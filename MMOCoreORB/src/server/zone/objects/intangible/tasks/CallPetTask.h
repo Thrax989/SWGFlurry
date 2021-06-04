@@ -23,8 +23,8 @@ public:
 
 		player->removePendingTask("call_pet");
 
-		//if(player->isInCombat())
-			//return;
+		if(player->isInCombat())
+			return;
 
 		Locker locker2(device);
 		Locker clocker(device->getControlledObject(), player);

@@ -18,7 +18,6 @@
 #include "server/zone/packets/chat/ChatSystemMessage.h"
 #include "server/zone/packets/scene/AttributeListMessage.h"
 #include "server/zone/objects/player/sui/transferbox/SuiTransferBox.h"
-#include "server/zone/ZoneProcessServer.h"
 
 #include "server/zone/objects/resource/ResourceSpawn.h"
 #include "server/zone/objects/resource/ResourceContainer.h"
@@ -156,14 +155,6 @@ void InstallationObjectImplementation::setOperating(bool value, bool notifyClien
 	broadcastToOperators(inso7);
 }
 
-String InstallationObjectImplementation::getCurrentSpawnName(){
-	if(currentSpawn != nullptr)
-	{
-		return currentSpawn->getType() + " - " + currentSpawn->getName();
-	}
-	else return "";
-}
-
 void InstallationObjectImplementation::setActiveResource(ResourceContainer* container) {
 
 	Time timeToWorkTill;
@@ -210,118 +201,6 @@ void InstallationObjectImplementation::setActiveResource(ResourceContainer* cont
 			broadcastToOperators(inso7);
 		}
 	}
-}
-// Credit - Quick harvester options mod from AotC.
-// Stack - implementing quick maint/power and also adding in retrieve all
-
-void InstallationObjectImplementation::quickAddMaint(CreatureObject* player, float amount)
-{
-	int bank = player->getBankCredits();
-	int cash = player->getCashCredits();
-	int availableCredits = bank + cash;
-
-	if(availableCredits < amount)
-	{
-		player->sendSystemMessage("Not enough funds");
-	}
-	else
-	{
-		if (cash < amount)
-		{
-			int diff = amount - cash;
-
-			if (diff > bank)
-			{
-				player->sendSystemMessage("@player_structure:insufficient_funds"); //You have insufficient funds to make this deposit.
-				return;
-			}
-			player->subtractCashCredits(cash); //Take all from cash, since they didn't have enough to cover.
-			player->subtractBankCredits(diff); //Take the rest from the bank.
-
-		} else {
-			player->subtractCashCredits(amount); //Take all of the payment from cash.
-		}
-
-		addMaintenance(amount);
-		player->sendSystemMessage("Quick Add Maintenance Successful");
-	}
-}
-
-void InstallationObjectImplementation::quickAddPower(CreatureObject* player, float amount)
-{
-	float energy = amount;
-	ManagedReference<ResourceManager*> resourceManager = player->getZoneServer()->getResourceManager();
-	//TODO: This should be handled in StructureManager
-
-	uint32 energyFromPlayer = resourceManager->getAvailablePowerFromPlayer(player);
-
-	if (energy > energyFromPlayer)
-	{
-		player->sendSystemMessage("Not enough energy in your inventory");
-		return;
-	}
-
-
-	addPower(energy);
-	resourceManager->removePowerFromPlayer(player, energy);
-
-	StringIdChatParameter stringId("player_structure", "deposit_successful");
-	stringId.setDI(energy);
-
-	player->sendSystemMessage(stringId);
-
-	stringId.setStringId("player_structure", "reserve_report");
-	stringId.setDI(getSurplusPower());
-
-	player->sendSystemMessage(stringId);
-
-	updateToDatabase();
-
-}
-
-
-
-void InstallationObjectImplementation::quickRetrieveAllResources(CreatureObject* player)
-{
-	int totalResources = 0;
-	SceneObject* inventory = player->getSlottedObject("inventory");
-
-	updateInstallationWork();
-
-	for (int i = 0; i < resourceHopper.size(); ++i) {
-		ResourceContainer* container = resourceHopper.get(i);
-
-		if (!inventory->isContainerFullRecursive())
-		{
-			Reference<ResourceSpawn*> resSpawn = container->getSpawnObject();
-			int quantity = container->getQuantity();
-			if(quantity <= 0)
-			{
-				continue;
-			}
-			String name = container->getSpawnName();
-			totalResources += quantity;
-			Locker locker(resSpawn);
-
-			ManagedReference<ResourceContainer*> newContainer = resSpawn->createResource(quantity);
-			if (inventory->transferObject(newContainer, -1, false))
-			{
-				inventory->broadcastObject(newContainer, true);
-
-				player->sendSystemMessage("Retrieved " + String::valueOf(quantity) + " of " + name);
-				updateResourceContainerQuantity(container, container->getQuantity() - quantity, true);
-			} else {
-				newContainer->destroyObjectFromDatabase(true);
-			}
-		}
-		else {
-			StringIdChatParameter stringId("error_message", "inv_full");
-			player->sendSystemMessage(stringId);
-			return;
-		}
-
-	}
-	player->sendSystemMessage("All Resources Retrieved Totaling: " + String::valueOf(totalResources));
 }
 
 void InstallationObjectImplementation::handleStructureAddEnergy(CreatureObject* player) {
@@ -387,23 +266,6 @@ ResourceContainer* InstallationObjectImplementation::getContainerFromHopper(Reso
 	return nullptr;
 }
 
-int InstallationObjectImplementation::getResourceContainerCountFromHopper()
-{
-	return resourceHopper.size();
-}
-
-ResourceContainer* InstallationObjectImplementation::getContainerFromHopperByIndex(int index)
-{
-	if (index < resourceHopper.size())
-	{
-		return resourceHopper.get(index);
-	}
-	else
-	{
-		return nullptr;
-	}
-}
-
 void InstallationObjectImplementation::updateInstallationWork() {
 
 	Time timeToWorkTill;
@@ -434,26 +296,7 @@ bool InstallationObjectImplementation::updateMaintenance(Time& workingTime) {
 		Time workTill(lastMaintenanceTime.getTime() + (int) workTimePermitted);
 		workingTime = workTill;
 
-		// Stack get a ref to owning player. if they have the funds, do NOT shut it down because its going to be withdrawn from bank
-		CreatureObject* player = getOwnerCreatureObject();
-		if(player != nullptr)
-		{
-			if(player->getBankCredits() > payAmount)
-			{
-				shutdownWork = false;
-			}
-			else
-			{
-				shutdownWork = true;
-			}
-
-		}
-		else
-		{
-			shutdownWork = true;
-		}
-
-
+		shutdownWork = true;
 	}
 
 	if (workTimePermitted > 0) {
@@ -825,6 +668,13 @@ bool InstallationObjectImplementation::isAggressiveTo(CreatureObject* target) {
 	if (!isAttackableBy(target) || target->isVehicleObject())
 		return false;
 
+	if (target->isPlayerCreature()) {
+		Reference<PlayerObject*> ghost = target->getPlayerObject();
+		if (ghost != nullptr && ghost->hasCrackdownTefTowards(getFaction())) {
+			return true;
+		}
+	}
+
 	if (getFaction() != 0 && target->getFaction() != 0 && getFaction() != target->getFaction())
 		return true;
 
@@ -874,13 +724,6 @@ bool InstallationObjectImplementation::isAttackableBy(CreatureObject* object) {
 	unsigned int thisFaction = getFaction();
 	unsigned int otherFaction = object->getFaction();
 
-	if (otherFaction != 0 && thisFaction != 0) {
-		if (otherFaction == thisFaction) {
-			return false;
-		}
-
-	}
-
 	if (object->isPet()) {
 		ManagedReference<CreatureObject*> owner = object->getLinkedCreature().get();
 
@@ -889,12 +732,27 @@ bool InstallationObjectImplementation::isAttackableBy(CreatureObject* object) {
 
 		return isAttackableBy(owner);
 
-	} else if (object->isPlayerCreature() && thisFaction != 0) {
-		if (object->getFactionStatus() == 0) {
-			return false;
-		}
+	} else if (object->isPlayerCreature()) {
+		if (thisFaction != 0) {
+			Reference<PlayerObject*> ghost = object->getPlayerObject();
+			if (ghost != nullptr && ghost->hasCrackdownTefTowards(thisFaction)) {
+				return true;
+			}
+			if (otherFaction != 0 && otherFaction == thisFaction) {
+				return false;
+			}
+			if (object->getFactionStatus() == 0) {
+				return false;
+			}
 
-		if ((getPvpStatusBitmask() & CreatureFlag::OVERT) && object->getFactionStatus() != FactionStatus::OVERT) {
+			if ((getPvpStatusBitmask() & CreatureFlag::OVERT) && object->getFactionStatus() != FactionStatus::OVERT) {
+				return false;
+			}
+		}
+	}
+
+	if (otherFaction != 0 && thisFaction != 0) {
+		if (otherFaction == thisFaction) {
 			return false;
 		}
 	}

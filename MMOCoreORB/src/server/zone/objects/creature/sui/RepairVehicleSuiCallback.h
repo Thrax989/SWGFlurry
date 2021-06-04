@@ -10,6 +10,7 @@
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/objects/creature/VehicleObject.h"
+#include "server/zone/objects/transaction/TransactionLog.h"
 
 class RepairVehicleSuiCallback : public SuiCallback {
 public:
@@ -39,13 +40,11 @@ public:
 			return;
 		}
 
-		//if (vehicle->isDisabled() && !player->getPlayerObject()->isPrivileged())
-			//return;
+		if (vehicle->isDisabled() && !player->getPlayerObject()->isPrivileged())
+			return;
 
 		int repairCost = vehicle->calculateRepairCost(player);
-		int bank = player->getBankCredits();
-		int cash = player->getCashCredits();
-		int totalFunds = bank + cash;
+		int totalFunds = player->getBankCredits();
 		int tax = 0;
 
 		ManagedReference<CityRegion*> city =vehicle->getCityRegion().get();
@@ -54,18 +53,14 @@ public:
 			repairCost += tax;
 		}
 
-		if (bank < repairCost) {
-			int diff = repairCost - bank;
+		if (repairCost > totalFunds) {
+			player->sendSystemMessage("@pet/pet_menu:lacking_funds_prefix " + String::valueOf(repairCost - totalFunds) + " @pet/pet_menu:lacking_funds_suffix"); //You lack the additional  credits required to repair your vehicle.
+			return;
+		}
 
-			if (diff > cash){
-				player->sendSystemMessage("@pet/pet_menu:lacking_funds_prefix " + String::valueOf(repairCost - totalFunds) + " @pet/pet_menu:lacking_funds_suffix"); //You lack the additional  credits required to repair your vehicle.
-				return;
-			}
-
-			player->subtractBankCredits(bank); //Take all from bank, since they didn't have enough to cover.
-			player->subtractCashCredits(diff); //Take the rest from cash.
-		} else {
-			player->subtractBankCredits(repairCost); //Take all of the payment from bank.
+		{
+			TransactionLog trx(player, TrxCode::VEHICLEREPAIRS, repairCost);
+			player->subtractBankCredits(repairCost);
 		}
 
 		StringIdChatParameter params("@base_player:prose_pay_success_no_target"); //You successfully make a payment of %DI credits.

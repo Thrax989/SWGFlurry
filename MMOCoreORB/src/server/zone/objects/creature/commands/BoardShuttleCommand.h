@@ -67,7 +67,7 @@ public:
 			return GENERALERROR;
 		}
 
-		if (!shuttle->isInRange(creature, 100.f)) {
+		if (!shuttle->isInRange(creature, 25.f)) {
 			creature->sendSystemMessage("@player_structure:boarding_too_far"); //You are too far from the shuttle to board.
 			return GENERALERROR;
 		}
@@ -194,11 +194,7 @@ public:
 			y = p.getPositionY() + cos(dirRadians) * distance;
 		}
 
-		if (arrivalZone->getZoneName() == "dungeon2") {
-			creature->switchZone(arrivalZone->getZoneName(), 84.1568, 0.899999, -46.0048, 14200813);
-		}else{
-			creature->switchZone(arrivalZone->getZoneName(), x, p.getPositionZ(), y, 0);
-		}
+		creature->switchZone(arrivalZone->getZoneName(), x, p.getPositionZ(), y, 0);
 
 		// Update the nearest mission for group waypoint for both the arrival and departure planet.
 		if (creature->isGrouped()) {
@@ -260,6 +256,16 @@ private:
 			return;
 
 		CreatureObject* player = cast<CreatureObject*>(creature);
+
+		ManagedReference<PlayerObject* > ghost = player->getPlayerObject();
+
+		if (ghost == nullptr)
+			return;
+
+		if (ghost->hasSuiBoxWindowType(SuiWindowType::TRAVEL_TICKET_SELECTION))
+		{
+			ghost->closeSuiWindowType(SuiWindowType::TRAVEL_TICKET_SELECTION);
+		}
 
 		ManagedReference<SuiListBox*> suiListBox = new SuiListBox(player, SuiWindowType::TRAVEL_TICKET_SELECTION);
 		creature->sendSystemMessage("@travel:boarding_ticket_selection"); //You must select a ticket to use before boarding.

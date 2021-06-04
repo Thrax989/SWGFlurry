@@ -24,11 +24,7 @@
 #include "server/zone/managers/player/PlayerManager.h"
 #include "server/chat/ChatManager.h"
 #include "server/zone/managers/stringid/StringIdManager.h"
-
-#include "server/zone/managers/vendor/VendorManager.h"
-#include "server/zone/objects/building/BuildingObject.h"
-#include "server/zone/objects/cell/CellObject.h"
-#include "server/zone/objects/tangible/components/vendor/VendorDataComponent.h"
+#include "server/zone/objects/transaction/TransactionLog.h"
 
 void StructureObjectImplementation::loadTemplateData(SharedObjectTemplate* templateData) {
 	TangibleObjectImplementation::loadTemplateData(templateData);
@@ -151,13 +147,6 @@ void StructureObjectImplementation::notifyLoadFromDatabase() {
 		Reference<MigratePermissionsTask*> task = new MigratePermissionsTask(_this.getReferenceUnsafeStaticCast());
 
 		task->execute();
-	}
-
-	if (!staticObject && getBaseMaintenanceRate() != 0 && !isTurret() && !isMinefield()) {
-		//Decay is 4 weeks.
-		maxCondition = getBaseMaintenanceRate() * 24 * 7 * 4;
-
-		scheduleMaintenanceExpirationEvent();
 	}
 }
 
@@ -633,27 +622,35 @@ void StructureObjectImplementation::payMaintenance(int maintenance, CreditObject
 	int payedSoFar;
 	if (cashFirst) {
 		if (creditObj->getCashCredits() >= maintenance) {
+			TransactionLog trx(creditObj, structure, TrxCode::STRUCTUREMAINTANENCE, maintenance, true);
 			creditObj->subtractCashCredits(maintenance);
 			addMaintenance(maintenance);
 		} else {
 			payedSoFar = creditObj->getCashCredits();
 
+			TransactionLog trxCash(creditObj, structure, TrxCode::STRUCTUREMAINTANENCE, payedSoFar, true);
 			creditObj->subtractCashCredits(payedSoFar);
 			addMaintenance(payedSoFar);
 
+			TransactionLog trxBank(creditObj, structure, TrxCode::STRUCTUREMAINTANENCE, maintenance - payedSoFar, false);
+			trxBank.groupWith(trxCash);
 			creditObj->subtractBankCredits(maintenance - payedSoFar);
 			addMaintenance(maintenance - payedSoFar);
 		}
 	} else {
 		if (creditObj->getBankCredits() >= maintenance) {
+			TransactionLog trx(creditObj, structure, TrxCode::STRUCTUREMAINTANENCE, maintenance, false);
 			creditObj->subtractBankCredits(maintenance);
 			addMaintenance(maintenance);
 		} else {
 			payedSoFar = creditObj->getBankCredits();
 
+			TransactionLog trxCash(creditObj, structure, TrxCode::STRUCTUREMAINTANENCE, payedSoFar, false);
 			creditObj->subtractBankCredits(payedSoFar);
 			addMaintenance(payedSoFar);
 
+			TransactionLog trxBank(creditObj, structure, TrxCode::STRUCTUREMAINTANENCE, maintenance - payedSoFar, true);
+			trxBank.groupWith(trxCash);
 			creditObj->subtractCashCredits(maintenance - payedSoFar);
 			addMaintenance(maintenance - payedSoFar);
 		}
@@ -854,103 +851,4 @@ bool StructureObjectImplementation::isOnPermissionList(const String& listName, C
 	}
 
 	return false;
-}
-
-bool StructureObjectImplementation::unloadFromZone(bool sendSelfDestroy) {
-	ManagedReference<Zone*> zone = getZone();
-
-	if (zone == nullptr)
-		return false;
-
-	ManagedReference<BuildingObject*> building = cast<BuildingObject*>(asSceneObject());
-
-	if (building == nullptr)
-		return false;
-
-	ManagedReference<SceneObject*> owner = zone->getZoneServer()->getObject(getOwnerObjectID());
-
-	if (owner == nullptr)
-		return false;
-
-	ManagedReference<SceneObject*> ghost = owner->getSlottedObject("ghost");
-
-	if (ghost == nullptr || !ghost->isPlayerObject())
-		return false;
-
-	if (navArea != nullptr) {
-		ManagedReference<NavArea*> nav = navArea;
-		Core::getTaskManager()->executeTask([nav, sendSelfDestroy] () {
-			Locker locker(nav);
-			nav->destroyObjectFromWorld(sendSelfDestroy);
-		}, "destroyStructureNavAreaLambda2");
-	}
-
-	PlayerObject* playerObject = cast<PlayerObject*>(ghost.get());
-
-	if (getObjectID() == playerObject->getDeclaredResidence())
-		playerObject->setDeclaredResidence(nullptr);
-
-	uint64 waypointID = getWaypointID();
-
-	if (waypointID != 0)
-		playerObject->removeWaypoint(waypointID, true, true);
-
-	float x = getPositionX();
-	float y = getPositionY();
-	float z = zone->getHeight(x, y);
-
-	building->destroyChildObjects();
-
-	for (uint32 i = 1; i <= building->getTotalCellNumber(); ++i) {
-		ManagedReference<CellObject*> cellObject = building->getCell(i);
-
-		if (cellObject == nullptr)
-			continue;
-
-		int childObjects = cellObject->getContainerObjectsSize();
-
-		if (childObjects <= 0)
-			continue;
-
-		for (int j = childObjects - 1; j >= 0; --j) {
-			ManagedReference<SceneObject*> containedObject = cellObject->getContainerObject(j);
-
-			if (containedObject->isVendor()) {
-				TangibleObject* vendor = cast<TangibleObject*>(containedObject.get());
-
-				if (vendor != nullptr) {
-					DataObjectComponentReference* data = vendor->getDataObjectComponent();
-
-					if (data == nullptr || data->get() == nullptr || !data->get()->isVendorData())
-						continue;
-
-					VendorDataComponent* vendorData = cast<VendorDataComponent*>(data->get());
-
-					if (vendorData == nullptr)
-						continue;
-
-					ManagedReference<CreatureObject*> owner = zone->getZoneServer()->getObject(vendorData->getOwnerId()).castTo<CreatureObject*>();
-
-					if (owner == nullptr)
-						continue;
-
-					Locker clocker(vendor, owner);
-					VendorManager::instance()->handlePackupVendor(owner, vendor, true);
-				}
-			}
-
-			if (containedObject->isPlayerCreature() || containedObject->isPet()) {
-				CreatureObject* playerCreature = cast<CreatureObject*>(containedObject.get());
-				playerCreature->teleport(x, z, y, 0);
-				building->onExit(playerCreature, 0);
-				continue;
-			}
-		}
-	}
-
-	removeObjectFromZone(zone, asSceneObject());
-	setZone(nullptr);
-	scheduleMaintenanceExpirationEvent();
-
-	return true;
 }

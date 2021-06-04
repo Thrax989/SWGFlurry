@@ -7,7 +7,6 @@
 
 #include "server/zone/objects/creature/events/ThrowTrapTask.h"
 #include "templates/tangible/TrapTemplate.h"
-#include "server/zone/managers/collision/CollisionManager.h"
 
 class ThrowTrapCommand: public CombatQueueCommand {
 public:
@@ -27,7 +26,7 @@ public:
 			return INVALIDLOCOMOTION;
 
 		int skillLevel = creature->getSkillMod("trapping");
-		if (skillLevel < 1 ) {
+		if (skillLevel < 1 || !creature->hasSkill("outdoors_scout_novice")) {
 			creature->sendSystemMessage("@trap/trap:trap_no_skill");
 			return GENERALERROR;
 		}
@@ -55,18 +54,13 @@ public:
 			ManagedReference<CreatureObject*> targetCreature =
 					server->getZoneServer()->getObject(target).castTo<CreatureObject*>();
 
-			if (targetCreature == nullptr) {
+			if (targetCreature == nullptr || !targetCreature->isCreature()) {
 				creature->sendSystemMessage("@trap/trap:sys_creatures_only");
 				return GENERALERROR;
 			}
 
 			if (!targetCreature->isAttackableBy(creature) || targetCreature->isPet()) {
 				creature->sendSystemMessage("@trap/trap:sys_no_pets");
-				return GENERALERROR;
-			}
-
-			if (!CollisionManager::checkLineOfSight(creature, targetCreature)) {
-				creature->sendSystemMessage("@cbt_spam:los_fail"); // "You lost sight of your target."
 				return GENERALERROR;
 			}
 
@@ -100,6 +94,12 @@ public:
 			int trappingSkill = creature->getSkillMod("trapping");
 			if(trappingSkill < 1) {
 				creature->sendSystemMessage("@trap/trap:trap_no_skill");
+				return GENERALERROR;
+			}
+
+			/// Skill too low check
+			if(trappingSkill < trapData->getSkillRequired()) {
+				creature->sendSystemMessage("@trap/trap:trap_no_skill_this");
 				return GENERALERROR;
 			}
 
@@ -144,22 +144,10 @@ public:
 
 				Locker locker(buff);
 
-				if(state != 0 && state != CreatureState::FROZEN )
+				if(state != 0)
 					buff->addState(state);
 
-				if ( state == CreatureState::FROZEN && targetCreature->getSpeedMultiplierMod() > 0.25f )	{
-					buff->setSpeedMultiplierMod(0.01f);
-					buff->setAccelerationMultiplierMod(0.01f);
-				}
-
-				if ( state == CreatureState::IMMOBILIZED &&  targetCreature->getSpeedMultiplierMod() > 0.25f )	{
-					buff->setSpeedMultiplierMod(0.21f);
-					buff->setAccelerationMultiplierMod(0.21f);
-				}
-
-				
 				const auto skillMods = trapData->getSkillMods();
-
 				for(int i = 0; i < skillMods->size(); ++i) {
 					buff->setSkillModifier(skillMods->elementAt(i).getKey(), skillMods->get(i));
 				}

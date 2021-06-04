@@ -33,10 +33,10 @@ public:
 			return false;
 		}
 
-		/*if (!creatureTarget->isResuscitable()) {
+		if (!creatureTarget->isResuscitable()) {
 			creature->sendSystemMessage("@healing_response:too_dead_to_resuscitate"); //Your target has been dead too long. There is no hope of resuscitation.
 			return false;
-		}*/
+		}
 
 		if (!creatureTarget->isHealableBy(creature)) {
 			creature->sendSystemMessage("@healing:pvp_no_help");  //It would be unwise to help such a patient.
@@ -185,6 +185,10 @@ public:
 
 		if(!checkDistance(creature, creatureTarget, range))
 			return TOOFAR;
+
+		if (!playerEntryCheck(creature, creatureTarget)) {
+			return GENERALERROR;
+		}
 
 		uint64 objectId = 0;
 

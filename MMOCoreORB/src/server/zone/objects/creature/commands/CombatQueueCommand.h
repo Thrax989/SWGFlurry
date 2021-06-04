@@ -12,7 +12,6 @@
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/managers/combat/CombatManager.h"
 #include "server/zone/objects/player/PlayerObject.h"
-#include "server/zone/objects/building/BuildingObject.h"
 #include "server/zone/objects/cell/CellObject.h"
 #include "server/zone/managers/combat/CreatureAttackData.h"
 #include "server/zone/managers/collision/CollisionManager.h"
@@ -184,9 +183,8 @@ public:
 
 				ManagedReference<TangibleObject*> targetTano = targetObject.castTo<TangibleObject*>();
 
-				//Comment out field faction change
-				/*if (targetTano != nullptr && creature->getFaction() != 0 && targetTano->getFaction() != 0 && targetTano->getFaction() != creature->getFaction() && creature->getFactionStatus() != FactionStatus::OVERT) {
- 					if (targetTano->isCreatureObject()) {
+				if (targetTano != nullptr && creature->getFaction() != 0 && targetTano->getFaction() != 0 && targetTano->getFaction() != creature->getFaction() && creature->getFactionStatus() != FactionStatus::OVERT && !ghost->hasCrackdownTef()) {
+					if (targetTano->isCreatureObject()) {
 						ManagedReference<CreatureObject*> targetCreature = targetObject.castTo<CreatureObject*>();
 
 						if (targetCreature != nullptr) {
@@ -211,7 +209,7 @@ public:
 						else if ((targetTano->getPvpStatusBitmask() & CreatureFlag::OVERT))
 							ghost->doFieldFactionChange(FactionStatus::OVERT);
 					}
-				}*/
+				}
 			}
 		}
 
@@ -232,32 +230,8 @@ public:
 			return GENERALERROR;
 		}
 
-		if (creature->isPlayerCreature() && targetObject->getParentID() != 0 && creature->getParentID() != targetObject->getParentID()) {
-			Reference<CellObject*> targetCell = targetObject->getParent().get().castTo<CellObject*>();
-
-			if (targetCell != nullptr) {
-				if (!targetObject->isPlayerCreature()) {
-					auto perms = targetCell->getContainerPermissions();
-
-					if (!perms->hasInheritPermissionsFromParent()) {
-						if (!targetCell->checkContainerPermission(creature, ContainerPermissions::WALKIN)) {
-							creature->sendSystemMessage("@combat_effects:cansee_fail"); // You cannot see your target.
-							return GENERALERROR;
-						}
-					}
-				}
-
-				ManagedReference<SceneObject*> parentSceneObject = targetCell->getParent().get();
-
-				if (parentSceneObject != nullptr) {
-					BuildingObject* buildingObject = parentSceneObject->asBuildingObject();
-
-					if (buildingObject != nullptr && !buildingObject->isAllowedEntry(creature)) {
-						creature->sendSystemMessage("@combat_effects:cansee_fail"); // You cannot see your target.
-						return GENERALERROR;
-					}
-				}
-			}
+		if (!playerEntryCheck(creature, targetObject->asTangibleObject())) {
+			return GENERALERROR;
 		}
 
 		CombatManager* combatManager = CombatManager::instance();
@@ -500,7 +474,7 @@ public:
 				return "creature_attack" + intensity;
 		}
 
-		//debug() << "Generated Attack Animation- " << buffer;
+		debug() << "Generated Attack Animation- " << buffer;
 
 		return buffer.toString();
 	}
@@ -524,7 +498,7 @@ public:
 			return anim;
 		}
 
-		//debug() << "Generated Attack Animation- " << anim;
+		debug() << "Generated Attack Animation- " << anim;
 
 		return anim;
 	}
@@ -548,12 +522,12 @@ public:
 		return poolsToDamage;
 	}
 
-	inline VectorMap<uint8, StateEffect>* getStateEffects() const {
-		return &(const_cast<CombatQueueCommand*>(this)->stateEffects);
+	inline const VectorMap<uint8, StateEffect>* getStateEffects() const {
+		return &stateEffects;
 	}
 
-	inline Vector<DotEffect>* getDotEffects() const {
-		return &(const_cast<CombatQueueCommand*>(this)->dotEffects);
+	inline const Vector<DotEffect>* getDotEffects() const {
+		return &dotEffects;
 	}
 
 	void setAnimationString(const String& anim) {
@@ -624,11 +598,11 @@ public:
 		this->accuracySkillMod = acc;
 	}
 
-	bool hasCombatSpam() {
+	bool hasCombatSpam() const {
 		return !combatSpam.isEmpty();
 	}
 
-	bool isCombatCommand() {
+	bool isCombatCommand() const {
 		return true;
 	}
 

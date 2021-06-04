@@ -20,6 +20,7 @@
 #include "server/zone/packets/player/PlayMusicMessage.h"
 #include "server/zone/objects/mission/events/FailMissionAfterCertainTimeTask.h"
 #include "events/CompleteMissionObjectiveTask.h"
+#include "server/zone/objects/transaction/TransactionLog.h"
 
 void MissionObjectiveImplementation::destroyObjectFromDatabase() {
 	for (int i = 0; i < observers.size(); ++i) {
@@ -167,8 +168,9 @@ void MissionObjectiveImplementation::fail() {
 void MissionObjectiveImplementation::awardReward() {
 	ManagedReference<MissionObject* > mission = this->mission.get();
 
-	if(mission == nullptr)
+	if (mission == nullptr) {
 		return;
+	}
 
 	Vector<ManagedReference<CreatureObject*> > players;
 	PlayMusicMessage* pmm = new PlayMusicMessage("sound/music_mission_complete.snd");
@@ -176,7 +178,6 @@ void MissionObjectiveImplementation::awardReward() {
 	Vector3 missionEndPoint = getEndPosition();
 
 	ManagedReference<CreatureObject*> owner = getPlayerOwner();
-
 	ManagedReference<GroupObject*> group = owner->getGroup();
 
 	int playerCount = 1;
@@ -200,8 +201,13 @@ void MissionObjectiveImplementation::awardReward() {
 #else
 				groupMember->sendMessage(pmm->clone());
 #endif
+				Vector3 memberPosition = groupMember->getWorldPosition();
 
-				if (groupMember->getWorldPosition().distanceTo(missionEndPoint) < 128) {
+				if (mission->getTypeCRC() == MissionTypes::BOUNTY) {
+					memberPosition.setZ(0);
+				}
+
+				if (memberPosition.distanceTo(missionEndPoint) < 128) {
 					players.add(groupMember);
 				}
 			}
@@ -220,11 +226,11 @@ void MissionObjectiveImplementation::awardReward() {
 		players.add(owner);
 	}
 
-	int divisor = players.size();
+	int divisor = mission->getRewardCreditsDivisor();
 	bool expanded = false;
 
-	if (1 > divisor) {
-		divisor = 1;
+	if (playerCount > divisor) {
+		divisor = playerCount;
 		expanded = true;
 	}
 
@@ -241,6 +247,7 @@ void MissionObjectiveImplementation::awardReward() {
 		player->sendSystemMessage(stringId);
 
 		Locker lockerPl(player, _this.getReferenceUnsafeStaticCast());
+		TransactionLog trx(TrxCode::MISSIONSYSTEMDYNAMIC, player, dividedReward, false);
 		player->addBankCredits(dividedReward, true);
 	}
 
@@ -255,16 +262,13 @@ void MissionObjectiveImplementation::awardReward() {
 	int creditsDistributed = dividedReward * players.size();
 
 	StatisticsManager::instance()->completeMission(mission->getTypeCRC(), creditsDistributed);
-	PlayerObject* ownerGhost = owner->getPlayerObject();
-	if (ownerGhost != NULL)
-		ownerGhost->updateMissionsCompleted();
 }
 
 Vector3 MissionObjectiveImplementation::getEndPosition() {
 	ManagedReference<MissionObject* > mission = this->mission.get();
 
 	Vector3 missionEndPoint;
-	if(mission != nullptr) {
+	if (mission != nullptr) {
 		missionEndPoint.setX(mission->getEndPositionX());
 		missionEndPoint.setY(mission->getEndPositionY());
 		TerrainManager* terrain = getPlayerOwner()->getZone()->getPlanetManager()->getTerrainManager();

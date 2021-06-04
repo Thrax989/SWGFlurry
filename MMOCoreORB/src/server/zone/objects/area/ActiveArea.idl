@@ -4,11 +4,12 @@
 
 package server.zone.objects.area;
 
-import server.zone.objects.scene.SceneObject;
-import server.zone.objects.area.areashapes.AreaShape;
-import server.zone.objects.pathfinding.NavArea;
+include server.zone.objects.scene.SceneObject;
+include server.zone.objects.area.areashapes.AreaShape;
 include system.util.Vector;
+
 import server.zone.Zone;
+import server.zone.objects.pathfinding.NavArea;
 
 @mock
 @json
@@ -88,7 +89,7 @@ class ActiveArea extends SceneObject {
 		return false;
 	}
 
-	@dirty
+	@read
 	public abstract boolean isNavArea() {
 		return false;
 	}
@@ -109,18 +110,25 @@ class ActiveArea extends SceneObject {
 		return campingPermitted;
 	}
 
-	@dirty
+	@read
 	public native boolean containsPoint(float x, float y, unsigned long cellid);
 
-	@dirty
+	@read
 	public abstract native boolean containsPoint(float x, float y);
 
-	@dirty
+	@read
 	public float getRadius2() {
-		if (areaShape != null) {
-			return areaShape.getRadius() * areaShape.getRadius();
+		float radius = getRadius();
+
+		return radius * radius;
+	}
+
+	@read
+	public float getRadius() {
+		if (areaShape) {
+			return areaShape.getRadius();
 		} else {
-			return super.getRadius() * super.getRadius();
+			return super.getRadius();
 		}
 	}
 
@@ -141,7 +149,7 @@ class ActiveArea extends SceneObject {
 
 	@preLocked
 	public void setRadius(float r) {
-		if (areaShape != null && r < areaShape.getRadius()) {
+		if (areaShape && r < areaShape.getRadius()) {
 			r = areaShape.getRadius();
 		}
 
@@ -182,7 +190,7 @@ class ActiveArea extends SceneObject {
 	public void setAreaShape(AreaShape area) {
 		areaShape = area;
 
-		if (areaShape != null) {
+		if (areaShape) {
 			setRadius(areaShape.getRadius());
 		}
 	}
@@ -191,8 +199,13 @@ class ActiveArea extends SceneObject {
 	public AreaShape getAreaShape() {
 		return areaShape;
 	}
+	
+	@read
+	public boolean isRectangularAreaShape() {
+		return areaShape && areaShape.isRectangularAreaShape();
+	}
 
-	@dirty
+	@read
 	public native boolean intersectsWith(ActiveArea area);
 
 	@preLocked

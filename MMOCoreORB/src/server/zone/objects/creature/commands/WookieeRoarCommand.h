@@ -44,8 +44,7 @@ public:
 
 		// Check to see if "innate_roar" Cooldown isPast();
 		if (!player->checkCooldownRecovery("innate_roar")) {
-
-			Time* cdTime = player->getCooldownTime("innate_roar");
+			const Time* cdTime = player->getCooldownTime("innate_roar");
 
 			// Returns -time. Multiple by -1 to return positive.
 			int timeLeft = floor((float)cdTime->miliDifference() / 1000) * -1;
@@ -65,7 +64,7 @@ public:
 		}
 
 		player->sendSystemMessage("@innate:roar_active"); // You let out a mighty roar.
-		player->addCooldown("innate_roar", 30 * 1000); // 30 Seconds reuse time.
+		player->addCooldown("innate_roar", 300 * 1000); // 5min reuse time.
 
 		if (res == GENERALERROR)
 			creature->sendSystemMessage("@combat_effects:wookiee_roar_miss");

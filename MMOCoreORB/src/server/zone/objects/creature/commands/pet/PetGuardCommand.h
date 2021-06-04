@@ -32,12 +32,12 @@ public:
 			pet->setPosture(CreaturePosture::UPRIGHT);
 
 		// Check if droid has power
-		if (controlDevice->getPetType() == PetManager::DROIDPET ){
+		if ( controlDevice->getPetType() == PetManager::DROIDPET ){
 			ManagedReference<DroidObject*> droidPet = cast<DroidObject*>(pet.get());
 			if( droidPet == nullptr )
 				return GENERALERROR;
 
-			if (!droidPet->hasPower() ){
+			if ( !droidPet->hasPower() ){
 				pet->showFlyText("npc_reaction/flytext","low_power", 204, 0, 0);  // "*Low Power*"
 				return GENERALERROR;
 			}
@@ -49,10 +49,10 @@ public:
 			return GENERALERROR;
 		}
 
-                if (player->isSwimming() || pet->isSwimming()) {
-                        pet->showFlyText("npc_reaction/flytext","confused", 204, 0, 0);  // "?!!?!?!"
-                        return GENERALERROR;
-                }
+		if (player->isSwimming() || pet->isSwimming()) {
+			pet->showFlyText("npc_reaction/flytext","confused", 204, 0, 0);  // "?!!?!?!"
+			return GENERALERROR;
+		}
 
 		// Guard the player's target if valid, otherwise guard the player
 		uint64 playersTargetID = player->getTargetID();

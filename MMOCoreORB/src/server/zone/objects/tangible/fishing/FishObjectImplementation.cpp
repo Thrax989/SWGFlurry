@@ -26,8 +26,9 @@ int FishObjectImplementation::handleObjectMenuSelect(CreatureObject* player, byt
 void FishObjectImplementation::fillObjectMenuResponse(ObjectMenuResponse* menuResponse, CreatureObject* player) {
 	TangibleObjectImplementation::fillObjectMenuResponse(menuResponse, player);
 	if (getContainerObjectsSize() > 0) {
-		String text = "@fishing:mnu_filet";
 
+		String text = "@fishing:mnu_filet";
+          
           	SceneObject* parent = getRootParent();
 
 		if (parent == nullptr)
@@ -43,7 +44,6 @@ void FishObjectImplementation::fillObjectMenuResponse(ObjectMenuResponse* menuRe
 			}
 		}
 
-		menuResponse->addRadialMenuItem(245, 3, text);
 		SceneObject* inventory = player->getSlottedObject("inventory");
 		SceneObject* thisParent = getParent().get();
 

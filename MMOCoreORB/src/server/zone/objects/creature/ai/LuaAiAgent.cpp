@@ -145,7 +145,7 @@ LuaAiAgent::LuaAiAgent(lua_State *L) : LuaCreatureObject(L) {
 #ifdef DYNAMIC_CAST_LUAOBJECTS
 	realObject = dynamic_cast<AiAgent*>(_getRealSceneObject());
 
-	assert(!_getRealSceneObject() || realObject != nullptr);
+	E3_ASSERT(!_getRealSceneObject() || realObject != nullptr);
 #else
 	realObject = static_cast<AiAgent*>(lua_touserdata(L, 1));
 #endif
@@ -163,7 +163,7 @@ int LuaAiAgent::_setObject(lua_State* L) {
 	if (realObject != obj)
 		realObject = obj;
 
-	assert(!_getRealSceneObject() || realObject != nullptr);
+	E3_ASSERT(!_getRealSceneObject() || realObject != nullptr);
 #else
 	auto obj = static_cast<AiAgent*>(lua_touserdata(L, -1));
 
@@ -326,6 +326,8 @@ int LuaAiAgent::setDestination(lua_State* L) {
 }
 
 int LuaAiAgent::completeMove(lua_State* L) {
+	Locker locker(realObject);
+
 	bool retVal = realObject->completeMove();
 
 	lua_pushboolean(L, retVal);
@@ -347,7 +349,7 @@ int LuaAiAgent::setWait(lua_State* L) {
 	float seconds = lua_tonumber(L, -1);
 
   	Locker locker(realObject);
-  
+
 	realObject->setWait((int)(seconds*1000));
 
 	return 0;

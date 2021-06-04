@@ -6,6 +6,7 @@
 #include "server/zone/ZoneServer.h"
 #include "server/zone/objects/tangible/component/droid/DroidComponent.h"
 #include "server/zone/packets/object/ObjectMenuResponse.h"
+#include "server/zone/objects/creature/ai/DroidObject.h"
 
 DroidDataStorageModuleDataComponent::DroidDataStorageModuleDataComponent() {
 	setLoggingName("DroidDataStorageModule");
@@ -16,7 +17,7 @@ DroidDataStorageModuleDataComponent::~DroidDataStorageModuleDataComponent() {
 
 }
 
-String DroidDataStorageModuleDataComponent::getModuleName() {
+String DroidDataStorageModuleDataComponent::getModuleName() const {
 	return String("datapad_storage_module");
 }
 
@@ -63,7 +64,7 @@ void DroidDataStorageModuleDataComponent::fillAttributeList(AttributeListMessage
 	alm->insertAttribute("data_module", rating > 10 ? 10 : rating);
 }
 
-String DroidDataStorageModuleDataComponent::toString() {
+String DroidDataStorageModuleDataComponent::toString() const {
 	return BaseDroidModuleComponent::toString();
 }
 

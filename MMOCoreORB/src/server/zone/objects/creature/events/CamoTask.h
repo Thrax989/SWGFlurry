@@ -49,7 +49,7 @@ public:
 			}
 
 			// on failure 50% chance to aggro animal if aggressive and within 40 meters
-			if (System::random(100) > 25 && ai->isAggressiveTo(player) && ai->isInRange3d(player, 40.0f))
+			if (System::random(100) > 50 && ai->isAggressiveTo(player) && ai->isInRange3d(player, 40.0f))
 				CombatManager::instance()->startCombat(ai, player, true);
 
 			return;

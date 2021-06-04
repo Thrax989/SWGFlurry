@@ -84,7 +84,8 @@ void PetControlDeviceImplementation::callObject(CreatureObject* player) {
 			player->sendSystemMessage("@pet/pet_menu:cant_call"); // cant call pet right now
 		return;
 	}
-	assert(pet->isLockedByCurrentThread());
+
+	E3_ASSERT(pet->isLockedByCurrentThread());
 
 	unsigned int petFaction = pet->getFaction();
 
@@ -105,7 +106,7 @@ void PetControlDeviceImplementation::callObject(CreatureObject* player) {
 		}
 	}
 
-	if(player->getPendingTask("call_pet") != nullptr) {
+	if (player->getPendingTask("call_pet") != nullptr) {
 		StringIdChatParameter waitTime("pet/pet_menu", "call_delay_finish_pet"); // Already calling a Pet: Call will be finished in %DI seconds.
 		AtomicTime nextExecution;
 		Core::getTaskManager()->getNextExecutionTime(player->getPendingTask("call_pet"), nextExecution);
@@ -167,7 +168,7 @@ void PetControlDeviceImplementation::callObject(CreatureObject* player) {
 		}
 
 	} else if (petType == PetManager::FACTIONPET){
-		maxPets = 2;
+		maxPets = 3;
 	}
 
 	for (int i = 0; i < ghost->getActivePetsSize(); ++i) {
@@ -177,7 +178,7 @@ void PetControlDeviceImplementation::callObject(CreatureObject* player) {
 			if (object->isCreature() && petType == PetManager::CREATUREPET) {
 				const CreatureTemplate* activePetTemplate = object->getCreatureTemplate();
 
-				if (activePetTemplate == nullptr || activePetTemplate->getTemplateName() == "at_st" || activePetTemplate->getTemplateName() == "at_xt")
+				if (activePetTemplate == nullptr || activePetTemplate->getTemplateName() == "at_st")
 					continue;
 
 				if (++currentlySpawned >= maxPets) {
@@ -200,11 +201,10 @@ void PetControlDeviceImplementation::callObject(CreatureObject* player) {
 				const CreatureTemplate* activePetTemplate = object->getCreatureTemplate();
 				const CreatureTemplate* callingPetTemplate = pet->getCreatureTemplate();
 
-				if (activePetTemplate == nullptr || callingPetTemplate == nullptr || activePetTemplate->getTemplateName() != "at_st" || activePetTemplate->getTemplateName() != "at_xt")
+				if (activePetTemplate == nullptr || callingPetTemplate == nullptr || activePetTemplate->getTemplateName() != "at_st")
 					continue;
 
-				if (++currentlySpawned >= maxPets || (activePetTemplate->getTemplateName() == "at_st" && callingPetTemplate->getTemplateName() == "at_st") ||
-						(activePetTemplate->getTemplateName() == "at_xt" && callingPetTemplate->getTemplateName() == "at_xt")) {
+				if (++currentlySpawned >= maxPets || (activePetTemplate->getTemplateName() == "at_st" && callingPetTemplate->getTemplateName() == "at_st")) {
 					player->sendSystemMessage("@pet/pet_menu:at_max"); // You already have the maximum number of pets of this type that you can call.
 					return;
 				}
@@ -229,10 +229,10 @@ void PetControlDeviceImplementation::callObject(CreatureObject* player) {
 		Reference<CallPetTask*> callPet = new CallPetTask(_this.getReferenceUnsafeStaticCast(), player, "call_pet");
 
 		StringIdChatParameter message("pet/pet_menu", "call_pet_delay"); // Calling pet in %DI seconds. Combat will terminate pet call.
-		message.setDI(3);
+		message.setDI(15);
 		player->sendSystemMessage(message);
 
-		player->addPendingTask("call_pet", callPet, 3 * 1000);
+		player->addPendingTask("call_pet", callPet, 15 * 1000);
 
 		if (petControlObserver == nullptr) {
 			petControlObserver = new PetControlObserver(_this.getReferenceUnsafeStaticCast());
@@ -376,11 +376,6 @@ void PetControlDeviceImplementation::spawnObject(CreatureObject* player) {
 	}
 
 	Zone* zone = player->getZone();
-//Added No Pets To Dungoen2 IF NEEDED
-	if (zone->getZoneName() == "dungeon2") {
-		//player->sendSystemMessage("@pet/pet_menu:cant_call"); // You cannot call this pet right now.
-		//return;
-	}
 
 	if (zone == nullptr)
 		return;
@@ -507,9 +502,9 @@ void PetControlDeviceImplementation::storeObject(CreatureObject* player, bool fo
 		task->execute();
 	}
 	else {
-		if (pet->getPendingTask("store_pet") == NULL) {
-			player->sendSystemMessage( "Storing pet in 5 seconds");
-			pet->addPendingTask("store_pet", task, 5 * 1000);
+		if (pet->getPendingTask("store_pet") == nullptr) {
+			player->sendSystemMessage( "Storing pet in 60 seconds");
+			pet->addPendingTask("store_pet", task, 60 * 1000);
 		}
 		else {
 			AtomicTime nextExecution;
@@ -549,7 +544,7 @@ bool PetControlDeviceImplementation::growPet(CreatureObject* player, bool force,
 
 	Time currentTime;
 	uint32 timeDelta = currentTime.getTime() - lastGrowth.getTime();
-	int stagesToGrow = timeDelta / 60; // 60 seconds
+	int stagesToGrow = timeDelta / 43200; // 12 hour
 
 	if (adult)
 		stagesToGrow = 10;
@@ -836,7 +831,6 @@ void PetControlDeviceImplementation::fillAttributeList(AttributeListMessage* alm
 		ManagedReference<AiAgent*> pet = cast<AiAgent*>(this->controlledObject.get().get());
 
 		if (pet != nullptr) {
-			alm->insertAttribute("original_name_creature", pet->getObjectName()->getFullPath());
 			alm->insertAttribute("challenge_level", pet->getLevel());
 
 			if (petType == PetManager::CREATUREPET)
@@ -1213,7 +1207,7 @@ bool PetControlDeviceImplementation::isValidPet(AiAgent* pet) {
 		// time to calculate!
 		int calculatedLevel =  deed->calculatePetLevel();
 
-		if (pet->getTemplateLevel() >= (calculatedLevel * 0.70)) {
+		if (pet->getTemplateLevel() >= (calculatedLevel * 0.85)) {
 			return true;
 		} else {
 			return false;

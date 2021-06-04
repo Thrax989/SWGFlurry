@@ -258,11 +258,6 @@ class WeaponObject extends TangibleObject {
 		idealAccuracy = value;
 	}
 
-	@dirty
-	public void setArmorPiercing(int value) {
-                armorPiercing = value;
-        }
-
 	@read
 	public int getArmorPiercing() {
 		return armorPiercing;
@@ -360,11 +355,6 @@ class WeaponObject extends TangibleObject {
 	}
 
 	@read
-	public string getDeconstructionTemplate() {
-		return weaponTemplate.getDeconstructionTemplate();
-	}
-
-	@read
 	public int getNumberOfDots() {
 		return dotType.size();
 	}
@@ -427,7 +417,7 @@ class WeaponObject extends TangibleObject {
 		dotUses.elementAt(index) = u;
 	}
 
-	@dirty
+	@read
 	public native string getWeaponType();
 
 	@read
@@ -472,7 +462,7 @@ class WeaponObject extends TangibleObject {
 
 	@read
 	public boolean isFlameThrower() {
-		return weaponTemplate.isDerivedFrom("object/weapon/ranged/rifle/rifle_flame_thrower.iff") || weaponTemplate.isDerivedFrom("object/weapon/ranged/heavy/som_republic_flamer.iff") || weaponTemplate.isDerivedFrom("object/weapon/ranged/heavy/som_lava_cannon.iff") || weaponTemplate.isDerivedFrom("object/weapon/ranged/rifle/rifle_pvp_rebel.iff") || weaponTemplate.isDerivedFrom("object/weapon/ranged/rifle/rifle_pvp_imperial.iff") || weaponTemplate.isDerivedFrom("object/weapon/ranged/rifle/rifle_pulse_cannon.iff") || weaponTemplate.isDerivedFrom("object/weapon/ranged/rifle/rifle_particle_beam.iff") || weaponTemplate.isDerivedFrom("object/weapon/ranged/rifle/rifle_mandalorian.iff") || weaponTemplate.isDerivedFrom("object/weapon/ranged/rifle/rifle_cr1_blast_cannon.iff") || weaponTemplate.isDerivedFrom("object/weapon/ranged/rifle/rifle_ep3_loot_void.iff") || weaponTemplate.isDerivedFrom("object/weapon/ranged/rifle/rifle_ep3_loot_corellian.iff") || weaponTemplate.isDerivedFrom("object/weapon/ranged/rifle/rifle_som_lava_cannon.iff") || weaponTemplate.isDerivedFrom("object/weapon/ranged/rifle/rifle_carbonite_cold_rifle.iff");
+		return weaponTemplate.isDerivedFrom("object/weapon/ranged/rifle/rifle_flame_thrower.iff");
 	}
 
 	@read
@@ -542,11 +532,12 @@ class WeaponObject extends TangibleObject {
 
 	@read
 	public boolean hasPowerup() {
-		return powerupObject != null;
+		return powerupObject;
 	}
 
 	public native boolean applyPowerup(CreatureObject player, PowerupObject pup);
 
+	@reference
 	public native PowerupObject removePowerup();
 
 	public native void decreasePowerupUses(CreatureObject player);

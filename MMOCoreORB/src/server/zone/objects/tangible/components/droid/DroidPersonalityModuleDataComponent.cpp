@@ -8,6 +8,7 @@
 #include "templates/tangible/DroidPersonalityModuleTemplate.h"
 #include "server/chat/ChatManager.h"
 #include "server/zone/managers/reaction/ReactionManager.h"
+#include "server/zone/objects/creature/ai/DroidObject.h"
 
 DroidPersonalityModuleDataComponent::DroidPersonalityModuleDataComponent() {
 	setLoggingName("DroidPersonalityModule");
@@ -17,7 +18,7 @@ DroidPersonalityModuleDataComponent::~DroidPersonalityModuleDataComponent() {
 
 }
 
-String DroidPersonalityModuleDataComponent::getModuleName() {
+String DroidPersonalityModuleDataComponent::getModuleName() const {
 	return "personality_chip";
 }
 
@@ -62,7 +63,7 @@ void DroidPersonalityModuleDataComponent::deactivate() {
 	// no op
 }
 
-String DroidPersonalityModuleDataComponent::toString() {
+String DroidPersonalityModuleDataComponent::toString() const {
 	return BaseDroidModuleComponent::toString();
 }
 

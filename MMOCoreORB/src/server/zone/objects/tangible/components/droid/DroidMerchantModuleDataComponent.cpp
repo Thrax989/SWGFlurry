@@ -9,6 +9,7 @@
 #include "server/zone/objects/player/PlayerObject.h"
 #include "server/zone/objects/creature/events/DroidMerchantBarkerTask.h"
 #include "server/zone/objects/player/sui/callbacks/SelectWaypointSuiCallback.h"
+#include "server/zone/objects/creature/ai/DroidObject.h"
 
 DroidMerchantModuleDataComponent::DroidMerchantModuleDataComponent() {
 	active = false;
@@ -18,7 +19,7 @@ DroidMerchantModuleDataComponent::DroidMerchantModuleDataComponent() {
 DroidMerchantModuleDataComponent::~DroidMerchantModuleDataComponent() {
 
 }
-String DroidMerchantModuleDataComponent::getModuleName() {
+String DroidMerchantModuleDataComponent::getModuleName() const {
 	return String("merchant_barker");
 }
 void DroidMerchantModuleDataComponent::initializeTransientMembers() {
@@ -178,7 +179,7 @@ void DroidMerchantModuleDataComponent::deactivate() {
 
 }
 
-String DroidMerchantModuleDataComponent::toString(){
+String DroidMerchantModuleDataComponent::toString() const {
 	return BaseDroidModuleComponent::toString();
 }
 

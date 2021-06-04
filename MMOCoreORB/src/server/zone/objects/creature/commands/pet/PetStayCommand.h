@@ -31,7 +31,6 @@ public:
 
 		pet->setOblivious();
 		pet->storeFollowObject();
-		pet->setPosture(CreaturePosture::SITTING);
 
 		Locker clocker(controlDevice, creature);
 		controlDevice->setLastCommand(PetManager::STAY);

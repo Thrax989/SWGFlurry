@@ -48,8 +48,8 @@ class CampSiteActiveArea extends ActiveArea {
 	@dereferenced
 	protected TemplateReference<CampStructureTemplate> campStructureData;
 
-	// 3 hours
-	public final static int DESPAWNTIME = 10800000;
+	// 1 Hour
+	public final static int DESPAWNTIME = 6000000;
 
 	// 1 minute
 	public final static int ABANDONTIME = 60000;

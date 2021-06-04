@@ -28,6 +28,7 @@
 
 #include "templates/customization/AssetCustomizationManagerTemplate.h"
 #include "templates/params/RangedIntCustomizationVariable.h"
+#include "server/zone/objects/transaction/TransactionLog.h"
 
 
 int CraftingSessionImplementation::initializeSession(CraftingTool* tool, CraftingStation* station) {
@@ -233,16 +234,16 @@ void CraftingSessionImplementation::closeCraftingWindow(int clientCounter, bool 
 			objMsg->insertByte(clientCounter);
 
 			crafter->sendMessage(objMsg);
+
+			objMsg = new ObjectControllerMessage(crafter->getObjectID(), 0x1B, 0x010C);
+			objMsg->insertInt(0x10A);
+			objMsg->insertInt(0);
+			objMsg->insertByte(clientCounter);
+
+			crafter->sendMessage(objMsg);
 	}
 
 	//The actual window close command
-	objMsg = new ObjectControllerMessage(crafter->getObjectID(), 0x1B, 0x010C);
-	objMsg->insertInt(0x10A);
-	objMsg->insertInt(0);
-	objMsg->insertByte(clientCounter);
-
-	crafter->sendMessage(objMsg);
-
 	objMsg = new ObjectControllerMessage(crafter->getObjectID(), 0x1B, 0x01C2);
 	objMsg->insertByte(clientCounter);
 
@@ -346,14 +347,17 @@ bool CraftingSessionImplementation::createManufactureSchematic(DraftSchematic* d
 	manufactureSchematic =
 			 (draftschematic->createManufactureSchematic(craftingTool)).castTo<ManufactureSchematic*>();
 
-	if (manufactureSchematic.get() == nullptr) {
+	auto schematic = manufactureSchematic.get();
+
+	if (schematic == nullptr) {
 		crafter->sendSystemMessage("@ui_craft:err_no_manf_schematic");
 		closeCraftingWindow(0, false);
 		cancelSession();
 		return false;
 	}
 
-	craftingTool->transferObject(manufactureSchematic.get(), 0x4, true);
+	TransactionLog trx(crafter, craftingTool, schematic, TrxCode::CRAFTINGSESSION);
+	craftingTool->transferObject(schematic, 0x4, true);
 	//manufactureSchematic->sendTo(crafter, true);
 
 	if (crafterGhost != nullptr && crafterGhost->getDebug()) {
@@ -389,6 +393,7 @@ bool CraftingSessionImplementation::createPrototypeObject(DraftSchematic* drafts
 
 	strongPrototype->createChildObjects();
 
+	TransactionLog trx(crafter, craftingTool, strongPrototype, TrxCode::CRAFTINGSESSION);
 	craftingTool->transferObject(strongPrototype, -1, false);
 	strongPrototype->sendTo(crafter, true);
 
@@ -480,6 +485,11 @@ void CraftingSessionImplementation::addIngredient(TangibleObject* tano, int slot
 	}
 
 	Locker locker(tano);
+
+	if (tano->getRootParent() == NULL) {
+		sendSlotMessage(clientCounter, IngredientSlot::INVALIDINGREDIENT);
+		return;
+	}
 
 	/// Check if item is on the player, but not in a crafting tool
 	/// Or if the item is in a crafting station to prevent some duping
@@ -641,7 +651,7 @@ void CraftingSessionImplementation::initialAssembly(int clientCounter) {
 	manufactureSchematic->setCrafter(crafter);
 
 	String expskill = draftSchematic->getExperimentationSkill();
-	experimentationPointsTotal = int((crafter->getSkillMod(expskill) + crafter->getSkillMod("force_experimentation")) / 10);
+	experimentationPointsTotal = int(crafter->getSkillMod(expskill) / 10);
 	experimentationPointsUsed = 0;
 
 	// Calculate exp failure for red bars
@@ -668,27 +678,52 @@ void CraftingSessionImplementation::initialAssembly(int clientCounter) {
 	craftingValues->setManufactureSchematic(manufactureSchematic);
 	craftingValues->setPlayer(crafter);
 
-	for (int i = 0; i < manufactureSchematic->getSlotCount(); ++i) {
+	if (prototype->isWeaponObject()) {
+		unsigned int type = prototype->getClientGameObjectType();
 
-		ComponentSlot* compSlot = cast<ComponentSlot*>(manufactureSchematic->getSlot(i));
-		if (compSlot == nullptr)
-			continue;
+		if (type == SceneObjectType::PISTOL || type == SceneObjectType::CARBINE || type == SceneObjectType::RIFLE) {
+			uint32 tanoCRC = prototype->getClientObjectCRC();
 
-		ManagedReference<TangibleObject*> tano = compSlot->getPrototype();
-		if (tano == nullptr)
-			continue;
+			for (int i = 0; i < manufactureSchematic->getSlotCount(); ++i) {
+				ComponentSlot* compSlot = cast<ComponentSlot*>(manufactureSchematic->getSlot(i));
 
-		uint32 tanoCRC = prototype->getClientObjectCRC();
-		uint32 visSlot = draftSchematic->getAppearance(i).hashCode();
+				if (compSlot == nullptr) {
+					continue;
+				}
 
-		// we know that we can only have one component per hardpoint slot, so don't worry about checking them
-		if (visSlot > 0) {
-			Vector<uint32> ids = ComponentMap::instance()->getVisibleCRC(tanoCRC, visSlot);
-			int size = ids.size();
+				ManagedReference<TangibleObject*> compTano = compSlot->getPrototype();
 
-			if (size > 0) {
-				int index = System::random(size - 1);
-				prototype->addVisibleComponent(ids.get(index), false);
+				if (compTano == nullptr) {
+					continue;
+				}
+
+				const String& slotName = compSlot->getSlotName();
+
+				if (slotName.isEmpty()) {
+					continue;
+				}
+
+				const auto& ids = ComponentMap::instance()->getVisibleCRC(tanoCRC, slotName.hashCode());
+
+				if (ids.size() == 0) {
+					continue;
+				}
+
+				uint32 compCrc = compTano->getClientObjectCRC();
+
+				for (int ii = 0; ii < ids.size(); ++ii) {
+					uint32 key = ids.elementAt(ii).getKey();
+					uint32 val = ids.elementAt(ii).getValue();
+
+					if (key == 0 || val == 0) {
+						continue;
+					}
+
+					if (slotName == "stock" || compCrc == key) {
+						prototype->addVisibleComponent(val, false);
+						break;
+					}
+				}
 			}
 		}
 	}
@@ -1031,22 +1066,25 @@ void CraftingSessionImplementation::customization(const String& name, byte templ
 	Locker locker2(manufactureSchematic);
 	Locker locker3(prototype);
 
+	StringId protoNameID = *prototype->getObjectName();
+
 	if (templateChoice != 0xFF) {
+		Reference<DraftSchematic*> draftSchematic = manufactureSchematic->getDraftSchematic();
 
-		Reference<DraftSchematic*> draftSchematic =
-				manufactureSchematic->getDraftSchematic();
+		if (draftSchematic != nullptr && draftSchematic->getTemplateListSize() >= (int)templateChoice) {
+			String clientTemplate = draftSchematic->getTemplate((int)templateChoice);
+			String serverTemplate = clientTemplate.replaceAll("shared_", "");
 
-		if (draftSchematic != nullptr) {
-			if (draftSchematic->getTemplateListSize() >= (int) templateChoice) {
-				String chosenTemplate = draftSchematic->getTemplate((int) templateChoice);
-				uint32 clientCRC = chosenTemplate.hashCode();
-				prototype->setClientObjectCRC(clientCRC);
+			SharedObjectTemplate* shot = TemplateManager::instance()->getTemplate(serverTemplate.hashCode());
 
-				String minusShared = chosenTemplate.replaceAll("shared_","");
-				SharedObjectTemplate* newTemplate = TemplateManager::instance()->getTemplate(minusShared.hashCode());
-
-				prototype->loadTemplateData(newTemplate);
+			if (shot != nullptr) {
+				prototype->loadTemplateData(shot);
+				prototype->setObjectName(protoNameID, false);
 				prototype->updateCraftingValues(manufactureSchematic->getCraftingValues(), false);
+
+				if (!prototype->getSerialNumber().isEmpty()) {
+					prototype->setOptionBit(OptionBitmask::HASSERIAL, false);
+				}
 
 				prototype->sendDestroyTo(crafter);
 				prototype->sendTo(crafter, true);
@@ -1054,62 +1092,64 @@ void CraftingSessionImplementation::customization(const String& name, byte templ
 		}
 	}
 
-	if (schematicCount < 0 || schematicCount > 1000)
-		schematicCount = 1000;
+	String clientName = name;
 
-	manufactureSchematic->setManufactureLimit(schematicCount);
+	while (clientName.contains("\\#")) {
+		int index = clientName.indexOf("\\#");
+		String sub = "\\" + clientName.subString(index, index + 2);
 
-	StringTokenizer tokenizer(customizationString);
-	byte customizationindex, customizationvalue;
-	String customizationname = "";
-
-	//Database::escapeString(name);
-
-	prototype->setCustomObjectName(name, false);
-
-	auto newObjectName = server::zone::objects::scene::variables::StringId(
-			prototype->getObjectNameStringIdFile(),
-			prototype->getObjectNameStringIdName());
-
-	/// Set Name
-	manufactureSchematic->setObjectName(newObjectName, false);
-
-	/// Set Manufacture Schematic Custom name
-	if (!name.isEmpty())
-		manufactureSchematic->setCustomObjectName(name, false);
-
-	while (tokenizer.hasMoreTokens()) {
-
-		customizationindex = (byte) tokenizer.getIntToken();
-
-		customizationname = variables.elementAt(customizationindex).getKey();
-
-		customizationvalue = (byte) tokenizer.getIntToken();
-
-		prototype->setCustomizationVariable(customizationname,
-				customizationvalue);
+		clientName = clientName.replaceFirst(sub, "");
 	}
 
-	TangibleObjectDeltaMessage3* dtano3 =
-			new TangibleObjectDeltaMessage3(prototype);
-	dtano3->updateCustomName(name);
+	if (clientName.isEmpty()) {
+		clientName = prototype->getDisplayedName();
+	}
+
+	UnicodeString customName = clientName;
+
+	prototype->setCustomObjectName(customName, false);
+
+	if (schematicCount < 0 || schematicCount > 1000) {
+		schematicCount = 1000;
+	}
+
+	manufactureSchematic->setManufactureLimit(schematicCount);
+	manufactureSchematic->setObjectName(protoNameID, false);
+	manufactureSchematic->setCustomObjectName(clientName, false);
+
+	StringTokenizer tokenizer(customizationString);
+
+	while (tokenizer.hasMoreTokens()) {
+		byte customizationindex = (byte)tokenizer.getIntToken();
+
+		if (tokenizer.hasMoreTokens()) {
+			byte customizationvalue = (byte)tokenizer.getIntToken();
+
+			String customizationname = variables.elementAt(customizationindex).getKey();
+
+			prototype->setCustomizationVariable(customizationname, customizationvalue);
+		}
+	}
+
+	auto dtano3 = new TangibleObjectDeltaMessage3(prototype);
+
+	dtano3->updateCustomName(customName);
+	dtano3->updateOptionsBitmask();
 	dtano3->updateCustomizationString();
 	dtano3->close();
 
 	crafter->sendMessage(dtano3);
 
-	ManufactureSchematicObjectDeltaMessage3 * dMsco3 =
-			new ManufactureSchematicObjectDeltaMessage3(
-					manufactureSchematic);
-	dMsco3->updateName(name);
+	auto dMsco3 = new ManufactureSchematicObjectDeltaMessage3(manufactureSchematic);
+
+	dMsco3->updateName(clientName);
 	dMsco3->updateCondition(schematicCount);
 	dMsco3->close();
 
 	crafter->sendMessage(dMsco3);
 
-	//Object Controller
-	ObjectControllerMessage* objMsg = new ObjectControllerMessage(
-			crafter->getObjectID(), 0x1B, 0x010C);
+	auto objMsg = new ObjectControllerMessage(crafter->getObjectID(), 0x1B, 0x010C);
+
 	objMsg->insertInt(0x15A);
 	objMsg->insertInt(0);
 	objMsg->insertByte(0);
@@ -1189,13 +1229,13 @@ void CraftingSessionImplementation::createPrototype(int clientCounter, bool crea
 
 		if (createItem) {
 
-			startCreationTasks(1, false); // 1 Second tool countdown to make sure it works with the client.
+			startCreationTasks(manufactureSchematic->getComplexity() * 2, false);
 
 		} else {
 
 			// This is for practicing
-			startCreationTasks(1, true); // 1 Second tool countdown to make sure it works with the client.
- 			xp *= 1.75f; // Default 1.05f for 5%
+			startCreationTasks(manufactureSchematic->getComplexity() * 2, true);
+			xp = round(xp * 1.05f);
 		}
 
 		Reference<PlayerManager*> playerManager = crafter->getZoneServer()->getPlayerManager();
@@ -1290,6 +1330,7 @@ void CraftingSessionImplementation::createManufactureSchematic(int clientCounter
 		manufactureSchematic->setPersistent(2);
 		prototype->setPersistent(2);
 
+		TransactionLog trx(crafter, datapad, manufactureSchematic, TrxCode::CRAFTINGSESSION);
 		datapad->transferObject(manufactureSchematic, -1, true);
 		manufactureSchematic->setPrototype(prototype);
 
@@ -1385,6 +1426,11 @@ bool CraftingSessionImplementation::checkPrototype() {
 
 		if (weapon->hasPowerup())
 			return false;
+	}
+
+	if (prototype->getContainerObjectsSize() > 0) {
+		error() << "checkPrototype(): prototype->getContainerObjectsSize() > 0, prototype: " << *prototype;
+		return false;
 	}
 
 	return true;

@@ -29,23 +29,7 @@ public:
 
 		GroupManager* groupManager = GroupManager::instance();
 
-		ManagedReference<SceneObject*> object = nullptr;
-				if (target != 0 && target != creature->getObjectID())
-					object = server->getZoneServer()->getObject(target);
-				else if (!arguments.isEmpty()) {
-					StringTokenizer tokenizer(arguments.toString());
-					if (tokenizer.hasMoreTokens()) {
-						String name;
-						tokenizer.getStringToken(name);
-						name = name.toLowerCase();
-						if (name != "self" && name != "this") {
-							try {
-								object = server->getPlayerManager()->getPlayer(name);
-							} catch (ArrayIndexOutOfBoundsException& ex) {
-							}
-						}
-					}
-				}
+		ManagedReference<SceneObject*> object = server->getZoneServer()->getObject(target);
 
 		if (object == nullptr || !object->isPlayerCreature())
 			return GENERALERROR;
@@ -65,3 +49,4 @@ public:
 };
 
 #endif //MAKELEADERCOMMAND_H_
+

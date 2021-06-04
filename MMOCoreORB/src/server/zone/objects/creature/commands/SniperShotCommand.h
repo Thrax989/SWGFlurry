@@ -16,7 +16,6 @@ public:
 	}
 
 	int doQueueCommand(CreatureObject* creature, const uint64& target, const UnicodeString& arguments) const {
-		ManagedReference<WeaponObject*> weapon = creature->getWeapon();
 
 		if (!checkStateMask(creature))
 			return INVALIDSTATE;
@@ -26,10 +25,6 @@ public:
 
 		if (!creature->isPlayerCreature())
 			return GENERALERROR;
-
-		if (weapon->isCarbineWeapon()) {
-			return INVALIDWEAPON;
-		}
 
 		ManagedReference<SceneObject*> targetObject = server->getZoneServer()->getObject(target);
 

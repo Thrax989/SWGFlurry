@@ -9,6 +9,7 @@ import system.util.SortedVector;
 import engine.log.Logger;
 include server.zone.packets.scene.AttributeListMessage;
 import server.zone.objects.creature.CreatureObject;
+import server.zone.objects.tangible.tool.repair.RepairTool;
 import server.zone.objects.area.ActiveArea;
 include templates.params.OptionBitmask;
 include templates.params.ObserverEventType;
@@ -23,7 +24,6 @@ import server.zone.objects.tangible.threat.ThreatMap;
 include server.zone.objects.scene.variables.AutoDeltaSet;
 include server.zone.objects.scene.variables.StringId;
 include system.thread.atomic.AtomicInteger;
-include server.zone.objects.intangible.ControlDevice;
 
 @json
 class TangibleObject extends SceneObject {
@@ -84,8 +84,8 @@ class TangibleObject extends SceneObject {
 
 	protected SceneObject antiDecayKitObject;
 
-	@weakReference
-	protected ControlDevice controlDevice;
+	protected boolean jediRobe;
+	protected boolean unionRing;
 
 	/**
 	 * TangibleObject constructor, used to initialized the object
@@ -102,7 +102,10 @@ class TangibleObject extends SceneObject {
 
 		antiDecayKitObject = null;
 
-		luaStringData.setNoDuplicateInsertPlan();
+		jediRobe = false;
+		unionRing = false;
+
+		luaStringData.setAllowOverwriteInsertPlan();
 	}
 
 	@dirty
@@ -131,7 +134,6 @@ class TangibleObject extends SceneObject {
 		threatMap = null;
 		junkDealerNeeded = 0;
 		junkValue = 0;
-		controlDevice = null;
 	}
 
 	/**
@@ -168,7 +170,7 @@ class TangibleObject extends SceneObject {
 	 * @param targetObject the targeted object containing the SkillModMap which will be affected.
 	 */
 	@local
-	@dirty
+	@read
 	public abstract native void removeTemplateSkillMods(TangibleObject tangibleObject);
 
 	@read
@@ -346,8 +348,9 @@ class TangibleObject extends SceneObject {
 	 * @return returns true if SceneObject defender exists in the defender vector
 	 */
 	@preLocked
-	@dirty
-	public boolean hasDefender(SceneObject defender) {
+	@local
+	@read
+	public boolean hasDefender(final SceneObject defender) {
 		for (int i = 0; i < defenderList.size(); ++i) {
 			if (defenderList.get(i) == defender)
 				return true;
@@ -674,6 +677,20 @@ class TangibleObject extends SceneObject {
 		sliced = slice;
 	}
 
+	@read
+	public boolean isJediRobe() {
+		return jediRobe;
+	}
+
+	@read
+	public boolean isUnionRing() {
+		return unionRing;
+	}
+
+	public void setUnionRing(boolean val) {
+		unionRing = val;
+	}
+
 	public void setCustomizationString(final string vars) {
 		customizationVariables.parseFromClientString(vars);
 	}
@@ -706,7 +723,7 @@ class TangibleObject extends SceneObject {
 		junkValue = jValue;
 	}
 
-	@dirty
+	@read
 	public abstract int getJunkValue() {
 		return junkValue;
 	}
@@ -730,12 +747,20 @@ class TangibleObject extends SceneObject {
 	 * Creates a factory crate for this object, can insert this object or a clone
 	 */
 	@reference
-	public native FactoryCrate createFactoryCrate(int maxSize, boolean insertSelf = false);
+	public native FactoryCrate createFactoryCrate(int maxSize, string type, boolean insertSelf = false);
 
 	@dirty
 	public native boolean canRepair(CreatureObject player);
 
-	public native void repair(CreatureObject player);
+	/**
+	* Repair this object with the given tool. If null, this method will
+	* search the player's inventory for an approriate tool (used by the
+	* radial menu repair option)
+	* @param player The player who's performing the repair. Must own this item.
+	* @param repairTool the repairTool with which to perform the repair. If
+	* null, players inventory will be searched for a valid tool
+	*/
+	public native void repair(CreatureObject player, RepairTool repairTool = null);
 
 	@dirty
 	public abstract string repairAttempt(int repairChance) {
@@ -827,16 +852,36 @@ class TangibleObject extends SceneObject {
 	}
 
 	@read
+	public abstract boolean isNoTrade() {
+		if (antiDecayKitObject) {
+			return antiDecayKitObject.isNoTrade() || super.isNoTrade();
+		}
+
+		return super.isNoTrade();
+	}
+
+	@read
 	public boolean hasAntiDecayKit() {
-		return antiDecayKitObject != null;
+		return antiDecayKitObject;
+	}
+
+	@read
+	public unsigned long getAntiDecayKitObjectID() {
+		if (!hasAntiDecayKit()) {
+		    return 0;
+		}
+
+		return antiDecayKitObject.getObjectID();
 	}
 
 	@preLocked
 	public void applyAntiDecayKit(CreatureObject player, SceneObject adk) {
-		if(!hasAntiDecayKit()) {
+		if (!hasAntiDecayKit()) {
 			antiDecayKitObject = adk;
 
-			if(adk.getParent() != null)
+			SceneObject parent = adk.getParent();
+
+			if (parent)
 				adk.destroyObjectFromWorld(true);
 
 			sendAttributeListTo(player);
@@ -845,13 +890,15 @@ class TangibleObject extends SceneObject {
 
 	@preLocked
 	public SceneObject removeAntiDecayKit() {
-		if(hasAntiDecayKit()) {
+		if (hasAntiDecayKit()) {
 			SceneObject adk = antiDecayKitObject;
 			antiDecayKitObject = null;
 			return adk;
 		}
 		return null;
 	}
+
+	public abstract native void destroyObjectFromDatabase(boolean destroyContainedObjects = false);
 
 	@read
 	public native boolean isCityStreetLamp();
@@ -879,10 +926,7 @@ class TangibleObject extends SceneObject {
 
 	@preLocked
 	public void setLuaStringData(final string key, final string data) {
-		if (luaStringData.contains(key))
-			luaStringData.get(key) = data;
-		else
-			luaStringData.put(key, data);
+		luaStringData.put(key, data);
 	}
 
 	@preLocked
@@ -902,15 +946,4 @@ class TangibleObject extends SceneObject {
 
 	@dirty
 	public native boolean isInNavMesh();
-	@preLocked
-	public void setControlDevice(ControlDevice device) {
-		controlDevice = device;
-	}
-
-	@weakReference
-	@read
-	public ControlDevice getControlDevice() {
-		return controlDevice;
-	}
 }
-

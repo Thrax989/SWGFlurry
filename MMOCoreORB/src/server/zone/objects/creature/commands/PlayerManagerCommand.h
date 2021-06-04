@@ -128,48 +128,6 @@ public:
 
 			player->sendSystemMessage(message.toString());
 
-		} else if (command == "setscale") {
-			if (!tokenizer.hasMoreTokens()) {
-				sendSyntax(player);
-				return 1;
-			}
-			ManagedReference<SceneObject* > object = creature->getZoneServer()->getObject(target);
-			ManagedReference<CreatureObject*> scaleTarget = nullptr;
-			
-			if(object == nullptr || !object->isPlayerCreature()) {
-				String firstName;
-				if(tokenizer.hasMoreTokens()) {
-					tokenizer.getStringToken(firstName);
-					scaleTarget = playerManager->getPlayer(firstName);
-				}
-			}else {
-				scaleTarget = cast<CreatureObject*>( object.get());
-			}
-			
-			if (!tokenizer.hasMoreTokens()) {
-				sendSyntax(player);
-				return 1;
-			}
-			
-			float height = tokenizer.getFloatToken();
- 			String playerName = creature->getFirstName();
-
-			if (tokenizer.hasMoreTokens())
-			height = tokenizer.getFloatToken();
-
-			if (height < 0.f)
-				height = 1.f;
-
-
-			if (height > 50.f)
-				height = 50.f;
-
-
-			if (height > 0.f)
-			scaleTarget->setHeight(height, true);
-
-			player->sendSystemMessage("Scale set to " + String::valueOf(height) + " for " + playerName);
-
 		} else {
 			sendSyntax(player);
 			return 1;
@@ -185,7 +143,6 @@ public:
 			player->sendSystemMessage("Syntax: /server playermanager [listjedi]");
 			player->sendSystemMessage("Syntax: /server playermanager [list_frsjedi]");
 			player->sendSystemMessage("Syntax: /server playermanager [listadmins]");
-			player->sendSystemMessage("Syntax: /server playermanager [setscale] [player first name] [value 0.1-50.0]");
 		}
 	}
 

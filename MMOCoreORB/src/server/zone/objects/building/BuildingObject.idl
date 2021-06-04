@@ -55,7 +55,7 @@ class BuildingObject extends StructureObject {
 
 	public boolean publicStructure;
 
-	public static final int MAXPLAYERITEMS = 1000;
+	public static final int MAXPLAYERITEMS = 400;
 
 	protected unicode signName;
 
@@ -260,9 +260,6 @@ class BuildingObject extends StructureObject {
 	@dirty
 	public native int getCurrentNumberOfPlayerItems();
 
-	@dirty
-	public native int getCurrentNumberOfPlayerVendors();
-
 	/**
 	 * Loops through all the cells, destroying items from the database that aren't contained in the child objects vector.
 	 */
@@ -346,14 +343,11 @@ class BuildingObject extends StructureObject {
 
 	@dirty
 	public string getRedeedMessage() {
-		if (getCurrentNumberOfPlayerItems() > 0)
+		if(getCurrentNumberOfPlayerItems() > 0)
 			return "clear_building_for_delete";
 
 		return "";
 	}
-
-	@dirty
-	public native string getPackupMessage();
 
 	@read
 	public boolean hasAccessFee() {

@@ -88,39 +88,6 @@ public:
 
 			creatureBank->sendWithoutParentTo(creature);
 			creatureBank->openContainerTo(creature);
-		} else if (container == "skills") {
-			ManagedReference<PlayerObject*> targetGhost = targetObj->getPlayerObject();
-			Locker locker(targetObj);
-
-			SkillManager* skillManager = SkillManager::instance();
-			const SkillList* skillList = targetObj->getSkillList();
-                        StringBuffer body;
-
-			if (skillList == nullptr){
-				return GENERALERROR;
-			}
-
-			body << "Player Name:\t" << targetObj->getFirstName();
-			body << "\nSkills on Character:\n";
-			String skillName = "";
-			Vector<String> listOfNames;
-			skillList->getStringList(listOfNames);
-			SkillList copyOfList;
-			copyOfList.loadFromNames(listOfNames);
-
-					for (int i = 0; i < copyOfList.size(); i++) {
-						Skill* skill = copyOfList.get(i);
-						String skillName = skill->getSkillName();
-						body <<  skillName << "\n";
-					}
-					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(creature, 0);
-					box->setPromptTitle("Skill Info");
-					box->setPromptText(body.toString());
-					box->setUsingObject(targetObj);
-					box->setForceCloseDisabled();
-
-					ghost->addSuiBox(box);
-					creature->sendMessage(box->generateMessage());
 		} else if (container == "credits") {
 			int cash = targetObj->getCashCredits();
 			int bank = targetObj->getBankCredits();
@@ -277,7 +244,7 @@ public:
 
 			AtomicTime nextExecutionTime;
 			Core::getTaskManager()->getNextExecutionTime(task, nextExecutionTime);
-			uint64 miliDiff = nextExecutionTime.miliDifference();
+			int64 miliDiff = nextExecutionTime.miliDifference();
 
 			buffer += ", Execution (server time): " + nextExecutionTime.getFormattedTime() + " (" + getTimeString(-miliDiff) + " from now)";
 
@@ -418,7 +385,7 @@ public:
 		body << "Total # of items:\t" << auctionsMap->getPlayerItemCount(target) << endl << endl;
 		body << "Vendors:" << endl;
 
-		SortedVector<unsigned long long>* ownedVendors = targetGhost->getOwnedVendors();
+		const SortedVector<unsigned long long>* ownedVendors = targetGhost->getOwnedVendors();
 		for (int i = 0; i < ownedVendors->size(); i++) {
 			ManagedReference<SceneObject*> vendor = creature->getZoneServer()->getObject(ownedVendors->elementAt(i));
 
@@ -591,7 +558,7 @@ public:
 			return GENERALERROR;
 		}
 
-		BuffList* bList = target->getBuffList();
+		const BuffList* bList = target->getBuffList();
 		if (bList == nullptr || bList->getBuffListSize() == 0) {
 			creature->sendSystemMessage("No Buffs to Display.");
 			return SUCCESS;
@@ -604,7 +571,7 @@ public:
 			buffText << buff->getBuffName() << ":" <<endl;
 			buffText << "\tCRC: 0x" << hex << buff->getBuffCRC() << endl;
 
-			Vector<uint64>* secondaryCRCs = buff->getSecondaryBuffCRCs();
+			const Vector<uint64>* secondaryCRCs = buff->getSecondaryBuffCRCs();
 			if (secondaryCRCs != nullptr && secondaryCRCs->size() > 0) {
 				buffText << "\tSecondary CRCs: "<< endl;
 				for (int j = 0; j < secondaryCRCs->size(); j++) {

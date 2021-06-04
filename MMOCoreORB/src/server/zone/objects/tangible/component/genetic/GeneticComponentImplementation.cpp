@@ -97,23 +97,13 @@ void GeneticComponentImplementation::updateCraftingValues(CraftingValues* values
 	if (values->getCurrentValue("lightsabereffectiveness") > 0)
 		setSpecialResist(SharedWeaponObjectTemplate::LIGHTSABER);
 
-	if (fortitude < 250) {
+	if (fortitude > 500) {
 		armorRating = 1;
 	}
-
-	if (fortitude >= 250) {
-		armorRating = 2;
-	}
-
-	if (fortitude >= 500) {
-		armorRating = 3;
-	}
-
 	// min - max values
 	if (fortitude > 1000) {
 		fortitude = 1000;
 	}
-
 	if (fortitude < 0)
 		fortitude = 1;
 
@@ -208,24 +198,16 @@ void GeneticComponentImplementation::updateCraftingValues(CraftingValues* values
 	focus = (intelligence * 15) + (dependency * 3);
 	strength = (hardiness * 15)    + (dependency * 3);
 	quickness = (dexterity * 15)    + (dependency * 3);
-	hit = 1.40 + (0.55 * ((float)cleverness/1000.0));
+	hit = 0.19 + (0.55 * ((float)cleverness/1000.0));
 	// dps of pet use to determien min and max value.
 	int dps = ceil((ceil(15.0 + (775.0 * ( ((float)power)/1000.0))))/3.5);
-	speed = 2.0-((ceil(((float)courage)/10)*10)/1000);
-	float damMod;
-	if (power < 3) {
-		damMod = 5;
-	} else if (power >= 3 && power < 25) {
-		damMod = round(pow(power,(1.0f/0.61f)));
-	} else {
-		damMod = round(((pow(power,((1.0f/0.57f)*-1.0f)))*1000.0f)*power);
-	}
-	maxDam = round(((float)dps * 10.0) * 6.0)+damMod;
+	speed = 2.5-((ceil(((float)courage)/10)*10)/1000);
+	maxDam = round(((float)dps * speed) * 1.5);
 	//minDam = round(((float)dps * speed) * 0.5);
   	// round maxDam down to the closest multiple of 5
 	maxDam = maxDam - (maxDam % 5);
   	// subtract either 5 or 10 from maxDam to get the minDam
-	minDam = maxDam - 5;
+	minDam = maxDam - ((System::random(1) + 1) * 5);
 }
 
 String GeneticComponentImplementation::convertSpecialAttack(String &attackName) {
@@ -324,7 +306,7 @@ int GeneticComponentImplementation::getEffectiveArmor() {
 		return fortitude/50;
 	if (fortitude > 500)
 		return (fortitude-500)/50;
-	if (fortitude == 1000)
+	if (fortitude == 500)
 		return 0;
 	return fortitude/50;
 }

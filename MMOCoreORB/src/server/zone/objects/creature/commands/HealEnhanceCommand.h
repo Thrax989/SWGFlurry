@@ -5,7 +5,6 @@
 #ifndef HEALENHANCECOMMAND_H_
 #define HEALENHANCECOMMAND_H_
 
-#include "server/zone/objects/building/BuildingObject.h"
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/tangible/pharmaceutical/EnhancePack.h"
 #include "server/zone/ZoneServer.h"
@@ -31,7 +30,7 @@ public:
 	void deactivateWoundTreatment(CreatureObject* creature) const {
 		float modSkill = (float)creature->getSkillMod("healing_wound_speed");
 
-		int delay = (int)round((modSkill * -(2.0f / 25.0f)) + 13.0f);   // 5 seconds for master doc, 3 seconds with +25 Wound treatment speed or Havla (3 second minimum)
+		int delay = (int)round((modSkill * -(2.0f / 25.0f)) + 20.0f);
 
 		if (creature->hasBuff(BuffCRC::FOOD_HEAL_RECOVERY)) {
 			DelayedBuff* buff = cast<DelayedBuff*>( creature->getBuff(BuffCRC::FOOD_HEAL_RECOVERY));
@@ -135,34 +134,9 @@ public:
 			return false;
 		}
 
-		if (enhancer->isPlayerCreature() && patient->getParentID() != 0 && enhancer->getParentID() != patient->getParentID()) {
-			Reference<CellObject*> targetCell = patient->getParent().get().castTo<CellObject*>();
-
-			if (targetCell != nullptr) {
-				if (!patient->isPlayerCreature()) {
-					auto perms = targetCell->getContainerPermissions();
-
-					if (!perms->hasInheritPermissionsFromParent()) {
-						if (!targetCell->checkContainerPermission(enhancer, ContainerPermissions::WALKIN)) {
-							enhancer->sendSystemMessage("@combat_effects:cansee_fail"); // You cannot see your target.
-							return false;
-						}
-					}
-				}
-
-				ManagedReference<SceneObject*> parentSceneObject = targetCell->getParent().get();
-
-				if (parentSceneObject != nullptr) {
-					BuildingObject* buildingObject = parentSceneObject->asBuildingObject();
-
-					if (buildingObject != nullptr && !buildingObject->isAllowedEntry(enhancer)) {
-						enhancer->sendSystemMessage("@combat_effects:cansee_fail"); // You cannot see your target.
-						return false;
-					}
-				}
-			}
+		if (!playerEntryCheck(enhancer, patient)) {
+			return false;
 		}
-
 
 		return true;
 	}

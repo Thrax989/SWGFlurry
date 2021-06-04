@@ -6,7 +6,7 @@ package server.zone.objects.creature;
 
 import server.zone.objects.tangible.TangibleObject;
 import server.chat.StringIdChatParameter;
-import server.zone.objects.group.GroupObject;
+include server.zone.objects.group.GroupObject;
 import server.zone.objects.guild.GuildObject;
 import server.zone.objects.tangible.weapon.WeaponObject;
 import server.zone.objects.player.PlayerObject;
@@ -38,17 +38,20 @@ import system.thread.ReadWriteLock;
 import server.zone.objects.creature.credits.CreditObject;
 include engine.util.u3d.Vector3;
 include system.util.SortedVector;
+include system.lang.ref.WeakReference;
 include engine.log.Logger;
 include server.zone.CloseObjectsVector;
 include server.zone.QuadTreeEntry;
 import system.util.SynchronizedVectorMap;
 import server.zone.managers.auction.AuctionSearchTask;
+import server.zone.objects.tangible.Instrument;
 
 @mock
 @json
 class CreatureObject extends TangibleObject {
-	@weakReference
-	protected transient ZoneClientSession owner;
+	@rawTemplate(value = "ZoneClientSession*")
+	@dereferenced
+	protected transient WeakReference owner;
 
     	protected CreditObject creditObject;
 
@@ -122,8 +125,8 @@ class CreatureObject extends TangibleObject {
 
 	protected unsigned long targetID;
 	protected byte moodID;
-	protected int performanceCounter;
-	protected int instrumentID;
+	protected int performanceStartTime;
+	protected int performanceType;
 
 	@dereferenced
 	protected DeltaVector<int> hamList;
@@ -208,32 +211,6 @@ class CreatureObject extends TangibleObject {
 	public static final int ZABRAK = 7;
 	public static final int ITHORIAN = 0x21;
 	public static final int SULLUSTAN = 0x31;
-	public static final int HUTT = 0x1f;
-	public static final int NAUTOLAN = 0;
-	public static final int TOGRUTA = 0;
-	public static final int CHISS = 0;
-	public static final int DEVARONIAN = 0x11;
-	public static final int GRAN = 0x1c;
-	public static final int ISHI_TIB = 0x20;
-	public static final int NIGHTSISTER = 0;
-	public static final int NIKTO = 0x2a;
-	public static final int QUARREN = 0x2e;
-	public static final int SMC = 0;
-	public static final int WEEQUAY = 0x37;
-	public static final int AQUALISH = 9;
-	public static final int BITH = 0x0e;
-	public static final int GOTAL = 0x1b;
-	public static final int TALZ = 0x32;
-	public static final int ABYSSIN = 8;
-	public static final int ARCONA = 0x0a;
-	public static final int CEREAN = 0;
-	public static final int DUROS = 0x14;
-	public static final int GUNGAN = 0x1d;
-	public static final int IKTOTCHI = 0;
-	public static final int JENET = 0;
-	public static final int KEL_DOR = 0;
-	public static final int KUBAZ = 0x27;
-	public static final int SANYASSAN = 0x28;
 
 	public static final int MALE = 0;
 	public static final int FEMALE = 1;
@@ -424,7 +401,6 @@ class CreatureObject extends TangibleObject {
 	 * @pre { this object is locked }
 	 * @post {this object is locked, this object has the new locomotion set, if appropriate }
 	 */
-	@dirty
 	public native float calculateSpeed();
 
 	@preLocked
@@ -520,7 +496,7 @@ class CreatureObject extends TangibleObject {
 	@arg1preLocked
 	public native int inflictDamage(TangibleObject attacker, int damageType, float damage, boolean destroy, final string xp, boolean notifyClient = true, boolean isCombatAction = false);
 
-	@dirty
+	@read
 	public boolean hasDamage(int attribute) {
 		return hamList.get(attribute) + wounds.get(attribute) < maxHamList.get(attribute);
 	}
@@ -620,14 +596,14 @@ class CreatureObject extends TangibleObject {
 	public native int notifyObjectRemoved(SceneObject object);
 
 	/**
-	 * Updates the instrument id to the specified object id
+	 * Updates the performance type to the specified type
 	 * @pre { this object is locked }
-	 * @post { this object is locked, this object has the specified weapon id }
-	 * @param instrumentid the new instrument id
+	 * @post { this object is locked, this object has the specified index }
+	 * @param type the new performance type
 	 * @param notifyClient if set true the client will be updated with the changes
 	 */
 	@preLocked
-	public native void setInstrumentID(int instrumentid, boolean notifyClient = true);
+	public native void setPerformanceType(int type, boolean notifyClient = true);
 
 	/**
 	 * Updates listen id
@@ -636,14 +612,14 @@ class CreatureObject extends TangibleObject {
 	public native void setListenToID(unsigned long id, boolean notifyClient = true);
 
 	/**
-	 * Updates the preformance counter
+	 * Updates the preformance start time
 	 * @pre { this object is locked }
 	 * @post { this object is locked, this object has the counter updated }
 	 * @param counter new performance counter
 	 * @param notifyClient if set true the client will be updated with the changes
 	 */
 	@preLocked
-	public native void setPerformanceCounter(int counter, boolean notifyClient = true);
+	public native void setPerformanceStartTime(int counter, boolean notifyClient = true);
 
 	/**
 	 * Updates the preformance animation string
@@ -677,16 +653,6 @@ class CreatureObject extends TangibleObject {
 	 */
 	@preLocked
 	public native void setTargetID(unsigned long targetID, boolean notifyClient = true);
-
-	/**
-	 * Updates the bank credits of this object
-	 * @pre { this object is locked }
-	 * @post { this object is locked, this object has the specified bank credits }
-	 * @param credits the new credits
-	 * @param notifyClient if set true the client will be updated with the changes
-	 */
-	@preLocked
-	public native void setBankCredits(int credits, boolean notifyClient = true);
 
 	/**
 	 * Adds the buff to the creature, activating it and sending packets if it is a player.
@@ -748,51 +714,48 @@ class CreatureObject extends TangibleObject {
 		return wearablesVector;
 	}
 
-	@dirty
+	@read
 	public void sendBuffsTo(CreatureObject creature) {
 		creatureBuffs.sendTo(creature);
 	}
 
 	@local
-	@dirty
-	public BuffList getBuffList() {
+	@read
+	public final BuffList getBuffList() {
 		return creatureBuffs;
 	}
 
-	@dirty
+	@read
 	public Buff getBuff(unsigned int buffcrc) {
-		if (creatureBuffs.hasBuff(buffcrc))
-			return creatureBuffs.getBuffByCRC(buffcrc);
-
-		return null;
+		return creatureBuffs.getBuffByCRC(buffcrc);
 	}
 
-	@dirty
+	@read
 	public long getSkillModFromBuffs(final string skillMod) {
 		return creatureBuffs.getModifierByName(skillMod);
 	}
 
 	@preLocked
 	public abstract int addDotState(CreatureObject attacker,
-									unsigned long dotType,
-									unsigned long objectID,
-									unsigned int strength,
-									byte type,
-									unsigned int duration,
-									float potency,
-									unsigned int defense,
-									int secondaryStrength = 0) {
+				unsigned long dotType,
+				unsigned long objectID,
+				unsigned int strength,
+				byte type,
+				unsigned int duration,
+				float potency,
+				unsigned int defense,
+				int secondaryStrength = 0) {
 
 		return damageOverTimeList.addDot(this,
-										 attacker,
-										 objectID,
-										 duration,
-										 dotType,
-										 type,
-										 strength,
-										 potency,
-										 defense,
-										 secondaryStrength);
+				attacker,
+				objectID,
+				duration,
+				dotType,
+				type,
+				strength,
+				potency,
+				defense,
+				secondaryStrength);
 	}
 
 	@preLocked
@@ -810,7 +773,7 @@ class CreatureObject extends TangibleObject {
 		return damageOverTimeList;
 	}
 
-	@dirty
+	@read
 	public boolean hasBuff(unsigned int buffcrc) {
 		return creatureBuffs.hasBuff(buffcrc);
 	}
@@ -830,16 +793,19 @@ class CreatureObject extends TangibleObject {
 	public native boolean isResuscitable();
 
 	@preLocked
-	public void addBankCredits(int credits, boolean notifyClient = true) {
-		int newCredits = getBankCredits() + credits;
-		setBankCredits(newCredits);
-	}
+	public native void addBankCredits(int credits, boolean notifyClient = true);
 
 	@preLocked
-	public void addCashCredits(int credits, boolean notifyClient = true) {
-		int newCredits = getCashCredits() + credits;
-		setCashCredits(newCredits);
-	}
+	public native void addCashCredits(int credits, boolean notifyClient = true);
+
+	@preLocked
+	public native void clearBankCredits(boolean notifyClient = true);
+
+	@preLocked
+	public native void clearCashCredits(boolean notifyClient = true);
+
+	@preLocked
+	public native void transferCredits(int cash, int bank, boolean notifyClient = true);
 
 	@preLocked
 	public native CreditObject getCreditObject();
@@ -850,27 +816,17 @@ class CreatureObject extends TangibleObject {
 	@preLocked
 	public native void subtractCashCredits(int credits);
 
-	@dirty
-	public boolean verifyCashCredits(int credits) {
-		if (credits < 0)
-			return false;
-
-		if (getCashCredits() < credits)
-			return false;
-
-		return true;
-	}
+	@preLocked
+	public native boolean subtractCredits(int credits);
 
 	@dirty
-	public boolean verifyBankCredits(int credits) {
-		if (credits < 0)
-			return false;
+	public native boolean verifyCashCredits(int credits);
 
-		if (getBankCredits() < credits)
-			return false;
+	@dirty
+	public native boolean verifyBankCredits(int credits);
 
-		return true;
-	}
+	@dirty
+	public native boolean verifyCredits(int credits);
 
 	@dirty
 	public native boolean isDancing();
@@ -885,16 +841,6 @@ class CreatureObject extends TangibleObject {
 	public native boolean isEntertaining() {
 		return isDancing() || isPlayingMusic();
 	}
-
-	/**
-	 * Update the cash credits of this object
-	 * @pre { this object is locked }
-	 * @post { this object is locked, this object has the specified cash credits }
-	 * @param credits the new credits
-	 * @param notifyClient if set true the client will be updated with the changes
-	 */
-	@preLocked
-	public native void setCashCredits(int credits, boolean notifyClient = true);
 
 	/**
 	 * Sets the terrain negotiation variable, and updates it.
@@ -1126,6 +1072,9 @@ class CreatureObject extends TangibleObject {
 	@dirty
 	public native boolean isHealableBy(CreatureObject object);
 
+	@dirty
+	public native boolean isInvulnerable();
+
 	/**
 	 * Evaluates if the bounty hunter has a mission with the target.
 	 * @param target the target.
@@ -1254,12 +1203,12 @@ class CreatureObject extends TangibleObject {
 	@preLocked
 	public native void setFactionRank(int rank, boolean notifyClient = true);
 
-	@dirty
+	@read
 	public native string getFirstName();
 
 	public native string setFirstName(final string newFirstName);
 
-	@dirty
+	@read
 	public native string getLastName();
 
 	public native string setLastName(final string newLastName, boolean skipVerify);
@@ -1270,7 +1219,7 @@ class CreatureObject extends TangibleObject {
 	public boolean isOnline() {
 		PlayerObject ghost = getPlayerObject();
 
-		if (ghost == null)
+		if (!ghost)
 			return false;
 
 		return ghost.isOnline();
@@ -1278,22 +1227,22 @@ class CreatureObject extends TangibleObject {
 
 	@dirty
 	public boolean canTreatInjuries() {
-		return super.getPendingTask("injuryTreatment") == null;
+		return !super.getPendingTask("injuryTreatment");
 	}
 
 	@dirty
 	public boolean canTreatStates() {
-		return super.getPendingTask("stateTreatment") == null;
+		return !super.getPendingTask("stateTreatment");
 	}
 
 	@dirty
 	public boolean canTreatWounds() {
-		return super.getPendingTask("woundTreatment") == null;
+		return !super.getPendingTask("woundTreatment");
 	}
 
 	@dirty
 	public boolean canTreatConditions() {
-		return super.getPendingTask("conditionTreatment") == null;
+		return !super.getPendingTask("conditionTreatment");
 	}
 
 	@reference
@@ -1311,14 +1260,12 @@ class CreatureObject extends TangibleObject {
 	}
 
 	@preLocked
-	public void setClient(ZoneClientSession cli) {
-		owner = cli;
-	}
+	public native void setClient(ZoneClientSession cli);
 
 	@preLocked
 	public native void dismount();
 
-	@dirty
+	@read
 	public native float calculateBFRatio();
 
 	@preLocked
@@ -1382,7 +1329,7 @@ class CreatureObject extends TangibleObject {
 		timeOfDeath.updateToCurrentTime();
 	}
 
-	@dirty
+	@read
 	public boolean hasAttackDelay() {
 		return !cooldownTimerMap.isPast("nextAttackDelay");
 	}
@@ -1391,7 +1338,7 @@ class CreatureObject extends TangibleObject {
 		cooldownTimerMap.updateToCurrentTime("nextAttackDelay");
 	}
 
-	@dirty
+	@read
 	public boolean hasIncapTimer() {
 		return !cooldownTimerMap.isPast("incapTimer");
 	}
@@ -1401,7 +1348,7 @@ class CreatureObject extends TangibleObject {
 		return cooldownTimerMap;
 	}
 
-	@dirty
+	@read
 	public boolean hasSpice() {
 		return creatureBuffs.hasSpice();
 	}
@@ -1414,7 +1361,7 @@ class CreatureObject extends TangibleObject {
 		cooldownTimerMap.updateToCurrentAndAddMili("postureChangeDelay", delay);
 	}
 
-	@dirty
+	@read
 	public boolean checkPostureChangeDelay() {
 		return cooldownTimerMap.isPast("postureChangeDelay");
 	}
@@ -1423,7 +1370,7 @@ class CreatureObject extends TangibleObject {
 		cooldownTimerMap.updateToCurrentAndAddMili("postureDownRecovery", 30000);
 	}
 
-	@dirty
+	@read
 	public boolean checkPostureDownRecovery() {
 		return cooldownTimerMap.isPast("postureDownRecovery");
 	}
@@ -1432,7 +1379,7 @@ class CreatureObject extends TangibleObject {
 		cooldownTimerMap.updateToCurrentAndAddMili("postureUpRecovery", 30000);
 	}
 
-	@dirty
+	@read
 	public boolean checkPostureUpRecovery() {
 		return cooldownTimerMap.isPast("postureUpRecovery");
 	}
@@ -1441,7 +1388,7 @@ class CreatureObject extends TangibleObject {
 		cooldownTimerMap.updateToCurrentAndAddMili("knockdownRecovery", 30000);
 	}
 
-	@dirty
+	@read
 	public boolean checkKnockdownRecovery() {
 		return cooldownTimerMap.isPast("knockdownRecovery");
 	}
@@ -1455,8 +1402,9 @@ class CreatureObject extends TangibleObject {
 	@preLocked
 	public abstract native void queueDizzyFallEvent();
 
+	@read
 	public boolean hasDizzyEvent() {
-		return dizzyFallDownEvent != null;
+		return dizzyFallDownEvent;
 	}
 
 	@preLocked
@@ -1472,6 +1420,7 @@ class CreatureObject extends TangibleObject {
 	 * Takes the screenPlayStatesMutex.
 	 * @param screenPlay ScreenPlay to retrieve
          */
+	@dirty
 	public unsigned long getScreenPlayState(final string screenPlay) {
 		synchronized (screenPlayStatesMutex) {
 			return screenPlayStates.get(screenPlay);
@@ -1498,13 +1447,14 @@ class CreatureObject extends TangibleObject {
 		}
 	}
 
-	@dirty
+	@read
 	public boolean checkCooldownRecovery(final string cooldown) {
 		return cooldownTimerMap.isPast(cooldown);
 	}
 
+	@read
 	@local
-	public Time getCooldownTime(final string cooldown) {
+	public final Time getCooldownTime(final string cooldown) {
 		return cooldownTimerMap.getTime(cooldown);
 	}
 
@@ -1527,12 +1477,12 @@ class CreatureObject extends TangibleObject {
 	@preLocked
 	public native void activateImmediateAction();
 
-	@dirty
+	@read
 	public native unicode getCreatureName();
 
 	@read
 	public boolean isGrouped() {
-		return group != null;
+		return group;
 	}
 
 	@read
@@ -1619,7 +1569,7 @@ class CreatureObject extends TangibleObject {
 	public unsigned long getCreatureLinkID() {
 		CreatureObject strongRef = linkedCreature;
 
-		if (strongRef != null)
+		if (strongRef)
 			return strongRef.getObjectID();
 		else
 			return 0;
@@ -1689,8 +1639,8 @@ class CreatureObject extends TangibleObject {
 
 	@preLocked
 	@local
-	@dirty
-	public CommandQueueActionVector getCommandQueue() {
+	@read
+	public final CommandQueueActionVector getCommandQueue() {
 		return commandQueue;
 	}
 
@@ -1713,6 +1663,7 @@ class CreatureObject extends TangibleObject {
 		return lastActionCounter;
 	}
 
+	@read
 	public unsigned int getLastActionCounter() {
 		return lastActionCounter;
 	}
@@ -1757,7 +1708,7 @@ class CreatureObject extends TangibleObject {
 
 	@read
 	public unsigned long getWeaponID() {
-		if (weapon == null)
+		if (!weapon)
 			return 0;
 		else
 			return weapon.getObjectID();
@@ -1778,7 +1729,7 @@ class CreatureObject extends TangibleObject {
 	public int getGuildID() {
 		GuildObject strongRef = guild;
 
-		if (strongRef != null)
+		if (strongRef)
 			return strongRef.getGuildID();
 		else
 			return 0;
@@ -1788,7 +1739,7 @@ class CreatureObject extends TangibleObject {
 	public boolean isInGuild() {
 		GuildObject strongRef = guild;
 
-		return strongRef != null;
+		return strongRef;
 	}
 
 	@preLocked
@@ -1798,7 +1749,7 @@ class CreatureObject extends TangibleObject {
 
 	@read
 	public unsigned long getGroupID() {
-		if (group != null)
+		if (group)
 			return group.getObjectID();
 		else
 			return 0;
@@ -1836,13 +1787,13 @@ class CreatureObject extends TangibleObject {
 	}
 
 	@read
-	public int getPerformanceCounter() {
-		return performanceCounter;
+	public int getPerformanceStartTime() {
+		return performanceStartTime;
 	}
 
 	@read
-	public int getInstrumentID() {
-		return instrumentID;
+	public int getPerformanceType() {
+		return performanceType;
 	}
 
 	@read
@@ -1855,27 +1806,27 @@ class CreatureObject extends TangibleObject {
 		return height;
 	}
 
-	@dirty
+	@read
 	public boolean isDroidSpecies() {
 		//Determine if creature is a droid.
 		return getSpecies() >= 203 && getSpecies() <= 225 && getSpecies() != 207;
 	}
 
-	@dirty
+	@read
 	public boolean isWalkerSpecies() {
 		//Determine if creature is an ATST or ATAT.
 		return getSpecies() == 226;
 	}
 
-	@dirty
+	@read
 	public boolean isProbotSpecies() {
 		return getSpecies() == 216;
 	}
 
-	@dirty
+	@read
 	public native boolean hasEffectImmunity(byte effectType);
 
-	@dirty
+	@read
 	public native boolean hasDotImmunity(unsigned int dotType);
 
 	@read
@@ -1904,52 +1855,6 @@ class CreatureObject extends TangibleObject {
 			return "ithorian";
 		else if(species == 0x31)
 			return "sullustan";
-		else if(species == 8)
-			return "abyssin";
-		else if(species == 9)
-			return "aqualish";
-		else if(species == 0x0a)
-			return "arcona";
-		else if(species == 0x0c)
-			return "bith";
-		else if(species == 0x0e)
-			return "chadra_fan";
-		else if(species == 0x11)
-			return "devaronian";
-		else if(species == 0x13)
-			return "dug";
-		else if(species == 0x14)
-			return "duros";
-		else if(species == 0x16)
-			return "ewok";
-		else if(species == 0x17)
-			return "feeorin";
-		else if(species == 0x1b)
-			return "gotal";
-		else if(species == 0x1c)
-			return "gran";
-		else if(species == 0x1d)
-			return "gungan";
-		else if(species == 0x1f)
-			return "hutt";
-		else if(species == 0x20)
-			return "ishi_tib";
-		else if(species == 0x27)
-			return "kubaz";
-		else if(species == 0x28)
-			return "sanyassan";
-		else if(species == 0x2a)
-			return "nikto";
-		else if(species == 0x2b)
-			return "ortolan";
-		else if(species == 0x2e)
-			return "quarren";
-		else if(species == 0x32)
-			return "talz";
-		else if(species == 0x35)
-			return "toydarian";
-		else if(species == 0x37)
-			return "weequay";
 		else
 			return "";
 	}
@@ -1970,11 +1875,9 @@ class CreatureObject extends TangibleObject {
 	}
 
 	@read
-	@preLocked
 	public native int getSkillMod(final string skillmod);
 
 	@dirty
-	@preLocked
 	public native int getSkillModOfType(final string skillmod, final unsigned int modType);
 
 	@read
@@ -2008,7 +1911,7 @@ class CreatureObject extends TangibleObject {
 	@local
 	public native CreatureObject asCreatureObject();
 
-	@dirty
+	@read
 	public boolean isNextActionPast() {
 		return nextAction.isPast();
 	}
@@ -2201,14 +2104,8 @@ class CreatureObject extends TangibleObject {
 	@dirty
 	public native boolean isPlayerCreature();
 
-	@dirty
-	public abstract int getReceiverFlags() {
-	    int type = CloseObjectsVector.CREOTYPE;
-	    if (isPlayerCreature())
-	        type = type | CloseObjectsVector.PLAYERTYPE;
-
-	    return type | super.getReceiverFlags();
-	}
+	@read
+	public native int getReceiverFlags();
 
 	@dirty
 	public abstract boolean isInformantCreature() {
@@ -2253,7 +2150,7 @@ class CreatureObject extends TangibleObject {
 		return skillModMutex;
 	}
 
-	@dirty
+	@read
 	public native float calculateCostAdjustment(byte stat, float baseCost);
 
 	@preLocked
@@ -2325,4 +2222,7 @@ class CreatureObject extends TangibleObject {
 	public void setAuctionSearchTask(AuctionSearchTask task) {
 		auctionSearch = task;
 	}
+	
+	@local
+	public native Instrument getPlayableInstrument();
 }

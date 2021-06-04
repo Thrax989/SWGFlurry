@@ -15,7 +15,6 @@
 #define LOGOUTTASK_H_
 
 #include "server/zone/packets/player/LogoutMessage.h"
-#include "server/zone/objects/player/FactionStatus.h"
 
 class LogoutTask: public Task {
 	ManagedReference<CreatureObject*> creature;
@@ -49,16 +48,9 @@ public:
 
 		try {
 			// TODO: Research do things like bleeding, poison etc stop a /logout ??
-			if (creature->isBleeding() || creature->isPoisoned() || creature->isDiseased() || creature->isOnFire() || !creature->isSitting()) {
+			if (player->isLinkDead() || creature->isBleeding() || creature->isPoisoned() || creature->isDiseased() || creature->isOnFire() || !creature->isSitting()) {
 				cancelLogout();
 				return;
-			}
-
-			if (creature->getFactionStatus() == FactionStatus::OVERT || player->hasBhTef()) {
-				if (creature->isInCombat()) {
-					cancelLogout();
-					return;
-				}
 			}
 
 			timeLeft -= 5;

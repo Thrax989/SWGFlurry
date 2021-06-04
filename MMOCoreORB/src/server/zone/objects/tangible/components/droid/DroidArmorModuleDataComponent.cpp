@@ -4,6 +4,7 @@
 
 #include "DroidArmorModuleDataComponent.h"
 #include "server/zone/objects/tangible/component/droid/DroidComponent.h"
+#include "server/zone/objects/creature/ai/DroidObject.h"
 
 DroidArmorModuleDataComponent::DroidArmorModuleDataComponent() {
 	armorModule = 0;
@@ -14,7 +15,7 @@ DroidArmorModuleDataComponent::~DroidArmorModuleDataComponent() {
 
 }
 
-String DroidArmorModuleDataComponent::getModuleName() {
+String DroidArmorModuleDataComponent::getModuleName() const {
 	return String("armor_module");
 }
 
@@ -56,13 +57,13 @@ void DroidArmorModuleDataComponent::initialize(DroidObject* droid) {
 
 	// Set damage resistance
 	if (level == 1 || level == 4) {
-		resist = 20;
+		resist = 15;
 	}
 	else if (level == 2 || level == 5) {
-		resist = 40;
+		resist = 25;
 	}
 	else if (level == 3 || level == 6) {
-		resist = 60;
+		resist = 40;
 	} else {
 		resist = 0;
 	}
@@ -80,7 +81,7 @@ int DroidArmorModuleDataComponent::getBatteryDrain() {
 	return 0;
 }
 
-String DroidArmorModuleDataComponent::toString() {
+String DroidArmorModuleDataComponent::toString() const {
 	return BaseDroidModuleComponent::toString();
 }
 

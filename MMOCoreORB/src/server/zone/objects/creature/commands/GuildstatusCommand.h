@@ -8,7 +8,6 @@
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/ZoneServer.h"
 #include "server/zone/objects/guild/GuildObject.h"
-#include "server/zone/objects/player/sui/messagebox/SuiMessageBox.h"
 
 class GuildstatusCommand : public QueueCommand {
 public:
@@ -39,112 +38,14 @@ public:
 		tokenizer.setDelimeter(" ");
 
 		if (tokenizer.hasMoreTokens()) {
+			UnicodeString targetName;
+			tokenizer.getUnicodeToken(targetName);
+
 			ManagedReference<PlayerManager*> playerManager = server->getPlayerManager();
-			
-			UnicodeString arg;
-			tokenizer.getUnicodeToken(arg);
-			
-			if (arg == "list") {
-				if (!player->isInGuild()) {
-					player->sendSystemMessage("You are not in a guild.");
-					return GENERALERROR;
-				}
 
-				ManagedReference<GuildObject*> guild = player->getGuildObject().get();
-				uint64 objid = player->getObjectID();
+			uint64 targetPlayerID = playerManager->getObjectID(targetName.toString());
 
-				if (guild == NULL)
-					return GENERALERROR;
-
-				if (!guild->hasMember(objid))
-					return GENERALERROR;
-				
-				Vector<uint64> members;
-				
-				Locker locker(guild);
-
-				GuildMemberList* memberList = guild->getGuildMemberList();
-
-				if (memberList == NULL)
-					return GENERALERROR;
-
-				for (int i = 0; i < memberList->size(); ++i) {
-					GuildMemberInfo* gmi = &memberList->get(i);
-
-					if (gmi == NULL)
-						continue;
-
-					members.add(gmi->getPlayerID());
-				}
-
-				locker.release();
-				
-				StringBuffer msg;
-				StringBuffer prompt;
-				
-				if (tokenizer.hasMoreTokens()) {
-					UnicodeString arg;
-					tokenizer.getUnicodeToken(arg);
-					
-					if (arg == "-online") {
-						prompt << "Guild Member List (online only)";
-						
-						for (const auto& memberID : members) {
-							auto firstName = guild->getZoneServer()->getPlayerManager()->getPlayerName(memberID);
-							obj = zoneServer->getObject(memberID);
-							CreatureObject* gmember = cast<CreatureObject*>(obj.get());
-
-							if (gmember->isOnline()) {
-								msg << "\\#ffd300" << firstName << " - online\n";
-							}
-						}
-						//msg << "\\#ffffff--------------\nEnd of Guild List.";
-					} else {
-						player->sendSystemMessage("SYNTAX: /guildStatus list");
-						player->sendSystemMessage("SYNTAX: /guildStatus list -online");
-						return INVALIDPARAMETERS;
-					}
-				} else {
-					prompt << "Guild Member List";
-					
-					for (const auto& memberID : members) {
-						auto firstName = guild->getZoneServer()->getPlayerManager()->getPlayerName(memberID);
-						obj = zoneServer->getObject(memberID);
-						CreatureObject* gmember = cast<CreatureObject*>(obj.get());
-
-						if (gmember->isOnline()) {
-							msg << "\\#ffd300" << firstName << " - online";
-						} else {
-							msg << firstName;
-						}
-
-						msg << "\\#ffffff\n";
-					}
-					//msg << "\\#ffffff--------------\nEnd of Guild List.";
-				}
-				
-				ManagedReference<PlayerObject*> ghost = player->getPlayerObject();
-
-				if (ghost == NULL) {
-					return GENERALERROR;
-				}
-				ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::NONE);
-				box->setPromptTitle(prompt.toString());
-				box->setPromptText(msg.toString());
-
-				ghost->addSuiBox(box);
-				player->sendMessage(box->generateMessage());
-				//player->sendSystemMessage(msg.toString());
-				return SUCCESS;
-			} else if (arg == "help") {
-				player->sendSystemMessage("SYNTAX: /guildStatus list");
-				player->sendSystemMessage("SYNTAX: /guildStatus list -online");
-				return SUCCESS;
-			} else {
-				uint64 targetPlayerID = playerManager->getObjectID(arg.toString());
-
-				obj = zoneServer->getObject(targetPlayerID);
-			}
+			obj = zoneServer->getObject(targetPlayerID);
 		}
 
 		if (obj == nullptr || !obj->isCreatureObject())
@@ -166,29 +67,29 @@ public:
 			return GENERALERROR;
 		}
 
-		ManagedReference<GuildObject*> tarGuild = targetCreature->getGuildObject().get();
-		uint64 tarObjid = targetCreature->getObjectID();
+		ManagedReference<GuildObject*> guild = targetCreature->getGuildObject().get();
+		uint64 objid = targetCreature->getObjectID();
 
-		if (tarGuild == nullptr)
+		if (guild == nullptr)
 			return GENERALERROR;
 
-		if (!tarGuild->hasMember(tarObjid))
+		if (!guild->hasMember(objid))
 			return GENERALERROR;
 
-		String tarGuildTitle = tarGuild->getGuildMemberTitle(tarObjid);
-		params.setTT(tarGuild->getGuildName());
+		String guildTitle = guild->getGuildMemberTitle(objid);
+		params.setTT(guild->getGuildName());
 
 		StringBuffer stringid;
 		stringid << "@base_player:guildstatus_";
 
-		if (tarGuild->getGuildLeaderID() == tarObjid)
+		if (guild->getGuildLeaderID() == objid)
 			stringid << "leader";
 		else
 			stringid << "member";
 
-		if (!tarGuildTitle.isEmpty()) {
+		if (!guildTitle.isEmpty()) {
 			stringid << "_title";
-			params.setTO(tarGuildTitle);
+			params.setTO(guildTitle);
 		}
 
 		params.setStringId(stringid.toString());

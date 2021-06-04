@@ -13,7 +13,7 @@ public:
 
 		buffCRC = BuffCRC::JEDI_RESIST_STATES;
 
-		skillMods.put("resistance_states", 50);
+		skillMods.put("resistance_states", 25);
 
 	}
 

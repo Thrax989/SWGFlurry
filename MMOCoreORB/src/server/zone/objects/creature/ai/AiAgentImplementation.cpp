@@ -193,13 +193,8 @@ void AiAgentImplementation::loadTemplateData(CreatureTemplate* templateData) {
 			} else if (petDeed != nullptr) {
 				weao->setAttackSpeed(petDeed->getAttackSpeed());
 			}
+
 			readyWeapon = weao;
-			Locker locker(weao);
-			if (weao->isJediWeapon()) {
-			int color = System::random(30);
-			weao->setBladeColor(color);
-			weao->setCustomizationVariable("/private/index_color_blade", color, true);
-			}
 		} else {
 			readyWeapon = nullptr;
 			error("could not create weapon " + weaponToUse);
@@ -370,7 +365,7 @@ void AiAgentImplementation::setupAttackMaps() {
 		defaultAttackMap = new CreatureAttackMap();
 
 		for (int i = 0; i < fullAttackMap->size(); i++) {
-			CombatQueueCommand* attack = cast<CombatQueueCommand*>(objectController->getQueueCommand(fullAttackMap->getCommand(i)));
+			const CombatQueueCommand* attack = cast<const CombatQueueCommand*>(objectController->getQueueCommand(fullAttackMap->getCommand(i)));
 			if (attack == nullptr)
 				continue;
 
@@ -888,7 +883,7 @@ void AiAgentImplementation::selectSpecialAttack(int attackNum) {
 				return;
 			}
 
-			QueueCommand* queueCommand = getZoneServer()->getObjectController()->getQueueCommand(nextActionCRC);
+			const QueueCommand* queueCommand = getZoneServer()->getObjectController()->getQueueCommand(nextActionCRC);
 			ManagedReference<SceneObject*> followCopy = getFollowObject().get();
 			if (queueCommand == nullptr || followCopy == nullptr
 					|| (queueCommand->getMaxRange() > 0 && !followCopy->isInRange(asAiAgent(), queueCommand->getMaxRange() + getTemplateRadius() + followCopy->getTemplateRadius()))
@@ -1134,9 +1129,9 @@ void AiAgentImplementation::selectDefaultWeapon() {
 
 bool AiAgentImplementation::validateStateAttack(CreatureObject* target, unsigned int actionCRC) {
 	ManagedReference<ObjectController*> objectController = getZoneServer()->getObjectController();
-	CombatQueueCommand* queueCommand = cast<CombatQueueCommand*>(objectController->getQueueCommand(actionCRC));
+	const CombatQueueCommand* queueCommand = cast<const CombatQueueCommand*>(objectController->getQueueCommand(actionCRC));
 
-	VectorMap<uint8, StateEffect>* effects = queueCommand->getStateEffects();
+	const VectorMap<uint8, StateEffect>* effects = queueCommand->getStateEffects();
 
 	if (effects->size() == 0) {
 		return true;
@@ -1276,10 +1271,7 @@ void AiAgentImplementation::setDefender(SceneObject* defender) {
 }
 
 void AiAgentImplementation::queueDizzyFallEvent() {
-       if (!isNonPlayerCreatureObject())
-		CreatureObjectImplementation::queueDizzyFallEvent();
-	else
-       if (isNonPlayerCreatureObject())
+	if (isNonPlayerCreatureObject())
 		CreatureObjectImplementation::queueDizzyFallEvent();
 }
 
@@ -1377,7 +1369,7 @@ void AiAgentImplementation::respawn(Zone* zone, int level) {
 	CreatureManager* creatureManager = zone->getCreatureManager();
 
 	if (npcTemplate != nullptr && creatureManager != nullptr && isCreature()) {
-		int chance = 500;
+		int chance = 2000;
 		int babiesSpawned = 0;
 
 		ManagedReference<SceneObject*> home = homeObject.get();
@@ -1711,15 +1703,18 @@ void AiAgentImplementation::updatePetSwimmingState() {
 	}
 
 	float waterHeight;
+	bool waterIsDefined = terrainManager->getWaterHeight(getPositionX(), getPositionY(), waterHeight);
+	float petHeight = getPositionZ();
+	float swimVar = (waterHeight - swimHeight + 0.2f);
 
-	if (terrainManager->getWaterHeight(getPositionX(), getPositionY(), waterHeight)) {
-
-		if ((getPositionZ() + getSwimHeight() - waterHeight < 0.2)) {
-			setState(CreatureState::SWIMMING, true);
-		} else {
-			clearState(CreatureState::SWIMMING, true);
-		}
+	if (waterIsDefined && (swimVar - petHeight > 0.1)) {
+		// Pet is in the water.
+		setState(CreatureState::SWIMMING, true);
+		return;
 	}
+
+	// Terrain is above water level.
+	clearState(CreatureState::SWIMMING, true);
 }
 
 void AiAgentImplementation::checkNewAngle() {
@@ -1900,23 +1895,46 @@ bool AiAgentImplementation::findNextPosition(float maxDistance, bool walk) {
 				// okay, we can't go that far in one update (since we've capped update times)
 				// calculate the distance we can go and set nextPosition
 				Vector3 thisPos = thisWorldPos;
-				if (nextPosition.getCell() != nullptr)
+
+				if (nextPosition.getCell() != nullptr) {
 					thisPos = PathFinderManager::transformToModelSpace(thisPos, nextPosition.getCell()->getParent().get());
+				}
 
 				float dx = nextPosition.getX() - thisPos.getX();
 				float dy = nextPosition.getY() - thisPos.getY();
-				float dz = nextPosition.getZ() - thisPos.getZ();
 
-				nextPosition.setX(thisPos.getX() + (maxDist * (dx / dist)));
-				nextPosition.setZ(thisPos.getZ() + (maxDist * (dz / dist)));
-				nextPosition.setY(thisPos.getY() + (maxDist * (dy / dist)));
+				float newX = (thisPos.getX() + (maxDist * (dx / dist)));
+				float newY = (thisPos.getY() + (maxDist * (dy / dist)));
+				float newZ = 0.f;
 
-				// Now do cell checks to get the Z coordinate outside
-				if (nextPosition.getCell() == nullptr && nextPosition.getZ() == 0) {
-					targetMutex.unlock();
-					nextPosition.setZ(getWorldZ(nextPosition.getWorldPosition()));
-					targetMutex.lock();
+				Zone* zone = getZoneUnsafe();
+
+				if (targetPosition.getCell() == nullptr && nextPosition.getCell() == nullptr && zone != nullptr) {
+					newZ = getWorldZ(nextPosition.getWorldPosition());
+
+					PlanetManager* planetManager = zone->getPlanetManager();
+
+					if (planetManager != nullptr) {
+						TerrainManager* terrainManager = planetManager->getTerrainManager();
+
+						if (terrainManager != nullptr) {
+							float waterHeight;
+							bool waterIsDefined = terrainManager->getWaterHeight(newX, newY, waterHeight);
+
+							if (waterIsDefined && (waterHeight > newZ) && isSwimming()) {
+								newZ = (waterHeight - swimHeight);
+							}
+						}
+					}
+				} else {
+					float dz = nextPosition.getZ() - thisPos.getZ();
+
+					newZ = (thisPos.getZ() + (maxDist * (dz / dist)));
 				}
+
+				nextPosition.setX(newX);
+				nextPosition.setZ(newZ);
+				nextPosition.setY(newY);
 			}
 		}
 
@@ -2344,7 +2362,6 @@ bool AiAgentImplementation::isScentMasked(CreatureObject* target) {
 	// Step 1. Check for break
 	bool success = false;
 	int camoSkill = effectiveTarget->getSkillMod("mask_scent");
-	camoSkill += 25;
 	int creatureLevel = getLevel();
 
 	int mod = 100;
@@ -2356,7 +2373,6 @@ bool AiAgentImplementation::isScentMasked(CreatureObject* target) {
 		mod -= 35;
 
 	success = System::random(100) <= mod - (float)creatureLevel / ((float)camoSkill / 100.0f) / 20.f;
-	effectiveTarget->sendSystemMessage("Your maskScent skill is: " + String::valueOf(camoSkill) + " and you rolled a: " + String::valueOf(success));
 
 	if (success)
 		camouflagedObjects.put(effectiveTargetID); // add to award
@@ -2851,6 +2867,10 @@ bool AiAgentImplementation::isAggressiveTo(CreatureObject* target) {
 	uint32 targetFaction = target->getFaction();
 	PlayerObject* ghost = target->getPlayerObject();
 
+	if (ghost != nullptr && ghost->hasCrackdownTefTowards(getFaction())) {
+		return true;
+	}
+
 	// check the GCW factions if both entities have one
 	if (getFaction() != 0 && targetFaction != 0) {
 
@@ -2906,8 +2926,7 @@ void AiAgentImplementation::sendDefaultConversationTo(SceneObject* player) {
 void AiAgentImplementation::selectConversationOption(int option, SceneObject* obj) {
 }
 
-bool AiAgentImplementation::isEventMob() {
-
+bool AiAgentImplementation::isEventMob() const {
 	if (getDisplayedName().contains(" (event)"))
 		return true;
 
@@ -3270,7 +3289,7 @@ bool AiAgentImplementation::isAttackableBy(TangibleObject* object) {
 	if (isPet()) {
 		ManagedReference<PetControlDevice*> pcd = getControlDevice().get().castTo<PetControlDevice*>();
 		if (pcd != nullptr && pcd->getPetType() == PetManager::FACTIONPET && object->isNeutral()) {
-			return true;
+			return false;
 		}
 
 		ManagedReference<CreatureObject*> owner = getLinkedCreature().get();
@@ -3310,7 +3329,7 @@ bool AiAgentImplementation::isAttackableBy(CreatureObject* object) {
 	if (isPet()) {
 		ManagedReference<PetControlDevice*> pcd = getControlDevice().get().castTo<PetControlDevice*>();
 		if (pcd != nullptr && pcd->getPetType() == PetManager::FACTIONPET && object->isNeutral()) {
-			return true;
+			return false;
 		}
 
 		ManagedReference<CreatureObject*> owner = getLinkedCreature().get();
@@ -3325,7 +3344,7 @@ bool AiAgentImplementation::isAttackableBy(CreatureObject* object) {
 	if (object->isPet() || object->isVehicleObject()) {
 		ManagedReference<PetControlDevice*> pcd = object->getControlDevice().get().castTo<PetControlDevice*>();
 		if (pcd != nullptr && pcd->getPetType() == PetManager::FACTIONPET && isNeutral()) {
-			return true;
+			return false;
 		}
 
 		ManagedReference<CreatureObject*> owner = object->getLinkedCreature().get();
@@ -3339,6 +3358,13 @@ bool AiAgentImplementation::isAttackableBy(CreatureObject* object) {
 
 	if (pvpStatusBitmask == 0) {
 		return false;
+	}
+
+	if (object->isPlayerCreature()) {
+		Reference<PlayerObject*> ghost = object->getPlayerObject();
+		if (ghost != nullptr && ghost->hasCrackdownTefTowards(getFaction())) {
+			return true;
+		}
 	}
 
 	unsigned int targetFaction = object->getFaction();
@@ -3482,4 +3508,8 @@ void AiAgentImplementation::clearCreatureBit(uint32 option) {
 	if (creatureBitmask & option) {
 		creatureBitmask = creatureBitmask & ~option;
 	}
+}
+
+bool AiAgentImplementation::isPet() const {
+	return (getControlDevice() != nullptr);
 }

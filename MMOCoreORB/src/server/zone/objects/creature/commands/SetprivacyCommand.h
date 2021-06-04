@@ -6,10 +6,6 @@
 #define SETPRIVACYCOMMAND_H_
 
 #include "server/zone/objects/scene/SceneObject.h"
-#include "server/zone/objects/scene/components/DataObjectComponentReference.h"
-#include "server/zone/objects/tangible/components/vendor/VendorDataComponent.h"
-#include "server/zone/managers/vendor/VendorManager.h"
-#include "server/zone/ZoneProcessServer.h"
 
 class SetprivacyCommand : public QueueCommand {
 public:
@@ -54,8 +50,7 @@ public:
 			return GENERALERROR;
 		}
 
-		//Allow vendors in private structure but disable search
-		for (int i = 1; i < building->getTotalCellNumber(); ++i) {
+		for (int i = 1; i <= building->getTotalCellNumber(); ++i) {
 			ManagedReference<CellObject*> cell = building->getCell(i);
 
 			if(cell == nullptr)
@@ -65,17 +60,8 @@ public:
 				ManagedReference<SceneObject*> obj = cell->getContainerObject(j);
 
 				if(obj != nullptr && obj->isVendor()) {
-					DataObjectComponentReference* data = obj->getDataObjectComponent();
-					if(data == NULL || data->get() == NULL || !data->get()->isVendorData()) {
-						error("No vendor data found");
-						return GENERALERROR;
-					}
-					VendorDataComponent* vendorData = cast<VendorDataComponent*>(data->get());
-					if(vendorData == NULL) {
-						error("Null vendor data");
-						return GENERALERROR;
-					}
-					vendorData->setVendorSearchEnabled(false); //disable vendor search for all vendors in the now private structre
+					creature->sendSystemMessage("@player_structure:vendor_no_private"); // A structure hosting a vendor cannot be declared private
+					return GENERALERROR;
 				}
 			}
 		}

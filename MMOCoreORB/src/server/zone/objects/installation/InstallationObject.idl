@@ -80,8 +80,6 @@ class InstallationObject extends StructureObject {
 		}*/
 	}
 
-	public native string getCurrentSpawnName();
-
 	/**
 	 * Destroys this object from database
 	 * @pre { this is locked }
@@ -158,25 +156,10 @@ class InstallationObject extends StructureObject {
 	public native ResourceContainer getContainerFromHopper(ResourceSpawn spawn);
 
 	@dirty
-	public native int getResourceContainerCountFromHopper();
-
-	@dirty
-	public native ResourceContainer getContainerFromHopperByIndex(int index);
-
-	@dirty
 	public native unsigned long getActiveResourceSpawnID();
 
 	@dirty
 	public native float getActualRate();
-
-	@dirty
-	public native void quickRetrieveAllResources(CreatureObject player);
-
-	@dirty
-	public native void quickAddMaint(CreatureObject player, float amount);
-
-	@dirty
-	public native void quickAddPower(CreatureObject player, float amount);
 
 	@dirty
 	@local
@@ -272,3 +255,5 @@ class InstallationObject extends StructureObject {
 	@read
 	public native float getHitChance();
 }
+
+
