@@ -82,39 +82,28 @@ public:
 		return parentNode.get().get();
 	}
 
-	inline const CharacterBuilderMenuNode* getParentNode() const {
-		return parentNode.get().get();
-	}
-
-	inline bool hasParentNode() const {
+	inline bool hasParentNode() {
 		return parentNode.get() != nullptr;
 	}
 
-	inline bool hasChildNodes() const {
+	inline bool hasChildNodes() {
 		return childNodes.size() > 0;
 	}
 
-	inline const String& getDisplayName() const {
+	inline String& getDisplayName() {
 		return displayName;
 	}
 
-	inline const String& getTemplatePath() const {
+	inline String& getTemplatePath() {
 		return templatePath;
 	}
 
-	inline uint32 getTemplateCRC() const {
+	inline uint32 getTemplateCRC() {
 		return templateCRC;
 	}
 
-	inline int getChildNodeSize() const {
+	inline int getChildNodeSize() {
 		return childNodes.size();
-	}
-
-	inline const CharacterBuilderMenuNode* getChildNodeAt(int index) const {
-		if (childNodes.size() < index + 1 || index < 0)
-			return nullptr;
-
-		return childNodes.get(index);
 	}
 
 	inline CharacterBuilderMenuNode* getChildNodeAt(int index) {

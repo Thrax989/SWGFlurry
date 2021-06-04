@@ -22,10 +22,10 @@ void CustomizationIdManager::loadHairAssetsSkillMods(IffStream* iffStream) {
 
 		hairAssetSkillMods.put(data->getServerTemplate(), data);
 
-		debug() << "adding " << data->getServerTemplate();
+		//info(data->getServerTemplate(), true);
 	}
 
-	info() << "loaded " << paletteColumns.size() << " hair assets";
+	info("loaded " + String::valueOf(paletteColumns.size()) + " hair assets");
 }
 
 void CustomizationIdManager::loadAllowBald(IffStream* iffStream) {
@@ -44,7 +44,7 @@ void CustomizationIdManager::loadAllowBald(IffStream* iffStream) {
 		allowBald.put(species, val);
 	}
 
-	info() << "loaded " << allowBald.size() << " allow bald species data";
+	info("loaded " + String::valueOf(allowBald.size()) + " allow bald species data");
 }
 
 void CustomizationIdManager::loadPaletteColumns(IffStream* iffStream) {
@@ -56,11 +56,10 @@ void CustomizationIdManager::loadPaletteColumns(IffStream* iffStream) {
 		data->readObject(dataTable.getRow(i));
 
 		paletteColumns.put(data->getName(), data);
-
-		debug() << "adding " << data->getName();
+		//info(data->getName(), true);
 	}
 
-	info() << "loaded " << paletteColumns.size() << " palette columns";
+	info("loaded " + String::valueOf(paletteColumns.size()) + " palette columns");
 }
 
 void CustomizationIdManager::readObject(IffStream* iffStream) {
@@ -83,6 +82,5 @@ void CustomizationIdManager::readObject(IffStream* iffStream) {
 	iffStream->closeForm('0001');
 	iffStream->closeForm('CIDM');
 
-	info() << "loaded " << customizationIds.size() << " customization ids";
+	info("loaded " + String::valueOf(customizationIds.size()) + " customization ids");
 }
-

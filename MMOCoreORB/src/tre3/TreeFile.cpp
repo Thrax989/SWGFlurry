@@ -21,7 +21,7 @@ TreeFile::~TreeFile() {
 
 void TreeFile::read(const String& path) {
 	setLoggingName("TreeFile " + path);
-	setLogLevel(Logger::INFO);
+	setLogging(true);
 
 	filePath = path;
 
@@ -58,8 +58,8 @@ void TreeFile::readHeader(FileInputStream* fileStream) {
 		fileStream->read((byte*) &totalRecords, 4);
 		fileStream->read((byte*) &dataOffset, 4);
 
-		debug() << "Found records: " << totalRecords
-			<< " Data offset at " << dataOffset;
+		//info("Found records: " + String::valueOf(totalRecords));
+		//info("Data offset at " + String::valueOf(dataOffset));
 
 		//Setup the file block.
 		fileStream->read((byte*) &buffer, 4);

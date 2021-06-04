@@ -76,9 +76,9 @@ protected:
 
 	Vector<ChildObject> childObjects;
 
-	AtomicReference<PortalLayout*> portalLayout;
-	AtomicReference<AppearanceTemplate*> appearanceTemplate;
-	AtomicBoolean loadedPortalLayout, loadedAppearanceTemplate;
+	PortalLayout* portalLayout;
+	AppearanceTemplate* appearanceTemplate;
+	bool loadedPortalLayout, loadedAppearanceTemplate;
 	String zoneComponent, attributeListComponent;
 	String containerComponent;
 	String objectMenuComponent;
@@ -304,12 +304,12 @@ public:
 	const PortalLayout* getPortalLayout();
 	AppearanceTemplate* getAppearanceTemplate();
 
-	const Vector <Vector<String>>& getArrangementDescriptors() const {
+	const Vector < Vector<String> >* getArrangementDescriptors() const {
 		if (arrangementDescriptors == nullptr) {
 			const static Vector < Vector<String> > EMPTY_DESCRIPTORS;
-			return EMPTY_DESCRIPTORS;
+			return &EMPTY_DESCRIPTORS;
 		} else
-			return arrangementDescriptors->getArrangementSlots();
+			return &arrangementDescriptors->getArrangementSlots();
 	}
 
 	/*inline Vector<float>* getScale() {
@@ -419,7 +419,7 @@ public:
 		return childObjects.size();
 	}
 
-	inline const ChildObject* getChildObject(int idx) const {
+	inline ChildObject* getChildObject(int idx) const {
 		return &childObjects.get(idx);
 	}
 
@@ -432,17 +432,17 @@ public:
 	}
 
 	bool hasArrangementDescriptor(const String& s) const {
-		const auto& hAD = getArrangementDescriptors();
+		bool foundIt = false;
 
-		for (int i = 0; i < hAD.size(); ++i) {
-			const auto& slotItems = hAD.get(i);
+		const Vector < Vector <String> >* hAD = getArrangementDescriptors();
 
-			if (slotItems.contains(s)) {
-				return true;
-			}
+		for (int i = 0; i < hAD->size() && !foundIt; ++i) {
+			Vector <String>& slotItems = hAD->get(i);
+
+			foundIt = slotItems.contains(s);
 		}
 
-		return false;
+		return foundIt;
 	}
 
 	bool getDelayedContainerLoad() const {
@@ -450,7 +450,7 @@ public:
 	}
 
 public:
-	void setAppearanceFilename(const String& appearanceFilename) {
+	void setAppearanceFilename(String appearanceFilename) {
 		this->appearanceFilename = appearanceFilename;
 	}
 
@@ -458,7 +458,7 @@ public:
 		this->clearFloraRadius = clearFloraRadius;
 	}
 
-	void setClientDataFile(const String& clientDataFile) {
+	void setClientDataFile(String clientDataFile) {
 		this->clientDataFile = clientDataFile;
 	}
 
@@ -514,7 +514,7 @@ public:
 		this->noBuildRadius = noBuildRadius;
 	}
 
-	void setObjectName(const String& objectName) {
+	void setObjectName(String objectName) {
 		this->objectName = objectName;
 	}
 
@@ -554,7 +554,7 @@ public:
 		this->surfaceType = surfaceType;
 	}
 
-	void setTintPallete(const String& tintPallete) {
+	void setTintPallete(String tintPallete) {
 		this->tintPallete = tintPallete;
 	}
 
@@ -577,7 +577,7 @@ public:
 		return false;
 	}
 
-	virtual bool isSharedTangibleObjectTemplate() const {
+	virtual bool isSharedTangibleObjectTemplate() {
 		return false;
 	}
 
@@ -661,7 +661,7 @@ public:
 		return false;
 	}
 
-	virtual bool isInstrumentObjectTemplate() const {
+	virtual bool isInstrumentObjectTemplate() {
 		return false;
 	}
 
@@ -685,11 +685,11 @@ public:
 		return false;
 	}
 
-	virtual bool isCreatureHabitatTemplate() const {
+	virtual bool isCreatureHabitatTemplate() {
 		return false;
 	}
 
-	virtual bool isRepairToolTemplate() const {
+	virtual bool isRepairToolTemplate() {
 		return false;
 	}
 
@@ -701,7 +701,7 @@ public:
 		return false;
 	}
 
-	virtual bool isRecycleToolTemplate() const {
+	virtual bool isRecycleToolTemplate() {
 	    	return false;
 	}
 
@@ -737,11 +737,11 @@ public:
 		return false;
 	}
 
-	virtual bool isPlayerCreatureTemplate() const {
+	virtual bool isPlayerCreatureTemplate() {
 		return false;
 	}
 
-	virtual bool isCraftingStationTemplate() const {
+	virtual bool isCraftingStationTemplate() {
 		return false;
 	}
 

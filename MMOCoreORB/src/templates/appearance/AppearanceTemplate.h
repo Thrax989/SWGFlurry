@@ -14,8 +14,8 @@
 class AppearanceTemplate : public Object {
 	String floorName;
 	String fileName;
-	BaseBoundingVolume* volume = nullptr;
-	BaseBoundingVolume* collisionVolume = nullptr;
+	BaseBoundingVolume* volume;
+	BaseBoundingVolume* collisionVolume;
 public:
 
 	virtual uint32 getType() const {

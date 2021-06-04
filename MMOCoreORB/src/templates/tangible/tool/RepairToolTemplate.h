@@ -11,6 +11,7 @@
 #include "templates/SharedTangibleObjectTemplate.h"
 
 class RepairToolTemplate : public SharedTangibleObjectTemplate {
+
 	uint32 mask;
 	String boostSkill;
 	String boostSkillMod;
@@ -28,7 +29,7 @@ public:
 
 	}
 
-	void readObject(LuaObject* templateData) override {
+	void readObject(LuaObject* templateData) {
 		SharedTangibleObjectTemplate::readObject(templateData);
 		mask = templateData->getIntField("canRepairType");
 		boostSkill =templateData->getStringField("boostSkill");
@@ -36,25 +37,25 @@ public:
 		stationType = templateData->getIntField("stationType");
 	}
 
-	uint32 getRepairType() const {
+	uint32 getRepairType() {
 		return mask;
 	}
 
-	const String& getSkill() const {
+	String getSkill() {
 		return boostSkill;
 	}
 
-	const String& getSkillMod() const {
+	String getSkillMod() {
 		return boostSkillMod;
 	}
 
-	int getStationType() const {
+	int getStationType() {
 		return stationType;
 	}
 
-	bool isRepairToolTemplate() const override {
-		return true;
-	}
+    bool isRepairToolTemplate() {
+    	return true;
+    }
 
 };
 

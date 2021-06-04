@@ -13,41 +13,39 @@
 
 class PlayerCreatureTemplate : public SharedCreatureObjectTemplate {
 	CustomizationDataMap dataMap;
-	Vector<String> startingSkills;
-	Vector<String> startingItems;
+	Reference<Vector<String>* > startingSkills;
+	Reference<Vector<String>* > startingItems;
 
 protected:
 	uint8 defaultLanguage;
 
 public:
 	PlayerCreatureTemplate() {
+		startingSkills = new Vector<String>();
+		startingItems = new Vector<String>();
 		defaultLanguage = 0;
 	}
 
 	~PlayerCreatureTemplate() {
 	}
 
-	const CustomizationDataMap& getCustomizationDataMap() const {
-		return dataMap;
+	CustomizationDataMap* getCustomizationDataMap() {
+		return &dataMap;
 	}
 
-	CustomizationDataMap& getCustomizationDataMap() {
-		return dataMap;
+	Vector<CustomizationData>* getCustomizationData(const String& customizationName) {
+		return &dataMap.get(customizationName);
 	}
 
-	const Vector<CustomizationData>& getCustomizationData(const String& customizationName) const {
-		return dataMap.get(customizationName);
-	}
-
-	const Vector<String>& getStartingSkills() const {
+	Vector<String>* getStartingSkills() {
 		return startingSkills;
 	}
 
-	const Vector<String>& getStartingItems() const {
+	Vector<String>* getStartingItems() {
 		return startingItems;
 	}
 
-	inline uint8 getDefaultLanguage() const {
+	inline uint8 getDefaultLanguage() {
 		return defaultLanguage;
 	}
 
@@ -57,9 +55,9 @@ public:
 
 	void parseVariableData(const String& varName, LuaObject* templateData);
 
-	void readObject(LuaObject* templateData) override;
+	void readObject(LuaObject* templateData);
 
-	bool isPlayerCreatureTemplate() const override {
+	bool isPlayerCreatureTemplate() {
 		return true;
 	}
 };

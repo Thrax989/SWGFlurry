@@ -117,100 +117,100 @@ public:
 			row->getValue(15, imageDesignSkillMod);
 			row->getValue(16, skillModValue);
 			row->getValue(17, modificationType);
-		} catch (const Exception& e) {
-			System::err << "CustomizationData::parse() exception: " << e.getMessage() << endl;
+		} catch (Exception& e) {
+			System::out << "CustomizationData::parse() exception: " << e.getMessage() << endl;
 		}
 	}
 
-	inline const String& getCustomizationGroup() const {
+	inline String& getCustomizationGroup() {
 		return customizationGroup;
 	}
 
-	inline const String& getType() const {
+	inline String& getType() {
 		return type;
 	}
 
-	inline const String& getCustomizationName() const {
+	inline String& getCustomizationName() {
 		return customizationName;
 	}
 
-	inline const String& getVariables() const {
+	inline String& getVariables() {
 		return variables;
 	}
 
-	inline bool getIsScale() const {
+	inline bool getIsScale() {
 		return isScale;
 	}
 
-	inline bool getReverse() const {
+	inline bool getReverse() {
 		return reverse;
 	}
 
-	inline const String& getColorLinked() const {
+	inline String& getColorLinked() {
 		return colorLinked;
 	}
 
-	inline const String& getColorLinkedtoSelf0() const {
+	inline String& getColorLinkedtoSelf0() {
 		return colorLinkedtoSelf0;
 	}
 
-	inline const String& getColorLinkedtoSelf1() const {
+	inline String& getColorLinkedtoSelf1() {
 		return colorLinkedtoSelf1;
 	}
 
-	inline float getCameraYaw() const {
+	inline float getCameraYaw() {
 		return cameraYaw;
 	}
 
-	inline bool getDiscrete() const {
+	inline bool getDiscrete() {
 		return discrete;
 	}
 
-	inline bool getRandomizable() const {
+	inline bool getRandomizable() {
 		return randomizable;
 	}
 
-	inline bool getRandomizableGroup() const {
+	inline bool getRandomizableGroup() {
 		return randomizableGroup;
 	}
 
-	inline bool getIsVarHairColor() const {
+	inline bool getIsVarHairColor() {
 		return isVarHairColor;
 	}
 
-	inline const String& getImageDesignSkillMod() const {
+	inline String& getImageDesignSkillMod() {
 		return imageDesignSkillMod;
 	}
 
-	inline int getSkillModValue() const {
+	inline int getSkillModValue() {
 		return skillModValue;
 	}
 
-	inline const String& getModificationType() const {
+	inline String& getModificationType() {
 		return modificationType;
 	}
 
-	inline bool isPhysicalModificationType() const {
+	inline bool isPhysicalModificationType() {
 		return (modificationType == "physical");
 	}
 
-	inline bool isCosmeticModificationType() const {
+	inline bool isCosmeticModificationType() {
 		return (modificationType == "cosmetic");
 	}
 
-	inline bool isHorizontalSlider() const {
+	inline bool isHorizontalSlider() {
 		return (type == "hslider");
 	}
 
-	inline bool isColorPicker() const {
+	inline bool isColorPicker() {
 		return (type == "color");
 	}
 
-	inline float getMinScale() const {
+	inline float getMinScale() {
 		return minScale;
 	}
 
-	inline float getMaxScale() const {
+	inline float getMaxScale() {
 		return maxScale;
 	}
 

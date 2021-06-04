@@ -10,6 +10,7 @@
 #include "engine/engine.h"
 
 namespace conf {
+	using namespace sys::thread;
 
 	class ConfigDataItem {
 		bool asBool;
@@ -19,9 +20,7 @@ namespace conf {
 		Vector <String>* asStringVector = nullptr;
 		SortedVector <String>* asSortedStringVector = nullptr;
 		Vector <int>* asIntVector = nullptr;
-		mutable AtomicInteger usageCounter = 0;
-
-		Mutex mutex;
+		int usageCounter = 0;
 
 	public:
 		ConfigDataItem(lua_Number value);
@@ -30,32 +29,29 @@ namespace conf {
 		ConfigDataItem(float value);
 		ConfigDataItem(const String& value);
 		ConfigDataItem(Vector <ConfigDataItem *>* value);
-
 		~ConfigDataItem();
 
-		inline bool getBool() const {
-			usageCounter.increment();
+		inline bool getBool() {
+			usageCounter++;
 			return asBool;
 		}
 
-		inline float getFloat() const {
-			usageCounter.increment();
+		inline float getFloat() {
+			usageCounter++;
 			return (float)asNumber;
 		}
 
-		inline int getInt() const {
-			usageCounter.increment();
+		inline int getInt() {
+			usageCounter++;
 			return (int)asNumber;
 		}
 
-		inline const String& getString() const {
-			usageCounter.increment();
+		inline const String& getString() {
+			usageCounter++;
 			return asString;
 		}
 
-		const Vector<String>& getStringVector() {
-			Locker guard(&mutex);
-
+		inline const Vector<String>& getStringVector() {
 			if (asStringVector == nullptr) {
 				asStringVector = new Vector<String>();
 
@@ -79,9 +75,7 @@ namespace conf {
 			return *asStringVector;
 		}
 
-		const SortedVector<String>& getSortedStringVector() {
-			Locker guard(&mutex);
-
+		inline const SortedVector<String>& getSortedStringVector() {
 			if (asSortedStringVector == nullptr) {
 				asSortedStringVector = new SortedVector<String>();
 				auto entries = getStringVector();
@@ -94,9 +88,7 @@ namespace conf {
 			return *asSortedStringVector;
 		}
 
-		const Vector<int>& getIntVector() {
-			Locker guard(&mutex);
-
+		inline const Vector<int>& getIntVector() {
 			if (asIntVector == nullptr) {
 				asIntVector = new Vector<int>();
 
@@ -120,17 +112,13 @@ namespace conf {
 			return *asIntVector;
 		}
 
-		void getAsJSON(JSONSerializationType& jsonData);
-
-		String toString() {
-			Locker guard(&mutex);
-
-			usageCounter.increment();
+		inline String toString() {
+			usageCounter++;
 
 			if (asVector == nullptr)
 				return String(asString);
 
-			const Vector<String>& elements = getStringVector();
+			Vector<String> elements = getStringVector();
 
 			StringBuffer buf;
 
@@ -146,14 +134,13 @@ namespace conf {
 			return buf.toString();
 		}
 
-		inline int getUsageCounter() const {
+		inline int getUsageCounter() {
 			return usageCounter;
 		}
 
 		inline int resetUsageCounter() {
-			int prevCount = usageCounter.get(std::memory_order_acquire);
-			usageCounter.set(0, std::memory_order_release);
-
+			int prevCount = usageCounter;
+			usageCounter = 0;
 			return prevCount;
 		}
 
@@ -163,37 +150,22 @@ namespace conf {
 
 	public:
 		inline void setDebugTag(const String& tag) {
-			debugTag = tag;
+			debugTag = String(tag);
 		}
 #endif // DEBUG_CONFIGMANAGER
 	};
 
-	class ConfigManager : public Singleton<ConfigManager>, public Object, public Logger {
-	protected:
-		Lua lua;
-
+	class ConfigManager : public Singleton<ConfigManager>, public Lua {
 		Timer configStartTime;
-		bool logChanges = false;
-
 		VectorMap<String, ConfigDataItem *> configData;
 
-		// Each change increments configVersion allowing cached results to auto-reload
-		mutable AtomicInteger configVersion = 0;
-
-		ReadWriteLock mutex;
-
-	private:
-		ConfigDataItem* findItem(const String& name) const;
-		bool updateItem(const String& name, ConfigDataItem* newItem);
-
-		bool parseConfigData(const String& prefix, bool isGlobal = false, int maxDepth = 5);
-		bool parseConfigJSONRecursive(const String prefix, JSONSerializationType jsonNode, String& errorMessage, bool updateOnly = true);
-		void writeJSONPath(StringTokenizer& tokens, JSONSerializationType& jsonData, const JSONSerializationType& jsonValue);
-		bool isSensitiveKey(const String& key);
-
-		void incrementConfigVersion() {
-			configVersion.increment();
-		}
+		// Cached values
+		bool cache_PvpMode = false;
+		bool cache_ProgressMonitors = false;
+		bool cache_UnloadContainers = false;
+		bool cache_UseMetrics = false;
+		int cache_SessionStatsSeconds = 1;
+		int cache_OnlineLogSize = 0;
 
 	public:
 		ConfigManager();
@@ -201,23 +173,17 @@ namespace conf {
 
 		bool loadConfigData();
 		void clearConfigData();
+		bool parseConfigData(const String& prefix, bool isGlobal = false, int maxDepth = 5);
 		void cacheHotItems();
-		bool parseConfigJSON(const String& jsonString, String& errorMessage, bool updateOnly = true);
-		bool parseConfigJSON(const JSONSerializationType jsonData, String& errorMessage, bool updateOnly = true);
 		void dumpConfig(bool includeSecure = false);
 		bool testConfig(ConfigManager* configManager);
 
-		uint64 getConfigDataAgeMs() const {
+		uint64 getConfigDataAgeMs() {
 			return configStartTime.elapsedMs();
 		}
 
-		int getConfigVersion() {
-			return configVersion.get();
-		}
-
 		// General config functions
-		bool contains(const String& name) const;
-		int getUsageCounter(const String& name) const;
+		ConfigDataItem* findItem(const String& name);
 		int getInt(const String& name, int defaultValue);
 		bool getBool(const String& name, bool defaultValue);
 		float getFloat(const String& name, float defaultValue);
@@ -225,8 +191,8 @@ namespace conf {
 		const Vector<String>& getStringVector(const String& name);
 		const SortedVector<String>& getSortedStringVector(const String& name);
 		const Vector<int>& getIntVector(const String& name);
-		bool getAsJSON(const String& target, JSONSerializationType& jsonData);
 
+		bool updateItem(const String& name, ConfigDataItem* newItem);
 		bool setNumber(const String& name, lua_Number newValue);
 		bool setInt(const String& name, int newValue);
 		bool setBool(const String& name, bool newValue);
@@ -251,56 +217,39 @@ namespace conf {
 			return getBool("Core3.MakeStatus", true);
 		}
 
+		inline bool getMakeWeb() {
+			return getBool("Core3.MakeWeb", true);
+		}
+
 		inline bool getDumpObjFiles() {
 			return getBool("Core3.DumpObjFiles", true);
 		}
 
 		inline bool shouldUnloadContainers() {
 			// Use cached value as this is called often
-			static uint32 cachedVersion = 0;
-			static bool cachedUnloadContainers;
-
-			if (configVersion.get() > cachedVersion) {
-				Locker guard(&mutex);
-				cachedUnloadContainers = getBool("Core3.UnloadContainers", true);
-				cachedVersion = configVersion.get();
-			}
-
-			return cachedUnloadContainers;
+			return cache_UnloadContainers;
 		}
 
 		inline bool shouldUseMetrics() {
 			// On Basilisk this is called 400/s
-			static uint32 cachedVersion = 0;
-			static bool cachedUseMetrics;
-
-			if (configVersion.get() > cachedVersion) {
-				Locker guard(&mutex);
-				cachedUseMetrics = getBool("Core3.UseMetrics", false);
-				cachedVersion = configVersion.get();
-			}
-
-			return cachedUseMetrics;
+			return cache_UseMetrics;
 		}
 
 		inline bool getPvpMode() {
 			// Use cached value as this is a hot item called in:
 			//   CreatureObjectImplementation::isAttackableBy
 			//   CreatureObjectImplementation::isAggressiveTo
-			static uint32 cachedVersion = 0;
-			static bool cachedPvpMode;
-
-			if (configVersion.get() > cachedVersion) {
-				Locker guard(&mutex);
-				cachedPvpMode = getBool("Core3.PvpMode", false);
-				cachedVersion = configVersion.get();
-			}
-
-			return cachedPvpMode;
+			return cache_PvpMode;
 		}
 
 		inline bool setPvpMode(bool val) {
-			return setBool("Core3.PvpMode", val);
+			if (!setBool("Core3.PvpMode", val))
+				return false;
+
+			// Updated cached value
+			cache_PvpMode = getBool("Core3.PvpMode", val);
+
+			return true;
 		}
 
 		inline const String& getORBNamingDirectoryAddress() {
@@ -317,16 +266,7 @@ namespace conf {
 
 		inline bool isProgressMonitorActivated() {
 			// Use cached value as this a hot item called in lots of loops
-			static uint32 cachedVersion = 0;
-			static bool cachedProgressMonitors;
-
-			if (configVersion.get() > cachedVersion) {
-				Locker guard(&mutex);
-				cachedProgressMonitors = getBool("Core3.ProgressMonitors", false);
-				cachedVersion = configVersion.get();
-			}
-
-			return cachedProgressMonitors;
+			return cache_ProgressMonitors;
 		}
 
 		inline int getDBPort() {
@@ -413,6 +353,22 @@ namespace conf {
 			return getInt("Core3.PingPort", 44462);
 		}
 
+		inline const String& getWebPorts() {
+			return getString("Core3.WebPorts", "44460");
+		}
+
+		inline const String& getWebAccessLog() {
+			return getString("Core3.WebAccessLog", "log/web_access.log");
+		}
+
+		inline const String& getWebErrorLog() {
+			return getString("Core3.WebErrorLog", "log/web_error.log");
+		}
+
+		inline int getWebSessionTimeout() {
+			return getInt("Core3.WebAccessLog", 600);
+		}
+
 		inline const String& getLoginRequiredVersion() {
 			return getString("Core3.LoginRequiredVersion", "20050408-18:00");
 		}
@@ -481,16 +437,11 @@ namespace conf {
 			return getInt("Core3.LogFileLevel", Logger::INFO);
 		}
 
-		inline int getRotateLogSizeMB() {
-			return getInt("Core3.RotateLogSizeMB", 100);
-		}
-
-		inline bool getRotateLogAtStart() {
-			return getBool("Core3.RotateLogAtStart", false);
-		}
-
 		inline void setProgressMonitors(bool val) {
 			setBool("Core3.ProgressMonitors", val);
+
+			// Updated cached value
+			cache_ProgressMonitors = getBool("Core3.ProgressMonitors", val);
 		}
 
 		inline const String& getTermsOfService() {
@@ -546,16 +497,7 @@ namespace conf {
 		}
 
 		inline int getSessionStatsSeconds() {
-			static uint32 cachedVersion = 0;
-			static int cachedSessionStatsSeconds;
-
-			if (configVersion.get() > cachedVersion) {
-				Locker guard(&mutex);
-				cachedSessionStatsSeconds = getInt("Core3.SessionStatsSeconds", 3600);
-				cachedVersion = configVersion.get();
-			}
-
-			return cachedSessionStatsSeconds;
+			return cache_SessionStatsSeconds;
 		}
 
 		inline int getOnlineLogSeconds() {
@@ -563,55 +505,34 @@ namespace conf {
 		}
 
 		inline int getOnlineLogSize() {
-			static uint32 cachedVersion = 0;
-			static int cachedOnlineLogSize;
-
-			if (configVersion.get() > cachedVersion) {
-				Locker guard(&mutex);
-				cachedOnlineLogSize = getInt("Core3.OnlineLogSize", 100000000);
-				cachedVersion = configVersion.get();
-			}
-
-			return cachedOnlineLogSize;
+			return cache_OnlineLogSize;
 		}
 
-		inline String getNoTradeMessage() {
-			static uint32 cachedVersion = 0;
-			static String cachedNoTradeMessage;
-
-			if (configVersion.get() > cachedVersion) {
-				Locker guard(&mutex);
-				cachedNoTradeMessage = getString("Core3.TangibleObject.NoTradeMessage", "");
-				cachedVersion = configVersion.get();
-			}
-
-			return cachedNoTradeMessage;
+		//Vendor Expired Item Relist
+		inline bool getItemRelistEnabled() {
+			return getBool("Core3.itemRelistEnabled", false);
+		}
+		
+		//Vendor Packup
+		inline bool getVendorPackupEnabled() {
+			return getBool("Core3.vendorPackupEnabled", false);
 		}
 
-		inline String getForceNoTradeMessage() {
-			static uint32 cachedVersion = 0;
-			static String cachedForceNoTradeMessage;
-
-			if (configVersion.get() > cachedVersion) {
-				Locker guard(&mutex);
-				cachedForceNoTradeMessage = getString("Core3.TangibleObject.ForceNoTradeMessage", "");
-				cachedVersion = configVersion.get();
-			}
-
-			return cachedForceNoTradeMessage;
+		inline int getItemRelistFee() {
+			return getInt("Core3.itemRelistFee", 0);
 		}
 
-		inline String getForceNoTradeADKMessage() {
-			static uint32 cachedVersion = 0;
-			static String cachedForceNoTradeADKMessage;
+		//Structure Packup
+		inline bool getStructurePackupEnabled() {
+			return getBool("Core3.structurePackupEnabled", false);
+		}
 
-			if (configVersion.get() > cachedVersion) {
-				Locker guard(&mutex);
-				cachedForceNoTradeADKMessage = getString("Core3.TangibleObject.ForceNoTradeADKMessage", "");
-				cachedVersion = configVersion.get();
-			}
-
-			return cachedForceNoTradeADKMessage;
+		//Inactive Structure Packup
+		inline bool getInactiveStructurePackupEnabled() {
+			return getBool("Core3.inactiveStructurePackupEnabled", false);
+		}
+		inline int getInactiveStructurePackupDays() {
+			return getInt("Core3.inactiveStructurePackupDays", 365);
 		}
 	};
 }

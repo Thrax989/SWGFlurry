@@ -21,6 +21,10 @@ protected:
 	int junkMinValue;
 	int junkMaxValue;
 
+	int minimumLevel;
+	int maximumLevel;
+
+
 	ValuesMap craftingValues;
 	bool suppressSerialNumber;
 
@@ -44,6 +48,9 @@ public:
 		junkDealerTypeNeeded = 0;
 		junkMinValue = 0;
 		junkMaxValue = 0;
+		// Added by Tyclo
+		minimumLevel = 0;
+		maximumLevel = -1; 
 		suppressSerialNumber = false;
 	}
 
@@ -55,6 +62,10 @@ public:
 		junkDealerTypeNeeded = templateData->getIntField("junkDealerTypeNeeded");
 		junkMinValue = templateData->getIntField("junkMinValue");
 		junkMaxValue = templateData->getIntField("junkMaxValue");
+    
+    		// Added by Tyclo
+		minimumLevel = templateData->getIntField("minimumLevel");
+		maximumLevel = templateData->getIntField("maximumLevel");
 
 		//TODO: At this point, we should go ahead and pull in the tangible objects stats
 
@@ -241,7 +252,13 @@ public:
 	int getJunkMaxValue() const {
 		return junkMaxValue;
 	}
-
+	// Added by Tyclo
+	int getMinimumLevel() const {
+		return minimumLevel;
+	}
+	int getMaximumLevel() const {
+		return maximumLevel;
+	}
 	const VectorMap<String, SortedVector<int> >* getStaticDotValues() const {
 		return &staticDotValues;
 	}

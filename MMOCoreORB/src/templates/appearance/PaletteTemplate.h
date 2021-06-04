@@ -53,11 +53,11 @@ public:
 		}
 	}
 
-	const Vector<PaletteColor>& getColors() const {
-		return colors;
+	Vector<PaletteColor>* getColors() {
+		return &colors;
 	}
 
-	int getColorCount() const {
+	int getColorCount() {
 		return colors.size();
 	}
 };

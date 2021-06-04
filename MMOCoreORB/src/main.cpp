@@ -2,16 +2,12 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions. */
 
-#ifndef PLATFORM_WIN
-#include "CoreProcess.h"
-#endif
+#include "system/thread/ChildProcess.h"
 
 #include "server/ServerCore.h"
-#include "server/zone/objects/creature/CreatureObject.h"
 #include "server/chat/ChatManager.h"
-#include "server/zone/managers/collision/NavMeshManager.h"
 #include "server/zone/managers/director/DirectorManager.h"
-#include "server/zone/managers/object/ObjectManager.h"
+#include "server/zone/managers/collision/NavMeshManager.h"
 
 #ifdef COMPILE_CORE3_TESTS
 #include "tests/TestCore.h"
@@ -21,8 +17,36 @@
 
 #include "engine/orb/db/DOBObjectManager.h"
 
+class CoreProcess : public ChildProcess {
+	const SortedVector<String>& arguments;
+
+public:
+	CoreProcess(const SortedVector<String>& args) : arguments(args) {
+	}
+
+	void run() {
+		bool truncateData = arguments.contains("clean");
+
+		ServerCore core(truncateData, arguments);
+		core.start();
+	}
+
+	void handleCrash() {
+		//TODO: implement
+	}
+
+	bool isDeadlocked() {
+		//TODO: implement
+		return false;
+	}
+
+	void handleDeadlock() {
+		//TODO: implement
+	}
+};
+
 int main(int argc, char* argv[]) {
-	System::setStreamBuffer(stdout, nullptr);
+	setbuf(stdout, 0);
 
 	if (argc) {
 		StackTrace::setBinaryName(argv[0]);
@@ -51,14 +75,12 @@ int main(int argc, char* argv[]) {
 
 			DirectorManager::instance()->info(true) << "Done in " << elapsed / 1000000 << "ms";
 		} else if (arguments.contains("service")) {
-#ifndef PLATFORM_WIN
 			while (true) {
 				CoreProcess core(arguments);
 				core.start();
 
 				core.wait();
 			}
-#endif
 #ifdef COMPILE_CORE3_TESTS
 		} else if (arguments.contains("runUnitTests")) {
 			TestCore core;
@@ -67,8 +89,6 @@ int main(int argc, char* argv[]) {
 			testing::InitGoogleTest(&argc, argv);
 
 			ret = RUN_ALL_TESTS();
-
-			ObjectManager::instance()->shutdown();
 #endif
 		} else if (arguments.contains("dumpNavMeshesToFile")) {
 			NavMeshManager::instance()->info("Dumping nav meshes to files...", true);
@@ -84,7 +104,7 @@ int main(int argc, char* argv[]) {
 	} catch (const Exception& e) {
 		e.printStackTrace();
 	} catch (...) {
-		System::err << "unreported exception caught main()" << endl;
+		System::out << "unreported exception caught main()" << endl;
 	}
 
 	pthread_exit(&ret);

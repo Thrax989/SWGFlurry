@@ -28,6 +28,7 @@ protected:
 
 public:
 	TerrainManager();
+
 	~TerrainManager();
 
 	bool initialize(const String& terrainFile);
@@ -39,7 +40,7 @@ public:
 	/**
 	 *  	|--------------- | x1,y1
 	 *  	|----------------| <- stepping
-	 *	|----------------|
+	 *	    |----------------|
 	 *  	|----------------|
 	 *x0,y0 |----------------|
 	 */

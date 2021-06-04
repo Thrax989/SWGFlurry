@@ -14,7 +14,7 @@ ZonePacketHandler::ZonePacketHandler(const String& s, Zone * z) : Logger(s) {
 }
 
 void ZonePacketHandler::handleMessage(Message* pack) {
-	debug() << "parsing " << *pack;
+	//info("parsing " + pack->toStringData(), true);
 
 	sys::uint16 opcount = pack->parseShort();
 	sys::uint32 opcode = pack->parseInt();
@@ -175,7 +175,9 @@ void ZonePacketHandler::handleSceneObjectCreateMessage(Message* pack) {
 	SceneObject* object = objectManager->createObject(crc, objectID);
 
 	if (object == nullptr) {
-		client->debug() << "unknown crc 0x" << hex << crc << " received in SceneObjectCreateMessage";
+		StringBuffer infoMsg;
+		infoMsg << "unknown crc 0x" << hex << crc << " received in SceneObjectCreateMessage";
+		client->debug(infoMsg.toString());
 		return;
 	}
 

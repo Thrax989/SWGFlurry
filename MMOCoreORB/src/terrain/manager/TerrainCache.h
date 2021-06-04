@@ -34,6 +34,7 @@ protected:
 
 public:
 	TerrainCache(TerrainManager* terrainManager);
+
 	~TerrainCache();
 
 private:

@@ -20,7 +20,7 @@ namespace detail {
 	inline uint64 hashPosition(const float x, const float y) {
 		union {
 			uint32 uval;
-			float fval;
+				float fval;
 		} v;
 
 		v.fval = x ;
@@ -45,12 +45,9 @@ public:
 	}
 
 	int compareTo(const QuadTreeEntryInterfaceBase<BasicQuadTreeNode>* obj) const override {
-		auto oid = getObjectID();
-		auto targetOid = obj->getObjectID();
-
-		if (oid < targetOid)
+		if (getObjectID() < obj->getObjectID())
 			return 1;
-		else if (oid > targetOid)
+		else if (getObjectID() > obj->getObjectID())
 			return -1;
 		else
 			return 0;

@@ -40,8 +40,6 @@ protected:
 
 	bool sliceable;
 
-	bool jediRobe;
-
 	bool invisible;
 
 	unsigned int faction;
@@ -70,8 +68,8 @@ public:
 
 	~SharedTangibleObjectTemplate();
 
-	void readObject(LuaObject* templateData) override;
-	void readObject(IffStream* iffStream) override;
+	void readObject(LuaObject* templateData);
+	void readObject(IffStream* iffStream);
 
 	void parseFileData(IffStream* str);
 
@@ -110,7 +108,7 @@ public:
 		return level;
 	}
 
-	inline bool isInvisible() const {
+	inline bool isInvisible() {
 		return invisible;
 	}
 
@@ -156,14 +154,6 @@ public:
 
 	inline bool getSliceable() const {
 		return sliceable;
-	}
-
-	inline bool isJediRobe() const {
-		return jediRobe;
-	}
-
-	void setJediRobe(bool jediRobe) {
-		this->jediRobe = jediRobe;
 	}
 
 	const Vector<short >* getNumberExperimentalProperties() const {
@@ -214,7 +204,7 @@ public:
 		return skillMods.get(mod);
 	}
 
-	bool isSharedTangibleObjectTemplate() const override {
+	bool isSharedTangibleObjectTemplate() {
 		return true;
 	}
 };

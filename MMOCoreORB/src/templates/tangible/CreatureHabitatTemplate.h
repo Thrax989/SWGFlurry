@@ -26,7 +26,7 @@ public:
 
 	}
 
-	bool isCreatureHabitatTemplate() const {
+	bool isCreatureHabitatTemplate() {
 		return true;
 	}
 

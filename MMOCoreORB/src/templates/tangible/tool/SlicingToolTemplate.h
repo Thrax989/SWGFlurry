@@ -23,10 +23,11 @@ public:
 
 	}
 
-	void readObject(LuaObject* templateData) override {
+	void readObject(LuaObject* templateData) {
 		SharedTangibleObjectTemplate::readObject(templateData);
 
 		effectiveness = templateData->getFloatField("effectiveness");
+
 	}
 
 	float getEffectiveness() const {

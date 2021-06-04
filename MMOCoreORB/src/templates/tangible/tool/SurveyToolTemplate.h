@@ -12,6 +12,7 @@
 
 class SurveyToolTemplate : public SharedTangibleObjectTemplate {
 private:
+
 	int toolType;
 	String surveyType;
 	String surveyAnimation;
@@ -26,7 +27,7 @@ public:
 
 	}
 
-	void readObject(LuaObject* templateData) override {
+	void readObject(LuaObject* templateData) {
 		SharedTangibleObjectTemplate::readObject(templateData);
 
 		toolType = templateData->getIntField("toolType");
@@ -35,19 +36,19 @@ public:
 		sampleAnimation = templateData->getStringField("sampleAnimation");
 	}
 
-	int getToolType() const {
+	int getToolType() {
 		return toolType;
 	}
 
-	const String& getSurveyType() const {
+	String getSurveyType() {
 		return surveyType;
 	}
 
-	const String& getSurveyAnimation() const {
+	String getSurveyAnimation() {
 		return surveyAnimation;
 	}
 
-	const String& getSampleAnimation() const {
+	String getSampleAnimation() {
 		return sampleAnimation;
 	}
 };

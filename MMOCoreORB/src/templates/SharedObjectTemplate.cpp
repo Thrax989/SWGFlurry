@@ -185,7 +185,7 @@ void SharedObjectTemplate::parseVariableData(const String& varName, LuaObject* t
 		LuaObject obj(state);
 
 		if (obj.isValidTable()) {
-			for (int i = 1; i <= obj.getTableSize(); ++i) {
+			for (int i = 1; i <= obj.getTableSize(); +i) {
 				LuaObject group = obj.getObjectAt(i);
 
 				groupPermissions.put(group.getStringAt(1).hashCode(), group.getIntAt(2));
@@ -365,7 +365,7 @@ void SharedObjectTemplate::readObject(IffStream* iffStream) {
 	uint32 nextType = iffStream->getNextFormType();
 
 	if (nextType != 'SHOT') {
-		warning() << "expecting SHOT got " << getType(nextType) << " in " << iffStream->getFileName();
+		warning() << "expecting SHOT got " << getType(nextType) << " in file: " << iffStream->getFileName();
 
 		iffStream->openForm(nextType);
 		iffStream->closeForm(nextType);
