@@ -47,11 +47,8 @@ int Rarelootcrate2MenuComponent::handleObjectMenuSelect(SceneObject* sceneObject
 	lootManager->createLoot(inventory, "lootcollectiontierdiamond", 300);
 	lootManager->createLoot(inventory, "lootcollectiontierdiamond", 300);
 	lootManager->createLoot(inventory, "lootcollectiontierdiamond", 300);
-	lootManager->createLoot(inventory, "lootcollectiontierdiamond", 300);
-	lootManager->createLoot(inventory, "lootcollectiontierdiamond", 300);
-	lootManager->createLoot(inventory, "lootcollectiontierdiamond", 300);
-	lootManager->createLoot(inventory, "armor_attachments", 300);
-	lootManager->createLoot(inventory, "clothing_attachments", 300);
+	lootManager->createLoot(inventory, "boss_rare", 300);
+	lootManager->createLoot(inventory, "boss_rare", 300);
 	creature->playEffect("clienteffect/rare_loot.cef", "");
 	sceneObject->destroyObjectFromWorld(true);
 	}

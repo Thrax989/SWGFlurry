@@ -46,9 +46,6 @@ int DiamondMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creat
 	lootManager->createLoot(inventory, "lootcollectiontierdiamond", 300);
 	lootManager->createLoot(inventory, "lootcollectiontierdiamond", 300);
 	lootManager->createLoot(inventory, "lootcollectiontierdiamond", 300);
-	lootManager->createLoot(inventory, "lootcollectiontierdiamond", 300);
-	lootManager->createLoot(inventory, "armor_attachments", 300);
-	lootManager->createLoot(inventory, "clothing_attachments", 300);
 	creature->playEffect("clienteffect/level_granted.cef", "");
 	sceneObject->destroyObjectFromWorld(true);
 	}

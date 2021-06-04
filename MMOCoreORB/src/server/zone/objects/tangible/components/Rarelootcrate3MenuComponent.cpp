@@ -45,13 +45,8 @@ int Rarelootcrate3MenuComponent::handleObjectMenuSelect(SceneObject* sceneObject
 	lootManager->createLoot(inventory, "jedi_belt_group", 300);
 	lootManager->createLoot(inventory, "resource_deed_loot", 300);
 	lootManager->createLoot(inventory, "resource_crate_loot", 300);
-	lootManager->createLoot(inventory, "lootcollectiontierdiamond", 300);
-	lootManager->createLoot(inventory, "lootcollectiontierdiamond", 300);
-	lootManager->createLoot(inventory, "lootcollectiontierdiamond", 300);
-	lootManager->createLoot(inventory, "lootcollectiontierdiamond", 300);
-	lootManager->createLoot(inventory, "lootcollectiontierdiamond", 300);
-	lootManager->createLoot(inventory, "lootcollectiontierdiamond", 300);
-	lootManager->createLoot(inventory, "lootcollectiontierdiamond", 300);
+	lootManager->createLoot(inventory, "jedi_comp_group", 300);
+	lootManager->createLoot(inventory, "legendary_comp_group", 300);
 	lootManager->createLoot(inventory, "lootcollectiontierdiamond", 300);
 	lootManager->createLoot(inventory, "lootcollectiontierdiamond", 300);
 	lootManager->createLoot(inventory, "lootcollectiontierdiamond", 300);
