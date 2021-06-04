@@ -58,7 +58,7 @@ int CreateVendorSessionImplementation::initializeSession() {
 		if(vendorData == nullptr)
 			continue;
 
-		if (!vendorData->isInitialized()) {
+		if (!vendorData->isInitialized() && !vendorData->isPackedUp()) {
 			player->sendSystemMessage("@player_structure:already_creating"); // You are already creating a vendor.
 			cancelSession();
 			return 0;
