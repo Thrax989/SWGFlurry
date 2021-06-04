@@ -15,7 +15,7 @@ end
 function GeneratePatrolBase:doAction(pAgent)
 	if (pAgent ~= nil) then
 		local agent = AiAgent(pAgent)
-		if agent:generatePatrol(5, 10) then
+		if agent:generatePatrol(10, 20) then
 			return BEHAVIOR_SUCCESS
 		else
 			return BEHAVIOR_FAILURE
