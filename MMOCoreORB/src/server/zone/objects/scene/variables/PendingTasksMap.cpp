@@ -40,7 +40,7 @@ bool PendingTasksMap::contains(const String& name) {
 	return taskMap.contains(name);
 }
 
-Reference<Task*> PendingTasksMap::get(const String& name) const {
+Reference<Task*> PendingTasksMap::get(const String& name) {
 	Locker guard(&mutex);
 
 	return taskMap.get(name);
@@ -58,7 +58,7 @@ void PendingTasksMap::putOrdered(Task* task, server::zone::objects::scene::Scene
 	}
 }
 
-int PendingTasksMap::getOrderedTasksSize() const {
+int PendingTasksMap::getOrderedTasksSize() {
 	return orderedTasks.size();
 }
 
@@ -91,4 +91,5 @@ Reference<Task*> PendingTasksMap::getNextOrderedTask() {
 
 	return task;
 }
+
 

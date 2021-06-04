@@ -69,7 +69,7 @@ void SceneObjectImplementation::initializeTransientMembers() {
 		createObjectMenuComponent();
 	}
 
-	if (dataObjectComponent != nullptr) {
+	if(dataObjectComponent != nullptr) {
 		dataObjectComponent->setParent(asSceneObject());
 		dataObjectComponent->initializeTransientMembers();
 	}
@@ -80,10 +80,6 @@ void SceneObjectImplementation::initializeTransientMembers() {
 	setLogging(false);
 
 	setLoggingName("SceneObject");
-
-	if (originalObjectID == 0) {
-		originalObjectID = getObjectID();
-	}
 }
 
 void SceneObjectImplementation::initializePrivateData() {
@@ -135,10 +131,6 @@ void SceneObjectImplementation::initializePrivateData() {
 	childObjects.setNoDuplicateInsertPlan();
 
 	collidableObject = false;
-
-	originalObjectID = 0;
-
-	forceNoTrade = false;
 }
 
 void SceneObjectImplementation::loadTemplateData(SharedObjectTemplate* templateData) {
@@ -191,7 +183,6 @@ void SceneObjectImplementation::createContainerComponent() {
 void SceneObjectImplementation::createObjectMenuComponent() {
 	setObjectMenuComponent(templateObject->getObjectMenuComponent());
 }
-
 void SceneObjectImplementation::createComponents() {
 	if (templateObject != nullptr) {
 		String zoneComponentClassName = templateObject->getZoneComponent();
@@ -199,8 +190,7 @@ void SceneObjectImplementation::createComponents() {
 		//zoneComponent->initialize(_this.getReferenceUnsafe());
 
 		if (zoneComponent == nullptr) {
-			info() << "zone component \'" << zoneComponentClassName << "\' null in " <<
-			       	templateObject->getFullTemplateString();
+			info("zone component null \'" + zoneComponentClassName + "\' in " + templateObject->getFullTemplateString());
 		}
 
 		createObjectMenuComponent();
@@ -210,7 +200,7 @@ void SceneObjectImplementation::createComponents() {
 			attributeListComponent = ComponentManager::instance()->getComponent<AttributeListComponent*>(attributeListComponentName);
 
 			if (attributeListComponent == nullptr) {
-				info() << "attributeList component null for " << templateObject->getFullTemplateString();
+				info("attributeList component null for " + templateObject->getFullTemplateString());
 			}
 		}
 
@@ -245,7 +235,7 @@ BaseMessage* SceneObjectImplementation::link(uint64 objectID, uint32 containment
 }
 
 void SceneObjectImplementation::destroyObjectFromDatabase(bool destroyContainedObjects) {
-	debug() << "deleting from database";
+	info() << "deleting from database";
 
 	fatal(!isPlayerCreature()) << "attempting to delete a player creature from database";
 
@@ -331,7 +321,7 @@ void SceneObjectImplementation::sendTo(SceneObject* player, bool doClose, bool f
 		sendContainerObjectsTo(player, forceLoadContainer);
 
 		sendSlottedObjectsTo(player);
-	} catch (const Exception& e) {
+	} catch (Exception& e) {
 		error(e.getMessage());
 		e.printStackTrace();
 	}
@@ -423,11 +413,10 @@ void SceneObjectImplementation::setObjectMenuComponent(const String& name) {
 
 		if (test.isValidTable()) {
 			objectMenuComponent = new LuaObjectMenuComponent(name);
-			debug() << "New Lua ObjectMenuComponent created: '" << name << "' for " << templateObject->getFullTemplateString();
-
+			debug("New Lua ObjectMenuComponent created: '" + name + "' for " + templateObject->getFullTemplateString());
 			ComponentManager::instance()->putComponent(name, objectMenuComponent);
 		} else {
-			error() << "ObjectMenuComponent not found: '" << name << "' for " << templateObject->getFullTemplateString();
+			error("ObjectMenuComponent not found: '" + name + "' for " + templateObject->getFullTemplateString());
 		}
 
 		test.pop();
@@ -446,11 +435,10 @@ void SceneObjectImplementation::setContainerComponent(const String& name) {
 
 		if (test.isValidTable()) {
 			containerComponent = new LuaContainerComponent(name);
-			debug() << "New Lua ContainerComponent created: '" << name << "' for " << templateObject->getFullTemplateString();
-
+			debug("New Lua ContainerComponent created: '" + name + "' for " + templateObject->getFullTemplateString());
 			ComponentManager::instance()->putComponent(name, containerComponent);
 		} else {
-			error() << "ContainerComponent not found: '" <<  name << "' for " << templateObject->getFullTemplateString();
+			error("ContainerComponent not found: '" + name + "' for " + templateObject->getFullTemplateString());
 		}
 
 		test.pop();
@@ -503,11 +491,16 @@ void SceneObjectImplementation::sendDestroyTo(SceneObject* player) {
 	if (staticObject)
 		return;
 
+	/*StringBuffer msg;
+	msg << "sending destroy to " << player->getLoggingName();
+	info(msg.toString(), true);*/
+
 	BaseMessage* msg = new SceneObjectDestroyMessage(asSceneObject());
 	player->sendMessage(msg);
 }
 
 void SceneObjectImplementation::sendAttributeListTo(CreatureObject* object) {
+
 	AttributeListMessage* alm = new AttributeListMessage(asSceneObject());
 
 	try {
@@ -517,7 +510,7 @@ void SceneObjectImplementation::sendAttributeListTo(CreatureObject* object) {
 
 		attributeListComponent->fillAttributeList(alm, object, asSceneObject());
 
-	} catch (const Exception& e) {
+	} catch (Exception& e) {
 		error(e.getMessage());
 		e.printStackTrace();
 
@@ -535,7 +528,7 @@ void SceneObjectImplementation::sendAttributeListTo(CreatureObject* object) {
 }
 
 void SceneObjectImplementation::broadcastObjectPrivate(SceneObject* object, SceneObject* selfObject) {
-	const ZoneServer* zoneServer = getZoneServer();
+	ZoneServer* zoneServer = getZoneServer();
 
 	if (zoneServer == nullptr || zoneServer->isServerLoading() || zoneServer->isServerShuttingDown())
 		return;
@@ -587,7 +580,7 @@ void SceneObjectImplementation::broadcastObject(SceneObject* object, bool sendSe
 }
 
 void SceneObjectImplementation::broadcastDestroyPrivate(SceneObject* object, SceneObject* selfObject) {
-	const ZoneServer* zoneServer = getZoneServer();
+	ZoneServer* zoneServer = getZoneServer();
 
 	if (zoneServer == nullptr || zoneServer->isServerLoading() || zoneServer->isServerShuttingDown())
 		return;
@@ -642,7 +635,7 @@ void SceneObjectImplementation::broadcastDestroy(SceneObject* object, bool sendS
 }
 
 void SceneObjectImplementation::broadcastMessagePrivate(BasePacket* message, SceneObject* selfObject, bool lockZone) {
-	const ZoneServer* zoneServer = getZoneServer();
+	ZoneServer* zoneServer = getZoneServer();
 
 	if (zoneServer == nullptr || zoneServer->isServerLoading() || zoneServer->isServerShuttingDown()) {
 		delete message;
@@ -681,7 +674,7 @@ void SceneObjectImplementation::broadcastMessagePrivate(BasePacket* message, Sce
 			closeobjects->safeCopyReceiversTo(closeNoneReference, CloseObjectsVector::PLAYERTYPE);
 		}
 
-	} catch (const Exception& e) {
+	} catch (Exception& e) {
 		error(e.getMessage());
 		e.printStackTrace();
 
@@ -720,7 +713,7 @@ void SceneObjectImplementation::broadcastMessage(BasePacket* message, bool sendS
 }
 
 void SceneObjectImplementation::broadcastMessagesPrivate(Vector<BasePacket*>* messages, SceneObject* selfObject) {
-	const ZoneServer* zoneServer = getZoneServer();
+	ZoneServer* zoneServer = getZoneServer();
 
 	static const auto clearMessages = [](auto messages) {
 		messages->forEach([](auto message) { delete message; });
@@ -813,9 +806,7 @@ void SceneObjectImplementation::broadcastMessages(Vector<BasePacket*>* messages,
 }
 
 int SceneObjectImplementation::inRangeObjects(unsigned int gameObjectType, float range) {
-	auto zone = getZoneUnsafe();
-
-	if (zone == nullptr)
+	if (getZoneUnsafe() == nullptr)
 		return 0;
 
 	int numberOfObjects = 0;
@@ -1013,7 +1004,16 @@ SceneObject* SceneObjectImplementation::getRootParentUnsafe() {
 	return static_cast<SceneObject*>(QuadTreeEntryImplementation::getRootParentUnsafe());
 }
 
-void SceneObjectImplementation::updateSavedRootParentRecursive(SceneObject* newRoot) {
+void SceneObjectImplementation::updateSavedRootParentRecursive(SceneObject* newRoot, int maxDepth) {
+	if (maxDepth <= 0) {
+		StringBuffer msg;
+
+		msg << "maxDepth reached in updateSavedRootParentRecursive("
+			<< getObjectID() << ") newRoot = "
+		    << (newRoot == nullptr ? 0 : newRoot->getObjectID())
+		;
+		throw Exception(msg.toString());
+	}
 	Locker locker(&parentLock);
 
 	if (newRoot == asSceneObject())
@@ -1027,13 +1027,13 @@ void SceneObjectImplementation::updateSavedRootParentRecursive(SceneObject* newR
 		for (int j = 0; j < getContainerObjectsSize(); ++j) {
 			ManagedReference<SceneObject*> object = getContainerObject(j);
 
-			object->updateSavedRootParentRecursive(newRoot);
+			object->updateSavedRootParentRecursive(newRoot, maxDepth - 1);
 		}
 
 		for (int i = 0; i < getSlottedObjectsSize(); ++i) {
 			ManagedReference<SceneObject*> object = getSlottedObject(i);
 
-			object->updateSavedRootParentRecursive(newRoot);
+			object->updateSavedRootParentRecursive(newRoot, maxDepth - 1);
 		}
 	}
 }
@@ -1093,6 +1093,7 @@ Zone* SceneObjectImplementation::getZone() {
 		return zone;
 	}
 }
+
 
 Zone* SceneObjectImplementation::getZoneUnsafe() const {
 	auto root = const_cast<SceneObjectImplementation*>(this)->getRootParentUnsafe();
@@ -1184,11 +1185,12 @@ void SceneObjectImplementation::rotate(int degrees) {
 }
 
 void SceneObjectImplementation::rotateXaxis(int degrees) {
-	Vector3 unity(1, 0, 0);
-	direction.rotate(unity, degrees);
+        Vector3 unity(1, 0, 0);
+ 	direction.rotate(unity, degrees);
 }
+
 void SceneObjectImplementation::rotateYaxis(int degrees) {
-	Vector3 unity(0, 0, 1);
+        Vector3 unity(0, 0, 1);
 	direction.rotate(unity, degrees);
 }
 
@@ -1234,7 +1236,7 @@ Vector3 SceneObjectImplementation::getWorldPosition() {
 	return position;
 }
 
-Vector3 SceneObjectImplementation::getCoordinate(float distance, float angleDegrees, bool includeZ) const {
+Vector3 SceneObjectImplementation::getCoordinate(float distance, float angleDegrees, bool includeZ) {
 	float angleRads = angleDegrees * (M_PI / 180.0f);
 	float newAngle = angleRads + (M_PI / 2) - direction.getRadians();
 
@@ -1310,7 +1312,7 @@ void SceneObjectImplementation::createChildObjects() {
 	bool client = isClientObject();
 
 	for (int i = 0; i < templateObject->getChildObjectsSize(); ++i) {
-		const auto child = templateObject->getChildObject(i);
+		ChildObject* child = templateObject->getChildObject(i);
 
 		if (child == nullptr)
 			continue;
@@ -1452,7 +1454,7 @@ void SceneObjectImplementation::faceObject(SceneObject* obj, bool notifyClient) 
 	float err = fabs(directionangle - direction.getRadians());
 
 	if (err < 0.05) {
-		debug() << "not updating " << directionangle;
+		//info("not updating " + String::valueOf(directionangle), true);
 		return;
 	}
 
@@ -1577,15 +1579,13 @@ SortedVector<ManagedReference<Observer* > > SceneObjectImplementation::getObserv
 	return observerEventMap.getObservers(eventType);
 }
 
-bool SceneObjectImplementation::isInWater() const {
-	auto zone = getZoneUnsafe();
-
-	if (zone == nullptr) {
+bool SceneObjectImplementation::isInWater() {
+	if (getZoneUnsafe() == nullptr) {
 		error("Zone is nullptr SceneObjectImplementation::isInWater");
 		return false;
 	}
 
-	auto planetManager = zone->getPlanetManager();
+	ManagedReference<PlanetManager*> planetManager = getZoneUnsafe()->getPlanetManager();
 
 	if (planetManager == nullptr) {
 		error("Unable to get PlanetManager SceneObjectImplementation::isInWater");
@@ -1611,7 +1611,7 @@ bool SceneObjectImplementation::containsNoTradeObjectRecursive() {
 	return false;
 }
 
-String SceneObjectImplementation::getDisplayedName() const {
+String SceneObjectImplementation::getDisplayedName() {
 	if (!customName.isEmpty())
 		return customName.toString();
 
@@ -1692,7 +1692,7 @@ Reference<SceneObject*> SceneObjectImplementation::getContainerObjectRecursive(u
 }
 
 const Vector<String>* SceneObjectImplementation::getArrangementDescriptor(int idx) const {
-	return &templateObject->getArrangementDescriptors().get(idx);
+	return &templateObject->getArrangementDescriptors()->get(idx);
 }
 
 bool SceneObjectImplementation::hasObjectInSlottedContainer(SceneObject* object) {
@@ -1779,10 +1779,10 @@ Reference<SceneObject*> SceneObjectImplementation::getCraftedComponentsSatchel()
 }
 
 int SceneObjectImplementation::getArrangementDescriptorSize() const {
-	return templateObject->getArrangementDescriptors().size();
+	return templateObject->getArrangementDescriptors()->size();
 }
 
-bool SceneObjectImplementation::isDataPad() const {
+bool SceneObjectImplementation::isDataPad() {
 	return templateObject->getFullTemplateString().contains("datapad");
 }
 
@@ -1935,60 +1935,38 @@ int SceneObjectImplementation::compareTo(SceneObject* obj) {
 	return asSceneObject()->compareTo(obj);
 }
 
-int SceneObjectImplementation::writeRecursiveJSON(JSONSerializationType& j, int maxDepth, bool pruneCreo, bool pruneCraftedComponents, Vector<uint64>* oidPath) {
+int SceneObjectImplementation::writeRecursiveJSON(JSONSerializationType& j, int maxDepth) {
 	if (maxDepth <= 0)
 		return 0;
 
-	if (oidPath == nullptr)
-		oidPath = new Vector<uint64>();
-
 	int count = 0;
-
-	Locker lock(asSceneObject());
 
 	JSONSerializationType thisObject;
 	writeJSON(thisObject);
 	thisObject["_maxDepth"] = maxDepth;
-	thisObject["_depth"] = oidPath->size();
-	thisObject["_oid"] = getObjectID();
-	thisObject["_className"] = _className;
-
-	oidPath->add(getObjectID());
-
-	auto childObjects = *getChildObjects(); // Get a copy before we release the lock
-	auto craftingComponents = getSlottedObject("crafted_components");
-
-	lock.release();
-
-	auto oidPathJSON = JSONSerializationType::array();
-
-	for (int i = 0;i < oidPath->size();i++) {
-		oidPathJSON.push_back(oidPath->get(i));
-	}
-
-	thisObject["_oidPath"] = oidPathJSON;
-
 	j[String::valueOf(getObjectID()).toCharArray()] = thisObject;
 
 	count++;
-
-	if (pruneCreo && isCreatureObject()) {
-		return count;
-	}
 
 	for (int i = 0; i < getContainerObjectsSize(); ++i) {
 		auto obj = getContainerObject(i);
 
 		if (obj != nullptr) {
-			count += obj->writeRecursiveJSON(j, maxDepth - 1, pruneCreo, pruneCraftedComponents, oidPath);
+			ReadLocker locker(obj);
+
+			count += obj->writeRecursiveJSON(j, maxDepth - 1);
 		}
 	}
 
-	for (int i = 0;i < childObjects.size(); ++i) {
-		auto obj = childObjects.get(i);
+	auto childObjects = getChildObjects();
+
+	for (int i = 0;i < childObjects->size(); ++i) {
+		auto obj = childObjects->get(i);
 
 		if (obj != nullptr) {
-			count += obj->writeRecursiveJSON(j, maxDepth - 1, pruneCreo, pruneCraftedComponents, oidPath);
+			ReadLocker locker(obj);
+
+			count += obj->writeRecursiveJSON(j, maxDepth - 1);
 		}
 	}
 
@@ -1996,25 +1974,16 @@ int SceneObjectImplementation::writeRecursiveJSON(JSONSerializationType& j, int 
 		auto obj =  getSlottedObject(i);
 
 		if (obj != nullptr) {
-			if (pruneCraftedComponents && obj == craftingComponents) {
-				continue;
-			}
+			ReadLocker locker(obj);
 
-			count += obj->writeRecursiveJSON(j, maxDepth - 1, pruneCreo, pruneCraftedComponents, oidPath);
+			count += obj->writeRecursiveJSON(j, maxDepth - 1);
 		}
-	}
-
-	oidPath->remove(oidPath->size() - 1);
-
-	if (oidPath->size() == 0) {
-		delete oidPath;
 	}
 
 	return count;
 }
 
-String SceneObjectImplementation::exportJSON(const String& exportNote, int maxDepth, bool pruneCreo, bool pruneCraftedComponents) {
-	Time startTime;
+String SceneObjectImplementation::exportJSON(const String& exportNote, int maxDepth) {
 	uint64 oid = getObjectID();
 
 	// Collect object and all children to maxDepth
@@ -2026,28 +1995,20 @@ String SceneObjectImplementation::exportJSON(const String& exportNote, int maxDe
 	int count = 0;
 
 	try {
-		count = writeRecursiveJSON(exportedObjects, maxDepth, pruneCreo, pruneCraftedComponents);
+		count = writeRecursiveJSON(exportedObjects, maxDepth);
 	} catch (Exception& e) {
 		error() << "SceneObjectImplementation::writeRecursiveJSON(): failed:" << e.getMessage();
 	}
 
 	// Metadata
+	Time now;
 	nlohmann::json metaData = nlohmann::json::object();
-	metaData["exportTime"] = startTime.getFormattedTimeFull();
+	metaData["exportTime"] = now.getFormattedTimeFull();
 	metaData["exportNote"] = exportNote;
 	metaData["rootObjectID"] = oid;
 	metaData["rootObjectClassName"] = _className;
 	metaData["objectCount"] = count;
 	metaData["maxDepth"] = maxDepth;
-	metaData["msExport"] = startTime.miliDifference();
-
-	if (pruneCreo) {
-		metaData["pruneCreatures"] = true;
-	}
-
-	if (pruneCraftedComponents) {
-		metaData["pruneCraftedComponents"] = true;
-	}
 
 	// Root object is meta "exportObject"
 	nlohmann::json exportObject;
@@ -2059,21 +2020,15 @@ String SceneObjectImplementation::exportJSON(const String& exportNote, int maxDe
 
 	// Spread the files out across directories
 	fileNameBuf << "exports";
-	if (!File::doMkdir(fileNameBuf.toString().toCharArray(), 0770)) {
-		warning() << "could not create " << fileNameBuf << " directory";
-	}
+	mkdir(fileNameBuf.toString().toCharArray(), 0770);
 
-	fileNameBuf << File::directorySeparator() << String::hexvalueOf((int64)((oid & 0xFFFF000000000000) >> 48));
-	if (!File::doMkdir(fileNameBuf.toString().toCharArray(), 0770)) {
-		warning() << "could not create " << fileNameBuf << " directory";
-	}
+	fileNameBuf << "/" << String::hexvalueOf((int64)((oid & 0xFFFF000000000000) >> 48));
+	mkdir(fileNameBuf.toString().toCharArray(), 0770);
 
-	fileNameBuf << File::directorySeparator() << String::hexvalueOf((int64)((oid & 0x0000FFFFFF000000) >> 24));
-	if (!File::doMkdir(fileNameBuf.toString().toCharArray(), 0770)) {
-		warning() << "could not create " << fileNameBuf << " directory";
-	}
+	fileNameBuf << "/" << String::hexvalueOf((int64)((oid & 0x0000FFFFFF000000) >> 24));
+	mkdir(fileNameBuf.toString().toCharArray(), 0770);
 
-	fileNameBuf << File::directorySeparator() << oid << "-" << startTime.getMiliTime() << ".json";
+	fileNameBuf << "/" << String::valueOf(oid) << "-" << now.getMiliTime() << ".json";
 
 	String fileName = fileNameBuf.toString();
 
@@ -2082,51 +2037,4 @@ String SceneObjectImplementation::exportJSON(const String& exportNote, int maxDe
 	jsonFile.close();
 
 	return fileName;
-}
-
-void SceneObjectImplementation::getChildrenRecursive(SortedVector<uint64>& childObjectsFound, int maxDepth, bool pruneCreo, bool pruneCraftedComponents) {
-	if (maxDepth <= 0)
-		return;
-
-	Locker lock(asSceneObject());
-
-	if (pruneCreo && isCreatureObject()) {
-		return;
-	}
-
-	auto childObjects = *getChildObjects(); // Get a copy before we release the lock
-	auto craftingComponents = getSlottedObject("crafted_components");
-
-	lock.release();
-
-	for (int i = 0; i < getContainerObjectsSize(); ++i) {
-		auto obj = getContainerObject(i);
-
-		if (obj != nullptr) {
-			childObjectsFound.put(obj->getObjectID());
-			obj->getChildrenRecursive(childObjectsFound, maxDepth - 1, pruneCreo, pruneCraftedComponents);
-		}
-	}
-
-	for (int i = 0;i < childObjects.size(); ++i) {
-		auto obj = childObjects.get(i);
-
-		if (obj != nullptr) {
-			childObjectsFound.put(obj->getObjectID());
-			obj->getChildrenRecursive(childObjectsFound, maxDepth - 1, pruneCreo, pruneCraftedComponents);
-		}
-	}
-
-	for (int i = 0;i < getSlottedObjectsSize(); ++i) {
-		auto obj =  getSlottedObject(i);
-
-		if (obj != nullptr) {
-			if (pruneCraftedComponents && obj == craftingComponents) {
-				continue;
-			}
-
-			childObjectsFound.put(obj->getObjectID());
-			obj->getChildrenRecursive(childObjectsFound, maxDepth - 1, pruneCreo, pruneCraftedComponents);
-		}
-	}
 }

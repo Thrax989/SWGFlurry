@@ -59,6 +59,69 @@ int ContainerComponent::canAddObject(SceneObject* sceneObject, SceneObject* obje
 		}
 	}
 
+	String validationError;
+
+	switch (sceneObject->getContainerType()) {
+	case ContainerType::NONE: // Nothing allowed
+		validationError = "ContainerType is NONE";
+		break;
+
+	case ContainerType::SLOTTED: // Only slot transfer allowed
+		if (containmentType < 4) {
+			validationError = "ContainerType is SLOTTED but ContainerType < 4";
+		}
+		break;
+
+	case ContainerType::VOLUME: // Only container transfer allowed of tangible object
+		if (containmentType != -1 || !object->isTangibleObject()) {
+			validationError = "ContainerType is VOLUME but !isTangibleObject()";
+		}
+		break;
+
+	case ContainerType::INTANGIBLE: // Only intagible objects allowed
+		if (containmentType != -1 || object->isTangibleObject()) {
+			validationError = "ContainerType is INTANGIBLE but isTangibleObject()";
+		}
+		break;
+
+	case ContainerType::GENERIC: // Generic container transfer
+		if (containmentType != -1) {
+			validationError = "ContainerType is GENERIC but containmentType != -1";
+		}
+		break;
+
+	case ContainerType::RIDABLE: // Rideable
+		if (containmentType < 4) {
+			validationError = "ContainerType is RIDABLE but containmentType < 4";
+		} else if (!(object->isVehicleObject() || object->isMount())) {
+			validationError = "ContainerType is RIDABLE but not (isVehicleObject or isMount)";
+		}
+		break;
+	}
+
+	if (validationError.isEmpty()) {
+		// Check for any parent that is containerType == NONE
+		for (auto parent = sceneObject->getParent().get(); parent != nullptr; parent = parent->getParent().get()) {
+			Locker lock(parent);
+
+			if (parent->getContainerType() == ContainerType::NONE) {
+				validationError = "ContainerType==NONE: oid " + String::valueOf(parent->getObjectID());
+				break;
+			}
+		}
+	}
+
+	if (!validationError.isEmpty()) {
+		sceneObject->error()
+			<< "canAddObject: invalid attempt for containmentType "
+			<< containmentType << " to add " << object->getObjectID()
+			<< " into " << sceneObject->getObjectID() << " (ContainerType " << sceneObject->getContainerType() << ") - "
+			<< validationError
+			;
+		errorDescription = "@container_error_message:container28";
+		return TransferErrorCode::CANTADD;
+	}
+
 	Locker contLocker(sceneObject->getContainerLock());
 
 	const VectorMap<String, ManagedReference<SceneObject*> >* slottedObjects = sceneObject->getSlottedObjects();
@@ -85,7 +148,6 @@ int ContainerComponent::canAddObject(SceneObject* sceneObject, SceneObject* obje
 
 			return TransferErrorCode::CONTAINERFULL;
 		}
-
 	} else {
 		sceneObject->error("unknown containmentType in canAddObject type " + String::valueOf(containmentType));
 
@@ -301,10 +363,15 @@ bool ContainerComponent::removeObject(SceneObject* sceneObject, SceneObject* obj
 			for (int i = 0; i < descriptors->size(); ++i)
 				slottedObjects->drop(descriptors->get(i));
 		}
-
-		if (object->isRobeObject()) {
-			if (slottedObjects->get("back") != nullptr && slottedObjects->get("back")->isRobeObject())
+		if (object->isRobeObject() && slottedObjects->get("back") != NULL){
+			if (slottedObjects->get("back")->isRobeObject())
 				slottedObjects->drop("back");
+		}
+
+
+		if (object->isRobeObject() && slottedObjects->get("chest1") != NULL){
+			if (slottedObjects->get("chest1")->isRobeObject())
+				slottedObjects->drop("chest1");
 		}
 	}
 
