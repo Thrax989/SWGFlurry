@@ -852,11 +852,25 @@ void StructureManager::promptDeleteAllItems(CreatureObject* creature,
 
 void StructureManager::promptFindLostItems(CreatureObject* creature,
 		StructureObject* structure) {
-	ManagedReference<SuiMessageBox*> sui = new SuiMessageBox(creature, 0x00);
+
+	ManagedReference<SuiListBox*> sui = new SuiListBox(creature, SuiWindowType::NONE, 0x00);
+	sui->setCallback(new FindLostItemsListSuiCallback(server));
 	sui->setUsingObject(structure);
 	sui->setPromptTitle("@player_structure:move_first_item"); //Find Lost Items
-	sui->setPromptText("@player_structure:move_first_item_d"); //This command will move the first item in your house to your location...
-	sui->setCallback(new FindLostItemsSuiCallback(server));
+	sui->setPromptText("This list contains all the objects inside this house. Select an object and click OK to have it moved to your location.");
+
+	Reference<BuildingObject*> build = cast<BuildingObject*>(structure);
+
+	for (uint32 i = 1; i <= build->getTotalCellNumber(); ++i) {
+		ManagedReference<CellObject*> cell = build->getCell(i);
+
+		for (int j = 0; j < cell->getContainerObjectsSize(); ++j) {
+			ManagedReference<SceneObject*> childObject = cell->getContainerObject(j);
+			if (!childObject->isTerminal() && !childObject->isVendor() && !childObject->isCreatureObject()) {
+				sui->addMenuItem(childObject->getDisplayedName(), childObject->getObjectID());
+			}
+		}
+	}
 
 	ManagedReference<PlayerObject*> ghost = creature->getPlayerObject();
 
