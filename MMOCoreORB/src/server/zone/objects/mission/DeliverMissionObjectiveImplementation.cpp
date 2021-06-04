@@ -101,7 +101,7 @@ bool DeliverMissionObjectiveImplementation::activateWithResult() {
 	if (targetSpawnPoint == nullptr) {
 		return false;
 	}
-	const Vector3* targetPosition = targetSpawnPoint->getPosition();
+	Vector3* targetPosition = targetSpawnPoint->getPosition();
 	if (targetPosition == nullptr) {
 		return false;
 	}

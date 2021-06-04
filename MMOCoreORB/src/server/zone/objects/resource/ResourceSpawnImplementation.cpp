@@ -160,7 +160,8 @@ int ResourceSpawnImplementation::getConcentration(bool jtl) const {
 }
 
 Vector<String> ResourceSpawnImplementation::getSpawnZones(int minpool, int maxpool,
-		const String& zonerestriction, Vector<String>& activeZones) const {
+		const String& zonerestriction, Vector<String>& activeZones) {
+
 	/**
 	 * Here we are using defined rules to set the number
 	 * of zones and specific zones of this specific spawn
@@ -168,12 +169,12 @@ Vector<String> ResourceSpawnImplementation::getSpawnZones(int minpool, int maxpo
 	Vector<String> zonenames;
 	int zonecount = 0;
 
-	if (minpool == maxpool)
+	if(minpool == maxpool)
 		zonecount = maxpool;
 	else
 		zonecount = System::random(maxpool - minpool) + minpool;
 
-	if (zonecount > activeZones.size())
+	if(zonecount > activeZones.size())
 		zonecount = activeZones.size();
 
 	/// If resource is zone restricted, add only the restricted zone
@@ -244,7 +245,8 @@ Reference<ResourceContainer*> ResourceSpawnImplementation::createResource(int un
    	if (units != 0)
    		newResource->setQuantity(units);
 
-   	newResource->setCustomObjectName(getFamilyName(), false);
+   	String resourceName = getFinalClass() + " (" + getName() + ")"; 
+    	newResource->setCustomObjectName(resourceName, false);
 
    	++containerReferenceCount;
 
@@ -261,6 +263,22 @@ void ResourceSpawnImplementation::decreaseContainerReferenceCount() {
 void ResourceSpawnImplementation::addStatsToDeedListBox(SuiListBox* suil) {
 	suil->setPromptTitle("@veteran:resource_name"); //Resource Name
 	suil->setPromptText("@veteran:confirm_choose_type"); //Please confirm that you would like to select this resource as your Veteran Reward Crate of Resources. Use the CANCEL button to go back and select a different resource.
+
+	String tempname = "Name = " + spawnName;
+	suil->addMenuItem(tempname);
+
+	for (int i = 0; i < spawnAttributes.size(); ++i) {
+		String attrib;
+		int value = getAttributeAndValue(attrib, i);
+
+		String tempstat = "@obj_attr_n:" + attrib + " = " + value;
+		suil->addMenuItem(tempstat);
+	}
+}
+
+void ResourceSpawnImplementation::addStatsToDeedListBoxCR(SuiListBox* suil) {
+	suil->setPromptTitle("Resource List");
+	suil->setPromptText("Here are the stats:");
 
 	String tempname = "Name = " + spawnName;
 	suil->addMenuItem(tempname);

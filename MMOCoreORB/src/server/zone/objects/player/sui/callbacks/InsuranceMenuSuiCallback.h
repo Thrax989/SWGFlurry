@@ -13,7 +13,6 @@
 #include "server/zone/objects/player/sui/listbox/SuiListBox.h"
 #include "server/zone/objects/player/sui/callbacks/InsuranceAllConfirmSuiCallback.h"
 #include "templates/params/OptionBitmask.h"
-#include "server/zone/objects/transaction/TransactionLog.h"
 
 class InsuranceMenuSuiCallback : public SuiCallback {
 public:
@@ -93,7 +92,7 @@ public:
 
 				Locker locker(item, player);
 
-				if (!(item->getOptionsBitmask() & OptionBitmask::INSURED) && (item->isArmorObject() || item->isWearableObject())) {
+				if (!(item->getOptionsBitmask() & OptionBitmask::INSURED) && (item->isWeaponObject() || item->isArmorObject() || item->isWearableObject())) {
 
 					if (bank < cost) {
 						int diff = cost - bank;
@@ -107,21 +106,9 @@ public:
 						}
 
 						//pay bank portion
-						TransactionLog trxBank(player, TrxCode::INSURANCESYSTEM, cost - diff);
-						trxBank.addRelatedObject(objectID);
-
 						player->subtractBankCredits(cost - diff);
-
-						TransactionLog trxCash(player, TrxCode::INSURANCESYSTEM, diff, true);
-						trxCash.addRelatedObject(objectID);
-						trxCash.addState("insuredCount", 1);
-						trxCash.groupWith(trxBank);
-
 						player->subtractCashCredits(diff);
 					} else {
-						TransactionLog trx(player, TrxCode::INSURANCESYSTEM, cost);
-						trx.addRelatedObject(objectID);
-						trx.addState("insuredCount", 1);
 						player->subtractBankCredits(cost);
 					}
 

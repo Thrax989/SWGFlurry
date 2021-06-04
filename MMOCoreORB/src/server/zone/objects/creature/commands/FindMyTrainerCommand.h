@@ -29,7 +29,46 @@ public:
 		if (ghost == nullptr)
 			return GENERALERROR;
 
-		if (ghost->getJediState() < 2 || !creature->hasSkill("force_title_jedi_rank_02"))
+		if (ghost->isAdmin()) {
+
+			ManagedReference<SceneObject* > targetObject =
+					server->getZoneServer()->getObject(target);
+
+			ManagedReference<CreatureObject*> player = nullptr;
+
+			StringTokenizer args(arguments.toString());
+
+			if(targetObject == nullptr || !targetObject->isPlayerCreature()) {
+
+				String firstName;
+				if(args.hasMoreTokens()) {
+					args.getStringToken(firstName);
+					player = server->getZoneServer()->getPlayerManager()->getPlayer(firstName);
+				}
+
+			} else {
+				player = cast<CreatureObject*>( targetObject.get());
+			}
+
+			if (player == nullptr) {
+				creature->sendSystemMessage("invalid arguments for command:  /findmytrainer <firstname> <reset>");
+				return GENERALERROR;
+			}
+
+			String action;
+			args.getStringToken(action);
+			if (action == "reset") {
+				PlayerObject* playerObject = player->getPlayerObject();
+				if (playerObject->getJediState() < 1)
+				return GENERALERROR;
+				setJediTrainer(playerObject);
+				creature->sendSystemMessage("Target player jedi skill trainer has been updated");
+				player->sendSystemMessage("Your jedi skill trainer has been updated.  Use /findmytrainer for the new location.");
+				return SUCCESS;
+			}
+		}
+
+		if (ghost->getJediState() < 1)
 			return GENERALERROR;
 
 		String planet = ghost->getTrainerZoneName();

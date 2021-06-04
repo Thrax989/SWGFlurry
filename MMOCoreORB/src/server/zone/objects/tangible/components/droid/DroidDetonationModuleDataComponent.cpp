@@ -22,7 +22,7 @@ DroidDetonationModuleDataComponent::~DroidDetonationModuleDataComponent() {
 
 }
 
-String DroidDetonationModuleDataComponent::getModuleName() const {
+String DroidDetonationModuleDataComponent::getModuleName() {
 	return String("detonation_module");
 }
 
@@ -94,7 +94,7 @@ void DroidDetonationModuleDataComponent::fillObjectMenuResponse(SceneObject* dro
 		return;
 
 	// Novice Bounty Hunter or Smuggler required to access radial
-	if (owner == player && (player->hasSkill("combat_bountyhunter_novice") || player->hasSkill("combat_smuggler_novice"))) {
+	if (owner == player && (player->hasSkill("combat_bountyhunter_novice") || player->hasSkill("combat_meleebountyhunter_novice") || player->hasSkill("combat_smuggler_novice"))) {
 		menuResponse->addRadialMenuItemToRadialID(132, DETONATE_DROID, 3, "@pet/droid_modules:detonate_droid");
 	}
 }
@@ -144,7 +144,7 @@ void DroidDetonationModuleDataComponent::deactivate() {
 	droid->removePendingTask("droid_detonation");
 }
 
-String DroidDetonationModuleDataComponent::toString() const {
+String DroidDetonationModuleDataComponent::toString() {
 	return BaseDroidModuleComponent::toString();
 }
 

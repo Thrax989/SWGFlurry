@@ -35,7 +35,6 @@
 
 #include "server/zone/objects/building/components/GCWBaseContainerComponent.h"
 #include "server/zone/objects/building/components/EnclaveContainerComponent.h"
-#include "server/zone/objects/transaction/TransactionLog.h"
 
 void BuildingObjectImplementation::initializeTransientMembers() {
 	StructureObjectImplementation::initializeTransientMembers();
@@ -118,6 +117,18 @@ int BuildingObjectImplementation::getCurrentNumberOfPlayerItems() {
 	return items;
 }
 
+int BuildingObjectImplementation::getCurrentNumberOfPlayerVendors() {
+	int vendors = 0;
+
+	for (int i = 0; i < cells.size(); ++i) {
+		auto& cell = cells.get(i);
+
+		vendors += cell->getCurrentNumberOfPlayerVendors();
+	}
+
+	return vendors;
+}
+
 void BuildingObjectImplementation::createCellObjects() {
 	for (int i = 0; i < totalCellNumber; ++i) {
 		auto newCell = getZoneServer()->createObject(0xAD431713, getPersistenceLevel());
@@ -147,10 +158,10 @@ void BuildingObjectImplementation::sendContainerObjectsTo(SceneObject* player, b
 }
 
 void BuildingObjectImplementation::sendTo(SceneObject* player, bool doClose, bool forceLoadContainer) {
-	debug("building sendto..");
+	//debug("building sendto..");
 
 	if (!isStaticBuilding()) { // send Baselines etc..
-		debug("sending building object create");
+		//debug("sending building object create");
 
 		SceneObjectImplementation::sendTo(player, doClose, forceLoadContainer);
 	} //else { // just send the objects that are in the building, without the cells because they are static in the client
@@ -355,7 +366,7 @@ void BuildingObjectImplementation::notifyRemoveFromZone() {
 
 void BuildingObjectImplementation::sendDestroyTo(SceneObject* player) {
 	if (!isStaticBuilding()) {
-		debug("sending building object destroy");
+		//debug("sending building object destroy");
 
 		SceneObjectImplementation::sendDestroyTo(player);
 	}
@@ -363,7 +374,7 @@ void BuildingObjectImplementation::sendDestroyTo(SceneObject* player) {
 
 void BuildingObjectImplementation::sendBaselinesTo(SceneObject* player) {
 	//send buios here
-	debug("sending building baselines");
+	//debug("sending building baselines");
 
 	BaseMessage* buio3 = new TangibleObjectMessage3(asBuildingObject());
 	player->sendMessage(buio3);
@@ -419,7 +430,7 @@ bool BuildingObjectImplementation::isAllowedEntry(CreatureObject* player) {
 }
 
 void BuildingObjectImplementation::notifyObjectInsertedToZone(SceneObject* object) {
-	debug("BuildingObjectImplementation::notifyInsertToZone");
+	//debug("BuildingObjectImplementation::notifyInsertToZone");
 
 	auto closeObjectsVector = getCloseObjects();
 	Vector<QuadTreeEntry*> closeObjects(closeObjectsVector->size(), 10);
@@ -909,8 +920,8 @@ void BuildingObjectImplementation::onExit(CreatureObject* player, uint64 parenti
 }
 
 uint32 BuildingObjectImplementation::getMaximumNumberOfPlayerItems() {
-	if (isCivicStructure() )
-		return 250;
+	//if (isCivicStructure() )
+		//return 250;
 
 	SharedStructureObjectTemplate* ssot = dynamic_cast<SharedStructureObjectTemplate*> (templateObject.get());
 
@@ -926,7 +937,7 @@ uint32 BuildingObjectImplementation::getMaximumNumberOfPlayerItems() {
 
 	auto maxItems = MAXPLAYERITEMS;
 
-	return Math::min(maxItems, lots * 100);
+	return Math::min(maxItems, lots * 200);
 }
 
 int BuildingObjectImplementation::notifyObjectInsertedToChild(SceneObject* object, SceneObject* child, SceneObject* oldParent) {
@@ -1175,9 +1186,6 @@ void BuildingObjectImplementation::payAccessFee(CreatureObject* player) {
 
 	ManagedReference<CreatureObject*> owner = getOwnerCreatureObject();
 
-	TransactionLog trx(player, owner, TrxCode::ACCESSFEE, accessFee, true);
-	trx.setAutoCommit(false);
-
 	player->subtractCashCredits(accessFee);
 
 	if (owner != nullptr) {
@@ -1185,10 +1193,7 @@ void BuildingObjectImplementation::payAccessFee(CreatureObject* player) {
 		owner->addBankCredits(accessFee, true);
 	} else {
 		error("Unable to pay access fee credits to owner");
-		trx.errorMessage() << "Unable to pay access fee to owner";
 	}
-
-	trx.commit();
 
 	if (paidAccessList.contains(player->getObjectID()))
 		paidAccessList.drop(player->getObjectID());
@@ -1830,4 +1835,17 @@ String BuildingObjectImplementation::getCellName(uint64 cellID) const {
 		return "";
 
 	return cellProperty->getName();
+}
+
+String BuildingObjectImplementation::getPackupMessage() {
+	if (!ConfigManager::instance()->getStructurePackupEnabled())
+		return "packup_not_eligible_01";
+
+	if (isCivicStructure() || isGCWBase())
+		return "packup_not_eligible_02";
+
+	if (getCurrentNumberOfPlayerItems() <= 0)
+		return "packup_not_eligible_03";
+
+	return "";
 }

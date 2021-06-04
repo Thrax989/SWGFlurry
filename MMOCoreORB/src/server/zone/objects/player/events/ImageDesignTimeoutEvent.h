@@ -12,7 +12,6 @@
 #define IMAGEDESIGNTIMEOUTEVENT_H_
 
 #include "engine/engine.h"
-#include "server/zone/objects/player/sessions/ImageDesignSession.h"
 
 namespace server {
 namespace zone {

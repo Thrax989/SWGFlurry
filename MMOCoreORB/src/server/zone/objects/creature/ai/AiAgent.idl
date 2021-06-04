@@ -511,7 +511,7 @@ class AiAgent extends CreatureObject {
 
 		numberOfPlayersInRange.set(0);
 
-		if (moveEvent) {
+		if (moveEvent != null) {
 			moveEvent.clearCreatureObject();
 			moveEvent = null;
 		}
@@ -519,7 +519,7 @@ class AiAgent extends CreatureObject {
 
 	@preLocked
 	public void destroyObjectFromDatabase(boolean destroyContainedObjects = false) {
-		if (petDeed) {
+		if (petDeed != null) {
 			petDeed.destroyObjectFromDatabase(true);
 		}
 
@@ -807,10 +807,10 @@ class AiAgent extends CreatureObject {
 
 	@dirty
 	public abstract float getKinetic() {
-		if (petDeed) {
+		if (petDeed != null) {
 			return getReducedResist(petDeed.getKinetic());
 		}
-		if (!npcTemplate.get())
+		if (npcTemplate.get() == null)
 			return 0;
 
 		return getReducedResist(npcTemplate.get().getKinetic());
@@ -818,10 +818,10 @@ class AiAgent extends CreatureObject {
 
 	@dirty
 	public abstract float getEnergy() {
-		if (petDeed) {
+		if (petDeed != null) {
 			return getReducedResist(petDeed.getEnergy());
 		}
-		if (!npcTemplate.get())
+		if (npcTemplate.get() == null)
 			return 0;
 
 		return getReducedResist(npcTemplate.get().getEnergy());
@@ -829,11 +829,11 @@ class AiAgent extends CreatureObject {
 
 	@dirty
 	public abstract float getElectricity() {
-		if (petDeed) {
+		if (petDeed != null) {
 			return getReducedResist(petDeed.getElectric());
 		}
 
-		if (!npcTemplate.get())
+		if (npcTemplate.get() == null)
 			return 0;
 
 		return getReducedResist(npcTemplate.get().getElectricity());
@@ -841,11 +841,11 @@ class AiAgent extends CreatureObject {
 
 	@dirty
 	public abstract float getStun() {
-		if (petDeed) {
+		if (petDeed != null) {
 			return getReducedResist(petDeed.getStun());
 		}
 
-		if (!npcTemplate.get())
+		if (npcTemplate.get() == null)
 			return 0;
 
 		return getReducedResist(npcTemplate.get().getStun());
@@ -853,11 +853,11 @@ class AiAgent extends CreatureObject {
 
 	@dirty
 	public abstract float getBlast() {
-		if (petDeed) {
+		if (petDeed != null) {
 			return getReducedResist(petDeed.getBlast());
 		}
 
-		if (!npcTemplate.get())
+		if (npcTemplate.get() == null)
 			return 0;
 
 		return getReducedResist(npcTemplate.get().getBlast());
@@ -865,11 +865,11 @@ class AiAgent extends CreatureObject {
 
 	@dirty
 	public abstract float getHeat() {
-		if (petDeed) {
+		if (petDeed != null) {
 			return getReducedResist(petDeed.getHeat());
 		}
 
-		if (!npcTemplate.get())
+		if (npcTemplate.get() == null)
 			return 0;
 
 		return getReducedResist(npcTemplate.get().getHeat());
@@ -877,7 +877,7 @@ class AiAgent extends CreatureObject {
 
 	@dirty
 	public abstract float getCold() {
-		if (petDeed) {
+		if (petDeed != null) {
 			return getReducedResist(petDeed.getCold());
 		}
 
@@ -889,7 +889,7 @@ class AiAgent extends CreatureObject {
 
 	@dirty
 	public abstract float getAcid() {
-		if (petDeed) {
+		if (petDeed != null) {
 			return getReducedResist(petDeed.getAcid());
 		}
 
@@ -901,7 +901,7 @@ class AiAgent extends CreatureObject {
 
 	@dirty
 	public abstract float getLightSaber() {
-		if (petDeed) {
+		if (petDeed != null) {
 			return getReducedResist(petDeed.getSaber());
 		}
 
@@ -924,7 +924,7 @@ class AiAgent extends CreatureObject {
 
 	@dirty
 	public abstract boolean isSpecialProtection(int resistType) {
-		if (petDeed) {
+		if (petDeed != null) {
 			return petDeed.isSpecialResist(resistType);
 		}
 
@@ -968,7 +968,7 @@ class AiAgent extends CreatureObject {
 
 	@dirty
 	public abstract unsigned int getArmor() {
-		if (petDeed) {
+		if (petDeed != null) {
 			return petDeed.getArmor();
 		}
 
@@ -1006,7 +1006,7 @@ class AiAgent extends CreatureObject {
 
 	@dirty
 	public float getChanceHit() {
-		if (petDeed) {
+		if (petDeed != null) {
 			return petDeed.getHitChance();
 		}
 
@@ -1036,7 +1036,7 @@ class AiAgent extends CreatureObject {
 
 	@dirty
 	public abstract int getBaseXp() {
-		if (petDeed) {
+		if (petDeed != null) {
 			return 100;
 		}
 
@@ -1056,7 +1056,7 @@ class AiAgent extends CreatureObject {
 
 	@read
 	public unsigned int getTemplateLevel() {
-		if (petDeed) {
+		if (petDeed != null) {
 			return petDeed.getLevel();
 		}
 
@@ -1068,7 +1068,7 @@ class AiAgent extends CreatureObject {
 
 	@read
 	public float getTame() {
-		if (petDeed) {
+		if (petDeed != null) {
 			return 1;
 		}
 
@@ -1089,7 +1089,7 @@ class AiAgent extends CreatureObject {
 	}
 
 	@local
-	@read
+	@dirty
 	public final LootGroupCollection getLootGroups() {
 		if (npcTemplate.get() == null || isEventMob())
 			return null;
@@ -1097,7 +1097,7 @@ class AiAgent extends CreatureObject {
 		return npcTemplate.get().getLootGroups();
 	}
 
-	@read
+	@dirty
 	public abstract string getReactionStf() {
 		if (npcTemplate.get() == null)
 			return "";
@@ -1150,11 +1150,13 @@ class AiAgent extends CreatureObject {
 		showNextMovementPosition = val;
 	}
 
-	@read
+	@dirty
 	public native boolean isEventMob();
 
 	@read
-	public native boolean isPet();
+	public boolean isPet() {
+		return (getControlDevice() != null);
+	}
 
 	/**
 	 * Pull an AI template from AiMap and set up the tree using the rules from the template. Then
@@ -1314,7 +1316,7 @@ class AiAgent extends CreatureObject {
 	}
 
 	public void rescheduleTrackingTask() {
-		if (!trackingTask) {
+		if (trackingTask == null) {
 			trackingTask = new AiTrackingTask(this);
 			trackingTask.schedule(300000);
 		}
@@ -1340,7 +1342,7 @@ class AiAgent extends CreatureObject {
 
 	@read
 	public boolean hasPetDeed() {
-		return petDeed;
+		return petDeed != null;
 	}
 
 	@read

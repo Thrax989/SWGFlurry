@@ -22,6 +22,11 @@ public:
 
 	int doQueueCommand(CreatureObject* creature, const uint64& target, const UnicodeString& arguments) const {
 
+	if (creature->getScreenPlayState("jediLives") <= 1) {
+		creature->sendSystemMessage("You have Permanently died on your jedi, you may not use this option"); // You have Permanently died on your jedi, you may not use this option
+		return 0;
+		}
+
 		// They should be dead...
 		if (creature->isDead()){
 

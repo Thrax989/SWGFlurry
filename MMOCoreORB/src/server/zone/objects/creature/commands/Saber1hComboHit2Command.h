@@ -34,6 +34,7 @@ public:
 
 		UnicodeString args = "healthDamageMultiplier=" + String::valueOf(mods[0]) + ";actionDamageMultiplier=" + String::valueOf(mods[1]) + ";mindDamageMultiplier=" + String::valueOf(mods[2]) + ";";
 
+
 		return doCombatAction(creature, target, args);
 	}
 

@@ -4,10 +4,6 @@
 
 #include "BaseDroidModuleComponent.h"
 
-#include "server/zone/objects/creature/CreatureObject.h"
-#include "server/zone/objects/creature/ai/DroidObject.h"
-#include "server/zone/objects/intangible/PetControlDevice.h"
-
 BaseDroidModuleComponent::BaseDroidModuleComponent() {
 	setLoggingName("DroidModuleDataComponent");
 	setLogging(false);
@@ -18,7 +14,7 @@ BaseDroidModuleComponent::~BaseDroidModuleComponent() {
 
 }
 
-String BaseDroidModuleComponent::getModuleName() const {
+String BaseDroidModuleComponent::getModuleName() {
 	return String("base");
 }
 
@@ -70,7 +66,7 @@ bool BaseDroidModuleComponent::actsAsCraftingStation() {
 	return false;
 }
 
-String BaseDroidModuleComponent::toString() const {
+String BaseDroidModuleComponent::toString() {
 	StringBuffer str;
 	str << getModuleName() << "\n";
 	return str.toString();
@@ -84,8 +80,8 @@ void BaseDroidModuleComponent::onStore() {
 
 }
 
-Reference<DroidObject*> BaseDroidModuleComponent::getDroidObject() {
-	Reference<SceneObject*> droid = getParent();
+ManagedReference<DroidObject*> BaseDroidModuleComponent::getDroidObject() {
+	ManagedReference<SceneObject*> droid = getParent();
 
 	if (droid == nullptr) {
 		return nullptr;

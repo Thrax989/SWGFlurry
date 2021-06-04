@@ -8,6 +8,7 @@
 #include "VendorDataComponent.h"
 #include "server/zone/ZoneServer.h"
 #include "server/zone/managers/vendor/VendorManager.h"
+#include "server/zone/objects/building/BuildingObject.h"
 #include "server/zone/objects/player/PlayerObject.h"
 #include "server/zone/objects/player/sui/callbacks/VendorMaintSuiCallback.h"
 #include "server/zone/objects/player/sui/inputbox/SuiInputBox.h"
@@ -17,7 +18,6 @@
 #include "server/zone/managers/player/PlayerManager.h"
 #include "server/zone/packets/object/SpatialChat.h"
 #include "server/zone/objects/tangible/tasks/VendorReturnToPositionTask.h"
-#include "server/zone/objects/transaction/TransactionLog.h"
 
 VendorDataComponent::VendorDataComponent() : AuctionTerminalDataComponent(), adBarkingMutex() {
 	ownerId = 0;
@@ -30,9 +30,11 @@ VendorDataComponent::VendorDataComponent() : AuctionTerminalDataComponent(), adB
 	awardUsageXP = 0;
 	adBarking = false;
 	mail1Sent = false;
+	mail2Sent = false;
 	barkMessage = "";
 	lastBark = 0;
 	originalDirection = 1000;
+	packedUp = false;
 	addSerializableVariables();
 }
 
@@ -48,11 +50,13 @@ void VendorDataComponent::addSerializableVariables() {
 	addSerializableVariable("lastSuccessfulUpdate", &lastSuccessfulUpdate);
 	addSerializableVariable("adBarking", &adBarking);
 	addSerializableVariable("mail1Sent", &mail1Sent);
+	addSerializableVariable("mail2Sent", &mail2Sent);
 	addSerializableVariable("emptyTimer", &emptyTimer);
 	addSerializableVariable("barkMessage", &barkMessage);
 	addSerializableVariable("barkMood", &barkMood);
 	addSerializableVariable("barkAnimation", &barkAnimation);
 	addSerializableVariable("originalDirection", &originalDirection);
+	addSerializableVariable("packedUp", &packedUp);
 }
 
 void VendorDataComponent::writeJSON(nlohmann::json& j) const {
@@ -74,6 +78,7 @@ void VendorDataComponent::writeJSON(nlohmann::json& j) const {
 	SERIALIZE_JSON_MEMBER(barkMood);
 	SERIALIZE_JSON_MEMBER(barkAnimation);
 	SERIALIZE_JSON_MEMBER(originalDirection);
+	SERIALIZE_JSON_MEMBER(packedUp);
 }
 
 void VendorDataComponent::initializeTransientMembers() {
@@ -119,6 +124,13 @@ void VendorDataComponent::runVendorUpdate() {
 	if (strongParent == nullptr || strongParent->getZoneServer() == nullptr)
 		return;
 
+	ManagedReference<BuildingObject*> building = cast<BuildingObject*>(strongParent->getRootParent());
+
+	if (building != nullptr && !building->isPublicStructure()) {
+		initialized = false;
+		return;
+	}
+
 	ManagedReference<CreatureObject*> owner = strongParent->getZoneServer()->getObject(getOwnerId()).castTo<CreatureObject*>();
 	ManagedReference<PlayerManager*> playerManager = strongParent->getZoneServer()->getPlayerManager();
 	ManagedReference<TangibleObject*> vendor = cast<TangibleObject*>(strongParent.get());
@@ -150,8 +162,9 @@ void VendorDataComponent::runVendorUpdate() {
 		vendor->setMaxCondition(1000, true);
 	}
 
+	ManagedReference<ChatManager*> cman = strongParent->getZoneServer()->getChatManager();
+
 	if (isEmpty()) {
-		ManagedReference<ChatManager*> cman = strongParent->getZoneServer()->getChatManager();
 
 		String sender = strongParent->getDisplayedName();
 		UnicodeString subject("@auction:vendor_status_subject");
@@ -184,6 +197,16 @@ void VendorDataComponent::runVendorUpdate() {
 		if (isVendorSearchEnabled())
 			setVendorSearchEnabled(false);
 
+		if (!mail2Sent) {
+			String sender = strongParent->getDisplayedName();
+			UnicodeString subject("@auction:vendor_status_subject");
+			StringIdChatParameter body("Your vendor has run out of maintenance. If vendor search was enabled, you will have to enable it again after paying maintenance.");
+			body.setTO(strongParent->getDisplayedName());
+
+			cman->sendMail(sender, subject, body, owner->getFirstName());
+			mail2Sent = true;
+		}
+
 		if (time(0) - inactiveTimer.getTime() > DELETEWARNING) {
 
 			ManagedReference<ChatManager*> cman = strongParent->getZoneServer()->getChatManager();
@@ -198,15 +221,17 @@ void VendorDataComponent::runVendorUpdate() {
 		}
 
 	} else {
+		mail2Sent = false;
 
 		/// Award hourly XP
 		E3_ASSERT(vendor->isLockedByCurrentThread());
 
 		Locker locker(owner, vendor);
-		playerManager->awardExperience(owner, "merchant", 150 * hoursSinceLastUpdate, false);
 
-		playerManager->awardExperience(owner, "merchant", awardUsageXP * 50, false);
-
+		if (!packedUp) {
+			playerManager->awardExperience(owner, "merchant", 150 * hoursSinceLastUpdate, false);
+			playerManager->awardExperience(owner, "merchant", awardUsageXP * 50, false);
+		}
 	}
 
 	awardUsageXP = 0;
@@ -238,18 +263,25 @@ float VendorDataComponent::getMaintenanceRate() {
 }
 
 void VendorDataComponent::payMaintanence() {
-	ManagedReference<SceneObject*> strongParent = parent.get();
+	ManagedReference<TangibleObject*> strongParent = parent.get().castTo<TangibleObject*>();
+
 	if (strongParent == nullptr || strongParent->getZoneServer() == nullptr)
 		return;
 
 	ManagedReference<CreatureObject*> owner = strongParent->getZoneServer()->getObject(getOwnerId()).castTo<CreatureObject*>();
-	if(owner == nullptr)
+
+	if (owner == nullptr)
 		return;
 
 	ManagedReference<SuiInputBox*> input = new SuiInputBox(owner, SuiWindowType::STRUCTURE_VENDOR_PAY);
-	input->setPromptTitle("@player_structure:pay_vendor_t"); //Add Militia Member
+	input->setPromptTitle("@player_structure:pay_vendor_t");
 	input->setPromptText("@player_structure:pay_vendor_d");
-	input->setUsingObject(strongParent);
+
+	if (isPackedUp())
+		input->setUsingObject(strongParent->getControlDevice().get());
+	else
+		input->setUsingObject(strongParent);
+
 	input->setForceCloseDistance(5.f);
 	input->setCallback(new VendorMaintSuiCallback(strongParent->getZoneServer()));
 
@@ -279,16 +311,12 @@ void VendorDataComponent::handlePayMaintanence(int value) {
 
 	if(owner->getBankCredits() + owner->getCashCredits() >= value) {
 		if(owner->getBankCredits() > value) {
-			TransactionLog trx(owner, strongParent, TrxCode::VENDORMAINTANENCE, value, false);
 			maintAmount += value;
 			owner->subtractBankCredits(value);
 		} else {
-			TransactionLog trxCash(owner, strongParent, TrxCode::VENDORMAINTANENCE, value - owner->getBankCredits(), true);
 			owner->subtractCashCredits(value - owner->getBankCredits());
 			maintAmount += value - owner->getBankCredits();
 
-			TransactionLog trxBank(owner, strongParent, TrxCode::VENDORMAINTANENCE, owner->getBankCredits(), false);
-			trxBank.groupWith(trxCash);
 			owner->subtractBankCredits(owner->getBankCredits());
 			maintAmount += owner->getBankCredits();
 		}
@@ -345,7 +373,6 @@ void VendorDataComponent::handleWithdrawMaintanence(int value) {
 	}
 
 	{
-		TransactionLog trx(strongParent, owner, TrxCode::VENDORMAINTANENCE, value, true);
 		maintAmount -= value;
 		owner->addBankCredits(value, true);
 	}
@@ -365,7 +392,6 @@ void VendorDataComponent::setVendorSearchEnabled(bool enabled) {
 	vendorSearchEnabled = enabled;
 	auctionManager->updateVendorSearch(strongParent, vendorSearchEnabled);
 }
-
 
 void VendorDataComponent::performVendorBark(SceneObject* target) {
 	if (isOnStrike()) {

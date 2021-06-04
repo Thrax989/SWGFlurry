@@ -125,14 +125,13 @@ class Buff extends ManagedObject implements Logger {
 		deactivate(true);
 	}
 
-	@read
+	@dirty
 	public abstract boolean checkRenew() {
 		return false;
 	}
 
 	@local
-	@read
-	public final VectorMap<string, int> getSkillModifiers() {
+	public VectorMap<string, int> getSkillModifiers() {
 		return skillModifiers;
 	}
 
@@ -172,13 +171,12 @@ class Buff extends ManagedObject implements Logger {
 	@preLocked
 	public native abstract void parseSkillModifierString(final string modifierstring);
 
-	@read
+	@dirty
 	public native abstract string getAttributeModifierString();
-
-	@read
+	@dirty
 	public native abstract string getSkillModifierString();
 
-	@read
+	@dirty
 	public native abstract float getTimeLeft();
 
 	@preLocked
@@ -212,7 +210,7 @@ class Buff extends ManagedObject implements Logger {
 		setSkillModifier("private_acceleration_multiplier", multiplier * 100);
 	}
 
-	@read
+	@dirty
 	public float getSpeedMultiplierMod() {
 		int speed = getSkillModifierValue("private_speed_multiplier");
 		float multiplier = speed / 100.0;
@@ -220,7 +218,7 @@ class Buff extends ManagedObject implements Logger {
 		return multiplier;
 	}
 
-	@read
+	@dirty
 	public float getAccelerationMultiplierMod() {
 		int acceleration = getSkillModifierValue("private_acceleration_multiplier");
 		float multiplier = acceleration / 100.0;
@@ -255,22 +253,27 @@ class Buff extends ManagedObject implements Logger {
 	}
 
 	@local
-	@read
-	public final VectorMap<byte, int> getAttributeModifiers() {
+	public VectorMap<byte, int> getAttributeModifiers() {
 		return attributeModifiers;
 	}
 
-	@read
+	@dirty
 	public abstract int getAttributeModifierValue(byte attribute) {
-		return attributeModifiers.get(attribute);
+		if (attributeModifiers.contains(attribute))
+			return attributeModifiers.get(attribute);
+
+		return 0;
 	}
 
-	@read
+	@dirty
 	public abstract int getSkillModifierValue(final string modname) {
-		return skillModifiers.get(modname);
+		if (skillModifiers.contains(modname))
+			return skillModifiers.get(modname);
+
+		return 0;
 	}
 
-	@read
+	@dirty
 	public native boolean isActive();
 
 	@read
@@ -315,18 +318,17 @@ class Buff extends ManagedObject implements Logger {
 			secondaryBuffCRCs.add(secondaryCRC);
 	}
 
-	@read
+	@dirty
 	@local
 	@dereferenced
 	public native Time getTimeApplied();
 
-	@read
-	@local
-	public abstract native int compareTo(final Buff obj);
+	@dirty
+	public abstract native int compareTo(Buff obj);
 
 	@local
-	@read
-	public final Vector<unsigned long> getSecondaryBuffCRCs() {
+	@dirty
+	public Vector<unsigned long> getSecondaryBuffCRCs() {
 		return secondaryBuffCRCs;
 	}
 

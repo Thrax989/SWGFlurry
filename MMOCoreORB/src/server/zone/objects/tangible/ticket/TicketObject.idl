@@ -68,27 +68,27 @@ class TicketObject extends TangibleObject {
 		ownerID = id;
 	}
 
-	@read
+	@dirty
 	public string getDeparturePlanet() {
 		return departurePlanet;
 	}
 
-	@read
+	@dirty
 	public string getDeparturePoint() {
 		return departurePoint;
 	}
 
-	@read
+	@dirty
 	public string getArrivalPlanet() {
 		return arrivalPlanet;
 	}
 
-	@read
+	@dirty
 	public string getArrivalPoint() {
 		return arrivalPoint;
 	}
 
-	@read
+	@dirty
 	public unsigned long getOwnerID() {
 		return ownerID;
 	}

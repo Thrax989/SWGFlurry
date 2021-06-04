@@ -78,11 +78,11 @@ public:
 			return INSUFFICIENTHAM;
 		}
 
-		// Heal 20% or 40% of base in wounds and damage
-		int mindHeal = pet->getBaseHAM(CreatureAttribute::MIND) * 0.20 * trickNumber;
-		int focusHeal = pet->getBaseHAM(CreatureAttribute::FOCUS) * 0.20 * trickNumber;
-		int willHeal = pet->getBaseHAM(CreatureAttribute::WILLPOWER) * 0.20 * trickNumber;
-		int shockHeal = 100 * trickNumber;
+		// Heal 25% or 50% of base in wounds and damage
+		int mindHeal = pet->getBaseHAM(CreatureAttribute::MIND) * 0.25 * trickNumber;
+		int focusHeal = pet->getBaseHAM(CreatureAttribute::FOCUS) * 0.25 * trickNumber;
+		int willHeal = pet->getBaseHAM(CreatureAttribute::WILLPOWER) * 0.25 * trickNumber;
+		int shockHeal = 250 * trickNumber;
 
 		// Heal wounds
 		pet->healWound(player, CreatureAttribute::MIND, mindHeal, true, false);
@@ -108,7 +108,7 @@ public:
 		pet->doAnimation(animation);
 
 		// Set cooldown
-		pet->getCooldownTimerMap()->updateToCurrentAndAddMili("trickCooldown", 5000); // 5 sec
+		pet->getCooldownTimerMap()->updateToCurrentAndAddMili("trickCooldown", 2000); // 2 sec
 
 		// Reduce player HAM
 		player->inflictDamage(player, CreatureAttribute::ACTION, actionCost, false);

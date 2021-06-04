@@ -9,7 +9,6 @@
 #define REPLACEFLASHSPEEDERSUICALLBACK_H_
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
-#include "server/zone/objects/transaction/TransactionLog.h"
 
 class ReplaceFlashSpeederSuiCallback : public SuiCallback {
 
@@ -30,7 +29,7 @@ public:
 			return;
 
 		// Player must have enough credits
-		if (!player->verifyCredits(FLASH_SPEEDER_COST)) {
+		if( player->getCashCredits() + player->getBankCredits() < FLASH_SPEEDER_COST ){
 			player->sendSystemMessage( "@veteran:flash_speeder_no_credits" ); // "You do not have enough credits to receive a replacement."
 			return;
 		}
@@ -58,8 +57,15 @@ public:
 
 		inventory->broadcastObject(speederDeed, true);
 
-		TransactionLog trx(player, TrxCode::VEHICLEREPAIRS, FLASH_SPEEDER_COST, true);
-		player->subtractCredits(FLASH_SPEEDER_COST);
+		// Deduct replacement cost
+		if( player->getCashCredits() >= FLASH_SPEEDER_COST ){
+			player->setCashCredits(player->getCashCredits() - FLASH_SPEEDER_COST, true);
+		}
+		else{
+			int fromBank = FLASH_SPEEDER_COST - player->getCashCredits();
+			player->setCashCredits(0, true);
+			player->setBankCredits(player->getBankCredits() - fromBank, true);
+		}
 
 		player->sendSystemMessage( "@veteran:flash_speeder_granted");  // "A Flash Speeder deed has been placed in your inventory."
 

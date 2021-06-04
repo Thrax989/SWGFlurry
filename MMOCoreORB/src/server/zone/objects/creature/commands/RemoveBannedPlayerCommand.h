@@ -76,7 +76,7 @@ public:
 
 		Locker alocker(account);
 
-		const CharacterListEntry* entry = account->getCharacterBan(server->getZoneServer()->getGalaxyID(), targetCreature->getFirstName());
+		CharacterListEntry* entry = account->getCharacterBan(server->getZoneServer()->getGalaxyID(), targetCreature->getFirstName());
 
 		if (entry == nullptr) {
 			creature->sendSystemMessage("Error getting CharacterListEntry");

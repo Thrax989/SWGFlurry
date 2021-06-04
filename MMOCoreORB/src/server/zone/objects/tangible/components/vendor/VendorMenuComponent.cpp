@@ -5,6 +5,7 @@
  *      Author: kyle
  */
 
+#include "server/zone/objects/building/BuildingObject.h"
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "server/zone/objects/player/PlayerObject.h"
 #include "VendorMenuComponent.h"
@@ -58,21 +59,23 @@ void VendorMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject,
 	}
 
 	if (!vendorData->isInitialized()) {
-
 		menuResponse->addRadialMenuItemToRadialID(70, 79, 3, "@player_structure:vendor_init");
 
-		menuResponse->addRadialMenuItem(10, 3, "@ui_radial:item_pickup");
+		if (!vendorData->isPackedUp())
+			menuResponse->addRadialMenuItem(10, 3, "@ui_radial:item_pickup");
 
 		menuResponse->addRadialMenuItem(51, 1, "@ui_radial:item_rotate"); //Rotate
 		menuResponse->addRadialMenuItemToRadialID(51, 52, 3, "@ui_radial:item_rotate_left"); //Rotate Left
 		menuResponse->addRadialMenuItemToRadialID(51, 53, 3, "@ui_radial:item_rotate_right"); //Rotate Right
 
 	} else {
-
 		menuResponse->addRadialMenuItemToRadialID(70, 71, 3, "@player_structure:vendor_status");
 
 		menuResponse->addRadialMenuItemToRadialID(70, 73, 3, "@player_structure:pay_vendor_t");
 		menuResponse->addRadialMenuItemToRadialID(70, 74, 3, "@player_structure:withdraw_vendor_t");
+
+		if (player->hasSkill("crafting_merchant_novice") && !vendorData->isOnStrike())
+			menuResponse->addRadialMenuItemToRadialID(70, 80, 3, "Restock Expired Items");
 
 		if (vendorData->isVendorSearchEnabled())
 			menuResponse->addRadialMenuItemToRadialID(70, 75, 3, "@player_structure:disable_vendor_search");
@@ -94,7 +97,11 @@ void VendorMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject,
 		}
 	}
 
-	menuResponse->addRadialMenuItemToRadialID(70, 78, 3, "@player_structure:remove_vendor");
+	if (ConfigManager::instance()->getVendorPackupEnabled())
+		menuResponse->addRadialMenuItemToRadialID(70, 81, 3, "@player_structure:vendor_packup");
+
+	if (!vendorData->isPackedUp())
+		menuResponse->addRadialMenuItemToRadialID(70, 78, 3, "@player_structure:remove_vendor");
 }
 
 int VendorMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject,
@@ -197,6 +204,13 @@ int VendorMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject,
 
 
 	case 79: {
+		ManagedReference<BuildingObject*> building = cast<BuildingObject*>(vendor->getRootParent());
+
+		if (building != nullptr && !building->isPublicStructure()) {
+			player->sendSystemMessage("You can not initialize a vendor in a private structure.");
+			return 0;
+		}
+
 		if (player->getRootParent() != vendor->getRootParent()) {
 			player->sendSystemMessage("@player_structure:vendor_not_in_same_building");
 			return 0;
@@ -209,8 +223,23 @@ int VendorMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject,
 
 		player->sendSystemMessage("@player_structure:vendor_initialized");
 		vendorData->setInitialized(true);
-		vendorData->setEmpty();
+
+		if (vendorData->isPackedUp())
+			vendorData->setPackedUp(false);
+		else
+			vendorData->setEmpty();
+
 		vendorData->scheduleVendorCheckTask(VendorDataComponent::VENDORCHECKINTERVAL);
+		return 0;
+	}
+
+	case 80: {
+		VendorManager::instance()->promptRelistItems(player, vendor);
+		return 0;
+	}
+
+	case 81: {
+		VendorManager::instance()->promptPackupVendor(player, vendor);
 		return 0;
 	}
 

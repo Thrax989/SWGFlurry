@@ -14,7 +14,7 @@ bool StructureContainerComponent::checkContainerPermission(SceneObject* sceneObj
 
 	if (building != nullptr) {
 		if (permission == ContainerPermissions::MOVEVENDOR) {
-			if (building->isPublicStructure() && (building->isOnPermissionList("VENDOR", creature) || building->isOnAdminList(creature)))
+			if (building->isOnPermissionList("VENDOR", creature) || building->isOnAdminList(creature))
 				return true;
 			else {
 				if (building->isPrivateStructure())

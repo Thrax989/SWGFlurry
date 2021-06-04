@@ -6,10 +6,13 @@
 #include "templates/params/creature/CreatureAttribute.h"
 #include "templates/params/creature/CreatureState.h"
 #include "server/zone/objects/creature/CreatureObject.h"
+#include "server/zone/objects/player/PlayerObject.h"
 #include "server/zone/objects/creature/commands/effect/CommandEffect.h"
 #include "DamageOverTime.h"
 #include "server/zone/ZoneServer.h"
 #include "server/zone/managers/combat/CombatManager.h"
+
+#include "server/zone/managers/frs/FrsManager.h"
 
 DamageOverTime::DamageOverTime() {
 	setAttackerID(0);
@@ -275,8 +278,10 @@ uint32 DamageOverTime::doPoisonTick(CreatureObject* victim, CreatureObject* atta
 
 	uint32 attr = victim->getHAM(attribute);
 	int absorptionMod = Math::max(0, Math::min(50, victim->getSkillMod("absorption_poison")));
-
 	// absorption reduces the strength of a dot by the given %.
+        if (attacker->isPet() && strength > 1600){
+		strength = 1600;
+	}
 	int damage = (int)(strength * (1.f - absorptionMod / 100.f));
 	if (attr < damage) {
 		//System::out << "setting strength to " << attr -1 << endl;
@@ -308,8 +313,10 @@ uint32 DamageOverTime::doDiseaseTick(CreatureObject* victim, CreatureObject* att
 		return 0;
 
 	int absorptionMod = Math::max(0, Math::min(50, victim->getSkillMod("absorption_disease")));
-
 	// absorption reduces the strength of a dot by the given %.
+        if (attacker->isPet() && strength > 1600){
+		strength = 1600;
+	}
 	// make sure that the CM dots modify the strength
 	int damage = (int)(strength * (1.f - absorptionMod / 100.f) * (1.f + victim->getShockWounds() / 100.0f));
 	int maxDamage = victim->getBaseHAM(attribute) - 1 - victim->getWounds(attribute);
@@ -361,6 +368,30 @@ uint32 DamageOverTime::doForceChokeTick(CreatureObject* victim, CreatureObject* 
 		Locker crossLocker(attackerRef, victimRef);
 
 		uint32 chokeDam = strength;
+
+		ManagedReference<PlayerObject*> ghost = nullptr;
+
+		if (attackerRef->isPlayerCreature())
+			ghost = attackerRef->getPlayerObject();
+
+		if (ghost != nullptr) {
+			FrsData* playerData = ghost->getFrsData();
+			int councilType = playerData->getCouncilType();
+			int powerModifier = 0;
+			int multiplier = 0;
+
+			if (councilType == FrsManager::COUNCIL_LIGHT) {
+				powerModifier = attackerRef->getSkillMod("force_power_light");
+				multiplier = 2;
+
+			} else if (councilType == FrsManager::COUNCIL_DARK) {
+				powerModifier = attackerRef->getSkillMod("force_power_dark");
+				multiplier = 4;
+			}
+
+			if (powerModifier > 0)
+				chokeDam += (int)((powerModifier / 2) * multiplier);
+		}
 
 		float jediBuffDamage = 0;
 		float rawDamage = chokeDam;

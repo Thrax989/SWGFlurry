@@ -9,20 +9,16 @@
 #include "events/ActiveAreaEvent.h"
 #include "server/zone/objects/area/areashapes/AreaShape.h"
 
-bool ActiveAreaImplementation::containsPoint(float px, float py, uint64 cellid) const {
+bool ActiveAreaImplementation::containsPoint(float px, float py, uint64 cellid) {
 	if (cellObjectID != 0 && cellObjectID != cellid)
 		return false;
 
 	return containsPoint(px, py);
 }
 
-bool ActiveAreaImplementation::containsPoint(float px, float py) const {
+bool ActiveAreaImplementation::containsPoint(float px, float py) {
 	if (areaShape == nullptr) {
-		float dx = getPositionX() - px;
-		float dy = getPositionY() - py;
-
-		float squaredLength = dx * dx + dy * dy;
-		return squaredLength <= (radius * radius);
+		return QuadTreeEntryImplementation::containsPoint(px, py);
 	}
 
 	return areaShape->containsPoint(px, py);
@@ -90,7 +86,7 @@ void ActiveAreaImplementation::setZone(Zone* zone) {
 	this->zone = zone;
 }
 
-bool ActiveAreaImplementation::intersectsWith(ActiveArea* area) const {
+bool ActiveAreaImplementation::intersectsWith(ActiveArea* area) {
 	if (areaShape == nullptr) {
 		return false;
 	}

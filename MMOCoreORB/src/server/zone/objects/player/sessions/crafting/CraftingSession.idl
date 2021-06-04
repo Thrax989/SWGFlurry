@@ -77,7 +77,7 @@ class CraftingSession extends Facade {
 	 * Cancels the current session
 	 */
 	public native int cancelSession();
-	
+
 	/*
 	 * Cancels the current session via slash cancelCraftingSession which also closes the window
 	 */

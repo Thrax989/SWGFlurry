@@ -36,6 +36,7 @@ protected:
 	SerializableTime inactiveTimer;
 
 	bool mail1Sent;
+	bool mail2Sent;
 
 	Vector<uint64> vendorBarks;
 	uint64 lastBark;
@@ -46,6 +47,8 @@ protected:
 	float originalDirection;
 
 	Mutex adBarkingMutex;
+
+	bool packedUp;
 
 public:
 
@@ -100,7 +103,7 @@ public:
 			return;
 
 		originalDirection = strongParent->getDirectionAngle();
-		setVendorSearchEnabled(true);
+		setVendorSearchEnabled(val);
 	}
 
 	void setVendorSearchEnabled(bool enabled);
@@ -271,6 +274,13 @@ public:
 	void scheduleVendorCheckTask(int delay); // In minutes
 
 	void cancelVendorCheckTask();
+
+	void setPackedUp(bool packed) {
+		packedUp = packed;
+	}
+	bool isPackedUp() {
+		return packedUp;
+	}
 
 private:
 	void addSerializableVariables();

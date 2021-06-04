@@ -284,24 +284,19 @@ int PlantObjectImplementation::getCriticalAttribute(int index) {
 	}
 }
 
-void PlantObjectImplementation::finalize() {
-	if (pulseTask != nullptr)
-		pulseTask->cancel();
-}
-
 void PlantObjectImplementation::startPulse() {
 	if (plantSize == 0)
 		return;
 
-	uint64 timeSinceLast = lastPulse.miliDifference();
+	int timeSinceLast = lastPulse.miliDifference();
 
 	if (pulseTask != nullptr)
 		pulseTask->cancel();
 
 	pulseTask = new GrowablePlantPulseTask(_this.getReferenceUnsafeStaticCast());
 
-	if (timeSinceLast >= PULSERATE)
+	if (timeSinceLast >= (PULSERATE * 1000))
 		pulseTask->execute();
 	else
-		pulseTask->schedule(PULSERATE - timeSinceLast);
+		pulseTask->schedule((PULSERATE * 1000) - timeSinceLast);
 }

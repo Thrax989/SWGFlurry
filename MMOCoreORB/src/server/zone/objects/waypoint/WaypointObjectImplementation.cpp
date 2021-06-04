@@ -21,7 +21,7 @@ void WaypointObjectImplementation::loadTemplateData(SharedObjectTemplate* templa
 	specialTypeID = 0;
 }
 
-String WaypointObjectImplementation::getDetailedDescription() const {
+String WaypointObjectImplementation::getDetailedDescription() {
 	if (detailedDescription.isEmpty())
 		return SceneObjectImplementation::getDetailedDescription();
 

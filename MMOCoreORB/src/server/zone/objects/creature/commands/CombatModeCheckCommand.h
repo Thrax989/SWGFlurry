@@ -5,8 +5,6 @@
 #ifndef COMBATMODECHECKCOMMAND_H_
 #define COMBATMODECHECKCOMMAND_H_
 
-#include "server/zone/managers/gcw/GCWManager.h"
-
 class CombatModeCheckCommand : public QueueCommand {
 public:
 
@@ -23,19 +21,7 @@ public:
 		if (!checkInvalidLocomotions(creature))
 			return INVALIDLOCOMOTION;
 
-		auto zone = creature->getZone();
-		if (zone != nullptr) {
-			auto gcwManager = zone->getGCWManager();
-			if (gcwManager != nullptr) {
-				creature->sendSystemMessage(gcwManager->getCrackdownInfo(creature));
-				return SUCCESS;
-			} else {
-				creature->sendSystemMessage("No GCWManager available.");
-			}
-		} else {
-			creature->sendSystemMessage("No zone available.");
-		}
-		return GENERALERROR;
+		return SUCCESS;
 	}
 
 };

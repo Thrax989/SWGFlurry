@@ -39,6 +39,8 @@ void InstrumentImplementation::fillObjectMenuResponse(ObjectMenuResponse* menuRe
 void InstrumentImplementation::notifyLoadFromDatabase() {
 	TangibleObjectImplementation::notifyLoadFromDatabase();
 
+	beingUsed = false;
+
 	Reference<SceneObject* > spawnedObject = this->spawnedObject;
 
 	if (spawnedObject != nullptr) {

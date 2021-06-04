@@ -19,17 +19,17 @@ class SuiListBox extends SuiBox {
 
 	private unsigned long next;
 	private unsigned long previous;
-
+	
 	public static final int MSGSELECTED = 0;
 	public static final int HANDLESINGLEBUTTON = 1;
 	public static final int HANDLETWOBUTTON = 2;
 	public static final int HANDLETHREEBUTTON = 3;
-
+	
 	public SuiListBox(CreatureObject player, unsigned int windowType = 0, unsigned int listBoxType = 0) {
 		super(player, windowType, SuiBox.LISTBOX);
-
+		
 		type = listBoxType;
-
+		
 		init();
 	}
 
@@ -65,13 +65,13 @@ class SuiListBox extends SuiBox {
 
 	public unsigned long getMenuObjectID(unsigned int idx) {
 		if (idx < menuItems.size()) {
-
+			
 			SuiListBoxMenuItem menuItem = menuItems.get(idx);
-
-			if (menuItem)
+			
+			if (menuItem != null)
 				return menuItem.getObjectID();
 		}
-
+		
 		return 0;
 	}
 
@@ -97,7 +97,7 @@ class SuiListBox extends SuiBox {
 	public unsigned long getPreviousBox() {
 		return previous;
 	}
-
+	
 	public boolean isListBox() {
 		return true;
 	}

@@ -18,7 +18,6 @@
 #include "server/zone/objects/tangible/deed/structure/StructureDeed.h"
 #include "templates/tangible/SharedStructureObjectTemplate.h"
 #include "server/zone/objects/area/areashapes/CircularAreaShape.h"
-#include "server/zone/objects/transaction/TransactionLog.h"
 #include "server/zone/Zone.h"
 
 
@@ -71,7 +70,7 @@ int PlaceStructureSessionImplementation::constructStructure(float x, float y, in
 		}
 	}
 
-	Reference<Task*> task = new StructureConstructionCompleteTask(creature);
+	Reference<Task*> task = new StructureConstructionCompleteTask(creature, false);
 	task->schedule(constructionDuration);
 
 	return 0;
@@ -141,9 +140,6 @@ int PlaceStructureSessionImplementation::completeSession() {
 	ManagedReference<StructureObject*> structureObject = structureManager->placeStructure(creature, serverTemplatePath, positionX, positionY, directionAngle);
 
 	removeTemporaryNoBuildZone();
-
-	TransactionLog trx(deed, creature, structureObject, TrxCode::STRUCTUREDEED);
-	trx.addState("subjectTemplate", serverTemplatePath);
 
 	if (structureObject == nullptr) {
 		ManagedReference<SceneObject*> inventory = creature->getSlottedObject("inventory");

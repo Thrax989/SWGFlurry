@@ -16,7 +16,7 @@
 /**
  * Rename for clarity/convenience
  */
-using Mod = VectorMapEntry<String,int>;
+typedef VectorMapEntry<String,int> Mod;
 
 /**
  * @inf
@@ -32,7 +32,7 @@ using Mod = VectorMapEntry<String,int>;
 class ModSortingHelper : public Mod {
 public:
 	ModSortingHelper(): Mod( "", 0) {}
-	ModSortingHelper(String name, int value) : Mod(name, value) {}
+	ModSortingHelper( String name, int value ) : Mod( name, value ) {}
 
 	/**
 	 * @inf
@@ -78,7 +78,7 @@ void WearableObjectImplementation::fillAttributeList(AttributeListMessage* alm,
 	}
 
 	//Anti Decay Kit
-	if (hasAntiDecayKit() && !isArmorObject()){
+	if(hasAntiDecayKit() && !isArmorObject()){
 		alm->insertAttribute("@veteran_new:antidecay_examine_title", "@veteran_new:antidecay_examine_text");
 	}
 
@@ -90,13 +90,14 @@ void WearableObjectImplementation::updateCraftingValues(CraftingValues* values, 
 	 * sockets				0-0(novice artisan) (Don't use)
 	 * hitpoints			1000-1000 (Don't Use)
 	 */
-	if (initialUpdate) {
+	if(initialUpdate) {
 		if(values->hasProperty("sockets") && values->getCurrentValue("sockets") >= 0)
 			generateSockets(values);
 	}
 }
 
 void WearableObjectImplementation::generateSockets(CraftingValues* craftingValues) {
+
 	if (socketsGenerated) {
 		return;
 	}
@@ -111,17 +112,19 @@ void WearableObjectImplementation::generateSockets(CraftingValues* craftingValue
 			ManagedReference<CreatureObject*> player = manuSchematic->getCrafter().get();
 
 			if (player != nullptr && draftSchematic != nullptr) {
-				String assemblySkill = draftSchematic->getAssemblySkill();
-				skill = player->getSkillMod(assemblySkill) * 2.5; // 0 to 250 max
-				luck = System::random(player->getSkillMod("luck")
-						+ player->getSkillMod("force_luck"));
+				String requiredAssemblySkill = draftSchematic->getAssemblySkill();
+				int assemblySkillMod = player->getSkillMod(requiredAssemblySkill);
+				assemblySkillMod += player->getSkillMod("force_assembly");
+				skill = assemblySkillMod * 3.45;  // 0 to 400 (345 max for master w/o tapes or force assembly
+
+				if (skill > 450) skill = 450;
 			}
 		}
 	}
 
-	int random = (System::random(750)) - 250; // -250 to 500
+	int random = (System::random(500)) - 100; // -100 to 400  100% chance of 4 sockets w/master & +25 tapes & +20 force assembly, 69% chance w/master only, 13.8% chance w/novice only
 
-	float roll = System::random(skill + luck + random);
+	float roll = skill + random;
 
 	int generatedCount = int(float(MAXSOCKETS * roll) / float(MAXSOCKETS * 100));
 
@@ -139,7 +142,7 @@ void WearableObjectImplementation::generateSockets(CraftingValues* craftingValue
 	socketsGenerated = true;
 }
 
-int WearableObjectImplementation::socketsUsed() const {
+int WearableObjectImplementation::socketsUsed() {
 	// TODO: remove this backwards compatibility fix at next wipe. Only usedSocketCount variable should be used.
 	if (objectCreatedPreUsedSocketCountFix) {
 		return wearableSkillMods.size() - modsNotInSockets;
@@ -150,17 +153,19 @@ int WearableObjectImplementation::socketsUsed() const {
 
 void WearableObjectImplementation::applyAttachment(CreatureObject* player,
 		Attachment* attachment) {
+
 	if (!isASubChildOf(player))
 		return;
 
 	if (socketsLeft() > 0) {
+
 		Locker locker(player);
 
 		if (isEquipped()) {
 			removeSkillModsFrom(player);
 		}
 
-		if (wearableSkillMods.size() < 6) {
+		if (wearableSkillMods.size() < 8) {
 			HashTable<String, int>* mods = attachment->getSkillMods();
 			HashTableIterator<String, int> iterator = mods->iterator();
 
@@ -250,6 +255,7 @@ bool WearableObjectImplementation::isEquipped() {
 }
 
 String WearableObjectImplementation::repairAttempt(int repairChance) {
+
 	String message = "@error_message:";
 
 	if(repairChance < 25) {

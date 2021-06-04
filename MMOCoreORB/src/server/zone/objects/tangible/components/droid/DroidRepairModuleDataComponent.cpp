@@ -6,8 +6,6 @@
 #include "server/zone/ZoneServer.h"
 #include "server/zone/packets/object/ObjectMenuResponse.h"
 #include "server/zone/managers/creature/PetManager.h"
-#include "server/zone/objects/creature/ai/DroidObject.h"
-#include "server/zone/objects/intangible/PetControlDevice.h"
 
 DroidRepairModuleDataComponent::DroidRepairModuleDataComponent() {
 	setLoggingName("DroidRepairModule");
@@ -15,7 +13,7 @@ DroidRepairModuleDataComponent::DroidRepairModuleDataComponent() {
 DroidRepairModuleDataComponent::~DroidRepairModuleDataComponent() {
 
 }
-String DroidRepairModuleDataComponent::getModuleName() const {
+String DroidRepairModuleDataComponent::getModuleName() {
 	return String("repair_module");
 }
 void DroidRepairModuleDataComponent::initializeTransientMembers() {
@@ -93,6 +91,6 @@ int DroidRepairModuleDataComponent::getBatteryDrain() {
 	return 0;  // No constant drain, but each activation will use power
 }
 
-String DroidRepairModuleDataComponent::toString() const {
+String DroidRepairModuleDataComponent::toString(){
 	return BaseDroidModuleComponent::toString();
 }

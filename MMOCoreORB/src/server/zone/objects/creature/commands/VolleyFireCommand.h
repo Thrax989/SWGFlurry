@@ -7,6 +7,9 @@
 
 #include "SquadLeaderCommand.h"
 #include "server/zone/managers/skill/SkillModManager.h"
+#include "CombatQueueCommand.h"
+#include "server/zone/managers/combat/CombatManager.h"
+#include "server/zone/objects/scene/SceneObject.h"
 
 class VolleyFireCommand : public SquadLeaderCommand {
 public:
@@ -70,7 +73,7 @@ public:
 
 		if (!skillCRC.isEmpty())
 			player->addSkillMod(SkillModManager::ABILITYBONUS, skillCRC, (int) skillMod * -2, false);
-
+		player->playEffect("clienteffect/off_superior_firepower.cef", "");
 		return ret == SUCCESS;
 	}
 
@@ -96,7 +99,8 @@ public:
 			uint64 queueActionCRC = queueAction.hashCode();
 
 			member->executeObjectControllerAction(queueActionCRC, (uint64)target, "");
-
+			member->playEffect("clienteffect/off_superior_firepower.cef", "");
+			leader->playEffect("clienteffect/off_superior_firepower.cef", "");
 			checkForTef(leader, member);
 		}
 

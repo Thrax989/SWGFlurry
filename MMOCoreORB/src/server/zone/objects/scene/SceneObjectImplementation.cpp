@@ -37,7 +37,6 @@
 #include "server/zone/objects/scene/components/LuaObjectMenuComponent.h"
 #include "server/zone/objects/scene/components/ContainerComponent.h"
 #include "server/zone/objects/scene/components/LuaContainerComponent.h"
-#include "server/zone/objects/scene/SceneObjectType.h"
 //#include "PositionUpdateTask.h"
 
 #include "variables/ContainerPermissions.h"
@@ -1014,17 +1013,7 @@ SceneObject* SceneObjectImplementation::getRootParentUnsafe() {
 	return static_cast<SceneObject*>(QuadTreeEntryImplementation::getRootParentUnsafe());
 }
 
-void SceneObjectImplementation::updateSavedRootParentRecursive(SceneObject* newRoot, int maxDepth) {
-	if (maxDepth <= 0) {
-		StringBuffer msg;
-
-		msg << "maxDepth reached in updateSavedRootParentRecursive("
-			<< getObjectID() << ") newRoot = "
-		    << (newRoot == nullptr ? 0 : newRoot->getObjectID())
-		;
-		throw Exception(msg.toString());
-	}
-
+void SceneObjectImplementation::updateSavedRootParentRecursive(SceneObject* newRoot) {
 	Locker locker(&parentLock);
 
 	if (newRoot == asSceneObject())
@@ -1038,13 +1027,13 @@ void SceneObjectImplementation::updateSavedRootParentRecursive(SceneObject* newR
 		for (int j = 0; j < getContainerObjectsSize(); ++j) {
 			ManagedReference<SceneObject*> object = getContainerObject(j);
 
-			object->updateSavedRootParentRecursive(newRoot, maxDepth - 1);
+			object->updateSavedRootParentRecursive(newRoot);
 		}
 
 		for (int i = 0; i < getSlottedObjectsSize(); ++i) {
 			ManagedReference<SceneObject*> object = getSlottedObject(i);
 
-			object->updateSavedRootParentRecursive(newRoot, maxDepth - 1);
+			object->updateSavedRootParentRecursive(newRoot);
 		}
 	}
 }
@@ -1191,6 +1180,15 @@ void SceneObjectImplementation::setDirection(const Quaternion& dir) {
 
 void SceneObjectImplementation::rotate(int degrees) {
 	Vector3 unity(0, 1, 0);
+	direction.rotate(unity, degrees);
+}
+
+void SceneObjectImplementation::rotateXaxis(int degrees) {
+	Vector3 unity(1, 0, 0);
+	direction.rotate(unity, degrees);
+}
+void SceneObjectImplementation::rotateYaxis(int degrees) {
+	Vector3 unity(0, 0, 1);
 	direction.rotate(unity, degrees);
 }
 
@@ -2131,8 +2129,4 @@ void SceneObjectImplementation::getChildrenRecursive(SortedVector<uint64>& child
 			obj->getChildrenRecursive(childObjectsFound, maxDepth - 1, pruneCreo, pruneCraftedComponents);
 		}
 	}
-}
-
-String SceneObjectImplementation::getGameObjectTypeStringID() {
-	return SceneObjectType::typeToString(gameObjectType);
 }

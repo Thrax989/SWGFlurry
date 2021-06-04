@@ -11,7 +11,7 @@ include templates.tangible.CharacterBuilderMenuNode;
 
 @json
 class CharacterBuilderTerminal extends Terminal {
-	protected transient final CharacterBuilderMenuNode rootNode;
+	public transient CharacterBuilderMenuNode rootNode;
 
 	public CharacterBuilderTerminal() {
 		Logger.setLoggingName("CharacterBuilderTerminal");

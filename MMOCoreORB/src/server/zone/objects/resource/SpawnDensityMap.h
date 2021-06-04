@@ -114,7 +114,7 @@ public:
 		return value * density;
 	}
 
-	void print() const {
+	void print() {
 		System::out << "Seed: " << seed << " Modifier: "
 				<< modifier << " Density: " << density << endl;
 	}
@@ -129,9 +129,9 @@ private:
 		seed = System::random(time(0));
 
 		if(ore)
-			modifier = .00015f;
+			modifier = .00015;
 		else
-			modifier = .0006f;
+			modifier = .0006;
 
 		switch(concentration) {
 		case 1:

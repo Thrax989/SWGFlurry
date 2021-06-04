@@ -126,22 +126,22 @@ class Consumable extends TangibleObject {
 		return (effectType == EFFECT_ATTRIBUTE);
 	}
 
-	@read
+	@dirty
 	public boolean isDrink() {
 		return (consumableType == DRINK);
 	}
 
-	@read
+	@dirty
 	public boolean isFood() {
 		return (consumableType == FOOD);
 	}
 
-	@read
+	@dirty
 	public boolean isForagedFood() {
 		return (foragedFood == 1);
 	}
 
-	@read
+	@dirty
 	public boolean isSpice() {
 		return (isSpiceEffect() && isFood());
 	}
@@ -151,13 +151,13 @@ class Consumable extends TangibleObject {
 		return true;
 	}
 
-	@read
-	public int getDuration() {
+	@dirty
+	public int getDuration(){
 		return duration;
 	}
 
-	@read
-	public string getSpeciesRestriction() {
+	@dirty
+	public string getSpeciesRestriction(){
 		return speciesRestriction;
 	}
 

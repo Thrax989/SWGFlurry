@@ -91,9 +91,9 @@ public:
 
 	int runCommand(CreatureObject* creature, CreatureObject* targetCreature) const;
 
-	int doQueueCommand(CreatureObject* creature, const uint64& target, const UnicodeString& arguments) const override;
+	int doQueueCommand(CreatureObject* creature, const uint64& target, const UnicodeString& arguments) const;
 
-	bool isForceHealCommand() const override {
+	bool isForceHealCommand() {
 		return true;
 	}
 

@@ -7,6 +7,7 @@
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/managers/structure/StructureManager.h"
+#include "server/zone/managers/player/PlayerManager.h"
 
 class StructurestatusCommand : public QueueCommand {
 public:
@@ -24,20 +25,43 @@ public:
 		if (!checkInvalidLocomotions(creature))
 			return INVALIDLOCOMOTION;
 
-		ManagedReference<PlayerManager*> playerManager = server->getPlayerManager();
+		ManagedReference<SceneObject*> obj = server->getZoneServer()->getObject(target).castTo<SceneObject*>();
+ 
+		if (obj == nullptr || !obj->isStructureObject()) {
+			ManagedReference<PlayerManager*> playerManager = server->getPlayerManager();
+			uint64 targetid = creature->getTargetID();
+ 
+			obj = playerManager->getInRangeStructureWithAdminRights(creature, targetid);
+		}
 
-		uint64 targetid = creature->getTargetID();
-		ManagedReference<SceneObject*> obj = playerManager->getInRangeStructureWithAdminRights(creature, targetid);
-
-		if (obj == nullptr || !obj->isStructureObject() || obj->getZone() == nullptr) {
+		if (obj == nullptr || !obj->isStructureObject()) {
 			creature->sendSystemMessage("@player_structure:no_building"); //you must be in a building, be near an installation, or have one targeted to do that.
 			return INVALIDTARGET;
 		}
 
 		StructureObject* structure = cast<StructureObject*>( obj.get());
 
-		StructureManager::instance()->reportStructureStatus(creature, structure);
+		if (!structure->isOnAdminList(creature))
+			return INVALIDTARGET;
 
+		String args = arguments.toString();
+
+		if (!args.isEmpty()) {
+			if (args == "spawnobjects") {
+				BuildingObject* building = cast<BuildingObject*>(structure);
+
+				if (building != nullptr) {
+					building->destroyChildObjects();
+					structure->createChildObjects();
+				}
+			} else {
+				StructureManager::instance()->reportStructureStatus(creature, structure);
+			}
+
+		} else {
+			StructureManager::instance()->reportStructureStatus(creature, structure);
+		}
+ 
 		// Check for admin doing export: /structurestatus export [reason for export]
 		auto ghost = creature->getPlayerObject();
 

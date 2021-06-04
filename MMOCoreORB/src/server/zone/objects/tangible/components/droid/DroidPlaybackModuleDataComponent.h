@@ -18,15 +18,16 @@ namespace droid {
 class DroidPlaybackModuleDataComponent : public BaseDroidModuleComponent {
 
 protected:
-	bool currentlyRecording;
+	bool active;
+	bool recording;
 	int recordingTrack;
-	int recordingPerformanceIndex;
+	String recordingSong;
+	int recordingInstrument;
 	int totalTracks;
-	int performanceIndex;
-	Vector<int> trackList; // Recorded Tracks
-
+	int selectedIndex;
+	Vector<String> tracks; // Recorded Tracks
+	Vector<int> instruments; // instrument for a given track
 	ManagedReference<DroidPlaybackObserver*> observer;
-
 	// states of recording
 	enum {
 		STATE_WAITING_TO_RECORD = 1,
@@ -38,24 +39,28 @@ protected:
 public:
 	DroidPlaybackModuleDataComponent();
 	~DroidPlaybackModuleDataComponent();
-	String getModuleName() const;
+	String getModuleName();
 	void initializeTransientMembers();
 	void fillAttributeList(AttributeListMessage* msg, CreatureObject* droid);
 	void fillObjectMenuResponse(SceneObject* droidObject, ObjectMenuResponse* menuResponse, CreatureObject* player);
 	int handleObjectMenuSelect(CreatureObject* player, byte selectedID, PetControlDevice* controller);
 	int getBatteryDrain();
 	void deactivate();
-	String toString() const;
+	String toString();
 	void onCall();
 	void onStore();
+	bool isActive();
 	void addListener(uint64 id);
 	virtual bool isStackable() { return true; }
 	virtual void addToStack(BaseDroidModuleComponent* other);
 	virtual void copy(BaseDroidModuleComponent* other);
 	void deleteTrack(CreatureObject* player, int slotIndex);
-	void setTrack( CreatureObject* player, int perfIndex);
+	void setTrack( CreatureObject* player, String song, int instrument);
 	bool toBinaryStream(ObjectOutputStream* stream);
 	bool parseFromBinaryStream(ObjectInputStream* stream);
+	bool isPlayingMusic();
+	String getCurrentTrack();
+	int getCurrentInstrument();
 	void sessionTimeout(CreatureObject* player, int state);
 	void songChanged(CreatureObject* player);
 	void songStopped(CreatureObject* player);
@@ -64,37 +69,19 @@ public:
 	bool trackEmpty(int index);
 	void stopTimer();
 	void doFlourish(int number);
-	String getTrackName(int perfIndex);
-	int getMatchingIndex(DroidObject* droid, int perfIndex);
-
-	inline bool isPlayingMusic() {
-		return performanceIndex > 0;
-	}
-
-	inline int getPerformanceIndex() {
-		return performanceIndex;
-	}
-
-	inline bool isRecording() {
-		return currentlyRecording;
-	}
-
-	inline int getTotalTracks() {
-		return trackList.size();
-	}
-
-	inline int getTrackPerformanceIndex(int index) {
-		return trackList.get(index);
-	}
 
 	void writeJSON(nlohmann::json& j) const {
 		BaseDroidModuleComponent::writeJSON(j);
 
-		SERIALIZE_JSON_MEMBER(currentlyRecording);
+		SERIALIZE_JSON_MEMBER(active);
+		SERIALIZE_JSON_MEMBER(recording);
 		SERIALIZE_JSON_MEMBER(recordingTrack);
-		SERIALIZE_JSON_MEMBER(recordingPerformanceIndex);
+		SERIALIZE_JSON_MEMBER(recordingSong);
+		SERIALIZE_JSON_MEMBER(recordingInstrument);
 		SERIALIZE_JSON_MEMBER(totalTracks);
-		SERIALIZE_JSON_MEMBER(trackList);
+		SERIALIZE_JSON_MEMBER(selectedIndex);
+		SERIALIZE_JSON_MEMBER(tracks);
+		SERIALIZE_JSON_MEMBER(instruments);
 		SERIALIZE_JSON_MEMBER(observer);
 
 	}

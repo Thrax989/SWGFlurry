@@ -38,7 +38,7 @@ void NavAreaImplementation::notifyLoadFromDatabase() {
 	ActiveAreaImplementation::notifyLoadFromDatabase();
 }
 
-AABB NavAreaImplementation::getBoundingBox() const {
+AABB NavAreaImplementation::getBoundingBox() {
 	float f = radius;
 	float x = getPositionX();
 	float y = getPositionY();
@@ -98,7 +98,7 @@ void NavAreaImplementation::initialize() {
     setLoggingName("NavArea " + meshName);
 }
 
-bool NavAreaImplementation::objectInMesh(SceneObject* obj) const {
+bool NavAreaImplementation::objectInMesh(SceneObject* obj) {
 	ReadLocker rlocker(&containedLock);
 
 	return containedObjects.contains(obj->getObjectID());
@@ -186,7 +186,7 @@ NavArea* NavAreaImplementation::asNavArea() {
     return _this.getReferenceUnsafeStaticCast();
 }
 
-bool NavAreaImplementation::containsPoint(float px, float py) const {
+bool NavAreaImplementation::containsPoint(float px, float py) {
     float dx = px - getPositionX();
     float dy = py - getPositionY();
 

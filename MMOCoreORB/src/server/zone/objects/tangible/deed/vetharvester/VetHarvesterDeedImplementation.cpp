@@ -24,7 +24,7 @@ void VetHarvesterDeedImplementation::fillObjectMenuResponse(ObjectMenuResponse* 
 
 	if (!isASubChildOf(creature))
 		return;
-
+  
 	menuResponse->addRadialMenuItem(20, 3, "@ui_radial:convert_harvester"); //use
 }
 
@@ -39,6 +39,7 @@ int VetHarvesterDeedImplementation::handleObjectMenuSelect(CreatureObject* playe
 }
 
 int VetHarvesterDeedImplementation::useObject(CreatureObject* creature) {
+
 	ManagedReference<PlayerObject*> ghost = creature->getPlayerObject();
 
 	ZoneServer *zone = creature->getZoneServer();

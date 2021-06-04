@@ -251,20 +251,20 @@ void ArmorObjectImplementation::fillAttributeList(AttributeListMessage* alm, Cre
 
 }
 
-bool ArmorObjectImplementation::isVulnerable(int type) const {
+bool ArmorObjectImplementation::isVulnerable(int type) {
 	return isBroken() || (!isSpecial(type) && (vulnerabilites & type));
 }
 
-float ArmorObjectImplementation::getTypeValue(int type, float value) const {
+float ArmorObjectImplementation::getTypeValue(int type, float value) {
+
 	int newValue = 0;
 
-	if (vulnerabilites & type)
+	if(vulnerabilites & type)
 		newValue = value;
 
-	else if (isSpecial(type)) {
+	else if(isSpecial(type)) {
 		newValue = specialProtection + value;
-
-		if (newValue > 80)
+		if(newValue > 80)
 			newValue = 80;
 	} else {
 		newValue = baseProtection + value;
@@ -283,7 +283,7 @@ float ArmorObjectImplementation::getTypeValue(int type, float value) const {
 }
 
 int ArmorObjectImplementation::handleObjectMenuSelect(CreatureObject* player, byte selectedID) {
-	if (selectedID == 69 && player->hasSkill("combat_smuggler_slicing_03") && isASubChildOf(player)) {
+	if (selectedID == 69 && player->hasSkill("combat_smuggler_slicing_03")) {
 		if (isSliced()) {
 			player->sendSystemMessage("@slicing/slicing:already_sliced");
 			return 0;
@@ -302,6 +302,7 @@ int ArmorObjectImplementation::handleObjectMenuSelect(CreatureObject* player, by
 		session->initalizeSlicingMenu(player, _this.getReferenceUnsafeStaticCast());
 
 		return 0;
+
 	} else
 		return TangibleObjectImplementation::handleObjectMenuSelect(player, selectedID);
 }
@@ -384,7 +385,8 @@ void ArmorObjectImplementation::calculateSpecialProtection(CraftingValues* craft
 	}
 }
 
-String ArmorObjectImplementation::getStringType(int type) const {
+String ArmorObjectImplementation::getStringType(int type) {
+
 	switch(type) {
 	case SharedWeaponObjectTemplate::KINETIC:
 		return "kineticeffectiveness";
@@ -418,52 +420,51 @@ String ArmorObjectImplementation::getStringType(int type) const {
 	}
 }
 
-float ArmorObjectImplementation::getKinetic() const {
+float ArmorObjectImplementation::getKinetic() {
 	float value = getTypeValue(SharedWeaponObjectTemplate::KINETIC, kinetic);
 	return value - getConditionReduction(value);
 }
 
-float ArmorObjectImplementation::getEnergy() const {
+float ArmorObjectImplementation::getEnergy() {
 	float value = getTypeValue(SharedWeaponObjectTemplate::ENERGY, energy);
 	return value - getConditionReduction(value);
 }
-
-float ArmorObjectImplementation::getElectricity() const {
+float ArmorObjectImplementation::getElectricity() {
 	float value = getTypeValue(SharedWeaponObjectTemplate::ELECTRICITY, electricity);
 	return value - getConditionReduction(value);
 }
-
-float ArmorObjectImplementation::getStun() const {
+float ArmorObjectImplementation::getStun() {
 	float value = getTypeValue(SharedWeaponObjectTemplate::STUN, stun);
 	return value - getConditionReduction(value);
 }
 
-float ArmorObjectImplementation::getBlast() const {
+float ArmorObjectImplementation::getBlast() {
 	float value = getTypeValue(SharedWeaponObjectTemplate::BLAST, blast);
 	return value - getConditionReduction(value);
 }
-
-float ArmorObjectImplementation::getHeat() const {
+float ArmorObjectImplementation::getHeat() {
 	float value = getTypeValue(SharedWeaponObjectTemplate::HEAT, heat);
 	return value - getConditionReduction(value);
 }
 
-float ArmorObjectImplementation::getCold() const {
+float ArmorObjectImplementation::getCold() {
 	float value = getTypeValue(SharedWeaponObjectTemplate::COLD, cold);
 	return value - getConditionReduction(value);
 }
 
-float ArmorObjectImplementation::getAcid() const {
+float ArmorObjectImplementation::getAcid() {
 	float value = getTypeValue(SharedWeaponObjectTemplate::ACID, acid);
 	return value - getConditionReduction(value);
 }
 
-float ArmorObjectImplementation::getLightSaber() const {
+float ArmorObjectImplementation::getLightSaber() {
 	float value = getTypeValue(SharedWeaponObjectTemplate::LIGHTSABER, lightSaber);
 	return value - getConditionReduction(value);
 }
 
+
 void ArmorObjectImplementation::setProtectionValue(int type, float value) {
+
 	if (type & SharedWeaponObjectTemplate::KINETIC)
 		setKinetic(value);
 	if (type & SharedWeaponObjectTemplate::ENERGY)
@@ -482,4 +483,39 @@ void ArmorObjectImplementation::setProtectionValue(int type, float value) {
 		setAcid(value);
 	if (type & SharedWeaponObjectTemplate::ELECTRICITY)
 		setElectricity(value);
+}
+
+float ArmorObjectImplementation::getResist(int type) {
+
+	switch(type) {
+	case SharedWeaponObjectTemplate::KINETIC:
+		return kinetic;
+		break;
+	case SharedWeaponObjectTemplate::ENERGY:
+		return energy;
+		break;
+	case SharedWeaponObjectTemplate::ELECTRICITY:
+		return electricity;
+		break;
+	case SharedWeaponObjectTemplate::STUN:
+		return stun;
+		break;
+	case SharedWeaponObjectTemplate::BLAST:
+		return blast;
+		break;
+	case SharedWeaponObjectTemplate::HEAT:
+		return heat;
+		break;
+	case SharedWeaponObjectTemplate::COLD:
+		return cold;
+		break;
+	case SharedWeaponObjectTemplate::ACID:
+		return acid;
+		break;
+	case SharedWeaponObjectTemplate::LIGHTSABER:
+		return lightSaber;
+		break;
+	default:
+		return 0.f;
+	}
 }

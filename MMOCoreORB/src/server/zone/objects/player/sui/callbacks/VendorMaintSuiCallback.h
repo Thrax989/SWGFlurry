@@ -8,6 +8,7 @@
 #ifndef VENDORMAINTCALLBACK_H_
 #define VENDORMAINTCALLBACK_H_
 
+#include "server/zone/objects/intangible/VendorControlDevice.h"
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/objects/tangible/components/vendor/VendorDataComponent.h"
 
@@ -28,27 +29,40 @@ public:
 		try {
 			int value = Integer::valueOf(args->get(0).toString());
 
-			ManagedReference<SceneObject*> vendor = sui->getUsingObject().get();
+			ManagedReference<SceneObject*> obj = sui->getUsingObject().get();
 
-			if(vendor == nullptr)
+			if (obj == nullptr)
+				return;
+
+			ManagedReference<TangibleObject*> vendor = nullptr;
+
+			if (obj->isVendor()) {
+				vendor = cast<TangibleObject*>(obj.get());
+			} else if (obj->isVendorControlDevice()) {
+				VendorControlDevice* device = cast<VendorControlDevice*>(obj.get());
+
+				if (device != nullptr)
+					vendor = cast<TangibleObject*>(device->getControlledObject());
+			}
+
+			if (vendor == nullptr)
 				return;
 
 			DataObjectComponentReference* data = vendor->getDataObjectComponent();
-			if(data == nullptr || data->get() == nullptr || !data->get()->isVendorData()) {
+			if (data == nullptr || data->get() == nullptr || !data->get()->isVendorData()) {
 				return;
 			}
 
 			VendorDataComponent* vendorData = cast<VendorDataComponent*>(data->get());
-			if(vendorData == nullptr) {
+			if (vendorData == nullptr) {
 				return;
 			}
 
-			if(sui->getWindowType() == SuiWindowType::STRUCTURE_VENDOR_PAY) {
+			if (sui->getWindowType() == SuiWindowType::STRUCTURE_VENDOR_PAY) {
 				vendorData->handlePayMaintanence(value);
 			} else {
 				vendorData->handleWithdrawMaintanence(value);
 			}
-
 
 		} catch(Exception& e) {
 

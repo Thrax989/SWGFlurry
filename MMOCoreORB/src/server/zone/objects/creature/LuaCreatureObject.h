@@ -30,6 +30,8 @@ namespace creature {
 
 		int _setObject(lua_State* L);
 		// Methods we will need to use
+		int getBankCredits(lua_State *L);
+		int setBankCredits(lua_State* L);
 		int setHAM(lua_State* L);
 		int setBaseHAM(lua_State* L);
 		int setMaxHAM(lua_State* L);
@@ -78,11 +80,8 @@ namespace creature {
 		int setFactionRank(lua_State* L);
 		int getFactionRank(lua_State* L);
 		int getCashCredits(lua_State* L);
-		int getBankCredits(lua_State *L);
 		int subtractCashCredits(lua_State* L);
-		int subtractBankCredits(lua_State* L);
 		int addCashCredits(lua_State* L);
-		int addBankCredits(lua_State* L);
 		int removeScreenPlayState(lua_State* L);
 		int setLootRights(lua_State* L);
 		int isGrouped(lua_State* L);
@@ -117,12 +116,20 @@ namespace creature {
 		int setShockWounds(lua_State* L);
 		int getForceSensitiveSkillCount(lua_State* L);
 		int villageKnightPrereqsMet(lua_State* L);
+		int buffSingleStat(lua_State* L);
+		int removeBuffs(lua_State* L);
+		int emptyStomach(lua_State* L);
+		int getActivePetsSize(lua_State* L);
+		int getActivePet(lua_State* L);
+		int subtractBankCredits(lua_State* L);
 		int getDamageDealerList(lua_State* L);
 		int getHealingThreatList(lua_State* L);
 		int getSkillMod(lua_State* L);
 		int getGender(lua_State* L);
-		int isRidingMount(lua_State* L);
-		int dismount(lua_State* L);
+		int broadcastToServer(lua_State* L);
+		int broadcastToDiscord(lua_State* L);
+		int broadcastToDiscordGcw(lua_State* L);
+		int broadcastToDiscordUnlock(lua_State* L);
 	private:
 		// The pointer to the 'real object' defined in object.cc
 		CreatureObject* realObject;

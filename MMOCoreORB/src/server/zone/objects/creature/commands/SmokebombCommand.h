@@ -5,8 +5,6 @@
 #ifndef SMOKEBOMBCOMMAND_H_
 #define SMOKEBOMBCOMMAND_H_
 
-#include "server/zone/objects/player/sessions/EntertainingSession.h"
-
 class SmokebombCommand : public QueueCommand {
 public:
 
@@ -23,15 +21,34 @@ public:
 		if (!checkInvalidLocomotions(creature))
 			return INVALIDLOCOMOTION;
 
-		ManagedReference<EntertainingSession*> session = creature->getActiveSession(SessionFacadeType::ENTERTAINING).castTo<EntertainingSession*>();
-
-		if (session == nullptr || (!session->isPlayingMusic() && !session->isDancing())) {
-			creature->sendSystemMessage("@performance:effect_not_performing"); // You must be performing in order to execute this special effect.
+		if (!creature->isEntertaining()) {
+			creature->sendSystemMessage("@performance:effect_not_performing");
 			return GENERALERROR;
 		}
 
-		int effectLevel = Integer::valueOf(arguments.toString());
-		session->doPerformEffect(PerformEffect::SMOKEBOMB, effectLevel);
+		if (!creature->isDancing()) {
+			creature->sendSystemMessage("@performance:effect_not_performing_correct");
+			return GENERALERROR;
+		}
+
+		int actionModifier = Integer::valueOf(arguments.toString());
+
+		if (actionModifier > 3 || actionModifier < 1)
+			actionModifier = 3;
+
+		int actionCost = 30 * actionModifier;
+		actionCost = creature->calculateCostAdjustment(CreatureAttribute::QUICKNESS, actionCost);
+		if (creature->getHAM(CreatureAttribute::ACTION) <= actionCost) {
+			creature->sendSystemMessage("@performance:effect_too_tired");
+			return GENERALERROR;
+		}
+		creature->inflictDamage(creature, CreatureAttribute::ACTION, actionCost, true);
+
+		StringBuffer effect;
+		effect << "clienteffect/entertainer_smoke_bomb_level_" << dec << actionModifier << ".cef";
+		creature->playEffect(effect.toString(), "");
+
+		creature->sendSystemMessage("@performance:effect_perform_smoke_bomb");
 
 		return SUCCESS;
 	}

@@ -26,16 +26,6 @@ public:
 
 	}
 
-	CommandReference& operator=(const CommandReference& val) {
-		if (this == &val) {
-			return *this;
-		}
-
-		Reference<O>::operator=(val);
-
-		return *this;
-	}
-
 	int compareTo(const CommandReference& val) const {
 		return Reference<O>::get()->compareTo(val.get());
 	}

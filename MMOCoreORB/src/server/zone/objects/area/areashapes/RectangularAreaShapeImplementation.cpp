@@ -9,15 +9,15 @@
 #include "server/zone/objects/area/areashapes/RingAreaShape.h"
 #include "engine/util/u3d/Segment.h"
 
-bool RectangularAreaShapeImplementation::containsPoint(float x, float y) const {
+bool RectangularAreaShapeImplementation::containsPoint(float x, float y) {
 	return (x >= blX) && (x <= urX) && (y >= blY) && (y <= urY);
 }
 
-bool RectangularAreaShapeImplementation::containsPoint(const Vector3& point) const {
+bool RectangularAreaShapeImplementation::containsPoint(const Vector3& point) {
 	return containsPoint(point.getX(), point.getY());
 }
 
-Vector3 RectangularAreaShapeImplementation::getRandomPosition() const {
+Vector3 RectangularAreaShapeImplementation::getRandomPosition() {
 	float width = getWidth();
 	float height = getHeight();
 	int x = System::random(width);
@@ -29,7 +29,7 @@ Vector3 RectangularAreaShapeImplementation::getRandomPosition() const {
 	return position;
 }
 
-Vector3 RectangularAreaShapeImplementation::getRandomPosition(const Vector3& origin, float minDistance, float maxDistance) const {
+Vector3 RectangularAreaShapeImplementation::getRandomPosition(const Vector3& origin, float minDistance, float maxDistance) {
 	bool found = false;
 	Vector3 position;
 	int retries = 5;
@@ -48,9 +48,9 @@ Vector3 RectangularAreaShapeImplementation::getRandomPosition(const Vector3& ori
 	return position;
 }
 
-bool RectangularAreaShapeImplementation::intersectsWith(AreaShape* areaShape) const {
+bool RectangularAreaShapeImplementation::intersectsWith(AreaShape* areaShape) {
 	if (areaShape->isRingAreaShape()) {
-		auto ring = cast<RingAreaShape*>(areaShape);
+		ManagedReference<RingAreaShape*> ring = cast<RingAreaShape*>(areaShape);
 		Vector3 center = ring->getAreaCenter();
 
 		if (ring->getOuterRadius2() < center.squaredDistanceTo(getClosestPoint(center))) // wholly outside the ring
@@ -63,7 +63,7 @@ bool RectangularAreaShapeImplementation::intersectsWith(AreaShape* areaShape) co
 		return areaShape->containsPoint(getClosestPoint(areaShape->getAreaCenter()));
 }
 
-Vector3 RectangularAreaShapeImplementation::getClosestPoint(const Vector3& position) const {
+Vector3 RectangularAreaShapeImplementation::getClosestPoint(const Vector3& position) {
 	// Calculate corners.
 	Vector3 topLeft, topRight, bottomLeft, bottomRight;
 	topLeft.set(blX, 0, urY);
@@ -88,11 +88,9 @@ Vector3 RectangularAreaShapeImplementation::getClosestPoint(const Vector3& posit
 	if (point.distanceTo(position) > right.distanceTo(position)) {
 		point = right;
 	}
-
 	if (point.distanceTo(position) > bottom.distanceTo(position)) {
 		point = bottom;
 	}
-
 	if (point.distanceTo(position) > left.distanceTo(position)) {
 		point = left;
 	}
@@ -100,7 +98,7 @@ Vector3 RectangularAreaShapeImplementation::getClosestPoint(const Vector3& posit
 	return point;
 }
 
-Vector3 RectangularAreaShapeImplementation::getFarthestPoint(const Vector3& position) const {
+Vector3 RectangularAreaShapeImplementation::getFarthestPoint(const Vector3& position) {
 	// Calculate corners.
 	Vector3 topLeft, topRight, bottomLeft, bottomRight;
 	topLeft.set(blX, 0, urY);
@@ -121,8 +119,4 @@ Vector3 RectangularAreaShapeImplementation::getFarthestPoint(const Vector3& posi
 	}
 
 	return point;
-}
-
-float RectangularAreaShapeImplementation::getRadius() const {
-	return Math::sqrt(getHeight() * getHeight() + getWidth() * getWidth()) / 2;
 }

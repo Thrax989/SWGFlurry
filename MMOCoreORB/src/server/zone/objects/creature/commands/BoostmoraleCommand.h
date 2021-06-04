@@ -8,6 +8,9 @@
 #include "server/zone/objects/group/GroupObject.h"
 #include "server/chat/ChatManager.h"
 #include "SquadLeaderCommand.h"
+#include "CombatQueueCommand.h"
+#include "server/zone/managers/combat/CombatManager.h"
+#include "server/zone/objects/scene/SceneObject.h"
 
 class BoostmoraleCommand : public SquadLeaderCommand {
 public:
@@ -65,6 +68,7 @@ public:
 			UnicodeString shout(ghost->getCommandMessageString(STRING_HASHCODE("boostmorale")));
  	 	 	server->getChatManager()->broadcastChatMessage(player, shout, 0, 80, player->getMoodID(), 0, ghost->getLanguageID());
  	 	 	creature->updateCooldownTimer("command_message", 30 * 1000);
+ 	 	 	creature->playEffect("clienteffect/off_inspiration.cef", "");
 		}
 
 		return SUCCESS;
@@ -136,6 +140,7 @@ public:
 					woundsToApply = wounds[1] - totalWoundsApplied;
 
 				member->addWounds(j, woundsToApply, true, false);
+				member->playEffect("clienteffect/off_inspiration.cef", "");
 
 				woundsApplied += woundsToApply;
 				totalWoundsApplied += woundsToApply;

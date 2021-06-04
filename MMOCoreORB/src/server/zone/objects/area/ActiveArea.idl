@@ -4,12 +4,11 @@
 
 package server.zone.objects.area;
 
-include server.zone.objects.scene.SceneObject;
-include server.zone.objects.area.areashapes.AreaShape;
-include system.util.Vector;
-
-import server.zone.Zone;
+import server.zone.objects.scene.SceneObject;
+import server.zone.objects.area.areashapes.AreaShape;
 import server.zone.objects.pathfinding.NavArea;
+include system.util.Vector;
+import server.zone.Zone;
 
 @mock
 @json
@@ -89,7 +88,7 @@ class ActiveArea extends SceneObject {
 		return false;
 	}
 
-	@read
+	@dirty
 	public abstract boolean isNavArea() {
 		return false;
 	}
@@ -110,25 +109,18 @@ class ActiveArea extends SceneObject {
 		return campingPermitted;
 	}
 
-	@read
+	@dirty
 	public native boolean containsPoint(float x, float y, unsigned long cellid);
 
-	@read
+	@dirty
 	public abstract native boolean containsPoint(float x, float y);
 
-	@read
+	@dirty
 	public float getRadius2() {
-		float radius = getRadius();
-
-		return radius * radius;
-	}
-
-	@read
-	public float getRadius() {
-		if (areaShape) {
-			return areaShape.getRadius();
+		if (areaShape != null) {
+			return areaShape.getRadius() * areaShape.getRadius();
 		} else {
-			return super.getRadius();
+			return super.getRadius() * super.getRadius();
 		}
 	}
 
@@ -149,7 +141,7 @@ class ActiveArea extends SceneObject {
 
 	@preLocked
 	public void setRadius(float r) {
-		if (areaShape && r < areaShape.getRadius()) {
+		if (areaShape != null && r < areaShape.getRadius()) {
 			r = areaShape.getRadius();
 		}
 
@@ -190,7 +182,7 @@ class ActiveArea extends SceneObject {
 	public void setAreaShape(AreaShape area) {
 		areaShape = area;
 
-		if (areaShape) {
+		if (areaShape != null) {
 			setRadius(areaShape.getRadius());
 		}
 	}
@@ -199,13 +191,8 @@ class ActiveArea extends SceneObject {
 	public AreaShape getAreaShape() {
 		return areaShape;
 	}
-	
-	@read
-	public boolean isRectangularAreaShape() {
-		return areaShape && areaShape.isRectangularAreaShape();
-	}
 
-	@read
+	@dirty
 	public native boolean intersectsWith(ActiveArea area);
 
 	@preLocked

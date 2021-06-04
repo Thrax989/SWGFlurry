@@ -85,7 +85,7 @@ public:
 		int intCurrentFaction = targetPlayer->getFactionStanding(faction);
 		int factionDif = intCurrentFaction - factionValue;
 
-		if ( factionValue >= -5000 && factionValue <= 100000 && factionDif != 0) {
+		if ( factionValue >= -5000 && factionValue <= 30000000 && factionDif != 0) {
 			if ( factionValue > intCurrentFaction)
 				targetPlayer->increaseFactionStanding(faction,factionValue-intCurrentFaction);
 			else
@@ -97,7 +97,7 @@ public:
 			if ( factionDif == 0 )
 				creature->sendSystemMessage("No faction change");
 			else
-				creature->sendSystemMessage("Invalid faction amount.  Must be between -5000 and 100k");
+				creature->sendSystemMessage("Invalid faction amount.  Must be between -5000 and 30,000,000");
 		}
 		return SUCCESS;
 	}

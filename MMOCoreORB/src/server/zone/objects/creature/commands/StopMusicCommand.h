@@ -17,22 +17,23 @@ public:
 	}
 
 	int doQueueCommand(CreatureObject* creature, const uint64& target, const UnicodeString& arguments) const {
+
 		if (!checkStateMask(creature))
 			return INVALIDSTATE;
 
 		if (!checkInvalidLocomotions(creature))
 			return INVALIDLOCOMOTION;
 
-		PerformanceManager* performanceManager = SkillManager::instance()->getPerformanceManager();
+		ManagedReference<Facade*> facade = creature->getActiveSession(SessionFacadeType::ENTERTAINING);
+		ManagedReference<EntertainingSession*> session = dynamic_cast<EntertainingSession*>(facade.get());
 
-		ManagedReference<EntertainingSession*> session = creature->getActiveSession(SessionFacadeType::ENTERTAINING).castTo<EntertainingSession*>();
-
-		if (session == nullptr || !session->isPlayingMusic()) {
-			performanceManager->performanceMessageToSelf(creature, nullptr, "performance", "music_not_performing"); // You are not currently playing a song.
+		if (session == nullptr)
 			return GENERALERROR;
-		}
 
-		session->stopMusic(false);
+		if (!session->isPlayingMusic())
+			return GENERALERROR;
+
+		session->stopPlayingMusic();
 
 		return SUCCESS;
 	}

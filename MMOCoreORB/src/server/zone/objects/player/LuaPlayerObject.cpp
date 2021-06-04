@@ -16,6 +16,7 @@
 #include "server/zone/Zone.h"
 #include "server/zone/objects/region/CityRegion.h"
 #include "server/zone/objects/player/sessions/SlicingSession.h"
+#include "server/chat/ChatManager.h"
 
 const char LuaPlayerObject::className[] = "LuaPlayerObject";
 
@@ -90,7 +91,7 @@ LuaPlayerObject::LuaPlayerObject(lua_State *L) : LuaIntangibleObject(L) {
 #ifdef DYNAMIC_CAST_LUAOBJECTS
 	realObject = dynamic_cast<PlayerObject*>(_getRealSceneObject());
 
-	E3_ASSERT(!_getRealSceneObject() || realObject != nullptr);
+	assert(!_getRealSceneObject() || realObject != nullptr);
 #else
 	realObject = reinterpret_cast<PlayerObject*>(lua_touserdata(L, 1));
 #endif
@@ -105,7 +106,7 @@ int LuaPlayerObject::_setObject(lua_State* L) {
 #ifdef DYNAMIC_CAST_LUAOBJECTS
 	realObject = dynamic_cast<PlayerObject*>(_getRealSceneObject());
 
-	E3_ASSERT(!_getRealSceneObject() || realObject != nullptr);
+	assert(!_getRealSceneObject() || realObject != nullptr);
 #else
 	realObject = (PlayerObject*)lua_touserdata(L, -1);
 #endif
@@ -339,7 +340,7 @@ int LuaPlayerObject::addHologrindProfession(lua_State* L){
 }
 
 int LuaPlayerObject::getHologrindProfessions(lua_State* L) {
-	const Vector<byte>* professions = realObject->getHologrindProfessions();
+	Vector<byte>* professions = realObject->getHologrindProfessions();
 
 	lua_newtable(L);
 
@@ -585,7 +586,7 @@ int LuaPlayerObject::closeSuiWindowType(lua_State* L) {
 }
 
 int LuaPlayerObject::getExperienceList(lua_State* L) {
-	const DeltaVectorMap<String, int>* expList = realObject->getExperienceList();
+	DeltaVectorMap<String, int>* expList = realObject->getExperienceList();
 
 	lua_newtable(L);
 

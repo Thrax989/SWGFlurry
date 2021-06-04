@@ -11,6 +11,7 @@
 #include "templates/customization/AssetCustomizationManagerTemplate.h"
 #include "templates/appearance/PaletteTemplate.h"
 #include "server/zone/objects/player/FactionStatus.h"
+#include "server/zone/objects/tangible/wearables/WearableObject.h"
 
 const char LuaTangibleObject::className[] = "LuaTangibleObject";
 
@@ -50,6 +51,9 @@ Luna<LuaTangibleObject>::RegType LuaTangibleObject::Register[] = {
 		{ "isBroken", &LuaTangibleObject::isBroken},
 		{ "isSliced", &LuaTangibleObject::isSliced},
 		{ "isNoTrade", &LuaTangibleObject::isNoTrade},
+		{ "setSocketCount", &LuaTangibleObject::setSocketCount},
+		{ "getCustomizationString", &LuaTangibleObject::getCustomizationString },
+		{ "setCustomizationString", &LuaTangibleObject::setCustomizationString },
 		{ 0, 0 }
 };
 
@@ -57,7 +61,7 @@ LuaTangibleObject::LuaTangibleObject(lua_State *L) : LuaSceneObject(L) {
 #ifdef DYNAMIC_CAST_LUAOBJECTS
 	realObject = dynamic_cast<TangibleObject*>(_getRealSceneObject());
 
-	E3_ASSERT(!_getRealSceneObject() || realObject != nullptr);
+	assert(!_getRealSceneObject() || realObject != nullptr);
 #else
 	realObject = static_cast<TangibleObject*>(lua_touserdata(L, 1));
 #endif
@@ -75,7 +79,7 @@ int LuaTangibleObject::_setObject(lua_State* L) {
 	if (realObject != obj)
 		realObject = obj;
 
-	E3_ASSERT(!_getRealSceneObject() || realObject != nullptr);
+	assert(!_getRealSceneObject() || realObject != nullptr);
 #else
 	auto obj = static_cast<TangibleObject*>(lua_touserdata(L, -1));
 
@@ -106,8 +110,8 @@ int LuaTangibleObject::getPaletteColorCount(lua_State* L) {
 
 	int colors = 0;
 
-	for (int i = 0; i < variables.size(); ++i) {
-		const String& varkey = variables.elementAt(i).getKey();
+	for (int i = 0; i< variables.size(); ++i) {
+		String varkey = variables.elementAt(i).getKey();
 
 		if (varkey.contains(variableName)) {
 			CustomizationVariable* customizationVariable = variables.get(varkey).get();
@@ -118,13 +122,15 @@ int LuaTangibleObject::getPaletteColorCount(lua_State* L) {
 			PaletteColorCustomizationVariable* palette = dynamic_cast<PaletteColorCustomizationVariable*>(customizationVariable);
 
 			if (palette != nullptr) {
-				const auto& paletteFileName = palette->getPaletteFileName();
-				UniqueReference<PaletteTemplate*> paletteTemplate(TemplateManager::instance()->getPaletteTemplate(paletteFileName));
+				String paletteFileName = palette->getPaletteFileName();
+				PaletteTemplate* paletteTemplate = TemplateManager::instance()->getPaletteTemplate(paletteFileName);
 
 				if (paletteTemplate == nullptr)
 					continue;
 
 				colors = paletteTemplate->getColorCount();
+
+				delete paletteTemplate;
 
 				break;
 			}
@@ -379,4 +385,48 @@ int LuaTangibleObject::isNoTrade(lua_State* L){
 	lua_pushboolean(L, noTrade);
 
 	return 1;
+}
+
+int LuaTangibleObject::setSocketCount(lua_State* L){
+
+    int count = lua_tointeger(L, -1);
+    
+    if (realObject->isWearableObject() && realObject != nullptr)
+    {
+        Locker locker(realObject);
+        
+        WearableObject* wo = cast<WearableObject*>(realObject);
+        
+        // Prevent over 4 sockets
+        if (count > 4)
+        { count = 4; }
+        // Prevent trying to set negative sockets
+        if (count < 0)
+        { count = 0; }
+        
+        wo->setSockets(count);
+    }
+    
+    return 0;
+}
+
+int LuaTangibleObject::getCustomizationString(lua_State* L) {
+
+	String customizationData = "TEST";
+
+	realObject->getCustomizationString(customizationData);
+//	realObject->getCustomizationStringConverted(customizationData);
+	lua_pushstring(L, customizationData.toCharArray());
+
+	return 1;
+}
+
+int LuaTangibleObject::setCustomizationString(lua_State* L) {
+	String customizationData = lua_tostring(L, -1);
+
+	Locker locker(realObject);
+
+	realObject->setCustomizationString(customizationData);
+
+	return 0;
 }

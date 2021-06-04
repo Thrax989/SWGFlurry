@@ -10,14 +10,15 @@
 #include "server/zone/packets/object/ObjectMenuResponse.h"
 
 void WearableObjectMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject, ObjectMenuResponse* menuResponse, CreatureObject* player) const {
-	if (!sceneObject->isTangibleObject())
+
+	if(!sceneObject->isTangibleObject())
 		return;
 
 	TangibleObject* tano = cast<TangibleObject*>(sceneObject);
-	if (tano == nullptr)
+	if(tano == nullptr)
 		return;
 
-	if (tano->getConditionDamage() > 0 && tano->canRepair(player)) {
+	if(tano->getConditionDamage() > 0 && tano->canRepair(player)) {
 		menuResponse->addRadialMenuItem(70, 3, "@sui:repair"); // Slice
 	}
 
@@ -29,7 +30,8 @@ int WearableObjectMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject
 	if (!sceneObject->isASubChildOf(player))
 		return 0;
 
-	if (selectedID == 70) {
+	if(selectedID == 70) {
+
 		if(!sceneObject->isTangibleObject())
 			return 0;
 

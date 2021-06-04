@@ -27,7 +27,7 @@ public:
 
 	~DroidCraftingModuleDataComponent();
 
-	String getModuleName() const;
+	String getModuleName();
 
 	void initializeTransientMembers();
 
@@ -53,20 +53,20 @@ public:
 
 	bool actsAsCraftingStation();
 
-	String toString() const;
+	String toString();
 
 	// crafting droid module specific
 	CraftingStation* getCraftingStation();
 
-	bool isWeaponDroidGeneric() const;
+	bool isWeaponDroidGeneric();
 
-	bool isFoodChemical() const;
+	bool isFoodChemical();
 
-	bool isClothingArmor() const;
+	bool isClothingArmor();
 
-	bool isStructureFurniture() const;
+	bool isStructureFurniture();
 
-	bool isShip() const;
+	bool isShip();
 
 	bool validCraftingType(int type);
 

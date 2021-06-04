@@ -55,8 +55,8 @@ class RingAreaShape extends AreaShape {
 	 * Get the inner radius of the ring.
 	 * @return inner radius of the ring
 	 */
-	@read
-	public float getInnerRadius() {
+	@dirty
+	public abstract float getInnerRadius() {
 		return innerRadius;
 	}
 
@@ -64,7 +64,7 @@ class RingAreaShape extends AreaShape {
 	 * Get the inner squared radius of the ring.
 	 * @return inner squared radius of the ring
 	 */
-	@read
+	@dirty
 	public float getInnerRadius2() {
 		return innerRadius2;
 	}
@@ -73,8 +73,8 @@ class RingAreaShape extends AreaShape {
 	 * Get the outer radius of the ring.
 	 * @return outer radius of the ring
 	 */
-	@read
-	public float getOuterRadius() {
+	@dirty
+	public abstract float getOuterRadius() {
 		return outerRadius;
 	}
 
@@ -82,7 +82,7 @@ class RingAreaShape extends AreaShape {
 	 * Get the outer squared radius of the ring.
 	 * @return outer squared radius of the ring
 	 */
-	@read
+	@dirty
 	public float getOuterRadius2() {
 		return outerRadius2;
 	}
@@ -91,7 +91,7 @@ class RingAreaShape extends AreaShape {
 	 * Get the minimum radius of a circle bounding the area shape.
 	 * @return the minimum bonding radius.
 	 */
-	@read
+	@dirty
 	public float getRadius() {
 		return outerRadius;
 	}
@@ -102,8 +102,8 @@ class RingAreaShape extends AreaShape {
 	 * @param y the y coordinate.
 	 * @return true if the coordinate is within the area shape.
 	 */
-	@read
-	public native boolean containsPoint(float x, float y);
+	@dirty
+	public native abstract boolean containsPoint(float x, float y);
 
 	/**
 	 * Check if the coordinate is within the area shape.
@@ -112,8 +112,8 @@ class RingAreaShape extends AreaShape {
 	 */
 	@dereferenced
 	@local
-	@read
-	public native boolean containsPoint(@dereferenced final Vector3 point);
+	@dirty
+	public native abstract boolean containsPoint(@dereferenced final Vector3 point);
 
 	/**
 	 * Generate a random position within the area.
@@ -121,8 +121,8 @@ class RingAreaShape extends AreaShape {
 	 */
 	@dereferenced
 	@local
-	@read
-	public native Vector3 getRandomPosition();
+	@dirty
+	public native abstract Vector3 getRandomPosition();
 
 	/**
 	 * Generate a random position within the area with the supplied origin and radius as limits.
@@ -133,15 +133,15 @@ class RingAreaShape extends AreaShape {
 	 */
 	@dereferenced
 	@local
-	@read
-	public native Vector3 getRandomPosition(@dereferenced final Vector3 origin, float minDistance, float maxDistance);
+	@dirty
+	public native abstract Vector3 getRandomPosition(@dereferenced final Vector3 origin, float minDistance, float maxDistance);
 
 	/**
 	 * Check if this is a ring area shape.
 	 * @return true if it is a ring area shape.
 	 */
-	@read
-	public boolean isRingAreaShape() {
+	@dirty
+	public abstract boolean isRingAreaShape() {
 		return true;
 	}
 
@@ -150,15 +150,15 @@ class RingAreaShape extends AreaShape {
 	 * @param areaShape the area shape to check for intersections with.s
 	 * @return true if the area shapes intersects each other.
 	 */
-	@read
-	public native boolean intersectsWith(AreaShape areaShape);
+	@dirty
+	public native abstract boolean intersectsWith(AreaShape areaShape);
 
 	/**
 	 * Check if this area shape intersects with the supplied circular area shape.
 	 * @param circle the circular area shape to check for intersections with.
 	 * @return true if the area shapes intersects each other.
 	 */
-	@read
+	@dirty
 	private native boolean intersectsWithCircle(CircularAreaShape circle);
 
 	/**
@@ -166,13 +166,13 @@ class RingAreaShape extends AreaShape {
 	 * @param ring the ring area shape to check for intersections with.
 	 * @return true if the rings intersect with each other.
 	 */
-	@read
+	@dirty
 	private native boolean intersectsWithRing(RingAreaShape ring);
 
 	/**
 	 * Get the area of the areaShape.
 	 * @return the area of the area shape.
 	 */
-	@read
-	public native float getArea();
+	@dirty
+	public native abstract float getArea();
 }

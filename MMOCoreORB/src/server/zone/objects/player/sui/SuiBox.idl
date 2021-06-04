@@ -72,6 +72,8 @@ class SuiBox extends ManagedObject implements Logger {
 	public static final int KEYPAD = 21;
 
 	public static final int QUESTPOPUP = 30;
+	public static final int ADDWEAPONDOT = 40;
+	public static final int DECONSTRUCTWEAPON = 41;
 
 	public SuiBox(CreatureObject play, unsigned int windowtype, unsigned int boxtype) {
 		player = play;
@@ -90,10 +92,10 @@ class SuiBox extends ManagedObject implements Logger {
 
 		CreatureObject strongRef = player;
 
-		if (strongRef) {
+		if (strongRef != null) {
 			PlayerObject ghost = strongRef.getPlayerObject();
 
-			if (ghost) {
+			if (ghost != null) {
 				boxID = ghost.getNewSuiBoxID(windowType);
 			}
 		}
@@ -145,6 +147,8 @@ class SuiBox extends ManagedObject implements Logger {
 	 */
 	@local
 	public native void generateBody(SuiCreatePageMessage message);
+	@local
+	public native void generateBodySorted(SuiCreatePageMessage message);
 
 
 	/**
@@ -267,6 +271,14 @@ class SuiBox extends ManagedObject implements Logger {
 	}
 
 	public abstract boolean isColorPicker() {
+		return false;
+	}
+
+	public abstract boolean isDeconstructWeapon() {
+		return false;
+	}
+
+	public abstract boolean isAddWeaponDot() {
 		return false;
 	}
 

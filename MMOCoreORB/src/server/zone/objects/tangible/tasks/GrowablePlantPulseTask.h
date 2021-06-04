@@ -11,7 +11,7 @@ namespace tangible {
 namespace tasks {
 
 class GrowablePlantPulseTask : public Task {
-	WeakReference<PlantObject*> plant;
+	ManagedWeakReference<PlantObject*> plant;
 
 public:
 	GrowablePlantPulseTask(PlantObject* pl) {
@@ -37,7 +37,7 @@ public:
 		Time* lastPulse = strongRef->getLastPulse();
 
 		// Cycles handles multiple pulses if server was offline during task trigger
-		int cycles = lastPulse->miliDifference() / PlantObject::PULSERATE;
+		int cycles = lastPulse->miliDifference() / (PlantObject::PULSERATE * 1000);
 
 		if (cycles < 1)
 			cycles = 1;
@@ -50,7 +50,7 @@ public:
 		strongRef->updateLastPulse();
 
 		if (parent == nullptr || rootParent == nullptr || !rootParent->isBuildingObject() || !parent->isCellObject()) {
-			reschedule(PlantObject::PULSERATE);
+			reschedule(PlantObject::PULSERATE * 1000);
 			return;
 		}
 
@@ -134,7 +134,7 @@ public:
 			}
 		}
 
-		reschedule(PlantObject::PULSERATE);
+		reschedule(PlantObject::PULSERATE * 1000);
 	}
 };
 

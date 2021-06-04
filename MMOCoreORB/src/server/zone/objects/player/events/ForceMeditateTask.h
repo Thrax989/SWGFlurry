@@ -35,7 +35,9 @@ public:
 			if (!player->isMeditating())
 				return;
 
-
+			player->playEffect("clienteffect/pl_force_meditate_self.cef", "");
+ 			player->playEffect("clienteffect/death_trooper_anti_virus.cef");
+			player->playEffect("clienteffect/medic_cure_affliction.cef");
 			if (fmeditateTask != nullptr)
 				fmeditateTask->reschedule(5000);
 

@@ -62,14 +62,29 @@ public:
 
 				ghost->completeQuest(quest);
 
+			} else if (commandType.beginsWith("spdata")){
+				PlayerObject* ghost = targetCreature->getPlayerObject();
+
+				if (ghost == nullptr)
+					return INVALIDTARGET;
+
+				String screenPlayName, screenPlayVariable, value;
+				args.getStringToken(screenPlayName);
+				args.getStringToken(screenPlayVariable);
+				args.getStringToken(value);
+
+				ghost->setScreenPlayData(screenPlayName, screenPlayVariable, value);
+
 			} else {
 				creature->sendSystemMessage("SYNTAX: /completeQuest screenplaystate <screenPlayStateName> <state>");
+				creature->sendSystemMessage("SYNTAX: /completeQuest spdata <screenPlayName> <screenPlayVariable> <data>");
 				creature->sendSystemMessage("SYNTAX: /completeQuest quest <quest>");
 
 				return INVALIDPARAMETERS;
 			}
 		} catch (Exception& e) {
 			creature->sendSystemMessage("SYNTAX: /completeQuest screenplaystate <screenPlayStateName> <state>");
+			creature->sendSystemMessage("SYNTAX: /completeQuest spdata <screenPlayName> <screenPlayVariable> <data>");
 			creature->sendSystemMessage("SYNTAX: /completeQuest quest <quest>");
 
 			return INVALIDPARAMETERS;

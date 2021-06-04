@@ -9,18 +9,18 @@
 #include "server/zone/objects/area/areashapes/RectangularAreaShape.h"
 #include "server/zone/objects/area/areashapes/RingAreaShape.h"
 
-bool CircularAreaShapeImplementation::containsPoint(float x, float y) const {
+bool CircularAreaShapeImplementation::containsPoint(float x, float y) {
 	Vector3 position;
 	position.set(x, 0, y);
 
 	return (areaCenter.squaredDistanceTo(position) <= radius2);
 }
 
-bool CircularAreaShapeImplementation::containsPoint(const Vector3& point) const {
+bool CircularAreaShapeImplementation::containsPoint(const Vector3& point) {
 	return (areaCenter.squaredDistanceTo(point) <= radius2);
 }
 
-Vector3 CircularAreaShapeImplementation::getRandomPosition() const {
+Vector3 CircularAreaShapeImplementation::getRandomPosition() {
 	float distance = System::random((int)radius);
 	float angle = System::random(360) * Math::DEG2RAD;
 
@@ -30,7 +30,7 @@ Vector3 CircularAreaShapeImplementation::getRandomPosition() const {
 	return position;
 }
 
-Vector3 CircularAreaShapeImplementation::getRandomPosition(const Vector3& origin, float minDistance, float maxDistance) const {
+Vector3 CircularAreaShapeImplementation::getRandomPosition(const Vector3& origin, float minDistance, float maxDistance) {
 	Vector3 position;
 	bool found = false;
 	int retries = 5;
@@ -49,32 +49,32 @@ Vector3 CircularAreaShapeImplementation::getRandomPosition(const Vector3& origin
 	return position;
 }
 
-bool CircularAreaShapeImplementation::intersectsWith(AreaShape* areaShape) const {
+bool CircularAreaShapeImplementation::intersectsWith(AreaShape* areaShape) {
 	if (areaShape == nullptr) {
 		return false;
 	}
 
 	if (areaShape->isCircularAreaShape()) {
-		auto circle = dynamic_cast<CircularAreaShape*>(areaShape);
+		ManagedReference<CircularAreaShape*> circle = cast<CircularAreaShape*>(areaShape);
 		return intersectsWithCircle(circle);
 	} else if (areaShape->isRectangularAreaShape()) {
-		auto rectangle = dynamic_cast<RectangularAreaShape*>(areaShape);
+		ManagedReference<RectangularAreaShape*> rectangle = cast<RectangularAreaShape*>(areaShape);
 		return rectangle->intersectsWith(_this.getReferenceUnsafeStaticCast());
 	} else if (areaShape->isRingAreaShape()) {
-		auto ring = dynamic_cast<RingAreaShape*>(areaShape);
+		ManagedReference<RingAreaShape*> ring = cast<RingAreaShape*>(areaShape);
 		return ring->intersectsWith(_this.getReferenceUnsafeStaticCast());
 	} else {
 		return false;
 	}
 }
 
-bool CircularAreaShapeImplementation::intersectsWithCircle(CircularAreaShape* circle) const {
+bool CircularAreaShapeImplementation::intersectsWithCircle(CircularAreaShape* circle) {
 	float squaredRadiusSum = radius2 + circle->getRadius2();
 	float squaredCenterDistance = areaCenter.squaredDistanceTo(circle->getAreaCenter());
 
 	return (squaredCenterDistance <= squaredRadiusSum);
 }
 
-float CircularAreaShapeImplementation::getArea() const {
+float CircularAreaShapeImplementation::getArea() {
 	return Math::PI * radius2;
 }

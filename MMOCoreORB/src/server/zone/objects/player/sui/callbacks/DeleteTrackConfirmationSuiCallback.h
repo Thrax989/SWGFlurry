@@ -29,16 +29,25 @@ public:
 		SuiMessageBox* listBox = cast<SuiMessageBox*>( suiBox);
 		ManagedReference<SceneObject*> object = suiBox->getUsingObject().get();
 
-		if (object == nullptr)
+		if (object == nullptr) {
 			return;
+		}
 
 		DroidObject* droid = cast<DroidObject*>(object.get());
-
-		if (droid == nullptr || module == nullptr || cancelPressed)
+		if (droid == nullptr){
 			return;
+		}
+		// should be locked before hand
 
-		Locker crosslock(droid, player);
-		module->deleteTrack(player, track);
+		if(module == nullptr) {
+			return;
+		}
+
+		if (cancelPressed) {
+			return;
+		}
+		Locker crosslock(droid,player);
+		module->deleteTrack(player,track);
 	}
 };
 

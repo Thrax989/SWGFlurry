@@ -241,7 +241,7 @@ void CreatureImplementation::notifyDespawn(Zone* zone) {
 
 bool CreatureImplementation::canHarvestMe(CreatureObject* player) {
 
-	if(!player->isInRange(_this.getReferenceUnsafeStaticCast(), 10.0f) || player->isInCombat() || !player->hasSkill("outdoors_scout_novice")
+	if(!player->isInRange(_this.getReferenceUnsafeStaticCast(), 21.0f) || player->isInCombat() || !player->hasSkill("outdoors_scout_novice")
 			|| player->isDead() || player->isIncapacitated() || isPet())
 		return false;
 
@@ -269,7 +269,7 @@ bool CreatureImplementation::canHarvestMe(CreatureObject* player) {
 bool CreatureImplementation::canDroidHarvestMe(CreatureObject* player,CreatureObject* droid) {
 
 	// droid should be able to harvest if in range, with current AI
-	if(!droid->isInRange(_this.getReferenceUnsafeStaticCast(), (10.0f + droid->getTemplateRadius() + getTemplateRadius())) || droid->isInCombat() || !player->hasSkill("outdoors_scout_novice")
+	if(!droid->isInRange(_this.getReferenceUnsafeStaticCast(), (21.0f + droid->getTemplateRadius() + getTemplateRadius())) || droid->isInCombat() || !player->hasSkill("outdoors_scout_novice")
 			|| droid->isDead() || droid->isIncapacitated() || isPet()) {
 		return false;
 	}
@@ -334,12 +334,16 @@ float CreatureImplementation::getChanceToTame(CreatureObject* player) {
 	int ferocity = getFerocity();
 	float tamingChance = getTame() * 100.0f;
 
-	if (isVicious())
+	if (isVicious()) {
 		skill += player->getSkillMod("tame_aggro");
-	else
+		skill += 15; // Aggro tame bonus
+	}
+	else {
 		skill += player->getSkillMod("tame_non_aggro");
+		skill += 5; // Non-Aggro tame bonus
+	}
 
-	float chanceToTame = tamingChance + skill - (cl + ferocity);
+ 	float chanceToTame = tamingChance + skill - (cl + ferocity);
 
 	return chanceToTame;
 }
@@ -391,7 +395,7 @@ bool CreatureImplementation::canCollectDna(CreatureObject* player) {
 	if (_this.getReferenceUnsafeStaticCast()->isNonPlayerCreatureObject()) {
 		return false;
 	}
-	if(!player->isInRange(_this.getReferenceUnsafeStaticCast(), 16.0f) || player->isInCombat() || player->isDead() || player->isIncapacitated() ){
+	if(!player->isInRange(_this.getReferenceUnsafeStaticCast(), 25.0f) || player->isInCombat() || player->isDead() || player->isIncapacitated() ){
 		return false;
 	}
 

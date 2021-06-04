@@ -15,7 +15,7 @@ DroidCraftingModuleDataComponent::~DroidCraftingModuleDataComponent() {
 
 }
 
-String DroidCraftingModuleDataComponent::getModuleName() const {
+String DroidCraftingModuleDataComponent::getModuleName() {
 	if (isClothingArmor())
 		return "crafting_clothing";
 	else if (isWeaponDroidGeneric())
@@ -95,7 +95,7 @@ bool DroidCraftingModuleDataComponent::actsAsCraftingStation() {
 	return true;
 }
 
-String DroidCraftingModuleDataComponent::toString() const {
+String DroidCraftingModuleDataComponent::toString() {
 	return BaseDroidModuleComponent::toString();
 }
 
@@ -104,23 +104,23 @@ CraftingStation* DroidCraftingModuleDataComponent::getCraftingStation() {
 	return craftingStation;
 }
 
-bool DroidCraftingModuleDataComponent::isWeaponDroidGeneric() const {
+bool DroidCraftingModuleDataComponent::isWeaponDroidGeneric() {
 	return craftingType == CraftingTool::WEAPON;
 }
 
-bool DroidCraftingModuleDataComponent::isFoodChemical() const {
+bool DroidCraftingModuleDataComponent::isFoodChemical() {
 	return craftingType == CraftingTool::FOOD;
 }
 
-bool DroidCraftingModuleDataComponent::isClothingArmor() const {
+bool DroidCraftingModuleDataComponent::isClothingArmor() {
 	return craftingType == CraftingTool::CLOTHING;
 }
 
-bool DroidCraftingModuleDataComponent::isStructureFurniture() const {
+bool DroidCraftingModuleDataComponent::isStructureFurniture() {
 	return craftingType == CraftingTool::STRUCTURE;
 }
 
-bool DroidCraftingModuleDataComponent::isShip() const {
+bool DroidCraftingModuleDataComponent::isShip() {
 	return craftingType == CraftingTool::SPACE;
 }
 

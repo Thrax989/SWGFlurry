@@ -30,7 +30,7 @@ public:
 
 	~DroidPersonalityModuleDataComponent();
 
-	String getModuleName() const;
+	String getModuleName();
 
 	void initializeTransientMembers();
 
@@ -44,7 +44,7 @@ public:
 
 	void deactivate();
 
-	String toString() const;
+	String toString();
 
 	void onCall();
 

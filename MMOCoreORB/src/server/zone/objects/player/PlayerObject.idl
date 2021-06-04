@@ -10,7 +10,7 @@ import engine.service.proto.BasePacket;
 import engine.util.u3d.Vector3;
 import server.zone.objects.building.BuildingObject;
 import server.zone.objects.creature.CreatureObject;
-include server.zone.objects.creature.ai.AiAgent;
+import server.zone.objects.creature.ai.AiAgent;
 import server.zone.objects.intangible.IntangibleObject;
 import server.zone.objects.player.events.PlayerDisconnectEvent;
 import server.zone.objects.player.events.PlayerRecoveryEvent;
@@ -89,8 +89,6 @@ class PlayerObject extends IntangibleObject {
 	protected boolean teleporting;
 
 	protected boolean onLoadScreen;
-
-	protected boolean forcedTransform;
 
 	protected boolean muted;
 	protected string mutedReason;
@@ -245,11 +243,6 @@ class PlayerObject extends IntangibleObject {
 	protected Time lastGcwPvpCombatActionTimestamp;
 
 	@dereferenced
-	protected Time lastCrackdownGcwCombatActionTimestamp;
-
-	protected unsigned int crackdownFactionTefCrc;
-
-	@dereferenced
 	protected transient Reference<PvpTefRemovalTask> pvpTefTask;
 
 	@dereferenced
@@ -295,6 +288,22 @@ class PlayerObject extends IntangibleObject {
 	protected transient unsigned long sessionStatsActivityMovement;
 	protected transient unsigned long sessionStatsTotalMovement;
 	protected transient string sessionStatsIPAddress;
+	protected transient string ipAddress;
+	protected boolean opposingFactionArea;
+	protected unsigned long pvpKills;
+	protected unsigned long pvpDeaths;
+	protected unsigned long bountyKills;
+	protected unsigned long pveKills;
+	protected unsigned long pveDeaths;
+	protected unsigned long missionsCompleted;
+	protected unsigned long worldbossKills;
+	protected unsigned long eventplayerCrate;
+
+	//Player Bounty
+	@dereferenced
+	protected Time playerBountyTimestamp;
+	protected unsigned long bountyPlacerId;
+	protected int bountyReward;	
 
 	public static final int LFG = 1;
 	public static final int NEWBIEHELPER = 2;
@@ -325,7 +334,6 @@ class PlayerObject extends IntangibleObject {
 
 		teleporting = false;
 		onLoadScreen = false;
-		forcedTransform = false;
 
 		muted = false;
 		mutedReason = "";
@@ -364,7 +372,7 @@ class PlayerObject extends IntangibleObject {
 
 		clientLastMovementStamp = 0;
 
-		maximumLots = 10;
+		maximumLots = 100;
 
 		adminLevel = 0;
 		priviledgeFlag = 0;
@@ -380,8 +388,6 @@ class PlayerObject extends IntangibleObject {
 
 		lastBhPvpCombatActionTimestamp.updateToCurrentTime();
 		lastGcwPvpCombatActionTimestamp.updateToCurrentTime();
-		lastCrackdownGcwCombatActionTimestamp.updateToCurrentTime();
-		crackdownFactionTefCrc = 0;
 
 		lastDigestion.updateToCurrentTime();
 
@@ -405,6 +411,22 @@ class PlayerObject extends IntangibleObject {
 
 		miliSecsPlayed = 0;
 
+		ipAddress = "";
+		opposingFactionArea = false;
+		worldbossKills = 0;
+		eventplayerCrate = 0;
+		pvpKills = 0;
+		pvpDeaths = 0;
+		bountyKills = 0;
+		pveKills = 0;
+		pveDeaths = 0;
+		missionsCompleted = 0;
+
+		//Player Bounty
+		playerBountyTimestamp.updateToCurrentTime();
+		bountyPlacerId = 0;
+		bountyReward = 0;
+
 		Logger.setLoggingName("PlayerObjectBase");
 	}
 
@@ -412,21 +434,21 @@ class PlayerObject extends IntangibleObject {
 
 	}
 
-	@dirty
-	@nativeStub
-	@local
-	public native PlayerObject asPlayerObject();
+	public native void showInstallationInfo(CreatureObject player);
+
+    @dirty
+    @nativeStub
+    @local
+    public native PlayerObject asPlayerObject();
 
 	public void setLogLevel(int newLevel) {
 		playerLogLevel = newLevel;
 	}
 
-	@read
 	public int getLogLevel() {
 		return playerLogLevel;
 	}
 
-	@read
 	public int getCountMaxCov() {
 		return countMaxCov;
 	}
@@ -465,14 +487,14 @@ class PlayerObject extends IntangibleObject {
 	public native void sendMessage(BasePacket msg);
 
 	public synchronized void addOwnedStructure(StructureObject obj) {
-		if (!obj)
+		if (obj == null)
 			return;
 
 		ownedStructures.put(obj.getObjectID());
 	}
 
 	public synchronized void removeOwnedStructure(StructureObject obj) {
-		if (!obj)
+		if (obj == null)
 			return;
 
 		ownedStructures.drop(obj.getObjectID());
@@ -481,7 +503,7 @@ class PlayerObject extends IntangibleObject {
 
 	}
 
-	@read
+	@dirty
 	public int getAcceptedTOSVersion() {
 		return tosVersionAccepted;
 	}
@@ -500,7 +522,7 @@ class PlayerObject extends IntangibleObject {
 
 	@dirty
 	public synchronized boolean isOwnedStructure(StructureObject obj) {
-		if (!obj)
+		if (obj == null)
 			return false;
 
 		return ownedStructures.contains(obj.getObjectID());
@@ -534,7 +556,7 @@ class PlayerObject extends IntangibleObject {
 	 */
 	public native int addExperience(final string xpType, int xp, boolean notifyClient = true);
 
-	 /**
+    /**
 	 * Removes experience of a type from the player's experience pool.
 	 * @pre { this is locked }
 	 * @post { this is locked }
@@ -543,12 +565,12 @@ class PlayerObject extends IntangibleObject {
 	 */
 	public native void removeExperience(final string xpType, boolean notifyClient = true);
 
-	/**
+    /**
 	 * Checks if the player has capped the experience type.
 	 * @param xpType The string value for the type of experience to check.
 	 * @return true if experience is capped, false otherwise.
 	 */
-	@read
+	@dirty
 	public native boolean hasCappedExperience(final string xpType);
 
 	/**
@@ -627,12 +649,12 @@ class PlayerObject extends IntangibleObject {
 		waypointList.insertToMessage(msg);
 	}
 
-	@read
+	@dirty
 	public int getWaypointListSize() {
 		return waypointList.size();
 	}
 
-	@read
+	@dirty
 	public WaypointObject getWaypoint(int index) {
 		return waypointList.getValueAt(index);
 	}
@@ -748,7 +770,6 @@ class PlayerObject extends IntangibleObject {
 	public native void decreaseFactionStanding(final string factionName, float amount);
 	public native void setFactionStanding(final string factionName, float amount);
 
-	@read
 	public native float getFactionStanding(final string factionName);
 
 	public void setScreenPlayData(final string screenPlay, final string variable, final string data) {
@@ -759,7 +780,7 @@ class PlayerObject extends IntangibleObject {
 		screenPlayData.drop(screenPlay + "_" + variable);
 	}
 
-	@read
+	@dirty
 	public string getScreenPlayData(final string screenPlay, final string variable) {
 		return screenPlayData.get(screenPlay + "_" + variable);
 	}
@@ -817,12 +838,12 @@ class PlayerObject extends IntangibleObject {
 
 	public native void activateQuest(int questID);
 
-	@read
+	@dirty
 	public boolean hasActiveQuestBitSet(int bitIndex) {
 		return activeQuests.getBitValue(bitIndex);
 	}
 
-	@read
+	@dirty
 	public boolean hasCompletedQuestsBitSet(int bitIndex) {
 		return completedQuests.getBitValue(bitIndex);
 	}
@@ -837,7 +858,7 @@ class PlayerObject extends IntangibleObject {
 
 	@dereferenced
 	@local
-	@read
+	@dirty
 	public native PlayerQuestData getQuestData(unsigned int questHashCode);
 
 	@read
@@ -895,7 +916,7 @@ class PlayerObject extends IntangibleObject {
 	}
 
 	public void setConversatingCreature(CreatureObject creature) {
-		if (!creature)
+		if (creature == null)
 			conversatingCreature = 0;
 		else
 			conversatingCreature = creature.getObjectID();
@@ -911,7 +932,7 @@ class PlayerObject extends IntangibleObject {
 
 	@local
 	@dereferenced
-	@read
+	@dirty
 	public native Vector3 getTrainerCoordinates();
 
 	public void setTrainerZoneName(string zoneName) {
@@ -994,14 +1015,14 @@ class PlayerObject extends IntangibleObject {
 	}
 
 	public void setDeclaredResidence(BuildingObject residence) {
-		if (!residence)
+		if (residence == null)
 			declaredResidence = 0;
 		else
 			declaredResidence = residence.getObjectID();
 	}
 
 	public void setCloningFacility(BuildingObject cloningfac) {
-		if (!cloningfac)
+		if (cloningfac == null)
 			cloningFacility = 0;
 		else
 			cloningFacility = cloningfac.getObjectID();
@@ -1019,9 +1040,11 @@ class PlayerObject extends IntangibleObject {
 	 */
 	public native void notifyOnline();
 
+	public native int numSpecificSkills(CreatureObject creature, final string reqSkillName);
+
 	public native void doDigest(int fillingReduction);
 
-	@read
+	@dirty
 	public boolean isDigesting() {
 		if (getDrinkFilling() > 0 || getFoodFilling() > 0) {
 			return true;
@@ -1059,6 +1082,7 @@ class PlayerObject extends IntangibleObject {
 		return savedParentID;
 	}
 
+	@dirty
 	public native unsigned int getNewSuiBoxID(unsigned int type);
 
 	@read
@@ -1067,7 +1091,7 @@ class PlayerObject extends IntangibleObject {
 	}
 
 	@reference
-	@read
+	@dirty
 	public SuiBox getSuiBox(unsigned int boxID) {
 		return suiBoxes.get(boxID);
 	}
@@ -1099,7 +1123,7 @@ class PlayerObject extends IntangibleObject {
 		if (hasSuiBoxWindowType(windowType)) {
 			SuiBox sui = getSuiBoxFromWindowType(windowType);
 
-			if (sui) {
+			if (sui != null) {
 				sendMessage(sui.generateCloseMessage());
 				removeSuiBox(sui.getBoxID());
 			}
@@ -1132,7 +1156,7 @@ class PlayerObject extends IntangibleObject {
 
 	public native void updateInRangeBuildingPermissions();
 
-	@read
+	@dirty
 	public native boolean hasPermissionGroup(final string group);
 
 	@local
@@ -1167,7 +1191,7 @@ class PlayerObject extends IntangibleObject {
 		return duelList.get(index);
 	}
 
-	@read
+	@dirty
 	public boolean requestedDuelTo(CreatureObject targetPlayer) {
 		return duelList.contains(targetPlayer);
 	}
@@ -1236,16 +1260,12 @@ class PlayerObject extends IntangibleObject {
 		onLoadScreen = val;
 	}
 
-	public void setForcedTransform(boolean val) {
-		forcedTransform = val;
-	}
-
-	@read
+	@dirty
 	public int getNumBadges() {
 		return badges.getNumBadges();
 	}
 
-	@read
+	@dirty
 	public int getBadgeTypeCount(unsigned int type) {
 		return badges.getTypeCount(type);
 	}
@@ -1279,6 +1299,7 @@ class PlayerObject extends IntangibleObject {
 	 * @param ability The ability to search for.
 	 * @return True if the player has the ability.
 	 */
+	@local
 	@read
 	public boolean hasAbility(final string ability) {
 		return abilityList.contains(ability);
@@ -1367,43 +1388,33 @@ class PlayerObject extends IntangibleObject {
 	public native boolean isNewbieHelper();
 
 	@local
-	@read
-	public final VectorMap<string, int> getXpTypeCapList() {
-	    return xpTypeCapList;
-	}
-
-	@local
+	@dirty
 	public VectorMap<string, int> getXpTypeCapList() {
 	    return xpTypeCapList;
 	}
 
 	@local
-	@read
-	public final DeltaVectorMap<string, int> getExperienceList() {
-		return experienceList;
-	}
-
-	@local
+	@dirty
 	public DeltaVectorMap<string, int> getExperienceList() {
 		return experienceList;
 	}
 
 	@local
 	@rawTemplate(value = "uint32, PlayerQuestData")
-	@read
-	public final DeltaVectorMap getPlayerQuestsData() {
+	@dirty
+	public DeltaVectorMap getPlayerQuestsData() {
 		return playerQuestsData;
 	}
 
 	@local
-	@read
-	public final DeltaBitArray getActiveQuests() {
+	@dirty
+	public DeltaBitArray getActiveQuests() {
 		return activeQuests;
 	}
 
 	@local
-	@read
-	public final DeltaBitArray getCompletedQuests() {
+	@dirty
+	public DeltaBitArray getCompletedQuests() {
 		return completedQuests;
 	}
 
@@ -1418,8 +1429,8 @@ class PlayerObject extends IntangibleObject {
 	}
 
 	@local
-	@read
-	public final AbilityList getAbilityList() {
+	@dirty
+	public AbilityList getAbilityList() {
 		return abilityList;
 	}
 
@@ -1430,12 +1441,7 @@ class PlayerObject extends IntangibleObject {
 	}
 
 	@local
-	@read
-	public final SchematicList getSchematics() {
-		return schematicList;
-	}
-
-	@local
+	@dirty
 	public SchematicList getSchematics() {
 		return schematicList;
 	}
@@ -1481,8 +1487,8 @@ class PlayerObject extends IntangibleObject {
 	}
 
 	@local
-	@read
-	public final DeltaVector<string> getFriendList() {
+	@dirty
+	public DeltaVector<string> getFriendList() {
 		return friendList;
 	}
 
@@ -1494,11 +1500,6 @@ class PlayerObject extends IntangibleObject {
 	@read
 	public boolean isOnLoadScreen() {
 		return onLoadScreen;
-	}
-
-	@read
-	public boolean isForcedTransform() {
-		return forcedTransform;
 	}
 
 	public void addChatRoom(unsigned int roomID) {
@@ -1529,8 +1530,8 @@ class PlayerObject extends IntangibleObject {
 	}
 
 	@local
-	@read
-	public final DeltaVector<string> getIgnoreList() {
+	@dirty
+	public DeltaVector<string> getIgnoreList() {
 		return ignoreList;
 	}
 
@@ -1549,13 +1550,14 @@ class PlayerObject extends IntangibleObject {
 	public native void maximizeExperience();
 
 	public native void activateMissions();
+	public native void regrantSkills();
 
-	@read
+	@dirty
 	public string getCommandMessageString(unsigned int actionCRC) {
 		return commandMessageStrings.get(actionCRC);
 	}
 
-	@read
+	@dirty
 	public boolean hasBadge(unsigned int badge) {
 		return badges.hasBadge(badge);
 	}
@@ -1617,13 +1619,8 @@ class PlayerObject extends IntangibleObject {
 	}
 
 	@local
+	@dirty
 	public ValidatedPosition getLastValidatedPosition() {
-		return lastValidatedPosition;
-	}
-
-	@local
-	@read
-	public final ValidatedPosition getLastValidatedPosition() {
 		return lastValidatedPosition;
 	}
 
@@ -1645,7 +1642,7 @@ class PlayerObject extends IntangibleObject {
 		return galaxyAccountInfo;
 	}
 
-	@read
+	@dirty
 	public unsigned long getServerMovementTimeDelta() {
 		return serverLastMovementStamp.miliDifference();
 	}
@@ -1677,8 +1674,8 @@ class PlayerObject extends IntangibleObject {
 	}
 
 	@local
-	@read
-	public final Vector<byte> getHologrindProfessions() {
+	@dirty
+	public Vector<byte> getHologrindProfessions() {
 		return hologrindProfessions;
 	}
 
@@ -1743,19 +1740,11 @@ class PlayerObject extends IntangibleObject {
 	@read
 	public native Time getLastGcwPvpCombatActionTimestamp();
 
-	@dereferenced
-	@local
-	@read
-	public native Time getLastGcwCrackdownCombatActionTimestamp();
-
-	public native void updateLastCombatActionTimestamp(boolean updateGcwCrackdownAction, boolean updateGcwAction, boolean updateBhAction);
+	public native void updateLastPvpCombatActionTimestamp(boolean updateGcwAction, boolean updateBhAction);
 
 	public native void updateLastBhPvpCombatActionTimestamp();
 
 	public native void updateLastGcwPvpCombatActionTimestamp();
-
-	@read
-	public native boolean hasTef();
 
 	@read
 	public native boolean hasPvpTef();
@@ -1763,15 +1752,7 @@ class PlayerObject extends IntangibleObject {
 	@read
 	public native boolean hasBhTef();
 
-	public native void setCrackdownTefTowards(unsigned int factionCrc, boolean scheduleTefRemovalTask = true);
-
-	@read
-	public native boolean hasCrackdownTefTowards(unsigned int factionCrc);
-
-	@read
-	public native boolean hasCrackdownTef();
-
-	public native void schedulePvpTefRemovalTask(boolean removeCrackdownGcwTefNow, boolean removeGcwTefNow, boolean removeBhTefNow);
+	public native void schedulePvpTefRemovalTask(boolean removeGcwTefNow, boolean removeBhTefNow);
 
 	public native void schedulePvpTefRemovalTask(boolean removeNow = false);
 
@@ -1787,8 +1768,7 @@ class PlayerObject extends IntangibleObject {
 	public native int getVendorCount();
 
 	@local
-	@read
-	public final SortedVector<unsigned long> getOwnedVendors() {
+	public SortedVector<unsigned long> getOwnedVendors() {
 		return ownedVendors;
 	}
 
@@ -1881,12 +1861,12 @@ class PlayerObject extends IntangibleObject {
 		return account;
 	}
 
-	@read
+	@dirty
 	public string getChosenVeteranReward( unsigned int milestone ) {
 		return galaxyAccountInfo.getChosenVeteranReward(milestone);
 	}
 
-	@read
+	@dirty
 	public native boolean hasChosenVeteranReward( final string rewardTemplate ) {
 		return galaxyAccountInfo.hasChosenVeteranReward(rewardTemplate);
 	}
@@ -1972,7 +1952,7 @@ class PlayerObject extends IntangibleObject {
 		lastPvpRatingUpdate.updateToCurrentTime();
 	}
 
-	public synchronized boolean hasOnVictimList(unsigned int playerID) {
+	public boolean hasOnVictimList(unsigned int playerID) {
 		if (lastPvpRatingUpdate.miliDifference() >= PVP_RESET_TIME && victimList.size() > 0) {
 			victimList.removeAll();
 			return false;
@@ -1995,6 +1975,94 @@ class PlayerObject extends IntangibleObject {
 
 		pvpRating = rating;
 	}
+
+	public void setIpAddress(string address) {
+		ipAddress = address;
+	}
+	public string getIpAddress() {
+		return ipAddress;
+	}
+	public void updatePvpKills() {
+		pvpKills += 1;
+		updateWebStats("pvpKills", pvpKills);
+	}
+	public unsigned long getPvpKills() {
+		return pvpKills;
+	}
+	public void updateworldbossKills() {
+		worldbossKills += 1;
+		updateWebStats("worldbossKills", worldbossKills);
+	}
+	public unsigned long getworldbossKills() {
+		return worldbossKills;
+	}
+	public void updateeventplayerCrate() {
+		eventplayerCrate += 1;
+		updateWebStats("eventplayerCrate", eventplayerCrate);
+	}
+	public unsigned long geteventplayerCrate() {
+		return eventplayerCrate;
+	}
+	public void updatePvpDeaths() {
+		pvpDeaths += 1;
+		updateWebStats("pvpDeaths", pvpDeaths);
+	}
+	public unsigned long getPvpDeaths() {
+		return pvpDeaths;
+	}
+	public void updateBountyKills() {
+		bountyKills += 1;
+		updateWebStats("bountykills", bountyKills);
+	}
+	public unsigned long getBountyKills() {
+		return bountyKills;
+	}
+	public void updatePveKills() {
+		pveKills += 1;
+		updateWebStats("pvekills", pveKills);
+	}
+	public unsigned long getPveKills() {
+		return pveKills;
+	}
+	public void updatePveDeaths() {
+		pveDeaths += 1;
+		updateWebStats("pveDeaths", pveDeaths);
+	}
+	public unsigned long getPveDeaths() {
+		return pveDeaths;
+	}
+	public void updateMissionsCompleted() {
+		missionsCompleted += 1;
+		updateWebStats("missionscompleted", missionsCompleted);
+	}
+	public unsigned long getMissionsCompleted() {
+		return missionsCompleted;
+	}
+	
+	public native void updateWebStats(final string stat, int newValue);
+
+	//Player Bounty
+	public void updatePlayerBountyTimestamp(int duration) {
+		playerBountyTimestamp.updateToCurrentTime();
+		playerBountyTimestamp.addMiliTime(duration);
+	}
+	public void setBountyReward(int reward) {
+		bountyReward = reward;
+	}
+	public unsigned long getBountyReward() {
+		return bountyReward;
+	}
+
+	public void setBountyPlacerId(unsigned long placerId) {
+		bountyPlacerId = placerId;
+	}
+	public unsigned long getBountyPlacerId() {
+		return bountyPlacerId;
+	}
+	public boolean hasPlayerBounty() {
+		return !playerBountyTimestamp.isPast();
+	}
+	public native void refundPlayerBountyCredits();
 
 	@read
 	public boolean isCloning() {

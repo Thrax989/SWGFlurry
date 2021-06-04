@@ -1236,9 +1236,6 @@ class SceneObject extends QuadTreeEntry implements Logger, Metrics {
 		return gameObjectType;
 	}
 
-	@dirty
-	public native string getGameObjectTypeStringID();
-
 	@read
 	public unsigned int getClientGameObjectType() {
 		return templateObject.getClientGameObjectType();
@@ -1265,6 +1262,9 @@ class SceneObject extends QuadTreeEntry implements Logger, Metrics {
 	 * TODO: @param notifyClient
 	 */
 	public native void rotate(int degrees);
+
+	public native void rotateXaxis(int degrees); 
+	public native void rotateYaxis(int degrees);
 
 	/**
 	 * Sets this objects direction so that the object is facing the specified object.
@@ -1321,7 +1321,7 @@ class SceneObject extends QuadTreeEntry implements Logger, Metrics {
 	@dirty
 	public native SceneObject getRootParentUnsafe();
 
-	public native void updateSavedRootParentRecursive(SceneObject newRoot, int maxDepth = 100);
+	public native void updateSavedRootParentRecursive(SceneObject newRoot);
 
 	/**
 	 * Returns the parent of object type in the tree
@@ -1691,11 +1691,6 @@ class SceneObject extends QuadTreeEntry implements Logger, Metrics {
 		return false;
 	}
 
-	@dirty
-	public abstract boolean isDotPackObject() {
-		return false;
-	}
-
 	@read
 	public boolean isFishingPoleObject() {
 		return gameObjectType == SceneObjectType.FISHINGPOLE;
@@ -1990,6 +1985,16 @@ class SceneObject extends QuadTreeEntry implements Logger, Metrics {
 	}
 
 	@dirty
+	public abstract boolean isStructureControlDevice() {
+		return false;
+	}
+
+	@dirty
+	public abstract boolean isVendorControlDevice() {
+		return false;
+	}
+
+	@dirty
 	public abstract boolean isMissionTerminal() {
 		return false;
 	}
@@ -2180,3 +2185,4 @@ class SceneObject extends QuadTreeEntry implements Logger, Metrics {
 	@local
 	public abstract native void getChildrenRecursive(@dereferenced SortedVector<unsigned long> childrenObjectsFound, int maxDepth = 50, boolean pruneCreo = false, boolean pruneCraftedComponents = false);
 }
+

@@ -24,7 +24,16 @@ public:
 
 		ManagedReference<EntertainingSession*> session = creature->getActiveSession(SessionFacadeType::ENTERTAINING).castTo<EntertainingSession*>();
 
-		if (session == nullptr || !session->isDancing()) {
+		if (session == nullptr) {
+			creature->sendSystemMessage("@performance:dance_must_be_performing_self");
+			return GENERALERROR;
+		}
+
+		if (session->isPlayingMusic()) {
+			session->stopPlayingMusic();
+		}
+
+		if (!session->isDancing()) {
 			creature->sendSystemMessage("@performance:dance_must_be_performing_self");
 			return GENERALERROR;
 		}
@@ -35,24 +44,25 @@ public:
 
 		PerformanceManager* performanceManager = SkillManager::instance()->getPerformanceManager();
 
-		if (args.length() < 1) {
-			performanceManager->sendAvailablePerformances(creature, PerformanceType::DANCE, false);
+		if (args.length() < 2) {
+			StartDanceCommand::sendAvailableDances(creature, ghost, SuiWindowType::DANCING_CHANGE);
 			return SUCCESS;
 		}
 
-		int performanceIndex = performanceManager->getPerformanceIndex(PerformanceType::DANCE, args, 0);
+		String fullString = String("startDance") + "+" + args;
 
-		if (performanceIndex == 0) {
-			creature->sendSystemMessage("@performance:dance_unknown_self"); // You do not know that dance.
+		if (!ghost->hasAbility(fullString)) {
+			creature->sendSystemMessage("@performance:dance_lack_skill_self");
 			return GENERALERROR;
 		}
 
-		if (!performanceManager->canPerformDance(creature, performanceIndex)) {
-			creature->sendSystemMessage("@performance:dance_lack_skill_self"); // You do not have the skill to perform the dance.
+		if (!performanceManager->hasDanceAnimation(args)) {
+			creature->sendSystemMessage("@performance:dance_lack_skill_self");
 			return GENERALERROR;
 		}
 
-		session->sendEntertainingUpdate(creature, performanceIndex);
+		session->sendEntertainingUpdate(creature, /*0x3C4CCCCD*/0.0125, performanceManager->getDanceAnimation(args), 0x07339FF8, 0xDD);
+		session->setPerformanceName(args);
 
 		creature->notifyObservers(ObserverEventType::CHANGEENTERTAIN, creature);
 

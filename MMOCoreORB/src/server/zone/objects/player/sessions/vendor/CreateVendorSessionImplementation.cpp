@@ -13,7 +13,6 @@
 #include "server/zone/objects/player/sessions/vendor/sui/CreateVendorSuiCallback.h"
 #include "server/zone/objects/player/sessions/vendor/sui/NameVendorSuiCallback.h"
 #include "server/zone/objects/player/PlayerObject.h"
-#include "server/zone/objects/transaction/TransactionLog.h"
 
 #include "server/zone/objects/tangible/components/vendor/VendorDataComponent.h"
 #include "templates/creature/VendorCreatureTemplate.h"
@@ -44,7 +43,7 @@ int CreateVendorSessionImplementation::initializeSession() {
 		return 0;
 	}
 
-	const SortedVector<unsigned long long>* ownedVendors = ghost->getOwnedVendors();
+	SortedVector<unsigned long long>* ownedVendors = ghost->getOwnedVendors();
 	for (int i = 0; i < ownedVendors->size(); i++) {
 		ManagedReference<SceneObject*> vendor = player->getZoneServer()->getObject(ownedVendors->elementAt(i));
 
@@ -59,7 +58,7 @@ int CreateVendorSessionImplementation::initializeSession() {
 		if(vendorData == nullptr)
 			continue;
 
-		if (!vendorData->isInitialized()) {
+		if (!vendorData->isInitialized() && !vendorData->isPackedUp()) {
 			player->sendSystemMessage("@player_structure:already_creating"); // You are already creating a vendor.
 			cancelSession();
 			return 0;
@@ -227,10 +226,7 @@ void CreateVendorSessionImplementation::createVendor(String& name) {
 		randomizeVendorLooks(cast<CreatureObject*>(vendor.get()));
 	}
 
-	TransactionLog trx(TrxCode::VENDORLIFECYCLE, player, vendor);
-
 	if(!inventory->transferObject(vendor, -1, false)) {
-		trx.abort() << "transferObject failed.";
 		player->sendSystemMessage("@player_structure:create_failed");
 		vendor->destroyObjectFromDatabase(true);
 		cancelSession();

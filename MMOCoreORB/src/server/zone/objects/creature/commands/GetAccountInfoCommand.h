@@ -270,7 +270,7 @@ public:
 
 			uint32 galaxyID = tokenizer.getIntToken();
 
-			const GalaxyBanEntry* galaxyBan = account->getGalaxyBan(galaxyID);
+			GalaxyBanEntry* galaxyBan = account->getGalaxyBan(galaxyID);
 			if(galaxyBan != nullptr)
 				galaxyName += " \\#FF0000(BANNED)\\#FFFFFF" + galaxyBan->getBanReason();
 

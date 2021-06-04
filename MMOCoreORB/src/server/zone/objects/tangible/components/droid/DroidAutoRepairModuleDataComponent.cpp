@@ -15,7 +15,7 @@ DroidAutoRepairModuleDataComponent::DroidAutoRepairModuleDataComponent() {
 DroidAutoRepairModuleDataComponent::~DroidAutoRepairModuleDataComponent() {
 
 }
-String DroidAutoRepairModuleDataComponent::getModuleName() const {
+String DroidAutoRepairModuleDataComponent::getModuleName() {
 	return String("auto_repair_module");
 }
 void DroidAutoRepairModuleDataComponent::initializeTransientMembers() {
@@ -123,7 +123,7 @@ void DroidAutoRepairModuleDataComponent::deactivate() {
 
 }
 
-String DroidAutoRepairModuleDataComponent::toString() const {
+String DroidAutoRepairModuleDataComponent::toString(){
 	return BaseDroidModuleComponent::toString();
 }
 

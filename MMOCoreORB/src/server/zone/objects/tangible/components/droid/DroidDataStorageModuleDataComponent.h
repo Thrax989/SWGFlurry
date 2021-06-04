@@ -24,7 +24,7 @@ public:
 
 	~DroidDataStorageModuleDataComponent();
 
-	String getModuleName() const;
+	String getModuleName();
 
 	void initializeTransientMembers();
 
@@ -32,7 +32,7 @@ public:
 
 	int getBatteryDrain() { return 0;}
 
-	String toString() const;
+	String toString();
 
 	void onCall();
 

@@ -26,11 +26,11 @@ public:
 	DroidTrapModuleDataComponent();
 	~DroidTrapModuleDataComponent();
 
-	String getModuleName() const;
+	String getModuleName();
 	void initializeTransientMembers();
 	void fillAttributeList(AttributeListMessage* msg, CreatureObject* droid);
 	int getBatteryDrain() { return 0;}
-	String toString() const;
+	String toString();
 	// crafting droid module specific
 	void onCall();
 	void onStore();

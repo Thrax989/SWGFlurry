@@ -52,16 +52,18 @@ public:
 		addSerializableVariables();
 	}
 
-	SkillModList& operator=(const SkillModList& l) {
+/*	SkillModList& operator=(const SkillModList& l) {
 		if (this == &l)
 			return *this;
 
-		DeltaVectorMap<String, SkillModEntry>::operator=(l);
+		DeltaVectorMap<String, int>::operator =(m);
+
+		mods.setAllowOverwriteInsertPlan();
 
 		mods = l.mods;
 
 		return *this;
-	}
+	}*/
 
 	inline void addSerializableVariables() {
 		addSerializableVariable("mods", &mods);

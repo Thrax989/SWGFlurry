@@ -143,7 +143,7 @@ public:
 			}
 
 			int targetDefense = target->getSkillMod(trapData->getDefenseMod());
-			const Time* cooldown = droid->getCooldownTime("throwtrap");
+			Time* cooldown = droid->getCooldownTime("throwtrap");
 
 			if (cooldown != nullptr && !cooldown->isPast()) {
 				StringIdChatParameter msg;

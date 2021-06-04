@@ -5,6 +5,7 @@
 #ifndef HEALDAMAGECOMMAND_H_
 #define HEALDAMAGECOMMAND_H_
 
+#include "server/zone/objects/building/BuildingObject.h"
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/tangible/pharmaceutical/StimPack.h"
 #include "server/zone/objects/tangible/pharmaceutical/RangedStimPack.h"
@@ -48,7 +49,7 @@ public:
 		}
 
 		//Force the delay to be at least 4 seconds.
-		delay = (delay < 4) ? 4 : delay;
+		delay = (delay < 1) ? 1 : delay;
 
 		StringIdChatParameter message("healing_response", "healing_response_58"); //You are now ready to heal more damage.
 		Reference<InjuryTreatmentTask*> task = new InjuryTreatmentTask(creature, message, "injuryTreatment");
@@ -119,17 +120,13 @@ public:
 	}
 
 	bool checkTarget(CreatureObject* creature, CreatureObject* creatureTarget) const {
-		if (!creatureTarget->hasDamage(CreatureAttribute::HEALTH) && !creatureTarget->hasDamage(CreatureAttribute::ACTION)) {
+		if (!creatureTarget->hasDamage(CreatureAttribute::HEALTH) && !creatureTarget->hasDamage(CreatureAttribute::ACTION) && !creatureTarget->hasDamage(CreatureAttribute::MIND)) {
 			return false;
 		}
 
 		PlayerManager* playerManager = server->getPlayerManager();
 
 		if (creature != creatureTarget && !CollisionManager::checkLineOfSight(creature, creatureTarget)) {
-			return false;
-		}
-
-		if (!playerEntryCheck(creature, creatureTarget)) {
 			return false;
 		}
 
@@ -348,6 +345,31 @@ public:
 				if (!creatureTarget->isHealableBy(creature))
 					continue;
 
+				if (creature->isPlayerCreature() && object->getParentID() != 0 && creature->getParentID() != object->getParentID()) {
+					Reference<CellObject*> targetCell = object->getParent().get().castTo<CellObject*>();
+
+					if (targetCell != nullptr) {
+						if (object->isPlayerCreature()) {
+							auto perms = targetCell->getContainerPermissions();
+
+							if (!perms->hasInheritPermissionsFromParent()) {
+								if (!targetCell->checkContainerPermission(creature, ContainerPermissions::WALKIN))
+									continue;
+							}
+						}
+
+						ManagedReference<SceneObject*> parentSceneObject = targetCell->getParent().get();
+
+						if (parentSceneObject != nullptr) {
+							BuildingObject* buildingObject = parentSceneObject->asBuildingObject();
+
+							if (buildingObject != nullptr && !buildingObject->isAllowedEntry(creature))
+								continue;
+						}
+					}
+				}
+
+
 				if (creature != creatureTarget && checkForArenaDuel(creatureTarget))
 					continue;
 
@@ -445,8 +467,32 @@ public:
 			return GENERALERROR;
 		}
 
-		if (!playerEntryCheck(creature, targetCreature)) {
-			return GENERALERROR;
+		if (creature->isPlayerCreature() && targetCreature->getParentID() != 0 && creature->getParentID() != targetCreature->getParentID()) {
+			Reference<CellObject*> targetCell = targetCreature->getParent().get().castTo<CellObject*>();
+
+			if (targetCell != nullptr) {
+				if (!targetCreature->isPlayerCreature()) {
+					auto perms = targetCell->getContainerPermissions();
+
+					if (!perms->hasInheritPermissionsFromParent()) {
+						if (!targetCell->checkContainerPermission(creature, ContainerPermissions::WALKIN)) {
+							creature->sendSystemMessage("@combat_effects:cansee_fail"); // You cannot see your target.
+							return GENERALERROR;
+						}
+					}
+				}
+
+				ManagedReference<SceneObject*> parentSceneObject = targetCell->getParent().get();
+
+				if (parentSceneObject != nullptr) {
+					BuildingObject* buildingObject = parentSceneObject->asBuildingObject();
+
+					if (buildingObject != nullptr && !buildingObject->isAllowedEntry(creature)) {
+						creature->sendSystemMessage("@combat_effects:cansee_fail"); // You cannot see your target.
+						return GENERALERROR;
+					}
+				}
+			}
 		}
 
 		uint32 stimPower = stimPack->calculatePower(creature, targetCreature);

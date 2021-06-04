@@ -6,38 +6,40 @@
 #include "server/zone/managers/combat/CreatureAttackData.h"
 
 class ForceIntimidateTask : public Task {
-	ManagedReference<CreatureObject*> targetCreature;
+	ManagedReference<CreatureObject*> sourceCreo;
 	const CreatureAttackData data;
 	Reference<SortedVector<ManagedReference<TangibleObject*> >* > targets;
+	int targetIndex;
 
 public:
-	ForceIntimidateTask(CreatureObject* targetCreo, SortedVector<ManagedReference<TangibleObject*> >* targets, const CombatQueueCommand *command) : data("", command, 0) {
-		targetCreature = targetCreo;
+	ForceIntimidateTask(CreatureObject* creo, SortedVector<ManagedReference<TangibleObject*> >* targets, const CombatQueueCommand *command) : data("", command, 0) {
+		sourceCreo = creo;
+		targetIndex = 0;
 		this->targets = targets;
+
 	}
 
 	void run() {
-		if (targetCreature == nullptr) {
-			return;
-		}
+		Locker locker(sourceCreo);
 
-		for (int i = 0;  i < targets->size(); i++) {
-			TangibleObject* chainTarget = targets->get(i);
+		for (int index=targetIndex;  index < targets->size(); index++) {
 
-			if (chainTarget == nullptr) {
+			TangibleObject* tar = targets->get(index);
+
+			if(tar == nullptr)
 				continue;
-			}
 
-			CreatureObject* chainCreature = chainTarget->asCreatureObject();
+			CreatureObject* tarCreo = tar->asCreatureObject();
+			if(tarCreo != nullptr && tarCreo != sourceCreo) {
 
-			if (chainCreature != nullptr && chainCreature != targetCreature) {
-				Locker locker(targetCreature);
+				sourceCreo->doCombatAnimation(tarCreo, STRING_HASHCODE("force_intimidate_chain"), 0x01, data.getTrails());
+				sourceCreo = tarCreo;
 
-				targetCreature->doCombatAnimation(chainCreature, STRING_HASHCODE("force_intimidate_chain"), 0x01, data.getTrails());
+				targetIndex = index+1;
+				if(targetIndex < targets->size())
+					schedule(100);
 
-				locker.release();
-
-				targetCreature = chainCreature;
+				return;
 			}
 		}
 	}

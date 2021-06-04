@@ -22,14 +22,14 @@ protected:
 public:
 	DroidRepairModuleDataComponent();
 	~DroidRepairModuleDataComponent();
-	String getModuleName() const;
+	String getModuleName();
 	void initializeTransientMembers();
 	void fillAttributeList(AttributeListMessage* msg, CreatureObject* droid);
 	void fillObjectMenuResponse(SceneObject* droidObject, ObjectMenuResponse* menuResponse, CreatureObject* player);
 	int handleObjectMenuSelect(CreatureObject* player, byte selectedID, PetControlDevice* controller);
 	void handlePetCommand(String cmd, CreatureObject* speaker) ;
 	int getBatteryDrain();
-	String toString() const;
+	String toString();
 
 	/**
 	 * There is no added benefit to having multiple repair modules installed.
