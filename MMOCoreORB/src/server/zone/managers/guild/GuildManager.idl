@@ -12,14 +12,12 @@ import server.zone.ZoneServer;
 import server.chat.ChatManager;
 import server.chat.room.ChatRoom;
 import server.zone.objects.scene.SceneObject;
+import server.zone.objects.guild.GuildObject;
 import server.zone.objects.tangible.terminal.guild.GuildTerminal;
 import server.zone.objects.creature.CreatureObject;
-
 include server.zone.objects.scene.variables.DeltaSet;
 include server.chat.StringIdChatParameter;
 include system.util.VectorMap;
-include server.zone.objects.guild.GuildObject;
-include server.zone.managers.guild.GuildObjectIterator;
 
 @dirty
 class GuildManager extends ManagedService implements Logger {
@@ -43,7 +41,7 @@ class GuildManager extends ManagedService implements Logger {
 
 	public GuildManager(ZoneServer serv, ZoneProcessServer proc) {
 		Logger.setLoggingName("GuildManager");
-		Logger.setLogging(false);
+		Logger.setLogging(true);
 		Logger.setGlobalLogging(true);
 
 		pendingGuilds.setNoDuplicateInsertPlan();
@@ -163,7 +161,7 @@ class GuildManager extends ManagedService implements Logger {
 	public native void renameGuild(GuildObject guild);
 
 	public native GuildObject createGuild(CreatureObject player, final string guildName, final string guildAbbrev);
-
+	
 	public native boolean disbandGuild(CreatureObject player, GuildObject guild);
 
 	public native void sponsorPlayer(CreatureObject player, final string playerName);
@@ -188,7 +186,7 @@ class GuildManager extends ManagedService implements Logger {
 
 	public native void sendTransferAckTo(CreatureObject player,  final string newOwnerName, SceneObject guildTerminal);
 
-	public native void transferLeadership(CreatureObject newOwner, CreatureObject oldOwner, boolean election);
+	public native void transferLeadership(CreatureObject newOwner, CreatureObject oldOwner, boolean election);  
 
 	public native void sendAcceptLotsTo(CreatureObject newOwner, GuildTerminal guildTerminal);
 
@@ -212,7 +210,4 @@ class GuildManager extends ManagedService implements Logger {
 	public native void castVote(GuildObject guild, CreatureObject player, unsigned long candidateID);
 
 	public native void viewElectionStandings(GuildObject guild, CreatureObject player, GuildTerminal terminal);
-
-	@local
-	public native void iterateGuilds(@dereferenced final GuildObjectIterator iterator);
 }

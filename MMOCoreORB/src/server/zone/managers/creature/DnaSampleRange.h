@@ -47,7 +47,7 @@ public:
 	};
 
 	int generateValue(int quality) const;
-	String toString() const;
+	String toString();
 	bool inRange(int amount) const;
 };
 

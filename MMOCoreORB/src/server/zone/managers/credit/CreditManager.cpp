@@ -4,111 +4,102 @@
 
 #include "CreditManager.h"
 
-CreditManager::CreditManager() {
-	Logger::setLoggingName("CreditManager");
-}
 
 void CreditManager::addBankCredits(uint64 creatureID, int amount, bool notifyClient) {
-	auto obj = CreditManager::getCreditObject(creatureID);
+	ManagedReference<CreditObject*> obj = CreditManager::getCreditObject(creatureID);
 
 	if (obj == nullptr)
 		return;
 
 	Locker locker(obj);
-	obj->addBankCredits(amount, notifyClient);
+	obj->setBankCredits(obj->getBankCredits()+amount, notifyClient);
 }
-
 void CreditManager::addCashCredits(uint64 creatureID, int amount, bool notifyClient) {
-	auto obj = CreditManager::getCreditObject(creatureID);
+	ManagedReference<CreditObject*> obj = CreditManager::getCreditObject(creatureID);
 
 	if (obj == nullptr)
 		return;
 
 	Locker locker(obj);
-	obj->addCashCredits(amount, notifyClient);
+	obj->setCashCredits(obj->getCashCredits()+amount, notifyClient);
 }
 
 bool CreditManager::subtractBankCredits(uint64 creatureID, int amount, bool notifyClient) {
-	auto obj = CreditManager::getCreditObject(creatureID);
+	ManagedReference<CreditObject*> obj = CreditManager::getCreditObject(creatureID);
 
 	if (obj == nullptr)
 		return false;
 
 	Locker locker(obj);
+	int newCredits = obj->getBankCredits() - amount;
 
-	if (!obj->verifyBankCredits(amount)) {
+	if(newCredits < 0)
 		return false;
-	}
 
-	obj->subtractBankCredits(amount);
+	obj->setBankCredits(newCredits, notifyClient);
 
 	return true;
 }
 
 bool CreditManager::subtractCashCredits(uint64 creatureID, int amount, bool notifyClient) {
-	auto obj = CreditManager::getCreditObject(creatureID);
+	ManagedReference<CreditObject*> obj = CreditManager::getCreditObject(creatureID);
 
 	if (obj == nullptr)
 		return false;
 
 	Locker locker(obj);
 
-	if (!obj->verifyCashCredits(amount)) {
-		return false;
-	}
+	int newCredits = obj->getCashCredits() - amount;
 
-	obj->subtractCashCredits(amount);
+	if (newCredits < 0)
+		return false;
+
+	obj->setCashCredits(newCredits, notifyClient);
 
 	return true;
 }
 
-void CreditManager::transferCredits(uint64 creatureID, int cash, int bank, bool notifyClient) {
-	auto obj = CreditManager::getCreditObject(creatureID);
-
-	if (obj == nullptr)
-		return;
-
-	Locker locker(obj);
-
-	obj->transferCredits(cash, bank, notifyClient);
-}
-
 bool CreditManager::verifyBankCredits(uint64 creatureID, int amount) {
-	auto obj = CreditManager::getCreditObject(creatureID);
+	ManagedReference<CreditObject*> obj = CreditManager::getCreditObject(creatureID);
 
 	if (obj == nullptr)
 		return false;
 
-	return obj->verifyBankCredits(amount);
+	if (amount < 0)
+		return false;
+
+	if (obj->getBankCredits() < amount)
+		return false;
+
+	return true;
 }
 
 bool CreditManager::verifyCashCredits(uint64 creatureID, int amount) {
-	auto obj = CreditManager::getCreditObject(creatureID);
+	ManagedReference<CreditObject*> obj = CreditManager::getCreditObject(creatureID);
 
 	if (obj == nullptr)
 		return false;
 
-	return obj->verifyCashCredits(amount);
+	if (amount < 0)
+		return false;
+
+	if (obj->getCashCredits() < amount)
+		return false;
+
+	return true;
 }
 
-Reference<CreditObject*> CreditManager::getCreditObject(uint64 creoID) {
+ManagedReference<CreditObject*> CreditManager::getCreditObject(uint64 creoID) {
 	static const uint64 databaseID = ObjectDatabaseManager::instance()->getDatabaseID("credits");
 
 	uint64 oid = ((creoID & 0x0000FFFFFFFFFFFFull) | (databaseID << 48));
 
-	Reference<CreditObject*> creditObj =  Core::getObjectBroker()->lookUp(oid).castTo<CreditObject*>();
-
-	if (creditObj != nullptr && creditObj->getOwnerObjectID() == 0) {
-		creditObj = nullptr;
-	}
+	ManagedReference<CreditObject*> creditObj =  Core::getObjectBroker()->lookUp(oid).castTo<CreditObject*>();
 
 	if (creditObj == nullptr) {
-		Reference<CreatureObject*> creo = Core::getObjectBroker()->lookUp(creoID).castTo<CreatureObject*>();
-
-		if (creo == nullptr) {
-			instance()->error() << "Failed to find credit object for creoID " << creoID;
+		ManagedReference<CreatureObject*> creo = Core::getObjectBroker()->lookUp(creoID).castTo<CreatureObject*>();
+		if (creo == nullptr)
 			return nullptr;
-		}
 
 		Locker locker(creo);
 		creditObj = creo->getCreditObject();

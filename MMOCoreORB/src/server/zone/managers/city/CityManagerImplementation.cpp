@@ -37,7 +37,6 @@
 #include "TaxPayMailTask.h"
 #include "templates/tangible/SharedStructureObjectTemplate.h"
 #include "server/zone/objects/player/sui/callbacks/RenameCitySuiCallback.h"
-#include "server/zone/objects/transaction/TransactionLog.h"
 
 #ifndef CITY_DEBUG
 #define CITY_DEBUG
@@ -201,9 +200,9 @@ CityRegion* CityManagerImplementation::createCity(CreatureObject* mayor, const S
 
 	city->setCustomRegionName(cityName);
 	city->setZone(mayor->getZone());
-	city->setCityRank(OUTPOST);
+	city->setCityRank(METROPOLIS);
 	city->setMayorID(mayor->getObjectID());
-	Region* region = city->addRegion(x, y, radiusPerRank.get(OUTPOST - 1), true);
+	Region* region = city->addRegion(x, y, radiusPerRank.get(METROPOLIS - 1), true);
 
 	city->resetVotingPeriod();
 	city->setAssessmentPending(true);
@@ -572,12 +571,8 @@ void CityManagerImplementation::withdrawFromCityTreasury(CityRegion* city, Creat
 		return;
 	}
 
-	{
-		TransactionLog trx(TrxCode::CITYTREASURY, mayor, value, false);
-		trx.addState("treasury", city->getCityTreasury());
-		mayor->addBankCredits(value, true);
-		city->subtractFromCityTreasury(value);
-	}
+	mayor->addBankCredits(value, true);
+	city->subtractFromCityTreasury(value);
 
 	mayor->addCooldown("city_withdrawal", CityManagerImplementation::treasuryWithdrawalCooldown);
 
@@ -631,12 +626,8 @@ void CityManagerImplementation::depositToCityTreasury(CityRegion* city, Creature
 		return;
 	}
 
-	{
-		TransactionLog trx(creature, TrxCode::CITYTREASURY, total, true);
-		trx.addState("treasury", city->getCityTreasury());
-		creature->subtractCashCredits(total);
-		city->addToCityTreasury(total);
-	}
+	city->addToCityTreasury(total);
+	creature->subtractCashCredits(total);
 
 	StringIdChatParameter params("city/city", "deposit_treasury"); //You deposit %DI credits into the treasury.
 	params.setDI(total);
@@ -761,7 +752,7 @@ void CityManagerImplementation::processCityUpdate(CityRegion* city) {
 			Reference<PlayerObject*> ghost = mayor->getSlottedObject("ghost").castTo<PlayerObject*> ();
 
 			if (ghost != nullptr) {
-				ghost->addExperience("political", 750, true);
+				ghost->addExperience("political", 3000, true);
 			}
 		}
 		updateCityVoting(city);
@@ -1148,7 +1139,7 @@ void CityManagerImplementation::updateCityVoting(CityRegion* city, bool override
 			Reference<PlayerObject*> ghost = mayorObject->getSlottedObject("ghost").castTo<PlayerObject*>();
 
 			if (ghost != nullptr) {
-				ghost->addExperience("political", votes * 300, true);
+				ghost->addExperience("political", votes * 3000, true);
 			}
 
 			if (votes > topVotes || (votes == topVotes && candidateID == incumbentID)) {
@@ -1179,7 +1170,7 @@ void CityManagerImplementation::updateCityVoting(CityRegion* city, bool override
 			CreatureObject* oldmayorCreo = cast<CreatureObject*> (oldmayor.get());
 
 			if (oldmayorCreo != nullptr) {
-				const Time* cooldownTime = oldmayorCreo->getCooldownTime("city_specialization");
+				Time* cooldownTime = oldmayorCreo->getCooldownTime("city_specialization");
 				int64 miliDiff = 0;
 
 				if (cooldownTime != nullptr) {

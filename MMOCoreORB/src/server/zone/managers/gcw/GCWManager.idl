@@ -8,15 +8,15 @@ import system.util.SortedVector;
 
 import server.zone.objects.tangible.TangibleObject;
 import server.zone.objects.structure.StructureObject;
+import server.zone.objects.building.BuildingObject;
 import server.zone.objects.installation.InstallationObject;
 import server.zone.objects.creature.CreatureObject;
 import server.zone.objects.creature.ai.AiAgent;
 import server.zone.objects.scene.SceneObject;
 import system.thread.Mutex;
 import server.zone.objects.tangible.deed.Deed;
+import server.zone.managers.gcw.TerminalSpawn;
 
-include server.zone.objects.building.BuildingObject;
-include server.zone.managers.gcw.TerminalSpawn;
 include server.zone.objects.building.components.DestructibleBuildingDataComponent;
 include server.zone.objects.installation.components.TurretDataComponent;
 include server.zone.objects.tangible.terminal.components.TurretControlTerminalDataComponent;
@@ -65,9 +65,6 @@ class GCWManager extends ManagedService implements Logger {
 	protected transient Vector<int> difficultyScalingThresholds;
 
 	@dereferenced
-	protected transient Vector<string> planetsWithWildScans;
-
-	@dereferenced
 	protected transient HashTable<int, float> racialPenaltyMap;
 
 	private transient int rebelBases;
@@ -76,12 +73,6 @@ class GCWManager extends ManagedService implements Logger {
 	private transient int imperialScore;
 	private transient int winningFaction;
 	private transient int winnerDifficultyScaling;
-	private transient boolean crackdownScansEnabled;
-	private transient boolean crackdownScanPrivilegedPlayers;
-	private transient int crackdownPlayerScanCooldown;
-	private transient int crackdownContrabandFineCredits;
-	private transient int crackdownContrabandFineFactionPoints;
-	private transient int crackdownPerformanceWildScanPlayerFindRadius;
 
 	public transient unsigned long gcwCheckTimer;
 	public transient int vulnerabilityDuration;
@@ -213,7 +204,7 @@ class GCWManager extends ManagedService implements Logger {
 
 	public native void sendJamUplinkMenu(CreatureObject creature, BuildingObject building, TangibleObject uplinkTerminal);
 	public native void verifyUplinkBand(CreatureObject creature, BuildingObject building, int band, TangibleObject uplinkTerminal);
-	public native void renewUplinkBand(BuildingObject building);
+	private native void renewUplinkBand(BuildingObject building);
 
 	public native boolean canStartSlice(CreatureObject creature, TangibleObject terminal);
 	public native void completeSecuritySlice(CreatureObject creature, TangibleObject securityTerminal);
@@ -256,7 +247,7 @@ class GCWManager extends ManagedService implements Logger {
 	public native void performDefenseDonation(BuildingObject building, CreatureObject creature, unsigned long deedOID);
 	private native void performDonateMinefield(BuildingObject building, CreatureObject creature, Deed deed);
 	private native void performDonateTurret(BuildingObject building, CreatureObject creature, Deed deed);
-	private native unsigned long addChildInstallationFromDeed(BuildingObject building, final ChildObject child, CreatureObject creature, Deed deed);
+	private native unsigned long addChildInstallationFromDeed(BuildingObject building, ChildObject child, CreatureObject creature, Deed deed);
 
 	public native void sendTurretAttackListTo(CreatureObject creature, SceneObject turretControlTerminal);
 	public native boolean canUseTurret(TangibleObject turret, SceneObject terminal, CreatureObject creature);
@@ -267,11 +258,6 @@ class GCWManager extends ManagedService implements Logger {
 	public native float getGCWDiscount(CreatureObject creature);
 
 	public native void runCrackdownScan(AiAgent scanner, CreatureObject player);
-	public native void startContrabandScanSession(AiAgent scanner, CreatureObject player, boolean enforced);
-	public native void performCheckWildContrabandScanTask();
-	private native boolean isContraband(SceneObject item);
-	private native int countContrabandItemsInContainer(SceneObject container);
-	public native int countContrabandItems(CreatureObject player);
 
 	private native void spawnBaseTerminals(BuildingObject building);
 	private native void despawnBaseTerminals(BuildingObject building);
@@ -410,9 +396,6 @@ class GCWManager extends ManagedService implements Logger {
 	private native void updateWinningFaction();
 
 	@local
-	private native void spawnGcwControlBanners();
-
-	@local
 	@read
 	public unsigned int getWinningFaction() {
 		return winningFaction;
@@ -422,24 +405,6 @@ class GCWManager extends ManagedService implements Logger {
 	@read
 	public int getWinningFactionDifficultyScaling() {
 		return winnerDifficultyScaling;
-	}
-
-	@local
-	@read
-	public int getCrackdownPlayerScanCooldown() {
-		return crackdownPlayerScanCooldown;
-	}
-
-	@local
-	@read
-	public int getCrackdownContrabandFineCredits() {
-		return crackdownContrabandFineCredits;
-	}
-
-	@local
-	@read
-	public int getCrackdownContrabandFineFactionPoints() {
-		return crackdownContrabandFineFactionPoints;
 	}
 
 	@local
@@ -509,14 +474,4 @@ class GCWManager extends ManagedService implements Logger {
 	public int getResetTimer() {
 		return resetTimer;
 	}
-
-	@local
-	@read
-	public int getCrackdownScansEnabled() {
-		return crackdownScansEnabled;
-	}
-
-	@local
-	@read
-	public native string getCrackdownInfo(CreatureObject player);
 }

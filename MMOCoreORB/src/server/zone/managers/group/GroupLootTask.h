@@ -12,7 +12,6 @@
 #include "server/zone/objects/group/GroupObject.h"
 #include "server/zone/managers/group/GroupManager.h"
 #include "server/zone/objects/player/sessions/LootLotterySession.h"
-#include "server/zone/objects/transaction/TransactionLog.h"
 
 class GroupLootTask : public Task {
 	ManagedReference<GroupObject*> group;
@@ -43,6 +42,7 @@ public:
 
 		switch (group->getLootRule()) {
 		case GroupManager::FREEFORALL:
+			//GO GET 'EM, NINJA! YEEEHAW!!!
 			break;
 		case GroupManager::MASTERLOOTER:
 			if (!group->checkMasterLooter(player)) {
@@ -135,7 +135,12 @@ public:
 		int luck = player->getSkillMod("force_luck");
 
 		if (luck > 0)
-			lootCredits += (lootCredits * luck) / 20;
+			lootCredits += (lootCredits * luck) / 10;
+
+		int bonusluck = player->getSkillMod("luck");
+
+		if (bonusluck > 0)
+			lootCredits += (lootCredits * bonusluck) / 10;
 
 		Locker clocker(group, corpse);
 
@@ -194,14 +199,7 @@ public:
 
 			Locker plocker(payee, corpse);
 
-			{
-				TransactionLog trx(corpse, payee, TrxCode::NPCLOOTCLAIM, payout, true);
-				trx.addState("srcDisplayedName", corpse->getDisplayedName());
-				trx.addState("groupSize", group->getGroupSize());
-				trx.addState("inRangeSize", payees.size());
-				payee->addCashCredits(payout, true);
-				corpse->subtractCashCredits(Math::min(payout, corpse->getCashCredits()));
-			}
+			payee->addCashCredits(payout, true);
 
 			//Send credit split system message.
 			if (payee == player) {
@@ -216,11 +214,8 @@ public:
 			}
 		}
 
-		// Refund unclaimed credits (if any)
-		if (corpse->getCashCredits() > 0) {
-			TransactionLog trx(corpse, TrxCode::NPCLOOT, corpse->getCashCredits(), true);
-			corpse->clearCashCredits();
-		}
+		corpse->setCashCredits(0);
+
 	}
 
 	bool membersInRange() {

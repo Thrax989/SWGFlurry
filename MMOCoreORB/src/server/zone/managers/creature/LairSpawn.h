@@ -73,31 +73,31 @@ namespace creature {
 			lairTemplateName = obj.getStringField("lairTemplateName");
 		}
 
-		int getSpawnLimit() const {
+		int getSpawnLimit() {
 			return spawnLimit;
 		}
 
-		int getMinDifficulty() const {
+		int getMinDifficulty() {
 			return minDifficulty;
 		}
 
-		int getMaxDifficulty() const {
+		int getMaxDifficulty() {
 			return maxDifficulty;
 		}
 
-		int getNumberToSpawn() const {
+		int getNumberToSpawn() {
 			return numberToSpawn;
 		}
 
-		int getWeighting() const {
+		int getWeighting() {
 			return weighting;
 		}
 
-		float getSize() const {
+		float getSize() {
 			return size;
 		}
 
-		const String& getLairTemplateName() const {
+		String getLairTemplateName() {
 			return lairTemplateName;
 		}
 	};

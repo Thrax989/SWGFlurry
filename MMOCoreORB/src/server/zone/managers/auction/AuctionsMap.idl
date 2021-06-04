@@ -5,6 +5,7 @@
 package server.zone.managers.auction;
 
 import engine.core.ManagedObject;
+import system.util.Vector;
 import system.util.VectorMap;
 import server.zone.objects.auction.AuctionItem;
 import server.zone.objects.creature.CreatureObject;
@@ -100,4 +101,8 @@ class AuctionsMap extends ManagedObject {
 	public int getTotalItemCount() {
 		return allItems.size();
 	}
+
+	@local
+	@dereferenced
+	public native Vector<unsigned long> getExpiredItemList(SceneObject vendor, CreatureObject player);
 }

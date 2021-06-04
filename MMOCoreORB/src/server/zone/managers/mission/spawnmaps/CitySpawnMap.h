@@ -47,8 +47,7 @@ protected:
 	 * @param spawnType spawn type bitmask that must be fulfilled.
 	 * @return true if the spawn fulfills spawn type, distance and is free, false otherwise.
 	 */
-	bool fulfillsRequirements(NpcSpawnPoint* npc, const Vector3* position,
-			const float minDistance, const float maxDistance, int spawnType) const {
+	bool fulfillsRequirements(NpcSpawnPoint* npc, const Vector3* position, const float minDistance, const float maxDistance, int spawnType) {
 		if (npc != nullptr) {
 			if (((npc->getSpawnType() & spawnType) == spawnType)) {
 				float squaredDistance = npc->getPosition()->squaredDistanceTo(*position);
@@ -79,7 +78,7 @@ public:
 	 * Get the city center coordinates.
 	 * @return city center position.
 	 */
-	inline const Vector3* getCityCenter() const {
+	inline Vector3* getCityCenter() {
 		return &cityCenter;
 	}
 
@@ -92,8 +91,7 @@ public:
 	 * @param maxDistance maximum distance between the spawn point and the given position.
 	 * @return random spawn point matching the requirements or nullptr if none can be found.
 	 */
-	NpcSpawnPoint* getRandomNpcSpawnPoint(const Vector3* position, const int spawnType,
-			const float minDistance = 0.0, const float maxDistance = 100000.0) const {
+	NpcSpawnPoint* getRandomNpcSpawnPoint(const Vector3* position, const int spawnType, const float minDistance = 0.0, const float maxDistance = 100000.0) {
 		if (npcSpawnMap.size() == 0) {
 			return nullptr;
 		}
@@ -103,7 +101,7 @@ public:
 		while (maximumNumberOfTries > 0) {
 			int npcNumber = System::random(npcSpawnMap.size() - 1);
 
-			auto npc = npcSpawnMap.get(npcNumber);
+			NpcSpawnPoint* npc = npcSpawnMap.get(npcNumber);
 
 			if (fulfillsRequirements(npc, position, minDistance, maxDistance, spawnType)) {
 				return npc;
@@ -114,7 +112,7 @@ public:
 
 		//100 random npc spawn points failed, do a full iteration and pick the first npc that match.
 		for (int i = 0; i < npcSpawnMap.size(); ++i) {
-			auto npc = npcSpawnMap.get(i);
+			NpcSpawnPoint* npc = npcSpawnMap.get(i);
 
 			if (fulfillsRequirements(npc, position, minDistance, maxDistance, spawnType)) {
 				return npc;
@@ -129,16 +127,8 @@ public:
 	 * Add a NPC to the spawn map for the city.
 	 * @param npc the NPC to add.
 	 */
-	void addNpc(NpcSpawnPoint* npc) {
-		npcSpawnMap.emplace(npc);
-	}
-
-	/**
-	 * Remove a spawn point.
-	 * @param npc the npc spawn point to remove.
-	 */
-	void remove(NpcSpawnPoint* npc) {
-		npcSpawnMap.removeElement(npc);
+	void addNpc(Reference<NpcSpawnPoint* > npc) {
+		npcSpawnMap.add(npc);
 	}
 
 	/**
@@ -146,7 +136,7 @@ public:
 	 * @param position the position to search from.
 	 * @return the nearest NPC spawn point.
 	 */
-	NpcSpawnPoint* getNearestNpcSpawnPoint(const Vector3* position) const {
+	NpcSpawnPoint* getNearestNpcSpawnPoint(Vector3* position) {
 		float minimumSquaredDistance = 100000.0f * 100000.0f;
 		NpcSpawnPoint* nearestNpcSpawnPoint = nullptr;
 		//Iterate over all spawn points.
@@ -167,7 +157,7 @@ public:
 	 * @param position the position to search.
 	 * @return the spawn point on the position or nullptr if none exist.
 	 */
-	NpcSpawnPoint* findSpawnAt(const Vector3* position) const {
+	NpcSpawnPoint* findSpawnAt(Vector3* position) {
 		for (int i = 0; i < npcSpawnMap.size(); i++) {
 			if (npcSpawnMap.get(i)->getPosition()->squaredDistanceTo(*position) < 25.0f) {
 				return npcSpawnMap.get(i);
@@ -203,7 +193,7 @@ public:
 	 * @param itemsBefore indicates if items has been added before from another city.
 	 * @return number of npc spawns written.
 	 */
-	int saveSpawnPoints(std::ofstream& file, bool itemsBefore) const {
+	int saveSpawnPoints(std::ofstream& file, bool itemsBefore) {
 		for (int i = 0; i < npcSpawnMap.size(); i++) {
 			if (i > 0 || itemsBefore) {
 				file << "," << std::endl;

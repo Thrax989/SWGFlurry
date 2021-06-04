@@ -28,10 +28,6 @@ void destroyNavMeshQuery(void* value) {
 PathFinderManager::PathFinderManager() : Logger("PathFinderManager"), m_navQuery(destroyNavMeshQuery) {
 	setFileLogger("log/pathfinder.log");
 	setLogJSON(ConfigManager::instance()->getPathfinderLogJSON());
-	setRotateLogSizeMB(ConfigManager::instance()->getRotateLogSizeMB());
-	if (getLogJSON()) {
-		setLogSynchronized(true);
-	}
 
 	m_filter.setIncludeFlags(SAMPLE_POLYFLAGS_ALL ^ (SAMPLE_POLYFLAGS_DISABLED));
 	m_filter.setExcludeFlags(0);
@@ -50,10 +46,6 @@ PathFinderManager::PathFinderManager() : Logger("PathFinderManager"), m_navQuery
 }
 
 Vector<WorldCoordinates>* PathFinderManager::findPath(const WorldCoordinates& pointA, const WorldCoordinates& pointB, Zone *zone) {
-#ifdef PLATFORM_WIN
-#undef isnan
-#endif
-
 	if (std::isnan(pointA.getX()) || std::isnan(pointA.getY()) || std::isnan(pointA.getZ()))
 		return nullptr;
 
@@ -131,12 +123,6 @@ void PathFinderManager::getNavMeshCollisions(SortedVector<NavCollision*> *collis
 	float maxT = dir.normalize();
 
 	for (const ManagedReference<NavArea*>& area : *areas) {
-		if (area->getZone() == nullptr) {
-			String name = area->getMeshName();
-			error() << "Null zone on navmesh area " << name << " in getNavMeshCollisions";
-			continue;
-		}
-
 		const AABB* bounds = area->getMeshBounds();
 
 		const Vector3& bPos = bounds->center();

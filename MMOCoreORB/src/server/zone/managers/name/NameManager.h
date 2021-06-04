@@ -110,19 +110,21 @@ class NameManager : public Singleton<NameManager>, public Logger, public Object 
 
 
 private:
+
 	void initialize();
+	char chooseNextLetter(const char, const char);
 
-	char chooseNextLetter(const char, const char) const;
+	inline bool isReserved(String);
 
-	inline bool isReserved(const String&) const;
-	inline bool isDeveloper(const String&) const;
-	inline bool isFiction(const String&) const;
+	inline bool isDeveloper(String);
 
-	String appendSyllable(const String& left, const String& right, const NameData* data) const;
+	inline bool isFiction(String);
 
-	int getFragmentType(const String& frag, const NameData* data) const;
+	String appendSyllable(const String& left, const String& right, NameData* data);
 
-	String makeImperialTrooperName(int type) const;
+	int getFragmentType(const String& frag, NameData* data);
+
+	String makeImperialTrooperName(int type);
 
 public:
 	NameManager();
@@ -130,32 +132,36 @@ public:
 
 	~NameManager();
 
-	void test() const;
+	void test();
 
-	bool isProfane(const String& name) const;
+	bool isProfane(String name);
 	void loadConfigData(bool reload = false);
 
-	int validateName(const CreatureObject* obj) const;
-	int validateName(const String& name, int species = -1) const;
-	int validateGuildName(const String& name, int type = NameManagerType::GUILD_NAME) const;
-	int validateCityName(const String& name) const;
-	int validateVendorName(const String& name) const;
-	int validateChatRoomName(const String& name) const;
-	int validateReservedNames(const String& name, int resultType = -1) const;
+	int validateName(CreatureObject * obj);
+	int validateName(const String& name, int species = -1);
+	int validateGuildName(const String& name, int type = NameManagerType::GUILD_NAME);
+	int validateCityName(const String& name);
+	int validateVendorName(const String& name);
+	int validateChatRoomName(const String& name);
+	int validateReservedNames(const String& name, int resultType = -1);
 
-	const String makeCreatureName(int type = 1, int species = 0) const;
+	const String makeCreatureName(int type = 1, int species = 0);
 
-	String generateSingleName(const NameData* nameData, const NameRules* rules) const;
-	String generateUniqueName(const NameData* nameData, const NameRules* rules) const;
-	String generateRandomizedName(const NameData* nameData, const NameRules* nameRules) const;
-	String generateRandomName(const NameData* nameData) const;
-	String generateResourceName(const String& randomNameClass) const;
+	String generateSingleName(NameData* nameData, NameRules* rules);
 
-	String makeDroidName(int type) const;
+	String generateUniqueName(NameData* nameData, NameRules* rules);
 
-	String capitalizeName(const String& name) const;
+	String generateRandomizedName(NameData* nameData, NameRules* nameRules);
 
-	const NameData* getSpeciesData(int species) const;
+	String generateRandomName(NameData* nameData);
+
+	String generateResourceName(const String& randomNameClass);
+
+	String makeDroidName(int type);
+
+	String capitalizeName(String& name);
+
+	NameData* getSpeciesData(int species);
 
 };
 

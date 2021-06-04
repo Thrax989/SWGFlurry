@@ -63,19 +63,25 @@ void GroupManager::inviteToGroup(CreatureObject* leader, CreatureObject* target)
 		}
 
 		// can't invite if the group is full
-		if (group->getGroupSize() >= 20) {
+		if (group->getGroupSize() >= 100) {
 			leader->sendSystemMessage("@group:full");
 			return;
 		}
 	}
 
 	if (target->isGrouped()) {
-		StringIdChatParameter stringId;
-		stringId.setStringId("group", "already_grouped");
-		stringId.setTT(target->getObjectID());
-		leader->sendSystemMessage(stringId);
-		//leader->sendSystemMessage("group", "already_grouped", player->getObjectID());
-
+		if ((!leader->isGrouped()) && ((target->hasSkill("social_dancer_novice")) || (target->hasSkill("social_musician_novice"))))
+		{
+			inviteToGroup(target, leader);
+		}
+		else
+		{
+			StringIdChatParameter stringId;
+			stringId.setStringId("group", "already_grouped");
+			stringId.setTT(target->getObjectID());
+			leader->sendSystemMessage(stringId);
+			//leader->sendSystemMessage("group", "already_grouped", player->getObjectID());
+		}
 		return;
 	}
 
@@ -151,7 +157,7 @@ void GroupManager::joinGroup(CreatureObject* player) {
 
 	Locker clocker2(group, player);
 
-	if (group->getGroupSize() >= 20) {
+	if (group->getGroupSize() >= 100) {
 		clocker.release();
 
 		player->updateGroupInviterID(0);
@@ -198,10 +204,23 @@ void GroupManager::joinGroup(CreatureObject* player) {
 		}
 
 		if (player->isPlayingMusic()) {
-			ManagedReference<EntertainingSession*> session = player->getActiveSession(SessionFacadeType::ENTERTAINING).castTo<EntertainingSession*>();
-
+			ManagedReference<Facade*> facade = player->getActiveSession(SessionFacadeType::ENTERTAINING);
+			ManagedReference<EntertainingSession*> session = dynamic_cast<EntertainingSession*> (facade.get());
 			if (session != nullptr && session->isPlayingMusic()) {
-				session->joinBand();
+				String song = session->getPerformanceName();
+				String bandSong = group->getBandSong();
+				if (bandSong == "") {
+					Locker locker(group);
+
+					group->setBandSong(song);
+				} else {
+					if (bandSong != song) {
+						player->sendSystemMessage("@performance:music_join_band_stop"); // You must play the same song as the band.
+						session->stopPlayingMusic();
+					} else {
+						player->sendSystemMessage("@performance:music_join_band_self"); // You join with the band in the currently playing song.
+					}
+				}
 			}
 		}
 	}
@@ -239,6 +258,57 @@ GroupObject* GroupManager::createGroup(CreatureObject* leader) {
 	if (leader->getGroupInviterID() != 0)
 		leader->updateGroupInviterID(0);
 
+	// Set the band song if anyone is playing music
+	if (leader->isPlayingMusic()) {
+		ManagedReference<Facade*> facade = leader->getActiveSession(SessionFacadeType::ENTERTAINING);
+		ManagedReference<EntertainingSession*> session = dynamic_cast<EntertainingSession*> (facade.get());
+
+		if (session != nullptr && session->isPlayingMusic()) {
+			group->setBandSong(session->getPerformanceName());
+
+			for (int i = 0; i < group->getGroupSize(); ++i) {
+				Reference<CreatureObject*> groupMember = group->getGroupMember(i);
+				if (groupMember == leader) {
+					continue;
+				} else {
+					ManagedReference<Facade*> otherFacade = groupMember->getActiveSession(SessionFacadeType::ENTERTAINING);
+					ManagedReference<EntertainingSession*> otherSession = dynamic_cast<EntertainingSession*> (otherFacade.get());
+
+					if (otherSession != nullptr && otherSession->isPlayingMusic()) {
+						if (otherSession->getPerformanceName() != group->getBandSong()) {
+							groupMember->sendSystemMessage("@performance:music_join_band_stop"); // You must play the same song as the band.
+							otherSession->stopPlayingMusic();
+						} else {
+							groupMember->sendSystemMessage("@performance:music_join_band_self"); // You join with the band in the currently playing song.
+						}
+					}
+				}
+			}
+		}
+	} else {
+		for (int i = 0; i < group->getGroupSize(); ++i) {
+			Reference<CreatureObject*> groupMember = group->getGroupMember(i);
+			if (groupMember->isPlayingMusic()) {
+				ManagedReference<Facade*> facade = groupMember->getActiveSession(SessionFacadeType::ENTERTAINING);
+				ManagedReference<EntertainingSession*> session = dynamic_cast<EntertainingSession*> (facade.get());
+
+				if (session != nullptr && session->isPlayingMusic()) {
+					String bandSong = group->getBandSong();
+					String song = session->getPerformanceName();
+
+					if (bandSong == "") {
+						group->setBandSong(song);
+					} else if (song != bandSong) {
+						groupMember->sendSystemMessage("@performance:music_join_band_stop"); // You must play the same song as the band.
+						session->stopPlayingMusic();
+					} else {
+						groupMember->sendSystemMessage("@performance:music_join_band_self"); // You join with the band in the currently playing song.
+					}
+				}
+			}
+		}
+	}
+
 	return group;
 }
 
@@ -263,6 +333,9 @@ void GroupManager::leaveGroup(ManagedReference<GroupObject*> group, CreatureObje
 		}
 
 		Locker clocker(group, player);
+
+		if (!group->isOtherMemberPlayingMusic(player))
+			group->setBandSong("");
 
 		player->updateGroup(nullptr);
 
