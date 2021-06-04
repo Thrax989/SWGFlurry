@@ -83,6 +83,12 @@ public:
 		return stats.toString();
 	}
 
+	String getXMLStatistics() {
+		StringBuffer stats;
+		getXMLMissionStatistics(stats);
+		return stats.toString();
+	}
+
 	void reset() {
 		resetMissionStatistics();
 	}
@@ -113,6 +119,32 @@ private:
 		stats << "Reconnaissance: " << creditsGeneratedFromMissionsRecon << endl;
 		stats << "Survey: " << creditsGeneratedFromMissionsSurvey << endl;
 		stats << "Total: " << getTotalCreditsFromCompletedMissions() << endl << endl;
+	}
+
+private:
+	void getXMLMissionStatistics(StringBuffer& stats) {
+		stats << "<stats>" << endl;
+		stats << "<bhm>" << numberOfCompletedMissionsBounty << "</bhm>" << endl;
+		stats << "<craftm>" << numberOfCompletedMissionsCrafting << "</craftm>" << endl;
+		stats << "<dancem>" << numberOfCompletedMissionsDancer << "</dancem>" << endl;
+		stats << "<deliverm>" << numberOfCompletedMissionsDeliver << "</deliverm>" << endl;
+		stats << "<destroym>" << numberOfCompletedMissionsDestroy << "</destroym>" << endl;
+		stats << "<huntingm>" << numberOfCompletedMissionsHunting << "</huntingm>" << endl;
+		stats << "<musicm>" << numberOfCompletedMissionsMusician << "</musicm>" << endl;
+		stats << "<reconm>" << numberOfCompletedMissionsRecon << "</reconm>" << endl;
+		stats << "<surveym>" << numberOfCompletedMissionsSurvey << "</surveym>" << endl;
+		stats << "<totalm>" << getTotalNumberOfCompletedMissions() << "</totalm>" << endl;
+		stats << "<bhc>" << creditsGeneratedFromMissionsBounty << "</bhc>" << endl;
+		stats << "<craftc>" << creditsGeneratedFromMissionsCrafting << "</craftc>" << endl;
+		stats << "<dancec>" << creditsGeneratedFromMissionsDancer << "</dancec>" << endl;
+		stats << "<deliverc>" << creditsGeneratedFromMissionsDeliver << "</deliverc>" << endl;
+		stats << "<destroyc>" << creditsGeneratedFromMissionsDestroy << "</destroyc>" << endl;
+		stats << "<huntingc>" << creditsGeneratedFromMissionsHunting << "</huntingc>" << endl;
+		stats << "<musicc>" << creditsGeneratedFromMissionsMusician << "</musicc>" << endl;
+		stats << "<reconc>" << creditsGeneratedFromMissionsRecon << "</reconc>" << endl;
+		stats << "<surveyc>" << creditsGeneratedFromMissionsSurvey << "</surveyc>" << endl;
+		stats << "<totalc>" << getTotalCreditsFromCompletedMissions() << "</totalc>" << endl;
+		stats << "</stats>" << endl;
 	}
 
 	long getTotalNumberOfCompletedMissions() {

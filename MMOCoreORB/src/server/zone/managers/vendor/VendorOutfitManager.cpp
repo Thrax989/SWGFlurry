@@ -18,12 +18,12 @@ void VendorOutfitManager::initialize() {
 void VendorOutfitManager::loadLuaOutfits() {
 	info("Loading Outfits...");
 	String outfitName;
-	Lua lua;
-	lua.init();
+	Lua* lua = new Lua();
+	lua->init();
 
-	lua.runFile("scripts/mobile/wearables/outfits.lua");
+	lua->runFile("scripts/mobile/wearables/outfits.lua");
 
-	LuaObject Luaoutfits = lua.getGlobalObject("Outfits");
+	LuaObject Luaoutfits = lua->getGlobalObject("Outfits");
 
 	for (int i = 1; i < Luaoutfits.getTableSize() + 1; ++i) {
 		lua_State* L = Luaoutfits.getLuaState();
@@ -32,28 +32,28 @@ void VendorOutfitManager::loadLuaOutfits() {
 
 		outfitName = outfit.getStringField("outfitName");
 
-		debug() << "Loaded " << outfitName; // OutfitName
+		//info("Loaded " + outfit.getStringField("outfitName"), true); // OutfitName
 		LuaObject clothing = outfit.getObjectField("clothing"); // Clothing Object
 
 		Reference<Outfit*> oFit = new Outfit();
 
 		for (int j = 1; j <= clothing.getTableSize(); ++j) {
-			const auto val = clothing.getStringAt(j);
-
-			debug() << "Added " << val;
-
-			oFit->addClothingCRC(val.hashCode());
+			//info("Added " + clothing.getStringAt(j), true);
+			oFit->addClothingCRC(clothing.getStringAt(j).hashCode());
 		}
 
-		outfits.put(std::move(outfitName), std::move(oFit));
+		outfits.put(outfitName, oFit);
 
 		clothing.pop();
 
 		outfit.pop();
 	}
 
-	info(true) << "Loaded " << outfits.size() << " unique outfits";
+	info("Loaded " + String::valueOf(outfits.size()) + " unique outfits", true);
 
 	Luaoutfits.pop();
+
+	delete lua;
+	lua = nullptr;
 }
 

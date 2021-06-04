@@ -12,12 +12,10 @@
 #include "server/db/ServerDatabase.h"
 #include "server/ServerCore.h"
 
-class OnlineZoneClientMap : public HashTable<uint32, Vector<Reference<ZoneClientSession*> > >, private Logger {
+class OnlineZoneClientMap : public HashTable<uint32, Vector<Reference<ZoneClientSession*> > >, Logger {
 protected:
 	HashTable<String, Reference<SortedVector<uint32>*> > ip_list;
 	ReadWriteLock mutex;
-
-	using self_table_type = HashTable<uint32, Vector<Reference<ZoneClientSession*> > >;
 
 public:
 	OnlineZoneClientMap() {
@@ -77,7 +75,7 @@ public:
 	}
 
 	SortedVector<uint32> getAccountsLoggedIn(const String& ip) {
-		ReadLocker locker(&mutex);
+		mutex.rlock();
 
 		SortedVector<uint32> ret;
 		Reference<SortedVector<uint32>*> account_list = ip_list.get(ip);
@@ -85,10 +83,12 @@ public:
 		if (account_list != nullptr)
 			ret.addAll(*account_list);
 
+		mutex.runlock();
+
 		return ret;
 	}
 
-	int getDistinctIps() const {
+	int getDistinctIps() {
 		return ip_list.size();
 	}
 
@@ -113,7 +113,7 @@ private:
 
 		try {
 			ServerDatabase::instance()->executeStatement(query);
-		} catch (const DatabaseException& e) {
+		} catch(DatabaseException& e) {
 			error(e.getMessage());
 		}
 	}

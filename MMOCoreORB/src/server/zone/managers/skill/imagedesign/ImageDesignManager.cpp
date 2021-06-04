@@ -115,7 +115,7 @@ void ImageDesignManager::updateCustomization(CreatureObject* imageDesigner, cons
 
 	String speciesGender = getSpeciesGenderString(creo);
 
-	const Vector<CustomizationData>* data = getCustomizationData(speciesGender, customizationName);
+	Vector<CustomizationData>* data = getCustomizationData(speciesGender, customizationName);
 
 	if (data == nullptr) {
 		error("Unable to get CustomizationData for " + speciesGender + "_" + customizationName);
@@ -221,7 +221,7 @@ void ImageDesignManager::updateColorCustomization(CreatureObject* imageDesigner,
 
 	String speciesGender = getSpeciesGenderString(creo);
 
-	const Vector<CustomizationData>* data = getCustomizationData(speciesGender, customizationName);
+	Vector<CustomizationData>* data = getCustomizationData(speciesGender, customizationName);
 
 	if (data == nullptr) {
 		error("Unable to get CustomizationData for " + speciesGender + "_" + customizationName);
@@ -297,7 +297,10 @@ void ImageDesignManager::loadCustomizationData() {
 		if (tmpl == nullptr)
 			continue;
 
-		CustomizationDataMap& dataMap = tmpl->getCustomizationDataMap();
+		CustomizationDataMap* dataMap = tmpl->getCustomizationDataMap();
+
+		if (dataMap == nullptr)
+			continue;
 
 		CustomizationData customizationData;
 		customizationData.parseRow(dataRow);
@@ -305,10 +308,10 @@ void ImageDesignManager::loadCustomizationData() {
 		customizationData.setMinScale(tmpl->getMinScale());
 		customizationData.setMaxScale(tmpl->getMaxScale());
 
-		if (!dataMap.contains(customizationData.getCustomizationName()))
-			dataMap.put(customizationData.getCustomizationName(), Vector<CustomizationData>());
+		if (!dataMap->contains(customizationData.getCustomizationName()))
+			dataMap->put(customizationData.getCustomizationName(), Vector<CustomizationData>());
 
-		Vector<CustomizationData> &records = dataMap.get(customizationData.getCustomizationName());
+		Vector<CustomizationData> &records = dataMap->get(customizationData.getCustomizationName());
 
 		records.add(customizationData);
 	}
@@ -321,7 +324,7 @@ void ImageDesignManager::loadCustomizationData() {
 
 }
 
-const Vector<CustomizationData>* ImageDesignManager::getCustomizationData(const String& speciesGender, const String& customizationName) {
+Vector<CustomizationData>* ImageDesignManager::getCustomizationData(const String& speciesGender, const String& customizationName) {
 	TemplateManager* templateManager = TemplateManager::instance();
 
 	uint32 templateCRC = String::hashCode("object/creature/player/" + speciesGender + ".iff");
@@ -331,7 +334,7 @@ const Vector<CustomizationData>* ImageDesignManager::getCustomizationData(const 
 	if (tmpl == nullptr)
 		return nullptr;
 
-	return &tmpl->getCustomizationData(customizationName);
+	return tmpl->getCustomizationData(customizationName);
 }
 
 String ImageDesignManager::getSpeciesGenderString(CreatureObject* creo) {
@@ -370,10 +373,10 @@ TangibleObject* ImageDesignManager::createHairObject(CreatureObject* imageDesign
 	if (imageDesigner->getSkillMod("hair") < skillMod)
 		return oldHair;
 
-	if (hairAssetData->getServerPlayerTemplate() != targetObject->getObjectTemplate()->getFullTemplateString()) {
+	/*if (hairAssetData->getServerPlayerTemplate() != targetObject->getObjectTemplate()->getFullTemplateString()) {
 		error("hair " + hairTemplate + " is not compatible with this creature player " + targetObject->getObjectTemplate()->getFullTemplateString());
 		return oldHair;
-	}
+	}*/
 
 	ManagedReference<SceneObject*> hair = imageDesigner->getZoneServer()->createObject(hairTemplate.hashCode(), 1);
 

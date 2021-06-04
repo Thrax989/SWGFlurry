@@ -24,7 +24,7 @@ public:
 	 * Get a badge by name
          * returns nullptr if the name wasn't found
 	 */
-	inline const Badge* get(const String& name) const {
+	inline const Badge* get(const String& name) {
 		return names.get(name);
 	}
 
@@ -32,7 +32,7 @@ public:
          * Get a badge by index
 	 * return nullptre if the name wasn't found
 	 */
-	inline const Badge* get(unsigned int idx) const {
+	inline const Badge* get(unsigned int idx) {
 		return badges.get(idx);
 	}
 

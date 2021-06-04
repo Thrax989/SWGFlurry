@@ -117,7 +117,49 @@ void ResourceMap::addToSuiListBox(SuiListBox* suil, const String& name) {
 	for(int i = 0; i < spawns.size(); ++i){
 		suil->addMenuItem(spawns.get(i)->getName(), spawns.get(i)->getObjectID());
 	}
+}
 
+void ResourceMap::addToSuiListBoxCR(SuiListBox* suil, const String& name) {
+
+	TypeResourceMap* typemap = typeResourceMap.get(name);
+
+	if(typemap == nullptr) {
+		suil->addMenuItem("No resources to display");
+		return;
+	}
+
+	int rCount = 0;
+	for(int i = 0; i < typemap->size(); ++i)
+	{
+		ManagedReference<ResourceSpawn*> spawn = typemap->get(i);
+
+		if(spawn == nullptr)
+		{
+			continue;
+		}
+
+		if(spawn->getDespawned() < time(0)) // Despawned
+		{
+			//suil->addMenuItem(spawn->getName(), spawn->getObjectID());
+		}
+		else // Only show spawned
+		{
+			rCount++;
+			if (spawn->isPerfectSpawn())
+			{
+				suil->addMenuItem("(PERFECT) " + spawn->getName(), spawn->getObjectID());
+			}
+			else
+			{
+				suil->addMenuItem(spawn->getName(), spawn->getObjectID());
+			}
+		}
+	}
+
+	if (rCount == 0)
+	{
+		suil->addMenuItem("No resources to display");
+	}
 }
 
 void ResourceMap::getTypeSubset(ResourceMap& subMap, const String& typeName) {
