@@ -62,22 +62,24 @@ protected:
 	 */
 	int inUseByNumberOfMissions;
 
-	ManagedReference<AiAgent*> npc;
+	Reference<AiAgent*> npc;
 
 	Reference<DespawnMissionNpcTask*> despawnMissionNpcTask;
 
 	bool npcSpawned;
 
 public:
-	
-	enum {
-		NOSPAWN        = 1, // Spawn type no spawn.
-		NEUTRALSPAWN   = 2, // Spawn type neutral spawn.
-		IMPERIALSPAWN  = 4, // Spawn type imperial spawn.
-		REBELSPAWN     = 8, // Spawn type rebel spawn.
-		BHTARGETSPAWN  = 16 //Spawn type bh target.
+
+	enum SpawnType {
+		NOSPAWN              = 1,  // Spawn type no spawn.
+		NEUTRALSPAWN         = 2,  // Spawn type neutral spawn.
+		IMPERIALSPAWN        = 4,  // Spawn type imperial spawn.
+		REBELSPAWN           = 8,  // Spawn type rebel spawn.
+		BHTARGETSPAWN        = 16, // Spawn type bh target.
+		LAMBDASHUTTLESPAWN   = 32, // Spawn type Lambda shuttle landing coordinates.
+		CONTAINMENTTEAMSPAWN = 64  // Spawn type containment team coordinates.
 	};
-	
+
 	/**
 	 * Default constructor.
 	 */
@@ -100,7 +102,7 @@ public:
 	 * Get the in use information.
 	 * @return true if spawn already is in use, false if it is free to use.
 	 */
-	inline int getInUse() {
+	inline int getInUse() const {
 		return inUseByNumberOfMissions;
 	}
 
@@ -108,7 +110,7 @@ public:
 	 * Get the spawn type bit mask.
 	 * @return the spawn type bit mask.
 	 */
-	inline int getSpawnType() {
+	inline int getSpawnType() const {
 		return spawnType;
 	}
 
@@ -116,7 +118,7 @@ public:
 	 * Get the position for the spawn on the planet.
 	 * @return the position for the spawn on the planet.
 	 */
-	inline Vector3* getPosition() {
+	inline const Vector3* getPosition() const {
 		return &position;
 	}
 
@@ -124,7 +126,7 @@ public:
 	 * Get the direction the spawn point npc should face.
 	 * @return the direction the spawn point npc should face.
 	 */
-	inline Quaternion* getDirection() {
+	inline const Quaternion* getDirection() const {
 		return &direction;
 	}
 
@@ -132,7 +134,7 @@ public:
 	 * Get the spawned npc pointer.
 	 * @return a pointer to the spawned npc.
 	 */
-	inline AiAgent* getNpc() {
+	inline AiAgent* getNpc() const {
 		return npc;
 	}
 
@@ -159,7 +161,7 @@ public:
 		file << ", " << direction.getRadians() << ", " << spawnType << " }";
 	}
 
-	String toString() {
+	String toString() const {
 		return "NpcSpawnPoint at " + position.toString() + " of spawntype " + String::valueOf(spawnType) + " is " + (inUseByNumberOfMissions > 0 ? " in use." : "free.");
 	}
 

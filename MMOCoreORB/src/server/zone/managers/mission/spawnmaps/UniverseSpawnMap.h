@@ -25,6 +25,13 @@ protected:
 
 public:
 	/**
+	 * Remove all stored spawn maps.
+	 */
+	void clear() {
+		planetSpawnMaps.removeAll();
+	}
+
+	/**
 	 * Read the object from a LuaObject.
 	 * @param luaObject the object to load from.
 	 */
@@ -88,6 +95,10 @@ public:
 	 * @return the requested planet.
 	 */
 	PlanetSpawnMap* getPlanet(const uint32 planetCRC) {
+		return planetSpawnMaps.get(planetCRC);
+	}
+
+	const PlanetSpawnMap* getPlanet(const uint32 planetCRC) const {
 		return planetSpawnMaps.get(planetCRC);
 	}
 

@@ -50,33 +50,6 @@
 #include "server/zone/objects/tangible/components/BankTerminalMenuComponent.h"
 #include "server/zone/objects/tangible/components/CloningTerminalMenuComponent.h"
 #include "server/zone/objects/tangible/components/HolocronMenuComponent.h"
-#include "server/zone/objects/tangible/components/ArtifactMenuComponent.h"
-#include "server/zone/objects/tangible/components/BossMenuComponent.h"
-#include "server/zone/objects/tangible/components/pvpMenuComponent.h"
-#include "server/zone/objects/tangible/components/DiamondMenuComponent.h"
-#include "server/zone/objects/tangible/components/Rarelootcrate1MenuComponent.h"
-#include "server/zone/objects/tangible/components/Rarelootcrate2MenuComponent.h"
-#include "server/zone/objects/tangible/components/Rarelootcrate3MenuComponent.h"
-#include "server/zone/objects/tangible/components/DotpackMenuComponent.h"
-#include "server/zone/objects/tangible/components/ContrabandMenuComponent.h"
-#include "server/zone/objects/tangible/components/DarkJediMenuComponent.h"
-#include "server/zone/objects/tangible/components/LightJediMenuComponent.h"
-#include "server/zone/objects/tangible/components/WorldMenuComponent.h"
-#include "server/zone/objects/tangible/components/EventMenuComponent.h"
-#include "server/zone/objects/tangible/components/HeroicMenuComponent.h"
-#include "server/zone/objects/tangible/components/FlurrycoalMenuComponent.h"
-#include "server/zone/objects/tangible/components/FlurrypresentMenuComponent.h"
-#include "server/zone/objects/tangible/components/HalloweenMenuComponent.h"
-#include "server/zone/objects/tangible/components/ForceShrineMenuComponent1.h"
-#include "server/zone/objects/tangible/components/FriendcrateMenuComponent.h"
-#include "server/zone/objects/tangible/components/NewMemberMenuComponent.h"
-#include "server/zone/objects/tangible/components/ScrapMenuComponent.h"
-#include "server/zone/objects/tangible/components/CollectionsilverMenuComponent.h"
-#include "server/zone/objects/tangible/components/CollectiongoldMenuComponent.h"
-#include "server/zone/objects/tangible/components/CollectionplatinumMenuComponent.h"
-#include "server/zone/objects/tangible/components/XpMenuComponent.h"
-#include "server/zone/objects/tangible/components/ImperialMenuComponent.h"
-#include "server/zone/objects/tangible/components/RebelMenuComponent.h"
 #include "server/zone/objects/tangible/components/WaypointDatapadMenuComponent.h"
 #include "server/zone/objects/tangible/components/ForceCrystalMenuComponent.h"
 #include "server/zone/objects/tangible/components/RobeObjectMenuComponent.h"
@@ -177,8 +150,6 @@
 #include "server/zone/objects/tangible/components/droid/DroidTrapModuleDataComponent.h"
 #include "server/zone/objects/tangible/components/droid/DroidHarvestModuleDataComponent.h"
 #include "server/zone/objects/tangible/components/droid/DroidPersonalityModuleDataComponent.h"
-#include "server/zone/objects/tangible/components/generic/SarlaccTrashCanMenuComponent.h"
-#include "server/zone/objects/tangible/components/generic/VendorTokenMenucomponent.h"
 
 ComponentManager::ComponentManager() {
 	components.put("ContainerComponent", new ContainerComponent());
@@ -218,36 +189,6 @@ ComponentManager::ComponentManager() {
 
 	components.put("ZoneContainerComponent", new ZoneContainerComponent());
 
-     components.put("ImperialMenuComponent", new ImperialMenuComponent());
-	components.put("RebelMenuComponent", new RebelMenuComponent());
-	components.put("CollectionsilverMenuComponent", new CollectionsilverMenuComponent());
-	components.put("CollectiongoldMenuComponent", new CollectiongoldMenuComponent());
-	components.put("CollectionplatinumMenuComponent", new CollectionplatinumMenuComponent());
-	components.put("XpMenuComponent", new XpMenuComponent());
-	components.put("ArtifactMenuComponent", new ArtifactMenuComponent());
-	components.put("BossMenuComponent", new BossMenuComponent());
-	components.put("pvpMenuComponent", new pvpMenuComponent());
-	components.put("ContrabandMenuComponent", new ContrabandMenuComponent());
-	components.put("DarkJediMenuComponent", new DarkJediMenuComponent());
-	components.put("LightJediMenuComponent", new LightJediMenuComponent());
-	components.put("DiamondMenuComponent", new DiamondMenuComponent());
-	components.put("SarlaccTrashCanMenuComponent", new SarlaccTrashCanMenuComponent());	
-	components.put("VendorTokenMenucomponent", new VendorTokenMenucomponent());	
-
-	components.put("Rarelootcrate1MenuComponent", new Rarelootcrate1MenuComponent());
-	components.put("Rarelootcrate2MenuComponent", new Rarelootcrate2MenuComponent());
-	components.put("Rarelootcrate3MenuComponent", new Rarelootcrate3MenuComponent());
-	components.put("DotpackMenuComponent", new DotpackMenuComponent());
-	components.put("WorldMenuComponent", new WorldMenuComponent());
-	components.put("EventMenuComponent", new EventMenuComponent());
-	components.put("HeroicMenuComponent", new HeroicMenuComponent());
-	components.put("FlurrycoalMenuComponent", new FlurrycoalMenuComponent());
-	components.put("FlurrypresentMenuComponent", new FlurrypresentMenuComponent());
-	components.put("HalloweenMenuComponent", new HalloweenMenuComponent());
-	components.put("ForceShrineMenuComponent1", new ForceShrineMenuComponent1());
-	components.put("FriendcrateMenuComponent", new FriendcrateMenuComponent());
-	components.put("NewMemberMenuComponent", new NewMemberMenuComponent());
-	components.put("ScrapMenuComponent", new ScrapMenuComponent());
 	components.put("HolocronMenuComponent", new HolocronMenuComponent());
 	components.put("WaypointDatapadMenuComponent", new WaypointDatapadMenuComponent());
 
@@ -354,6 +295,7 @@ ComponentManager::ComponentManager() {
 	components.put("GCWBaseContainerComponent", new GCWBaseContainerComponent());
 	components.put("PlaceDecorationComponent", new PlaceDecorationComponent());
 	components.put("CityDecorationMenuComponent", new CityDecorationMenuComponent());
+
 	components.put("EnclaveTerminalMenuComponent", new EnclaveTerminalMenuComponent());
 	components.put("EnclaveContainerComponent", new EnclaveContainerComponent());
 

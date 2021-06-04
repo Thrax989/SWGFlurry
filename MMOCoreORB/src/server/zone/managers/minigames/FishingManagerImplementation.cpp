@@ -484,7 +484,7 @@ void FishingManagerImplementation::success(CreatureObject* player, int fish, Sce
 
 				String resourceString = zone->getZoneName();
 				resourceString = "seafood_fish_" + resourceString;
-				int amount = 250+factor;
+				int amount = System::random(50)+factor;
 				ManagedReference<ResourceManager*> resourceManager = zone->getZoneServer()->getResourceManager();
 				ManagedReference<SceneObject*> resource = cast<SceneObject*>(resourceManager->harvestResource(player, resourceString, amount));
 

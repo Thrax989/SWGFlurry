@@ -82,7 +82,7 @@ int DnaManager::generateXp(int creatureLevel) {
 	float x2 = 0.0025801845 * (creatureLevel * 3);
 	float x3 = 0.1673150401 * (creatureLevel * 2);
 	float x4 = 6.757844921 * creatureLevel;
-	float x5 = 46.75746899;
+	float x5 = 46.75746899f;
 	return (int)ceil(x1-x2+x3+x4+x5);
 }
 int DnaManager::addQualityTemplate(lua_State * L) {
@@ -127,36 +127,6 @@ void DnaManager::generationalSample(PetDeed* deed, CreatureObject* player,int qu
 	Locker clocker(prototype);
 	// Check Here for unique npcs
 	prototype->setSource(deed->getTemplateName());
-	String qualityName;
-
-	switch (quality){
-		case 1:
-			qualityName = "Very High Quality";
-			break;
-		case 2:
-			qualityName = "High Quality";
-			break;
-		case 3:		
-			qualityName = "Above Average";
-			break;
-		case 4:
-			qualityName = "Average";
-			break;
-		case 5:
-			qualityName = "Below Average";
-			break;
-		case 6:
-			qualityName = "Low Quality";
-			break;
-		case 7:
-			qualityName = "Very Low Quality";
-			break;
-	}
-
-	StringBuffer dnaSampleName;
-	dnaSampleName << "DNA Sample from: " << deed->getDisplayedName() << " (" << qualityName << ")";
-
-    	prototype->setCustomObjectName(dnaSampleName.toString(), false);
 	prototype->setQuality(quality);
 	prototype->setLevel(cl);
 	String serial = player->getZoneServer()->getCraftingManager()->generateSerial();
@@ -245,36 +215,6 @@ void DnaManager::generateSample(Creature* creature, CreatureObject* player,int q
 	} else {
 		prototype->setSource(nameId->getFullPath());
 	}
-	String qualityName;
-
-	switch (quality){
-		case 1:
-			qualityName = "Very High Quality";
-			break;
-		case 2:
-			qualityName = "High Quality";
-			break;
-		case 3:		
-			qualityName = "Above Average";
-			break;
-		case 4:
-			qualityName = "Average";
-			break;
-		case 5:
-			qualityName = "Below Average";
-			break;
-		case 6:
-			qualityName = "Low Quality";
-			break;
-		case 7:
-			qualityName = "Very Low Quality";
-			break;
-	}
-
-	StringBuffer dnaSampleName;
-	dnaSampleName << "DNA Sample from: " << creature->getDisplayedName() << " (" << qualityName << ")";
-
-    	prototype->setCustomObjectName(dnaSampleName.toString(), false);
 	prototype->setQuality(quality);
 	prototype->setLevel(cl);
 	String serial = player->getZoneServer()->getCraftingManager()->generateSerial();

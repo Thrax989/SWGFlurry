@@ -133,8 +133,8 @@ void LairObserverImplementation::doAggro(TangibleObject* lair, TangibleObject* a
 				// TODO: only set defender if needed
 				AiAgent* ai = cast<AiAgent*>( creo);
 				Locker clocker(creo, lair);
-				if (lair->hasDefender(attacker))
-					creo->setDefender(attacker);
+				creo->setDefender(attacker);
+
 			}
 	}
 }
@@ -177,15 +177,21 @@ void LairObserverImplementation::healLair(TangibleObject* lair, TangibleObject* 
 
 		//  TODO: Range check
 		damageToHeal += lairMaxCondition / 100;
+
 	}
+
 	if (damageToHeal == 0)
 		return;
+
 	if (lair->getZone() == nullptr)
 		return;
+
 	lair->healDamage(lair, 0, damageToHeal, true);
+
 	PlayClientEffectObjectMessage* heal =
 			new PlayClientEffectObjectMessage(lair, "clienteffect/healing_healdamage.cef", "");
 	lair->broadcastMessage(heal, false);
+
 	PlayClientEffectLoc* healLoc = new PlayClientEffectLoc("clienteffect/healing_healdamage.cef",
 			lair->getZone()->getZoneName(), lair->getPositionX(),
 			lair->getPositionZ(), lair->getPositionY());
