@@ -15,22 +15,14 @@ include(CheckCXXCompilerFlag)
 
 if (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
     if (CMAKE_CXX_COMPILER_VERSION VERSION_LESS 5.4)
-	message(FATAL_ERROR "GCC version must be at least 5.4!")
+	message(FATAL_ERROR "GCC version myst be at least 5.4!")
     endif()
 elseif (CMAKE_CXX_COMPILER_ID MATCHES "Clang")
     if (CMAKE_CXX_COMPILER_VERSION VERSION_LESS 3.4)
         message(FATAL_ERROR "Clang version must be at least 3.4!")
     endif()
-elseif (CMAKE_CXX_COMPILER_ID MATCHES "MSVC")
-    if (CMAKE_CXX_COMPILER_VERSION VERSION_LESS 19.10)
-        message(FATAL_ERROR "Visual Studio version must be at least 2017!")
-    endif()
 else()
-    message(WARNING "You are using an unsupported compiler! Compilation has only been tested with Clang, GCC and Visual Studio 2019.")
-endif()
-
-if(CMAKE_SIZEOF_VOID_P EQUAL 4)
-    message(FATAL_ERROR "32 bit compile targets are not supported")
+    message(WARNING "You are using an unsupported compiler! Compilation has only been tested with Clang and GCC.")
 endif()
 
 # Set up options
@@ -46,15 +38,12 @@ option(ENABLE_UBSAN "Enables undefined behavior sanitizer compiling" OFF)
 option(ENABLE_NATIVE "Enables -march=native compiler option" ON)
 option(ENABLE_OMIT_FRAMEPOINTER "Enables -fno-omit-frame-pointer compiler option" ON)
 option(ENABLE_ERROR_ON_WARNINGS "Enables -Werror compiler option" ON)
-option(ENABLE_REST_SERVER "Enables REST API Server" OFF)
-option(ENABLE_SESSION_API "Enables Session API support" OFF)
+option(ENABLE_REST_SERVER "Enables RESTServer if cpprestsdk is found" OFF)
 option(ENABLE_ODB "Enables odb3 compiling" OFF)
 option(ENABLE_ODB_REFERENCES "Sets ODB_REFERENCES define" ON) #needs to match engine3
 option(ENABLE_BUILD_CLIENT "Enables core3client build" ON)
 option(ENABLE_JEMALLOC_LINK "Enables jemalloc linking if found" ON)
 option(ENABLE_MULTITHREADED_LINKER "Enables ld.gold/lld with --threads check and use" ON)
-option(ENABLE_LOCKFREE_BCLIENT_BUFFERS "Enables lock free base client buffers, requires boost thread" OFF) #needs to match engine3
-option(DUMP_ALL_CMAKE_VARIABLES "Prints all cmake variables" OFF)
 
 # Set cmake paths
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/Modules/")
@@ -75,7 +64,7 @@ find_package(MySql REQUIRED)
 find_package(Berkeley REQUIRED)
 include_directories(${DB_INCLUDE_DIR})
 
-find_package(Java 1.5 COMPONENTS Runtime REQUIRED)
+find_package(Java 1.5 COMPONENTS Runtime REQUIRED )
 
 # Find engine3 includes and libraries
 find_package(Engine3 REQUIRED)
@@ -86,16 +75,6 @@ include_directories(${OPENSSL_INCLUDE_DIR})
 
 find_package(ZLIB REQUIRED)
 include_directories(${ZLIB_INCLUDE_DIRS})
-
-if (ENABLE_SESSION_API)
-    message(STATUS "Compiling with session API support")
-    add_definitions(-DWITH_SESSION_API)
-endif()
-
-if (ENABLE_REST_SERVER)
-	message(STATUS "Compiling with REST API support")
-	add_definitions(-DWITH_REST_API)
-endif(ENABLE_REST_SERVER)
 
 if(ENABLE_MULTITHREADED_LINKER)
 	macro(check_cxx_linker_flag _Flag _Var)
@@ -129,21 +108,11 @@ set(CMAKE_THREAD_PREFER_PTHREAD TRUE)
 set(THREADS_PREFER_PTHREAD_FLAG TRUE)
 find_package(Threads REQUIRED)
 
-if(WIN32)
-	string(TOLOWER ${CMAKE_BUILD_TYPE} E3_BUILD_TYPE)
-
-	if(E3_BUILD_TYPE STREQUAL "debug")
-		set(PTHREAD_LIB_LINK pthreadVCE3d)
-	else()
-		set(PTHREAD_LIB_LINK pthreadVCE3)
-	endif()
-else()
-	set(PTHREAD_LIB_LINK Threads::Threads)
-endif()
-
 set(Boost_USE_STATIC_LIBS OFF)
 set(Boost_USE_MULTITHREADED ON)
 set(Boost_USE_STATIC_RUNTIME OFF)
+
+find_package(Boost QUIET OPTIONAL_COMPONENTS thread)
 
 find_package(JEMALLOC QUIET)
 
@@ -170,6 +139,10 @@ if (NOT HAVE_CXX_ATOMICS_WITHOUT_LIB)
 	find_package(GccAtomic REQUIRED)
 endif()
 
+if(Boost_FOUND)
+    include_directories(${Boost_INCLUDE_DIRS})
+endif()
+
 if(ENABLE_CCACHE)
     find_program(CCACHE_FOUND ccache)
 
@@ -187,14 +160,10 @@ endif(IDL_NOPRELOCKS)
 
 # Include googlemock and googletest
 if(COMPILE_TESTS)
-	set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+    add_subdirectory(utils/googletest-release-1.8.0/googlemock)
 
-    add_subdirectory(utils/googletest-release-1.10.0)
-
-    include_directories(${CMAKE_SOURCE_DIR}/utils/googletest-release-1.10.0/googletest/include)
-    include_directories(${CMAKE_SOURCE_DIR}/utils/googletest-release-1.10.0/googlemock/include)
-
-	enable_testing()
+    include_directories(${CMAKE_SOURCE_DIR}/utils/googletest-release-1.8.0/googletest/include)
+    include_directories(${CMAKE_SOURCE_DIR}/utils/googletest-release-1.8.0/googlemock/include)
 
     add_definitions(-DCOMPILE_CORE3_TESTS)
 else(COMPILE_TESTS)
@@ -213,18 +182,6 @@ if (ENABLE_ODB_REFERENCES)
 	add_definitions(-DODB_REFERENCES)
 endif()
 
-if (ENABLE_LOCKFREE_BCLIENT_BUFFERS)
-	find_package(Boost REQUIRED COMPONENTS thread)
-
-	add_definitions(-DLOCKFREE_BCLIENT_BUFFERS)
-else()
-	find_package(Boost QUIET OPTIONAL_COMPONENTS thread)
-endif()
-
-if(Boost_FOUND)
-    include_directories(${Boost_INCLUDE_DIRS})
-endif()
-
 if (CMAKE_CXX_COMPILER_ID MATCHES "Clang" OR CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
     # Define global build gcc compatible flags to check and add if available
     set(GCCEXTRAFLAGS -Wall
@@ -237,7 +194,7 @@ if (CMAKE_CXX_COMPILER_ID MATCHES "Clang" OR CMAKE_CXX_COMPILER_ID STREQUAL "GNU
 	-Wno-missing-declarations
 	-Wno-return-std-move
 	-Wno-implicit-fallthrough
-	-Wno-class-memaccess
+        -Wno-class-memaccess
 	-fcolor-diagnostics)
 
     foreach(flag_comp ${GCCEXTRAFLAGS})
@@ -322,7 +279,6 @@ add_custom_target(update-engine3
 	COMMAND ${GIT_EXECUTABLE} submodule update --recursive --remote
 	WORKING_DIRECTORY ${CMAKE_SOURCE_DIR})
 
-set_property(TARGET core3 PROPERTY VS_DEBUGGER_WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}/bin")
 
 message(STATUS "Build type: " ${CMAKE_BUILD_TYPE})
 #message(STATUS "Compiler flags:" ${CMAKE_CXX_COMPILE_FLAGS})
@@ -337,11 +293,3 @@ endif ()
 #message(STATUS "Compiler cxx min size flags:" ${CMAKE_CXX_FLAGS_MINSIZEREL})
 message(STATUS "Compiler extra cxx flags:" ${CMAKE_CXX_FLAGS})
 message(STATUS "Available targets: tags compdb update-engine3 core3 odb3 idl rebuild-idl")
-
-if (DUMP_ALL_CMAKE_VARIABLES)
-	get_cmake_property(_variableNames VARIABLES)
-
-	foreach (_variableName ${_variableNames})
-	    message(STATUS "${_variableName}=${${_variableName}}")
-	endforeach()
-endif()

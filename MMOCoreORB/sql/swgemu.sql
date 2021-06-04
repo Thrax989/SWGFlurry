@@ -31,7 +31,7 @@ CREATE TABLE  `swgemu`.`account_bans` (
   `account_id` int(10) unsigned NOT NULL,
   `issuer_id` int(10) unsigned NOT NULL,
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `expires` int(10) unsigned NOT NULL DEFAULT '0',
+  `expires` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `reason` tinytext NOT NULL,
   PRIMARY KEY (`ban_id`) USING BTREE
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
@@ -87,7 +87,7 @@ DROP TABLE IF EXISTS `swgemu`.`account_log`;
 CREATE TABLE  `swgemu`.`account_log` (
   `acclog_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `account_id` int(10) unsigned NOT NULL,
-  `timestamp` datetime NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `ip_address` varchar(15) NOT NULL,
   PRIMARY KEY (`acclog_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
