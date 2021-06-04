@@ -25,11 +25,8 @@
 #include "server/chat/ChatManager.h"
 #include "server/zone/managers/stringid/StringIdManager.h"
 
-#include "server/zone/managers/vendor/VendorManager.h"
 #include "server/zone/objects/building/BuildingObject.h"
 #include "server/zone/objects/cell/CellObject.h"
-#include "server/zone/objects/tangible/components/vendor/VendorDataComponent.h"
-
 void StructureObjectImplementation::loadTemplateData(SharedObjectTemplate* templateData) {
 	TangibleObjectImplementation::loadTemplateData(templateData);
 
@@ -629,35 +626,25 @@ int StructureObjectImplementation::getDecayPercentage() {
 void StructureObjectImplementation::payMaintenance(int maintenance, CreditObject* creditObj, bool cashFirst) {
 	//Pay maintenance.
 
-	auto structure = _this.getReferenceUnsafeStaticCast();
 	int payedSoFar;
 	if (cashFirst) {
 		if (creditObj->getCashCredits() >= maintenance) {
 			creditObj->subtractCashCredits(maintenance);
-			addMaintenance(maintenance);
 		} else {
 			payedSoFar = creditObj->getCashCredits();
-
 			creditObj->subtractCashCredits(payedSoFar);
-			addMaintenance(payedSoFar);
-
 			creditObj->subtractBankCredits(maintenance - payedSoFar);
-			addMaintenance(maintenance - payedSoFar);
 		}
 	} else {
 		if (creditObj->getBankCredits() >= maintenance) {
 			creditObj->subtractBankCredits(maintenance);
-			addMaintenance(maintenance);
 		} else {
 			payedSoFar = creditObj->getBankCredits();
-
 			creditObj->subtractBankCredits(payedSoFar);
-			addMaintenance(payedSoFar);
-
 			creditObj->subtractCashCredits(maintenance - payedSoFar);
-			addMaintenance(maintenance - payedSoFar);
 		}
 	}
+	addMaintenance(maintenance);
 }
 
 bool StructureObjectImplementation::isCampStructure() const {
@@ -915,34 +902,10 @@ bool StructureObjectImplementation::unloadFromZone(bool sendSelfDestroy) {
 		for (int j = childObjects - 1; j >= 0; --j) {
 			ManagedReference<SceneObject*> containedObject = cellObject->getContainerObject(j);
 
-			if (containedObject->isVendor()) {
-				TangibleObject* vendor = cast<TangibleObject*>(containedObject.get());
-
-				if (vendor != nullptr) {
-					DataObjectComponentReference* data = vendor->getDataObjectComponent();
-
-					if (data == nullptr || data->get() == nullptr || !data->get()->isVendorData())
-						continue;
-
-					VendorDataComponent* vendorData = cast<VendorDataComponent*>(data->get());
-
-					if (vendorData == nullptr)
-						continue;
-
-					ManagedReference<CreatureObject*> owner = zone->getZoneServer()->getObject(vendorData->getOwnerId()).castTo<CreatureObject*>();
-
-					if (owner == nullptr)
-						continue;
-
-					Locker clocker(vendor, owner);
-					VendorManager::instance()->handlePackupVendor(owner, vendor, true);
-				}
-			}
-
 			if (containedObject->isPlayerCreature() || containedObject->isPet()) {
-				CreatureObject* playerCreature = cast<CreatureObject*>(containedObject.get());
-				playerCreature->teleport(x, z, y, 0);
-				building->onExit(playerCreature, 0);
+				CreatureObject* creature = cast<CreatureObject*>(containedObject.get());
+				creature->teleport(x, z, y, 0);
+				building->onExit(creature, 0);
 				continue;
 			}
 		}
