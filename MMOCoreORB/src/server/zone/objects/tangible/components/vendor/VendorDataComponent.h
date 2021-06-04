@@ -36,6 +36,7 @@ protected:
 	SerializableTime inactiveTimer;
 
 	bool mail1Sent;
+	bool mail2Sent;
 
 	Vector<uint64> vendorBarks;
 	uint64 lastBark;
@@ -46,6 +47,8 @@ protected:
 	float originalDirection;
 
 	Mutex adBarkingMutex;
+
+	bool packedUp;
 
 public:
 
@@ -61,8 +64,7 @@ public:
 		DELETEWARNING       = 60 * 60 * 24 * 100, // 100 days
 
 		BARKRANGE           = 15, // 15 Meters
-		BARKINTERVAL        = 60 * 2, // 2 Minutes
-		LOWWARNING			= 360 // Credits, 1 day worth at the default rate
+		BARKINTERVAL        = 60 * 2 // 2 Minutes
 	};
 
 public:
@@ -101,7 +103,7 @@ public:
 			return;
 
 		originalDirection = strongParent->getDirectionAngle();
-		setVendorSearchEnabled(true);
+		setVendorSearchEnabled(val);
 	}
 
 	void setVendorSearchEnabled(bool enabled);
@@ -273,8 +275,11 @@ public:
 
 	void cancelVendorCheckTask();
 
-	void skimMaintanence(int value){
-		maintAmount += value;
+	void setPackedUp(bool packed) {
+		packedUp = packed;
+	}
+	bool isPackedUp() {
+		return packedUp;
 	}
 
 private:
