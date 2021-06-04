@@ -7,8 +7,8 @@
 #define SKILLMANAGER_H_
 
 #include "server/zone/objects/player/variables/Ability.h"
+#include "server/zone/objects/creature/variables/Skill.h"
 
-class Skill;
 class PerformanceManager;
 
 namespace server {
@@ -70,9 +70,7 @@ public:
 
 	void addAbilities(PlayerObject* ghost, const Vector<String>& abilityNames, bool notifyClient = true);
 	void removeAbilities(PlayerObject* ghost, const Vector<String>& abilityNames, bool notifyClient = true);
-	void awardResetSkills(CreatureObject* creature);
-	void awardForceFromSkills(CreatureObject* creature);
-	int getSpecificSkillCount(CreatureObject* creature, const String& skill);
+
 	bool awardSkill(const String& skillName, CreatureObject* creature, bool notifyClient = true, bool awardRequiredSkills = false, bool noXpRequired = false);
 	void awardDraftSchematics(Skill* skill, PlayerObject* ghost, bool notifyClient = true);
 

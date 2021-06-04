@@ -27,6 +27,7 @@ void WeatherManagerImplementation::initialize() {
 
 	//Load weather configuration from the luas.
 	debug() << "Loading configuration from Lua.";
+
 	if(!loadLuaConfig()) {
 		info("ERROR in Lua config. Loading default values.");
 		loadDefaultValues();
@@ -170,9 +171,6 @@ void WeatherManagerImplementation::sendWeatherTo(CreatureObject* player) {
 
 void WeatherManagerImplementation::applySandstormDamage(CreatureObject* player) {
 	if (player == nullptr)
-		return;
-
-	if (player->isDead() || player->isIncapacitated())
 		return;
 
 	PlayerObject* ghost = player->getPlayerObject();
