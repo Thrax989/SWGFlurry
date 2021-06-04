@@ -15,17 +15,36 @@
 #include "server/zone/packets/auction/ItemSoldMessage.h"
 
 int AuctionsMapImplementation::addItem(CreatureObject* player, SceneObject* vendor, AuctionItem* item) {
-	if(vendor == nullptr || vendor->getZone() == nullptr)
+	if (vendor == nullptr)
 		return ItemSoldMessage::VENDORNOTWORKING;
 
-	String planet = vendor->getZone()->getZoneName();
+	DataObjectComponentReference* data = vendor->getDataObjectComponent();
+	bool vendorPackedUp = false;
 
-	String region = "@planet_n:" + vendor->getZone()->getZoneName();
+	if (data != nullptr && data->get() != nullptr && data->get()->isVendorData()) {
+		VendorDataComponent* vendorData = cast<VendorDataComponent*>(data->get());
+
+		if (vendorData != nullptr && vendorData->isPackedUp())
+			vendorPackedUp = true;
+	}
+
+	if (vendor->getZone() == nullptr && !vendorPackedUp)
+		return ItemSoldMessage::VENDORNOTWORKING;
+
+	String planet = "Unavailable";
+	String region = "Unavailable";
+
+	if (!vendorPackedUp) {
+		planet = vendor->getZone()->getZoneName();
+		region = "@planet_n:" + vendor->getZone()->getZoneName();
+	}
+
 	ManagedReference<CityRegion*> cityRegion = vendor->getCityRegion().get();
-	if(cityRegion != nullptr)
+
+	if (cityRegion != nullptr)
 		region = cityRegion->getRegionName();
 
-	if(vendor->isBazaarTerminal())
+	if (vendor->isBazaarTerminal())
 		return addBazaarItem(player, planet, region, vendor, item);
 
 	return addVendorItem(player, planet, region, vendor, item);
@@ -93,8 +112,13 @@ int AuctionsMapImplementation::addBazaarItem(CreatureObject* player, const Strin
 	return ItemSoldMessage::SUCCESS;
 }
 
-void AuctionsMapImplementation::deleteItem(SceneObject* vendor, AuctionItem* item) {
+void AuctionsMapImplementation::deleteItem(SceneObject* vendor, AuctionItem* item, bool deleteAuctionedObject) {
+	Locker locker(_this.getReferenceUnsafeStaticCast());
+	removeItem(vendor, item);
+	item->destroyAuctionItemFromDatabase(false, deleteAuctionedObject);
+}
 
+void AuctionsMapImplementation::removeItem(SceneObject* vendor, AuctionItem* item) {
 	Locker locker(_this.getReferenceUnsafeStaticCast());
 
 	if(vendor != nullptr) {
@@ -105,7 +129,6 @@ void AuctionsMapImplementation::deleteItem(SceneObject* vendor, AuctionItem* ite
 	}
 
 	allItems.drop(item->getAuctionedItemObjectID());
-	ObjectManager::instance()->destroyObjectFromDatabase(item->_getObjectID());
 }
 
 void AuctionsMapImplementation::removeVendorItem(SceneObject* vendor, AuctionItem* item) {
@@ -156,7 +179,7 @@ int AuctionsMapImplementation::getPlayerItemCount(CreatureObject* player) {
 	if (ghost == nullptr)
 		return 0;
 
-	SortedVector<unsigned long long>* ownedVendors = ghost->getOwnedVendors();
+	const SortedVector<unsigned long long>* ownedVendors = ghost->getOwnedVendors();
 	int total = 0;
 
 	for (int i = 0; i < ownedVendors->size(); i++) {
@@ -220,23 +243,11 @@ void AuctionsMapImplementation::deleteTerminalItems(SceneObject* vendor) {
 		ReadLocker rlocker(vendorItems);
 
 		for(int i = 0; i < vendorItems->size(); ++i) {
-			ManagedReference<AuctionItem*> item = vendorItems->get(i);
+			Reference<AuctionItem*> item = vendorItems->get(i);
 
 			if(item != nullptr) {
-				uint64 oid = item->getAuctionedItemObjectID();
-
-				allItems.drop(oid);
-				ObjectManager::instance()->destroyObjectFromDatabase(item->_getObjectID());
-
-				Core::getTaskManager()->executeTask([zserv, oid] () {
-					ManagedReference<SceneObject*> sceno = zserv->getObject(oid);
-
-					if (sceno != nullptr) {
-						Locker locker(sceno);
-
-						sceno->destroyObjectFromDatabase(true);
-					}
-				}, "DeleteTerminalItemLambda", "slowQueue");
+				allItems.drop(item->getAuctionedItemObjectID());
+				item->destroyAuctionItemFromDatabase(false, true);
 			}
 		}
 	}
@@ -331,3 +342,32 @@ void AuctionsMapImplementation::removeFromCommodityLimit(AuctionItem* item) {
 		commoditiesLimit.drop(item->getOwnerID());
 }
 
+Vector<uint64> AuctionsMapImplementation::getExpiredItemList(SceneObject* vendor, CreatureObject* player) {
+	Vector<uint64> expiredItems;
+
+	Locker locker(_this.getReferenceUnsafeStaticCast());
+
+	if (vendor == nullptr) {
+		logger.error("null vendor in AuctionsMapImplementation::getExpiredItemList");
+		return 0;
+	}
+
+	Reference<TerminalItemList*> vendorItems = vendorItemsForSale.get(vendor->getObjectID());
+
+	if (vendorItems == nullptr)
+		return 0;
+
+	ReadLocker rlocker(vendorItems);
+
+	for (int i = 0; i < vendorItems->size(); ++i) {
+		AuctionItem* item = vendorItems->get(i);
+		if (item == nullptr)
+			continue;
+
+		if (item->getStatus() != AuctionItem::EXPIRED || item->getOwnerID() != player->getObjectID())
+			continue;
+
+		expiredItems.add(item->getObjectID());
+	}
+	return expiredItems;
+}
