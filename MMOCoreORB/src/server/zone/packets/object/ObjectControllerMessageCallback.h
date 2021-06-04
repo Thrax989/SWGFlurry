@@ -25,7 +25,7 @@ public:
 		objectControllerCallback = nullptr;
 	}
 
-	static MessageCallbackFactory<MessageCallback* (ObjectControllerMessageCallback*), uint32>* objectMessageControllerFactory;
+	static UniqueReference<MessageCallbackFactory<MessageCallback* (ObjectControllerMessageCallback*), uint32>*> objectMessageControllerFactory;
 
 	const char* getTaskName();
 
@@ -33,15 +33,15 @@ public:
 
 	void run();
 
-	inline uint32 getPriority() {
+	inline uint32 getPriority() const {
 		return priority;
 	}
 
-	inline uint32 getType() {
+	inline uint32 getType() const {
 		return type;
 	}
 
-	inline uint64 getObjectID() {
+	inline uint64 getObjectID() const {
 		return objectID;
 	}
 
