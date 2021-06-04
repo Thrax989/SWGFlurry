@@ -1991,6 +1991,11 @@ class SceneObject extends QuadTreeEntry implements Logger, Metrics {
 		return false;
 	}
 
+ 	@dirty
+	public abstract boolean isVendorControlDevice() {
+		return false;
+	}
+
 	@dirty
 	public abstract boolean isMissionTerminal() {
 		return false;
