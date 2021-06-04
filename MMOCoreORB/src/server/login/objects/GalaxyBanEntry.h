@@ -5,20 +5,19 @@
 #ifndef GALAXYBANENTRY_H_
 #define GALAXYBANENTRY_H_
 
+#include "system/lang/Object.h"
+
 class GalaxyBanEntry : public Object {
 private:
-	uint32 accountID;
+	uint32 accountID = 0;
 	Time creationDate;
-	int galaxyID;
+	int galaxyID = 0;
 	String banReason;
-	uint32 banAdmin;
+	uint32 banAdmin = 0;
 	Time banExpiration;
 
 public:
-	GalaxyBanEntry() {
-		galaxyID = 0;
-		accountID = banAdmin = 0;
-	}
+	GalaxyBanEntry() = default;
 
 	GalaxyBanEntry(const GalaxyBanEntry& e) : Object() {
 		accountID = e.accountID;
@@ -51,7 +50,7 @@ public:
 		return accountID;
 	}
 
-	Time getCreationDate() const {
+	const Time& getCreationDate() const {
 		return creationDate;
 	}
 
@@ -75,7 +74,7 @@ public:
 		this->banReason = banReason;
 	}
 
-	String getBanReason() const {
+	const String& getBanReason() const {
 		return banReason;
 	}
 
@@ -83,7 +82,7 @@ public:
 		this->banExpiration = banExpiration;
 	}
 
-	uint32 getBanExpiration() {
+	uint32 getBanExpiration() const {
 		return banExpiration.getTime();
 	}
 

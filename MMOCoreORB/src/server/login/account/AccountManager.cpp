@@ -9,6 +9,9 @@
 #include "AccountManager.h"
 #include "server/login/LoginClient.h"
 #include "server/login/LoginServer.h"
+#ifdef WITH_SESSION_API
+#include "server/login/SessionAPIClient.h"
+#endif // WITH_SESSION_API
 #include "server/login/packets/AccountVersionMessage.h"
 #include "server/login/packets/EnumerateCharacterId.h"
 #include "server/login/packets/LoginClientToken.h"
@@ -34,10 +37,10 @@ AccountManager::AccountManager(LoginServer* loginserv) : Logger("AccountManager"
 		try {
 			String query = "TRUNCATE TABLE characters";
 
-			Reference<ResultSet*> res = ServerDatabase::instance()->executeQuery(query);
+			UniqueReference<ResultSet*> res(ServerDatabase::instance()->executeQuery(query));
 
 			info("characters table truncated", true);
-		} catch (Exception& e) {
+		} catch (const Exception& e) {
 			error(e.getMessage());
 		}
 	}
@@ -59,15 +62,44 @@ void AccountManager::loginAccount(LoginClient* client, Message* packet) {
 		return;
 	}
 
-	ManagedReference<Account*> account = validateAccountCredentials(client, username, password);
+	Reference<Account*> account = validateAccountCredentials(client, username, password);
 
 	if (account == nullptr)
 		return;
 
-	//TODO: This should probably be refactored at some point.
-	uint32 sessionID = System::random();
+#ifdef WITH_SESSION_API
+	SessionAPIClient::instance()->approveNewSession(client->getIPAddress(), account->getAccountID(),
+			[this,
+			loginClient = Reference<LoginClient*>(client),
+			loginAccount = Reference<Account*>(account)
+			](const SessionApprovalResult& result) {
 
-	Message* lct = new LoginClientToken(account, sessionID);
+		if (result.isActionTemporaryFailure()) {
+			error()
+			    << "Unexpected failure in approveNewSession for user ["
+				<< (loginAccount == nullptr ? "<unknown user>" : loginAccount->getUsername())
+				<< "]: " << result.getLogMessage();
+		}
+
+		if (loginClient == nullptr || loginAccount == nullptr)
+			return;
+
+		if (!result.isActionAllowed()) {
+			loginClient->sendErrorMessage(result.getTitle(), result.getMessage(true));
+			return;
+		}
+
+		loginApprovedAccount(loginClient, loginAccount);
+	});
+};
+
+void AccountManager::loginApprovedAccount(LoginClient* client, ManagedReference<Account*> account) {
+#endif // WITH_SESSION_API
+	String sessionID = Crypto::randomSalt<64>();
+
+	client->debug() << "generated sessionID: " << sessionID;
+
+	auto* lct = new LoginClientToken(account, sessionID);
 	client->sendMessage(lct);
 
 	uint32 accountID = account->getAccountID();
@@ -76,9 +108,13 @@ void AccountManager::loginAccount(LoginClient* client, Message* packet) {
 
 	String ip = client->getSession()->getAddress().getIPAddress();
 
+#ifdef WITH_SESSION_API
+	SessionAPIClient::instance()->notifySessionStart(ip, accountID);
+#endif // WITH_SESSION_API
+
 	StringBuffer sessionQuery;
 	sessionQuery << "REPLACE INTO sessions (account_id, session_id, ip, expires) VALUES (";
-	sessionQuery << accountID << ", " << sessionID << ", '" << ip << "' , ADDTIME(NOW(), '00:15'));";
+	sessionQuery << accountID << ", '" << sessionID << "', '" << ip << "' , ADDTIME(NOW(), '00:15'));";
 
 	StringBuffer logQuery;
 	logQuery << "INSERT INTO account_log (account_id, ip_address, timestamp) VALUES (" << accountID << ", '" << ip << "', NOW());";
@@ -86,39 +122,45 @@ void AccountManager::loginAccount(LoginClient* client, Message* packet) {
 	try {
 		ServerDatabase::instance()->executeStatement(sessionQuery);
 		ServerDatabase::instance()->executeStatement(logQuery);
-	} catch (DatabaseException& e) {
-		client->info(e.getMessage(), true);
+	} catch (const DatabaseException& e) {
+		client->error() << e.getMessage();
 	}
 
 	client->sendMessage(loginServer->getLoginEnumClusterMessage(account));
 	client->sendMessage(loginServer->getLoginClusterStatusMessage(account));
 
-	Message* eci = new EnumerateCharacterID(account);
+	auto* eci = new EnumerateCharacterID(account);
 	client->sendMessage(eci);
 }
 
-
-Account* AccountManager::validateAccountCredentials(LoginClient* client, const String& username, const String& password) {
+Reference<Account*> AccountManager::validateAccountCredentials(LoginClient* client, const String& username, const String& password) {
 	StringBuffer query;
-	query << "SELECT a.account_id, a.username, a.password, a.salt, a.account_id, a.station_id, UNIX_TIMESTAMP(a.created), a.admin_level FROM accounts a WHERE a.username = '" << username << "' LIMIT 1;";
+	query << "SELECT a.account_id, a.username, a.password, a.salt, a.account_id, a.station_id, "
+		"UNIX_TIMESTAMP(a.created), a.admin_level FROM accounts a WHERE a.username = '" << username << "' LIMIT 1;";
 
 	String passwordStored;
-	Account* account = getAccount(query.toString(), passwordStored, true); //force update of mysql rows to update galaxy bans
+	Reference<Account*> account = getAccount(query.toString(), passwordStored, true); //force update of mysql rows to update galaxy bans
 
 	if (account == nullptr) {
 		//The user name didn't exist, so we check if auto registration is enabled and create a new account
 		if (isAutoRegistrationEnabled() && client != nullptr) {
 			account = createAccount(username, password, passwordStored);
 		} else {
-			if(client != nullptr)
-				client->sendErrorMessage("Login Error", "Username not registered.  Forum registration and game registration are separate on Flurry. If you have not registered for a game account, please go to our forums and click the Registration button to do so.  If you have already registered for a game account, please try to log in using your forum account name.  If you continue to get this error, please contact an admin or ask for help in or discord https://discord.gg/RVx66Sw.");
+			if (client != nullptr) {
+				client->sendErrorMessage("Login Error",
+					ConfigManager::instance()->getString("Core3.RegistrationMessage",
+						"Automatic registration is currently disabled. "
+						"Please contact the administrators of the server in order to get an authorized account."
+					)
+				);
+			}
+
 			return nullptr;
 		}
 	}
 
-	if(!account->isActive()) {
-
-		if(client != nullptr) {
+	if (!account->isActive()) {
+		if (client != nullptr) {
 			const String& inactTitle = ConfigManager::instance()->getInactiveAccountTitle();
 			const String& inactText = ConfigManager::instance()->getInactiveAccountText();
 
@@ -133,7 +175,7 @@ Account* AccountManager::validateAccountCredentials(LoginClient* client, const S
 
 	//Check hash version
 	String passwordHashed;
-	if(account->getSalt() == "") {
+	if (account->getSalt() == "") {
 		passwordHashed = Crypto::SHA1Hash(password);
 	} else {
 		passwordHashed = Crypto::SHA256Hash(dbSecret + password + account->getSalt());
@@ -146,12 +188,11 @@ Account* AccountManager::validateAccountCredentials(LoginClient* client, const S
 		return nullptr;
 	}
 	//update hash if unsalted
-	if(account->getSalt() == "")
+	if (account->getSalt() == "")
 		updateHash(username, password);
 
 	//Check if they are banned
-	if(account->isBanned()) {
-
+	if (account->isBanned()) {
 		StringBuffer reason;
 		reason << "Your account has been banned from the server by the administrators.\n\n";
 		int totalBan = account->getBanExpires() - time(0);
@@ -165,23 +206,22 @@ Account* AccountManager::validateAccountCredentials(LoginClient* client, const S
 		int minutesBanned = floor((float)totalBan / 60.0f);
 		totalBan -= (minutesBanned * 60);
 
-
 		reason << "Time remaining: ";
 
-		if(daysBanned > 0)
+		if (daysBanned > 0)
 			reason << daysBanned << " Days ";
 
-		if(hoursBanned > 0)
+		if (hoursBanned > 0)
 			reason << hoursBanned << " Hours ";
 
-		if(minutesBanned > 0)
+		if (minutesBanned > 0)
 			reason << minutesBanned << " Minutes ";
 
 		reason << totalBan << " Seconds\n";
 
 		reason << "Reason: " << account->getBanReason();
 
-		if(client != nullptr)
+		if (client != nullptr)
 			client->sendErrorMessage("Account Banned", reason.toString());
 
 		return nullptr;
@@ -201,14 +241,12 @@ void AccountManager::updateHash(const String& username, const String& password) 
 
 	try {
 		ServerDatabase::instance()->executeStatement(query);
-	} catch (DatabaseException& e) {
+	} catch (const DatabaseException& e) {
 		error(e.getMessage());
 	}
-
-
 }
 
-Account* AccountManager::createAccount(const String& username, const String& password, String& passwordStored) {
+Reference<Account*> AccountManager::createAccount(const String& username, const String& password, String& passwordStored) {
 	uint32 stationID = System::random();
 
 	String salt = Crypto::randomSalt();
@@ -221,7 +259,7 @@ Account* AccountManager::createAccount(const String& username, const String& pas
 	query << stationID << ",";
 	query << "'" << salt << "');";
 
-	Reference<ResultSet*> result = ServerDatabase::instance()->executeQuery(query.toString());
+	UniqueReference<ResultSet*> result(ServerDatabase::instance()->executeQuery(query.toString()));
 
 	if (result == nullptr)
 		return nullptr;
@@ -231,7 +269,7 @@ Account* AccountManager::createAccount(const String& username, const String& pas
 	return getAccount(accountID, passwordStored, true);
 }
 
-ManagedReference<Account*> AccountManager::getAccount(uint32 accountID, bool forceSqlUpdate) {
+Reference<Account*> AccountManager::getAccount(uint32 accountID, bool forceSqlUpdate) {
 	static Logger logger("AccountManager");
 
 	Locker locker(&mutex);
@@ -260,7 +298,7 @@ ManagedReference<Account*> AccountManager::getAccount(uint32 accountID, bool for
 	StringBuffer query;
 	query << "SELECT a.active, a.username, a.password, a.salt, a.account_id, a.station_id, UNIX_TIMESTAMP(a.created), a.admin_level FROM accounts a WHERE a.account_id = '" << accountID << "' LIMIT 1;";
 
-	Reference<ResultSet*> result = ServerDatabase::instance()->executeQuery(query.toString());
+	UniqueReference<ResultSet*> result(ServerDatabase::instance()->executeQuery(query.toString()));
 
 	if (result->next()) {
 		Locker locker(accObj);
@@ -273,14 +311,6 @@ ManagedReference<Account*> AccountManager::getAccount(uint32 accountID, bool for
 		accObj->setTimeCreated(result->getUnsignedInt(6));
 		accObj->setAdminLevel(result->getInt(7));
 
-		StringBuffer query1;
-		query1 << "SELECT UNIX_TIMESTAMP(timestamp) FROM account_log WHERE account_id = '" << accountID << "' ORDER BY UNIX_TIMESTAMP(timestamp) DESC LIMIT 1;";
-
-		Reference<ResultSet*> result1 = ServerDatabase::instance()->executeQuery(query1.toString());
-
-		if (result1->next())
-			accObj->setLastLogin(result1->getUnsignedInt(0));
-
 		accObj->updateFromDatabase();
 
 		return accObj;
@@ -289,21 +319,21 @@ ManagedReference<Account*> AccountManager::getAccount(uint32 accountID, bool for
 	return nullptr;
 }
 
-ManagedReference<Account*> AccountManager::getAccount(uint32 accountID, String& passwordStored, bool forceSqlUpdate) {
+Reference<Account*> AccountManager::getAccount(uint32 accountID, String& passwordStored, bool forceSqlUpdate) {
 	StringBuffer query;
 	query << "SELECT a.active, a.username, a.password, a.salt, a.account_id, a.station_id, UNIX_TIMESTAMP(a.created), a.admin_level FROM accounts a WHERE a.account_id = '" << accountID << "' LIMIT 1;";
 
 	return getAccount(query.toString(), passwordStored, forceSqlUpdate);
 }
 
-ManagedReference<Account*> AccountManager::getAccount(String query, String& passwordStored, bool forceSqlUpdate) {
+Reference<Account*> AccountManager::getAccount(String query, String& passwordStored, bool forceSqlUpdate) {
 	static Logger logger("AccountManager");
 
 	Locker locker(&mutex);
 
 	Reference<Account*> account;
 
-	Reference<ResultSet*> result = ServerDatabase::instance()->executeQuery(query);
+	UniqueReference<ResultSet*> result(ServerDatabase::instance()->executeQuery(query));
 
 	if (result->next()) {
 		static uint64 databaseID = ObjectDatabaseManager::instance()->getDatabaseID("accounts");
@@ -343,14 +373,6 @@ ManagedReference<Account*> AccountManager::getAccount(String query, String& pass
 		account->setTimeCreated(result->getUnsignedInt(6));
 		account->setAdminLevel(result->getInt(7));
 
-		StringBuffer query1;
-		query1 << "SELECT UNIX_TIMESTAMP(timestamp) FROM account_log WHERE account_id = '" << accountID << "' ORDER BY UNIX_TIMESTAMP(timestamp) DESC LIMIT 1;";
-
-		Reference<ResultSet*> result1 = ServerDatabase::instance()->executeQuery(query1.toString());
-
-		if (result1->next())
-			account->setLastLogin(result1->getUnsignedInt(0));
-
 		account->updateFromDatabase();
 
 		return account;
@@ -359,9 +381,7 @@ ManagedReference<Account*> AccountManager::getAccount(String query, String& pass
 	return nullptr;
 }
 
-
-
-ManagedReference<Account*> AccountManager::getAccount(const String& accountName, bool forceSqlUpdate) {
+Reference<Account*> AccountManager::getAccount(const String& accountName, bool forceSqlUpdate) {
 	String name = accountName;
 
 	Database::escapeString(name);
