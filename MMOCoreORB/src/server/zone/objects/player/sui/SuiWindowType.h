@@ -119,6 +119,7 @@ public:
 		STRUCTURE_VENDOR_WITHDRAW          = 156,
 		STRUCTURE_SELECT_SIGN              = 157,
 		STRUCTURE_ASSIGN_DROID             = 158,
+		STRUCTURE_PACKUP_VENDOR_CONFIRM    = 159,
 
 		//Admin 171 - 220
 		ADMIN_COMMANDS                     = 171,
@@ -166,8 +167,8 @@ public:
 		//Fishing 271 - 280
 		FISHING                            = 271,
 
-		// FRS
-		ENCLAVE_VOTING					   = 281,
+		//FRS
+		ENCLAVE_VOTING                     = 281,
 
 		//Medic 291 - 300
 		MEDIC_CONSENT                      = 291,
@@ -187,7 +188,7 @@ public:
 		REACTION_FINE                      = 331,
 
 		//Add Dot
-		ADD_DOT							   = 333,
+		ADD_DOT							 = 333,
 		//Deconstruct Weapon
 		DECONSTRUCT_WEAPON				   = 334,
 
@@ -279,7 +280,8 @@ public:
 		FIELD_FACTION_CHANGE			   = 1040,
 		GOTO_LIST						   = 1041,
 		FS_EXP_CONVERT 					   = 1042,
-		PLAYER_BOUNTY_OFFER 			   = 1043
+		PLAYER_BOUNTY_OFFER 			   = 1043,
+		DESTROY_CONTROLDEVICE 			   = 1044
 	};
 };
 
