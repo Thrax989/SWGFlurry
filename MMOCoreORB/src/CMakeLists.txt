@@ -30,8 +30,6 @@ if(BUILD_IDL)
 		string(REGEX REPLACE ".+\/src\/" "" idl_f ${idl})
 		string(CONCAT idl_b "src/" ${idl_f})
 
-		get_filename_component(idl_we ${idl} NAME_WE)
-
 		add_custom_command(OUTPUT "${autogen_cpp}" #"${autogen_h}"
 			COMMAND ${Java_JAVA_EXECUTABLE} ${IDLC_JAVA_ARGS} ${IDL_DIRECTIVES} -silence -rbcpp -sd src ${idl_f}
 			WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
@@ -74,21 +72,18 @@ file(GLOB_RECURSE tests_headers "tests/*.h")
 set(core3tests_libs)
 set(gmock_libs)
 
+add_dependencies(idlobjects engine3)
+
 if(COMPILE_TESTS)
 	# Define tests
 	enable_testing()
 
-	add_library(core3tests ${tests_headers} ${tests_sources})
-
-	add_dependencies(core3tests gmock idlobjects)
-
-	set(core3tests_libs core3tests)
+	set(core3tests_libs ${tests_headers} ${tests_sources})
 	set(gmock_libs gmock)
 endif(COMPILE_TESTS)
 
-
 # Create core3 binary
-add_executable(core3 main.cpp server/ServerCore.cpp ${tre3_sources} ${tre3_headers} ${zone3_sources} ${zone3_headers})
+add_executable(core3 main.cpp server/ServerCore.cpp ${core3tests_libs} ${tre3_sources} ${tre3_headers} ${zone3_sources} ${zone3_headers})
 
 if(ENABLE_ODB)
 	add_executable(odb3 server/ServerCore.cpp ${odb3_sources} ${odb3_headers} ${autogen_sources} ${autogen_headers} ${zone3_sources} ${zone3_headers}
@@ -97,7 +92,7 @@ if(ENABLE_ODB)
 endif(ENABLE_ODB)
 
 if(COMPILE_TESTS)
-	add_dependencies(core3 gmock idlobjects)
+	add_dependencies(core3 idlobjects)
 else(COMPILE_TESTS)
 	add_dependencies(core3 idlobjects)
 endif(COMPILE_TESTS)
@@ -112,7 +107,12 @@ set(whole_archive_start)
 set(whole_archive_end)
 
 # Add custom link options
-if(APPLE)
+if(WIN32)
+	set(whole_archive_start "")
+	set(whole_archive_end "")
+
+	set (CMAKE_LINK_WHAT_YOU_USE OFF) 
+elseif(APPLE)
 	set(whole_archive_start "-Wl,-all_load")
 	set(whole_archive_end "") #-Wl,-noall_load deprecated
 elseif(UNIX)
@@ -122,10 +122,15 @@ endif()
 
 target_link_libraries(core3
 	${whole_archive_start}
-	${core3tests_libs} db3 conf3 web3 status3 ping3 login3 chat3 core3terrain core3templates core3pathfinding idlobjects
+	db3 conf3 web3 status3 ping3 login3 chat3 core3terrain core3templates core3pathfinding idlobjects
 	${whole_archive_end}
-	${ENGINE3_LIBRARIES}
-	${gmock_libs} ${Boost_LIBRARIES} ${GCCLIBATOMIC_LIBRARY} Threads::Threads ${MYSQL_CLIENT_LIBS} ${LUA_LIBRARIES} ${DB_LIBRARIES} ${OPENSSL_LIBRARIES} ${ZLIB_LIBRARIES} ${CMAKE_DL_LIBS})
+	engine3
+	${gmock_libs}
+	${Boost_LIBRARIES}
+	${GCCLIBATOMIC_LIBRARY} ${PTHREAD_LIB_LINK} ${MYSQL_LIB}
+	${LUA_LIBRARIES}
+	${DB_LIBRARIES} ${OPENSSL_LIBRARIES}
+	${ZLIB_LIBRARIES} ${CMAKE_DL_LIBS})
 
 if (NOT ENABLE_ASAN AND NOT ENABLE_TSAN AND NOT ENABLE_UBSAN AND JEMALLOC_FOUND AND ENABLE_JEMALLOC_LINK)
 	target_link_libraries(core3 ${JEMALLOC_LIBRARIES})
@@ -136,9 +141,13 @@ if(ENABLE_MULTITHREADED_LINKER)
 endif(ENABLE_MULTITHREADED_LINKER)
 
 if(ENABLE_ODB)
-target_link_libraries(odb3
-	${ENGINE3_LIBRARIES}
-	${gmock_libs} ${Boost_LIBRARIES} ${GCCLIBATOMIC_LIBRARY} Threads::Threads ${MYSQL_CLIENT_LIBS} ${LUA_LIBRARIES} ${DB_LIBRARIES} ${OPENSSL_LIBRARIES} ${ZLIB_LIBRARIES} ${CMAKE_DL_LIBS})
+	target_link_libraries(odb3
+		engine3
+		${gmock_libs} ${Boost_LIBRARIES}
+		${GCCLIBATOMIC_LIBRARY} ${PTHREAD_LIB_LINK}
+		${MYSQL_LIB} ${LUA_LIBRARIES}
+		${DB_LIBRARIES} ${OPENSSL_LIBRARIES}
+		${ZLIB_LIBRARIES} ${CMAKE_DL_LIBS})
 
 if (NOT ENABLE_ASAN AND NOT ENABLE_TSAN AND NOT ENABLE_UBSAN AND JEMALLOC_FOUND AND ENABLE_JEMALLOC_LINK)
 	target_link_libraries(odb3 ${JEMALLOC_LIBRARIES})
@@ -189,3 +198,70 @@ add_custom_target(rebuild-idl
 	COMMENT "Rebuilding idl sources"
         VERBATIM)
 
+if (ENABLE_REST_SERVER OR ENABLE_SESSION_API)
+	find_package(cpprestsdk QUIET NAMES cpprestsdk cpprest)
+
+	if (cpprestsdk_FOUND)
+		target_link_libraries(core3 cpprestsdk::cpprest)
+
+		message(STATUS "Compiling with cpprestsdk package")
+	else ()
+		find_path(CUST_CPPREST_INCLUDE_DIR
+			NAMES
+			cpprest/http_listener.h
+			PATHS
+			${CASABLANCA_PKGCONF_INCLUDE_DIRS}
+			${CASABLANCA_DIR}
+			$ENV{CASABLANCA_DIR}
+			/usr/local/include
+			/usr/include
+			../../casablanca
+			PATH_SUFFIXES
+			Release/include
+			include
+			)
+
+		if (CUST_CPPREST_INCLUDE_DIR-NOTFOUND)
+			message(STATUS "Cant find cpprest/http_listener.h")
+		endif(CUST_CPPREST_INCLUDE_DIR-NOTFOUND)
+
+		# Library
+		find_library(CUST_CPPREST_LIBRARY
+			NAMES
+			cpprest
+			cpprest_2_9.lib
+			cpprestsdk
+			PATHS
+			${CASABLANCA_PKGCONF_LIBRARY_DIRS}
+			${CASABLANCA_DIR}
+			${CASABLANCA_DIR}
+			$ENV{CASABLANCA_DIR}
+			/usr/local
+			/usr/lib
+			/usr/local/lib
+			/usr
+			../../casablanca
+			PATH_SUFFIXES
+			lib
+			Release/build.release/Binaries/
+			build.release/Binaries/
+			)
+
+		if (CUST_CPPREST_LIBRARY-NOTFOUND)
+			message(STATUS "Cant find cpprestsdk library")
+		endif(CUST_CPPREST_LIBRARY-NOTFOUND)
+
+		if (CUST_CPPREST_INCLUDE_DIR-NOTFOUND AND CUST_CPPREST_LIBRARY-NOTFOUND)
+			message(STATUS "cpprestsdk not found, compiling without")
+		else ()
+			include_directories(${CUST_CPPREST_INCLUDE_DIR})
+			target_link_libraries(core3 ${CUST_CPPREST_LIBRARY})
+
+			if(ENABLE_ODB)
+				target_link_libraries(odb3 ${CUST_CPPREST_LIBRARY})
+			endif()
+
+			message(STATUS "Compiling with cpprestsdk")
+		endif()
+	endif()
+endif()

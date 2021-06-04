@@ -83,19 +83,18 @@ public:
 
 		for (int i = 0; i < files.size(); i++) {
 			String file = files.get(i);
-			ObjectInputStream* stream = templateManager->openTreFile(file);
+			UniqueReference<ObjectInputStream*> stream(templateManager->openTreFile(file));
 
 			if (stream != nullptr) {
-
 				if (stream->size() > 4) {
 					StringFile stringFile;
+
 					if (stringFile.load(stream)) {
 						file = file.replaceFirst("string/en/","");
 						file = file.replaceFirst(".stf","");
 
-						const HashTable<String, UnicodeString>* hashTable = stringFile.getStringMap();
-
-						HashTableIterator<String, UnicodeString> iterator = hashTable->iterator();
+						const auto& hashTable = stringFile.getStringMap();
+						auto iterator = hashTable.iterator();
 
 						while (iterator.hasNext()) {
 							String name;
@@ -111,9 +110,6 @@ public:
 					}
 
 				}
-
-				delete stream;
-
 			}
 
 		}
@@ -572,9 +568,9 @@ TEST_F(LuaMobileTest, LuaMobileTemplatesTest) {
 		Vector<String> lairTemplates;
 
 		// Verify spawn list
-		Vector<Reference<LairSpawn*> >* spawnList = group->getSpawnList();
-		for (int i = 0; i < spawnList->size(); i++) {
-			LairSpawn* spawn = spawnList->get(i);
+		const auto& spawnList = group->getSpawnList();
+		for (int i = 0; i < spawnList.size(); i++) {
+			LairSpawn* spawn = spawnList.get(i);
 			std::string lairName( spawn->getLairTemplateName().toCharArray() );
 
 			// Verify lair template exists and isn't duplicated in the group
@@ -617,9 +613,9 @@ TEST_F(LuaMobileTest, LuaMobileTemplatesTest) {
 		Vector<String> lairTemplates;
 
 		// Verify spawn list
-		Vector<Reference<LairSpawn*> >* spawnList = group->getSpawnList();
-		for (int i = 0; i < spawnList->size(); i++) {
-			LairSpawn* spawn = spawnList->get(i);
+		const auto& spawnList = group->getSpawnList();
+		for (int i = 0; i < spawnList.size(); i++) {
+			LairSpawn* spawn = spawnList.get(i);
 			std::string lairName( spawn->getLairTemplateName().toCharArray() );
 
 			// Verify lair template exists

@@ -24,7 +24,7 @@ bool StringFile::load(ObjectInputStream* inputFile) {
 		uint32 unknown1 = inputFile->readInt();
 		uint32 stringCount = inputFile->readInt();
 
-		//info("stringCount = " + String::valueOf(stringCount), true);
+		debug() << "stringCount = " << stringCount;
 
 		VectorMap<uint32, String> id;
 		VectorMap<uint32, UnicodeString> desc;
@@ -34,20 +34,18 @@ bool StringFile::load(ObjectInputStream* inputFile) {
 		for (int i = 0; i < stringCount; ++i) {
 			num = inputFile->readInt();
 			key = inputFile->readInt();
-			//size = inputFile->readInt();
 
 			UnicodeString description;
 
 			uint32 len = inputFile->readInt();
 			inputFile->shiftOffset(len * 2);
 
-			description.append((unsigned short*) (inputFile->getBuffer() + inputFile->getOffset() - len * 2), len);
+			description.append(reinterpret_cast<uint16*>(inputFile->getBuffer() + inputFile->getOffset() - len * 2), len);
 
-			//desc.setElementAt(num - 1, description);
 			desc.put(num, description);
 
-			//info("num = " + String::valueOf(num), true);
-			//info("description = " + description.toString(), true);
+			debug() << "num = " << num
+					<< " description = " << description;
 		}
 
 		for (int j = 0; j < stringCount; ++j) {
@@ -63,10 +61,9 @@ bool StringFile::load(ObjectInputStream* inputFile) {
 
 			str = buffer.toString();
 
-			//id.setElementAt(num - 1, str);
 			id.put(num, str);
 
-			//info("string = " + str, true);
+			debug() << "string = " << str;
 		}
 
 		stringMap.removeAll();
@@ -77,11 +74,11 @@ bool StringFile::load(ObjectInputStream* inputFile) {
 
 			UnicodeString description = desc.get(num);
 
-			stringMap.put(idKey, description);
+			stringMap.put(std::move(idKey), std::move(description));
 		}
 
 		return true;
-	} catch (Exception& e) {
+	} catch (const Exception& e) {
 		error("could not parse string file");
 		e.printStackTrace();
 	}

@@ -42,15 +42,15 @@ public:
 	}
 
 	inline int getHealthWoundRegenRate() {
-		return healthWoundRegenRate * 2.0;
+		return healthWoundRegenRate;
 	}
 
 	inline int getActionWoundRegenRate() {
-		return actionWoundRegenRate * 2.0;
+		return actionWoundRegenRate;
 	}
 
 	inline int getMindWoundRegenRate() {
-		return mindWoundRegenRate * 2.0;
+		return mindWoundRegenRate;
 	}
 };
 
