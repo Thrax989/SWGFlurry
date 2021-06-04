@@ -27,7 +27,7 @@ void QuadTreeEntryImplementation::setNode(QuadTreeNode* n) {
 	node = n;
 }
 
-bool QuadTreeEntryImplementation::containsPoint(float px, float py) const {
+bool QuadTreeEntryImplementation::containsPoint(float px, float py) {
 	return (((px - getPositionX()) * (px - getPositionX())) + ((py - getPositionY()) * (py - getPositionY())) <= radius * radius );
 }
 

@@ -159,7 +159,7 @@ void QuadTreeNode::check () {
 	}
 }
 
-String QuadTreeNode::toStringData() const {
+String QuadTreeNode::toStringData() {
 	StringBuffer s;
 	s << "Node " << this << " (" << (int) minX << ","
 			<< (int) minY << "," << (int) maxX << "," << (int) maxY
@@ -207,7 +207,7 @@ void QuadTree::insert(QuadTreeEntry *obj) {
 		raise(SIGSEGV);
 	}*/
 
-	E3_ASSERT(obj->getParent() == nullptr);
+	assert(obj->getParent() == nullptr);
 
 	Locker locker(&mutex);
 

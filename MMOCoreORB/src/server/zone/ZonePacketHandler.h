@@ -19,22 +19,27 @@ namespace zone {
 	class ZoneServer;
 
 	class ZonePacketHandler : public Logger, public Object {
-		Reference<ZoneProcessServer*> processServer;
+		ManagedReference<ZoneProcessServer*> processServer;
 
-		Reference<ZoneServer*> server;
+		ManagedReference<ZoneServer*> server;
 
 		MessageCallbackFactory<MessageCallback* (ZoneClientSession*, ZoneProcessServer*), uint32> messageCallbackFactory;
 
 	public:
-		ZonePacketHandler();
+		ZonePacketHandler() : Logger() {
+			server = nullptr;
+		}
+
 		ZonePacketHandler(const String& s, ZoneProcessServer* serv);
 
-		~ZonePacketHandler();
+		~ZonePacketHandler() {
+			delete ObjectControllerMessageCallback::objectMessageControllerFactory;
+		}
 
 		void registerMessages();
 		void registerObjectControllerMessages();
 
-		Task* generateMessageTask(ZoneClientSession* client, Message* pack) const;
+		Task* generateMessageTask(ZoneClientSession* client, Message* pack);
 	};
 
 	}

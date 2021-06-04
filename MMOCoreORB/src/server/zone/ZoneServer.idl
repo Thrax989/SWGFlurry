@@ -120,7 +120,7 @@ class ZoneServer extends ManagedService implements Logger {
 
 	// The range of objects kept within closeObjects vectors.
 	// Changing this will have a large impact on performance.
-	public static final float CLOSEOBJECTRANGE = 192;
+	public static final float CLOSEOBJECTRANGE = 512;
 
 	public native ZoneServer(ConfigManager config);
 
@@ -224,12 +224,12 @@ class ZoneServer extends ManagedService implements Logger {
 	@dirty
 	public native void increaseTotalDeletedPlayers();
 
-	@read
+	@dirty
 	public int getGalaxyID() {
 		return galaxyID;
 	}
 
-	@read
+	@dirty
 	public string getGalaxyName() {
 		return galaxyName;
 	}
@@ -238,42 +238,41 @@ class ZoneServer extends ManagedService implements Logger {
 		galaxyName = name;
 	}
 
-	@read
+	@dirty
 	public boolean isServerLocked() {
 		return serverState.get() == LOCKED;
 	}
 
-	@read
+	@dirty
 	public boolean isServerOnline() {
 		return serverState.get() == ONLINE;
 	}
 
-	@read
+	@dirty
 	public boolean isServerOffline() {
 		return serverState.get() == OFFLINE;
 	}
 
-	@read
+	@dirty
 	public boolean isServerLoading() {
 		return serverState.get() == LOADING;
 	}
 
-	@read
+	@dirty
 	public boolean isServerShuttingDown() {
 		return serverState.get() == SHUTTINGDOWN;
 	}
 
-	@read
 	public int getServerCap() {
 		return serverCap;
 	}
 
-	@read
+	@dirty
 	public int getServerState() {
 		return serverState.get();
 	}
 
-	@read
+	@dirty
 	public Zone getZone(final string terrainName) {
 		return zones.get(terrainName);
 	}
@@ -288,22 +287,22 @@ class ZoneServer extends ManagedService implements Logger {
 		return zones.get(idx);
 	}
 
-	@read
+	@dirty
 	public int getZoneCount() {
 		return zones.size();
 	}
 
-	@read
+	@dirty
 	public int getMaxPlayers() {
 		return maximumPlayers.get();
 	}
 
-	@read
+	@dirty
 	public int getTotalPlayers() {
 		return totalPlayers.get();
 	}
 
-	@read
+	@dirty
 	public int getDeletedPlayers() {
 		return totalDeletedPlayers.get();
 	}
@@ -389,7 +388,7 @@ class ZoneServer extends ManagedService implements Logger {
 	public SkillManager getSkillManager() {
 		return processor.getSkillManager();
 	}
-
+	
 	@local
 	@dirty
 	public NameManager getNameManager() {
@@ -414,7 +413,7 @@ class ZoneServer extends ManagedService implements Logger {
 		deleteNavAreas = b;
 	}
 
-	@read
+	@dirty
 	public boolean shouldDeleteNavAreas() {
 		return deleteNavAreas;
 	}
@@ -428,6 +427,6 @@ class ZoneServer extends ManagedService implements Logger {
 	public native void loadLoginMessage();
 	public native void changeLoginMessage(final string motd);
 
-	@read
+	@dirty
 	public native string getLoginMessage();
 }

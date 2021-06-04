@@ -126,7 +126,7 @@ public:
 	// Test if the object is inside this node
 	bool testInside(QuadTreeEntry* obj) const;
 
-	String toStringData() const;
+	String toStringData();
 
 	friend class server::zone::QuadTree;
 	friend class server::zone::QuadTreeEntryImplementation;
