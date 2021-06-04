@@ -1550,6 +1550,11 @@ void StructureManager::systemPackupStructure(StructureObject* structureObject, C
 	if (structureObject == nullptr || creature == nullptr)
 		return;
 
+	ManagedReference<StructureDeed*> deed = server->getObject(structureObject->getDeedObjectID()).castTo<StructureDeed*>();
+
+	if (deed == nullptr)
+		return;
+
 	ManagedReference<StructureControlDevice*> controlDevice = server->createObject(STRING_HASHCODE("object/intangible/house/generic_house_control_device.iff"), 1).castTo<StructureControlDevice*>();
 
 	if (controlDevice == nullptr)
