@@ -49,6 +49,7 @@
 #include "server/zone/objects/intangible/StructureControlDevice.h"
 #include "server/zone/managers/creature/PetManager.h"
 #include "server/zone/objects/installation/harvester/HarvesterObject.h"
+#include "server/zone/objects/player/sui/callbacks/FindLostItemsListSuiCallback.h"
 
 namespace StorageManagerNamespace {
 	 int indexCallback(DB *secondary, const DBT *key, const DBT *data, DBT *result) {
