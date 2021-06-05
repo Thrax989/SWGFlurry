@@ -888,10 +888,6 @@ void SlicingSessionImplementation::handleContainerSlice() {
 			return;
 		}
 
-		if (System::random(10) != 4)
-			lootManager->createLoot(container, "looted_container");
-
-
 		int roll = 200 - System::random(100);
 		int numRoll = (System::random(2) + 1);
 
