@@ -17,22 +17,22 @@ include engine.log.Logger;
 @json
 @dirty
 class AuctionsMap extends ManagedObject {
-
+	
 	@dereferenced
 	protected transient AuctionTerminalMap vendorItemsForSale;
-
+	
 	@dereferenced
 	protected transient AuctionTerminalMap bazaarItemsForSale;
 
 	@dereferenced
 	protected transient VectorMap<unsigned long, AuctionItem> allItems;
-
+	
 	@dereferenced
 	CommoditiesLimit commoditiesLimit;
-
+	
 	@dereferenced
 	protected transient Logger logger;
-
+	
 	public AuctionsMap() {
 		allItems.setNullValue(null);
 		allItems.setNoDuplicateInsertPlan();
@@ -65,27 +65,31 @@ class AuctionsMap extends ManagedObject {
 	@local
 	@dereferenced
 	public native TerminalListVector getVendorTerminalData(final string planet, final string region, SceneObject vendor);
-
+	
 	@local
 	@dereferenced
 	public native TerminalListVector getBazaarTerminalData(final string planet, final string region, SceneObject vendor);
 
 	public native int getPlayerItemCount(CreatureObject player);
 
+	public native int getVendorExpiredOffersCount(SceneObject vendor, CreatureObject player);
+
+	public native int getVendorExpiredItemCount(SceneObject vendor);
+
 	public native int getVendorItemCount(SceneObject vendor, boolean forSaleOnly = false);
-
+	
 	public native void deleteTerminalItems(SceneObject vendor);
-
+	
 	public native int getCommodityCount(CreatureObject player);
-
+	
 	public native void updateUID(SceneObject vendor, final string oldUID, final string newUID);
 
 	public native void updateVendorSearch(SceneObject vendor, boolean enabled);
 
 	public native void addToCommodityLimit(AuctionItem item);
-
+	
 	public native void removeFromCommodityLimit(AuctionItem item);
-
+	
 	public synchronized int getBazaarCount() {
 		return bazaarItemsForSale.size();
 	}

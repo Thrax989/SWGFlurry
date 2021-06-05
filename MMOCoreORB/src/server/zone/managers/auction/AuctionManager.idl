@@ -77,7 +77,7 @@ class AuctionManager extends ManagedService implements Logger {
 	public native void initialize();
 
 	@local
-	public native void addSaleItem(CreatureObject player, unsigned long objectid, SceneObject vendor, final unicode description, int price, unsigned int duration, boolean auction, boolean premium);
+	public native void addSaleItem(CreatureObject player, unsigned long objectid, SceneObject vendor, final unicode description, int price, unsigned int duration, boolean auction, boolean premium, boolean isRelist = false);
 
 	@local
 	public native AuctionItem createVendorItem(CreatureObject player, SceneObject objectToSell, SceneObject vendor, final unicode description, int price, unsigned int duration, boolean auction, boolean premium);
