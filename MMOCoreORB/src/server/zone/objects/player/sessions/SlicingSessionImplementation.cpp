@@ -897,6 +897,7 @@ void SlicingSessionImplementation::handleContainerSlice() {
 
 		for (int x=0; x < numRoll; x++) {
 			lootManager->createLoot(container, "looted_container", roll);
+		}
 
 		inventory->transferObject(container, -1);
 		container->sendTo(player, true);
