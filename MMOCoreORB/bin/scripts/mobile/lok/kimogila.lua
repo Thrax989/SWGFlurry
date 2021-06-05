@@ -33,7 +33,7 @@ kimogila = Creature:new {
 	        groups = {
 				{group = "kimogila_common", chance = 10000000}
 			},
-			lootChance = 7000000
+			lootChance = 10000000
 		}
 	},
 	weapons = {},

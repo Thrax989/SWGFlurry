@@ -134,6 +134,11 @@ public:
 			milkZone = "creature_quality_scrawny";
 		}
 
+		// 25% milk harvesting for having Master Ranger
+		if (player->hasSkill("outdoors_ranger_master")) {
+			quantityExtracted =  quantityExtracted * 1.25;
+		}
+
 		StringIdChatParameter harvestMessage("skl_use", milkZone);
 		harvestMessage.setDI(quantityExtracted);
 		harvestMessage.setTU(resourceSpawn->getFinalClass());
