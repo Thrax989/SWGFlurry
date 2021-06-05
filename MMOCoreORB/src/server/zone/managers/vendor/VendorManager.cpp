@@ -38,10 +38,7 @@ void VendorManager::loadLuaVendors() {
 	Lua* lua = new Lua();
 	lua->init();
 
-	bool res = lua->runFile("custom_scripts/managers/vendor_manager.lua");
-
-	if (!res)
-		res = lua->runFile("scripts/managers/vendor_manager.lua");
+	lua->runFile("scripts/managers/vendor_manager.lua");
 
 	LuaObject menu = lua->getGlobalObject("VendorMenu");
 
@@ -419,8 +416,8 @@ void VendorManager::handleRegisterVendorCallback(CreatureObject* player, Tangibl
 		return;
 	}
 
-	Reference<PlanetMapCategory*> planetMapCategory = TemplateManager::instance()->getPlanetMapCategoryByName("vendor");
-	Reference<PlanetMapCategory*> planetMapSubCategory = TemplateManager::instance()->getPlanetMapCategoryByName("vendor_" + planetMapCategoryName);
+	Reference<const PlanetMapCategory*> planetMapCategory = TemplateManager::instance()->getPlanetMapCategoryByName("vendor");
+	Reference<const PlanetMapCategory*> planetMapSubCategory = TemplateManager::instance()->getPlanetMapCategoryByName("vendor_" + planetMapCategoryName);
 
 	if (planetMapCategory == nullptr || planetMapSubCategory == nullptr)
 		return;
