@@ -52,8 +52,6 @@ Luna<LuaTangibleObject>::RegType LuaTangibleObject::Register[] = {
 		{ "isSliced", &LuaTangibleObject::isSliced},
 		{ "isNoTrade", &LuaTangibleObject::isNoTrade},
 		{ "setSocketCount", &LuaTangibleObject::setSocketCount},
-		{ "getCustomizationString", &LuaTangibleObject::getCustomizationString },
-		{ "setCustomizationString", &LuaTangibleObject::setCustomizationString },
 		{ 0, 0 }
 };
 
@@ -408,25 +406,4 @@ int LuaTangibleObject::setSocketCount(lua_State* L){
     }
     
     return 0;
-}
-
-int LuaTangibleObject::getCustomizationString(lua_State* L) {
-
-	String customizationData = "TEST";
-
-	realObject->getCustomizationString(customizationData);
-//	realObject->getCustomizationStringConverted(customizationData);
-	lua_pushstring(L, customizationData.toCharArray());
-
-	return 1;
-}
-
-int LuaTangibleObject::setCustomizationString(lua_State* L) {
-	String customizationData = lua_tostring(L, -1);
-
-	Locker locker(realObject);
-
-	realObject->setCustomizationString(customizationData);
-
-	return 0;
 }

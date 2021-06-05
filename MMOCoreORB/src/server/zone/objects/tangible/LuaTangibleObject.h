@@ -61,8 +61,6 @@ namespace tangible {
 		int isSliced(lua_State* L);
 		int isNoTrade(lua_State* L);
 		int setSocketCount(lua_State* L);
-		int getCustomizationString(lua_State *L);
-		int setCustomizationString(lua_State *L);
 	protected:
 		TangibleObject* realObject;
 	};
