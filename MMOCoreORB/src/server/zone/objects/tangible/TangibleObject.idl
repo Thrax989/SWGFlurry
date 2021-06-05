@@ -24,6 +24,7 @@ include server.zone.objects.scene.variables.AutoDeltaSet;
 include server.zone.objects.scene.variables.StringId;
 include system.thread.atomic.AtomicInteger;
 include server.zone.objects.intangible.ControlDevice;
+import server.zone.objects.tangible.tool.repair.RepairTool;
 
 @json
 class TangibleObject extends SceneObject {
@@ -735,7 +736,15 @@ class TangibleObject extends SceneObject {
 	@dirty
 	public native boolean canRepair(CreatureObject player);
 
-	public native void repair(CreatureObject player);
+	/**
+	* Repair this object with the given tool. If null, this method will
+	* search the player's inventory for an approriate tool (used by the
+	* radial menu repair option)
+	* @param player The player who's performing the repair. Must own this item.
+	* @param repairTool the repairTool with which to perform the repair. If
+	* null, players inventory will be searched for a valid tool
+	*/
+	public native void repair(CreatureObject player, RepairTool repairTool = null);
 
 	@dirty
 	public abstract string repairAttempt(int repairChance) {
