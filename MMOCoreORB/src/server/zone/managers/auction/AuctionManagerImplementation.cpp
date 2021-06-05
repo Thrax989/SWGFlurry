@@ -341,8 +341,7 @@ void AuctionManagerImplementation::doAuctionMaint(TerminalListVector* items, con
 	info(logTag + " Checked " + String::valueOf(count_total) + " auction item(s) and updated " + String::valueOf(count_updated) + " item(s)", true);
 }
 
-void AuctionManagerImplementation::addSaleItem(CreatureObject* player, uint64 objectid, SceneObject* vendor, const UnicodeString& description, int price, uint32 duration, bool auction, bool premium) {
-
+void AuctionManagerImplementation::addSaleItem(CreatureObject* player, uint64 objectid, SceneObject* vendor, const UnicodeString& description, int price, uint32 duration, bool auction, bool premium, bool isRelist) {
 	int bank = player->getBankCredits();
 	int cash = player->getCashCredits();
 	int totalFunds = bank + cash;
@@ -450,7 +449,7 @@ void AuctionManagerImplementation::addSaleItem(CreatureObject* player, uint64 ob
 
 	// add city tax to the price
 	ManagedReference<CityRegion*> city = vendor->getCityRegion().get();
-	if (city != nullptr) {
+	if (city != nullptr && !isRelist) {
 		price *= (1.0f + (city->getSalesTax() / 100.0f));
 	}
 
