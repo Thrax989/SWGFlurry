@@ -251,7 +251,7 @@ object_weapon_melee_polearm_crafted_saber_sword_lightsaber_polearm_gen5_exar_kun
 	experimentalGroupTitles = {"null", "null", "expDamage", "expDamage", "expDamage", "expDamage", "expEffeciency", "expEffeciency", "expEffeciency", "expEffeciency"},
 	experimentalSubGroupTitles = {"null", "null", "mindamage", "maxdamage", "attackspeed", "woundchance", "forcecost", "attackhealthcost", "attackactioncost", "attackmindcost"},
 	experimentalMin = {0, 0, 325, 405, 5.1, 25, 64, 60, 95, 45},
-	experimentalMax = {0, 0, 335, 425, 4.8, 50, 59, 45, 65, 40},
+	experimentalMax = {0, 0, 350, 475, 4.8, 50, 59, 45, 65, 40},
 	experimentalPrecision = {0, 0, 0, 0, 1, 0, 1, 0, 0, 0},
 	experimentalCombineType = {0, 0, 1, 1, 1, 1, 1, 1, 1, 1},
 }

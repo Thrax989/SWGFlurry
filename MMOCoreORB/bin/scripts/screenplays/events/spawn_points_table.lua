@@ -68,4 +68,8 @@ SpawnPointsTable = {
 	--Yavin
 	{planetName = "yavin4", xRef = -301, yRef = 4861, minRadius = 400}, --Mining Outpost
 	{planetName = "yavin4", xRef = -6933, yRef = -5706, minRadius = 400}, --Labor Outpost
+
+	--Hoth
+	{planetName = "hoth", xRef = 0, yRef = 0, minRadius = 800}, 
+
   }

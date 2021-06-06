@@ -20,14 +20,14 @@ FlurryWorldBossScreenPlay = ScreenPlay:new {
 	numberOfActs = 1,
 	
 	--Config Values
-	bossesToSpawn = 8, --Number of world bosses this screenplay will spawn 
-	numReferencePoints = 28, --Number of locations declared in spawn_points_table.lua
+	bossesToSpawn = 10, --Number of world bosses this screenplay will spawn 
+	numReferencePoints = 29, --Number of locations declared in spawn_points_table.lua
 	secondsToDespawn = 86400, --Number of seconds before a boss will despawn if it has not been killed (24h = 86,400s)
 	secondsToRespawn = 259200, --Number of seconds before a boss will respawn after it has been killed (3d = 259,200s)
 	maxRadius = 2500, --Maximum distance in meters from a known reference point to spawn boss mobiles
-	numBosses = 14, --Number of boss mobile templates to choose from, as declared below
+	numBosses = 19, --Number of boss mobile templates to choose from, as declared below
 	
-	bossMobileTemplates =  {"vsh", "vvl", "iv", "lg", "mhs", "sr", "jf", "dn", "geoworld_boss2", "rare_force2", "geoworld_boss4", "rare_force4", "geoworld_boss7", "rare_force6"},
+	bossMobileTemplates =  {"vsh", "vvl", "iv", "lg", "mhs", "sr", "jf", "dn", "geoworld_boss2", "rare_force2", "geoworld_boss4", "rare_force4", "geoworld_boss7", "rare_force6", "rare_force1", "rare_force3", "rare_force5", "rare_force7", "geoworld_boss5"},
 
 	screenplayName = "FlurryWorldBossScreenPlay",
 	

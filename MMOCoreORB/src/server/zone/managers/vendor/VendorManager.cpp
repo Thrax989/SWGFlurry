@@ -13,6 +13,7 @@
 #include "server/zone/objects/player/sui/messagebox/SuiMessageBox.h"
 #include "server/zone/managers/vendor/sui/RenameVendorSuiCallback.h"
 #include "server/zone/managers/vendor/sui/RegisterVendorSuiCallback.h"
+#include "server/zone/managers/vendor/sui/RelistItemsSuiCallback.h"
 #include "server/zone/managers/auction/AuctionManager.h"
 #include "server/zone/managers/auction/AuctionsMap.h"
 #include "server/zone/objects/tangible/components/vendor/VendorDataComponent.h"
@@ -113,12 +114,12 @@ void VendorManager::handleDisplayStatus(CreatureObject* player, TangibleObject* 
 
 	ManagedReference<AuctionManager*> auctionManager = server->getZoneServer()->getAuctionManager();
 	if(auctionManager == nullptr) {
-		error("null auction manager");
+		error("nullptr auction manager");
 		return;
 	}
 	ManagedReference<AuctionsMap*> auctionsMap = auctionManager->getAuctionMap();
 	if(auctionsMap == nullptr) {
-		error("null auctionsMap");
+		error("nullptr auctionsMap");
 		return;
 	}
 
@@ -202,6 +203,34 @@ String VendorManager::getTimeString(uint32 timestamp) {
 	return "(" + str.toString() + ")";
 }
 
+void VendorManager::promptRelistItems(CreatureObject* player, TangibleObject* vendor) {
+	ManagedReference<AuctionManager*> auctionManager = server->getZoneServer()->getAuctionManager();
+	if (auctionManager == nullptr) return;
+	ManagedReference<AuctionsMap*> auctionsMap = auctionManager->getAuctionMap();
+	if (auctionsMap == nullptr) return;
+
+	int expiredSales = auctionsMap->getVendorExpiredItemCount(vendor) - auctionsMap->getVendorExpiredOffersCount(vendor, player);
+
+	if (expiredSales > 0){
+		SuiMessageBox* confirmationWindow = new SuiMessageBox(player, SuiWindowType::NONE);
+		confirmationWindow->setCallback(new RelistItemsSuiCallback(player->getZoneServer()));
+		confirmationWindow->setUsingObject(vendor);
+		confirmationWindow->setPromptTitle("Restock Items");
+		confirmationWindow->setPromptText("The service fee for re-listing the "
+				+ String::valueOf(expiredSales)
+				+ " items in the stockroom is "
+				+ String::valueOf(expiredSales * 50)
+				+ " credits.\n\nContinue?");
+		confirmationWindow->setOkButton(true, "@yes");
+		confirmationWindow->setCancelButton(true, "@no");
+
+		player->getPlayerObject()->addSuiBox(confirmationWindow);
+		player->sendMessage(confirmationWindow->generateMessage());
+	} else {
+		player->sendSystemMessage("There are no items in the stockroom");
+	}
+}
+
 void VendorManager::promptDestroyVendor(CreatureObject* player, TangibleObject* vendor) {
 
 	DataObjectComponentReference* data = vendor->getDataObjectComponent();
@@ -259,13 +288,13 @@ void VendorManager::destroyVendor(TangibleObject* vendor) {
 
 	ManagedReference<AuctionManager*> auctionManager = server->getZoneServer()->getAuctionManager();
 	if (auctionManager == nullptr) {
-		error("null auctionManager when deleting vendor");
+		error("nullptr auctionManager when deleting vendor");
 		return;
 	}
 
 	ManagedReference<AuctionsMap*> auctionsMap = auctionManager->getAuctionMap();
 	if (auctionsMap == nullptr) {
-		error("null auctionsMap");
+		error("nullptr auctionsMap");
 		return;
 	}
 
@@ -311,6 +340,56 @@ void VendorManager::sendRegisterVendorTo(CreatureObject* player, TangibleObject*
 	player->sendMessage(registerBox->generateMessage());
 	player->getPlayerObject()->addSuiBox(registerBox);
 
+}
+
+void VendorManager::handleRelistItems(CreatureObject* player, TangibleObject* vendor) {
+
+	ManagedReference<AuctionManager*> auctionManager = server->getZoneServer()->getAuctionManager();
+	if (auctionManager == nullptr) return;
+
+	ManagedReference<AuctionsMap*> auctionsMap = auctionManager->getAuctionMap();
+	if (auctionsMap == nullptr) return;
+
+	String planet = vendor->getZone()->getZoneName();
+	String region = "@planet_n:" + vendor->getZone()->getZoneName();
+
+	TerminalListVector vendorList = auctionsMap->getVendorTerminalData(planet, region, vendor);
+	Reference<TerminalItemList*> itemList = vendorList.get(0);
+
+	int availableCredits = player->getBankCredits();
+	int expiredOffers = auctionsMap->getVendorExpiredOffersCount(vendor, player);
+	int expiredSalesCount = auctionsMap->getVendorExpiredItemCount(vendor) - expiredOffers;
+	int totalFees = expiredSalesCount * 50;
+	if (totalFees > availableCredits) {
+		player->sendSystemMessage("You do not have enough credits for the relisting fee");
+		return;
+	}
+
+	if (itemList != nullptr){
+
+		while (expiredSalesCount > 0) {
+			for (int i = 0; i < itemList->size(); i++) {
+				ManagedReference<AuctionItem*> item = itemList->get(i);
+				if (item != nullptr) {
+					Locker locker(item);
+					int salePrice = item->getPrice() > 99999990 ? 99999990 : item->getPrice();
+					if (item->getStatus() == AuctionItem::EXPIRED && item->getOwnerID() == player->getObjectID()) {
+						auctionManager->addSaleItem(player, item->getAuctionedItemObjectID(), vendor, item->getItemDescription(), salePrice, AuctionManager::VENDOREXPIREPERIOD, false, false, true);
+					}
+				}
+			}
+			expiredSalesCount = auctionsMap->getVendorExpiredItemCount(vendor) - expiredOffers;
+		}
+	}
+	// charge the fees after the entire transaction is complete
+	player->subtractBankCredits(totalFees);
+	// if in a player city add a percentage to the treasury
+	ManagedReference<CityRegion*> city = vendor->getCityRegion().get();
+	if (city != nullptr) {
+		Locker clocker(city);
+		city->addToCityTreasury((double)(totalFees * 0.25));
+	}
+	player->sendSystemMessage("Stockroom items have been relisted");
 }
 
 void VendorManager::handleRegisterVendorCallback(CreatureObject* player, TangibleObject* vendor, const String& planetMapCategoryName) {

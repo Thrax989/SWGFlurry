@@ -888,15 +888,12 @@ void SlicingSessionImplementation::handleContainerSlice() {
 			return;
 		}
 
-		if (System::random(10) != 4)
-			lootManager->createLoot(container, "looted_container");
-
-
 		int roll = 200 - System::random(100);
 		int numRoll = (System::random(2) + 1);
 
 		for (int x=0; x < numRoll; x++) {
 			lootManager->createLoot(container, "looted_container", roll);
+		}
 
 		inventory->transferObject(container, -1);
 		container->sendTo(player, true);
