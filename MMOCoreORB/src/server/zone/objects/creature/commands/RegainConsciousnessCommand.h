@@ -22,7 +22,7 @@ public:
 
 	int doQueueCommand(CreatureObject* creature, const uint64& target, const UnicodeString& arguments) const {
 
-	if (creature->hasSkill("combat_jedi_novice") && creature->getScreenPlayState("jediLives") <= 1) {
+	if (creature->hasSkill("combat_jedi_novice") && creature->getScreenPlayState("jediLives") == 0) {
 		creature->sendSystemMessage("You Have 1 Gray Jedi Life Or Less, You May Not Use This Ability."); // You Have 1 Gray Jedi Life Or Less, You May Not Use This Ability.
 		return 0;
 		}
