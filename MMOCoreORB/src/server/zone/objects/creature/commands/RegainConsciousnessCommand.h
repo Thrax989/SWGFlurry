@@ -22,8 +22,8 @@ public:
 
 	int doQueueCommand(CreatureObject* creature, const uint64& target, const UnicodeString& arguments) const {
 
-	if (creature->getScreenPlayState("jediLives") <= 1) {
-		creature->sendSystemMessage("You have Permanently died on your jedi, you may not use this option"); // You have Permanently died on your jedi, you may not use this option
+	if (creature->hasSkill("combat_jedi_novice") && creature->getScreenPlayState("jediLives") <= 1) {
+		creature->sendSystemMessage("You Have 1 Gray Jedi Life Or Less, You May Not Use This Abilitiy."); // You have Permanently died on your jedi, you may not use this option
 		return 0;
 		}
 
