@@ -35,6 +35,10 @@ public:
 		PlayerManager* playerManager = server->getZoneServer()->getPlayerManager();
 		playerManager->sendActivateCloneRequest(player);
 
+		if (player->isDead()) {
+			playerManager->sendActivateCloneRequest(player);
+		}	
+			
 		return SUCCESS;
 	}
 

@@ -207,6 +207,7 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
             "Janta Town (5,000 Credits)", "pc_jantatown_travel",
             "Serendipity (5,000 Credits)", "pc_serendipity_travel",
             "Malice (5,000 Credits)", "pc_malice_travel",
+            "Port Rielig (5,000 Credits)", "pc_portrielig_travel",			
             "Banir (5,000 Credits)", "pc_banir_travel"
           },
             "Dathomir",
@@ -273,8 +274,8 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 		  "Rori",
           {  
             "Unrest (5,000 Credits)", "pc_unrest_travel",
-            "No Fate (5,000 Credits)", "pc_nofate_travel",
-            "Stewjon (5,000 Credits)", "pc_stewjon_travel"   
+            "No Fate (5,000 Credits)", "pc_nofate_travel"
+            --"Stewjon (5,000 Credits)", "pc_stewjon_travel"   
 		  },		  
 		  "Taanab",
           {  
