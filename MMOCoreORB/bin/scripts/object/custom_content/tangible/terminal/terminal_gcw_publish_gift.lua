@@ -274,8 +274,8 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 		  "Rori",
           {  
             "Unrest (5,000 Credits)", "pc_unrest_travel",
-            "No Fate (5,000 Credits)", "pc_nofate_travel",
-            "Stewjon (5,000 Credits)", "pc_stewjon_travel"   
+            "No Fate (5,000 Credits)", "pc_nofate_travel"
+            --"Stewjon (5,000 Credits)", "pc_stewjon_travel"   
 		  },		  
 		  "Taanab",
           {  
