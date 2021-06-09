@@ -33,7 +33,7 @@ dune_sea_krayt_dragon = Creature:new {
 		{
 	        	groups = {
 				{group = "krayt_tissue_rare", chance = 2500000},
-				{group = "krayt_dragon_common", chance = 400000},
+				{group = "krayt_dragon_common", chance = 4000000},
 				{group = "krayt_pearls_flawless", chance = 2500000},
 				{group = "weapons_all", chance = 1000000},
 			},
