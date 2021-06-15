@@ -1,6 +1,6 @@
 --------------------------------------
 --   Creator : TOXIC
---   Date : 03/25/2019
+--   Date : 06/15/2021
 --------------------------------------
 local ObjectManager = require("managers.object.object_manager")
 
@@ -19,12 +19,12 @@ function jedi2:start()
 end
   
 function jedi2:spawnActiveAreas()
-	local pSpawnArea = spawnSceneObject("corellia", "object/active_area.iff", 0, 0, 0, 0, 0, 0, 0, 0)
+	local pSpawnArea = spawnSceneObject("dathomir", "object/active_area.iff", 5297, 78, -4129, 0, 0, 0, 0, 0)
     
 	if (pSpawnArea ~= nil) then
 		local activeArea = LuaActiveArea(pSpawnArea)
 	        activeArea:setCellObjectID(0)
-	        activeArea:setRadius(340)
+	        activeArea:setRadius(10)
 	        createObserver(ENTEREDAREA, "jedi2", "notifySpawnArea", pSpawnArea)
 	        createObserver(EXITEDAREA, "jedi2", "notifySpawnAreaLeave", pSpawnArea)
 	    end
@@ -41,14 +41,11 @@ function jedi2:notifySpawnArea(pActiveArea, pMovingObject)
 			return 0
 		end
 		
-        local thisState = player:getScreenPlayState(jediQuest.questString)
-
-        if ( thisState ~= 2 ) then
-		if (player:isImperial() or player:isRebel() or player:isNeutral()) then
-			player:sendSystemMessage("You must have the quest state to enter the zone!")
-			player:teleport(0, 0, 0, 0)
+		if (player:hasSkill("combat_jedi_novice")) then
+			player:sendSystemMessage("You have entered the training area!")
 		else
-			player:sendSystemMessage("You have entered the Quest Zone")
+			player:sendSystemMessage("You must be a gray jedi to enter the training area!")
+			player:teleport(5285, 78, -4171, 0)
 		end
 		return 0
 	end)
@@ -64,9 +61,9 @@ function jedi2:notifySpawnAreaLeave(pActiveArea, pMovingObject)
 		if (player:isAiAgent()) then
 			return 0
 		end
- 
-		if (player:isImperial() or player:isRebel() or player:isNeutral()) then
-			player:sendSystemMessage("You have left the Quest zone!")
+		
+		if (player:hasSkill("combat_jedi_novice")) then
+			player:sendSystemMessage("You have left training area!")
 		end
 		return 0
 	end)
