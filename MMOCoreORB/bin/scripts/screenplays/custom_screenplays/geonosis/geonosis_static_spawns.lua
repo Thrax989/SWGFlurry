@@ -19,23 +19,23 @@ function GeonosisStaticSpawnsScreenPlay:spawnMobiles()
 	--Need to add the rest of static spawns (Incomplete).
 
 
-	spawnMobile("geonosis", "geoworld_boss1",10800, getRandomNumber(16400) + -8200, 0, getRandomNumber(16400) + -8200, getRandomNumber(360), 0)
-	spawnMobile("geonosis", "geoworld_boss2",10800, getRandomNumber(16400) + -8200, 0, getRandomNumber(16400) + -8200, getRandomNumber(360), 0)
-	spawnMobile("geonosis", "geoworld_boss3",10800, getRandomNumber(16400) + -8200, 0, getRandomNumber(16400) + -8200, getRandomNumber(360), 0)
-	spawnMobile("geonosis", "geoworld_boss4",10800, getRandomNumber(16400) + -8200, 0, getRandomNumber(16400) + -8200, getRandomNumber(360), 0)
-	spawnMobile("geonosis", "geoworld_boss5",10800, getRandomNumber(16400) + -8200, 0, getRandomNumber(16400) + -8200, getRandomNumber(360), 0)
-	spawnMobile("geonosis", "geoworld_boss6",10800, getRandomNumber(16400) + -8200, 0, getRandomNumber(16400) + -8200, getRandomNumber(360), 0)
-	spawnMobile("geonosis", "geoworld_boss7",10800, getRandomNumber(16400) + -8200, 0, getRandomNumber(16400) + -8200, getRandomNumber(360), 0)
-	spawnMobile("geonosis", "geoworld_boss8",10800, getRandomNumber(16400) + -8200, 0, getRandomNumber(16400) + -8200, getRandomNumber(360), 0)
+	spawnMobile("geonosis", "geoworld_boss1",10800, getRandomNumber(12000) + -6000, 0, getRandomNumber(12000) + -6000, getRandomNumber(360), 0)
+	spawnMobile("geonosis", "geoworld_boss2",10800, getRandomNumber(12000) + -6000, 0, getRandomNumber(12000) + -6000, getRandomNumber(360), 0)
+	spawnMobile("geonosis", "geoworld_boss3",10800, getRandomNumber(12000) + -6000, 0, getRandomNumber(12000) + -6000, getRandomNumber(360), 0)
+	spawnMobile("geonosis", "geoworld_boss4",10800, getRandomNumber(12000) + -6000, 0, getRandomNumber(12000) + -6000, getRandomNumber(360), 0)
+	spawnMobile("geonosis", "geoworld_boss5",10800, getRandomNumber(12000) + -6000, 0, getRandomNumber(12000) + -6000, getRandomNumber(360), 0)
+	spawnMobile("geonosis", "geoworld_boss6",10800, getRandomNumber(12000) + -6000, 0, getRandomNumber(12000) + -6000, getRandomNumber(360), 0)
+	spawnMobile("geonosis", "geoworld_boss7",10800, getRandomNumber(12000) + -6000, 0, getRandomNumber(12000) + -6000, getRandomNumber(360), 0)
+	spawnMobile("geonosis", "geoworld_boss8",10800, getRandomNumber(12000) + -6000, 0, getRandomNumber(12000) + -6000, getRandomNumber(360), 0)
 
 
 
-  spawnMobile("geonosis", "rare_force1",10800, getRandomNumber(16400) + -8200, 0, getRandomNumber(16400) + -8200, getRandomNumber(360), 0)
-  spawnMobile("geonosis", "rare_force2",10800, getRandomNumber(16400) + -8200, 0, getRandomNumber(16400) + -8200, getRandomNumber(360), 0)
-  spawnMobile("geonosis", "rare_force3",10800, getRandomNumber(16400) + -8200, 0, getRandomNumber(16400) + -8200, getRandomNumber(360), 0)
-  spawnMobile("geonosis", "rare_force4",10800, getRandomNumber(16400) + -8200, 0, getRandomNumber(16400) + -8200, getRandomNumber(360), 0)
-  spawnMobile("geonosis", "rare_force5",10800, getRandomNumber(16400) + -8200, 0, getRandomNumber(16400) + -8200, getRandomNumber(360), 0)
-  spawnMobile("geonosis", "rare_force6",10800, getRandomNumber(16400) + -8200, 0, getRandomNumber(16400) + -8200, getRandomNumber(360), 0)
-  spawnMobile("geonosis", "rare_force7",10800, getRandomNumber(16400) + -8200, 0, getRandomNumber(16400) + -8200, getRandomNumber(360), 0)  
+  spawnMobile("geonosis", "rare_force1",7200, getRandomNumber(12000) + -6000, 0, getRandomNumber(12000) + -6000, getRandomNumber(360), 0)
+  spawnMobile("geonosis", "rare_force2",7200, getRandomNumber(12000) + -6000, 0, getRandomNumber(12000) + -6000, getRandomNumber(360), 0)
+  spawnMobile("geonosis", "rare_force3",7200, getRandomNumber(12000) + -6000, 0, getRandomNumber(12000) + -6000, getRandomNumber(360), 0)
+  spawnMobile("geonosis", "rare_force4",7200, getRandomNumber(12000) + -6000, 0, getRandomNumber(12000) + -6000, getRandomNumber(360), 0)
+  spawnMobile("geonosis", "rare_force5",7200, getRandomNumber(12000) + -6000, 0, getRandomNumber(12000) + -6000, getRandomNumber(360), 0)
+  spawnMobile("geonosis", "rare_force6",7200, getRandomNumber(12000) + -6000, 0, getRandomNumber(12000) + -6000, getRandomNumber(360), 0)
+  spawnMobile("geonosis", "rare_force7",7200, getRandomNumber(12000) + -6000, 0, getRandomNumber(12000) + -6000, getRandomNumber(360), 0)  
 
 end
