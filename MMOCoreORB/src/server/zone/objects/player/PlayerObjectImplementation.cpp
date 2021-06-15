@@ -1569,7 +1569,7 @@ void PlayerObjectImplementation::notifyOnline() {
 		}
 	}
 
-	if (playerCreature->hasSkill("combat_jedi_novice") && playerCreature->getFactionStatus() == FactionStatus::OVERT)) {
+	if (playerCreature->hasSkill("combat_jedi_novice") && playerCreature->getFactionStatus() == FactionStatus::OVERT) {
 		playerCreature->setFactionStatus(1);
 	}
 
