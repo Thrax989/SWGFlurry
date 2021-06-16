@@ -53,6 +53,8 @@ end
 function FlurryWorldBossScreenPlay:setupBoss(pBoss)
 	createObserver(OBJECTDESTRUCTION, "FlurryWorldBossScreenPlay", "notifyBossDead", pBoss)
 	createEvent(self.secondsToDespawn * 1000, "FlurryWorldBossScreenPlay", "despawnBoss", pBoss, "")
+	CreatureObject(bossObject):broadcastToServer("\\#63C8F9 Unique World Boss System Generating.")
+	CreatureObject(bossObject):broadcastToDiscord(" Unique World Boss System Generating.")
 end
 
 function FlurryWorldBossScreenPlay:notifyBossDead(pBoss, pKiller)
@@ -65,6 +67,8 @@ function FlurryWorldBossScreenPlay:notifyBossDead(pBoss, pKiller)
 	end
 
 	createEvent(self.secondsToRespawn * 1000, "FlurryWorldBossScreenPlay", "respawnBoss", pBoss, "")
+	CreatureObject(bossObject):broadcastToServer("\\#63C8F9 A Unique World Boss Has Died.")
+	CreatureObject(bossObject):broadcastToDiscord(" A Unique World Boss Has Died.")
 	--print("Boss was killed, initiating despawn/respawn.")
 	return 1
 end
@@ -113,6 +117,8 @@ function FlurryWorldBossScreenPlay:respawnBoss(pOldBoss)
 
 		if (pBoss ~= nil) then
 			createEvent(10, "FlurryWorldBossScreenPlay", "setupBoss", pBoss, "")
+			CreatureObject(bossObject):broadcastToServer("\\#63C8F9 A Unique World Boss Is Now Spawning Randomly In The Galaxy.")
+			CreatureObject(bossObject):broadcastToDiscord(" A Unique World Boss Is Now Spawning Randomly In The Galaxy.")
 			--print("Boss: " .. bossTemplate .. " spawned at " .. spawnPoint[1] .. ", " .. spawnPoint[3] .. ", " .. zone) -- debug message, comment out
 		end
 
@@ -133,5 +139,7 @@ function FlurryWorldBossScreenPlay:despawnBoss(pBoss)
 	--print("Boss was not killed, initiating despawn/respawn.")
 	SceneObject(pBoss):destroyObjectFromWorld()
 	createEvent(2 * 1000, "FlurryWorldBossScreenPlay", "respawnBoss", pNewBoss, "")
+	CreatureObject(bossObject):broadcastToServer("\\#63C8F9 An Inactive World Boss Is Currently Despawning.")
+	CreatureObject(bossObject):broadcastToDiscord(" An Inactive World Boss Is Currently Despawning.")
 	return 1
 end
