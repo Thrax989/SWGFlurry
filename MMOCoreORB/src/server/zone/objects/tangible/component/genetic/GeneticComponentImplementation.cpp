@@ -169,10 +169,10 @@ void GeneticComponentImplementation::updateCraftingValues(CraftingValues* values
 	if (power < 0)
 		power = 1;
 	// max on resists
-	if (kinResist > 60)
-		kinResist = 60;
-	if (energyResist > 60)
-		energyResist = 60;
+	if (kinResist > 80)
+		kinResist = 80;
+	if (energyResist > 80)
+		energyResist = 80;
 	if (blastResist > 100)
 		blastResist = 100;
 	if (heatResist > 100)
@@ -185,8 +185,8 @@ void GeneticComponentImplementation::updateCraftingValues(CraftingValues* values
 		acidResist = 100;
 	if (stunResist > 100)
 		stunResist = 100;
-	if (saberResist > 100)
-		saberResist = 100;
+	if (saberResist > 70)
+		saberResist = 70;
 	// Determine other factors
 	// HAM, attack speed, min/max damage toHit
 	// Health: har,dex
@@ -199,16 +199,16 @@ void GeneticComponentImplementation::updateCraftingValues(CraftingValues* values
 	// Strength: har,dep
 	// Quickness: dex,dep
 
-	health = (hardiness * 15)    + (dexterity * 3);
-	action = (dexterity * 15)    + (intelligence * 3);
-	mind   = (intelligence * 15) + (hardiness * 3);
+	health = (hardiness * 125)    + (dexterity * 3);
+	action = (dexterity * 125)    + (intelligence * 3);
+	mind   = (intelligence * 125) + (hardiness * 3);
 	stamina = (dexterity*15)     + (endurance * 3);
 	willPower = (intelligence * 15) + (cleverness * 3);
 	constitution = (hardiness * 15)    + (fortitude * 3);
 	focus = (intelligence * 15) + (dependency * 3);
 	strength = (hardiness * 15)    + (dependency * 3);
 	quickness = (dexterity * 15)    + (dependency * 3);
-	hit = 1.40 + (0.55 * ((float)cleverness/1000.0));
+	hit = 0.19 + (0.55 * ((float)cleverness/1000.0));
 	// dps of pet use to determien min and max value.
 	int dps = ceil((ceil(15.0 + (775.0 * ( ((float)power)/1000.0))))/3.5);
 	speed = 2.0-((ceil(((float)courage)/10)*10)/1000);

@@ -635,5 +635,6 @@ reservedNames = {
 	{ "self", DECLINED_RESERVED },
 	{ "tox", DECLINED_RESERVED }, --admin name  
 	{ "syg", DECLINED_RESERVED },  --admin name
-	{ "sig", DECLINED_RESERVED } --admin name  
+	{ "sig", DECLINED_RESERVED }, --admin name
+  { "mohel", DECLINED_PROFANE } 
 }
