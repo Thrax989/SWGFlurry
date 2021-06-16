@@ -127,7 +127,6 @@ function FlurryWorldBossScreenPlay:respawnBoss(pOldBoss)
 end
 
 function FlurryWorldBossScreenPlay:despawnBoss(pBoss)
-	local boss = LuaCreatureObject(pBoss)
 	if (pBoss == nil or CreatureObject(pBoss):isDead()) then
 		--print ("Despawn function triggered, but boss was nil or dead - do nothing.")
 		return
@@ -142,6 +141,7 @@ function FlurryWorldBossScreenPlay:despawnBoss(pBoss)
 	--print("Boss was not killed, initiating despawn/respawn.")
 	SceneObject(pBoss):destroyObjectFromWorld()
 	createEvent(2 * 1000, "FlurryWorldBossScreenPlay", "respawnBoss", pNewBoss, "")
+	local boss = LuaCreatureObject(pOldBoss)
 	CreatureObject(pBoss):broadcastToServer("\\#63C8F9 An Inactive World Boss Is Currently Despawning.")
 	CreatureObject(pBoss):broadcastToDiscord(" An Inactive World Boss Is Currently Despawning.")
 	return 1
