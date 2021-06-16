@@ -76,7 +76,6 @@ function FlurryWorldBossScreenPlay:notifyBossDead(pBoss, pKiller)
 end
 
 function FlurryWorldBossScreenPlay:respawnBoss(pOldBoss)
-	local boss = LuaCreatureObject(pOldBoss)
 	local bossTemplate = self.bossMobileTemplates[getRandomNumber(1, self.numBosses)]
 	local referencePoint = getRandomNumber(1, self.numReferencePoints)
 	local zone = SpawnPointsTable[referencePoint].planetName
@@ -118,6 +117,7 @@ function FlurryWorldBossScreenPlay:respawnBoss(pOldBoss)
 	SceneObject(pSpawner):destroyObjectFromWorld()	
 
 		if (pBoss ~= nil) then
+			local boss = LuaCreatureObject(pOldBoss)
 			createEvent(10, "FlurryWorldBossScreenPlay", "setupBoss", pBoss, "")
 			CreatureObject(pOldBoss):broadcastToServer("\\#63C8F9 A Unique World Boss Is Now Spawning Randomly In The Galaxy.")
 			CreatureObject(pOldBoss):broadcastToDiscord(" A Unique World Boss Is Now Spawning Randomly In The Galaxy.")
@@ -141,7 +141,7 @@ function FlurryWorldBossScreenPlay:despawnBoss(pBoss)
 	--print("Boss was not killed, initiating despawn/respawn.")
 	SceneObject(pBoss):destroyObjectFromWorld()
 	createEvent(2 * 1000, "FlurryWorldBossScreenPlay", "respawnBoss", pNewBoss, "")
-	local boss = LuaCreatureObject(pOldBoss)
+	local boss = LuaCreatureObject(pBoss)
 	CreatureObject(pBoss):broadcastToServer("\\#63C8F9 An Inactive World Boss Is Currently Despawning.")
 	CreatureObject(pBoss):broadcastToDiscord(" An Inactive World Boss Is Currently Despawning.")
 	return 1
