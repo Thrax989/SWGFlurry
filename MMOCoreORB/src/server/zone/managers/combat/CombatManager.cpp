@@ -1650,8 +1650,10 @@ float CombatManager::calculateDamage(CreatureObject* attacker, WeaponObject* wea
 		ManagedReference<CreatureObject*> petOwner = defender->getLinkedCreature();
 		if (petOwner != nullptr && petOwner->isPlayerCreature()) {
 			if (attacker->isPlayerCreature()){
-				damage *= 0.50;
-			} 
+				damage *= 0.75; // 25 % PVP
+			} else {
+			 	damage *= 0.50; // 50 % PVE
+			}
 		}
 	}	
 
