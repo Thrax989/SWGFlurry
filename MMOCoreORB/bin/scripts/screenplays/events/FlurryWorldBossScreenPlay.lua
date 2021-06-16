@@ -117,10 +117,10 @@ function FlurryWorldBossScreenPlay:respawnBoss(pOldBoss)
 	SceneObject(pSpawner):destroyObjectFromWorld()	
 
 		if (pBoss ~= nil) then
-			local boss = LuaCreatureObject(pOldBoss)
+			local boss = LuaCreatureObject(pBoss)
 			createEvent(10, "FlurryWorldBossScreenPlay", "setupBoss", pBoss, "")
-			CreatureObject(pOldBoss):broadcastToServer("\\#63C8F9 A Unique World Boss Is Now Spawning Randomly In The Galaxy.")
-			CreatureObject(pOldBoss):broadcastToDiscord(" A Unique World Boss Is Now Spawning Randomly In The Galaxy.")
+			CreatureObject(pBoss):broadcastToServer("\\#63C8F9 A Unique World Boss Is Now Spawning Randomly In The Galaxy.")
+			CreatureObject(pBoss):broadcastToDiscord(" A Unique World Boss Is Now Spawning Randomly In The Galaxy.")
 			--print("Boss: " .. bossTemplate .. " spawned at " .. spawnPoint[1] .. ", " .. spawnPoint[3] .. ", " .. zone) -- debug message, comment out
 		end
 
