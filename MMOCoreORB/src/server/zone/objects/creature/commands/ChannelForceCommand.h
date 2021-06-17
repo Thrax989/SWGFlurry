@@ -31,6 +31,11 @@ public:
 			return NOJEDIARMOR;
 		}
 
+		if (creature->hasBuff(BuffCRC::JEDI_AVOID_INCAPACITATION)) {
+			creature->sendSystemMessage("You cannot use Channel Force while Avoid Incapping.");
+			return INVALIDSTATE;
+		}
+
 		// Bonus is in between 250-350.
 		int forceRandom = System::random(100);
 		int forceBonus = 250 + (forceRandom);

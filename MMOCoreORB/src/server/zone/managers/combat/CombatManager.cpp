@@ -1646,12 +1646,16 @@ float CombatManager::calculateDamage(CreatureObject* attacker, WeaponObject* wea
 			damage *= 1.f / (1.f + ((float)forceDefense / 100.f));
 	}
 
-	// PvP Damage Reduction.
-	if ((attacker->isPlayerCreature() && !attacker->asCreatureObject()->hasSkill("force_title_jedi_novice"))  && defender->isPlayerCreature()) {
-		damage *= 0.50;//Non Jedi Do 50% Damage
-	} else if (attacker->asCreatureObject()->hasSkill("force_title_jedi_novice") && !defender->asCreatureObject()->hasSkill("force_title_jedi_novice")) {  
-		damage *= 0.75;//Jedi Do 75% Damage To non Jedi
-	}
+	if (defender->isPet()) {
+		ManagedReference<CreatureObject*> petOwner = defender->getLinkedCreature();
+		if (petOwner != nullptr && petOwner->isPlayerCreature()) {
+			if (attacker->isPlayerCreature()){
+				damage *= 0.75; // 25 % PVP
+			} else {
+			 	damage *= 0.80; // 20 % PVE
+			}
+		}
+	}	
 
 	if (damage < 1) damage = 1;
 
@@ -1727,9 +1731,18 @@ int CombatManager::getHitChance(TangibleObject* attacker, CreatureObject* target
 	if (creoAttacker != nullptr)
 		bonusAccuracy = getAttackerAccuracyBonus(creoAttacker, weapon);
 
-	// this is the scout/ranger creature hit bonus that only works against creatures (not NPCS)
-	if (targetCreature->isCreature() && creoAttacker != nullptr)
-		bonusAccuracy += creoAttacker->getSkillMod("creature_hit_bonus");
+	if (creoAttacker != nullptr){
+		int petOwnerToHitBonus = 0;
+		if (creoAttacker->isPet()){
+			ManagedReference<CreatureObject*> petOwner = creoAttacker->getLinkedCreature();
+			if (petOwner != nullptr) {
+				if (petOwner->getSkillMod("creature_hit_bonus") > 0){
+					petOwnerToHitBonus += petOwner->getSkillMod("creature_hit_bonus");
+				}
+			}
+		}
+		bonusAccuracy += petOwnerToHitBonus;
+	}
 
 	//info("Attacker total bonus is " + String::valueOf(bonusAccuracy), true);
 
