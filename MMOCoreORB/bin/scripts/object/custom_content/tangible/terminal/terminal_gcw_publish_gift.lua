@@ -192,21 +192,21 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 		   {
 			"Korrivan (5,000 Credits)", "pc_korrivan_travel",
 			"Skynet (5,000 Credits)", "pc_skynet_travel",
-			"Make America Krayt Again (5,000 Credits)", "pc_maka_travel",
+			--"Make America Krayt Again (5,000 Credits)", "pc_maka_travel",
 			"Little China (5,000 Credits)", "pc_littlechina_travel"
 					},         
             "Naboo",
           {
-           	"Intas Minor (5,000 Credits)", "pc_intas_travel", 
+           	--"Intas Minor (5,000 Credits)", "pc_intas_travel", 
             "Lafayette (5,000 Credits)", "pc_lafayette_travel",
             "Avalon Prime (5,000 Credits)", "pc_avalon_travel",
 	    "Flurrys Haven (5,000 Credits)", "pc_flurrys haven_travel"		
           },
             "Dantooine",
           {
-            "Janta Town (5,000 Credits)", "pc_jantatown_travel",
+            --"Janta Town (5,000 Credits)", "pc_jantatown_travel",
             "Serendipity (5,000 Credits)", "pc_serendipity_travel",
-            "Malice (5,000 Credits)", "pc_malice_travel",
+            --"Malice (5,000 Credits)", "pc_malice_travel",
             "Port Rielig (5,000 Credits)", "pc_portrielig_travel",			
             "Banir (5,000 Credits)", "pc_banir_travel"
           },
@@ -214,15 +214,15 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
           {
             "Hill Top (5,000 Credits)", "pc_hilltop_travel",
             "Cyberdyne (5,000 Credits)", "pc_cyberdyne_travel",
-            "Darkness Falls (5,000 Credits)", "pc_darkness_travel",
-            "Sanctus (5,000 Credits)", "pc_sanctus_travel",
-			"Sparta (5,000 Credits)", "pc_sparta_travel",
+            --"Darkness Falls (5,000 Credits)", "pc_darkness_travel",
+            --"Sanctus (5,000 Credits)", "pc_sanctus_travel",
+			--"Sparta (5,000 Credits)", "pc_sparta_travel",
 			"Limes Inferior (5,000 Credits)", "pc_limes inferior_travel"
           },
             "Corellia",
           {  
-            "Shadow Falls (5,000 Credits)", "pc_shadowfalls_travel",
-            "Lowca Island (5,000 Credits)", "pc_lowca island_travel"
+            --"Shadow Falls (5,000 Credits)", "pc_shadowfalls_travel",
+            --"Lowca Island (5,000 Credits)", "pc_lowca island_travel"
           },
             "Endor",
           {
@@ -232,20 +232,21 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
           },
             "Geonosis",
           {
-            "Asgard (5,000 Credits)", "pc_asgard_travel",
-	    "Lost City (5,000 Credits)", "pc_lost city_travel"		
+            --"Asgard (5,000 Credits)", "pc_asgard_travel",
+	    	"Lost City (5,000 Credits)", "pc_lost city_travel"
+			"Somov'Rit (5,000 Credits)", "pc_somov city_travel"				
           },
             "Talus",
           {
 			"Caladan (5,000 Credits)", "pc_caladan_travel",
-			"Vir Domus (5,000 Credits)", "pc_virdomus_travel",
+			--"Vir Domus (5,000 Credits)", "pc_virdomus_travel",
 			"Solace (5,000 Credits)", "pc_solace_travel"
           },  
             "Lok",
           {
-      "Crimson Thorn (5,000 Credits)", "pc_crimson_travel",
-			"Binary (5,000 Credits)", "pc_binary_travel",
-			"Serenity (5,000 Credits)", "pc_serenity_travel"
+      		--"Crimson Thorn (5,000 Credits)", "pc_crimson_travel",
+			--"Binary (5,000 Credits)", "pc_binary_travel",
+			--"Serenity (5,000 Credits)", "pc_serenity_travel"
           },
             "Yavin4",
           {
@@ -257,7 +258,7 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
           },
             "Hutta",
           {  
-            "Bad Mutta Hutta (5,000 Credits)", "pc_bmh_travel"
+            --"Bad Mutta Hutta (5,000 Credits)", "pc_bmh_travel"
           },
             "Hoth",
           {
@@ -267,7 +268,7 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 
             "Mandalore",
           {  
-			"Nevarro (5,000 Credits)", "pc_freedom_travel",
+			--"Nevarro (5,000 Credits)", "pc_freedom_travel",
 			"The Old West (5,000 Credits)", "pc_oldwest_travel",
 			"Setec Astronomy (5,000 Credits)", "pc_setec_astronomy_travel"
 		  },
