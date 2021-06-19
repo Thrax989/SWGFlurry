@@ -212,10 +212,10 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
           },
             "Dathomir",
           {
-            "Hill Top (5,000 Credits)", "pc_hilltop_travel",
-            "Cyberdyne (5,000 Credits)", "pc_cyberdyne_travel",
-            --"Darkness Falls (5,000 Credits)", "pc_darkness_travel",
-            --"Sanctus (5,000 Credits)", "pc_sanctus_travel",
+			"Hill Top (5,000 Credits)", "pc_hilltop_travel",
+			"Cyberdyne (5,000 Credits)", "pc_cyberdyne_travel",
+			--"Darkness Falls (5,000 Credits)", "pc_darkness_travel",
+			--"Sanctus (5,000 Credits)", "pc_sanctus_travel",
 			--"Sparta (5,000 Credits)", "pc_sparta_travel",
 			"Limes Inferior (5,000 Credits)", "pc_limes inferior_travel"
           },
@@ -226,14 +226,14 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
           },
             "Endor",
           {
-            "Mos Potatoes (5,000 Credits)", "mos_potatoes",
-            "Sundari (5,000 Credits)", "pc_sundari_travel",
-            "Purgatory (5,000 Credits)", "pc_purgatory_travel"
+            		"Mos Potatoes (5,000 Credits)", "mos_potatoes",
+            		"Sundari (5,000 Credits)", "pc_sundari_travel",
+            		"Purgatory (5,000 Credits)", "pc_purgatory_travel"
           },
             "Geonosis",
           {
-            --"Asgard (5,000 Credits)", "pc_asgard_travel",
-	    	"Lost City (5,000 Credits)", "pc_lost city_travel"
+           		 --"Asgard (5,000 Credits)", "pc_asgard_travel",
+			"Lost City (5,000 Credits)", "pc_lost city_travel",
 			"Somov'Rit (5,000 Credits)", "pc_somov city_travel"				
           },
             "Talus",
