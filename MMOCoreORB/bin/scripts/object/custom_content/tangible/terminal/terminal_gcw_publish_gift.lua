@@ -186,105 +186,81 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 		   {
 			"Teleport To PvP Zone Rori Restuss (5,000 Credits)", "restuss_pvp_travel",
 		   },
-		 	"Player Cities",
+		   "Player Cities",
 		   {
-            "Tatooine",
+		   "Dantooine",
 		   {
-			"Korrivan (5,000 Credits)", "pc_korrivan_travel",
-			"Skynet (5,000 Credits)", "pc_skynet_travel",
-			--"Make America Krayt Again (5,000 Credits)", "pc_maka_travel",
-			"Little China (5,000 Credits)", "pc_littlechina_travel"
-					},         
-            "Naboo",
-          {
-           	--"Intas Minor (5,000 Credits)", "pc_intas_travel", 
-            "Lafayette (5,000 Credits)", "pc_lafayette_travel",
-            "Avalon Prime (5,000 Credits)", "pc_avalon_travel",
-	    	"Flurrys Haven (5,000 Credits)", "pc_flurrys haven_travel"
-			"Sanitarium (5,000 Credits)", "pc_sanitarium_travel"
-			"Cry More Noobs (5,000 Credits)", "pc_cry more noobs_travel"		
-          },
-            "Dantooine",
-          {
-            --"Janta Town (5,000 Credits)", "pc_jantatown_travel",
-            "Serendipity (5,000 Credits)", "pc_serendipity_travel",
-            --"Malice (5,000 Credits)", "pc_malice_travel",
-            "Port Rielig (5,000 Credits)", "pc_portrielig_travel",			
-            "Banir (5,000 Credits)", "pc_banir_travel"
-          },
-            "Dathomir",
-          {
-            "Hill Top (5,000 Credits)", "pc_hilltop_travel",
-            "Cyberdyne (5,000 Credits)", "pc_cyberdyne_travel",
-            --"Darkness Falls (5,000 Credits)", "pc_darkness_travel",
-            --"Sanctus (5,000 Credits)", "pc_sanctus_travel",
-			--"Sparta (5,000 Credits)", "pc_sparta_travel",
-			"Limes Inferior (5,000 Credits)", "pc_limes inferior_travel"
-          },
-            "Corellia",
-          {  
-            --"Shadow Falls (5,000 Credits)", "pc_shadowfalls_travel",
-            --"Lowca Island (5,000 Credits)", "pc_lowca island_travel"
-          },
-            "Endor",
-          {
-            "Mos Potatoes (5,000 Credits)", "mos_potatoes",
-            "Sundari (5,000 Credits)", "pc_sundari_travel",
-            "Purgatory (5,000 Credits)", "pc_purgatory_travel"
-          },
-            "Geonosis",
-          {
-            --"Asgard (5,000 Credits)", "pc_asgard_travel",
-	    	"Lost City (5,000 Credits)", "pc_lost city_travel"
-			"Somov'Rit (5,000 Credits)", "pc_somov city_travel"				
-          },
-            "Talus",
-          {
-			"Caladan (5,000 Credits)", "pc_caladan_travel",
-			--"Vir Domus (5,000 Credits)", "pc_virdomus_travel",
-			"Solace (5,000 Credits)", "pc_solace_travel"
-          },  
-            "Lok",
-          {
-      		--"Crimson Thorn (5,000 Credits)", "pc_crimson_travel",
-			--"Binary (5,000 Credits)", "pc_binary_travel",
-			--"Serenity (5,000 Credits)", "pc_serenity_travel"
-          },
-            "Yavin4",
-          {
-          "Annamnesis (5,000 Credits)", "pc_annamnesis_travel"           
-          },
-            "Kashyyyk",
-          {
-            "Riverside (5,000 Credits)", "pc_riverside_travel"
-          },
-            "Hutta",
-          {  
-            --"Bad Mutta Hutta (5,000 Credits)", "pc_bmh_travel"
-          },
-            "Hoth",
-          {
-            "Indestine (5,000 Credits)", "pc_indestine_travel",
-            "REBS of HOTH (5,000 Credits)", "pc_rebs_travel"
-          },
-
-            "Mandalore",
-          {  
-			--"Nevarro (5,000 Credits)", "pc_freedom_travel",
-			"The Old West (5,000 Credits)", "pc_oldwest_travel",
-			"Setec Astronomy (5,000 Credits)", "pc_setec_astronomy_travel"
-		  },
-		  "Rori",
-          {  
-            "Unrest (5,000 Credits)", "pc_unrest_travel",
-            "No Fate (5,000 Credits)", "pc_nofate_travel"
-            --"Stewjon (5,000 Credits)", "pc_stewjon_travel"   
-		  },		  
-		  "Taanab",
-          {  
-            "Sin city (5,000 Credits)", "pc_sincity_travel",
-            "Valinor city (5,000 Credits)", "pc_valinor_travel" 
-		  },		  		  
+		   "Banir (5,000 Credits)", "pc_banir_travel",
+		   "Port Rielig (5,000 Credits)", "pc_portrielig_travel",
+		   "Serendipity (5,000 Credits)", "pc_serendipity_travel",
+		   },
+		   "Dathomir",
+		   {
+		   "Cyberdyne (5,000 Credits)", "pc_cyberdyne_travel",
+		   "Hill Top (5,000 Credits)", "pc_hilltop_travel",
+		   "Limes Inferior (5,000 Credits)", "pc_limesinferior_travel",
+		   },
+		   "Endor",
+		   {
+		   "Mos Potatoes (5,000 Credits)", "pc_mospotatoes_travel",
+		   "Sundari (5,000 Credits)", "pc_sundari_travel",
+		   },
+		   "Geonosis",
+		   {
+		   "Lost City (5,000 Credits)", "pc_lostcity_travel",
+		   "Somov'Rit (5,000 Credits)", "pc_somovrit_travel",
+		   },
+		   "Hoth",
+		   {
+		   "Indestine (5,000 Credits)", "pc_indestine_travel",
+		   "REBS of Hoth (5,000 Credits)", "pc_rebs_travel",
+		   },
+		   "Kashyyyk",
+		   {
+		   "Riverside (5,000 Credits)", "pc_riverside_travel",
+		   },
+		   "Lok",
+		   {
+		   "Orion Dawn (5,000 Credits)", "pc_oriondawn_travel",
+		   },
+		   "Mandalor",
+		   {
+		   "Setec Astronomy (5,000 Credits)", "pc_setecastronomy_travel",
+		   "The Old West (5,000 Credits)", "pc_theoldwest_travel",
+		   },
+		   "Naboo",
+		   {
+		   "Avalon Prime (5,000 Credits)", "pc_avalonprime_travel",
+		   "Cry More Noobs (5,000 Credits)", "pc_crymorenoobs_travel",
+		   "Flurry's Haven (5,000 Credits)", "pc_flurryshaven_travel",
+		   "Lafayette (5,000 Credits)", "pc_lafayette_travel",
+		   "Sanitarium (5,000 Credits)", "pc_sanitarium_travel",
+		   },
+		   "Rori",
+		   {
+		   "No Fate (5,000 Credits)", "pc_nofate_travel",
+		   },
+		   "Taanab",
+		   {
+		   "Sin City (5,000 Credits)", "pc_sincity_travel",
+		   "Valinor (5,000 Credits)", "pc_valinor_travel",
+		   },
+		   "Talus",
+		   {
+		   "Caladan (5,000 Credits)", "pc_caladan_travel",
+		   "Solace (5,000 Credits)", "pc_solace_travel",
+		   "Suywo Plains (5,000 Credits)", "pc_suywoplains_travel",
+		   },
+		   "Tatooine",
+		   {
+		   "Korrivan (5,000 Credits)", "pc_korrivan_travel",
+		   "Little China (5,000 Credits)", "pc_littlechina_travel",
+		   "Skynet (5,000 Credits)", "pc_skynet_travel",
+		   },
+		   "Yavin4",
+		   {
+		   "Annamnesis (5,000 Credits)", "pc_annamnesis_travel",
+		   },		  		  
     }      
 	}
 }
