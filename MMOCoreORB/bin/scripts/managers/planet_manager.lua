@@ -311,7 +311,7 @@ endor = {
 
 geonosis = {
 	weatherEnabled = 1,
-	gcwEnabled = 1,
+	gcwEnabled = 0,
 
 	outpostRegionNames = { },
 
