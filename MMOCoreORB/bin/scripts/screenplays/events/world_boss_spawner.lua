@@ -4,9 +4,9 @@ includeFile("events/world_boss_spt.lua")
 WorldBossSpawner = ScreenPlay:new {
 
 	numberOfActs = 1,
-	bossesToSpawn = 3,
+	bossesToSpawn = 5,
 	initSpawnTimer = 900,
-	numReferencePoints = 29,
+	numReferencePoints = 5,
 	secondsToDespawn = 18000, 
 	secondsToRespawn = 21600, 
 	maxRadius = 2000,
@@ -54,13 +54,13 @@ function WorldBossSpawner:notifyBossDead(pBoss, pKiller)
 		return 1
 	end
 	createEvent(getRandomNumber(self.secondsToRespawn - self.randomVariance, self.secondsToRespawn + self.randomVariance) * 1000, "WorldBossSpawner", "respawnBoss", pBoss, "")
-	print("Boss was killed, initiating respawn.")
+	--print("Boss was killed, initiating respawn.")
 	local bossName = self:getBossName(pBoss)
 	local zone = self:getBossZone(pBoss)
 
 	if (bossName ~= nil and zone ~= nil) then
-		CreatureObject(pBoss):broadcastToServer("\\#6699ff <Incomming Transmission> \n\n \\#ffff99" .. bossName .. " \\#ff9966 has been slain on " .. zone)
-		CreatureObject(pBoss):broadcastToDiscord("\\#6699ff <Incomming Transmission> \n\n \\#ffff99" .. bossName .. " \\#ff9966 has been slain on " .. zone) 
+		CreatureObject(pBoss):broadcastToServer("\\#6699ff Incomming Transmission \n\n \\#ffff99" .. bossName .. " \\#ff9966 has been slain on " .. zone)
+		CreatureObject(pBoss):broadcastToDiscord(" a " .. bossName .. " has been slain on " .. zone) 
 		deleteStringData(SceneObject(pBoss):getObjectID() .. ":name")
 		deleteStringData(SceneObject(pBoss):getObjectID() .. ":zone")
 		for i = 1, self.bossesToSpawn, 1 do
@@ -116,23 +116,12 @@ function WorldBossSpawner:respawnBoss(pOldBoss)
 	SceneObject(pSpawner):destroyObjectFromWorld()	
 
 		if (pBoss ~= nil) then
-			local mechanicType = ""
-
-			if (bossTemplate == "deathsting_boss") then
-				mechanicType = "poisonGasCloudMechanic"
-			elseif (bossTemplate == "wampa_boss" or bossTemplate == "kkorrwrot_boss") then
-				mechanicType = "coldFieldMechanic"
-			end
-			
-			if (mechanicType ~= "") then
-				createObserver(STARTCOMBAT, mechanicType, "setupMech", pBoss, "")
-			end
 
 			createEvent(30, "WorldBossSpawner", "setupBoss", pBoss, "")
 
 			self:spawnBigGameHunter(pBoss, zone)
 
-			print("World Boss: " .. bossObject.name .. " spawned at " .. spawnPoint[1] .. ", " .. spawnPoint[3] .. ", " .. zone)
+			--print("World Boss: " .. bossObject.name .. " spawned at " .. spawnPoint[1] .. ", " .. spawnPoint[3] .. ", " .. zone)
 
 			writeStringData(SceneObject(pBoss):getObjectID() .. ":name", bossObject.name)
 			writeStringData(SceneObject(pBoss):getObjectID() .. ":zone", zone)
@@ -144,8 +133,8 @@ function WorldBossSpawner:respawnBoss(pOldBoss)
 				end
 			end
 
-			CreatureObject(pBoss):broadcastToServer("\\#6699ff <Incomming Transmission> \n\n ".." a \\#ffff99" .. bossObject.name .. " \\#66ff99 has been sighted on " .. zone) 
-			CreatureObject(pBoss):broadcastToDiscord("\\#6699ff <Incomming Transmission> \n\n ".." a \\#ffff99" .. bossObject.name .. " \\#66ff99 has been sighted on " .. zone)
+			CreatureObject(pBoss):broadcastToServer("\\#6699ff Incomming Transmission \n\n ".." a \\#ffff99" .. bossObject.name .. " \\#66ff99 has been sighted on " .. zone) 
+			CreatureObject(pBoss):broadcastToDiscord(" a " .. bossObject.name .. " has been sighted on " .. zone)
 		end
 
 end
@@ -175,14 +164,14 @@ function WorldBossSpawner:despawnBoss(pBoss)
 		return		
 	end
 
-	print("Boss was not killed, initiating despawn/respawn.")
+	--print("Boss was not killed, initiating despawn/respawn.")
 	
 	local bossName = self:getBossName(pBoss)
 	local zone = self:getBossZone(pBoss)
 
 	if (bossName ~= nil and zone ~= nil) then
-		CreatureObject(pBoss):broadcastToServer("\\#6699ff <Incomming Transmission> \n\n \\#ffff99" .. bossName .. " \\#ffccff has gone back into hiding on " .. zone) 
-		CreatureObject(pBoss):broadcastToDiscord("\\#6699ff <Incomming Transmission> \n\n \\#ffff99" .. bossName .. " \\#ffccff has gone back into hiding on " .. zone)
+		CreatureObject(pBoss):broadcastToServer("\\#6699ff Incomming Transmission \n\n \\#ffff99" .. bossName .. " \\#ffccff has gone back into hiding on " .. zone) 
+		CreatureObject(pBoss):broadcastToDiscord(" a " .. bossName .. " has gone back into hiding on " .. zone)
 	end
 
 	for i = 1, self.bossesToSpawn, 1 do
