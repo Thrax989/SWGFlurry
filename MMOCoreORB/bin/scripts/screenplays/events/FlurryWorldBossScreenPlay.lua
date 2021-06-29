@@ -65,6 +65,9 @@ function FlurryWorldBossScreenPlay:notifyBossDead(pBoss, pKiller)
 	end
 
 	createEvent(self.secondsToRespawn * 1000, "FlurryWorldBossScreenPlay", "respawnBoss", pBoss, "")
+	local bossName = self:getBossName(pBoss)
+	local zone = self:getBossZone(pBoss)
+	CreatureObject(pBoss):broadcastToDiscord(" a " .. bossName .. " has been slain on " .. zone) 
 	--print("Boss was killed, initiating despawn/respawn.")
 	return 1
 end
@@ -113,6 +116,9 @@ function FlurryWorldBossScreenPlay:respawnBoss(pOldBoss)
 
 		if (pBoss ~= nil) then
 			createEvent(10, "FlurryWorldBossScreenPlay", "setupBoss", pBoss, "")
+			local bossName = self:getBossName(pOldBoss)
+			local zone = self:getBossZone(pOldBoss)
+			CreatureObject(pOldBoss):broadcastToDiscord(" a " .. bossName .. " Respawning On Test " .. zone) 
 			--print("Boss: " .. bossTemplate .. " spawned at " .. spawnPoint[1] .. ", " .. spawnPoint[3] .. ", " .. zone) -- debug message, comment out
 		end
 
@@ -126,6 +132,9 @@ function FlurryWorldBossScreenPlay:despawnBoss(pBoss)
 
 	if (CreatureObject(pBoss):isInCombat()) then --If Boss is in combat at the scheduled despawn time, don't actually complete the despawn.  Instead, set a new despawn timer.
 		createEvent(self.secondsToDespawn * 1000, "FlurryWorldBossScreenPlay", "despawnBoss", pBoss, "")
+		local bossName = self:getBossName(pBoss)
+		local zone = self:getBossZone(pBoss)
+		CreatureObject(pBoss):broadcastToDiscord(" a " .. bossName .. " Despawning On " .. zone) 
 		--print ("Boss was in combat, rescheduling despawn.")
 		return		
 	end
@@ -133,5 +142,18 @@ function FlurryWorldBossScreenPlay:despawnBoss(pBoss)
 	--print("Boss was not killed, initiating despawn/respawn.")
 	SceneObject(pBoss):destroyObjectFromWorld()
 	createEvent(2 * 1000, "FlurryWorldBossScreenPlay", "respawnBoss", pNewBoss, "")
+	local bossName = self:getBossName(pBoss)
+	local zone = self:getBossZone(pBoss)
+	CreatureObject(pBoss):broadcastToDiscord(" a " .. bossName .. " Respawning On " .. zone) 
 	return 1
+end
+
+function WorldBossSpawner:getBossName(pBoss)
+	local bossName = readStringData(SceneObject(pBoss):getObjectID() .. ":bossMobileTemplates")
+	return bossName
+end
+
+function WorldBossSpawner:getBossZone(pBoss)
+	local bossZone = readStringData(SceneObject(pBoss):getObjectID() .. ":zone")
+	return bossZone
 end
