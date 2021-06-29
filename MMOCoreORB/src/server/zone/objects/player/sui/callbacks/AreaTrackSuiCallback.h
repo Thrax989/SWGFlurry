@@ -46,8 +46,8 @@ public:
 				creature->sendSystemMessage("@skl_use:sys_scan_begin"); // You begin to examine the environment for information.
 
 				Reference<AreaTrackTask*> att = new AreaTrackTask(creature, index);
-				creature->addPendingTask("areatrack", att, 6000);
-				creature->addCooldown("areatrack", 6000);
+				creature->addPendingTask("areatrack", att, 1000);
+				creature->addCooldown("areatrack", 1000);
 			}
 		}
 	}
