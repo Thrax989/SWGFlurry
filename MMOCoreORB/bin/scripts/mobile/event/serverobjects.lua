@@ -42,3 +42,11 @@ includeFile("event/event_tybis.lua")
 includeFile("event/student_force.lua")
 includeFile("event/student_force1.lua")
 includeFile("event/student_force2.lua")
+
+includeFile("event/custom/big_game_hunter.lua")
+includeFile("event/world_boss/deathsting_boss.lua")
+includeFile("event/world_boss/acklay_boss.lua")
+includeFile("event/world_boss/rancor_boss.lua")
+includeFile("event/world_boss/wampa_boss.lua")
+includeFile("event/world_boss/geonosian_boss.lua")
+
