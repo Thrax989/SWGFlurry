@@ -1,4 +1,4 @@
-deathsting_boss = Creature:new {
+corrupted_deathsting_boss = Creature:new {
 	customName = "Corrupted Deathsting",
 	socialGroup = "krayt",
 	faction = "",
@@ -51,4 +51,4 @@ deathsting_boss = Creature:new {
 	}
 }
 
-CreatureTemplates:addCreatureTemplate(deathsting_boss, "deathsting_boss")
+CreatureTemplates:addCreatureTemplate(corrupted_deathsting_boss, "corrupted_deathsting_boss")

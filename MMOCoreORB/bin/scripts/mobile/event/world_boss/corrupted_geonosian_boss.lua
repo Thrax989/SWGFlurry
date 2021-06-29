@@ -1,4 +1,4 @@
-geonosian_boss = Creature:new {
+corrupted_geonosian_boss = Creature:new {
 	customName = "Corrupted Geonosian",
 	socialGroup = "geonosian_creature",
 	faction = "",
@@ -50,4 +50,4 @@ geonosian_boss = Creature:new {
 	}
 }
 
-CreatureTemplates:addCreatureTemplate(geonosian_boss, "geonosian_boss")
+CreatureTemplates:addCreatureTemplate(corrupted_geonosian_boss, "corrupted_geonosian_boss")

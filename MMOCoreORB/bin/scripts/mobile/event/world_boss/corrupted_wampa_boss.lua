@@ -1,4 +1,4 @@
-wampa_boss = Creature:new {
+corrupted_wampa_boss = Creature:new {
 	customName = "Corrupted Wampa",
 	socialGroup = "wampa",
 	faction = "",
@@ -50,4 +50,4 @@ wampa_boss = Creature:new {
 	}
 }
 
-CreatureTemplates:addCreatureTemplate(wampa_boss, "wampa_boss")
+CreatureTemplates:addCreatureTemplate(corrupted_wampa_boss, "corrupted_wampa_boss")

@@ -13,11 +13,11 @@ WorldBossSpawner = ScreenPlay:new {
 	randomVariance = 1800,
 
 	bossMobileTemplates =  {
-		{template = "acklay_boss", name = "Corrupted Acklay"}, 
-		{template = "rancor_boss", name = "Corrupted Rancor"},
-		{template = "wampa_boss", name = "Corrupted Wampa"},
-		{template = "kkorrwrot_boss", name = "Corrupted Geonosian"},
-		{template = "deathsting_boss", name = "Corrupted Deathsting"},
+		{template = "corrupted_acklay_boss", name = "Corrupted Acklay"}, 
+		{template = "corrupted_rancor_boss", name = "Corrupted Rancor"},
+		{template = "corrupted_wampa_boss", name = "Corrupted Wampa"},
+		{template = "corrupted_geonosian_boss", name = "Corrupted Geonosian"},
+		{template = "corrupted_deathsting_boss", name = "Corrupted Deathsting"},
 	},
 
 	screenplayName = "WorldBossSpawner",

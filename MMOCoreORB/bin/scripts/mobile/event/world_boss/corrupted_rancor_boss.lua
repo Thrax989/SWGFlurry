@@ -1,16 +1,16 @@
-acklay_boss = Creature:new {
-	customName = "Corrupted Acklay",
-	socialGroup = "geonosian_creature",
+corrupted_rancor_boss = Creature:new {
+	customName = "Corrupted Rancor",
+	socialGroup = "rancor",
 	faction = "",
-	level = 500,
+	level = 300,
 	chanceHit = 70.0,
 	damageMin = 7570,
 	damageMax = 9950,
 	baseXp = 28549,
-	baseHAM = 1680000,
-	baseHAMmax = 1950000,
+	baseHAM = 1800000,
+	baseHAMmax = 1850000,
 	armor = 3,
-	resists = {85,65,55,85,65,85,85,85,65},
+	resists = {35,85,65,85,85,85,65,85,60},
 	meatType = "meat_carnivore",
 	meatAmount = 1000,
 	hideType = "hide_bristley",
@@ -26,7 +26,7 @@ acklay_boss = Creature:new {
 	diet = CARNIVORE,
 	scale = 1.5,
 
-	templates = {"object/mobile/mutant_acklay.iff"},
+	templates = {"object/mobile/wod_mutant_rancor_boss.iff"},
 	lootGroups = {
 		{
 	        groups = {
@@ -47,8 +47,9 @@ acklay_boss = Creature:new {
 	attacks = {
 		{"creatureareacombo","stateAccuracyBonus=100"},
 		{"creatureareaknockdown","stateAccuracyBonus=100"},
-		{"creatureareapoison","stateAccuracyBonus=90"}
+		{"creatureareadisease","stateAccuracyBonus=90"},
+		{"strongdisease",""}
 	}
 }
 
-CreatureTemplates:addCreatureTemplate(acklay_boss, "acklay_boss")
+CreatureTemplates:addCreatureTemplate(corrupted_rancor_boss, "corrupted_rancor_boss")
