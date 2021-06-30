@@ -117,7 +117,7 @@ public:
 	}
 
 	void sendRallyCombatSpam(CreatureObject* leader, GroupObject* group, bool success) const {
-		if (player == nullptr)
+		if (leader == nullptr || group == nullptr)
 			return;
 
 		Zone* zone = leader->getZone();
