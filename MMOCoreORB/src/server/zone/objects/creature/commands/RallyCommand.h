@@ -68,8 +68,10 @@ public:
 		for (int i = 0; i < group->getGroupSize(); i++) {
 			ManagedReference<CreatureObject*> member = group->getGroupMember(i);
 
-			if (member == nullptr)
+			if (member == nullptr || member->getZone() != leader->getZone())
 				continue;
+
+			if(member->getDistanceTo(member) > 100)
 
 			if (!isValidGroupAbilityTarget(leader, member, true))
 				continue;
@@ -112,7 +114,7 @@ public:
 
 	void sendRallyCombatSpam(CreatureObject* leader, GroupObject* group, bool success) const {
 		if (leader == nullptr || group == nullptr)
-			return;
+			continue;
 
 		Zone* zone = leader->getZone();
 		if (zone == nullptr)
