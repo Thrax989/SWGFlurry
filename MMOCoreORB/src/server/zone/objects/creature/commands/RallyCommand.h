@@ -30,7 +30,6 @@ public:
 
 		ManagedReference<CreatureObject*> player = cast<CreatureObject*>(creature);
 		ManagedReference<GroupObject*> group = player->getGroup();
-		player->playEffect("clienteffect/combat_special_defender_rally.cef", "head");
 
 		if (!checkGroupLeader(player, group))
 			return GENERALERROR;
@@ -64,16 +63,12 @@ public:
 		int duration = 30;
 
 		leader->sendSystemMessage("@cbt_spam:rally_success_single"); //"You rally the group!"
-		leader->playEffect("clienteffect/combat_special_defender_rally.cef", "head");
 		sendRallyCombatSpam(leader, group, true);
-
+		leader->playEffect("clienteffect/off_scatter.cef", "");
 		for (int i = 0; i < group->getGroupSize(); i++) {
 			ManagedReference<CreatureObject*> member = group->getGroupMember(i);
 
-			if (member == nullptr || member->getZone() != leader->getZone())
-				continue;
-
-			if(member->getDistanceTo(member) > 100)
+			if (member == nullptr)
 				continue;
 
 			if (!isValidGroupAbilityTarget(leader, member, true))
@@ -81,10 +76,10 @@ public:
 
 			Locker clocker(member, leader);
 
-			if (member != leader)
+			if (member != leader) {
 				member->sendSystemMessage("@cbt_spam:rally_success_group_msg"); //"Your group rallies to the attack!"
-				member->playEffect("clienteffect/combat_special_defender_rally.cef", "head");
-
+				member->playEffect("clienteffect/off_scatter.cef", "");
+			}
 			ManagedReference<Buff*> buff = new Buff(member, actionCRC, duration, BuffType::SKILL);
 
 			Locker locker(buff);
@@ -151,10 +146,10 @@ public:
 		SortedVector<QuadTreeEntry*> closeObjects;
 		if (vec != nullptr) {
 			closeObjects.removeAll(vec->size(), 10);
-			vec->safeCopyTo(closeObjects);
+			vec->safeCopyReceiversTo(closeObjects, CloseObjectsVector::PLAYERTYPE);
 		} else {
 #ifdef COV_DEBUG
-			info("nullptr closeobjects vector in RallyCommand::sendRallyCombatSpam", true);
+			info("Null closeobjects vector in RallyCommand::sendRallyCombatSpam", true);
 #endif
 			zone->getInRangeObjects(leader->getWorldPositionX(), leader->getWorldPositionY(), 70, &closeObjects, true);
 		}
