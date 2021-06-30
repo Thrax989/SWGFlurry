@@ -119,7 +119,7 @@ function WorldBossSpawner:respawnBoss(pOldBoss)
 
 			createEvent(30, "WorldBossSpawner", "setupBoss", pBoss, "")
 
-			self:spawnBigGameHunter(pBoss, zone)
+			--self:spawnBigGameHunter(pBoss, zone)
 
 			--print("World Boss: " .. bossObject.name .. " spawned at " .. spawnPoint[1] .. ", " .. spawnPoint[3] .. ", " .. zone)
 
