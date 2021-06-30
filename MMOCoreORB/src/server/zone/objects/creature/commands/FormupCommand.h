@@ -75,7 +75,7 @@ public:
 
 			ManagedReference<CreatureObject*> member = group->getGroupMember(i);
 
-			if (member == nullptr || !member->isPlayerCreature())
+			if (member->getDistanceTo(leader) > 120)
 				continue;
 
 			if (!isValidGroupAbilityTarget(leader, member, false))
