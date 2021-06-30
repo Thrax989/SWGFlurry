@@ -92,14 +92,14 @@ public:
 			sendCombatSpam(memberPlayer);
 
 			if (memberPlayer->isDizzied())
-
-					memberPlayer->removeStateBuff(CreatureState::DIZZY);
-					member->playEffect("clienteffect/combat_special_defender_rally.cef", "head");
-					
+				memberPlayer->removeStateBuff(CreatureState::DIZZY);
+				member->playEffect("clienteffect/combat_special_defender_rally.cef", "head");
+			}
 
 			if (memberPlayer->isStunned())
-					memberPlayer->removeStateBuff(CreatureState::STUNNED);
-					member->playEffect("clienteffect/combat_special_defender_rally.cef", "head");
+				memberPlayer->removeStateBuff(CreatureState::STUNNED);
+				member->playEffect("clienteffect/combat_special_defender_rally.cef", "head");
+			}
 
 			checkForTef(leader, memberPlayer);
 		}
