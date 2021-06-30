@@ -198,6 +198,7 @@ function WorldBossSpawner:getBossZone(pBoss)
 	return bossZone
 end
 
+--[[
 function WorldBossSpawner:spawnBigGameHunter(pBoss, planet)
 	if (pBoss ~= nil or CreatureObject(pBoss):isDead() == false) then
 		for i = 1, #BigGameHunterSpawns, 1 do
@@ -233,3 +234,4 @@ function WorldBossSpawner:despawnBigGameHunter(pBGH)
 		SceneObject(pBGH):destroyObjectFromWorld()
 	end
 end
+--]]
