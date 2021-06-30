@@ -5,10 +5,10 @@
 #ifndef FORMUPCOMMAND_H_
 #define FORMUPCOMMAND_H_
 
-#include "server/zone/objects/scene/SceneObject.h"
 #include "SquadLeaderCommand.h"
 #include "CombatQueueCommand.h"
 #include "server/zone/managers/combat/CombatManager.h"
+#include "server/zone/objects/scene/SceneObject.h"
 
 class FormupCommand : public SquadLeaderCommand {
 public:
@@ -29,7 +29,6 @@ public:
 			return GENERALERROR;
 
 		ManagedReference<CreatureObject*> player = cast<CreatureObject*>(creature);
-		player->playEffect("clienteffect/combat_special_defender_rally.cef", "head");
 
 		if (player == nullptr)
 			return GENERALERROR;
@@ -62,46 +61,41 @@ public:
 			UnicodeString shout(ghost->getCommandMessageString(STRING_HASHCODE("formup")));
  	 	 	server->getChatManager()->broadcastChatMessage(player, shout, 0, 80, player->getMoodID(), 0, ghost->getLanguageID());
  	 	 	creature->updateCooldownTimer("command_message", 30 * 1000);
+ 	 	 	creature->playEffect("clienteffect/off_charge.cef", "");
 		}
 
 		return SUCCESS;
 	}
 
 	bool doFormUp(CreatureObject* leader, GroupObject* group) const {
-		if (leader == nullptr || group == nullptr)
-			return false;
+
+		if (player == nullptr)
+			return;
 
 		for (int i = 0; i < group->getGroupSize(); i++) {
 
 			ManagedReference<CreatureObject*> member = group->getGroupMember(i);
-			member->playEffect("clienteffect/combat_special_defender_rally.cef", "head");
-
-			if (member == nullptr || !member->isPlayerCreature() || member->getZone() != leader->getZone())
-				continue;
 
 			if(member->getDistanceTo(leader) > 120)
 				continue;
 
-			CreatureObject* memberPlayer = cast<CreatureObject*>( member.get());
-
-			if (!isValidGroupAbilityTarget(leader, memberPlayer, false))
+			if (!isValidGroupAbilityTarget(leader, member, false))
 				continue;
 
-			Locker clocker(memberPlayer, leader);
+			Locker clocker(member, leader);
 
-			sendCombatSpam(memberPlayer);
+			sendCombatSpam(member);
 
-			if (memberPlayer->isDizzied())
+			member->playEffect("clienteffect/off_charge.cef", "");
+			leader->playEffect("clienteffect/off_charge.cef", "");
 
-					memberPlayer->removeStateBuff(CreatureState::DIZZY);
-					member->playEffect("clienteffect/combat_special_defender_rally.cef", "head");
+			if (member->isDizzied())
+				member->removeStateBuff(CreatureState::DIZZY);
 					
+			if (member->isStunned())
+				member->removeStateBuff(CreatureState::STUNNED);
 
-			if (memberPlayer->isStunned())
-					memberPlayer->removeStateBuff(CreatureState::STUNNED);
-					member->playEffect("clienteffect/combat_special_defender_rally.cef", "head");
-
-			checkForTef(leader, memberPlayer);
+			checkForTef(leader, member);
 		}
 
 		return true;
