@@ -148,12 +148,12 @@ function FlurryWorldBossScreenPlay:despawnBoss(pBoss)
 	return 1
 end
 
-function FlurryWorldBossScreenPlay:getBossName(pBoss)
+function WorldBossSpawner:getBossName(pBoss)
 	local bossName = readStringData(SceneObject(pBoss):getObjectID() .. ":bossMobileTemplates")
 	return bossName
 end
 
-function FlurryWorldBossScreenPlay:getBossZone(pBoss)
+function WorldBossSpawner:getBossZone(pBoss)
 	local bossZone = readStringData(SceneObject(pBoss):getObjectID() .. ":zone")
 	return bossZone
 end
