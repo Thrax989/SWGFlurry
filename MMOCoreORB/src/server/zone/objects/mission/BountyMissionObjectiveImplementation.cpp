@@ -625,7 +625,6 @@ void BountyMissionObjectiveImplementation::handlePlayerKilled(ManagedObject* arg
 
 					Zone* zone = owner->getZone();
 					String planetName = zone->getZoneName();
-					String victimName = target->getFirstName();
 					String bhName = owner->getFirstName();
 					StringBuffer zBroadcast;
                         		Vector3 worldPosition = owner->getWorldPosition();
