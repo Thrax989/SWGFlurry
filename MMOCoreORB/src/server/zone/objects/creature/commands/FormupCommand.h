@@ -4,10 +4,11 @@
 
 #ifndef FORMUPCOMMAND_H_
 #define FORMUPCOMMAND_H_
+
+#include "server/zone/objects/scene/SceneObject.h"
 #include "SquadLeaderCommand.h"
 #include "CombatQueueCommand.h"
 #include "server/zone/managers/combat/CombatManager.h"
-#include "server/zone/objects/scene/SceneObject.h"
 
 class FormupCommand : public SquadLeaderCommand {
 public:
@@ -29,7 +30,6 @@ public:
 
 		ManagedReference<CreatureObject*> player = cast<CreatureObject*>(creature);
 		player->playEffect("clienteffect/combat_special_defender_rally.cef", "head");
-		player->playEffect("clienteffect/bacta_bomb.cef");
 
 		if (player == nullptr)
 			return GENERALERROR;
@@ -75,7 +75,6 @@ public:
 
 			ManagedReference<CreatureObject*> member = group->getGroupMember(i);
 			member->playEffect("clienteffect/combat_special_defender_rally.cef", "head");
-			member->playEffect("clienteffect/bacta_bomb.cef");
 
 			if (member == nullptr || !member->isPlayerCreature() || member->getZone() != leader->getZone())
 				continue;
@@ -96,13 +95,11 @@ public:
 
 					memberPlayer->removeStateBuff(CreatureState::DIZZY);
 					member->playEffect("clienteffect/combat_special_defender_rally.cef", "head");
-					member->playEffect("clienteffect/bacta_bomb.cef");
 					
 
 			if (memberPlayer->isStunned())
 					memberPlayer->removeStateBuff(CreatureState::STUNNED);
 					member->playEffect("clienteffect/combat_special_defender_rally.cef", "head");
-					member->playEffect("clienteffect/bacta_bomb.cef");
 
 			checkForTef(leader, memberPlayer);
 		}
