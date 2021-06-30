@@ -68,15 +68,14 @@ public:
 	}
 
 	bool doFormUp(CreatureObject* leader, GroupObject* group) const {
-
-		if (player == nullptr)
-			return;
+		if (leader == nullptr || group == nullptr)
+			return false;
 
 		for (int i = 0; i < group->getGroupSize(); i++) {
 
 			ManagedReference<CreatureObject*> member = group->getGroupMember(i);
 
-			if(member->getDistanceTo(leader) > 120)
+			if (member == nullptr || !member->isPlayerCreature())
 				continue;
 
 			if (!isValidGroupAbilityTarget(leader, member, false))
