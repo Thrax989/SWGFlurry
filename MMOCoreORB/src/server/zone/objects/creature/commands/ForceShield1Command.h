@@ -35,7 +35,7 @@ public:
 		// Client Effect upon hit (needed)
 		player->playEffect("clienteffect/pl_force_shield_hit.cef", "");
 
-		int fCost = param * getFrsModifiedExtraForceCost(player, 0.05);
+		int fCost = param * getFrsModifiedExtraForceCost(player, 0.5f);
 		if (ghost->getForcePower() <= fCost) { // Remove buff if not enough force.
 			Buff* buff = player->getBuff(BuffCRC::JEDI_FORCE_SHIELD_1);
 			if (buff != nullptr) {
