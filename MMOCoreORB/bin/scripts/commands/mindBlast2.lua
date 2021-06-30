@@ -47,10 +47,10 @@ MindBlast2Command = {
 	minDamage = 500,
 	maxDamage = 800,
 	speed = 2.0,
-	forceCost = 160,
+	forceCost = 200,
 	visMod = 25,
 	accuracySkillMod = "mindblast_accuracy";
-	coneAngle = 40,
+	coneAngle = 90,
 	coneAction = true,
   
 	dotEffects = {
