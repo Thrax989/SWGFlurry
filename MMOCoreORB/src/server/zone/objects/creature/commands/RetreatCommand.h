@@ -22,7 +22,7 @@ public:
 
 		Zone* zone = creature->getZone();
 
-		if (creature->getZone() == nullptr) {
+		if (zone == nullptr) {
 			return false;
 		}
 
@@ -38,6 +38,11 @@ public:
 
 		if (creature->hasBuff(burstCRC) || creature->hasBuff(forceRun1CRC) || creature->hasBuff(forceRun2CRC) || creature->hasBuff(forceRun3CRC)) {
 			creature->sendSystemMessage("@combat_effects:burst_run_no"); //You cannot burst run right now.
+			return false;
+		}
+
+		if (creature->isFrozen()){
+			creature->sendSystemMessage("Cannot Force Run while ROOTED");
 			return false;
 		}
 
@@ -86,12 +91,13 @@ public:
 		if (!inflictHAM(player, healthCost, actionCost, mindCost))
 			return GENERALERROR;
 
-		for (int i = 1; i < group->getGroupSize(); ++i) {
+		for (int i = 0; i < group->getGroupSize(); ++i) {
 			ManagedReference<CreatureObject*> member = group->getGroupMember(i);
 
 			if (member == nullptr || !member->isPlayerCreature() || member->getZone() != creature->getZone())
 				continue;
 
+				continue;
 
 			if (!isValidGroupAbilityTarget(creature, member, false))
 				continue;
