@@ -29,6 +29,7 @@ public:
 			return GENERALERROR;
 
 		ManagedReference<CreatureObject*> player = cast<CreatureObject*>(creature);
+		player->playEffect("clienteffect/combat_special_defender_rally.cef", "head");
 
 		if (player == nullptr)
 			return GENERALERROR;
@@ -61,7 +62,6 @@ public:
 			UnicodeString shout(ghost->getCommandMessageString(STRING_HASHCODE("formup")));
  	 	 	server->getChatManager()->broadcastChatMessage(player, shout, 0, 80, player->getMoodID(), 0, ghost->getLanguageID());
  	 	 	creature->updateCooldownTimer("command_message", 30 * 1000);
- 	 	 	creature->playEffect("clienteffect/off_charge.cef", "");
 		}
 
 		return SUCCESS;
@@ -74,8 +74,12 @@ public:
 		for (int i = 0; i < group->getGroupSize(); i++) {
 
 			ManagedReference<CreatureObject*> member = group->getGroupMember(i);
+			member->playEffect("clienteffect/combat_special_defender_rally.cef", "head");
 
-			if (member->getDistanceTo(leader) > 120)
+			if (member == nullptr || !member->isPlayerCreature() || member->getZone() != leader->getZone())
+				continue;
+
+			if (member->getDistanceTo(member) > 0)
 				continue;
 
 			if (!isValidGroupAbilityTarget(leader, member, false))
@@ -85,14 +89,13 @@ public:
 
 			sendCombatSpam(member);
 
-			member->playEffect("clienteffect/off_charge.cef", "");
-			leader->playEffect("clienteffect/off_charge.cef", "");
-
 			if (member->isDizzied())
 				member->removeStateBuff(CreatureState::DIZZY);
+				member->playEffect("clienteffect/combat_special_defender_rally.cef", "head");
 					
 			if (member->isStunned())
 				member->removeStateBuff(CreatureState::STUNNED);
+				member->playEffect("clienteffect/combat_special_defender_rally.cef", "head");
 
 			checkForTef(leader, member);
 		}
