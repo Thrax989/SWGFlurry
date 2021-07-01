@@ -67,7 +67,7 @@ Intimidate1Command = {
 	combatSpam = "intim",
 	animation = "intimidate",
 	effectString = "clienteffect/combat_special_attacker_intimidate.cef",
-	range = 32,
+	range = 24,
 
 	poolsToDamage = NO_ATTRIBUTE
 }
