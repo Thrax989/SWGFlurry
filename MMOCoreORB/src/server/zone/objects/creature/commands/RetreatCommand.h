@@ -4,7 +4,6 @@
 
 #ifndef RETREATCOMMAND_H_
 #define RETREATCOMMAND_H_
-
 #include "server/zone/objects/scene/SceneObject.h"
 #include "SquadLeaderCommand.h"
 
@@ -21,7 +20,7 @@ public:
 			return false;
 		}
 
-		Zone* zone = creature->getZone();	
+		Zone* zone = creature->getZone();
 
 		if (creature->getZone() == nullptr) {
 			return false;
@@ -40,15 +39,15 @@ public:
 		if (creature->hasBuff(burstCRC) || creature->hasBuff(forceRun1CRC) || creature->hasBuff(forceRun2CRC) || creature->hasBuff(forceRun3CRC)) {
 			creature->sendSystemMessage("@combat_effects:burst_run_no"); //You cannot burst run right now.
 			return false;
-		}				
-		
+		}
+
 		if (!creature->checkCooldownRecovery("retreat")) {
 			creature->sendSystemMessage("@combat_effects:burst_run_no"); //You cannot burst run right now.
 			return false;
-		}			
+		}
 
 		return true;
-	}	
+	}
 
 	int doQueueCommand(CreatureObject* creature, const uint64& target, const UnicodeString& arguments) const {
 
@@ -80,7 +79,6 @@ public:
 
 		float groupBurstRunMod = (float) player->getSkillMod("group_burst_run");
 		int hamCost = (int) (100.0f * (1.0f - (groupBurstRunMod / 100.0f))) * calculateGroupModifier(group);
-
 		int healthCost = creature->calculateCostAdjustment(CreatureAttribute::STRENGTH, hamCost);
 		int actionCost = creature->calculateCostAdjustment(CreatureAttribute::QUICKNESS, hamCost);
 		int mindCost = creature->calculateCostAdjustment(CreatureAttribute::FOCUS, hamCost);
@@ -88,31 +86,29 @@ public:
 		if (!inflictHAM(player, healthCost, actionCost, mindCost))
 			return GENERALERROR;
 
-		for (int i = 0; i < group->getGroupSize(); i++) {
-
+		for (int i = 1; i < group->getGroupSize(); ++i) {
 			ManagedReference<CreatureObject*> member = group->getGroupMember(i);
 
-			if (member == nullptr || !member->isPlayerCreature() || member->getZone() != player->getZone())
+			if (member == nullptr || !member->isPlayerCreature() || member->getZone() != creature->getZone())
 				continue;
 
-			if(member->getDistanceTo(player) > 120)
+
+			if (!isValidGroupAbilityTarget(creature, member, false))
 				continue;
 
-			CreatureObject* memberPlayer = cast<CreatureObject*>( member.get());
+			Locker clocker(member, player);
 
-			if (!isValidGroupAbilityTarget(player, memberPlayer, false))
-				continue;
+			sendCombatSpam(member);
+			doRetreat(member);
 
-			Locker clocker(memberPlayer, player);
-
-			doRetreat(memberPlayer);
+			checkForTef(player, member);
 		}
 
 		if (!ghost->getCommandMessageString(STRING_HASHCODE("retreat")).isEmpty() && creature->checkCooldownRecovery("command_message")) {
 			UnicodeString shout(ghost->getCommandMessageString(STRING_HASHCODE("retreat")));
  	 	 	server->getChatManager()->broadcastChatMessage(player, shout, 0, 80, player->getMoodID(), 0, ghost->getLanguageID());
  	 	 	creature->updateCooldownTimer("command_message", 30 * 1000);
-		}		
+		}
 
 		return SUCCESS;
 	}
@@ -129,7 +125,7 @@ public:
 
 		if (player->hasBuff(actionCRC)) {
 			return;
-		}	
+		}
 
 		float groupRunMod = (float) player->getSkillMod("group_burst_run");
 
@@ -155,10 +151,8 @@ public:
 		player->updateCooldownTimer("retreat", 30000);
 		player->playEffect("clienteffect/combat_special_defender_rally.cef", "head");
 		player->playEffect("clienteffect/bacta_bomb.cef");
-
 	}
 
 };
-
 
 #endif //RETREATCOMMAND_H_
