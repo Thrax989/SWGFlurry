@@ -72,16 +72,14 @@ public:
 			if (member == nullptr)
 				continue;
 
-			if (member->getDistanceTo(leader) > 0)
-				continue;
-
 			if (!isValidGroupAbilityTarget(leader, member, true))
 				continue;
 
 			Locker clocker(member, leader);
 
-			if (leader != nullptr || group != nullptr)
-				member->sendSystemMessage("@cbt_spam:rally_success_group_msg");
+			if (member != leader)
+				member->sendSystemMessage("@cbt_spam:rally_success_group_msg"); //"Your group rallies to the attack!"
+
 			ManagedReference<Buff*> buff = new Buff(member, actionCRC, duration, BuffType::SKILL);
 
 			Locker locker(buff);

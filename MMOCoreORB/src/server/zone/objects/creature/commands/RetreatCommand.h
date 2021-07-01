@@ -4,8 +4,9 @@
 
 #ifndef RETREATCOMMAND_H_
 #define RETREATCOMMAND_H_
-#include "server/zone/objects/scene/SceneObject.h"
+
 #include "SquadLeaderCommand.h"
+#include "server/zone/objects/scene/SceneObject.h"
 
 class RetreatCommand : public SquadLeaderCommand {
 public:
@@ -77,24 +78,23 @@ public:
 
 		ManagedReference<GroupObject*> group = player->getGroup();
 		player->playEffect("clienteffect/combat_special_defender_rally.cef", "head");
-		player->playEffect("clienteffect/bacta_bomb.cef");
 
 		if (!checkGroupLeader(player, group))
 			return GENERALERROR;
 
 		float groupBurstRunMod = (float) player->getSkillMod("group_burst_run");
 		int hamCost = (int) (100.0f * (1.0f - (groupBurstRunMod / 100.0f))) * calculateGroupModifier(group);
-		int healthCost = creature->calculateCostAdjustment(CreatureAttribute::STRENGTH, hamCost);
+
 		int actionCost = creature->calculateCostAdjustment(CreatureAttribute::QUICKNESS, hamCost);
 		int mindCost = creature->calculateCostAdjustment(CreatureAttribute::FOCUS, hamCost);
 
-		if (!inflictHAM(player, healthCost, actionCost, mindCost))
+		if (!inflictHAM(player, 0, actionCost, mindCost))
 			return GENERALERROR;
 
 		for (int i = 0; i < group->getGroupSize(); ++i) {
 			ManagedReference<CreatureObject*> member = group->getGroupMember(i);
 
-			if (member == nullptr || !member->isPlayerCreature() || member->getZone() != creature->getZone())
+			if (member == nullptr || !member->isPlayerCreature())
 				continue;
 
 			if (!isValidGroupAbilityTarget(creature, member, false))
@@ -154,7 +154,6 @@ public:
 
 		player->updateCooldownTimer("retreat", 30000);
 		player->playEffect("clienteffect/combat_special_defender_rally.cef", "head");
-		player->playEffect("clienteffect/bacta_bomb.cef");
 	}
 
 };
