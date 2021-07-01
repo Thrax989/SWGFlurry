@@ -35,12 +35,8 @@ public:
 		// Client Effect upon hit (needed)
 		player->playEffect("clienteffect/pl_force_armor_hit.cef", "");
 
-		if (ghost->hasSkill("combat_jedi_novice") {
-				int fCost = param * getFrsModifiedExtraForceCost(player, 0.9f);
-			}
-		} else {
-				int fCost = param * getFrsModifiedExtraForceCost(player, 0.03f);
-		}
+		if (player->hasSkill("force_title_jedi_novice")) {
+				int fCost = param * getFrsModifiedExtraForceCost(player, 0.1f);
 
 		if (ghost->getForcePower() <= fCost) { // Remove buff if not enough force.
 			Buff* buff = player->getBuff(BuffCRC::JEDI_FORCE_ARMOR_2);
@@ -48,12 +44,27 @@ public:
 				Locker locker(buff);
 
 				player->removeBuff(buff);
-			}
-		} else {
-			ghost->setForcePower(ghost->getForcePower() - fCost);
-		}
-	}
+				}
+			} else {
+				ghost->setForcePower(ghost->getForcePower() - fCost);
+					}
+				}
 
+		if (player->hasSkill("combat_jedi_novice")) {
+				int fCost = param * getFrsModifiedExtraForceCost(player, 0.03f);
+
+		if (ghost->getForcePower() <= fCost) { // Remove buff if not enough force.
+			Buff* buff = player->getBuff(BuffCRC::JEDI_FORCE_ARMOR_2);
+			if (buff != nullptr) {
+				Locker locker(buff);
+
+				player->removeBuff(buff);
+				}
+			} else {
+				ghost->setForcePower(ghost->getForcePower() - fCost);
+					}
+				}
+			}
 };
 
 #endif //FORCEARMOR2COMMAND_H_

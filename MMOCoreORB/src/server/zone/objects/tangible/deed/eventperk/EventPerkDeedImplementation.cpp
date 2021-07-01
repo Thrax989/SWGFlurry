@@ -105,11 +105,6 @@ int EventPerkDeedImplementation::handleObjectMenuSelect(CreatureObject* player, 
 		ManagedReference<CityRegion*> city = player->getCityRegion().get();
 
 		if (city != nullptr) {
-			if (city->isClientRegion()) {
-				player->sendSystemMessage("@event_perk:not_in_municipal_zone"); // You may not place a Rental in a municipal zone.
-				return 1;
-			}
-
 			if (city->isZoningEnabled() && !city->hasZoningRights(player->getObjectID())) {
 				player->sendSystemMessage("@event_perk:no_zoning_rights"); // You must have zoning rights to place a Rental in this city.
 				return 1;

@@ -80,10 +80,9 @@ public:
 
 			Locker clocker(member, leader);
 
-			if (member != leader)
+			if (leader != nullptr || group != nullptr)
 				member->sendSystemMessage("@cbt_spam:rally_success_group_msg");
-				member->playEffect("clienteffect/off_scatter.cef", "");
-				ManagedReference<Buff*> buff = new Buff(member, actionCRC, duration, BuffType::SKILL);
+			ManagedReference<Buff*> buff = new Buff(member, actionCRC, duration, BuffType::SKILL);
 
 			Locker locker(buff);
 
