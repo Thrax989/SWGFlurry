@@ -80,8 +80,8 @@ public:
 
 			Locker clocker(member, leader);
 
-			if (member->isGrouped || leader->isGrouped())
-				member->sendSystemMessage("@cbt_spam:rally_success_group_msg"); //"Your group rallies to the attack!"
+			if (member != leader)
+				member->sendSystemMessage("@cbt_spam:rally_success_group_msg");
 				member->playEffect("clienteffect/off_scatter.cef", "");
 			ManagedReference<Buff*> buff = new Buff(member, actionCRC, duration, BuffType::SKILL);
 
