@@ -72,12 +72,14 @@ public:
 			if (member == nullptr)
 				continue;
 
+				continue;
+
 			if (!isValidGroupAbilityTarget(leader, member, true))
 				continue;
 
 			Locker clocker(member, leader);
 
-			if (member || leader)
+			if (member->isGrouped)
 				member->sendSystemMessage("@cbt_spam:rally_success_group_msg"); //"Your group rallies to the attack!"
 				member->playEffect("clienteffect/off_scatter.cef", "");
 			ManagedReference<Buff*> buff = new Buff(member, actionCRC, duration, BuffType::SKILL);
