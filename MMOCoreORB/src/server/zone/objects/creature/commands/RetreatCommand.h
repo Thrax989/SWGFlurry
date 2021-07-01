@@ -97,8 +97,6 @@ public:
 			if (member == nullptr || !member->isPlayerCreature() || member->getZone() != creature->getZone())
 				continue;
 
-				continue;
-
 			if (!isValidGroupAbilityTarget(creature, member, false))
 				continue;
 
