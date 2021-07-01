@@ -48,10 +48,10 @@ ForceArmor1Command = {
 	--animationCRC = hashCode()
 	clientEffect = "clienteffect/pl_force_armor_self.cef",
 	buffClass = SINGLE_USE_BUFF,
-	frsDarkExtraForceCostModifier = -0.003,
-	frsLightExtraForceCostModifier = -0.003,
-	frsLightBuffModifier = 0.25,
-	frsDarkBuffModifier = 0.25,
+	frsDarkExtraForceCostModifier = -0.001,
+	frsLightExtraForceCostModifier = -0.001,
+	frsLightBuffModifier = 0.15,
+	frsDarkBuffModifier = 0.15,
 }
 
 AddCommand(ForceArmor1Command)
