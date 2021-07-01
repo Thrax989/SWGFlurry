@@ -65,23 +65,21 @@ public:
 		leader->sendSystemMessage("@cbt_spam:rally_success_single"); //"You rally the group!"
 		sendRallyCombatSpam(leader, group, true);
 		leader->playEffect("clienteffect/off_scatter.cef", "");
+
 		for (int i = 0; i < group->getGroupSize(); i++) {
 			ManagedReference<CreatureObject*> member = group->getGroupMember(i);
 
-			if (member == nullptr || member->getZone() != leader->getZone())
+			if (member == nullptr)
 				continue;
-
-			if(member->getDistanceTo(member) > 100)
 
 			if (!isValidGroupAbilityTarget(leader, member, true))
 				continue;
 
 			Locker clocker(member, leader);
 
-			if (member != leader) {
+			if (member || leader)
 				member->sendSystemMessage("@cbt_spam:rally_success_group_msg"); //"Your group rallies to the attack!"
 				member->playEffect("clienteffect/off_scatter.cef", "");
-			}
 			ManagedReference<Buff*> buff = new Buff(member, actionCRC, duration, BuffType::SKILL);
 
 			Locker locker(buff);
@@ -114,7 +112,7 @@ public:
 
 	void sendRallyCombatSpam(CreatureObject* leader, GroupObject* group, bool success) const {
 		if (leader == nullptr || group == nullptr)
-			continue;
+			return;
 
 		Zone* zone = leader->getZone();
 		if (zone == nullptr)
@@ -151,7 +149,7 @@ public:
 			vec->safeCopyReceiversTo(closeObjects, CloseObjectsVector::PLAYERTYPE);
 		} else {
 #ifdef COV_DEBUG
-			info("Null closeobjects vector in RallyCommand::sendRallyCombatSpam", true);
+			info("nullptr closeobjects vector in RallyCommand::sendRallyCombatSpam", true);
 #endif
 			zone->getInRangeObjects(leader->getWorldPositionX(), leader->getWorldPositionY(), 70, &closeObjects, true);
 		}
