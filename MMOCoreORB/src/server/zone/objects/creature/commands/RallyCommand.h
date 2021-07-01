@@ -72,6 +72,7 @@ public:
 			if (member == nullptr)
 				continue;
 
+			if (member->getDistanceTo(leader) > 0)
 				continue;
 
 			if (!isValidGroupAbilityTarget(leader, member, true))
