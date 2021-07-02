@@ -1,6 +1,6 @@
 rare_force1 = Creature:new {
 	customName = "Dark Jedi Master \\#ff0000[Wanderer]",
-	socialGroup = "",
+	socialGroup = "mercenary",
 	faction = "",
 	level = 300,
 	chanceHit = 75.0,
