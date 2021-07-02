@@ -14,7 +14,7 @@ public:
 		buffCRC = BuffCRC::JEDI_FORCE_ARMOR_2;
 		overrideableCRCs.add(BuffCRC::JEDI_FORCE_ARMOR_1);
 		singleUseEventTypes.add(ObserverEventType::FORCEARMOR);
-		skillMods.put("force_armor", 75);
+		skillMods.put("force_armor", 45);
 	}
 
 	int doQueueCommand(CreatureObject* creature, const uint64& target, const UnicodeString& arguments) const {
@@ -51,7 +51,7 @@ public:
 				}
 
 		if (player->hasSkill("combat_jedi_novice")) {
-				int fCost = param * getFrsModifiedExtraForceCost(player, 0.03f);
+				int fCost = param * getFrsModifiedExtraForceCost(player, 0.00001f);
 
 		if (ghost->getForcePower() <= fCost) { // Remove buff if not enough force.
 			Buff* buff = player->getBuff(BuffCRC::JEDI_FORCE_ARMOR_2);
