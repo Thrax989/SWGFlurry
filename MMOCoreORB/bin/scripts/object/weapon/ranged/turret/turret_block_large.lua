@@ -60,14 +60,14 @@ object_weapon_ranged_turret_turret_block_large = object_weapon_ranged_turret_sha
 	-- Leave blank for now
 	damageModifiers = { },
 
-	pointBlankRange = 0,
-	pointBlankAccuracy = 50,
+	pointBlankRange = 10,
+	pointBlankAccuracy = 80,
 	idealRange = 40,
-	idealAccuracy = 80,
-	maxRange = 70,
+	idealAccuracy = 100,
+	maxRange = 75,
 	maxRangeAccuracy = 100,
-	minDamage = 5000,
-	maxDamage = 8000,
+	minDamage = 8000,
+	maxDamage = 12000,
 	attackSpeed = 1,
 	woundsRatio = 20,
 }
