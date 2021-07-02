@@ -1,5 +1,5 @@
-event_hansgar = Creature:new {
-	customName = "Hansgar",
+event_hanzgar = Creature:new {
+	customName = "Hanzgar",
 	socialGroup = "mercenary",
 	faction = "",
 	level = 300,
@@ -199,4 +199,4 @@ event_hansgar = Creature:new {
 
 }
 
-CreatureTemplates:addCreatureTemplate(event_hansgar, "event_hansgar")
+CreatureTemplates:addCreatureTemplate(event_hanzgar, "event_hanzgar")
