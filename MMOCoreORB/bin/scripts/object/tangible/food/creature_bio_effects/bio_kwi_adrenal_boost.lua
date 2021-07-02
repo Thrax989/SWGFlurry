@@ -45,7 +45,7 @@
 object_tangible_food_creature_bio_effects_bio_kwi_adrenal_boost = object_tangible_food_creature_bio_effects_shared_bio_kwi_adrenal_boost:new  {
 	templateType = CONSUMABLE,
 
-	duration = 1800,
+	duration = 10800,
 	filling = 0,
 	nutrition = 0,
 
@@ -60,7 +60,7 @@ object_tangible_food_creature_bio_effects_bio_kwi_adrenal_boost = object_tangibl
 	quantityMin = 0,
 	quantityMax = 0,
 
-	modifiers = { "health" , 500, "constitution" , 500, "action", 500, "stamina", 500, "mind", 1000, "willpower", 500 },
+	modifiers = { "health" , 500, "constitution" , 500, "action", 500, "stamina", 500, "mind", 1500, "willpower", 500 },
 
 	buffName = "kwi_boost",
 	buffCRC = 0,

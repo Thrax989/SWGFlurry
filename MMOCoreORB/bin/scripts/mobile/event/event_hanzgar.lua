@@ -1,5 +1,5 @@
-event_hansgar = Creature:new {
-	customName = "Hansgar",
+event_hanzgar = Creature:new {
+	customName = "Hanzgar",
 	socialGroup = "mercenary",
 	faction = "",
 	level = 300,
@@ -27,36 +27,36 @@ event_hansgar = Creature:new {
   	scale = 1.75,
 
 	templates = {"object/mobile/som/mustafarian_02.iff"},
-	lootGroups = {
+		lootGroups = {
 		{
 			groups = {
-				{group = "boss_common", chance = 10000000},
+				{group = "ancient_force_bread", chance = 10000000},
 			},
 			lootChance = 10000000
 		},	
 		{
 			groups = {
-				{group = "boss_common", chance = 10000000},
+				{group = "ancient_force_bread", chance = 10000000},
 			},
 			lootChance = 10000000
 		},
 		{
 			groups = {
-				{group = "boss_common", chance = 10000000},
+				{group = "jedi_pack_group", chance = 10000000},
 			},
-			lootChance = 10000000
+			lootChance = 1000000
 		},
 		{
 			groups = {
-				{group = "boss_common", chance = 10000000},
+				{group = "jedi_belt_group", chance = 10000000},
 			},
-			lootChance = 10000000
+			lootChance = 1000000
 		},
 		{
 			groups = {
-				{group = "boss_common", chance = 10000000},
+				{group = "jedi_jewelry", chance = 10000000},
 			},
-			lootChance = 10000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
@@ -199,4 +199,4 @@ event_hansgar = Creature:new {
 
 }
 
-CreatureTemplates:addCreatureTemplate(event_hansgar, "event_hansgar")
+CreatureTemplates:addCreatureTemplate(event_hanzgar, "event_hanzgar")

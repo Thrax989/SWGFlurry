@@ -23,6 +23,10 @@
 #include "server/zone/objects/mission/bountyhunter/BountyHunterDroid.h"
 #include "server/zone/objects/mission/bountyhunter/events/BountyHunterTargetTask.h"
 #include "server/zone/managers/visibility/VisibilityManager.h"
+#include "server/zone/objects/player/sui/callbacks/BountyHuntSuiCallback.h"
+#include "server/zone/objects/player/sui/inputbox/SuiInputBox.h"
+#include "server/zone/packets/player/PlayMusicMessage.h"
+#include "server/zone/managers/loot/LootManager.h"
 
 void BountyMissionObjectiveImplementation::setNpcTemplateToSpawn(SharedObjectTemplate* sp) {
 	npcTemplateToSpawn = sp;
@@ -575,11 +579,15 @@ void BountyMissionObjectiveImplementation::handlePlayerKilled(ManagedObject* arg
 
 	ManagedReference<MissionObject* > mission = this->mission.get();
 	ManagedReference<CreatureObject*> owner = getPlayerOwner();
+	ManagedReference<SceneObject*> inventory = killer->getSlottedObject("inventory");
+	ManagedReference<LootManager*> lootManager = killer->getZoneServer()->getLootManager();
 
 	if(mission == nullptr)
 		return;
 
 	if (owner != nullptr && killer != nullptr && !completedMission) {
+		String playerName = killer->getFirstName();
+		String bhName = owner->getFirstName();
 		if (owner->getObjectID() == killer->getObjectID()) {
 			//Target killed by player, complete mission.
 			ZoneServer* zoneServer = owner->getZoneServer();
@@ -603,9 +611,20 @@ void BountyMissionObjectiveImplementation::handlePlayerKilled(ManagedObject* arg
 					message.setDI(xpLoss * -1);
 					message.setTO("exp_n", "jedi_general");
 					target->sendSystemMessage(message);
+
+					String victimName = target->getFirstName();
+					lootManager->createNamedLoot(inventory, "saberhand28", victimName, 300);//, victimName);
+
+					if (target->hasSkill("force_rank_light_novice")) {
+					lootManager->createNamedLoot(inventory, "holocron_light", victimName, 300);//, victimName);
+					}
+					
+					if (target->hasSkill("force_rank_dark_novice")) {
+					lootManager->createNamedLoot(inventory, "holocron_dark", victimName, 300);//, victimName);
+					}
+
 					Zone* zone = owner->getZone();
 					String planetName = zone->getZoneName();
-					String victimName = target->getFirstName();
 					String bhName = owner->getFirstName();
 					StringBuffer zBroadcast;
                         		Vector3 worldPosition = owner->getWorldPosition();

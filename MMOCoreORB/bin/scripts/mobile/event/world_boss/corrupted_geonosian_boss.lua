@@ -1,14 +1,15 @@
-event_grim_sage = Creature:new {
-	customName = "Grim Sage Soulserpent",
-	socialGroup = "mercenary",
+corrupted_geonosian_boss = Creature:new {
+	customName = "Corrupted Geonosian",
+	socialGroup = "geonosian_creature",
 	faction = "",
 	level = 300,
 	chanceHit = 50.0,
-	damageMin = 3000,
-	damageMax = 6000,
+	damageMin = 1245,
+	damageMax = 2600,
+	specialDamageMult = 7.5,
 	baseXp = 128549,
-	baseHAM = 3900000,
-	baseHAMmax = 4000000,
+	baseHAM = 5900000,
+	baseHAMmax = 6000000,
 	armor = 3,
 	resists = {195,195,195,195,195,195,195,195,200},
 	meatType = "",
@@ -21,12 +22,12 @@ event_grim_sage = Creature:new {
 	tamingChance = 0,
 	ferocity = 30,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
-	creatureBitmask = PACK + KILLER + STALKER,
-	optionsBitmask = AIENABLED + INTERESTING,
-	diet = CARNIVORE,
+	creatureBitmask = PACK + KILLER + HEALER,
+	optionsBitmask = AIENABLED,
+	diet = HERBIVORE,
 	scale = 1.75,
 
-	templates = {"object/mobile/dressed_dathomir_nightsister_sage.iff"},
+	templates = {"object/mobile/dressed_geonosian_warrior_03.iff"},
 		lootGroups = {
 		{
 			groups = {
@@ -193,11 +194,9 @@ event_grim_sage = Creature:new {
 			lootChance = 10000000
 		}
 	},
-	weapons = {},
-	conversationTemplate = "",
-	weapons = {"mixed_force_weapons"},
-	conversationTemplate = "",
-	attacks = merge(tkamaster,swordsmanmaster,fencermaster,pikemanmaster,brawlermaster,forcepowermaster)
+	weapons = {"dark_jedi_weapons_gen4"},
+	reactionStf = "@npc_reaction/slang",
+	attacks = merge(lightsabermaster)
 }
 
-CreatureTemplates:addCreatureTemplate(event_grim_sage, "event_grim_sage")
+CreatureTemplates:addCreatureTemplate(corrupted_geonosian_boss, "corrupted_geonosian_boss")

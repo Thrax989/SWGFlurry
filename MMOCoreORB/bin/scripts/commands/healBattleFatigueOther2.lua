@@ -46,7 +46,7 @@ HealBattleFatigueOther2Command = {
 	healBattleFatigue = 120,
 	forceCost = 25,
 	forceCostMultiplier = 1,
-	defaultTime = 1,
+	defaultTime = 0,
 	range = 32,
 }
 

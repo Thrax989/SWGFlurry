@@ -141,6 +141,8 @@ Core3 = {
 
 	-- Each tre file (order is important!)
 	TreFiles = {
+	"flurry10.tre",
+	"flurry9.tre",
 	"flurry8.tre",
 	"flurry7.tre",
 	"flurry6.tre",
