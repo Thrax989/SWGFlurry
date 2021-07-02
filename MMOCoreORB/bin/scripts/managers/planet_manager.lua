@@ -311,7 +311,7 @@ endor = {
 
 geonosis = {
 	weatherEnabled = 1,
-	gcwEnabled = 0,
+	gcwEnabled = 1,
 
 	outpostRegionNames = { },
 
@@ -332,7 +332,7 @@ geonosis = {
 
 concordia = {
 	weatherEnabled = 1,
-	gcwEnabled = 0,
+	gcwEnabled = 1,
 
 	outpostRegionNames = { },
 
@@ -353,7 +353,7 @@ concordia = {
 
 concorddawn = {
 	weatherEnabled = 1,
-	gcwEnabled = 0,
+	gcwEnabled = 1,
 
 	outpostRegionNames = { },
 
@@ -411,7 +411,7 @@ hutta = {
 
 jakku = {
   weatherEnabled = 1,
-  gcwEnabled = 0,
+  gcwEnabled = 1,
 
   planetTravelPoints = {
 	{name = "Battle Of Jakku", x = -4263, z = 6, y = -2411, interplanetaryTravelAllowed = 1, incomingTravelAllowed = 1}
