@@ -12,7 +12,7 @@ boss_rare = {
 		{groupTemplate = "krayt_tissue_rare", weight = 955555},
 		{groupTemplate = "krayt_pearls_flawless", weight = 955555},    
 		{groupTemplate = "g_named_crystals", weight = 955555},
-		{groupTemplate = "jedi_jewelry", weight = 955555},      
+		{groupTemplate = "crystal_windus_guile", weight = 955555},      
 		{groupTemplate = "weapons_all", weight = 200000},    
 		{groupTemplate = "nge_all", weight = 600000}   
 		
