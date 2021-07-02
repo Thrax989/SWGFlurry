@@ -30,36 +30,36 @@ event_elliot = Creature:new {
 	templates = {
 		"object/mobile/dressed_geonosian_scientist_01.iff",
 		"object/mobile/dressed_geonosian_scientist_02.iff"},
-	lootGroups = {
+		lootGroups = {
 		{
 			groups = {
-				{group = "boss_common", chance = 10000000},
+				{group = "ancient_force_bread", chance = 10000000},
 			},
 			lootChance = 10000000
 		},	
 		{
 			groups = {
-				{group = "boss_common", chance = 10000000},
+				{group = "ancient_force_bread", chance = 10000000},
 			},
 			lootChance = 10000000
 		},
 		{
 			groups = {
-				{group = "boss_common", chance = 10000000},
+				{group = "jedi_pack_group", chance = 10000000},
 			},
-			lootChance = 10000000
+			lootChance = 1000000
 		},
 		{
 			groups = {
-				{group = "boss_common", chance = 10000000},
+				{group = "jedi_belt_group", chance = 10000000},
 			},
-			lootChance = 10000000
+			lootChance = 1000000
 		},
 		{
 			groups = {
-				{group = "boss_common", chance = 10000000},
+				{group = "jedi_jewelry", chance = 10000000},
 			},
-			lootChance = 10000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
@@ -195,7 +195,7 @@ event_elliot = Creature:new {
 			},
 			lootChance = 10000000
 		}
-	},	
+	},
 	weapons = {"imperial_weapons_heavy"},
 	reactionStf = "@npc_reaction/slang",
 	attacks = merge(bountyhuntermaster,marksmanmaster,brawlermaster,pikemanmaster,fencermaster,swordsmanmaster,tkamaster,pistoleermaster,commandomaster)
