@@ -3,52 +3,203 @@ corrupted_rancor_boss = Creature:new {
 	socialGroup = "rancor",
 	faction = "",
 	level = 300,
-	chanceHit = 70.0,
-	damageMin = 7570,
-	damageMax = 9950,
-	baseXp = 28549,
-	baseHAM = 1800000,
-	baseHAMmax = 1850000,
+	chanceHit = 50.0,
+	damageMin = 3000,
+	damageMax = 6000,
+	baseXp = 128549,
+	baseHAM = 3900000,
+	baseHAMmax = 4000000,
 	armor = 3,
-	resists = {35,85,65,85,85,85,65,85,60},
+	resists = {195,195,195,195,195,195,195,195,200},
 	meatType = "meat_carnivore",
-	meatAmount = 1000,
+	meatAmount = 1500,
 	hideType = "hide_bristley",
-	hideAmount = 950,
+	hideAmount = 1500,
 	boneType = "bone_mammal",
-	boneAmount = 905,
+	boneAmount = 1500,
 	milk = 0,
 	tamingChance = 0,
 	ferocity = 30,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
 	creatureBitmask = PACK + KILLER + STALKER,
-	optionsBitmask = AIENABLED,
+	optionsBitmask = AIENABLED + INTERESTING,
 	diet = CARNIVORE,
-	scale = 1.5,
+	scale = 1.75,
 
 	templates = {"object/mobile/wod_mutant_rancor_boss.iff"},
 	lootGroups = {
 		{
-	        groups = {
-				{group = "junk", chance = 10000000},
+			groups = {
+				{group = "boss_common", chance = 10000000},
+			},
+			lootChance = 10000000
+		},	
+		{
+			groups = {
+				{group = "boss_common", chance = 10000000},
 			},
 			lootChance = 10000000
 		},
 		{
 			groups = {
-				{group = "junk", chance = 10000000}
+				{group = "boss_common", chance = 10000000},
 			},
 			lootChance = 10000000
 		},
-
+		{
+			groups = {
+				{group = "boss_common", chance = 10000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "boss_common", chance = 10000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "boss_common", chance = 10000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "boss_common", chance = 10000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "boss_common", chance = 10000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "boss_common", chance = 10000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "boss_common", chance = 10000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "boss_common", chance = 10000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "boss_rare", chance = 10000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "boss_rare", chance = 10000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "death_watch_bunker_ingredient_protective", chance = 5000000},
+ 				{group = "death_watch_bunker_ingredient_binary", chance = 5000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "death_watch_bunker_ingredient_protective", chance = 5000000},
+ 				{group = "death_watch_bunker_ingredient_binary", chance = 5000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "worldbosscrate", chance = 10000000},
+			},
+			lootChance = 10000000
+		},
+ 		{
+			groups = {
+				{group = "worldbosscrate", chance = 10000000},
+			},
+			lootChance = 10000000
+		},
+ 		{
+			groups = {
+				{group = "worldbosscrate", chance = 10000000},
+			},
+			lootChance = 10000000
+		},   
+		{
+			groups = {
+				{group = "worldbosscrate", chance = 10000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "boss_rare", chance = 10000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "tierone", chance = 1000000},
+				{group = "tiertwo", chance = 1000000},
+				{group = "tierthree", chance = 3000000},
+				{group = "tierdiamond", chance = 5000000},
+			},
+			lootChance = 10000000
+		},    
+		{
+			groups = {
+				{group = "boss_rare", chance = 10000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "tierone", chance = 1000000},
+				{group = "tiertwo", chance = 1000000},
+				{group = "tierthree", chance = 3000000},
+				{group = "tierdiamond", chance = 5000000},
+			},
+			lootChance = 10000000
+		},    
+		{
+			groups = {
+				{group = "tierone", chance = 1000000},
+				{group = "tiertwo", chance = 1000000},
+				{group = "tierthree", chance = 3000000},
+				{group = "tierdiamond", chance = 5000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "tierone", chance = 1000000},
+				{group = "tiertwo", chance = 1000000},
+				{group = "tierthree", chance = 3000000},
+				{group = "tierdiamond", chance = 5000000},
+			},
+			lootChance = 10000000
+		}
 	},
 	weapons = {},
 	conversationTemplate = "",
 	attacks = {
 		{"creatureareacombo","stateAccuracyBonus=100"},
 		{"creatureareaknockdown","stateAccuracyBonus=100"},
-		{"creatureareadisease","stateAccuracyBonus=90"},
-		{"strongdisease",""}
+		{"posturedownattack","stateAccuracyBonus=100"},
+		{"creatureareacombo","stateAccuracyBonus=100"}
 	}
 }
 
