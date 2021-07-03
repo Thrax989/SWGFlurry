@@ -25,7 +25,7 @@ sbd2_droids = Creature:new {
 	optionsBitmask = AIENABLED,
 	diet = NONE,
 	scale = 1.1,
-	templates = {"object/mobile/bomarr_monk_spider_droid_greeter.iff"},
+	templates = {"object/mobile/ep3/ep3_clone_relics_super_battle_droid_01.iff"},
 	lootGroups = {
 		{
 			groups = {
