@@ -3410,7 +3410,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				if (!player->isInCombat() && player->getBankCredits() < 4999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 		                box->setPromptTitle("Somov'Rit");
-		                box->setPromptText("Travel Coast 5,000 credits. (Bank)");
+		                box->setPromptText("Travel Cost 5,000 credits. (Bank)");
 		                box->setOkButton(true, "@cancel");
 		                box->setUsingObject(player);
 		                player->getPlayerObject()->addSuiBox(box);
@@ -3431,7 +3431,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			} else if (templatePath == "pc_crymorenoobs_travel") {
 				if (!player->isInCombat() && player->getBankCredits() < 4999) {
 					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-					box->setPromptTitle("Player City Cry More Noobs")
+					box->setPromptTitle("Player City Cry More Noobs");
 					box->setPromptText("Travel Cost 5,000 Credits. (Bank)");
 					box->setOkButton(true, "@cancel");
 					box->setUsingObject(player);
@@ -3445,7 +3445,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 					player->switchZone("naboo", 6397, 9, 2809);
 					player->subtractBankCredits(5000);
 					box->setForceCloseDistance(5.f);
-					if(currentCity !=nullptr && !currentCity->isClinetRegion()) {
+					if(currentCity !=nullptr && !currentCity->isClientRegion()) {
 					Locker clocker(currentCity, player);
 					currentCity->addToCityTreasury(1000);
 					}
@@ -3453,7 +3453,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 			} else if (templatePath == "pc_sanitarium_travel") {
 				if (!player->isInCombat() && player->getBankCredits() < 4999) {
 					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-					box->setPromptTitle("Player City Sanitarium")
+					box->setPromptTitle("Player City Sanitarium");
 					box->setPromptText("Travel Cost 5,000 Credits. (Bank)");
 					box->setOkButton(true, "@cancel");
 					box->setUsingObject(player);
@@ -3467,7 +3467,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 					player->switchZone("naboo", 4374, 7, 1528);
 					player->subtractBankCredits(5000);
 					box->setForceCloseDistance(5.f);
-					if(currentCity !=nullptr && !currentCity->isClinetRegion()) {
+					if(currentCity !=nullptr && !currentCity->isClientRegion()) {
 					Locker clocker(currentCity, player);
 					currentCity->addToCityTreasury(1000);
 					}
