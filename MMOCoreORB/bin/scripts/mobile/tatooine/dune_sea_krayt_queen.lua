@@ -46,7 +46,7 @@ dune_sea_queen = Creature:new {
 			groups = {
 				{group = "krayt_pearls_flawless", chance = 10000000},
 			},
-			lootChance = 7500000
+			lootChance = 10000000
 		},
 		{
 			groups = {

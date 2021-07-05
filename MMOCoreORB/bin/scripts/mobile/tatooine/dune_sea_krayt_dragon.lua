@@ -32,9 +32,9 @@ dune_sea_krayt_dragon = Creature:new {
 	lootGroups = {
 		{
 	        	groups = {
-				{group = "krayt_tissue_rare", chance = 2500000},
-				{group = "krayt_dragon_common", chance = 4000000},
-				{group = "krayt_pearls_flawless", chance = 2500000},
+				{group = "krayt_tissue_rare", chance = 3000000},
+				{group = "krayt_dragon_common", chance = 3000000},
+				{group = "krayt_pearls_flawless", chance = 3000000},
 				{group = "weapons_all", chance = 1000000},
 			},
 			lootChance = 10000000
@@ -52,8 +52,10 @@ dune_sea_krayt_dragon = Creature:new {
 	weapons = {},
 	conversationTemplate = "",
 	attacks = {
-		{"posturedownattack",""},
-		{"creatureareaattack",""}
+		{"posturedownattack","stateAccuracyBonus=100"},
+		{"creatureareaattack","stateAccuracyBonus=100"},
+       {"creatureareacombo","stateAccuracyBonus=100"},
+		{"creatureareaknockdown","stateAccuracyBonus=100"}
 	}
 }
 
