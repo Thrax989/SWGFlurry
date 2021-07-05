@@ -15,6 +15,7 @@ holo_exchange_items_screen = ConvoScreen:new {
    options = {
       {"Light Holocron", "1"},
       {"Dark Holocron", "2"},
+      {"Dot Removal Pack", "3"},     
       {"Back", "first_screen"},
       {"No thank you.", "deny_quest"},
       }
