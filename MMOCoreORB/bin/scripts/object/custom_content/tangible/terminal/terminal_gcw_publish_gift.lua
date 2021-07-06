@@ -236,7 +236,7 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
           {
            		 --"Asgard (5,000 Credits)", "pc_asgard_travel",
 			"Lost City (5,000 Credits)", "pc_lost city_travel",
-			"Somov'Rit (5,000 Credits)", "pc_somov city_travel"				
+			--"Somov'Rit (5,000 Credits)", "pc_somov city_travel"				
           },
             "Talus",
           {
@@ -248,7 +248,8 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
           {
       		--"Crimson Thorn (5,000 Credits)", "pc_crimson_travel",
 			--"Binary (5,000 Credits)", "pc_binary_travel",
-			--"Serenity (5,000 Credits)", "pc_serenity_travel"
+			--"Serenity (5,000 Credits)", "pc_serenity_travel",
+			"New Justice (5,000 Credits)", "pc_newjustice_travel"
           },
             "Yavin4",
           {
@@ -265,7 +266,7 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
             "Hoth",
           {
             "Indestine (5,000 Credits)", "pc_indestine_travel",
-            "REBS of HOTH (5,000 Credits)", "pc_rebs_travel"
+            --"REBS of HOTH (5,000 Credits)", "pc_rebs_travel"
           },
 
             "Mandalore",
