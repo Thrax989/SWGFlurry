@@ -9,160 +9,104 @@
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/player/PlayerObject.h"
-#include "server/zone/packets/object/ObjectMenuResponse.h"
-#include "server/zone/objects/player/sui/messagebox/SuiMessageBox.h"
-#include "server/zone/managers/skill/SkillManager.h"
-#include "server/zone/managers/player/PlayerManager.h"
-#include "server/zone/packets/player/PlayMusicMessage.h"
-#include "server/zone/managers/creature/CreatureManager.h"
-#include "server/zone/objects/region/CityRegion.h"
 #include "server/zone/ZoneServer.h"
-#include "server/chat/ChatManager.h"
 #include "server/zone/managers/jedi/JediManager.h"
+#include "server/chat/ChatManager.h"
+#include "server/zone/packets/player/PlayMusicMessage.h"
+#include "server/zone/managers/visibility/VisibilityManager.h"
+#include "server/zone/objects/player/sui/inputbox/SuiInputBox.h"
 
-void HolocronMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject, ObjectMenuResponse* menuResponse, CreatureObject* player) const {
 
-	TangibleObjectMenuComponent::fillObjectMenuResponse(sceneObject, menuResponse, player);
-	ManagedReference<PlayerObject*> ghost = player->getPlayerObject();
-
-	if (ghost->getJediState() >=1) {
-			menuResponse->addRadialMenuItem(213, 3, "Reveal Encrypted Data"); // Use Holocron
-			menuResponse->addRadialMenuItemToRadialID(213, 214, 3, "Increase Jedi Lives"); // Increase Jedi Lives
-			menuResponse->addRadialMenuItemToRadialID(213, 215, 3, "Regenerate Full Force"); // Regenerate Jedi's Full Force
-			menuResponse->addRadialMenuItemToRadialID(213, 216, 3, "Visibility"); // Show Jedi's Visibility
-			menuResponse->addRadialMenuItemToRadialID(213, 217, 3, "Jedi Lives Remaining"); // Jedi Live's Remaining
-			menuResponse->addRadialMenuItemToRadialID(213, 220, 3, "Unlock Gray Jedi"); // Unlocks Gray Jedi
-		}
-	}
 int HolocronMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* creature, byte selectedID) const {
-	ManagedReference<PlayerObject*> ghost = creature->getPlayerObject();
-
-	if (ghost == NULL)
-		return 0;
-
-	ZoneServer* zserv = creature->getZoneServer();
-
-	if (zserv == NULL)
-		return 0;
 	
-	if (selectedID == 213) {
- 		if (ghost->getJediState() >= 1) {
-			JediManager::instance()->useItem(sceneObject, JediManager::ITEMHOLOCRON, creature);
-		}
+	/*
+		@param If timer is up - Holocron will refil force bar and remove itself
+		@param If timer is down - Holoron will not refil force bar and stay in your inventory
+		
+		If player has !cooldown then
+			refil force bar
+			galactic message (player, "used holocron")
+			player message "your visibility is: #"
+		else
+			player message "your still under cooldown"
+			player message "your visibility is: #"
+	*/
+	
+	if (selectedID != 20)
+		return 0;
+
+	if (!sceneObject->isASubChildOf(creature))
+		return 0;
+
+	ManagedReference<PlayerObject*> playerObject = creature->getPlayerObject();
+	int jediVis1 = playerObject->getVisibility();
+	StringBuffer messageVis;
+	//put to 0 after test
+	int test = 0;
+	
+	if (playerObject->getAdminLevel() >= 6) {
+		test = 1;
 	}
-	if (selectedID == 214 && (ghost->getJediState() >= 1) && creature->hasSkill("combat_jedi_novice") && (creature->getScreenPlayState("jediLives") == 0)) {
-		creature->sendSystemMessage("You have Permanently died on your jedi, you may not use this option"); // You have Permanently died on your jedi, you may not use this option
-		}
-	if (selectedID == 214 && (!creature->isDead() && (ghost->getJediState() >= 1) && creature->hasSkill("combat_jedi_novice") && (creature->getScreenPlayState("jediLives") == 1))) {
-		int livesLeft = creature->getScreenPlayState("jediLives") + 1;
-		creature->setScreenPlayState("jediLives", livesLeft);
-		sceneObject->destroyObjectFromWorld(true);
-		creature->sendSystemMessage("You have added +1 Life to your jedi, you now have a total of 2 Lives"); // You have added +1 Life to your jedi, you now have a total of 2 Lives
-		}
-	if (selectedID == 214 && (!creature->isDead() && (ghost->getJediState() >= 1) && creature->hasSkill("combat_jedi_novice") && (creature->getScreenPlayState("jediLives") == 2))) {
-		int livesLeft = creature->getScreenPlayState("jediLives") + 1;
-		creature->setScreenPlayState("jediLives", livesLeft);
-		sceneObject->destroyObjectFromWorld(true);
-		creature->sendSystemMessage("You have added +1 Life to your jedi, you now have a total of 3 Lives"); // You have added +1 Life to your jedi, you now have a total of 3 Lives
-		}
-	if (selectedID == 214 && (ghost->getJediState() >= 1) && creature->hasSkill("combat_jedi_novice") && (creature->getScreenPlayState("jediLives") == 3)) {
-		creature->sendSystemMessage("You are at your maximum amount of Jedi lives, 3 Remain"); // You are at your maximum amount of Jedi Lives
-		}
-	if (selectedID == 214 && (ghost->getJediState() >= 1) && creature->hasSkill("combat_jedi_novice") && (creature->getScreenPlayState("jediLives") > 3)) {
-		creature->sendSystemMessage("You Cannont Use This Feature");
-		}
-	if (selectedID == 214 && !creature->hasSkill("combat_jedi_novice")) {
-		creature->sendSystemMessage("You must be a gray jedi to use this option"); // You have Permanently died on your jedi, you may not use this option
-		}
-	if (selectedID == 215 && (ghost->getJediState() >= 1)) {
-		ManagedReference<PlayerObject*> playerObject = creature->getPlayerObject();
-		if (!creature->checkCooldownRecovery("force_replenish_cooldown")) {
+	
+	if (!creature->checkCooldownRecovery("used_holocron")) {
 		if (playerObject->getForcePower() >= playerObject->getForcePowerMax()) {
 			creature->sendSystemMessage("@jedi_spam:holocron_force_max");
 		} else {
-				StringIdChatParameter stringId;
-  
-				Time* cdTime = creature->getCooldownTime("force_replenish_cooldown");
-  
-				int timeLeft = floor((float)cdTime->miliDifference() / 1000) *-1;
-  
-				stringId.setStringId("@innate:equil_wait"); // You are still recovering from your last Command available in %DI seconds.
-				stringId.setDI(timeLeft);
-				creature->sendSystemMessage(stringId);
-				error("Cooldown In Effect You May Not Replenish Force: " + creature->getFirstName());
-				return 0;
-			}
+			creature->sendSystemMessage("@jedi_spam:holocron_no_effect");
+		}
+		
+		if (test == 1) {
+			creature->sendSystemMessage("This is the check for used_holocron");
+		}
+		
+		messageVis << "\\#00CC00 Your Visibility is at: " << jediVis1;
+		creature->sendSystemMessage(messageVis.toString());
 		return 0;
 	}
-	if (playerObject != NULL && playerObject->getJediState() >= 1) {
+
+	if (playerObject != NULL && playerObject->getJediState() >= 2) {
+		//No matter what, display your visibilty if you're a jedi
+		messageVis << "\\#00CC00 Your Visibility is at: " << jediVis1;
+		creature->sendSystemMessage(messageVis.toString());
+		if (test == 1) {
+			creature->sendSystemMessage("Your jedi state is >= 2");
+		}
+		//You're a jedi, and not on cooldown && forceFull ? fillForce : FullForceString
 		if (playerObject->getForcePower() < playerObject->getForcePowerMax()) {
 			//Refil force + Message player
 			creature->sendSystemMessage("@jedi_spam:holocron_force_replenish");
 			playerObject->setForcePower(playerObject->getForcePowerMax(), true);
 			//Set cooldown
-			creature->addCooldown("force_replenish_cooldown", 3600 * 1000);// 1 hour cooldown
+			creature->addCooldown("used_holocron", 1 * 1800000); //3,600,000 = 1 hr
 			//Destroy object
 			sceneObject->destroyObjectFromWorld(true);
 			//Music + Effect
 			creature->playEffect("clienteffect/pl_force_absorb_hit.cef");
 			PlayMusicMessage* pmm = new PlayMusicMessage("sound/music_become_light_jedi.snd");
   			playerObject->sendMessage(pmm);
+			//Broadcast to Server
+ 			Zone* zone = creature->getZone();
+ 			String playerName = creature->getFirstName();
+  			StringBuffer zBroadcast;
+  			zBroadcast << "\\#00E604" << playerName << " \\#63C8F9 Has Used A Holocron";
+ 			creature->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
+			if (test == 1) {
+				creature->sendSystemMessage("your force has been refilled");
+			}
 		} else {
 			//You have max force
-			creature->sendSystemMessage("You may not use this option unless you are a jedi");
+			creature->sendSystemMessage("@jedi_spam:holocron_force_max");
+			if (test == 1) {
+				creature->sendSystemMessage("You're full force, can't add");
+			}
 		}
 	} else {
 		//You're not a jedi yet
 		JediManager::instance()->useItem(sceneObject, JediManager::ITEMHOLOCRON, creature);
-	}
-		return 0;
-	}
-	if (selectedID == 216 && (ghost->getJediState() >= 1)) {
-		ManagedReference<SuiMessageBox*> box = new SuiMessageBox(creature, SuiWindowType::NONE);
-		box->setPromptTitle("Jedi Visibility");
-		int jediVis1 = ghost->getVisibility();
-		StringBuffer promptText;
-		String playerName = creature->getFirstName();
-		promptText << "\\#00ff00 " << playerName << " Has " << "\\#000000 " << "(" << "\\#ffffff " << jediVis1 << "\\#000000 " << ")" << "\\#00ff00 " << " Jedi Visibility" << endl;
-		box->setPromptText(promptText.toString());
-		ghost->addSuiBox(box);
-		creature->sendMessage(box->generateMessage());
-	}
-	if (selectedID == 217 && (ghost->getJediState() >= 1)) {
-		ManagedReference<SuiMessageBox*> box = new SuiMessageBox(creature, SuiWindowType::NONE);
-		box->setPromptTitle("Jedi Lives");
-		StringBuffer promptText;
-		String playerName = creature->getFirstName();
-		promptText << "\\#00ff00 " << playerName << " Has " << "\\#000000 " << "(" << "\\#ffffff " << creature->getScreenPlayState("jediLives") << "\\#000000 " << ")" << "\\#00ff00 " << " Jedi Lives Left" << endl;
-		box->setPromptText(promptText.toString());
-		ghost->addSuiBox(box);
-		creature->sendMessage(box->generateMessage());
-	}
-	if (selectedID == 220 && (ghost->getJediState() >= 1) && (ghost->getSkillPoints() == 250)) {
-		        ManagedReference<SuiMessageBox*> box = new SuiMessageBox(creature, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-				creature->sendSystemMessage("You Have Unlocked Gray Jedi");
-				int livesLeft = creature->getScreenPlayState("jediLives") + 3;
-				creature->setScreenPlayState("jediLives", livesLeft);
-				int jediVis1 = ghost->getVisibility();
-				box->setPromptTitle("Gray Jedi Progress");
-				StringBuffer promptText;
-				String playerName = creature->getFirstName();
-				promptText << "\\#00ff00 " << playerName << " Has " << "\\#000000 " << "(" << "\\#ffffff " << creature->getScreenPlayState("jediLives") << "\\#000000 " << ")" << "\\#00ff00 " << " Gray Jedi Lives" << endl;
-				promptText << "\\#ffffff " << playerName << "\\#00ff00 Your Visibility is at: " << jediVis1;
-				box->setPromptText(promptText.toString());
-				ghost->addSuiBox(box);
-				creature->sendMessage(box->generateMessage());
-				SkillManager::instance()->awardSkill("combat_jedi_novice", creature, true, true, true);
-				Vector3 coords(5294.95, -4123.03, 0); // Gray Jedi Master Trainer
-				String zoneName = "dathomir"; // Gray Jedi Master Trainer
-				ghost->setTrainerCoordinates(coords);
-				ghost->setTrainerZoneName(zoneName); // For the Waypoint.
-				creature->sendExecuteConsoleCommand("/pause 10;/findmytrainer");
-				box->setForceCloseDistance(5.f);
+		if (test == 1) {
+			creature->sendSystemMessage("You're not a jedi");
 		}
-	if (selectedID == 220 && (ghost->getJediState() >= 1) && (ghost->getSkillPoints() < 250) && !creature->hasSkill("combat_jedi_novice")) {
-				creature->sendSystemMessage("You do not meet the requirements for this feature, Force Sensitive and 250 skill points must be free to become gray jedi");
-		return 0;
-		}
+	}
+
 	return 0;
 }
