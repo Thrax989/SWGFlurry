@@ -29,6 +29,7 @@
 #include "server/zone/managers/frs/FrsManager.h"
 #include "server/zone/objects/tangible/powerup/PowerupObject.h"
 #include "server/zone/objects/tangible/weapon/WeaponObject.h"
+#include "server/zone/managers/skill/SkillManager.h"
 
 #define COMBAT_SPAM_RANGE 85
 
