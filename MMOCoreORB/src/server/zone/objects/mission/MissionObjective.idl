@@ -32,8 +32,8 @@ class MissionObjective extends ManagedObject implements Logger {
 
 	protected transient boolean activated;
 
-	//Default duration of 2 days.
-	public final static int MISSIONDURATION = 172800000;
+	//Default duration of 5 hours.
+	public final static int MISSIONDURATION = 18000000;
 
 	public MissionObjective(MissionObject parent) {
 		mission = parent;
