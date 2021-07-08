@@ -54,11 +54,6 @@ int PlayerContainerComponent::canAddObject(SceneObject* sceneObject, SceneObject
 			}
 		}
 
-		if ((wearable->getMaxCondition() - wearable->getConditionDamage()) <= 0) {
-			errorDescription = "It would be a waste of time to try to use this.";
-				return TransferErrorCode::PLAYERUSEMASKERROR;
-		}
-
 		if (object->isArmorObject()) {
 			PlayerManager* playerManager = sceneObject->getZoneServer()->getPlayerManager();
 
@@ -90,6 +85,11 @@ int PlayerContainerComponent::canAddObject(SceneObject* sceneObject, SceneObject
 
 						return TransferErrorCode::PLAYERUSEMASKERROR;
 					}
+				}
+
+				if ((wearable->getMaxCondition() - wearable->getConditionDamage()) <= 0) {
+					errorDescription = "This object has been damaged to the point of uselessness.";
+						return TransferErrorCode::PLAYERUSEMASKERROR;
 				}
 			}
 		}
@@ -165,6 +165,7 @@ int PlayerContainerComponent::notifyObjectInserted(SceneObject* sceneObject, Sce
 
 		if (object->isRobeObject()) {
 			ghost->recalculateForcePower();
+			VisibilityManager::instance()->increaseVisibility(creo, VisibilityManager::SABERVISMOD);
 		} else if (object->isWeaponObject()) {
 			WeaponObject* weaponObject = cast<WeaponObject*>(object);
 			if (weaponObject->isJediWeapon()) {
