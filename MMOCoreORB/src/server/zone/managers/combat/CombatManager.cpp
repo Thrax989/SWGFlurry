@@ -2188,6 +2188,24 @@ int CombatManager::applyDamage(TangibleObject* attacker, WeaponObject* weapon, C
 	bool actionDamaged = (!!(poolsToDamage & ACTION) && data.getActionDamageMultiplier() > 0.0f);
 	bool mindDamaged   = (!!(poolsToDamage & MIND)   && data.getMindDamageMultiplier()   > 0.0f);
 
+	if (data.getCombatSpam() == "forcechoke") //special case for force choke
+	{
+		int targetHamTotal = defender->getHAM(CreatureAttribute::HEALTH);
+		int targetHAM = CreatureAttribute::HEALTH;
+			healthDamaged = true; actionDamaged = false; mindDamaged = false;
+
+		if (defender->getHAM(CreatureAttribute::ACTION) > targetHamTotal){
+			targetHAM = CreatureAttribute::ACTION;
+			targetHamTotal = defender->getHAM(CreatureAttribute::ACTION);
+			healthDamaged = false; actionDamaged = true; mindDamaged = false;
+		}
+		if (defender->getHAM(CreatureAttribute::MIND) > targetHamTotal){
+			healthDamaged = false; actionDamaged = false; mindDamaged = true;
+			targetHAM = CreatureAttribute::MIND;
+		}
+
+	}
+
 	int numberOfPoolsDamaged = (healthDamaged ? 1 : 0) + (actionDamaged ? 1 : 0) + (mindDamaged ? 1 : 0);
 	Vector<int> poolsToWound;
 
