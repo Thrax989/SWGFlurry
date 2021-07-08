@@ -1434,6 +1434,14 @@ float CombatManager::calculateDamage(CreatureObject* attacker, WeaponObject* wea
 	if (attacker->isPlayerCreature())
 		damage *= 1.5;
 
+	if (attacker->isPet()) {
+		if (attacker->isWalkerSpecies() || attacker->isDroidSpecies()) {
+			damage *= 1.5;
+		} else {
+			damage *= 2.0;
+		}
+	}
+
 	if (!data.isForceAttack() && weapon->getAttackType() == SharedWeaponObjectTemplate::MELEEATTACK)
 		damage *= 1.25;
 
