@@ -620,7 +620,7 @@ FactoryCrate* FactoryObjectImplementation::locateCrateInOutputHopper(TangibleObj
 
 	ManagedReference<SceneObject*> outputHopper = getSlottedObject("output_hopper");
 
-	if(outputHopper == nullptr) {
+	if(outputHopper == nullptr || prototype == nullptr) {
 		stopFactory("manf_error_6", "", "", -1);
 		return nullptr;
 	}
