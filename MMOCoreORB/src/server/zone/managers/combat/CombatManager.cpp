@@ -1506,7 +1506,7 @@ float CombatManager::doDroidDetonation(CreatureObject* droid, CreatureObject* de
 
 				Locker plocker(psgArmor);
 
-				psgArmor->inflictDamage(psgArmor, 0, damage * 0.001, true, true);
+				psgArmor->inflictDamage(psgArmor, 0, damage * 0.1, true, true);
 			}
 			// reduced by psg not check each spot for damage
 			healthDamage = damage;
