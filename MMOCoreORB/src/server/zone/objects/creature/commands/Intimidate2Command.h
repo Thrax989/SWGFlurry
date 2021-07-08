@@ -27,6 +27,20 @@ public:
 
 		if (targetObject == nullptr || !targetObject->isCreatureObject())
 			return INVALIDTARGET;
+			
+		ManagedReference<WeaponObject*> weapon = nullptr;
+
+		if(creature->getWeapon() == nullptr) {
+						return GENERALERROR;
+		}				
+		else{
+		weapon = creature->getWeapon();
+		}
+
+		if (weapon->isJediWeapon()){
+			return INVALIDWEAPON;
+		}
+
 
 		int res = doCombatAction(creature, target);
 
