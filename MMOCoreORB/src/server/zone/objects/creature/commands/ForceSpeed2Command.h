@@ -17,14 +17,6 @@ public:
 	}
 
 	int doQueueCommand(CreatureObject* creature, const uint64& target, const UnicodeString& arguments) const {
-		ManagedReference<GroupObject*> group = creature->getGroup();
-
-		if (0) {  // (creature->hasSkill("force_discipline_enhancements_master") && group != NULL && group->getGroupSize() > 1){
-			creature->sendSystemMessage("Your mastery of the enhancement discipline allows you to extend this power to others near you");
-			int groupres = doJediGroupBuffCommand(creature);
-
-		}
-
 		return doJediSelfBuffCommand(creature);
 	}
 
