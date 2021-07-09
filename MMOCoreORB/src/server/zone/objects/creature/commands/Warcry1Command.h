@@ -31,17 +31,9 @@ public:
 		ManagedReference<WeaponObject*> weapon = nullptr;
 
         ManagedReference<CreatureObject*> creatureTarget = targetObject.castTo<CreatureObject*>();
-        if (creatureTarget == nullptr){
-            return INVALIDTARGET;
-        }
-
-		
-		if(creature->getWeapon() == nullptr) {
-						return GENERALERROR;
-		}				
-		else{
-		weapon = creature->getWeapon();
-		}
+        	if (creatureTarget == nullptr){
+            		return INVALIDTARGET;
+        	}
 
 		if (weapon->isJediWeapon()){
 			return INVALIDWEAPON;
