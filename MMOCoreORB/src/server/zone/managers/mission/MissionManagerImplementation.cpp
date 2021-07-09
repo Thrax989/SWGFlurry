@@ -865,7 +865,7 @@ void MissionManagerImplementation::randomizeGenericDestroyMission(CreatureObject
 	mission->setFaction(faction);
 
 	int factionPointsReward = randomLairSpawn->getMinDifficulty();
-		factionPointsReward * = 10.0;
+		factionPointsReward *=10.0;
 
 	String messageDifficulty;
 	String missionType;
