@@ -3533,8 +3533,22 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				bluefrog->grantGlowyBadges(player);
 
 			} else if (templatePath == "unlock_jedi_initiate") {
-				bluefrog->grantJediInitiate(player);
-
+				if (!player->isInCombat() && player->getBankCredits() < 49999999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+		                box->setPromptTitle("Unlocking Jedi");
+		                box->setPromptText("Unlocking Jedi Cost 50,000,000 Credits. (Bank)");
+		                box->setOkButton(true, "@cancel");
+		                box->setUsingObject(player);
+		                player->getPlayerObject()->addSuiBox(box);
+		                player->sendMessage(box->generateMessage());
+			        }
+				if (!player->isInCombat() && player->getBankCredits() > 49999999) {
+		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
+						player->sendSystemMessage("Thank you for purchasing a Jedi Unlock.");
+						bluefrog->grantGlowyBadges(player);					
+						player->subtractBankCredits(5000);
+						box->setForceCloseDistance(5.f);
+			        }
 			} else {
 				if (templatePath.length() > 0) {
 					SkillManager::instance()->awardSkill(templatePath, player, true, true, true);
