@@ -28,18 +28,6 @@ public:
 		if (targetObject == nullptr || !targetObject->isCreatureObject())
 			return INVALIDTARGET;
 
-        ManagedReference<CreatureObject*> creatureTarget = targetObject.castTo<CreatureObject*>();
-        	if (creatureTarget == nullptr{
-            		return INVALIDTARGET;
-        	}
-			
-		ManagedReference<WeaponObject*> weapon = nullptr;
-
-		if (weapon->isJediWeapon()){
-			return INVALIDWEAPON;
-		}
-
-
 		int res = doCombatAction(creature, target);
 
 		if (res == TOOFAR)
