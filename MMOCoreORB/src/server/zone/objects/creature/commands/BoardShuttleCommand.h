@@ -196,9 +196,10 @@ public:
 
 		if (arrivalZone->getZoneName() == "dungeon2") {
 			creature->switchZone(arrivalZone->getZoneName(), 84.1568, 0.899999, -46.0048, 14200813);
-		}else{
+		} else if (arrivalPlanet == departurePlanet) {
+			creature->teleport(x, p.getPositionZ(), y, 0);
+		} else {
 			creature->switchZone(arrivalZone->getZoneName(), x, p.getPositionZ(), y, 0);
-		}
 
 		// Update the nearest mission for group waypoint for both the arrival and departure planet.
 		if (creature->isGrouped()) {
