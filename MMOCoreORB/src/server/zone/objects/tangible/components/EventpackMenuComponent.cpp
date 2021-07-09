@@ -12,6 +12,7 @@
 #include "server/zone/ZoneServer.h"
 #include "server/zone/packets/object/ObjectMenuResponse.h"
 #include "server/zone/objects/group/GroupObject.h"
+#include "templates/params/creature/CreatureAttribute.h"
 
 void EventpackMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject, ObjectMenuResponse* menuResponse, CreatureObject* player) const {
 	TangibleObjectMenuComponent::fillObjectMenuResponse(sceneObject, menuResponse, player);
