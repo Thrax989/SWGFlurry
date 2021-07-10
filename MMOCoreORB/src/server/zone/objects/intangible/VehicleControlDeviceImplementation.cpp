@@ -145,24 +145,23 @@ void VehicleControlDeviceImplementation::spawnObject(CreatureObject* player) {
 	Reference<VehicleDecayTask*> decayTask = new VehicleDecayTask(controlledObject);
 	decayTask->execute();
 
-	if (vehicle != NULL && controlledObject->getServerObjectCRC() == 0x32F87A54) // Jetpack
+	if (vehicle != nullptr && controlledObject->getServerObjectCRC() == 0x60250B32) // Jetpack
 	{
-		controlledObject->setCustomizationVariable("/private/index_hover_height", 40, true); // Illusion of flying.
+		controlledObject->setCustomizationVariable("/private/index_hover_height", 100, true); // Illusion of flying.
 		player->executeObjectControllerAction(STRING_HASHCODE("mount"), controlledObject->getObjectID(), ""); // Auto mount.
 	}
 
-	if (vehicle != NULL && controlledObject->getServerObjectCRC() == 0x33797275) // HK Jetpack
+	if (vehicle != nullptr && controlledObject->getServerObjectCRC() == 0x3B65876E) // Jetpack
 	{
-		controlledObject->setCustomizationVariable("/private/index_hover_height", 40, true); // Illusion of flying.
+		controlledObject->setCustomizationVariable("/private/index_hover_height", 100, true); // Illusion of flying.
 		player->executeObjectControllerAction(STRING_HASHCODE("mount"), controlledObject->getObjectID(), ""); // Auto mount.
 	}
 
-	if (vehicle != NULL && controlledObject->getServerObjectCRC() == 0x5C3FA920) // Merr Sonn Jetpack
+	if (vehicle != nullptr && controlledObject->getServerObjectCRC() == 0x3DB595A1) // Jetpack
 	{
-		controlledObject->setCustomizationVariable("/private/index_hover_height", 40, true); // Illusion of flying.
+		controlledObject->setCustomizationVariable("/private/index_hover_height", 100, true); // Illusion of flying.
 		player->executeObjectControllerAction(STRING_HASHCODE("mount"), controlledObject->getObjectID(), ""); // Auto mount.
 	}
-
 
 	updateStatus(1);
 

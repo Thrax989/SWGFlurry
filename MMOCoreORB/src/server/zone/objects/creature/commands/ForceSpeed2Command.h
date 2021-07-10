@@ -12,9 +12,7 @@ public:
 	: JediQueueCommand(name, server) {
 
 		buffCRC = BuffCRC::JEDI_FORCE_SPEED_2;
-
 		overrideableCRCs.add(BuffCRC::JEDI_FORCE_SPEED_1);
-
 		skillMods.put("combat_haste", 25);
 	}
 

@@ -58,6 +58,7 @@
 #include "server/zone/objects/tangible/components/Rarelootcrate2MenuComponent.h"
 #include "server/zone/objects/tangible/components/Rarelootcrate3MenuComponent.h"
 #include "server/zone/objects/tangible/components/DotpackMenuComponent.h"
+#include "server/zone/objects/tangible/components/EventpackMenuComponent.h"
 #include "server/zone/objects/tangible/components/ContrabandMenuComponent.h"
 #include "server/zone/objects/tangible/components/DarkJediMenuComponent.h"
 #include "server/zone/objects/tangible/components/LightJediMenuComponent.h"
@@ -238,6 +239,7 @@ ComponentManager::ComponentManager() {
 	components.put("Rarelootcrate2MenuComponent", new Rarelootcrate2MenuComponent());
 	components.put("Rarelootcrate3MenuComponent", new Rarelootcrate3MenuComponent());
 	components.put("DotpackMenuComponent", new DotpackMenuComponent());
+	components.put("EventpackMenuComponent", new EventpackMenuComponent());
 	components.put("WorldMenuComponent", new WorldMenuComponent());
 	components.put("EventMenuComponent", new EventMenuComponent());
 	components.put("HeroicMenuComponent", new HeroicMenuComponent());
