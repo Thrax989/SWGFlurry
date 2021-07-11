@@ -158,9 +158,9 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 			"Light Jedi FRS Unlock (Fix For Broken Light FRS Members)", "frs_light_side",
 			"Dark Jedi FRS Unlock (Fix For Broken Dark FRS Members)", "frs_dark_side",
 		   },
-		 	"Unlock Jedi 100,000,000 Credits",
+		 	"Unlock Jedi 10,000,000 Credits",
 		   {
-			"Unlocking Jedi Requires (50,000,000 Credits)", "unlock_jedi_initiate",
+			"Unlocking Jedi Requires (10,000,000 Credits)", "unlock_jedi_initiate",
 		   },
 		 	"Master Politician",
 		   {
