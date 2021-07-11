@@ -753,7 +753,7 @@ lootableRifleStatMods = {
 	"heavy_rifle_lightning_accuracy",
 	"heavy_rifle_lightning_speed",
 	"intimidate_defense",
-	"knockdown_defense",,
+	"knockdown_defense",
 	"posture_change_down_defense",
 	"posture_change_up_defense",
 	"ranged_defense",
