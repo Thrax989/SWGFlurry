@@ -1709,7 +1709,10 @@ float CombatManager::calculateDamage(CreatureObject* attacker, WeaponObject* wea
 			 	damage *= 0.80; // 20 % PVE
 			}
 		}
-	}	
+	}
+
+	if (attacker->isPlayerCreature() && defender->isPlayerCreature() && !data.isForceAttack())
+		damage *= 0.25;
 
 	if (damage < 1) damage = 1;
 
