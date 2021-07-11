@@ -2012,6 +2012,7 @@ bool MissionManagerImplementation::isBountyValidForPlayer(CreatureObject* player
 
 	uint64 targetId = bounty->getTargetPlayerID();
 	uint64 playerId = player->getObjectID();
+	ManagedReference<BuildingObject*> building = nullptr;
 
 	if (targetId == playerId)
 		return false;
