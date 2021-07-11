@@ -2039,8 +2039,9 @@ bool MissionManagerImplementation::isBountyValidForPlayer(CreatureObject* player
 		if (cell != nullptr){
 			ManagedReference<BuildingObject*> building = cell->getParent().get().castTo<BuildingObject*>();
 			if (building != nullptr){
-				if (building->isPrivateStructure())
+				if (building->isPrivateStructure()) {
 					return false;
+				}
 			}
 		}
 	}
@@ -2059,6 +2060,58 @@ bool MissionManagerImplementation::isBountyValidForPlayer(CreatureObject* player
 
 	if (playerGhost == nullptr)
 		return false;
+
+	float targetX = creature->getWorldPositionX();
+	float targetY = creature->getWorldPositionY();
+	float targetZ= creature->getWorldPositionZ();
+
+	Zone* zone = creature->getZone();
+
+	if (zone != nullptr) {
+
+		PlanetManager* planetManager = zone->getPlanetManager();
+
+		if (planetManager != nullptr) {
+
+			TerrainManager* terrainManager = planetManager->getTerrainManager();
+
+			if (terrainManager != nullptr) {
+
+				float height = terrainManager->getHeight(targetX, targetY);
+				float heightDifference = targetZ - height;
+				if ((heightDifference) > 3.0f && building == nullptr) {
+
+					SortedVector<ManagedReference<QuadTreeEntry* > > nearbyObjects;
+					zone->getInRangeObjects(targetX, targetY, 25, &nearbyObjects, true, false);
+					for(int i = 0; i < nearbyObjects.size(); ++i) {
+						SceneObject* scno = cast<SceneObject*>(nearbyObjects.get(i).get());
+						if (scno != nullptr && scno->isStructureObject()) {
+							String objName = scno->getObjectName()->getStringID();
+							float diffZ = targetZ - scno->getWorldPositionZ();
+							if (objName == "association_hall_general" && ((diffZ> 9.45 && diffZ < 9.55) || (diffZ > 11.0 && diffZ < 11.1))) {
+								return false;
+							}
+							if (objName == "housing_naboo_medium" && diffZ > 6.05 && diffZ < 6.15) {
+								return false;
+							}
+							if (objName == "housing_naboo_large" && diffZ > 16.45 && diffZ < 16.55)  {
+								return false;
+							}
+							if (objName == "housing_tatt_style01_large" && diffZ > 5.05 && diffZ < 5.15)  {
+								return false;
+							}
+							if (objName =="housing_tatt_style01_med" && diffZ > 4.6 && diffZ < 4.7)  {
+								return false;
+							} 
+							if (objName =="player_house_jabbas_sail_barge_n" && diffZ > 20.4)  {
+								return false;
+							} 
+						}
+					}
+				}
+			}
+		}
+	}
 
 	uint64 accountId = playerGhost->getAccountID();
 
