@@ -157,7 +157,7 @@ lok_destroy_missions = {
 			minDifficulty = 55,
 			maxDifficulty = 100,
 			size = 25,
-		}
+		},
 	}
 }
 
