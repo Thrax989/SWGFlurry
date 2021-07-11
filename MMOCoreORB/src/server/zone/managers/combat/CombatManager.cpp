@@ -1326,7 +1326,10 @@ int CombatManager::getArmorReduction(TangibleObject* attacker, WeaponObject* wea
 
 		// Force Absorb
 		if (defender->getSkillMod("force_absorb") > 0 && defender->isPlayerCreature()) {
-			defender->notifyObservers(ObserverEventType::FORCEABSORB, attacker, data.getForceCost());
+                       float absorbDam = damage * 0.4f;
+
+                       defender->notifyObservers(ObserverEventType::FORCEABSORB, attacker, absorbDam);
+                       hitList->setForceAbsorb(absorbDam);
 		}
 	}
 
