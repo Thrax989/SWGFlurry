@@ -163,7 +163,7 @@ dathomir_destroy_missions = {
 			minDifficulty = 90,
 			maxDifficulty = 200,
 			size = 35,
-		}
+		},
 	}
 }
 
