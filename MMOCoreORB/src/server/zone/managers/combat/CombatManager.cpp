@@ -1329,7 +1329,7 @@ int CombatManager::getArmorReduction(TangibleObject* attacker, WeaponObject* wea
                        float absorbDam = damage * 0.4f;
 
                        defender->notifyObservers(ObserverEventType::FORCEABSORB, attacker, absorbDam);
-                       hitList->setForceAbsorb(absorbDam);
+                       //hitList->setForceAbsorb(absorbDam);
 		}
 	}
 
@@ -1833,7 +1833,9 @@ int CombatManager::getHitChance(TangibleObject* attacker, CreatureObject* target
 	if (damage > 0) {
 		ManagedReference<WeaponObject*> targetWeapon = targetCreature->getWeapon();
 		const auto defenseAccMods = targetWeapon->getDefenderSecondaryDefenseModifiers();
-		const String& def = defenseAccMods->get(0); // FIXME: this is hacky, but a lot faster than using contains()
+		const String& def = defenseAccMods->get(0);
+		const String& defjt = defenseAccMods->get(0);
+		const String& deflst = defenseAccMods->get(0);
 
 		// saber block is special because it's just a % chance to block based on the skillmod
 		if (def == "saber_block") {
@@ -1845,7 +1847,7 @@ int CombatManager::getHitChance(TangibleObject* attacker, CreatureObject* target
 		}
 
 		if (defjt == "jedi_toughness") {
-			int saberDef = targetCreature->getSkillMod(defjt);
+			int jtDef = targetCreature->getSkillMod(defjt);
 			if (targetCreature->isIntimidated())
 				jtDef = jtDef/2;
 			if (!(attacker->isTurret() || weapon->isThrownWeapon()) && ((weapon->isHeavyWeapon() || weapon->isSpecialHeavyWeapon() || (weapon->getAttackType() == SharedWeaponObjectTemplate::RANGEDATTACK)) && ((System::random(100)) < jtDef) && (!targetCreature->isKnockedDown())))				return RICOCHET;
@@ -1853,7 +1855,7 @@ int CombatManager::getHitChance(TangibleObject* attacker, CreatureObject* target
 		}
 
 		if (deflst == "lightsaber_toughness") {
-			int saberDef = targetCreature->getSkillMod(deflst);
+			int lstDef = targetCreature->getSkillMod(deflst);
 			if (targetCreature->isIntimidated())
 				lstDef = lstDef/2;
 			if (!(attacker->isTurret() || weapon->isThrownWeapon()) && ((weapon->isHeavyWeapon() || weapon->isSpecialHeavyWeapon() || (weapon->getAttackType() == SharedWeaponObjectTemplate::RANGEDATTACK)) && ((System::random(100)) < lstDef) && (!targetCreature->isKnockedDown())))				return RICOCHET;
