@@ -3,14 +3,14 @@ dune_kimogila = Creature:new {
 	socialGroup = "kimogila",
 	faction = "",
 	level = 300,
-	chanceHit = 30,
+	chanceHit = 0.95,
 	damageMin = 1900,
-	damageMax = 2500,
-	baseXp = 20000,
-	baseHAM = 250000,
-	baseHAMmax = 350000,
+	damageMax = 3800,
+	baseXp = 10500,
+	baseHAM = 50000,
+	baseHAMmax = 100000,
 	armor = 2,
-	resists = {140,165,115,200,115,115,200,115,115},
+	resists = {140,165,115,200,115,115,200,115,-1},
 	meatType = "meat_carnivore",
 	meatAmount = 1000,
 	hideType = "hide_leathery",
@@ -30,9 +30,7 @@ dune_kimogila = Creature:new {
 	lootGroups = {
 		{
 	        	groups = {
-				{group = "krayt_tissue_rare", chance = 2500000},
 				{group = "krayt_dragon_common", chance = 2000000},
-				{group = "krayt_pearls_flawless", chance = 500000},
 				{group = "kimogila_common", chance = 5000000},
 			},
 			lootChance = 10000000
@@ -42,6 +40,7 @@ dune_kimogila = Creature:new {
 	conversationTemplate = "",
 	attacks = {
 		{"intimidationattack",""},
+		{"creatureareapoison",""},
 		{"creatureareacombo",""}
 	}
 }

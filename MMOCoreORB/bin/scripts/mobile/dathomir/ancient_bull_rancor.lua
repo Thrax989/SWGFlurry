@@ -2,13 +2,13 @@ ancient_bull_rancor = Creature:new {
 	objectName = "@mob/creature_names:ancient_bull_rancor",
 	socialGroup = "rancor",
 	faction = "",
-	level = 98,
+	level = 300,
 	chanceHit = 0.95,
-	damageMin = 620,
-	damageMax = 950,
-	baseXp = 9336,
-	baseHAM = 20000,
-	baseHAMmax = 25000,
+	damageMin = 1900,
+	damageMax = 3800,
+	baseXp = 10500,
+	baseHAM = 50000,
+	baseHAMmax = 100000,
 	armor = 2,
 	resists = {150,165,0,200,200,200,0,0,-1},
 	meatType = "meat_carnivore",
@@ -43,6 +43,7 @@ ancient_bull_rancor = Creature:new {
 	conversationTemplate = "",
 	attacks = {
 		{"creatureareableeding",""},
+		{"creatureareapoison",""},
 		{"creatureareacombo",""}
 	}
 }

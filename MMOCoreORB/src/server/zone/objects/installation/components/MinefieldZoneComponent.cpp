@@ -17,6 +17,9 @@
 
 void MinefieldZoneComponent::notifyPositionUpdate(SceneObject* sceneObject, QuadTreeEntry* entry) const {
 
+	if(sceneObject->getContainerObjectsSize() == 0 )
+		return;
+
 	ManagedReference<SceneObject*> target = cast<SceneObject*>(entry);
 
 	if(!sceneObject->isMinefield() || target == nullptr){

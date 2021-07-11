@@ -1,4 +1,5 @@
 event_exar = Creature:new {
+  customName = "Spirit of Exar Kun (Dark Lord of the Sith)",
 	socialGroup = "mercenary",
 	faction = "",
 	level = 300,

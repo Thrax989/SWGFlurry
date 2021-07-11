@@ -86,6 +86,15 @@ function holo_exchange_convo_handler:getNextConversationScreen(conversationTempl
 	            DeleteItems = 10
 		    nextConversationScreen = conversation:getScreen("end")
 		    creature:sendSystemMessage("Dark Holocron.")
+        
+	     elseif (optionLink == "3" and itemCounter < 10) then            
+	            nextConversationScreen = conversation:getScreen("insufficient_item")
+	            creature:sendSystemMessage("You have insufficient items")
+	     elseif (optionLink == "3" and itemCounter >= 10) then
+	            local pItem = giveItem(pInventory, "object/tangible/collection/deathtrooper_epsilon_antidote_kit_01.iff", -1)
+	            DeleteItems = 10
+		    nextConversationScreen = conversation:getScreen("end")
+		    creature:sendSystemMessage("Dot Removal Pack.")        
 
 
           	end

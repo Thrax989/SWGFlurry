@@ -113,8 +113,8 @@ includeFile("custom_screenplays/taanab/taanab_great_herd.lua")
 includeFile("custom_screenplays/taanab/taanab_hex_farms.lua")
 includeFile("custom_screenplays/taanab/taanab_mine.lua")
 includeFile("custom_screenplays/taanab/taanab_pandath.lua")
---includeFile("custom_screenplays/taanab/taanab_starhunterstation.lua")
-includeFile("custom_screenplays/taanab/taanab_starhunterstation_event.lua") --enabled for 4th of July event
+includeFile("custom_screenplays/taanab/taanab_starhunterstation.lua")
+--includeFile("custom_screenplays/taanab/taanab_starhunterstation_event.lua") --enabled for 4th of July event
 includeFile("custom_screenplays/taanab/taanab_static_spawns.lua")
 
 --Talus

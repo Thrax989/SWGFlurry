@@ -12,13 +12,13 @@ function villageSivarraPhase4ConvoHandler:getInitialScreen(pPlayer, pNpc, pConvT
 		return convoTemplate:getScreen("intro_not_eligible")
 	elseif (QuestManager.hasCompletedQuest(pPlayer, QuestManager.quests.FS_COMBAT_HEALING_FINISH)) then
 		return convoTemplate:getScreen("intro_completed_quest")
-	elseif ((QuestManager.hasActiveQuest(pPlayer, QuestManager.quests.FS_COMBAT_HEALING_1) and healCount < 50) or (QuestManager.hasActiveQuest(pPlayer, QuestManager.quests.FS_COMBAT_HEALING_2) and healCount < 100)) then
+	elseif ((QuestManager.hasActiveQuest(pPlayer, QuestManager.quests.FS_COMBAT_HEALING_1) and healCount < 5) or (QuestManager.hasActiveQuest(pPlayer, QuestManager.quests.FS_COMBAT_HEALING_2) and healCount < 10)) then
 		return convoTemplate:getScreen("intro_in_progress")
 	elseif (pInventory == nil or SceneObject(pInventory):isContainerFullRecursive()) then
 		return convoTemplate:getScreen("intro_full_inventory")
-	elseif (QuestManager.hasActiveQuest(pPlayer, QuestManager.quests.FS_COMBAT_HEALING_2) and healCount >= 100) then
+	elseif (QuestManager.hasActiveQuest(pPlayer, QuestManager.quests.FS_COMBAT_HEALING_2) and healCount >= 10) then
 		return convoTemplate:getScreen("intro_give_second_set_reward")
-	elseif (QuestManager.hasActiveQuest(pPlayer, QuestManager.quests.FS_COMBAT_HEALING_1) and healCount >= 50) then
+	elseif (QuestManager.hasActiveQuest(pPlayer, QuestManager.quests.FS_COMBAT_HEALING_1) and healCount >= 5) then
 		return convoTemplate:getScreen("intro_give_first_set_reward")
 	elseif (not CreatureObject(pPlayer):hasSkill("science_medic_novice")) then
 		return convoTemplate:getScreen("intro_has_no_medic")

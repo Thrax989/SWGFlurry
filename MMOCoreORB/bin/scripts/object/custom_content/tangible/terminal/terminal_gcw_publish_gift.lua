@@ -91,14 +91,15 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 			"Kaadara Shuttleport (5,000 Credits)", "kaadar_shuttleport_travel",
 			"Kaadara Starport (5,000 Credits)", "kaadara_starport_travel",
 			"Keren Shuttleport (5,000 Credits)", "keren_shuttleport_travel",
-			"Keren Shuttleport South (5,000 Credits)", "karen_shuttleport_south_travel",
+			"Keren Shuttleport South (5,000 Credits)", "keren_shuttleport_south_travel",
 			"Keren Starport (5,000 Credits)", "keren_starport_travel",
-			"Moenia Starport (5,000 Credits)", "moemia_starport_travel",
+			"Moenia Starport (5,000 Credits)", "moenia_starport_travel",
 			"The Lake Retreat Shuttleport (5,000 Credits)", "the_lake_retreat_shuttleport_travel",
 			"Theed Shuttleport A (5,000 Credits)", "theed_shuttleport_a_travel",
 			"Theed Shuttleport B (5,000 Credits)", "theed_shuttleport_b_travel",
 			"Theed Shuttleport C (5,000 Credits)", "theed_shuttleport_c_travel",
 			"Theed Starport (5,000 Credits)", "theed_starport_travel",
+			"Moenia Shuttleport (5,000 Credits)", "moenia_shuttleport_travel",
 		   },
 		 	"Rori",
 		   {
@@ -118,6 +119,7 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 			"Talus Dearic Starport (5,000 Credits)", "talus_dearic_starport_travel",
 			"Talus Nashal Shuttleport (5,000 Credits)", "talus_nashal_shuttleport_travel",
 			"Talus Imperial Outpost (5,000 Credits)", "talus_imperial_outpost_travel",
+			"Talus Nashal Starport (5,000 Credits)", "talus_nashal_starport_travel",
 
 		   },
 		 	"Tatooine",
@@ -133,11 +135,13 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 			"Mos Espa Shuttle South (5,000 Credits)", "mos_espa_shuttleport_south_travel",
 			"Mos Espa Shuttle West (5,000 Credits)", "mos_espa_shuttleport_west_travel",
 			"Mos Espa Starport (5,000 Credits)", "mos_espa_starport_travel",
+			"Mos Eisley Starport (5,000 Credits)", "mos_eisley_starport_travel",
 		   },
 		 	"Yavin4",
 		   {
 			"Yavin IV Imperial Outpost (5,000 Credits)", "yavin_iv_imperial_outpost_travel",
 			"Yavin IV Labor Outpost (5,000 Credits)", "yavin_iv_labor_outpost_travel",
+			"Yavin IV Mining Outpost (5,000 Credits)", "yavin_iv_mining_outpost_travel",
 		   },
 		 	"Endor",
 		   {
@@ -153,6 +157,10 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 		   {
 			"Light Jedi FRS Unlock (Fix For Broken Light FRS Members)", "frs_light_side",
 			"Dark Jedi FRS Unlock (Fix For Broken Dark FRS Members)", "frs_dark_side",
+		   },
+		 	"Unlock Jedi 10,000,000 Credits",
+		   {
+			"Unlocking Jedi Requires (10,000,000 Credits)", "unlock_jedi_initiate",
 		   },
 		 	"Master Politician",
 		   {
@@ -200,7 +208,9 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
            	--"Intas Minor (5,000 Credits)", "pc_intas_travel", 
             "Lafayette (5,000 Credits)", "pc_lafayette_travel",
             "Avalon Prime (5,000 Credits)", "pc_avalon_travel",
-	    "Flurrys Haven (5,000 Credits)", "pc_flurrys haven_travel"		
+	    "Flurrys Haven (5,000 Credits)", "pc_flurrys haven_travel",
+	    "Sanitarium (5,000 Credits)", "pc_sanitarium_travel",
+	    "Cry More Noobs (5,000 Credits)", "pc_crymorenoobs_travel"
           },
             "Dantooine",
           {
@@ -234,7 +244,7 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
           {
            		 --"Asgard (5,000 Credits)", "pc_asgard_travel",
 			"Lost City (5,000 Credits)", "pc_lost city_travel",
-			"Somov'Rit (5,000 Credits)", "pc_somov city_travel"				
+			--"Somov'Rit (5,000 Credits)", "pc_somov city_travel"				
           },
             "Talus",
           {
@@ -246,7 +256,8 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
           {
       		--"Crimson Thorn (5,000 Credits)", "pc_crimson_travel",
 			--"Binary (5,000 Credits)", "pc_binary_travel",
-			--"Serenity (5,000 Credits)", "pc_serenity_travel"
+			--"Serenity (5,000 Credits)", "pc_serenity_travel",
+			"New Justice (5,000 Credits)", "pc_newjustice_travel"
           },
             "Yavin4",
           {
@@ -263,7 +274,7 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
             "Hoth",
           {
             "Indestine (5,000 Credits)", "pc_indestine_travel",
-            "REBS of HOTH (5,000 Credits)", "pc_rebs_travel"
+            --"REBS of HOTH (5,000 Credits)", "pc_rebs_travel"
           },
 
             "Mandalore",

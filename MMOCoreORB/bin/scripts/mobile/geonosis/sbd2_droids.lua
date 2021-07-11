@@ -25,7 +25,7 @@ sbd2_droids = Creature:new {
 	optionsBitmask = AIENABLED,
 	diet = NONE,
 	scale = 1.1,
-	templates = {"object/mobile/bomarr_monk_spider_droid_greeter.iff"},
+	templates = {"object/mobile/ep3/ep3_clone_relics_super_battle_droid_01.iff"},
 	lootGroups = {
 		{
 			groups = {
@@ -46,13 +46,14 @@ sbd2_droids = Creature:new {
 			},
 			lootChance = 10000000
 		},
- 		{
-			groups = {
-				{group = "death_watch_bunker_ingredient_protective", chance = 5000000},
- 				{group = "death_watch_bunker_ingredient_binary", chance = 5000000},
-			},
-			lootChance = 500000
-		},    
+-- PLC's and BL's are loots are reserved for mandolorain npcs only, either place SBD on Mandalore, or change the loot to something other than. 
+-- 		{
+--			groups = {
+--				{group = "death_watch_bunker_ingredient_protective", chance = 5000000},
+-- 				{group = "death_watch_bunker_ingredient_binary", chance = 5000000},
+--			},
+--			lootChance = 500000
+--		},      
 		{
 			groups = {
 				{group = "tierone", chance = 1500000},

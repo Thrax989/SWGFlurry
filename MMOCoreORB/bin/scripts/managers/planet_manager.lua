@@ -54,7 +54,7 @@ starportLandedTime = 240
 
 
 corellia = {
-	weatherEnabled = 1,
+	weatherEnabled = 0,
 	gcwEnabled = 1,
 
 	outpostRegionNames = { },
@@ -102,7 +102,7 @@ corellia = {
 }
 
 coruscant = {
-  weatherEnabled = 1,
+  weatherEnabled = 0,
   gcwEnabled = 1,
   
   planetTravelPoints = {
@@ -122,7 +122,7 @@ coruscant = {
 }
 
 chandrila = {
-  weatherEnabled = 1,
+  weatherEnabled = 0,
   gcwEnabled = 1,
   
   planetTravelPoints = {
@@ -139,7 +139,7 @@ chandrila = {
 }
 
 dantooine = {
-	weatherEnabled = 1,
+	weatherEnabled = 0,
 	gcwEnabled = 1,
 
 	outpostRegionNames = {
@@ -180,7 +180,7 @@ dantooine = {
 }
 
 dathomir = {
-	weatherEnabled = 1,
+	weatherEnabled = 0,
 	gcwEnabled = 1,
 
 	outpostRegionNames = { },
@@ -268,7 +268,7 @@ dungeon2 = {
 }
 
 endor = {
-	weatherEnabled = 1,
+	weatherEnabled = 0,
 	gcwEnabled = 1,
 
 	outpostRegionNames = {
@@ -310,7 +310,7 @@ endor = {
 }
 
 geonosis = {
-	weatherEnabled = 1,
+	weatherEnabled = 0,
 	gcwEnabled = 1,
 
 	outpostRegionNames = { },
@@ -331,7 +331,7 @@ geonosis = {
 }
 
 concordia = {
-	weatherEnabled = 1,
+	weatherEnabled = 0,
 	gcwEnabled = 1,
 
 	outpostRegionNames = { },
@@ -352,7 +352,7 @@ concordia = {
 }
 
 concorddawn = {
-	weatherEnabled = 1,
+	weatherEnabled = 0,
 	gcwEnabled = 1,
 
 	outpostRegionNames = { },
@@ -373,7 +373,7 @@ concorddawn = {
 }
 
 hoth = {
-	weatherEnabled = 1,
+	weatherEnabled = 0,
 	gcwEnabled = 1,
 
 	outpostRegionNames = { },
@@ -394,7 +394,7 @@ hoth = {
 }
 
 hutta = {
-  weatherEnabled = 1,
+  weatherEnabled = 0,
   gcwEnabled = 1,
   
   planetTravelPoints = {
@@ -410,7 +410,7 @@ hutta = {
 }
 
 jakku = {
-  weatherEnabled = 1,
+  weatherEnabled = 0,
   gcwEnabled = 1,
 
   planetTravelPoints = {
@@ -426,7 +426,7 @@ jakku = {
 }
 
 kaas = {
-  weatherEnabled = 1,
+  weatherEnabled = 0,
   gcwEnabled = 1,
   
   planetTravelPoints = {
@@ -442,7 +442,7 @@ kaas = {
 }
 
 kashyyyk = {
-	weatherEnabled = 1,
+	weatherEnabled = 0,
 	gcwEnabled = 1,
 
 	outpostRegionNames = { },
@@ -463,7 +463,7 @@ kashyyyk = {
 }
 
 korriban = {
-  weatherEnabled = 1,
+  weatherEnabled = 0,
   gcwEnabled = 1,
   
   planetTravelPoints = {
@@ -479,7 +479,7 @@ korriban = {
 }
 
 lok = {
-	weatherEnabled = 1,
+	weatherEnabled = 0,
 	gcwEnabled = 1,
 
 	outpostRegionNames = {
@@ -518,7 +518,7 @@ lok = {
 
 mandalore = {
 
-	weatherEnabled = 1,
+	weatherEnabled = 0,
 	gcwEnabled = 1,
 
 	outpostRegionNames = { },
@@ -542,8 +542,8 @@ mandalore = {
 }
 
 mustafar = {
-	weatherEnabled = 1,
-	gcwEnabled = 0,
+	weatherEnabled = 0,
+	gcwEnabled = 1,
 
 	outpostRegionNames = { },
 
@@ -564,7 +564,7 @@ mustafar = {
 }
 
 naboo = {
-	weatherEnabled = 1,
+	weatherEnabled = 0,
 	gcwEnabled = 1,
 
 	outpostRegionNames = { },
@@ -625,7 +625,7 @@ naboo = {
 }
 
 rori = {
-	weatherEnabled = 1,
+	weatherEnabled = 0,
 	gcwEnabled = 1,
 
 	outpostRegionNames = {
@@ -705,7 +705,7 @@ rori = {
 }
 
 talus = {
-	weatherEnabled = 1,
+	weatherEnabled = 0,
 	gcwEnabled = 1,
 
 	outpostRegionNames = {
@@ -789,7 +789,7 @@ talus = {
 }
 
 taanab = {
-	weatherEnabled = 1,
+	weatherEnabled = 0,
 	gcwEnabled = 1,
 
 	outpostRegionNames = { },
@@ -811,7 +811,7 @@ taanab = {
 }
 
 tatooine = {
-	weatherEnabled = 1,
+	weatherEnabled = 0,
 	gcwEnabled = 1,
 
 	outpostRegionNames = { },
@@ -882,7 +882,7 @@ tutorial = {
 
 
 yavin4 = {
-	weatherEnabled = 1,
+	weatherEnabled = 0,
 	gcwEnabled = 1,
 
 	outpostRegionNames = {

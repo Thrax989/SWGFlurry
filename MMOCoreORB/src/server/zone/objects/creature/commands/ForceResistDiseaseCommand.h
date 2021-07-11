@@ -13,7 +13,7 @@ public:
 
 		buffCRC = BuffCRC::JEDI_RESIST_DISEASE;
 
-		skillMods.put("resistance_disease", 25);
+		skillMods.put("resistance_disease", 50);
 		skillMods.put("absorption_disease", 25);
 
 	}

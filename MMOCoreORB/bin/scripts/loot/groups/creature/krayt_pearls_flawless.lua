@@ -5,8 +5,8 @@ krayt_pearls_flawless = {
 	minimumLevel = 0,
 	maximumLevel = -1,
 	lootItems = {
-		{itemTemplate = "krayt_dragon_pearl_premium", weight = 7500000},
-    {itemTemplate = "krayt_dragon_pearl_flawless", weight = 2500000}
+		{itemTemplate = "krayt_dragon_pearl_premium", weight = 4000000},
+    {itemTemplate = "krayt_dragon_pearl_flawless", weight = 6000000}
 	}
 }
 
