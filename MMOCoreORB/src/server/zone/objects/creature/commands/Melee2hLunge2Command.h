@@ -23,6 +23,9 @@ public:
 		if (!checkInvalidLocomotions(creature))
 			return INVALIDLOCOMOTION;
 
+		Reference<SceneObject*> object = server->getZoneServer()->getObject(target);
+		ManagedReference<CreatureObject*> creatureTarget = cast<CreatureObject*>( object.get());
+
 		if (creatureTarget == nullptr)
 			return GENERALERROR;
 
