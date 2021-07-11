@@ -1841,6 +1841,22 @@ int CombatManager::getHitChance(TangibleObject* attacker, CreatureObject* target
 			else return HIT;
 		}
 
+		if (defjt == "jedi_toughness") {
+			int saberDef = targetCreature->getSkillMod(defjt);
+			if (targetCreature->isIntimidated())
+				jtDef = jtDef/2;
+			if (!(attacker->isTurret() || weapon->isThrownWeapon()) && ((weapon->isHeavyWeapon() || weapon->isSpecialHeavyWeapon() || (weapon->getAttackType() == SharedWeaponObjectTemplate::RANGEDATTACK)) && ((System::random(100)) < jtDef) && (!targetCreature->isKnockedDown())))				return RICOCHET;
+			else return HIT;
+		}
+
+		if (deflst == "lightsaber_toughness") {
+			int saberDef = targetCreature->getSkillMod(deflst);
+			if (targetCreature->isIntimidated())
+				lstDef = lstDef/2;
+			if (!(attacker->isTurret() || weapon->isThrownWeapon()) && ((weapon->isHeavyWeapon() || weapon->isSpecialHeavyWeapon() || (weapon->getAttackType() == SharedWeaponObjectTemplate::RANGEDATTACK)) && ((System::random(100)) < lstDef) && (!targetCreature->isKnockedDown())))				return RICOCHET;
+			else return HIT;
+		}
+
 		targetDefense = getDefenderSecondaryDefenseModifier(targetCreature);
 
 		//info("Secondary defenses are " + String::valueOf(targetDefense), true);
