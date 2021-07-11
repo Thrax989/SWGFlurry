@@ -20,6 +20,7 @@ protected:
 	float minDamage;
 	float maxDamage;
 	int damageType;
+	int forceCost;
 	float damageMultiplier;
 	float healthDamageMultiplier;
 	float actionDamageMultiplier;
@@ -179,6 +180,10 @@ public:
 
 	bool isForceAttack() const {
 		return forceAttack;
+	}
+
+	int getForceCost() const {
+		return forceCost;
 	}
 
 	float getFrsLightMinDamageModifier() const {
