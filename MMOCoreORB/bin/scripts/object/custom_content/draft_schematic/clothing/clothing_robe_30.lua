@@ -33,7 +33,7 @@ object_draft_schematic_clothing_clothing_robe_30 = object_draft_schematic_clothi
              },
 		
 	skillMods = {
-	}
+	},
 }
 
 ObjectTemplates:addTemplate(object_draft_schematic_clothing_clothing_robe_30, "object/draft_schematic/clothing/clothing_robe_30.iff")
