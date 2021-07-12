@@ -26,43 +26,7 @@ geonosis_destroy_missions = {
 			maxDifficulty = 150,
 			size = 25,
 		},
-		{
-			lairTemplateName = "geonosis_sbd1_droid_neutral",
-			minDifficulty = 1,
-			maxDifficulty = 150,
-			size = 25,
-		},
-		{
-			lairTemplateName = "geonosis_sbd2_droid_neutral",
-			minDifficulty = 1,
-			maxDifficulty = 150,
-			size = 25,
-		},
-		{
-			lairTemplateName = "geonosis_sbd3_droid_neutral",
-			minDifficulty = 1,
-			maxDifficulty = 150,
-			size = 25,
-		},
-		{
-			lairTemplateName = "geonosis_sbd4_droid_neutral",
-			minDifficulty = 1,
-			maxDifficulty = 150,
-			size = 25,
-		},
-		{
-			lairTemplateName = "geonosis_sbd5_droid_neutral",
-			minDifficulty = 1,
-			maxDifficulty = 150,
-			size = 25,
-		},
-		{
-			lairTemplateName = "geonosis_sbd6_droid_neutral",
-			minDifficulty = 1,
-			maxDifficulty = 150,
-			size = 25,
-		},
-		{
+				{
 			lairTemplateName = "geonosis_security1_droid_neutral",
 			minDifficulty = 1,
 			maxDifficulty = 150,
