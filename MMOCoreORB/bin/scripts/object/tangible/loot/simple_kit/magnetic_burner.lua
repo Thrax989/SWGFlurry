@@ -42,7 +42,7 @@
 
 
 object_tangible_loot_simple_kit_magnetic_burner = object_tangible_loot_simple_kit_shared_magnetic_burner:new {
-
+          objectMenuComponent = "ScrapMenuComponent",
 }
 
 ObjectTemplates:addTemplate(object_tangible_loot_simple_kit_magnetic_burner, "object/tangible/loot/simple_kit/magnetic_burner.iff")
