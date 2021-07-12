@@ -100,7 +100,7 @@ geonosis_destroy_missions = {
 		},
     		{
 			lairTemplateName = "geonosis_elite_geonosian_warrior_neutral",
-			minDifficulty = 1,
+			minDifficulty = 25,
 			maxDifficulty = 150,
 			size = 25,
     		},
