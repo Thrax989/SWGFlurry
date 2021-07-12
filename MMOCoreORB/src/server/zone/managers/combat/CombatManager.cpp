@@ -1835,27 +1835,12 @@ int CombatManager::getHitChance(TangibleObject* attacker, CreatureObject* target
 		const String& deflst = defenseAccMods->get(0);
 
 		// saber block is special because it's just a % chance to block based on the skillmod
-		if (def == "saber_block") {
+		if (def == "saber_block" || def == "jedi_toughness" || def == "lightsaber_toughness") {
 			int saberDef = targetCreature->getSkillMod(def);
 			if (targetCreature->isIntimidated())
 				saberDef = saberDef/2;
-			if (!(attacker->isTurret() || weapon->isThrownWeapon()) && ((weapon->isHeavyWeapon() || weapon->isSpecialHeavyWeapon() || (weapon->getAttackType() == SharedWeaponObjectTemplate::RANGEDATTACK)) && ((System::random(100)) < saberDef) && (!targetCreature->isKnockedDown())))				return RICOCHET;
-			else return HIT;
-		}
-
-		if (defjt == "jedi_toughness") {
-			int jtDef = targetCreature->getSkillMod(defjt);
-			if (targetCreature->isIntimidated())
-				jtDef = jtDef/2;
-			if (!(attacker->isTurret() || weapon->isThrownWeapon()) && ((weapon->isHeavyWeapon() || weapon->isSpecialHeavyWeapon() || (weapon->getAttackType() == SharedWeaponObjectTemplate::RANGEDATTACK)) && ((System::random(100)) < jtDef) && (!targetCreature->isKnockedDown())))				return RICOCHET;
-			else return HIT;
-		}
-
-		if (deflst == "lightsaber_toughness") {
-			int lstDef = targetCreature->getSkillMod(deflst);
-			if (targetCreature->isIntimidated())
-				lstDef = lstDef/2;
-			if (!(attacker->isTurret() || weapon->isThrownWeapon()) && ((weapon->isHeavyWeapon() || weapon->isSpecialHeavyWeapon() || (weapon->getAttackType() == SharedWeaponObjectTemplate::RANGEDATTACK)) && ((System::random(100)) < lstDef) && (!targetCreature->isKnockedDown())))				return RICOCHET;
+			if (!(attacker->isTurret() || weapon->isThrownWeapon()) && ((weapon->isHeavyWeapon() || weapon->isSpecialHeavyWeapon() || (weapon->getAttackType() == SharedWeaponObjectTemplate::RANGEDATTACK)) && ((System::random(100)) < targetCreature->getSkillMod(def))))
+				return RICOCHET;
 			else return HIT;
 		}
 
