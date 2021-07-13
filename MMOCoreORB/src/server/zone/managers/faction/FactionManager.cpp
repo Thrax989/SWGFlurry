@@ -91,6 +91,267 @@ FactionMap* FactionManager::getFactionMap() {
 	return &factionMap;
 }
 
+void FactionManager::awardForceRankPoints(TangibleObject* killer, CreatureObject* destructedObject) {
+	if (killer->isPlayerCreature() && destructedObject->isPlayerCreature() && destructedObject->hasSkill("force_title_jedi_rank_02")) {
+		CreatureObject* killerCreature = cast<CreatureObject*>(killer);
+		ManagedReference<PlayerObject*> killerGhost = killerCreature->getPlayerObject();
+
+		ManagedReference<PlayerObject*> killedGhost = destructedObject->getPlayerObject();
+		int rankModD = destructedObject->getSkillMod("force_manipulation_dark");
+		int rankModL = destructedObject->getSkillMod("force_manipulation_light");
+		int rankXp = killedGhost->getExperience("force_rank_xp");
+		int rankXpMultiplier = 1;
+
+		if (rankModD > rankModL)
+			rankXpMultiplier = (rankModD * .25);
+		if (rankModL > rankModD)
+			rankXpMultiplier = (rankModL * .25);
+
+ //BOOSTED FOR XP WEEK
+
+    int frsXpGain = rankXpMultiplier * 2000;
+    int frsXpLoss = rankXpMultiplier * -1000;
+
+    bool lightJediInKillingGroup = false;
+    bool darkJediInKillingGroup = false;
+    int groupMembersInRange = 1; // includes the original killer
+
+    // set the flag based on whether or not the killer is a light / dark jedi
+    if ( killerCreature->hasSkill("force_rank_light_novice") ) {
+      lightJediInKillingGroup |= true;
+    }
+    else if ( killerCreature->hasSkill("force_rank_dark_novice") ) {
+      darkJediInKillingGroup |= true;
+    }
+
+    // only award frs xp to group members within 256m
+    const float frsXpRange = 256.0f;
+   
+    // if the killer is in a group we need to determine how many group members are in range
+    // as that will determine the amount of frs xp awarded.  We also need to track if there
+    // are any light / dark jedi in the group.
+    if ( killerCreature->isGrouped() )
+    {
+      ManagedReference<GroupObject*> group = killerCreature->getGroup();
+      int groupSize = group->getGroupSize();
+
+      // iterate over the group members
+      for (int i = 0; i < groupSize; i++) {
+        ManagedReference<CreatureObject*> groupMember = group->getGroupMember(i);
+
+        // skip the killer passed in
+        if (killerCreature->getObjectID() == groupMember->getObjectID())
+          continue;
+
+        // if the group member is in range...
+        if (killerCreature->isInRange(groupMember, frsXpRange)) {
+          CreatureObject* groupMemberCreature = dynamic_cast<CreatureObject*>(groupMember.get());
+
+          if ( groupMemberCreature == NULL )
+            continue;
+
+          // increment group counter
+          groupMembersInRange++;
+
+          // flag based on frs
+          if ( groupMemberCreature->hasSkill("force_rank_light_novice") ) {
+            lightJediInKillingGroup |= true;
+          }
+          else if ( groupMemberCreature->hasSkill("force_rank_dark_novice") ) {
+            darkJediInKillingGroup |= true;
+          }
+        }
+      }
+    }
+
+    // For now, the killing group needs to contain an opposing jedi
+    
+    const bool bValidFrsKill = ((destructedObject->hasSkill("force_rank_dark_novice") && lightJediInKillingGroup) ||
+                                (destructedObject->hasSkill("force_rank_light_novice") && darkJediInKillingGroup));
+
+    if (!bValidFrsKill)
+    {
+      return;
+    }
+
+    const int32 frsEventID = trackFrsKillEvent(destructedObject);
+
+    // determine the amount of frs xp to award..
+    const int frsXpToAward = frsXpGain / groupMembersInRange;
+    const String fightClubMessage = "Fight Clubbing is not tolerated within the FRS.  You have been penalized.";
+
+    // if the dead jedi is a dark jedi, and there where light jedi involved in the kill...
+    if ( destructedObject->hasSkill("force_rank_dark_novice") && lightJediInKillingGroup ) {
+
+      // Handle the killer themselves
+      {
+        const bool isOpposingJedi = killerCreature->hasSkill("force_rank_light_novice");
+        if (isOpposingJedi)
+        {
+          const bool isFightClubbing = killerGhost->getAccountID() == killedGhost->getAccountID();
+          const int actualXpAward = isFightClubbing ? -frsXpGain : frsXpToAward;
+
+          const int fcRankMod = killerCreature->getSkillMod("force_manipulation_light");
+          const int fcRankXp = killerGhost->getExperience("force_rank_xp");
+
+          // award xp to killer jedi
+          killerGhost->addExperience("force_rank_xp", actualXpAward);
+          trackFrsXpChange(frsEventID, killerCreature, actualXpAward);
+
+          trackFrsKillParticipant(frsEventID, killerCreature);
+
+          if (isFightClubbing)
+          {
+            killerCreature->sendSystemMessage(fightClubMessage);
+          }
+        }
+        else
+        {
+          trackFrsKillParticipant(frsEventID, killerCreature);
+        }
+      }
+
+      // iterate group and award xp to any valid group members
+      if ( killerCreature->isGrouped() )
+      {
+        ManagedReference<GroupObject*> group = killerCreature->getGroup();
+        int groupSize = group->getGroupSize();
+
+        // iterate over the group members
+        for (int i = 0; i < groupSize; i++) {
+          ManagedReference<CreatureObject*> groupMember = group->getGroupMember(i);
+
+          // skip the killer passed in
+          if (killerCreature->getObjectID() == groupMember->getObjectID())
+            continue;
+
+          // if the group member is in range...
+          if (killerCreature->isInRange(groupMember, frsXpRange)) {
+            CreatureObject* groupMemberCreature = dynamic_cast<CreatureObject*>(groupMember.get());
+
+            if (groupMemberCreature == NULL )
+              continue;
+
+            if (!groupMemberCreature->isPlayerCreature())
+              continue;
+
+            trackFrsKillParticipant(frsEventID, groupMemberCreature);
+
+            ManagedReference<PlayerObject*> groupMemberGhost = groupMemberCreature->getPlayerObject();
+            const bool isOpposingJedi = groupMemberCreature->hasSkill("force_rank_light_novice");
+
+            // only light jedi are valid for a dark jedi kill
+            if (isOpposingJedi)
+            {
+              const bool isFightClubbing = groupMemberGhost->getAccountID() == killedGhost->getAccountID();
+              const int actualXpAward = isFightClubbing ? -frsXpGain : frsXpToAward;
+
+              const int fcRankMod = killerCreature->getSkillMod("force_manipulation_light");
+              const int fcRankXp = killerGhost->getExperience("force_rank_xp");
+
+              groupMemberGhost->addExperience("force_rank_xp", actualXpAward);
+              trackFrsXpChange(frsEventID, groupMemberCreature, actualXpAward);
+
+              if (isFightClubbing)
+              {
+                killerCreature->sendSystemMessage(fightClubMessage);
+              }
+            }
+          }
+        }
+      }
+
+      // remove xp from the dead dark jedi
+      killedGhost->addExperience("force_rank_xp", frsXpLoss, true);
+      trackFrsXpChange(frsEventID, destructedObject, frsXpLoss);
+
+		} else if ( destructedObject->hasSkill("force_rank_light_novice") && darkJediInKillingGroup ) {
+
+      // Handle the killer themselves
+      {
+        const bool isOpposingJedi = killerCreature->hasSkill("force_rank_dark_novice");
+        if (isOpposingJedi)
+        {
+          const bool isFightClubbing = killerGhost->getAccountID() == killedGhost->getAccountID();
+          const int actualXpAward = isFightClubbing ? -frsXpGain : frsXpToAward;
+
+          const int fcRankMod = killerCreature->getSkillMod("force_manipulation_dark");
+          const int fcRankXp = killerGhost->getExperience("force_rank_xp");
+
+          // award xp to killer jedi
+          killerGhost->addExperience("force_rank_xp", actualXpAward);
+          trackFrsXpChange(frsEventID, killerCreature, actualXpAward);
+
+          trackFrsKillParticipant(frsEventID, killerCreature);
+
+          if (isFightClubbing)
+          {
+            killerCreature->sendSystemMessage(fightClubMessage);
+          }
+        }
+        else 
+        {
+          trackFrsKillParticipant(frsEventID, killerCreature);
+        }
+      }
+
+      // iterate group and award xp to any valid group members
+      if ( killerCreature->isGrouped() )
+      {
+        ManagedReference<GroupObject*> group = killerCreature->getGroup();
+        int groupSize = group->getGroupSize();
+
+        // iterate over the group members
+        for (int i = 0; i < groupSize; i++) {
+          ManagedReference<CreatureObject*> groupMember = group->getGroupMember(i);
+
+          // skip the killer passed in
+          if (killerCreature->getObjectID() == groupMember->getObjectID())
+            continue;
+
+          // if the group member is in range...
+          if (killerCreature->isInRange(groupMember, frsXpRange)) {
+            CreatureObject* groupMemberCreature = dynamic_cast<CreatureObject*>(groupMember.get());
+
+            if (groupMemberCreature == NULL )
+              continue;
+
+            if (!groupMemberCreature->isPlayerCreature())
+              continue;
+
+            trackFrsKillParticipant(frsEventID, groupMemberCreature);
+
+            ManagedReference<PlayerObject*> groupMemberGhost = groupMemberCreature->getPlayerObject();
+            const bool isOpposingJedi = groupMemberCreature->hasSkill("force_rank_dark_novice");           
+
+            // only light jedi are valid for a dark jedi kill
+            if (isOpposingJedi)
+            {
+              const bool isFightClubbing = groupMemberGhost->getAccountID() == killedGhost->getAccountID();
+              const int actualXpAward = isFightClubbing ? -frsXpGain : frsXpToAward;
+
+              const int fcRankMod = killerCreature->getSkillMod("force_manipulation_dark");
+              const int fcRankXp = killerGhost->getExperience("force_rank_xp");
+
+              groupMemberGhost->addExperience("force_rank_xp", actualXpAward);
+              trackFrsXpChange(frsEventID, groupMemberCreature, actualXpAward);
+
+              if (isFightClubbing)
+              {
+                killerCreature->sendSystemMessage(fightClubMessage);              
+              }
+            }
+          }
+        }
+      }
+
+      // remove xp from the dead light jedi
+      killedGhost->addExperience("force_rank_xp", frsXpLoss, true);
+      trackFrsXpChange(frsEventID, destructedObject, frsXpLoss);
+		}
+	}
+}
+
 void FactionManager::awardFactionStanding(CreatureObject* player, const String& factionName, int level) {
 	if (player == nullptr)
 		return;

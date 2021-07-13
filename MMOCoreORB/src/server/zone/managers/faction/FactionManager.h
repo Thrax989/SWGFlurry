@@ -40,6 +40,8 @@ public:
 
 	void awardPvpFactionPoints(TangibleObject* killer, CreatureObject* destructedObject);
 
+	void awardForceRankPoints(TangibleObject* killer, CreatureObject* destructedObject);
+
 	/**
 	 * Gets a list of enemy factions to the faction passed to the method.
 	 * @param faction The faction to check for enemies.
@@ -71,6 +73,9 @@ public:
 protected:
 	void loadFactionRanks();
 	void loadLuaConfig();
+	int32 trackFrsKillEvent(CreatureObject* killedCreature) const;
+	void trackFrsKillParticipant(int32 frsKillEventID, CreatureObject* participantCreature) const;
+	void trackFrsXpChange(int32 frsKillEventID, CreatureObject* jediCreature, int32 frsXpChange) const;
 };
 
 #endif /* FACTIONMANAGER_H_ */
