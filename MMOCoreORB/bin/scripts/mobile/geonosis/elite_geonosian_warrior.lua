@@ -9,8 +9,8 @@ elite_geonosian_warrior = Creature:new {
 	baseXp = 13500,
 	baseHAM = 60000,
 	baseHAMmax = 120000,
-	armor = 1,
-	resists = {125,135,-1,165,25,125,-1,25,-1},
+	armor = 2,
+	resists = {130,125,130,125,125,130,130,130,140},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -44,9 +44,9 @@ elite_geonosian_warrior = Creature:new {
 		},
 		{
 			groups = {
-				{group = "geonosian_common", chance = 2000000},   
+				{group = "geonosian_common", chance = 10000000},   
 			},
-			lootChance = 10000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
