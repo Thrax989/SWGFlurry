@@ -7,11 +7,12 @@ ring_ranger = {
 	customizationStringNames = {},
 	customizationValues = {},
 	skillMods = {
-		{"camouflage", 25},
 		{"creature_harvesting", 25},
-		{"trapping", 25},
+		{"creature_hit_bonus", 25},
 		{"mask_scent", 25},
-    {"luck", 25},
+		{"camouflage", 25},
+		{"trapping", 25},
+    		{"luck", 25},
 	}
 }
 
