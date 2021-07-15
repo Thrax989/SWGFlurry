@@ -1708,9 +1708,6 @@ float CombatManager::calculateDamage(CreatureObject* attacker, WeaponObject* wea
 		}
 	}
 
-	if (attacker->isPlayerCreature() && defender->isPlayerCreature() && !data.isForceAttack())
-		damage *= 0.25;
-
 	if (damage < 1) damage = 1;
 
 	//info("damage to be dealt is " + String::valueOf(damage), true);
