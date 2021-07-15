@@ -229,6 +229,10 @@ void FactionManager::awardPvpFactionPoints(TangibleObject* killer, CreatureObjec
 					if (groupedCreature != nullptr && groupedCreature->isCreatureObject() && groupedCreature->isInRange(killerCreature, 300.0f) && groupedCreature != killerCreature) {
 					Locker locker(groupedCreature);
 					playerManager->awardExperience(killerCreature, "force_rank_xp", 5000);
+					StringIdChatParameter message("base_player","prose_revoke_xp");
+					message.setDI(-5000);
+					message.setTO("exp_n", "force_rank_xp");
+					killerCreature->sendSystemMessage(message);
 					locker.release();
 						}
 					}
@@ -269,6 +273,10 @@ void FactionManager::awardPvpFactionPoints(TangibleObject* killer, CreatureObjec
 					if (groupedCreature != nullptr && groupedCreature->isCreatureObject() && groupedCreature->isInRange(killerCreature, 300.0f) && groupedCreature != killerCreature) {
 					Locker locker(groupedCreature);
 					playerManager->awardExperience(killerCreature, "force_rank_xp", 5000);
+					StringIdChatParameter message("base_player","prose_revoke_xp");
+					message.setDI(-5000);
+					message.setTO("exp_n", "force_rank_xp");
+					killerCreature->sendSystemMessage(message);
 					locker.release();
 						}
 					}
