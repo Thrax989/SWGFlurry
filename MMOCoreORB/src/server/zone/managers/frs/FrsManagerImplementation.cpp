@@ -1062,6 +1062,18 @@ int FrsManagerImplementation::calculatePvpExperienceChange(CreatureObject* attac
 		PlayerManager* playerManager = attacker->getZoneServer()->getPlayerManager();
 		attacker->playEffect("clienteffect/level_granted.cef", "");
 		playerManager->awardExperience(attacker, "force_rank_xp", 5000, true); // Award FRS XP
+		ManagedReference<GroupObject*> group = attacker->getGroup();
+		if (group != nullptr) {
+			for (int i = 0; i < group->getGroupSize(); i++) {
+			ManagedReference<CreatureObject*> groupedCreature = group->getGroupMember(i);
+			ManagedReference<PlayerManager*> playerManager = attacker->getZoneServer()->getPlayerManager();
+			if (groupedCreature != nullptr && groupedCreature->isCreatureObject() && groupedCreature->isInRange(attacker, 300.0f) && groupedCreature != attacker) {
+			Locker locker(groupedCreature);
+			playerManager->awardExperience(attacker, "force_rank_xp", 5000);
+			locker.release();
+				}
+			}
+		}
 	}
 	return xpChange;
 }
