@@ -221,6 +221,17 @@ void FactionManager::awardPvpFactionPoints(TangibleObject* killer, CreatureObjec
 				StringBuffer zGeneral;
 				zGeneral << "A [Light Jedi] Has Killed " << playerName << " A [Dark Jedi] In The [FRS]";	
 				chatManager->handleGeneralChat(killerCreature, zGeneral.toString());
+				ManagedReference<GroupObject*> group = killerCreature->getGroup();
+				if (group != nullptr) {
+					for (int i = 0; i < group->getGroupSize(); i++) {
+					ManagedReference<CreatureObject*> groupedCreature = group->getGroupMember(i);
+					ManagedReference<PlayerManager*> playerManager = killerCreature->getZoneServer()->getPlayerManager();
+					if (groupedCreature != nullptr && groupedCreature->isCreatureObject() && groupedCreature->isInRange(killerCreature, 300.0f) && groupedCreature != killerCreature) {
+					Locker locker(groupedCreature);
+					playerManager->awardExperience(killerCreature, "force_rank_xp", 5000);
+					locker.release();
+					}
+				}
 			}
 			ghost->getZoneServer()->getChatManager()->broadcastGalaxy(nullptr, zBroadcast.toString());
 		} else if (killer->isImperial() && destructedObject->isRebel()) {
