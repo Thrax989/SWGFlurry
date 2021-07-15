@@ -1831,17 +1831,16 @@ int CombatManager::getHitChance(TangibleObject* attacker, CreatureObject* target
 		ManagedReference<WeaponObject*> targetWeapon = targetCreature->getWeapon();
 		const auto defenseAccMods = targetWeapon->getDefenderSecondaryDefenseModifiers();
 		const String& def = defenseAccMods->get(0);
-		const String& defjt = defenseAccMods->get(0);
-		const String& deflst = defenseAccMods->get(0);
 
 		// saber block is special because it's just a % chance to block based on the skillmod
-		if (def == "saber_block" || def == "jedi_toughness" || def == "lightsaber_toughness") {
+		if (def == "saber_block") {
 			int saberDef = targetCreature->getSkillMod(def);
 			if (targetCreature->isIntimidated())
 				saberDef = saberDef/2;
 			if (!(attacker->isTurret() || weapon->isThrownWeapon()) && ((weapon->isHeavyWeapon() || weapon->isSpecialHeavyWeapon() || (weapon->getAttackType() == SharedWeaponObjectTemplate::RANGEDATTACK)) && ((System::random(100)) < targetCreature->getSkillMod(def))))
 				return RICOCHET;
-			else return HIT;
+			else
+				return HIT;
 		}
 
 		targetDefense = getDefenderSecondaryDefenseModifier(targetCreature);
