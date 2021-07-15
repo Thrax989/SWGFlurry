@@ -137,7 +137,7 @@ void FactionManager::awardForceRankPoints(TangibleObject* killer, CreatureObject
 
       // iterate over the group members
       for (int i = 0; i < groupSize; i++) {
-        ManagedReference<CreatureObject*> groupMember = group->getGroupMember(i);
+        ManagedReference<SceneObject*> groupMember = group->getGroupMember(i);
 
         // skip the killer passed in
         if (killerCreature->getObjectID() == groupMember->getObjectID())
@@ -203,6 +203,7 @@ void FactionManager::awardForceRankPoints(TangibleObject* killer, CreatureObject
           if (isFightClubbing)
           {
             killerCreature->sendSystemMessage(fightClubMessage);
+            locRemoveFrsSkills(fcRankMod, fcRankXp, killerCreature, "light");
           }
         }
         else
@@ -219,7 +220,7 @@ void FactionManager::awardForceRankPoints(TangibleObject* killer, CreatureObject
 
         // iterate over the group members
         for (int i = 0; i < groupSize; i++) {
-          ManagedReference<CreatureObject*> groupMember = group->getGroupMember(i);
+          ManagedReference<SceneObject*> groupMember = group->getGroupMember(i);
 
           // skip the killer passed in
           if (killerCreature->getObjectID() == groupMember->getObjectID())
@@ -255,6 +256,7 @@ void FactionManager::awardForceRankPoints(TangibleObject* killer, CreatureObject
               if (isFightClubbing)
               {
                 killerCreature->sendSystemMessage(fightClubMessage);
+                locRemoveFrsSkills(fcRankMod, fcRankXp, groupMemberCreature, "light");
               }
             }
           }
@@ -264,6 +266,8 @@ void FactionManager::awardForceRankPoints(TangibleObject* killer, CreatureObject
       // remove xp from the dead dark jedi
       killedGhost->addExperience("force_rank_xp", frsXpLoss, true);
       trackFrsXpChange(frsEventID, destructedObject, frsXpLoss);
+
+      locRemoveFrsSkills(rankModD, rankXp, destructedObject, "dark");
 
 		} else if ( destructedObject->hasSkill("force_rank_light_novice") && darkJediInKillingGroup ) {
 
@@ -287,6 +291,7 @@ void FactionManager::awardForceRankPoints(TangibleObject* killer, CreatureObject
           if (isFightClubbing)
           {
             killerCreature->sendSystemMessage(fightClubMessage);
+            locRemoveFrsSkills(fcRankMod, fcRankXp, killerCreature, "dark");
           }
         }
         else 
@@ -303,7 +308,7 @@ void FactionManager::awardForceRankPoints(TangibleObject* killer, CreatureObject
 
         // iterate over the group members
         for (int i = 0; i < groupSize; i++) {
-          ManagedReference<CreatureObject*> groupMember = group->getGroupMember(i);
+          ManagedReference<SceneObject*> groupMember = group->getGroupMember(i);
 
           // skip the killer passed in
           if (killerCreature->getObjectID() == groupMember->getObjectID())
@@ -339,6 +344,7 @@ void FactionManager::awardForceRankPoints(TangibleObject* killer, CreatureObject
               if (isFightClubbing)
               {
                 killerCreature->sendSystemMessage(fightClubMessage);              
+                locRemoveFrsSkills(fcRankMod, fcRankXp, groupMemberCreature, "dark");
               }
             }
           }
@@ -348,6 +354,8 @@ void FactionManager::awardForceRankPoints(TangibleObject* killer, CreatureObject
       // remove xp from the dead light jedi
       killedGhost->addExperience("force_rank_xp", frsXpLoss, true);
       trackFrsXpChange(frsEventID, destructedObject, frsXpLoss);
+
+      locRemoveFrsSkills(rankModL, rankXp, destructedObject, "light");
 		}
 	}
 }
