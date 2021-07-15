@@ -1073,6 +1073,10 @@ int FrsManagerImplementation::calculatePvpExperienceChange(CreatureObject* attac
 			if (groupedCreature != nullptr && groupedCreature->isCreatureObject() && groupedCreature->isInRange(attacker, 300.0f) && groupedCreature != attacker) {
 			Locker locker(groupedCreature);
 			playerManager->awardExperience(attacker, "force_rank_xp", 5000);
+			StringIdChatParameter message("base_player","prose_revoke_xp");
+			message.setDI(-5000);
+			message.setTO("exp_n", "force_rank_xp");
+			attacker->sendSystemMessage(message);
 			locker.release();
 				}
 			}
