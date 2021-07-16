@@ -229,7 +229,7 @@ void FactionManager::awardPvpFactionPoints(TangibleObject* killer, CreatureObjec
 					if (groupedCreature != nullptr && groupedCreature->isCreatureObject() && groupedCreature->isInRange(killerCreature, 300.0f) && groupedCreature != killerCreature) {
 					Locker locker(groupedCreature);
 					playerManager->awardExperience(killerCreature, "force_rank_xp", 5000);
-					StringIdChatParameter message("base_player","prose_revoke_xp");
+					StringIdChatParameter message("base_player","prose_grant_xp");
 					message.setDI(5000);
 					message.setTO("exp_n", "force_rank_xp");
 					killerCreature->sendSystemMessage(message);
@@ -267,18 +267,13 @@ void FactionManager::awardPvpFactionPoints(TangibleObject* killer, CreatureObjec
 				chatManager->handleGeneralChat(killerCreature, zGeneral.toString());
 				ManagedReference<GroupObject*> group = killerCreature->getGroup();
 				if (group != nullptr) {
-					for (int i = 0; i < group->getGroupSize(); i++) {
-					ManagedReference<CreatureObject*> groupedCreature = group->getGroupMember(i);
 					ManagedReference<PlayerManager*> playerManager = killerCreature->getZoneServer()->getPlayerManager();
-					if (groupedCreature != nullptr && groupedCreature->isCreatureObject() && groupedCreature->isInRange(killerCreature, 300.0f) && groupedCreature != killerCreature) {
-					Locker locker(groupedCreature);
-					playerManager->awardExperience(killerCreature, "force_rank_xp", 5000);
-					StringIdChatParameter message("base_player","prose_revoke_xp");
+					if (group != nullptr && group->isCreatureObject() && group->isInRange(killerCreature, 300.0f) && group != killerCreature) {
+					playerManager->awardExperience(group, "force_rank_xp", 5000);
+					StringIdChatParameter message("base_player","prose_grant_xp");
 					message.setDI(5000);
 					message.setTO("exp_n", "force_rank_xp");
-					killerCreature->sendSystemMessage(message);
-					locker.release();
-						}
+					group->sendSystemMessage(message);
 					}
 				}
 			}
