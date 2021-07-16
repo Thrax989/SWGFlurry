@@ -578,6 +578,7 @@ includeFile("custom_loot/items/wearables/jewelry/ring_medic.lua")
 includeFile("custom_loot/items/wearables/jewelry/ring_medic_second.lua")
 includeFile("custom_loot/items/wearables/jewelry/ring_entertainer.lua")
 includeFile("custom_loot/items/wearables/jewelry/necklace_crafter.lua")
+includeFile("custom_loot/items/wearables/jewelry/ring_ranger.lua")
 
 --Goggles
 includeFile("custom_loot/items/goggles/goggles_g01.lua")

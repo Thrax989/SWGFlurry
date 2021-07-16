@@ -5,7 +5,8 @@ non_jedi_ring_crafter_second = {
 	lootItems = {
     {itemTemplate = "ring_medic", weight = 2500000},
     {itemTemplate = "ring_medic_second", weight = 2500000},
-    {itemTemplate = "ring_entertainer", weight = 5000000},
+    {itemTemplate = "ring_entertainer", weight = 2500000},
+    {itemTemplate = "ring_ranger", weight = 2500000},
 	}
 }
 

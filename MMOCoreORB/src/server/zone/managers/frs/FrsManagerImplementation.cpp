@@ -22,6 +22,9 @@
 #include "server/zone/packets/MessageCallback.h"
 #include "server/zone/ZoneServer.h"
 #include "server/zone/Zone.h"
+#include "server/zone/objects/scene/SceneObject.h"
+#include "server/zone/managers/loot/LootManager.h"
+#include "server/zone/objects/group/GroupObject.h"
 
 void FrsManagerImplementation::initialize() {
 	auto zoneServer = this->zoneServer.get();
@@ -1062,6 +1065,22 @@ int FrsManagerImplementation::calculatePvpExperienceChange(CreatureObject* attac
 		PlayerManager* playerManager = attacker->getZoneServer()->getPlayerManager();
 		attacker->playEffect("clienteffect/level_granted.cef", "");
 		playerManager->awardExperience(attacker, "force_rank_xp", 5000, true); // Award FRS XP
+		ManagedReference<GroupObject*> group = attacker->getGroup();
+		if (group != nullptr) {
+			for (int i = 0; i < group->getGroupSize(); i++) {
+			ManagedReference<CreatureObject*> groupedCreature = group->getGroupMember(i);
+			ManagedReference<PlayerManager*> playerManager = attacker->getZoneServer()->getPlayerManager();
+			if (groupedCreature != nullptr && groupedCreature->isCreatureObject() && groupedCreature->isInRange(attacker, 300.0f) && groupedCreature != attacker) {
+			Locker locker(groupedCreature);
+			playerManager->awardExperience(attacker, "force_rank_xp", 5000);
+			StringIdChatParameter message("base_player","prose_revoke_xp");
+			message.setDI(5000);
+			message.setTO("exp_n", "force_rank_xp");
+			attacker->sendSystemMessage(message);
+			locker.release();
+				}
+			}
+		}
 	}
 	return xpChange;
 }
