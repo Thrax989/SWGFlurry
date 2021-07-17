@@ -163,7 +163,7 @@ tor_vizsla = Creature:new {
 			lootChance = 10000000
 		}
 	},
-	weapons = {"creature_spit_heavy_flame"},
+	weapons = {"st_bombardier_weapons"},
 	reactionStf = "@npc_reaction/slang",
 	attacks = {
 		{"creatureareacombo","StateAccuracyBonus=100"},
