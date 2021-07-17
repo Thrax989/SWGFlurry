@@ -6,8 +6,9 @@ lom_pyke = Creature:new {
 	faction = "",
 	level = 300,
 	chanceHit = 75.00,
-	damageMin = 2000,
-	damageMax = 4000,
+	damageMin = 12000,
+	damageMax = 14000,
+  specialDamageMult = 1.5,  
 	baseXp = 296845,
 	baseHAM = 1000000,
 	baseHAMmax = 1300000,
@@ -163,7 +164,7 @@ lom_pyke = Creature:new {
 			lootChance = 10000000
 		}
 	},
-	weapons = {"pirate_weapons_heavy"},
+	weapons = {"st_bombardier_weapons"},
 	conversationTemplate = "",
 	attacks = merge(riflemanmaster,pistoleermaster,carbineermaster,brawlermaster,commandomaster)
 }

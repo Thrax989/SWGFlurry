@@ -7,8 +7,8 @@ pyke_syndicate_criminal = Creature:new {
 	faction = "",
 	level = 250,
 	chanceHit = 100,
-	damageMin = 12500,
-	damageMax = 14050,
+	damageMin = 2500,
+	damageMax = 4050,
   specialDamageMult = 1.5,
 	baseXp = 15000,
 	baseHAM = 95000,
@@ -53,7 +53,7 @@ pyke_syndicate_criminal = Creature:new {
 			lootChance = 3500000
 		},
 	},
-	weapons = {"pirate_weapons_heavy"},
+	weapons = {"st_bombardier_weapons"},
 	conversationTemplate = "",
 	attacks = merge(riflemanmaster,pistoleermaster,carbineermaster,brawlermaster)
 }
