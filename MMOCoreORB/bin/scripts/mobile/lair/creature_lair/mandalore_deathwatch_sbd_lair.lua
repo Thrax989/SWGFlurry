@@ -1,6 +1,6 @@
 mandalore_deathwatch_sbd_lair = Lair:new {
-		mobiles = {{"deathwatch_sbd.lua",1}},
-		--bossMobiles = {{"deathwatch_sbd.lua",1}},
+		mobiles = {{"deathwatch_sbd",1}},
+		--bossMobiles = {{"deathwatch_sbd",1}},
 		spawnLimit = 15,
 		buildingsVeryEasy = {"object/tangible/lair/base/poi_all_lair_rock_shelter_large_evil_fire_small.iff"},
 	  	buildingsEasy = {"object/tangible/lair/base/poi_all_lair_rock_shelter_large_evil_fire_small.iff"},
