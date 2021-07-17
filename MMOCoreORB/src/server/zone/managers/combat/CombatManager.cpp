@@ -1354,7 +1354,7 @@ int CombatManager::getArmorReduction(TangibleObject* attacker, WeaponObject* wea
 
 		Locker plocker(psg);
 
-		psg->inflictDamage(psg, 0, damage * 0.001, true, true);
+		psg->inflictDamage(psg, 0, damage * 0.01, true, true);
 
 	}
 
@@ -1382,7 +1382,12 @@ int CombatManager::getArmorReduction(TangibleObject* attacker, WeaponObject* wea
 		// inflict condition damage
 		Locker alocker(armor);
 
-		armor->inflictDamage(armor, 0, damage * 0.001, true, true);
+  		if (getArmorObjectReduction(armor, 16) > 0 && damageType == 16) {
+  			armor->inflictDamage(armor, 0, damage * 0.2, true, true);
+  		} else {
+  			armor->inflictDamage(armor, 0, damage * 0.1, true, true);
+  			}
+		}
 	}
 
 	if (psg != nullptr && !psg->isVulnerable(damageType)) {
@@ -1390,9 +1395,9 @@ int CombatManager::getArmorReduction(TangibleObject* attacker, WeaponObject* wea
 
 		if (defender->checkCooldownRecovery("psg_damaged")){
 			if (attacker->isPlayerCreature())
-				psg->inflictDamage(psg, 0, damage * 0.001, true, true);
+				psg->inflictDamage(psg, 0, damage * 0.01, true, true);
 			  else
-				psg->inflictDamage(psg, 0, damage * 0.001, true, true);
+				psg->inflictDamage(psg, 0, damage * 0.01, true, true);
 			} else {
 	        		defender->updateCooldownTimer("psg_damaged", 1000);
 			}
@@ -1539,7 +1544,7 @@ float CombatManager::doDroidDetonation(CreatureObject* droid, CreatureObject* de
 
 				Locker plocker(psgArmor);
 
-				psgArmor->inflictDamage(psgArmor, 0, damage * 0.001, true, true);
+				psgArmor->inflictDamage(psgArmor, 0, damage * 0.01, true, true);
 			}
 			// reduced by psg not check each spot for damage
 			healthDamage = damage;
