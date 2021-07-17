@@ -613,4 +613,4 @@ includeFile("lair/creature_lair/geonosis_spider_droid_brown_neutral.lua")
 includeFile("lair/creature_lair/geonosis_pit_droid_neutral.lua")
 includeFile("lair/creature_lair/geonosis_elite_geonosian_warrior_neutral.lua")
 
-includeFile("lair/creature_lair/mandalore_deathwatch_sbd_lair_neutral.lua")
+includeFile("lair/creature_lair/mandalore_deathwatch_sbd_lair.lua")
