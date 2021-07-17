@@ -1388,7 +1388,6 @@ int CombatManager::getArmorReduction(TangibleObject* attacker, WeaponObject* wea
   			armor->inflictDamage(armor, 0, damage * 0.1, true, true);
   			}
 		}
-	}
 
 	if (psg != nullptr && !psg->isVulnerable(damageType)) {
 		Locker plocker(psg);
