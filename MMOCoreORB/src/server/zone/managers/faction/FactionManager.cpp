@@ -221,21 +221,23 @@ void FactionManager::awardPvpFactionPoints(TangibleObject* killer, CreatureObjec
 				StringBuffer zGeneral;
 				zGeneral << "A [Light Jedi] Has Killed " << playerName << " A [Dark Jedi] In The [FRS]";	
 				chatManager->handleGeneralChat(killerCreature, zGeneral.toString());
+			if (killerCreature->isGrouped()) {
+		
 				ManagedReference<GroupObject*> group = killerCreature->getGroup();
-				if (group != nullptr) {
-					for (int i = 0; i < group->getGroupSize(); i++) {
-					ManagedReference<CreatureObject*> groupedCreature = group->getGroupMember(i);
-					ManagedReference<PlayerManager*> playerManager = killerCreature->getZoneServer()->getPlayerManager();
-					if (groupedCreature != nullptr && groupedCreature->isCreatureObject() && groupedCreature->isInRange(killerCreature, 300.0f) && groupedCreature != killerCreature) {
-					Locker locker(groupedCreature);
-					playerManager->awardExperience(killerCreature, "force_rank_xp", 500);
-					StringIdChatParameter message("base_player","prose_grant_xp");
-					message.setDI(500);
-					message.setTO("exp_n", "force_rank_xp");
-					killerCreature->sendSystemMessage(message);
-					locker.release();
-						}
-					}
+				int groupSize = group->getGroupSize();
+
+				for (int i = 0; i < groupSize; i++) {
+					ManagedReference<CreatureObject*> groupMember = group->getGroupMember(i);
+
+					ManagedReference<PlayerObject*> groupMemberPlayer = groupMember->getPlayerObject();
+
+					if (groupMember->isInRange(killerCreature, 300.0) && (groupMember != killerCreature)) {	
+						if (groupMember->isPlayerCreature()) {			
+								playerManager->awardExperience(killerCreature, "force_rank_xp", 500);
+							} 			
+						}	
+					}	
+		    
 				}
 			}
 			ghost->getZoneServer()->getChatManager()->broadcastGalaxy(nullptr, zBroadcast.toString());
@@ -265,21 +267,23 @@ void FactionManager::awardPvpFactionPoints(TangibleObject* killer, CreatureObjec
 				StringBuffer zGeneral;
 				zGeneral << "A [Dark Jedi] Has Killed " << playerName << " A [Light Jedi] In The [FRS]";	
 				chatManager->handleGeneralChat(killerCreature, zGeneral.toString());
+			if (killerCreature->isGrouped()) {
+		
 				ManagedReference<GroupObject*> group = killerCreature->getGroup();
-				if (group != nullptr) {
-					for (int i = 0; i < group->getGroupSize(); i++) {
-					ManagedReference<CreatureObject*> groupedCreature = group->getGroupMember(i);
-					ManagedReference<PlayerManager*> playerManager = killerCreature->getZoneServer()->getPlayerManager();
-					if (groupedCreature != nullptr && groupedCreature->isCreatureObject() && groupedCreature->isInRange(killerCreature, 300.0f) && groupedCreature != killerCreature) {
-					Locker locker(groupedCreature);
-					playerManager->awardExperience(killerCreature, "force_rank_xp", 500);
-					StringIdChatParameter message("base_player","prose_grant_xp");
-					message.setDI(500);
-					message.setTO("exp_n", "force_rank_xp");
-					killerCreature->sendSystemMessage(message);
-					locker.release();
-						}
-					}
+				int groupSize = group->getGroupSize();
+
+				for (int i = 0; i < groupSize; i++) {
+					ManagedReference<CreatureObject*> groupMember = group->getGroupMember(i);
+
+					ManagedReference<PlayerObject*> groupMemberPlayer = groupMember->getPlayerObject();
+
+					if (groupMember->isInRange(killerCreature, 300.0) && (groupMember != killerCreature)) {	
+						if (groupMember->isPlayerCreature()) {			
+								playerManager->awardExperience(killerCreature, "force_rank_xp", 500);
+							} 			
+						}	
+					}	
+		    
 				}
 			}
 				ghost->getZoneServer()->getChatManager()->broadcastGalaxy(nullptr, zBroadcast.toString());
