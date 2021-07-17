@@ -229,17 +229,16 @@ void FactionManager::awardPvpFactionPoints(TangibleObject* killer, CreatureObjec
 				for (int i = 0; i < groupSize; i++) {
 					ManagedReference<CreatureObject*> groupMember = group->getGroupMember(i);
 
-					ManagedReference<PlayerObject*> groupMemberPlayer = groupMember->getPlayerObject();
-
-					if (groupMember->isInRange(killerCreature, 300.0) && (groupMember != killerCreature)) {	
+					if (groupMember->isInRange(killerCreature, 100.0)) {	
 						if (groupMember->isPlayerCreature()) {			
-								playerManager->awardExperience(killerCreature, "force_rank_xp", 500);
-								killerCreature->sendSystemMessage("You Have Gained 500 FRS Points");
+							playerManager->awardExperience(groupMember, "force_rank_xp", 5000);
+ 							groupMember->sendSystemMessage("You Have Gained 500 FRS Points");
 							} 			
 						}	
 					}	
 		    
 				}
+
 			}
 			ghost->getZoneServer()->getChatManager()->broadcastGalaxy(nullptr, zBroadcast.toString());
 		} else if (killer->isImperial() && destructedObject->isRebel()) {
@@ -276,16 +275,15 @@ void FactionManager::awardPvpFactionPoints(TangibleObject* killer, CreatureObjec
 				for (int i = 0; i < groupSize; i++) {
 					ManagedReference<CreatureObject*> groupMember = group->getGroupMember(i);
 
-					ManagedReference<PlayerObject*> groupMemberPlayer = groupMember->getPlayerObject();
-
-					if (groupMember->isInRange(killerCreature, 300.0) && (groupMember != killerCreature)) {	
+					if (groupMember->isInRange(killerCreature, 100.0)) {	
 						if (groupMember->isPlayerCreature()) {			
-								playerManager->awardExperience(killerCreature, "force_rank_xp", 500);
-								killerCreature->sendSystemMessage("You Have Gained 500 FRS Points");
-							} 			
+							playerManager->awardExperience(groupMember, "force_rank_xp", 5000);
+ 								groupMember->sendSystemMessage("You Have Gained 500 FRS Points");		
+							}	
 						}	
-					}	
 		    
+					}
+
 				}
 			}
 				ghost->getZoneServer()->getChatManager()->broadcastGalaxy(nullptr, zBroadcast.toString());
