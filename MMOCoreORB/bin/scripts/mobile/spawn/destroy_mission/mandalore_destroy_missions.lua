@@ -75,51 +75,9 @@ mandalore_destroy_missions = {
 			size = 25,
 		},
 		{
-			lairTemplateName = "talus_rot_mite_lair_neutral_boss_02",
-			minDifficulty = 16,
-			maxDifficulty = 20,
-			size = 25,
-		},
-		{
-			lairTemplateName = "talus_rot_mite_lair_neutral_boss_03",
-			minDifficulty = 17,
-			maxDifficulty = 22,
-			size = 25,
-		},
-		{
-			lairTemplateName = "talus_rot_mite_lair_neutral_boss_04",
-			minDifficulty = 18,
-			maxDifficulty = 23,
-			size = 25,
-		},
-		{
-			lairTemplateName = "talus_rot_mite_lair_neutral_boss_04",
-			minDifficulty = 18,
-			maxDifficulty = 23,
-			size = 25,
-		},
-		{
 			lairTemplateName = "talus_rot_mite_lair_neutral_small_01",
 			minDifficulty = 19,
 			maxDifficulty = 25,
-			size = 25,
-		},
-		{
-			lairTemplateName = "talus_rot_mite_lair_neutral_small_02",
-			minDifficulty = 24,
-			maxDifficulty = 34,
-			size = 25,
-		},
-		{
-			lairTemplateName = "talus_rot_mite_lair_neutral_small_03",
-			minDifficulty = 9,
-			maxDifficulty = 14,
-			size = 25,
-		},
-		{
-			lairTemplateName = "talus_rot_mite_lair_neutral_small_04",
-			minDifficulty = 7,
-			maxDifficulty = 11,
 			size = 25,
 		},
 		{
