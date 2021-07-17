@@ -231,7 +231,7 @@ void FactionManager::awardPvpFactionPoints(TangibleObject* killer, CreatureObjec
 
 					if (groupMember->isInRange(killerCreature, 100.0)) {	
 						if (groupMember->isPlayerCreature()) {			
-							playerManager->awardExperience(groupMember, "force_rank_xp", 5000);
+							playerManager->awardExperience(groupMember, "force_rank_xp", 500);
  							groupMember->sendSystemMessage("You Have Gained 500 FRS Points");
 							} 			
 						}	
@@ -277,7 +277,7 @@ void FactionManager::awardPvpFactionPoints(TangibleObject* killer, CreatureObjec
 
 					if (groupMember->isInRange(killerCreature, 100.0)) {	
 						if (groupMember->isPlayerCreature()) {			
-							playerManager->awardExperience(groupMember, "force_rank_xp", 5000);
+							playerManager->awardExperience(groupMember, "force_rank_xp", 500);
  								groupMember->sendSystemMessage("You Have Gained 500 FRS Points");		
 							}	
 						}	
