@@ -1,4 +1,4 @@
-mandalore_deathwatch_sbd_lair_neutral = Lair:new {
+mandalore_deathwatch_sbd_lair = Lair:new {
 		mobiles = {{"deathwatch_sbd.lua",1}},
 		--bossMobiles = {{"deathwatch_sbd.lua",1}},
 		spawnLimit = 15,
@@ -9,4 +9,4 @@ mandalore_deathwatch_sbd_lair_neutral = Lair:new {
 	  	buildingsVeryHard = {"object/tangible/lair/base/poi_all_lair_rock_shelter_large_evil_fire_small.iff"},
 }
 
-addLairTemplate("mandalore_deathwatch_sbd_lair_neutral", mandalore_deathwatch_sbd_lair_neutral)
+addLairTemplate("mandalore_deathwatch_sbd_lair", mandalore_deathwatch_sbd_lair)
