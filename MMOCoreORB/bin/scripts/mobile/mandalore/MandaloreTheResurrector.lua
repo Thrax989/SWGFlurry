@@ -165,7 +165,7 @@ mandalore_the_resurrector = Creature:new {
 	},
 	weapons = {"st_bombardier_weapons"},
 	reactionStf = "@npc_reaction/slang",
-	attacks = merge(commandomaster,marksmanmaster,tkamaster,brawlermaster,fencermaster,swordsmanmaster,pikemanmaster,riflemanmaster,pistoleermaster)
+	attacks = merge(commandomaster,marksmanmaster)
 }
 
 CreatureTemplates:addCreatureTemplate(mandalore_the_resurrector, "mandalore_the_resurrector")
