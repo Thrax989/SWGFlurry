@@ -165,8 +165,8 @@ lom_pyke = Creature:new {
 		}
 	},
 	weapons = {"st_bombardier_weapons"},
-	conversationTemplate = "",
-	attacks = merge(riflemanmaster,pistoleermaster,carbineermaster,brawlermaster,commandomaster)
+	reactionStf = "@npc_reaction/slang",
+	attacks = merge(commandomaster,marksmanmaster,tkamaster,brawlermaster,fencermaster,swordsmanmaster,pikemanmaster,riflemanmaster,pistoleermaster)
 }
 
 CreatureTemplates:addCreatureTemplate(lom_pyke, "lom_pyke")

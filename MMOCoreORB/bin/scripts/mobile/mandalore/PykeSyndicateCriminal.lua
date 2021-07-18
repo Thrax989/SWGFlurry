@@ -54,8 +54,8 @@ pyke_syndicate_criminal = Creature:new {
 		},
 	},
 	weapons = {"st_bombardier_weapons"},
-	conversationTemplate = "",
-	attacks = merge(riflemanmaster,pistoleermaster,carbineermaster,brawlermaster)
+	reactionStf = "@npc_reaction/slang",
+	attacks = merge(commandomaster,marksmanmaster,tkamaster,brawlermaster,fencermaster,swordsmanmaster,pikemanmaster,riflemanmaster,pistoleermaster)
 }
 
 CreatureTemplates:addCreatureTemplate(pyke_syndicate_criminal, "pyke_syndicate_criminal")

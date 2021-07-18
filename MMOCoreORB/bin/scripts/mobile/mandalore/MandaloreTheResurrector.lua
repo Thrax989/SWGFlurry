@@ -165,17 +165,7 @@ mandalore_the_resurrector = Creature:new {
 	},
 	weapons = {"st_bombardier_weapons"},
 	reactionStf = "@npc_reaction/slang",
-	attacks = {
-		{"creatureareacombo","StateAccuracyBonus=100"},
-		{"creatureareaknockdown","StateAccuracyBonus=100"},
-		{"knockdownattack","KnockdownChance=100"},
-		{"creatureareaknockdown","KnockdownChance=100"},
-		{"dizzyattack","DizzyChance=100"},
-		{"stunattack","StunChance=100"},
-		{"intimidationattack","IntimidationChance=100"},
-		{"creatureareaattack","StateAccuracyBonus=100"},
-    {"creatureareableeding","BleedChance=100"}
-	}
+	attacks = merge(commandomaster,marksmanmaster,tkamaster,brawlermaster,fencermaster,swordsmanmaster,pikemanmaster,riflemanmaster,pistoleermaster)
 }
 
 CreatureTemplates:addCreatureTemplate(mandalore_the_resurrector, "mandalore_the_resurrector")
