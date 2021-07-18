@@ -11,8 +11,7 @@ bracelet_rightcrafting = {
 		{"force_experimentation", 25},
 		{"jedi_saber_assembly", 25},
 		{"jedi_saber_experimentation", 25},
-    {"general_assembly", 25},
-    {"general_experimentation", 25}   
+    {"force_failure_reduction", 25},   
 	}
 }
 addLootItemTemplate("bracelet_rightcrafting", bracelet_rightcrafting)
