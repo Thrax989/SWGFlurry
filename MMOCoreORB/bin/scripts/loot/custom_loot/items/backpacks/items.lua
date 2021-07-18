@@ -477,6 +477,11 @@ includeFile("custom_loot/items/wearables/jewelry/ring_medic_second.lua")
 includeFile("custom_loot/items/wearables/jewelry/ring_entertainer.lua")
 includeFile("custom_loot/items/wearables/jewelry/necklace_crafter.lua")
 includeFile("custom_loot/items/wearables/jewelry/ring_ranger.lua")
+includeFile("custom_loot/items/wearables/jewelry/ring_resolve.lua")
+includeFile("custom_loot/items/wearables/jewelry/ring_resistance.lua")
+includeFile("custom_loot/items/wearables/jewelry/necklace_jediform.lua")
+includeFile("custom_loot/items/wearables/jewelry/bracelet_leftpower.lua")
+includeFile("custom_loot/items/wearables/jewelry/bracelet_rightcrafting.lua")
 
 
 
