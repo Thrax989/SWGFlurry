@@ -115,13 +115,7 @@ mandalore_destroy_missions = {
 			minDifficulty = 8,
 			maxDifficulty = 13,
 			size = 25,
-		},
-		{
-			lairTemplateName = "global_dark_jedi_camp_dark_jedi_theater",
-			minDifficulty = 8,
-			maxDifficulty = 13,
-			size = 25,
-		},
+		},-
 		{
 			lairTemplateName = "global_pirate_camp_neutral_small_theater",
 			minDifficulty = 8,
@@ -135,7 +129,7 @@ mandalore_destroy_missions = {
 			size = 25,
 		},
 		{
-			lairTemplateName = "mandalore_deathwatch_sbd_lair_neutral",
+			lairTemplateName = "mandalore_deathwatch_sbd_lair",
 			minDifficulty = 50,
 			maxDifficulty = 150,
 			size = 25,
