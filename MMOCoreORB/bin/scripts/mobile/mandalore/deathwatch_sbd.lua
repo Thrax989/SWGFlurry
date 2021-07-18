@@ -1,9 +1,9 @@
 deathwatch_sbd = Creature:new {
 	customName = "Deathwatch Super Battle Droid",
-	socialGroup = "death_watch",
+	socialGroup = "",
 	faction = "",
-	level = 200,
-	chanceHit = 18,
+	level = 300,
+	chanceHit = 25,
 	damageMin = 1200,
 	damageMax = 2100,
 	baseXp = 19000,
@@ -26,10 +26,8 @@ deathwatch_sbd = Creature:new {
 	diet = NONE,
 	scale = 1.40,
 
-	templates = {
-		"object/mobile/death_watch_s_battle_droid.iff",
-		"object/mobile/death_watch_s_battle_droid_02.iff",
-		"object/mobile/death_watch_s_battle_droid_03.iff"},
+	templates = {"object/mobile/ep3/ep3_clone_relics_durge_droid_02.iff"},
+		
 	lootGroups = {
 		    {
 			    groups = {
@@ -74,4 +72,4 @@ deathwatch_sbd = Creature:new {
 	defaultAttack = "attack"
 }
 
-CreatureTemplates:addCreatureTemplate(death_watch_s_battle_droid_alt, "death_watch_s_battle_droid_alt")
+CreatureTemplates:addCreatureTemplate(deathwatch_sbd, "deathwatch_sbd")
