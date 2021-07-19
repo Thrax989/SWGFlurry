@@ -42,7 +42,7 @@
 
 
 object_tangible_loot_simple_kit_datapad_connectors = object_tangible_loot_simple_kit_shared_datapad_connectors:new {
-
+          objectMenuComponent = "ScrapMenuComponent",
 }
 
 ObjectTemplates:addTemplate(object_tangible_loot_simple_kit_datapad_connectors, "object/tangible/loot/simple_kit/datapad_connectors.iff")

@@ -4,15 +4,16 @@ lom_pyke = Creature:new {
 	socialGroup = "death_watch",
 	pvpFaction = "death_watch",
 	faction = "",
-	level = 300,
-	chanceHit = 75.00,
-	damageMin = 2000,
-	damageMax = 4000,
-	baseXp = 296845,
-	baseHAM = 1000000,
-	baseHAMmax = 1300000,
+	level = 350,
+	chanceHit = 95,
+	damageMin = 8500,
+	damageMax = 10000,
+	specialDamageMult = 2.5,
+	baseXp = 20948,
+	baseHAM = 1250000,
+	baseHAMmax = 1500000,
 	armor = 3,
-	resists = {175,175,175,175,175,175,175,175,150},
+	resists = {165,165,165,165,165,165,165,165,200},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -34,13 +35,13 @@ lom_pyke = Creature:new {
 			groups = {
 				{group = "boss_rare", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 10000000
 		},		
 		{
 			groups = {
 				{group = "death_watch_bunker_lootbox", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
@@ -64,37 +65,37 @@ lom_pyke = Creature:new {
 			groups = {
 				{group = "boss_common", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 2500000
 		},
 		{
 			groups = {
 				{group = "boss_common", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 25000000
 		},
 		{
 			groups = {
 				{group = "boss_common", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 25000000
 		},
 		{
 			groups = {
 				{group = "death_watch_bunker_lootbox", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
 				{group = "death_watch_bunker_commoners", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
 				{group = "blacksun_rare", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
@@ -106,19 +107,19 @@ lom_pyke = Creature:new {
 			groups = {
 				{group = "boss_common", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
 				{group = "boss_common", chance = 10000000},
 			},
-			lootChance = 10000000
+			lootChance = 50000000
 		},
 		{
 			groups = {
 				{group = "boss_common", chance = 10000000},
 			},
-			lootChance = 10000000
+			lootChance = 50000000
 		},
 		{
 			groups = {
@@ -142,7 +143,7 @@ lom_pyke = Creature:new {
 			groups = {
 				{group = "boss_rare", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
@@ -163,9 +164,9 @@ lom_pyke = Creature:new {
 			lootChance = 10000000
 		}
 	},
-	weapons = {"pirate_weapons_heavy"},
-	conversationTemplate = "",
-	attacks = merge(riflemanmaster,pistoleermaster,carbineermaster,brawlermaster,commandomaster)
+	weapons = {"mandalorian_weapons_heavy"},
+	reactionStf = "@npc_reaction/slang",
+	attacks = merge(pikemanmaster,tkamaster,marksmanmaster,pistoleermaster,carbineermaster,forcewielder)
 }
 
 CreatureTemplates:addCreatureTemplate(lom_pyke, "lom_pyke")

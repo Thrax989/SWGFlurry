@@ -47,7 +47,7 @@ int EventpackMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Cre
 				if (group != nullptr) {
 					for (int i = 0; i < group->getGroupSize(); i++) {
 					ManagedReference<CreatureObject*> groupedCreature = group->getGroupMember(i);
-					if (groupedCreature != nullptr && groupedCreature->isCreatureObject() && groupedCreature->isInRange(creature, 30.0f) && groupedCreature != creature) {
+					if (groupedCreature != nullptr && groupedCreature->isCreatureObject() && groupedCreature->isInRange(creature, 500.0f) && groupedCreature != creature) {
 					Locker locker(groupedCreature);
 					groupedCreature->healDamage(groupedCreature, CreatureAttribute::HEALTH, 15000);
 					groupedCreature->healDamage(groupedCreature, CreatureAttribute::ACTION, 15000);

@@ -42,7 +42,7 @@ ig88_upgrade = Creature:new {
 		},
 		{
 			groups = {
-				{group = "mokk_elites", chance = 2000000},   
+				{group = "weapon_component_advanced", chance = 2000000},   
 			},
 			lootChance = 5000000
 		},

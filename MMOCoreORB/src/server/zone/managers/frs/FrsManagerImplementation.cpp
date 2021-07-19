@@ -22,6 +22,9 @@
 #include "server/zone/packets/MessageCallback.h"
 #include "server/zone/ZoneServer.h"
 #include "server/zone/Zone.h"
+#include "server/zone/objects/scene/SceneObject.h"
+#include "server/zone/managers/loot/LootManager.h"
+#include "server/zone/objects/group/GroupObject.h"
 
 void FrsManagerImplementation::initialize() {
 	auto zoneServer = this->zoneServer.get();

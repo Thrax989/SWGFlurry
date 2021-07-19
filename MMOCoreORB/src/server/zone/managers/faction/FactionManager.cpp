@@ -221,6 +221,24 @@ void FactionManager::awardPvpFactionPoints(TangibleObject* killer, CreatureObjec
 				StringBuffer zGeneral;
 				zGeneral << "A [Light Jedi] Has Killed " << playerName << " A [Dark Jedi] In The [FRS]";	
 				chatManager->handleGeneralChat(killerCreature, zGeneral.toString());
+			if (killerCreature->isGrouped()) {
+		
+				ManagedReference<GroupObject*> group = killerCreature->getGroup();
+				int groupSize = group->getGroupSize();
+
+				for (int i = 0; i < groupSize; i++) {
+					ManagedReference<CreatureObject*> groupMember = group->getGroupMember(i);
+
+					if (groupMember->isInRange(killerCreature, 100.0)) {	
+						if (groupMember->isPlayerCreature()) {			
+							playerManager->awardExperience(groupMember, "force_rank_xp", 500);
+ 							groupMember->sendSystemMessage("You Have Gained 500 FRS Points");
+							} 			
+						}	
+					}	
+		    
+				}
+
 			}
 			ghost->getZoneServer()->getChatManager()->broadcastGalaxy(nullptr, zBroadcast.toString());
 		} else if (killer->isImperial() && destructedObject->isRebel()) {
@@ -249,6 +267,24 @@ void FactionManager::awardPvpFactionPoints(TangibleObject* killer, CreatureObjec
 				StringBuffer zGeneral;
 				zGeneral << "A [Dark Jedi] Has Killed " << playerName << " A [Light Jedi] In The [FRS]";	
 				chatManager->handleGeneralChat(killerCreature, zGeneral.toString());
+			if (killerCreature->isGrouped()) {
+		
+				ManagedReference<GroupObject*> group = killerCreature->getGroup();
+				int groupSize = group->getGroupSize();
+
+				for (int i = 0; i < groupSize; i++) {
+					ManagedReference<CreatureObject*> groupMember = group->getGroupMember(i);
+
+					if (groupMember->isInRange(killerCreature, 100.0)) {	
+						if (groupMember->isPlayerCreature()) {			
+							playerManager->awardExperience(groupMember, "force_rank_xp", 500);
+ 								groupMember->sendSystemMessage("You Have Gained 500 FRS Points");		
+							}	
+						}	
+		    
+					}
+
+				}
 			}
 				ghost->getZoneServer()->getChatManager()->broadcastGalaxy(nullptr, zBroadcast.toString());
 		}

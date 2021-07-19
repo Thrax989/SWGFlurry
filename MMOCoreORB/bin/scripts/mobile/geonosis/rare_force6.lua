@@ -62,7 +62,7 @@ rare_force6 = Creature:new {
 		},    
 		{
 			groups = {
-				{group = "jedi_jewelry", chance = 2000000},   
+				{group = "jedi_jewelry", chance = 10000000},   
 			},
 			lootChance = 5000000
 		},

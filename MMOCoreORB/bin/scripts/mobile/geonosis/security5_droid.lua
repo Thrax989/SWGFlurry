@@ -42,9 +42,9 @@ security5_droid = Creature:new {
 		},
 		{
 			groups = {
-				{group = "geonosian_common", chance = 2000000},   
+				{group = "geonosian_common", chance = 10000000},   
 			},
-			lootChance = 10000000
+			lootChance = 3000000
 		},  
 		{
 			groups = {

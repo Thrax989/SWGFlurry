@@ -4,15 +4,16 @@ tor_vizsla = Creature:new {
 	socialGroup = "death_watch",
 	pvpFaction = "death_watch",
 	faction = "",
-	level = 300,
-	chanceHit = 100,
-	damageMin = 3000,
-	damageMax = 4000,
+	level = 350,
+	chanceHit = 95,
+	damageMin = 8500,
+	damageMax = 10000,
+	specialDamageMult = 2.5,
 	baseXp = 20948,
 	baseHAM = 1250000,
 	baseHAMmax = 1500000,
 	armor = 3,
-	resists = {180,180,180,180,180,180,180,180,165},
+	resists = {165,165,165,165,165,165,165,165,200},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -33,17 +34,17 @@ tor_vizsla = Creature:new {
 			groups = {
 				{group = "boss_rare", chance = 10000000},
 			},
-			lootChance = 1000000
-		},	
+			lootChance = 10000000
+		},		
 		{
 			groups = {
 				{group = "death_watch_bunker_lootbox", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
-				{group = "nge_all", chance = 10000000},
+				{group = "boss_common", chance = 10000000},
 			},
 			lootChance = 10000000
 		},
@@ -63,37 +64,37 @@ tor_vizsla = Creature:new {
 			groups = {
 				{group = "boss_common", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 2500000
 		},
 		{
 			groups = {
 				{group = "boss_common", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 25000000
 		},
 		{
 			groups = {
 				{group = "boss_common", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 25000000
+		},
+		{
+			groups = {
+				{group = "death_watch_bunker_lootbox", chance = 10000000},
+			},
+			lootChance = 5000000
 		},
 		{
 			groups = {
 				{group = "death_watch_bunker_commoners", chance = 10000000},
 			},
-			lootChance = 1000000
-		},
-		{
-			groups = {
-				{group = "death_watch_bunker_commoners", chance = 10000000},
-			},
-			lootChance = 1000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
 				{group = "blacksun_rare", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
@@ -105,19 +106,19 @@ tor_vizsla = Creature:new {
 			groups = {
 				{group = "boss_common", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
 				{group = "boss_common", chance = 10000000},
 			},
-			lootChance = 10000000
+			lootChance = 50000000
 		},
 		{
 			groups = {
 				{group = "boss_common", chance = 10000000},
 			},
-			lootChance = 10000000
+			lootChance = 50000000
 		},
 		{
 			groups = {
@@ -141,7 +142,7 @@ tor_vizsla = Creature:new {
 			groups = {
 				{group = "boss_rare", chance = 10000000},
 			},
-			lootChance = 2500000
+			lootChance = 5000000
 		},
 		{
 			groups = {
@@ -162,19 +163,9 @@ tor_vizsla = Creature:new {
 			lootChance = 10000000
 		}
 	},
-	weapons = {"creature_spit_heavy_flame"},
+	weapons = {"mandalorian_weapons_heavy"},
 	reactionStf = "@npc_reaction/slang",
-	attacks = {
-		{"creatureareacombo","StateAccuracyBonus=100"},
-		{"creatureareaknockdown","StateAccuracyBonus=100"},
-		{"knockdownattack","KnockdownChance=100"},
-		{"creatureareaknockdown","KnockdownChance=100"},
-		{"dizzyattack","DizzyChance=100"},
-		{"stunattack","StunChance=100"},
-		{"intimidationattack","IntimidationChance=100"},
-		{"creatureareaattack","StateAccuracyBonus=100"},
-    		{"creatureareableeding","BleedChance=100"}
-	}
+	attacks = merge(pikemanmaster,tkamaster,marksmanmaster,pistoleermaster,carbineermaster,forcewielder)
 }
 
 CreatureTemplates:addCreatureTemplate(tor_vizsla, "tor_vizsla")

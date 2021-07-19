@@ -32,13 +32,19 @@ student_force1 = Creature:new {
 			groups = {
 				{group = "junk", chance = 10000000}
 			},
-			lootChance = 100000
+			lootChance = 10000000
 		},
 		{
 			groups = {
-				{group = "junk", chance = 10000000}
+				{group = "ancient_force_bread", chance = 10000000}
 			},
-			lootChance = 1000000
+			lootChance = 5000000
+		},
+		{
+			groups = {
+				{group = "trash_common", chance = 10000000}
+			},
+			lootChance = 10000000
 		},
 	},
 	weapons = {"dark_jedi_weapons_gen4"},

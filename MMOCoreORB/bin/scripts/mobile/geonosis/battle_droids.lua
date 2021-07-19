@@ -45,9 +45,9 @@ battle_droids = Creature:new {
 		},
 		{
 			groups = {
-				{group = "geonosian_common", chance = 2000000},   
+				{group = "geonosian_common", chance = 10000000},   
 			},
-			lootChance = 10000000
+			lootChance = 3000000
 		},  
 		{
 			groups = {
@@ -56,7 +56,7 @@ battle_droids = Creature:new {
 				{group = "tierthree", chance = 2500000},
 				{group = "tierdiamond", chance = 2500000},
 			},
-			lootChance = 3500000
+			lootChance = 5000000
 		}
 	},
 	weapons = {"canyon_corsair_weapons"},

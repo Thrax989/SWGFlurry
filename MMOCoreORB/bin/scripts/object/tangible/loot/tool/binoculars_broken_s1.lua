@@ -42,7 +42,7 @@
 
 
 object_tangible_loot_tool_binoculars_broken_s1 = object_tangible_loot_tool_shared_binoculars_broken_s1:new {
-
+          objectMenuComponent = "ScrapMenuComponent",
 }
 
 ObjectTemplates:addTemplate(object_tangible_loot_tool_binoculars_broken_s1, "object/tangible/loot/tool/binoculars_broken_s1.iff")

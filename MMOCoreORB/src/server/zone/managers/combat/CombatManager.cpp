@@ -1354,7 +1354,7 @@ int CombatManager::getArmorReduction(TangibleObject* attacker, WeaponObject* wea
 
 		Locker plocker(psg);
 
-		psg->inflictDamage(psg, 0, damage * 0.001, true, true);
+		psg->inflictDamage(psg, 0, damage * 0.01, true, true);
 
 	}
 
@@ -1382,17 +1382,21 @@ int CombatManager::getArmorReduction(TangibleObject* attacker, WeaponObject* wea
 		// inflict condition damage
 		Locker alocker(armor);
 
-		armor->inflictDamage(armor, 0, damage * 0.1, true, true);
-	}
+  		if (getArmorObjectReduction(armor, 16) > 0 && damageType == 16) {
+  			armor->inflictDamage(armor, 0, damage * 0.2, true, true);
+  		} else {
+  			armor->inflictDamage(armor, 0, damage * 0.1, true, true);
+  			}
+		}
 
 	if (psg != nullptr && !psg->isVulnerable(damageType)) {
 		Locker plocker(psg);
 
 		if (defender->checkCooldownRecovery("psg_damaged")){
 			if (attacker->isPlayerCreature())
-				psg->inflictDamage(psg, 0, damage * 0.2, true, true);
+				psg->inflictDamage(psg, 0, damage * 0.01, true, true);
 			  else
-				psg->inflictDamage(psg, 0, damage * 0.1, true, true);
+				psg->inflictDamage(psg, 0, damage * 0.01, true, true);
 			} else {
 	        		defender->updateCooldownTimer("psg_damaged", 1000);
 			}
@@ -1539,7 +1543,7 @@ float CombatManager::doDroidDetonation(CreatureObject* droid, CreatureObject* de
 
 				Locker plocker(psgArmor);
 
-				psgArmor->inflictDamage(psgArmor, 0, damage * 0.1, true, true);
+				psgArmor->inflictDamage(psgArmor, 0, damage * 0.01, true, true);
 			}
 			// reduced by psg not check each spot for damage
 			healthDamage = damage;
@@ -1708,9 +1712,6 @@ float CombatManager::calculateDamage(CreatureObject* attacker, WeaponObject* wea
 		}
 	}
 
-	if (attacker->isPlayerCreature() && defender->isPlayerCreature() && !data.isForceAttack())
-		damage *= 0.25;
-
 	if (damage < 1) damage = 1;
 
 	//info("damage to be dealt is " + String::valueOf(damage), true);
@@ -1831,32 +1832,16 @@ int CombatManager::getHitChance(TangibleObject* attacker, CreatureObject* target
 		ManagedReference<WeaponObject*> targetWeapon = targetCreature->getWeapon();
 		const auto defenseAccMods = targetWeapon->getDefenderSecondaryDefenseModifiers();
 		const String& def = defenseAccMods->get(0);
-		const String& defjt = defenseAccMods->get(0);
-		const String& deflst = defenseAccMods->get(0);
 
 		// saber block is special because it's just a % chance to block based on the skillmod
 		if (def == "saber_block") {
 			int saberDef = targetCreature->getSkillMod(def);
 			if (targetCreature->isIntimidated())
 				saberDef = saberDef/2;
-			if (!(attacker->isTurret() || weapon->isThrownWeapon()) && ((weapon->isHeavyWeapon() || weapon->isSpecialHeavyWeapon() || (weapon->getAttackType() == SharedWeaponObjectTemplate::RANGEDATTACK)) && ((System::random(100)) < saberDef) && (!targetCreature->isKnockedDown())))				return RICOCHET;
-			else return HIT;
-		}
-
-		if (defjt == "jedi_toughness") {
-			int jtDef = targetCreature->getSkillMod(defjt);
-			if (targetCreature->isIntimidated())
-				jtDef = jtDef/2;
-			if (!(attacker->isTurret() || weapon->isThrownWeapon()) && ((weapon->isHeavyWeapon() || weapon->isSpecialHeavyWeapon() || (weapon->getAttackType() == SharedWeaponObjectTemplate::RANGEDATTACK)) && ((System::random(100)) < jtDef) && (!targetCreature->isKnockedDown())))				return RICOCHET;
-			else return HIT;
-		}
-
-		if (deflst == "lightsaber_toughness") {
-			int lstDef = targetCreature->getSkillMod(deflst);
-			if (targetCreature->isIntimidated())
-				lstDef = lstDef/2;
-			if (!(attacker->isTurret() || weapon->isThrownWeapon()) && ((weapon->isHeavyWeapon() || weapon->isSpecialHeavyWeapon() || (weapon->getAttackType() == SharedWeaponObjectTemplate::RANGEDATTACK)) && ((System::random(100)) < lstDef) && (!targetCreature->isKnockedDown())))				return RICOCHET;
-			else return HIT;
+			if (!(attacker->isTurret() || weapon->isThrownWeapon()) && ((weapon->isHeavyWeapon() || weapon->isSpecialHeavyWeapon() || (weapon->getAttackType() == SharedWeaponObjectTemplate::RANGEDATTACK)) && ((System::random(100)) < targetCreature->getSkillMod(def))))
+				return RICOCHET;
+			else
+				return HIT;
 		}
 
 		targetDefense = getDefenderSecondaryDefenseModifier(targetCreature);

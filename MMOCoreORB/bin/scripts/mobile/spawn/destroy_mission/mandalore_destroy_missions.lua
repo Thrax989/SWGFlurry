@@ -75,51 +75,9 @@ mandalore_destroy_missions = {
 			size = 25,
 		},
 		{
-			lairTemplateName = "talus_rot_mite_lair_neutral_boss_02",
-			minDifficulty = 16,
-			maxDifficulty = 20,
-			size = 25,
-		},
-		{
-			lairTemplateName = "talus_rot_mite_lair_neutral_boss_03",
-			minDifficulty = 17,
-			maxDifficulty = 22,
-			size = 25,
-		},
-		{
-			lairTemplateName = "talus_rot_mite_lair_neutral_boss_04",
-			minDifficulty = 18,
-			maxDifficulty = 23,
-			size = 25,
-		},
-		{
-			lairTemplateName = "talus_rot_mite_lair_neutral_boss_04",
-			minDifficulty = 18,
-			maxDifficulty = 23,
-			size = 25,
-		},
-		{
 			lairTemplateName = "talus_rot_mite_lair_neutral_small_01",
 			minDifficulty = 19,
 			maxDifficulty = 25,
-			size = 25,
-		},
-		{
-			lairTemplateName = "talus_rot_mite_lair_neutral_small_02",
-			minDifficulty = 24,
-			maxDifficulty = 34,
-			size = 25,
-		},
-		{
-			lairTemplateName = "talus_rot_mite_lair_neutral_small_03",
-			minDifficulty = 9,
-			maxDifficulty = 14,
-			size = 25,
-		},
-		{
-			lairTemplateName = "talus_rot_mite_lair_neutral_small_04",
-			minDifficulty = 7,
-			maxDifficulty = 11,
 			size = 25,
 		},
 		{
@@ -157,13 +115,7 @@ mandalore_destroy_missions = {
 			minDifficulty = 8,
 			maxDifficulty = 13,
 			size = 25,
-		},
-		{
-			lairTemplateName = "global_dark_jedi_camp_dark_jedi_theater",
-			minDifficulty = 8,
-			maxDifficulty = 13,
-			size = 25,
-		},
+		},-
 		{
 			lairTemplateName = "global_pirate_camp_neutral_small_theater",
 			minDifficulty = 8,
@@ -177,42 +129,11 @@ mandalore_destroy_missions = {
 			size = 25,
 		},
 		{
-			lairTemplateName = "geonosis_sbd1_droid_neutral",
-			minDifficulty = 1,
+			lairTemplateName = "mandalore_deathwatch_sbd_lair",
+			minDifficulty = 50,
 			maxDifficulty = 150,
 			size = 25,
 		},
-		{
-			lairTemplateName = "geonosis_sbd2_droid_neutral",
-			minDifficulty = 1,
-			maxDifficulty = 150,
-			size = 25,
-		},
-		{
-			lairTemplateName = "geonosis_sbd3_droid_neutral",
-			minDifficulty = 1,
-			maxDifficulty = 150,
-			size = 25,
-		},
-		{
-			lairTemplateName = "geonosis_sbd4_droid_neutral",
-			minDifficulty = 1,
-			maxDifficulty = 150,
-			size = 25,
-		},
-		{
-			lairTemplateName = "geonosis_sbd5_droid_neutral",
-			minDifficulty = 1,
-			maxDifficulty = 150,
-			size = 25,
-		},
-		{
-			lairTemplateName = "geonosis_sbd6_droid_neutral",
-			minDifficulty = 1,
-			maxDifficulty = 150,
-			size = 25,
-		},
-
 	}
 }
 

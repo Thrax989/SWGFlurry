@@ -85,3 +85,4 @@ includeFile("weapon/groups/tutorial_bandit.lua")
 
 ---Custom groups
 includeFile("weapon/groups/bosstest_weapons.lua")
+includeFile("weapon/groups/mandalorian_weapons.lua")

@@ -250,13 +250,14 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
           {
 			"Caladan (5,000 Credits)", "pc_caladan_travel",
 			--"Vir Domus (5,000 Credits)", "pc_virdomus_travel",
-			"Solace (5,000 Credits)", "pc_solace_travel"
+			"Solace (5,000 Credits)", "pc_solace_travel",
+			"Laconia (5,000 Credits)", "pc_laconia_travel"
           },  
             "Lok",
           {
       		--"Crimson Thorn (5,000 Credits)", "pc_crimson_travel",
 			--"Binary (5,000 Credits)", "pc_binary_travel",
-			--"Serenity (5,000 Credits)", "pc_serenity_travel",
+			"Serenity (5,000 Credits)", "pc_serenity_travel",
 			"New Justice (5,000 Credits)", "pc_newjustice_travel"
           },
             "Yavin4",
