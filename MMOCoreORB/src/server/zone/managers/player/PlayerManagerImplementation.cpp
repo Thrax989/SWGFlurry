@@ -2405,7 +2405,7 @@ void PlayerManagerImplementation::frsSkillCheck(CreatureObject* player, const St
 	SkillManager* skillManager = server->getSkillManager();
 	String skillStarter;
 
-	error("frsskillcheckEntered for player: " + player->getFirstName() + " Skill: " + skill + " Skill Parent: " + skillParent);
+	//error("frsskillcheckEntered for player: " + player->getFirstName() + " Skill: " + skill + " Skill Parent: " + skillParent);
 	if (player->hasSkill("force_rank_light_novice")) {
 		skillStarter = "force_rank_light_";
 	} else {
