@@ -4,16 +4,16 @@ mandalore_the_resurrector = Creature:new {
 	socialGroup = "death_watch",
 	pvpFaction = "death_watch",
 	faction = "",
-	level = 300,
-	chanceHit = 100,
-	damageMin = 13000,
-	damageMax = 14000,
-  specialDamageMult = 1.5,
+	level = 350,
+	chanceHit = 95,
+	damageMin = 8500,
+	damageMax = 10000,
+	specialDamageMult = 2.5,
 	baseXp = 20948,
 	baseHAM = 1250000,
 	baseHAMmax = 1500000,
 	armor = 3,
-	resists = {180,180,180,180,180,180,180,180,165},
+	resists = {165,165,165,165,165,165,165,165,200},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -34,13 +34,13 @@ mandalore_the_resurrector = Creature:new {
 			groups = {
 				{group = "boss_rare", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 10000000
 		},		
 		{
 			groups = {
 				{group = "death_watch_bunker_lootbox", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
@@ -64,37 +64,37 @@ mandalore_the_resurrector = Creature:new {
 			groups = {
 				{group = "boss_common", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 2500000
 		},
 		{
 			groups = {
 				{group = "boss_common", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 25000000
 		},
 		{
 			groups = {
 				{group = "boss_common", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 25000000
 		},
 		{
 			groups = {
 				{group = "death_watch_bunker_lootbox", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
 				{group = "death_watch_bunker_commoners", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
 				{group = "blacksun_rare", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
@@ -106,19 +106,19 @@ mandalore_the_resurrector = Creature:new {
 			groups = {
 				{group = "boss_common", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
 				{group = "boss_common", chance = 10000000},
 			},
-			lootChance = 10000000
+			lootChance = 50000000
 		},
 		{
 			groups = {
 				{group = "boss_common", chance = 10000000},
 			},
-			lootChance = 10000000
+			lootChance = 50000000
 		},
 		{
 			groups = {
@@ -142,7 +142,7 @@ mandalore_the_resurrector = Creature:new {
 			groups = {
 				{group = "boss_rare", chance = 10000000},
 			},
-			lootChance = 1000000
+			lootChance = 5000000
 		},
 		{
 			groups = {
@@ -163,9 +163,9 @@ mandalore_the_resurrector = Creature:new {
 			lootChance = 10000000
 		}
 	},
-	weapons = {"st_bombardier_weapons"},
+	weapons = {"mandalorian_weapons_heavy"},
 	reactionStf = "@npc_reaction/slang",
-	attacks = merge(commandomaster,marksmanmaster,tkamaster,brawlermaster,fencermaster,swordsmanmaster,pikemanmaster,riflemanmaster,pistoleermaster)
+	attacks = merge(pikemanmaster,tkamaster,marksmanmaster,pistoleermaster,carbineermaster,forcewielder)
 }
 
 CreatureTemplates:addCreatureTemplate(mandalore_the_resurrector, "mandalore_the_resurrector")

@@ -5,16 +5,16 @@ pyke_syndicate_criminal = Creature:new {
 	socialGroup = "death_watch",
 	pvpFaction = "death_watch",
 	faction = "",
-	level = 250,
+	level = 300,
 	chanceHit = 100,
-	damageMin = 2500,
-	damageMax = 4050,
+	damageMin = 6500,
+	damageMax = 8050,
   specialDamageMult = 1.5,
 	baseXp = 15000,
 	baseHAM = 95000,
 	baseHAMmax = 125000,
-	armor = 1,
-	resists = {30,70,70,70,70,70,70,70,35},
+	armor = 2,
+	resists = {165,165,165,165,165,165,165,165,200},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -43,7 +43,19 @@ pyke_syndicate_criminal = Creature:new {
 			},
 			lootChance = 2000000
 		},
+    		{
+			groups = {
+				{group = "death_watch_bunker_ingredient_binary", chance = 10000000},
+			},
+			lootChance = 1000000
+		},
 		{
+			groups = {
+				{group = "death_watch_bunker_ingredient_protective", chance = 10000000},
+			},
+			lootChance = 1000000
+		},
+    {
 			groups = {
 				{group = "tierone", chance = 1500000},
 				{group = "tiertwo", chance = 3500000},
@@ -53,9 +65,9 @@ pyke_syndicate_criminal = Creature:new {
 			lootChance = 3500000
 		},
 	},
-	weapons = {"st_bombardier_weapons"},
+	weapons = {"mandalorian_weapons_heavy"},
 	reactionStf = "@npc_reaction/slang",
-	attacks = merge(commandomaster,marksmanmaster,tkamaster,brawlermaster,fencermaster,swordsmanmaster,pikemanmaster,riflemanmaster,pistoleermaster)
+	attacks = merge(pikemanmaster,tkamaster,marksmanmaster,pistoleermaster,carbineermaster,forcewielder)
 }
 
 CreatureTemplates:addCreatureTemplate(pyke_syndicate_criminal, "pyke_syndicate_criminal")
