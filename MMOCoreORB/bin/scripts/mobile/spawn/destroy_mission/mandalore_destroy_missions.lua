@@ -115,7 +115,7 @@ mandalore_destroy_missions = {
 			minDifficulty = 8,
 			maxDifficulty = 13,
 			size = 25,
-		},-
+		},
 		{
 			lairTemplateName = "global_pirate_camp_neutral_small_theater",
 			minDifficulty = 8,
