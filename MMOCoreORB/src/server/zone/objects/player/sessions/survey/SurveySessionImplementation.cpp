@@ -228,8 +228,9 @@ void SurveySessionImplementation::startSample(const String& resname) {
 	message.setTO(lastResourceSampleName);
 	surveyer->sendSystemMessage(message);
 
-	if (!doGamble && richSampleLocation.getPosition() == Vector3(0, 0, 0) && System::random(50) == 7) {
-		/*if (ghost->hasSuiBoxWindowType(SuiWindowType::SURVEY_TOOL_CONCENTRATED_MINIGAME)) {
+	if (!doGamble && richSampleLocation.getPosition() != Vector3(0, 0, 0) && System::random(50) == 7) {
+
+		if (ghost->hasSuiBoxWindowType(SuiWindowType::SURVEY_TOOL_CONCENTRATED_MINIGAME)) {
 			ghost->removeSuiBoxType(SuiWindowType::SURVEY_TOOL_CONCENTRATED_MINIGAME);
 		}
 
@@ -241,7 +242,7 @@ void SurveySessionImplementation::startSample(const String& resname) {
 			surveyCnodeMinigameSui();
 		else
 			surveyGnodeMinigameSui();
-		*/
+
 	} else {
 
 		if (!lastResourceSampleName.isEmpty())
@@ -399,3 +400,4 @@ void SurveySessionImplementation::rescheduleSampleResults(const ResourceSpawner*
 	}
 }
 
+{"mode":"full","isActive":false}
