@@ -399,5 +399,3 @@ void SurveySessionImplementation::rescheduleSampleResults(const ResourceSpawner*
 		surveyer->addPendingTask("sampleresults", sampleResultsTask, 3000);
 	}
 }
-
-{"mode":"full","isActive":false}
