@@ -574,7 +574,7 @@ includeFile("caves/dantooine_force_crystal_hunter_cave.lua")
 includeFile("caves/dantooine_force_cave.lua")
 includeFile("caves/dantooine_janta_cave.lua") --old janta king screenplay
 includeFile("caves/dantooine_kunga_stronghold.lua")
-includeFile("caves/dantooine_lizard_cave.lua")
+--includeFile("caves/dantooine_lizard_cave.lua") -- Has Students of the Force
 includeFile("caves/dathomir_rancor_cave.lua")
 includeFile("caves/dathomir_spider_clan_cave.lua")
 includeFile("caves/endor_jinda_ritualist_cave.lua")
