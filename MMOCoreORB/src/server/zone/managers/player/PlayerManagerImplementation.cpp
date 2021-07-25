@@ -2387,16 +2387,16 @@ int PlayerManagerImplementation::awardExperience(CreatureObject* player, const S
 
 //BH Rank System BHG
 	if (xpType == "bhg_rank_xp") {
-		if (player->hasSkill("bounty_hunters_guild_novice")) {
+		if (player->hasSkill("bounty_rank_guild_novice")) {
 			PlayerObject* ghost = player->getPlayerObject();
 			const SkillList* skillList = player->getSkillList();
 			int curExp = ghost->getExperience("bhg_rank_xp");
 			if (curExp < -15000) {
-				if (player->hasSkill("bounty_hunters_guild_novice")) {
-					while (player->hasSkill("bounty_hunters_guild_novice")) {
+				if (player->hasSkill("bounty_rank_guild_novice")) {
+					while (player->hasSkill("bounty_rank_guild_novice")) {
 						for (int i = 0; i < skillList->size(); ++i) {
 							Skill* skill = skillList->get(i);
-							if (skill->getSkillName().indexOf("bounty_hunters_guild_") != -1 && skill->getSkillName().indexOf("bounty_hunters_guild_novice") == -1) {
+							if (skill->getSkillName().indexOf("bounty_rank_") != -1 && skill->getSkillName().indexOf("bounty_rank_guild_novice") == -1) {
 								SkillManager::instance()->surrenderSkill(skill->getSkillName(), player, true);
 							}
 						}
@@ -2408,46 +2408,44 @@ int PlayerManagerImplementation::awardExperience(CreatureObject* player, const S
 				}
 			}
 			if (curExp < 10000) {
-				bhgSkillCheck(player, "", "");
+				bhgSkillCheck(player, "novice", "rank_01");
 			}
 			if (curExp >= 10000 && curExp < 20000) {
-				bhgSkillCheck(player, "", "");
+				bhgSkillCheck(player, "rank_01", "rank_02");
 			}
 			if (curExp >= 20000 && curExp < 30000) {
-				bhgSkillCheck(player, "", "");
+				bhgSkillCheck(player, "rank_02", "rank_03");
 			}
 			if (curExp >= 30000 && curExp < 40000) {
-				bhgSkillCheck(player, "", "");
+				bhgSkillCheck(player, "rank_03", "rank_04");
 			}
 			if (curExp >= 40000 && curExp < 60000) {
-				bhgSkillCheck(player, "", "");
+				bhgSkillCheck(player, "rank_04", "rank_05");
 			}
 			if (curExp >= 60000 && curExp < 80000) {
-				bhgSkillCheck(player, "", "");
+				bhgSkillCheck(player, "rank_05", "rank_06");
 			}
 			if (curExp >= 80000 && curExp < 100000) {
-				bhgSkillCheck(player, "", "");
+				bhgSkillCheck(player, "rank_06", "rank_07");
 			}
 			if (curExp >= 100000 && curExp < 150000) {
-				bhgSkillCheck(player, "", "");
+				bhgSkillCheck(player, "rank_07", "rank_08");
 			}
 			if (curExp >= 150000 && curExp < 200000) {
-				bhgSkillCheck(player, "", "");
-				SkillManager::instance()->awardSkill("", player, true, true, true);
+				bhgSkillCheck(player, "rank_08", "rank_09");
 			}
 			if (curExp >= 200000 && curExp < 300000) {
-				bhgSkillCheck(player, "", "");
+				bhgSkillCheck(player, "rank_09", "rank_10");
 			}
 			if (curExp >= 300000 && curExp < 500000) {
-				bhgSkillCheck(player, "", "");
-				SkillManager::instance()->awardSkill("", player, true, true, true);
+				bhgSkillCheck(player, "rank_10", "master");
 			}
 			if (curExp >= 500000) {
-				bhgSkillCheck(player, "", "");
-				SkillManager::instance()->awardSkill("", player, true, true, true);
+				bhgSkillCheck(player, "master", "master");
 			}
 		}
 	}
+
 // End Of BH Rank BHG
 
 	if (xpType == "force_rank_xp") {
@@ -2474,7 +2472,7 @@ int PlayerManagerImplementation::awardExperience(CreatureObject* player, const S
 					String playerName = player->getFirstName();
 					StringBuffer zBroadcast;
 					zBroadcast << "\\#ffb90f" << playerName << " has left the \\#22b7f6Jedi Order!";
-					ghost->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
+					ghost->getZoneServer()->getChatManager()->broadcastGalaxy(nullptr, zBroadcast.toString());
 				} else if (player->hasSkill("force_rank_dark_novice")) {
 					while (player->hasSkill("force_rank_dark_novice")) {
 						for (int i = 0; i < skillList->size(); ++i) {
@@ -2493,7 +2491,7 @@ int PlayerManagerImplementation::awardExperience(CreatureObject* player, const S
 					String playerName = player->getFirstName();
 					StringBuffer zBroadcast;
 					zBroadcast << "\\#ffb90f" << playerName << " has left the \\#e51b1bSith Order!";
-					ghost->getZoneServer()->getChatManager()->broadcastGalaxy(NULL, zBroadcast.toString());
+					ghost->getZoneServer()->getChatManager()->broadcastGalaxy(nullptr, zBroadcast.toString());
 				}
 			}
 			error("frsSkillCheck Current FRSXP = " + String::valueOf(curExp));
@@ -2601,8 +2599,8 @@ void PlayerManagerImplementation::bhgSkillCheck(CreatureObject* player, const St
 	SkillManager* skillManager = server->getSkillManager();
 	String skillStarter;
 
-	if (player->hasSkill("bounty_hunters_guild_novice")) {
-		skillStarter = "bounty_hunters_guild_";
+	if (player->hasSkill("bounty_rank_guild_novice")) {
+		skillStarter = "bounty_rank_guild_";
 	}
 	player->sendSystemMessage("You have been granted: " + skillStarter + skill);
 	skillManager->awardSkill(skillStarter + skill, player, true, true, true);
