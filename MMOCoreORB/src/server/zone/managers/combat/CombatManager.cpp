@@ -1394,9 +1394,9 @@ int CombatManager::getArmorReduction(TangibleObject* attacker, WeaponObject* wea
 
 		if (defender->checkCooldownRecovery("psg_damaged")){
 			if (attacker->isPlayerCreature())
-				psg->inflictDamage(psg, 0, damage * 0.1, true, true);
+				psg->inflictDamage(psg, 0, damage * 0.002, true, true);
 			  else
-				psg->inflictDamage(psg, 0, damage * 0.1, true, true);
+				psg->inflictDamage(psg, 0, damage * 0.001, true, true);
 			} else {
 	        		defender->updateCooldownTimer("psg_damaged", 1000);
 			}
