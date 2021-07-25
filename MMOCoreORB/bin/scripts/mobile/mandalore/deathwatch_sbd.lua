@@ -52,7 +52,7 @@ deathwatch_sbd = Creature:new {
 				    {group = "death_watch_bunker_ingredient_protective", chance = 5000000},
  				    {group = "death_watch_bunker_ingredient_binary", chance = 5000000},
 			  },
-			  lootChance = 500000
+			  lootChance = 100000
 		    },
 		    {
 			    groups = {
@@ -64,12 +64,12 @@ deathwatch_sbd = Creature:new {
 			    groups = {
 				    {group = "jedi_comp_group", chance = 10000000},
 			  },
-			  lootChance = 400000
+			  lootChance = 100000
 		    },
 	  },
+	weapons = {"battle_droid_weapons"},
 	conversationTemplate = "",
-	defaultWeapon = "object/weapon/ranged/droid/droid_droideka_ranged.iff",
-	defaultAttack = "attack"
+	attacks = merge(pistoleermaster,carbineermaster,marksmanmaster)
 }
 
 CreatureTemplates:addCreatureTemplate(deathwatch_sbd, "deathwatch_sbd")
