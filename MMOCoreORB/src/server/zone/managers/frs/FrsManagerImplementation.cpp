@@ -1064,7 +1064,8 @@ int FrsManagerImplementation::calculatePvpExperienceChange(CreatureObject* attac
 		chatManager->handleGeneralChat(attacker, zGeneral.toString());
 		PlayerManager* playerManager = attacker->getZoneServer()->getPlayerManager();
 		attacker->playEffect("clienteffect/level_granted.cef", "");
-		playerManager->awardExperience(attacker, "force_rank_xp", 5000, true); // Award FRS XP
+		playerManager->awardExperience(attacker, "force_rank_xp", 10000, true); // Award FRS XP
+ 		attacker->sendSystemMessage("You Have Gained 10,000 FRS Points");		
 	}
 	return xpChange;
 }
