@@ -2309,6 +2309,72 @@ int PlayerManagerImplementation::awardExperience(CreatureObject* player, const S
 		}
 	}
 
+
+//BH Rank System BHG
+	if (xpType == "bhg_rank_xp") {
+		if (player->hasSkill("bounty_hunters_guild_novice")) {
+			PlayerObject* ghost = player->getPlayerObject();
+			const SkillList* skillList = player->getSkillList();
+			int curExp = ghost->getExperience("bhg_rank_xp");
+			if (curExp < -15000) {
+				if (player->hasSkill("bounty_hunters_guild_novice")) {
+					while (player->hasSkill("bounty_hunters_guild_novice")) {
+						for (int i = 0; i < skillList->size(); ++i) {
+							Skill* skill = skillList->get(i);
+							if (skill->getSkillName().indexOf("bounty_hunters_guild_") != -1 && skill->getSkillName().indexOf("bounty_hunters_guild_novice") == -1) {
+								SkillManager::instance()->surrenderSkill(skill->getSkillName(), player, true);
+							}
+						}
+					}
+					String playerName = player->getFirstName();
+					StringBuffer zBroadcast;
+					zBroadcast << "\\#ffb90f" << playerName << " has left the \\#22b7f6Bounty Hunters Guild!";
+					ghost->getZoneServer()->getChatManager()->broadcastGalaxy(nullptr, zBroadcast.toString());
+				}
+			}
+			if (curExp < 10000) {
+				bhgSkillCheck(player, "", "");
+			}
+			if (curExp >= 10000 && curExp < 20000) {
+				bhgSkillCheck(player, "", "");
+			}
+			if (curExp >= 20000 && curExp < 30000) {
+				bhgSkillCheck(player, "", "");
+			}
+			if (curExp >= 30000 && curExp < 40000) {
+				bhgSkillCheck(player, "", "");
+			}
+			if (curExp >= 40000 && curExp < 60000) {
+				bhgSkillCheck(player, "", "");
+			}
+			if (curExp >= 60000 && curExp < 80000) {
+				bhgSkillCheck(player, "", "");
+			}
+			if (curExp >= 80000 && curExp < 100000) {
+				bhgSkillCheck(player, "", "");
+			}
+			if (curExp >= 100000 && curExp < 150000) {
+				bhgSkillCheck(player, "", "");
+			}
+			if (curExp >= 150000 && curExp < 200000) {
+				bhgSkillCheck(player, "", "");
+				SkillManager::instance()->awardSkill("", player, true, true, true);
+			}
+			if (curExp >= 200000 && curExp < 300000) {
+				bhgSkillCheck(player, "", "");
+			}
+			if (curExp >= 300000 && curExp < 500000) {
+				bhgSkillCheck(player, "", "");
+				SkillManager::instance()->awardSkill("", player, true, true, true);
+			}
+			if (curExp >= 500000) {
+				bhgSkillCheck(player, "", "");
+				SkillManager::instance()->awardSkill("", player, true, true, true);
+			}
+		}
+	}
+// End Of BH Rank BHG
+
 	if (xpType == "force_rank_xp") {
 		if (player->hasSkill("force_rank_light_novice") || player->hasSkill("force_rank_dark_novice")) {
 			PlayerObject* ghost = player->getPlayerObject();
