@@ -3655,6 +3655,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 				if (!player->isInCombat() && player->getBankCredits() > 9999999) {
 		                ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 						player->sendSystemMessage("Thank you for purchasing a Jedi Unlock.");
+						bluefrog->grantGlowyBadges(player);
 						bluefrog->grantJediInitiate(player);
 						player->subtractBankCredits(10000000);
 						box->setForceCloseDistance(5.f);

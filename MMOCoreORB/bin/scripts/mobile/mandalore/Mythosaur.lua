@@ -45,13 +45,13 @@ mythosaur = Creature:new {
 			groups = {
 				{group = "mythosaur_common", chance = 10000000},
 			},
-			lootChance = 2500000
+			lootChance = 7500000
 		},
 		{
 			groups = {
 				{group = "mythosaur_common", chance = 10000000},
 			},
-			lootChance = 2500000
+			lootChance = 5000000
 		},
 		{
 			groups = {
@@ -60,7 +60,7 @@ mythosaur = Creature:new {
 				{group = "tierthree", chance = 2000000},
 				{group = "tierdiamond", chance = 2000000},
 			},
-			lootChance = 5000000
+			lootChance = 8000000
 		}
 	},
 	weapons = {},

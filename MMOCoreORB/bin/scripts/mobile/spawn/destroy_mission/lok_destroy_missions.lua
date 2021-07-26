@@ -154,8 +154,8 @@ lok_destroy_missions = {
 		},
 		{
 			lairTemplateName = "lok_kimogilla_dune_lair_neutral_medium",
-			minDifficulty = 100,
-			maxDifficulty = 215,
+			minDifficulty = 40,
+			maxDifficulty = 60,
 			size = 25,
 		},
 	}

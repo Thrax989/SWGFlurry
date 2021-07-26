@@ -108,35 +108,6 @@ bool CombatManager::startCombat(CreatureObject* attacker, TangibleObject* defend
 			VisibilityManager::instance()->increaseVisibility(creo, 25);
 	}
 
-	ManagedReference<CreatureObject*> defenderCreo =nullptr;
-
-	if (defender->isPlayerCreature())
-		defenderCreo = cast<CreatureObject*>(defender);
-
-	if (attacker->isPlayerCreature() && defenderCreo != nullptr){
-		if (attacker->hasBuff(BuffCRC::JEDI_FORCE_RUN_3))
-			attacker->removeBuff(BuffCRC::JEDI_FORCE_RUN_3);
-	
-		if (defenderCreo->hasBuff(BuffCRC::JEDI_FORCE_RUN_3))
-			defenderCreo->removeBuff(BuffCRC::JEDI_FORCE_RUN_3);
-	}
-
-	if (attacker->isPlayerCreature() && defenderCreo != nullptr){
-		if (attacker->hasBuff(BuffCRC::JEDI_FORCE_RUN_2))
-			attacker->removeBuff(BuffCRC::JEDI_FORCE_RUN_2);
-	
-		if (defenderCreo->hasBuff(BuffCRC::JEDI_FORCE_RUN_2))
-			defenderCreo->removeBuff(BuffCRC::JEDI_FORCE_RUN_2);
-	}
-
-	if (attacker->isPlayerCreature() && defenderCreo != nullptr){
-		if (attacker->hasBuff(BuffCRC::JEDI_FORCE_RUN_1))
-			attacker->removeBuff(BuffCRC::JEDI_FORCE_RUN_1);
-	
-		if (defenderCreo->hasBuff(BuffCRC::JEDI_FORCE_RUN_1))
-			defenderCreo->removeBuff(BuffCRC::JEDI_FORCE_RUN_1);
-	}
-
 	attacker->setDefender(defender);
 	defender->addDefender(attacker);
 
@@ -1394,9 +1365,9 @@ int CombatManager::getArmorReduction(TangibleObject* attacker, WeaponObject* wea
 
 		if (defender->checkCooldownRecovery("psg_damaged")){
 			if (attacker->isPlayerCreature())
-				psg->inflictDamage(psg, 0, damage * 0.01, true, true);
+				psg->inflictDamage(psg, 0, damage * 0.002, true, true);
 			  else
-				psg->inflictDamage(psg, 0, damage * 0.01, true, true);
+				psg->inflictDamage(psg, 0, damage * 0.001, true, true);
 			} else {
 	        		defender->updateCooldownTimer("psg_damaged", 1000);
 			}
