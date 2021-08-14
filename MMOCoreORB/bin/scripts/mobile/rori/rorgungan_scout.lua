@@ -26,7 +26,7 @@ rorgungan_scout = Creature:new {
 	creatureBitmask = PACK + HERD,
 	diet = HERBIVORE,
 
-	templates = {"object/mobile/gungan_s04_male.iff"},
+	templates = {"object/mobile/gungan_male.iff"},
 
 	lootGroups = {
 		{

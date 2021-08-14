@@ -25,7 +25,7 @@ fassa = Creature:new {
 	optionsBitmask = AIENABLED + CONVERSABLE,
 	diet = HERBIVORE,
 
-	templates = {"object/mobile/gungan_s02_male.iff"},
+	templates = {"object/mobile/gungan_male.iff"},
 	lootGroups = {},
 	weapons = {"rebel_weapons_medium"},
 	conversationTemplate = "boss_nass_mission_target_convotemplate",
