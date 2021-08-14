@@ -26,7 +26,7 @@ rorgungan_warchief = Creature:new {
 	creatureBitmask = PACK + KILLER + HERD,
 	diet = HERBIVORE,
 
-	templates = {"object/mobile/gungan_s02_male.iff"},
+	templates = {"object/mobile/gungan_male.iff"},
 	lootGroups = {
 		{
 			groups = {

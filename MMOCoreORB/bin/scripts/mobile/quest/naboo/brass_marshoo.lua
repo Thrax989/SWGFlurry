@@ -26,7 +26,7 @@ brass_marshoo = Creature:new {
 	optionsBitmask = AIENABLED + CONVERSABLE,
 	diet = HERBIVORE,
 
-	templates = {"object/mobile/gungan_s02_male.iff"},
+	templates = {"object/mobile/gungan_male.iff"},
 	lootGroups = {},
 	weapons = {},
 	conversationTemplate = "brass_marshoo_mission_giver_convotemplate",
