@@ -244,6 +244,7 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
           {
            		 --"Asgard (5,000 Credits)", "pc_asgard_travel",
 			"Lost City (5,000 Credits)", "pc_lost city_travel",
+			"Phobos (5,000 Credits)", "pc_phobos_travel"      
 			--"Somov'Rit (5,000 Credits)", "pc_somov city_travel"				
           },
             "Talus",
