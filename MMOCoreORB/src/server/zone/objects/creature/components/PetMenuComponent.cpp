@@ -122,60 +122,60 @@ void PetMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject, ObjectMe
 
 		menuResponse->addRadialMenuItem(141, 3, "@pet/pet_menu:menu_command"); // PET_COMMAND
 
-		if( player->hasSkill( "outdoors_creaturehandler_novice" ) || player->hasSkill( "force_rank_gray_master" ) ){
+		if( player->hasSkill( "outdoors_creaturehandler_novice" ) ){
 			menuResponse->addRadialMenuItemToRadialID(141, 142, 3, "@pet/pet_menu:menu_follow" ); // PET_FOLLOW
 			menuResponse->addRadialMenuItemToRadialID(141, 146, 3, "@pet/pet_menu:menu_attack" ); // PET_ATTACK
 			menuResponse->addRadialMenuItemToRadialID(141, 164, 3, "@pet/pet_menu:menu_store" );
 		}
 
-		if( player->hasSkill( "outdoors_creaturehandler_training_01" ) || player->hasSkill( "force_rank_gray_master" ) ){
+		if( player->hasSkill( "outdoors_creaturehandler_training_01" ) ){
 			menuResponse->addRadialMenuItemToRadialID(141, 143, 3, "@pet/pet_menu:menu_stay" ); // PET_STAY
 		}
 
-		if( player->hasSkill( "outdoors_creaturehandler_training_02" ) || player->hasSkill( "force_rank_gray_master" ) ){
+		if( player->hasSkill( "outdoors_creaturehandler_training_02" ) ){
 			menuResponse->addRadialMenuItemToRadialID(141, 144, 3, "@pet/pet_menu:menu_guard" ); // PET_GUARD
 		}
 
-		if( player->hasSkill( "outdoors_creaturehandler_training_03" ) || player->hasSkill( "force_rank_gray_master" ) ){
+		if( player->hasSkill( "outdoors_creaturehandler_training_03" ) ){
 			menuResponse->addRadialMenuItemToRadialID(141, 147, 3, "@pet/pet_menu:menu_patrol" ); // PET_PATROL
 			menuResponse->addRadialMenuItemToRadialID(141, 148, 3, "@pet/pet_menu:menu_get_patrol_point" ); // PET_GET_PATROL_POINT
 			menuResponse->addRadialMenuItemToRadialID(141, 149, 3, "@pet/pet_menu:menu_clear_patrol_points" ); // PET_CLEAR_PATROL_POINTS
 		}
 
-		if( player->hasSkill( "outdoors_creaturehandler_training_04" ) || player->hasSkill( "force_rank_gray_master" ) ){
+		if( player->hasSkill( "outdoors_creaturehandler_training_04" ) ){
 			menuResponse->addRadialMenuItemToRadialID(141, 150, 3, "@pet/pet_menu:menu_assume_formation_1" ); // PET_ASSUME_FORMATION_1
 			menuResponse->addRadialMenuItemToRadialID(141, 151, 3, "@pet/pet_menu:menu_assume_formation_2" ); // PET_ASSUME_FORMATION_2
 		}
 
-		if( player->hasSkill( "outdoors_creaturehandler_healing_01" ) || player->hasSkill( "force_rank_gray_master" ) ){
+		if( player->hasSkill( "outdoors_creaturehandler_healing_01" ) ){
 			menuResponse->addRadialMenuItemToRadialID(141, 154, 3, "@pet/pet_menu:menu_trick_1" ); // PET_TRICK_1
 		}
 
-		if( player->hasSkill( "outdoors_creaturehandler_healing_03" ) || player->hasSkill( "force_rank_gray_master" ) ){
+		if( player->hasSkill( "outdoors_creaturehandler_healing_03" ) ){
 			menuResponse->addRadialMenuItemToRadialID(141, 155, 3, "@pet/pet_menu:menu_trick_2" ); // PET_TRICK_2
 		}
 
-		if( player->hasSkill( "outdoors_creaturehandler_support_01" ) || player->hasSkill( "force_rank_gray_master" ) ){
+		if( player->hasSkill( "outdoors_creaturehandler_support_01" ) ){
 			menuResponse->addRadialMenuItemToRadialID(141, 158, 3, "@pet/pet_menu:menu_group" ); // PET_GROUP
 		}
 
-		if( player->hasSkill( "outdoors_creaturehandler_support_02" ) || player->hasSkill( "force_rank_gray_master" ) ){
+		if( player->hasSkill( "outdoors_creaturehandler_support_02" ) ){
 			menuResponse->addRadialMenuItemToRadialID(141, 165, 3, "@pet/pet_menu:menu_follow_other" );
 		}
 
-		if( player->hasSkill( "outdoors_creaturehandler_support_03" ) || player->hasSkill( "force_rank_gray_master" ) ){
+		if( player->hasSkill( "outdoors_creaturehandler_support_03" ) ){
 			menuResponse->addRadialMenuItemToRadialID(141, 145, 3, "@pet/pet_menu:menu_friend" ); // PET_FRIEND
 		}
 
-		if( player->hasSkill( "outdoors_creaturehandler_taming_03" ) || player->hasSkill( "force_rank_gray_master" ) && pet->hasSpecialAttack(1) ){
+		if( player->hasSkill( "outdoors_creaturehandler_taming_03" ) && pet->hasSpecialAttack(1) ){
 			menuResponse->addRadialMenuItemToRadialID(141, 161, 3, "@pet/pet_menu:menu_specialattack_one" ); // PET_SPECIAL_ATTACK_ONE
 		}
 
-		if( player->hasSkill( "outdoors_creaturehandler_taming_04" ) || player->hasSkill( "force_rank_gray_master" ) && pet->hasSpecialAttack(2) ){
+		if( player->hasSkill( "outdoors_creaturehandler_taming_04" ) && pet->hasSpecialAttack(2) ){
 			menuResponse->addRadialMenuItemToRadialID(141, 162, 3, "@pet/pet_menu:menu_specialattack_two" ); // PET_SPECIAL_ATTACK_TWO
 		}
 
-		if( player->hasSkill( "outdoors_creaturehandler_master" ) || player->hasSkill( "force_rank_gray_master" ) ){
+		if( player->hasSkill( "outdoors_creaturehandler_master" ) ){
 			if (pet->hasRangedWeapon()) {
 				menuResponse->addRadialMenuItemToRadialID(141, 163, 3, "@pet/pet_menu:menu_ranged_attack" );
 			}
@@ -183,7 +183,7 @@ void PetMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject, ObjectMe
 			menuResponse->addRadialMenuItemToRadialID(141, 152, 3, "@pet/pet_menu:menu_transfer" ); // PET_TRANSFER
 		}
 
-		if( player->hasSkill( "outdoors_creaturehandler_support_04") || player->hasSkill( "force_rank_gray_master" ) && !controlDevice->isTrainedAsMount() && petManager->checkMountEligibility(controlDevice) == PetManager::CANBEMOUNTTRAINED){
+		if( player->hasSkill( "outdoors_creaturehandler_support_04") && !controlDevice->isTrainedAsMount() && petManager->checkMountEligibility(controlDevice) == PetManager::CANBEMOUNTTRAINED){
 			menuResponse->addRadialMenuItemToRadialID(141, 207, 3, "@pet/pet_menu:menu_train_mount" ); // Train Pet As A Mount
 		}
 

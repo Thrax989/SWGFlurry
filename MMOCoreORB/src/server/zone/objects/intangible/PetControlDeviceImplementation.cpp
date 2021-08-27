@@ -149,7 +149,7 @@ void PetControlDeviceImplementation::callObject(CreatureObject* player) {
 		if (creaturePet == nullptr)
 			return;
 
-		bool ch = player->hasSkill("outdoors_creaturehandler_novice") || player->hasSkill("force_rank_gray_master");
+		bool ch = player->hasSkill("outdoors_creaturehandler_novice");
 
 		if (ch) {
 			maxPets = player->getSkillMod("keep_creature");
@@ -768,7 +768,7 @@ bool PetControlDeviceImplementation::canBeTradedTo(CreatureObject* player, Creat
 		int maxStoredPets = playerManager->getBaseStoredCreaturePets();
 		int maxLevelofPets = 10;
 		int level = pet->getAdultLevel();
-		bool ch = receiver->hasSkill("outdoors_creaturehandler_novice") || receiver->hasSkill("force_rank_gray_master");
+		bool ch = receiver->hasSkill("outdoors_creaturehandler_novice");
 
 		if (ch) {
 			maxStoredPets += receiver->getSkillMod("stored_pets");

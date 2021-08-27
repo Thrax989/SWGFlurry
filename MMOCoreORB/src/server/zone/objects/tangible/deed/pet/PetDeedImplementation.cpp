@@ -423,7 +423,7 @@ int PetDeedImplementation::handleObjectMenuSelect(CreatureObject* player, byte s
 		bool isVicious = petTemplate->getPvpBitmask() & CreatureFlag::AGGRESSIVE;
 
 		if (level > 10 || isVicious) {
-			if (!player->hasSkill("outdoors_creaturehandler_novice") || !player->hasSkill("force_rank_gray_master") || (level > maxLevelofPets)) {
+			if (!player->hasSkill("outdoors_creaturehandler_novice") || (level > maxLevelofPets)) {
 				player->sendSystemMessage("@pet/pet_menu:sys_lack_skill"); // You lack the skill to be able to tame that creature.
 				return 1;
 			}
