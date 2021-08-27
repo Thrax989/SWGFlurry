@@ -167,11 +167,11 @@ void PetMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject, ObjectMe
 			menuResponse->addRadialMenuItemToRadialID(141, 145, 3, "@pet/pet_menu:menu_friend" ); // PET_FRIEND
 		}
 
-		if( player->hasSkill( "outdoors_creaturehandler_taming_03" ) || player->hasSkill( "force_rank_gray_master" ) && pet->hasSpecialAttack(1) ){
+		if( (player->hasSkill( "outdoors_creaturehandler_taming_03" ) || player->hasSkill( "force_rank_gray_master" )) && pet->hasSpecialAttack(1) ){
 			menuResponse->addRadialMenuItemToRadialID(141, 161, 3, "@pet/pet_menu:menu_specialattack_one" ); // PET_SPECIAL_ATTACK_ONE
 		}
 
-		if( player->hasSkill( "outdoors_creaturehandler_taming_04" ) || player->hasSkill( "force_rank_gray_master" ) && pet->hasSpecialAttack(2) ){
+		if( (player->hasSkill( "outdoors_creaturehandler_taming_04" ) || player->hasSkill( "force_rank_gray_master" )) && pet->hasSpecialAttack(2) ){
 			menuResponse->addRadialMenuItemToRadialID(141, 162, 3, "@pet/pet_menu:menu_specialattack_two" ); // PET_SPECIAL_ATTACK_TWO
 		}
 
@@ -183,7 +183,7 @@ void PetMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject, ObjectMe
 			menuResponse->addRadialMenuItemToRadialID(141, 152, 3, "@pet/pet_menu:menu_transfer" ); // PET_TRANSFER
 		}
 
-		if( player->hasSkill( "outdoors_creaturehandler_support_04") || player->hasSkill( "force_rank_gray_master" ) && !controlDevice->isTrainedAsMount() && petManager->checkMountEligibility(controlDevice) == PetManager::CANBEMOUNTTRAINED){
+		if( (player->hasSkill( "outdoors_creaturehandler_support_04") || player->hasSkill( "force_rank_gray_master" )) && !controlDevice->isTrainedAsMount() && petManager->checkMountEligibility(controlDevice) == PetManager::CANBEMOUNTTRAINED){
 			menuResponse->addRadialMenuItemToRadialID(141, 207, 3, "@pet/pet_menu:menu_train_mount" ); // Train Pet As A Mount
 		}
 
