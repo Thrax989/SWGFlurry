@@ -998,7 +998,7 @@ void CreatureManagerImplementation::tame(Creature* creature, CreatureObject* pla
 	int templateLevel = creatureTemplate->getLevel();
 	int maxLevelofPets = player->getSkillMod("tame_level");
 
-	if (!player->hasSkill("outdoors_creaturehandler_novice") || (templateLevel > maxLevelofPets)) {
+	if (!player->hasSkill("outdoors_creaturehandler_novice") || !player->hasSkill("force_rank_gray_master") || (templateLevel > maxLevelofPets)) {
 		player->sendSystemMessage("@pet/pet_menu:sys_lack_skill"); // You lack the skill to be able to tame that creature.
 		return;
 	}

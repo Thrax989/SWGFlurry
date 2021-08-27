@@ -91,7 +91,7 @@ public:
 		}
 
 		//None CH can only have 1 active pet.
-		if(targetPlayer->hasSkill("outdoors_creaturehandler_novice") && ((petLevel + pet->getLevel()) > targetPlayer->getSkillMod("tame_level")))
+		if((targetPlayer->hasSkill("outdoors_creaturehandler_novice") || targetPlayer->hasSkill("force_rank_gray_master")) && ((petLevel + pet->getLevel()) > targetPlayer->getSkillMod("tame_level")))
 		{
 			player->sendSystemMessage("@pet/pet_menu:no_chance"); // That person has no chance of controlling this creature. Transfer failed.
 			return GENERALERROR;
