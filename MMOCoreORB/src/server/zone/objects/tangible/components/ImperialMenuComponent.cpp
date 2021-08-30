@@ -47,7 +47,7 @@ int ImperialMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Crea
 
 	ManagedReference<PlayerObject*> ghost = creature->getPlayerObject();
 
-	ghost->increaseFactionStanding("imperial", 500);
+	ghost->increaseFactionStanding("imperial", 1000);
 	sceneObject->destroyObjectFromWorld(true);
 	sceneObject->destroyObjectFromDatabase(true);
 	}
