@@ -55,10 +55,10 @@ int WorldMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Creatur
 	lootManager->createLoot(inventory, "lootcollectiontierdiamond", 300);
 	lootManager->createLoot(inventory, "clothing_attachments.", 300);
 	lootManager->createLoot(inventory, "armor_attachments", 300);
-	lootManager->createLoot(inventory, "power_crystals", 300);
-	lootManager->createLoot(inventory, "tiertwo", 300);
+	lootManager->createLoot(inventory, "krayt_pearls_flawless", 300);
+	lootManager->createLoot(inventory, "mokk_elites", 300);
 	lootManager->createLoot(inventory, "tierthree", 300);
-	lootManager->createLoot(inventory, "tierone", 300);
+	lootManager->createLoot(inventory, "rarelootsystem", 300);
 	lootManager->createLoot(inventory, "tierdiamond", 300);
 	player->playEffect("clienteffect/level_granted.cef", "");
 	ghost->updateworldbossKills();
