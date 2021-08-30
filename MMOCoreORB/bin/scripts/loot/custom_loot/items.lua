@@ -584,6 +584,7 @@ includeFile("custom_loot/items/wearables/jewelry/ring_resistance.lua")
 includeFile("custom_loot/items/wearables/jewelry/necklace_jediform.lua")
 includeFile("custom_loot/items/wearables/jewelry/bracelet_leftpower.lua")
 includeFile("custom_loot/items/wearables/jewelry/bracelet_rightcrafting.lua")
+includeFile("custom_loot/items/wearables/jewelry/ch_earing.lua")
 
 --Goggles
 includeFile("custom_loot/items/goggles/goggles_g01.lua")
