@@ -12,6 +12,8 @@ ch_earing = {
 		{"tame_aggro", 25},
     {"tame_bonus", 25},
     {"tame_non_aggro", 25},
-    {"creature_hit_bonus", 25} 
+    {"creature_hit_bonus", 25}
+	}
+}    
 
 addLootItemTemplate("ch_earing", ch_earing)
