@@ -3,14 +3,14 @@ ancient_bull_rancor = Creature:new {
 	socialGroup = "rancor",
 	faction = "",
 	level = 300,
-	chanceHit = 0.75,
+	chanceHit = 0.95,
 	damageMin = 1900,
 	damageMax = 3800,
 	baseXp = 10500,
 	baseHAM = 50000,
 	baseHAMmax = 100000,
 	armor = 2,
-	resists = {150,165,150,200,200,200,150,140,120},
+	resists = {150,165,0,200,200,200,0,0,-1},
 	meatType = "meat_carnivore",
 	meatAmount = 1000,
 	hideType = "hide_leathery",
@@ -42,9 +42,9 @@ ancient_bull_rancor = Creature:new {
 	weapons = {},
 	conversationTemplate = "",
 	attacks = {
-		{"creatureareableeding","BleedChance=60"},
-		{"creatureareapoison","PoisonChance=40"},
-		{"creatureareacombo","stateAccuracyBonus=75"}
+		{"creatureareableeding",""},
+		{"creatureareapoison",""},
+		{"creatureareacombo",""}
 	}
 }
 
