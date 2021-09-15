@@ -40,6 +40,7 @@
 --gives permission to release a modified version without this exception; 
 --this exception also makes it possible to release a modified version 
 
+
 object_tangible_wearables_helmet_helmet_fighter_privateer_ace = object_tangible_wearables_helmet_shared_helmet_fighter_privateer_ace:new {
 	playerRaces = { "object/creature/player/abyssin_male.iff",
 				"object/creature/player/abyssin_female.iff",
