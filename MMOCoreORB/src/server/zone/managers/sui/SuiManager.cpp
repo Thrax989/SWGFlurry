@@ -3625,51 +3625,7 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 					Locker clocker(currentCity, player);
 					currentCity->addToCityTreasury(1000);
 					}
-				}
-			} else if (templatePath == "pc_infinite_travel") {
-				if (!player->isInCombat() && player->getBankCredits() < 4999) {
-					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-					box->setPromptTitle("Player City Infinite");
-					box->setPromptText("Travel Cost 5,000 Credits. (Bank)");
-					box->setOkButton(true, "@cancel");
-					box->setUsingObject(player);
-					player->getPlayerObject()->addSuiBox(box);
-					player->sendMessage(box->generateMessage());
-				}
-				if (!player->isInCombat() && player->getBankCredits() > 4999) {
-					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-					ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
-					player->sendSystemMessage("Thank you for your travels.");
-					player->switchZone("Dantooine", -529, 3, -2933);
-					player->subtractBankCredits(5000);
-					box->setForceCloseDistance(5.f);
-					if(currentCity !=nullptr && !currentCity->isClientRegion()) {
-					Locker clocker(currentCity, player);
-					currentCity->addToCityTreasury(1000);
-					}
-				}
-			} else if (templatePath == "pc_tombstone_travel") {
-				if (!player->isInCombat() && player->getBankCredits() < 4999) {
-					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-					box->setPromptTitle("Player City Tombstone");
-					box->setPromptText("Travel Cost 5,000 Credits. (Bank)");
-					box->setOkButton(true, "@cancel");
-					box->setUsingObject(player);
-					player->getPlayerObject()->addSuiBox(box);
-					player->sendMessage(box->generateMessage());
-				}
-				if (!player->isInCombat() && player->getBankCredits() > 4999) {
-					ManagedReference<SuiMessageBox*> box = new SuiMessageBox(player, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
-					ManagedReference<CityRegion*> currentCity = player->getCityRegion().get();
-					player->sendSystemMessage("Thank you for your travels.");
-					player->switchZone("talus", 3900, 71, -2279);
-					player->subtractBankCredits(5000);
-					box->setForceCloseDistance(5.f);
-					if(currentCity !=nullptr && !currentCity->isClientRegion()) {
-					Locker clocker(currentCity, player);
-					currentCity->addToCityTreasury(1000);
-					}
-				}												
+				}				
 //GRAY JEDI HOLOCRON QUEST END CHAPTER
 			} else if (templatePath == "switch_normal_loadout") {
 				if (!player->isInCombat() && player->getBankCredits() < 99) {
