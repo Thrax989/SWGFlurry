@@ -224,6 +224,8 @@ object_tangible_wearables_helmet_helmet_tie_fighter = object_tangible_wearables_
 				"object/creature/player/zabrak_female.iff" ,
 				"object/mobile/vendor/zabrak_male.iff",
 				"object/mobile/vendor/zabrak_female.iff" },
+				gameObjectType = 16777226,
+        			clientGameObjectType = 16777226
 }
 
 ObjectTemplates:addTemplate(object_tangible_wearables_helmet_helmet_tie_fighter, "object/tangible/wearables/helmet/helmet_tie_fighter.iff")
