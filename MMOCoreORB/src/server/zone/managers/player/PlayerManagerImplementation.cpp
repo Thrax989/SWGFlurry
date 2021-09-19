@@ -6606,7 +6606,7 @@ void PlayerManagerImplementation::unlockFRSForTesting(CreatureObject* player, in
 
 	SkillManager* skillManager = SkillManager::instance();
 
-	int glowyBadgeIds[] = { 12, 14, 15, 16, 17, 19, 20, 21, 23, 30, 38, 39, 71, 105, 106, 107 };
+	int glowyBadgeIds[] = { 12, 14, 15, 16, 17, 19, 20, 21, 23, 30, 38, 39, 56, 71, 105, 106, 107, 108 };
 
 	for (int i = 0; i < 16; i++) {
 		ghost->awardBadge(glowyBadgeIds[i]);
