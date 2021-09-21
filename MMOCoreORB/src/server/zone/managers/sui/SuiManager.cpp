@@ -3723,7 +3723,6 @@ void SuiManager::handleCharacterBuilderSelectItem(CreatureObject* player, SuiBox
 						player->sendSystemMessage("Thank you for purchasing a Jedi Unlock.");
 						bluefrog->grantGlowyBadges(player);
 						bluefrog->grantJediInitiate(player);
-						bluefrog->unlockFRSForTesting(player);
 						player->subtractBankCredits(10000000);
 						box->setForceCloseDistance(5.f);
 			        }
