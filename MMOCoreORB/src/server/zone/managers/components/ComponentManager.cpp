@@ -69,8 +69,6 @@
 #include "server/zone/objects/tangible/components/FlurrypresentMenuComponent.h"
 #include "server/zone/objects/tangible/components/HalloweenMenuComponent.h"
 #include "server/zone/objects/tangible/components/ForceShrineMenuComponent1.h"
-#include "server/zone/objects/tangible/components/GCWMenuComponent1.h"
-#include "server/zone/objects/tangible/components/BHGMenuComponent1.h"
 #include "server/zone/objects/tangible/components/FriendcrateMenuComponent.h"
 #include "server/zone/objects/tangible/components/NewMemberMenuComponent.h"
 #include "server/zone/objects/tangible/components/ScrapMenuComponent.h"
@@ -249,8 +247,6 @@ ComponentManager::ComponentManager() {
 	components.put("FlurrypresentMenuComponent", new FlurrypresentMenuComponent());
 	components.put("HalloweenMenuComponent", new HalloweenMenuComponent());
 	components.put("ForceShrineMenuComponent1", new ForceShrineMenuComponent1());
-	components.put("ForceShrineMenuComponent1", new GCWMenuComponent1());
-	components.put("ForceShrineMenuComponent1", new BHGMenuComponent1());
 	components.put("FriendcrateMenuComponent", new FriendcrateMenuComponent());
 	components.put("NewMemberMenuComponent", new NewMemberMenuComponent());
 	components.put("ScrapMenuComponent", new ScrapMenuComponent());

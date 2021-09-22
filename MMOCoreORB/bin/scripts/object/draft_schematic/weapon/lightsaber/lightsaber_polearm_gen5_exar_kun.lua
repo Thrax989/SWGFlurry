@@ -31,8 +31,9 @@ object_draft_schematic_weapon_lightsaber_lightsaber_polearm_gen5_exar_kun = obje
    targetTemplate = "object/weapon/melee/polearm/crafted_saber/sword_lightsaber_polearm_gen5_exar_kun.iff",
 
    additionalTemplates = {
-                           },
-						   
+              "object/weapon/melee/polearm/crafted_saber/shared_sword_lightsaber_polearm_s1_gen4.iff",
+              "object/weapon/melee/polearm/crafted_saber/shared_sword_lightsaber_polearm_s2_gen4.iff",
+             }
 
 }
 

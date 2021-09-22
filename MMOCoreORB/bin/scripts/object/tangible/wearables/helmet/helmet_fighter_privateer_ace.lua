@@ -40,7 +40,6 @@
 --gives permission to release a modified version without this exception; 
 --this exception also makes it possible to release a modified version 
 
-
 object_tangible_wearables_helmet_helmet_fighter_privateer_ace = object_tangible_wearables_helmet_shared_helmet_fighter_privateer_ace:new {
 	playerRaces = { "object/creature/player/abyssin_male.iff",
 				"object/creature/player/abyssin_female.iff",
@@ -222,6 +221,8 @@ object_tangible_wearables_helmet_helmet_fighter_privateer_ace = object_tangible_
 				"object/creature/player/zabrak_female.iff" ,
 				"object/mobile/vendor/zabrak_male.iff",
 				"object/mobile/vendor/zabrak_female.iff" },
+				gameObjectType = 16777226,
+        			clientGameObjectType = 16777226
 }
 
 ObjectTemplates:addTemplate(object_tangible_wearables_helmet_helmet_fighter_privateer_ace, "object/tangible/wearables/helmet/helmet_fighter_privateer_ace.iff")
