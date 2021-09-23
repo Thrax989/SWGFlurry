@@ -31,19 +31,7 @@ deathwatch_sbd = Creature:new {
 	lootGroups = {
 		    {
 			    groups = {
-				    {group = "wearables_uncommon", chance = 10000000}
-			  },
-			  lootChance = 5000000
-		    },
-		    {
-			    groups = {
 				    {group = "death_watch_bunker_lieutenants", chance = 10000000}
-			  },
-			  lootChance = 5000000
-		    },
-		    {
-			    groups = {
-				    {group = "jetpack_base", chance = 10000000}
 			  },
 			  lootChance = 5000000
 		    },
@@ -52,7 +40,7 @@ deathwatch_sbd = Creature:new {
 				    {group = "death_watch_bunker_ingredient_protective", chance = 5000000},
  				    {group = "death_watch_bunker_ingredient_binary", chance = 5000000},
 			  },
-			  lootChance = 100000
+			  lootChance = 2000000
 		    },
 		    {
 			    groups = {
@@ -64,7 +52,7 @@ deathwatch_sbd = Creature:new {
 			    groups = {
 				    {group = "jedi_comp_group", chance = 10000000},
 			  },
-			  lootChance = 100000
+			  lootChance = 1000000
 		    },
 	  },
 	weapons = {"battle_droid_weapons"},
