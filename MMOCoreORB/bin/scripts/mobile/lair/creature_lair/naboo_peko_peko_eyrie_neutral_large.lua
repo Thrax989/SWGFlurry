@@ -1,5 +1,6 @@
 naboo_peko_peko_eyrie_neutral_large = Lair:new {
 	mobiles = {{"peko_peko",1}},
+	bossMobiles = {{"peko_peko_albatross",1}},
 	spawnLimit = 15,
 	buildingsVeryEasy = {"object/tangible/lair/base/poi_all_lair_rocks_large.iff"},
 	buildingsEasy = {"object/tangible/lair/base/poi_all_lair_rocks_large.iff"},
