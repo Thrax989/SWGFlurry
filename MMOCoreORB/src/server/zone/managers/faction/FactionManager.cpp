@@ -210,7 +210,8 @@ void FactionManager::awardPvpFactionPoints(TangibleObject* killer, CreatureObjec
 			killedGhost->decreaseFactionStanding("imperial", 45);
 			
 			if (killerCreature->hasSkill("force_rank_light_novice") && destructedObject->hasSkill("force_rank_dark_novice")) {
-				playerManager->awardExperience(killerCreature, "force_rank_xp", 5000);
+				playerManager->awardExperience(killerCreature, "force_rank_xp", 10000);
+	 			killerCreature->sendSystemMessage("You Have Gained 10,000 GCW FRS Points");		
 				playerManager->awardExperience(destructedObject, "force_rank_xp", -5000);
 				StringIdChatParameter message("base_player","prose_revoke_xp");
 				message.setDI(-5000);
@@ -231,8 +232,8 @@ void FactionManager::awardPvpFactionPoints(TangibleObject* killer, CreatureObjec
 
 					if (groupMember->isInRange(killerCreature, 100.0)) {	
 						if (groupMember->isPlayerCreature()) {			
-							playerManager->awardExperience(groupMember, "force_rank_xp", 500);
- 							groupMember->sendSystemMessage("You Have Gained 500 FRS Points");
+							playerManager->awardExperience(groupMember, "force_rank_xp", 5000);
+ 							groupMember->sendSystemMessage("You Have Gained 5,000 FRS Points");
 							} 			
 						}	
 					}	
@@ -256,7 +257,8 @@ void FactionManager::awardPvpFactionPoints(TangibleObject* killer, CreatureObjec
 			ghost->decreaseFactionStanding("rebel", 45);
 			killedGhost->decreaseFactionStanding("rebel", 45);
 			if (killerCreature->hasSkill("force_rank_dark_novice") && destructedObject->hasSkill("force_rank_light_novice")) {
-				playerManager->awardExperience(killerCreature, "force_rank_xp", 5000);
+				playerManager->awardExperience(killerCreature, "force_rank_xp", 100000);
+ 				killerCreature->sendSystemMessage("You Have Gained 10,000 GCW FRS Points");		
 				playerManager->awardExperience(destructedObject, "force_rank_xp", -5000);
 				StringIdChatParameter message("base_player","prose_revoke_xp");
 				message.setDI(-5000);
@@ -277,8 +279,8 @@ void FactionManager::awardPvpFactionPoints(TangibleObject* killer, CreatureObjec
 
 					if (groupMember->isInRange(killerCreature, 100.0)) {	
 						if (groupMember->isPlayerCreature()) {			
-							playerManager->awardExperience(groupMember, "force_rank_xp", 500);
- 								groupMember->sendSystemMessage("You Have Gained 500 FRS Points");		
+							playerManager->awardExperience(groupMember, "force_rank_xp", 5000);
+ 								groupMember->sendSystemMessage("You Have Gained 5,000 FRS Points");		
 							}	
 						}	
 		    

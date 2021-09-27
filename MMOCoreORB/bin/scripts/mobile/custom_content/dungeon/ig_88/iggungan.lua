@@ -26,7 +26,7 @@ iggungan = Creature:new {
 	diet = HERBIVORE,
 	scale = 1.15,
 
-	templates = {"object/mobile/gungan_s02_male.iff"},
+	templates = {"object/mobile/gungan_male.iff"},
 	lootGroups = {
 	},
 	weapons = {"tusken_weapons"},

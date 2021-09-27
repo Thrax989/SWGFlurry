@@ -41,13 +41,13 @@
 --this exception also makes it possible to release a modified version 
 
 
-object_weapon_ranged_turret_turret_block_small = object_weapon_ranged_turret_shared_turret_block_large:new {
+object_weapon_ranged_turret_turret_block_small = object_weapon_ranged_turret_shared_turret_block_small:new {
 	-- HEAVYLIGHTNINGBEAMATTACK, HEAVYPARTICLEBEAMATTACK, HEAVYROCKETLAUNCHERATTACK, HEAVYLAUNCHERATTACK
 	attackType = RANGEDATTACK,
 	-- ENERGY, KINETIC, ELECTRICITY, STUN, BLAST, HEAT, COLD, ACID, LIGHTSABER
 	damageType = BLAST,
 	-- NONE, LIGHT, MEDIUM, HEAVY
-	armorPiercing = HEAVY,
+	armorPiercing = MEDIUM,
 	-- See http://www.ocdsoft.com/files/accuracy.xls
 	creatureAccuracyModifiers = { "rifle_accuracy" },
 	creatureAimModifiers = { "rifle_aim", "aim" },
@@ -64,11 +64,11 @@ object_weapon_ranged_turret_turret_block_small = object_weapon_ranged_turret_sha
 	pointBlankAccuracy = 80,
 	idealRange = 40,
 	idealAccuracy = 100,
-	maxRange = 75,
+	maxRange = 50,
 	maxRangeAccuracy = 100,
-	minDamage = 8000,
-	maxDamage = 12000,
-	attackSpeed = 1,
+	minDamage = 3000,
+	maxDamage = 7000,
+	attackSpeed = 3,
 	woundsRatio = 20,
 }
 

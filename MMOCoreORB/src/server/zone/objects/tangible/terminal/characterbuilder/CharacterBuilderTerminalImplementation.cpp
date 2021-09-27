@@ -119,10 +119,10 @@ void CharacterBuilderTerminalImplementation::grantGlowyBadges(CreatureObject* pl
 	if (ghost == nullptr)
 		return;
 
-	Vector<int> ids = terminalTemplate->getGlowyBadgeIds();
+	int glowyBadgeIds[] = { 12, 14, 15, 16, 17, 19, 20, 21, 23, 30, 38, 39, 71, 105, 106, 107 };
 
-	for (int i = 0; i < ids.size(); i++) {
-		ghost->awardBadge(ids.get(i));
+	for (int i = 0; i < 16; i++) {
+		ghost->awardBadge(glowyBadgeIds[i]);
 	}
 }
 

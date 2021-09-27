@@ -6,14 +6,15 @@ taung_warrior = Creature:new {
 	pvpFaction = "death_watch",
 	faction = "",
 	level = 300,
-	chanceHit = 40,
-	damageMin = 3750,
-	damageMax = 4250, 
+	chanceHit = 100,
+	damageMin = 6500,
+	damageMax = 8050,
+  specialDamageMult = 1.5,
 	baseXp = 15000,
-	baseHAM = 115000,
+	baseHAM = 95000,
 	baseHAMmax = 125000,
 	armor = 2,
-	resists = {170,170,140,170,170,145,170,170,145},
+	resists = {165,165,165,165,165,165,165,165,200},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -57,7 +58,7 @@ taung_warrior = Creature:new {
 				{group = "death_watch_bunker_ingredient_protective", chance = 5000000},
  				{group = "death_watch_bunker_ingredient_binary", chance = 5000000},
 			},
-			lootChance = 500000
+			lootChance = 1000000
 		},   
 		{
 			groups = {

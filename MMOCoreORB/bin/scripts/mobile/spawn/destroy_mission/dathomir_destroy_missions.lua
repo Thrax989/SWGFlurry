@@ -160,8 +160,8 @@ dathomir_destroy_missions = {
 		},
 		{
 			lairTemplateName = "dathomir_rancor_ancient_bull_lair_neutral_large",
-			minDifficulty = 100,
-			maxDifficulty = 215,
+			minDifficulty = 85,
+			maxDifficulty = 90,
 			size = 35,
 		},
 	}

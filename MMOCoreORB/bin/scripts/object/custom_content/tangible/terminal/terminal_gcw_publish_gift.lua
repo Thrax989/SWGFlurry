@@ -217,7 +217,8 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
             --"Janta Town (5,000 Credits)", "pc_jantatown_travel",
             "Serendipity (5,000 Credits)", "pc_serendipity_travel",
             --"Malice (5,000 Credits)", "pc_malice_travel",
-            "Port Rielig (5,000 Credits)", "pc_portrielig_travel",			
+            "Port Rielig (5,000 Credits)", "pc_portrielig_travel",
+            "Infinite (5,000 Credits)", "pc_infinite_travel",            
             "Banir (5,000 Credits)", "pc_banir_travel"
           },
             "Dathomir",
@@ -244,6 +245,7 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
           {
            		 --"Asgard (5,000 Credits)", "pc_asgard_travel",
 			"Lost City (5,000 Credits)", "pc_lost city_travel",
+			"Phobos (5,000 Credits)", "pc_phobos_travel"      
 			--"Somov'Rit (5,000 Credits)", "pc_somov city_travel"				
           },
             "Talus",
@@ -251,6 +253,7 @@ object_tangible_terminal_terminal_gcw_publish_gift = object_tangible_terminal_sh
 			"Caladan (5,000 Credits)", "pc_caladan_travel",
 			--"Vir Domus (5,000 Credits)", "pc_virdomus_travel",
 			"Solace (5,000 Credits)", "pc_solace_travel",
+			"Tombstone (5,000 Credits)", "pc_tombstone_travel",      
 			"Laconia (5,000 Credits)", "pc_laconia_travel"
           },  
             "Lok",

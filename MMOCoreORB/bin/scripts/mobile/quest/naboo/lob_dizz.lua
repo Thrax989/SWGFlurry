@@ -26,7 +26,7 @@ lob_dizz = Creature:new {
 	optionsBitmask = AIENABLED + CONVERSABLE,
 	diet = HERBIVORE,
 
-	templates = {"object/mobile/gungan_s02_male.iff"},
+	templates = {"object/mobile/gungan_male.iff"},
 	lootGroups = {},
 	weapons = {},
 	conversationTemplate = "lob_dizz_mission_giver_convotemplate",

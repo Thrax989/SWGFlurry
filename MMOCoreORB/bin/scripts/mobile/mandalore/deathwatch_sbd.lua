@@ -4,13 +4,13 @@ deathwatch_sbd = Creature:new {
 	faction = "",
 	level = 300,
 	chanceHit = 25,
-	damageMin = 1200,
-	damageMax = 2100,
+	damageMin = 2500,
+	damageMax = 3200,
 	baseXp = 19000,
-	baseHAM = 230000,
-	baseHAMmax = 230000,
-	armor = 2,
-	resists = {85,95,100,60,100,25,40,85,-1},
+	baseHAM = 100000,
+	baseHAMmax = 130000,
+	armor = 1,
+	resists = {180,190,100,160,125,125,140,185,120},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -52,7 +52,7 @@ deathwatch_sbd = Creature:new {
 				    {group = "death_watch_bunker_ingredient_protective", chance = 5000000},
  				    {group = "death_watch_bunker_ingredient_binary", chance = 5000000},
 			  },
-			  lootChance = 500000
+			  lootChance = 100000
 		    },
 		    {
 			    groups = {
@@ -64,12 +64,12 @@ deathwatch_sbd = Creature:new {
 			    groups = {
 				    {group = "jedi_comp_group", chance = 10000000},
 			  },
-			  lootChance = 400000
+			  lootChance = 100000
 		    },
 	  },
+	weapons = {"battle_droid_weapons"},
 	conversationTemplate = "",
-	defaultWeapon = "object/weapon/ranged/droid/droid_droideka_ranged.iff",
-	defaultAttack = "attack"
+	attacks = merge(pistoleermaster,carbineermaster,marksmanmaster)
 }
 
 CreatureTemplates:addCreatureTemplate(deathwatch_sbd, "deathwatch_sbd")
