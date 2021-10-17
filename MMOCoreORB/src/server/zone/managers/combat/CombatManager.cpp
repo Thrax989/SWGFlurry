@@ -1453,6 +1453,9 @@ float CombatManager::calculateDamage(CreatureObject* attacker, WeaponObject* wea
 	if (!data.isForceAttack() && weapon->getAttackType() == SharedWeaponObjectTemplate::MELEEATTACK)
 		damage *= 1.25;
 
+	if (attacker->isPlayerCreature() && weapon->getDamageType() == SharedWeaponObjectTemplate::LIGHTSABER && !data.isForceAttack() && weapon->getAttackType() == SharedWeaponObjectTemplate::MELEEATTACK)
+		damage *= attacker->getFrsMod("manipulation",2);
+
 	//info("damage to be dealt is " + String::valueOf(damage), true);
 
 	ManagedReference<LairObserver*> lairObserver = nullptr;
