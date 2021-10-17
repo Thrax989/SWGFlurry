@@ -68,6 +68,12 @@ death_watch_s_battle_droid_alt = Creature:new {
 			},
 			lootChance = 400000
 		},
+		{
+			groups = {
+				{group = "black_suns", chance = 10000000}
+			},
+			lootChance = 100000
+		},
 	},
 	conversationTemplate = "",
 	defaultWeapon = "object/weapon/ranged/droid/droid_droideka_ranged.iff",

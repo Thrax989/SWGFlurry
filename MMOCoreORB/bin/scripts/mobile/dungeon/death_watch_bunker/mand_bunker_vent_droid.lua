@@ -57,6 +57,12 @@ mand_bunker_vent_droid = Creature:new {
 			},
 			lootChance = 5000000
 		},
+		{
+			groups = {
+				{group = "black_suns", chance = 10000000}
+			},
+			lootChance = 100000
+		},
 	},
 	weapons = {},
 	attacks = {}

@@ -67,6 +67,12 @@ death_watch_battle_droid = Creature:new {
 			},
 			lootChance = 200000
 		},
+		{
+			groups = {
+				{group = "black_suns", chance = 10000000}
+			},
+			lootChance = 100000
+		},
 	},
 	weapons = {"battle_droid_weapons"},
 	conversationTemplate = "",
