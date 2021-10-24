@@ -2,7 +2,7 @@ HalloweenEventVendorLogic = VendorLogic:new {
 	scriptName = "HalloweenEventVendorLogic",
 	currencies = {
 	--For Tokens: Displayed Name, full template string (without shared_), if applicable: ScreenPlayData string, ScreenPlayData key
-		{currency = "token", name = "Hallween Event Tokens", template = "object/tangible/loot/misc/halloween_token.iff", ScreenPlayDataString = "vendorToken", ScreenPlayDataKey = "event_token"},
+		{currency = "token", name = "Hallween Event Coins", template = "object/tangible/event_perk/halloween_coin.iff", ScreenPlayDataString = "vendorToken", ScreenPlayDataKey = "event_token"},
 	},
 	--Displayed Name, full template string (without shared_), cost in {}, use the same structure as currencies
 	merchandise = {
