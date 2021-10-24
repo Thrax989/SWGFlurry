@@ -807,3 +807,11 @@ includeFile("custom_screenplays/screenplays.lua")
 
 --Battlefields
 includeFile("battlefields/battlefield_spawner.lua")
+
+
+--Merchants
+includeFile("merchants/vendor_logic.lua")
+includeFile("merchants/vendorData.lua")
+includeFile("merchants/houseVendorData.lua")
+includeFile("merchants/halloweenvendorData.lua")
+includeFile("merchants/vendor_conv_handler.lua")
