@@ -89,6 +89,7 @@
 #include "server/zone/objects/tangible/misc/ContractCrate.h"
 #include "server/zone/managers/crafting/schematicmap/SchematicMap.h"
 #include "server/zone/managers/structure/tasks/DestroyPackedupStructureTask.h"
+#include "server/zone/objects/tangible/misc/VendorToken.h"
 
 int DirectorManager::DEBUG_MODE = 0;
 int DirectorManager::ERROR_CODE = NO_ERROR;
