@@ -1922,9 +1922,19 @@ void PlayerManagerImplementation::disseminateExperience(TangibleObject* destruct
 				xpAmount = Math::min(xpAmount, calculatePlayerLevel(attacker, xpType) * 300.f);
 
 				//Apply group bonus if in group
-				if (group != nullptr)
-					xpAmount *= groupExpMultiplier;
-
+				//Adjust Range default 100m
+				if (group != nullptr) {
+				ManagedReference<GroupObject*> group = attacker->getGroup();
+				int groupSize = group->getGroupSize();
+				for (int i = 0; i < groupSize; i++) {
+					ManagedReference<CreatureObject*> groupMember = group->getGroupMember(i);
+					if (groupMember->isInRange(killerCreature, 100.0)) {	
+						if (groupMember->isPlayerCreature()) {			
+							xpAmount *= groupExpMultiplier;
+							} 			
+						}	
+					}
+					
 				if (winningFaction == attacker->getFaction())
 					xpAmount *= gcwBonus;
 
