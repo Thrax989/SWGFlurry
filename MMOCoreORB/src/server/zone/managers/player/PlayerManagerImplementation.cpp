@@ -1928,12 +1928,13 @@ void PlayerManagerImplementation::disseminateExperience(TangibleObject* destruct
 				int groupSize = group->getGroupSize();
 				for (int i = 0; i < groupSize; i++) {
 					ManagedReference<CreatureObject*> groupMember = group->getGroupMember(i);
-					if (groupMember->isInRange(killerCreature, 100.0)) {	
+					if (groupMember->isInRange(attacker, 100.0)) {	
 						if (groupMember->isPlayerCreature()) {			
 							xpAmount *= groupExpMultiplier;
 							} 			
 						}	
 					}
+				}
 					
 				if (winningFaction == attacker->getFaction())
 					xpAmount *= gcwBonus;
