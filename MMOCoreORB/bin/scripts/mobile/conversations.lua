@@ -324,3 +324,4 @@ includeFile("conversations/events/holo_exchange.lua")
 --custom exchange
 includeFile("conversations/events/event_exchange_dealer.lua")
 
+includeFile("conversations/merchants/vendor_conv.lua") 

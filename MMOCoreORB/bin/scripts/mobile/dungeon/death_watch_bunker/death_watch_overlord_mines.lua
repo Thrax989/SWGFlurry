@@ -66,6 +66,12 @@ death_watch_overlord_mines = Creature:new {
 			},
 			lootChance = 5000000
 		},
+		{
+			groups = {
+				{group = "black_suns", chance = 10000000}
+			},
+			lootChance = 100000
+		},
 	},
 	weapons = {"dark_trooper_weapons"},
 	conversationTemplate = "",

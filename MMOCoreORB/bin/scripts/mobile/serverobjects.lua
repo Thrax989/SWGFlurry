@@ -57,3 +57,6 @@ includeFile("ghost/serverobjects.lua")
 
 --New Beast Master BE Pets
 includeFile("be/serverobjects.lua")
+
+--Merchants
+includeFile("merchants/serverobjects.lua")

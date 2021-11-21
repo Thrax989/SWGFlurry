@@ -4,12 +4,11 @@
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/objects/player/sui/callbacks/SplitTokenSuiCallback.h"
 #include "server/zone/objects/player/sui/inputbox/SuiInputBox.h"
-#include "server/zone/objects/tangible/components/generic/VendorTokenMenucomponent.h"
-#include "engine/log/Logger.h"
+#include "server/zone/objects/tangible/misc/VendorToken.h"
 
-class SplitTokenSuiCallback : public SuiCallback, Logger {
+class SplitTokenSuiCallback : public SuiCallback {
 	ManagedWeakReference<SceneObject*> scenObj;
-
+	
 public:
 	SplitTokenSuiCallback(ZoneServer* server, SceneObject* sceneObject) : SuiCallback(server) {
 		scenObj = sceneObject;
@@ -17,50 +16,46 @@ public:
 
 	void run(CreatureObject* player, SuiBox* suiBox, uint32 eventIndex, Vector<UnicodeString>* args) {
 		if (!player->isPlayerCreature()) {
-			return;
+		return;
 		}
-
+		
 		SceneObject* inventory = player->getSlottedObject("inventory");
-		if (inventory == NULL) {
+		if (inventory == nullptr) {
 			return;
 		}
-
+		
 		bool cancelPressed = (eventIndex == 1);
 
 		if (!suiBox->isTransferBox() || cancelPressed || args->size() <= 1) {
 			return;
 		}
 
-		int newCount = Integer::valueOf(args->get(1).toString());
 		SceneObject* sceno = scenObj.get();
-
+		
 		String fullTemplate = sceno->getObjectTemplate()->getFullTemplateString();
 		TangibleObject* tano = cast <TangibleObject* >(sceno);
 		ManagedReference<TangibleObject*> newToken = player->getZoneServer()->createObject(fullTemplate.hashCode(), 1).castTo<TangibleObject*>();
-
-		if (newToken == NULL) {
+		
+		if (newToken == nullptr) {
 			return;
 		}
-
+		
 		Locker locker(tano);
-
-		int tokenCount = tano->getUseCount();
-
-		if (tokenCount <= 0 or newCount <= 0 or ((tokenCount - newCount) <= 0)) {
-			player->sendSystemMessage("Please enter a stack size greater than 0.");
-			setLoggingName("SplitToken");
-			warning(player->getFirstName() + " (Attempted to Split a Token by 0)");
+		
+		int value = Integer::valueOf(args->get(1).toString());
+		
+		if (value == 0 || value == tano->getUseCount()) {
 			return;
 		}
-
-		tano->setUseCount(tokenCount - newCount, true);
-
+		
+		tano->setUseCount(tano->getUseCount() - value, true);
+		
 		Locker newTokenLocker(newToken);
-
+		
 		inventory->transferObject(newToken, -1, true);
-
+		
 		newToken->sendTo(player, true);
-		newToken->setUseCount(newCount, true);
+		newToken->setUseCount(value, true);
 
 		player->sendSystemMessage("You've successfully split your items.");
 	}
