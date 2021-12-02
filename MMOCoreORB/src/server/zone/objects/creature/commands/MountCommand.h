@@ -174,12 +174,6 @@ public:
 			newTurn += creature->getSkillMod("force_vehicle_control");
 		}
 
-		// Force Sensitive SkillMods
-		if (vehicle->isVehicleObject()) {
-			newAccel += creature->getSkillMod("force_vehicle_speed");
-			newTurn += creature->getSkillMod("force_vehicle_control");
-		}
-
 		creature->setRunSpeed(newSpeed);
 		creature->setTurnScale(newTurn, true);
 		creature->setAccelerationMultiplierMod(newAccel, true);
