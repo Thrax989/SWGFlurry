@@ -1468,16 +1468,7 @@ void PlayerObjectImplementation::notifyOnline() {
 
 	playerCreature->notifyObservers(ObserverEventType::LOGGEDIN);
 
-	if (!playerCreature->isRidingMount())
-	{
-		auto playerTemplate = dynamic_cast<SharedCreatureObjectTemplate*>(playerCreature->getObjectTemplate());
-
-		if (playerTemplate != nullptr) {
-			auto speedTempl = playerTemplate->getSpeed();
-
-			playerCreature->setRunSpeed(speedTempl.get(0));
-		}
-	}
+	playerCreature->executeObjectControllerAction(STRING_HASHCODE("dismount"));
 
 	if (playerCreature->isInGuild()) {
 		ManagedReference<GuildObject*> guild = playerCreature->getGuildObject().get();
