@@ -1,0 +1,3 @@
+object_mobile_passenger_flash_speeder = object_mobile_shared_passenger_flash_speeder:new {
+}
+ObjectTemplates:addTemplate(object_mobile_passenger_flash_speeder, "object/mobile/passenger_flash_speeder.iff")
