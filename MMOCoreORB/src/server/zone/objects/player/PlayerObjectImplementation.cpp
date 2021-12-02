@@ -1468,6 +1468,17 @@ void PlayerObjectImplementation::notifyOnline() {
 
 	playerCreature->notifyObservers(ObserverEventType::LOGGEDIN);
 
+	if (!playerCreature->isRidingMount())
+	{
+		auto playerTemplate = dynamic_cast<SharedCreatureObjectTemplate*>(playerCreature->getObjectTemplate());
+
+		if (playerTemplate != nullptr) {
+			auto speedTempl = playerTemplate->getSpeed();
+
+			playerCreature->setRunSpeed(speedTempl.get(0));
+		}
+	}
+
 	if (playerCreature->isInGuild()) {
 		ManagedReference<GuildObject*> guild = playerCreature->getGuildObject().get();
 		uint64 playerId = playerCreature->getObjectID();
@@ -1636,6 +1647,8 @@ void PlayerObjectImplementation::notifyOffline() {
 			player->sendMessage(notifyStatus);
 		}
 	}
+
+	playerCreature->executeObjectControllerAction(STRING_HASHCODE("dismount"));
 
 	//Remove player from visibility list
 	VisibilityManager::instance()->removeFromVisibilityList(playerCreature);
