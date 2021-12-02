@@ -174,27 +174,18 @@ public:
 			newTurn += creature->getSkillMod("force_vehicle_control");
 		}
 
+		// Force Sensitive SkillMods
+		if (vehicle->isVehicleObject()) {
+			newAccel += creature->getSkillMod("force_vehicle_speed");
+			newTurn += creature->getSkillMod("force_vehicle_control");
+		}
+
 		creature->setRunSpeed(newSpeed);
 		creature->setTurnScale(newTurn, true);
 		creature->setAccelerationMultiplierMod(newAccel, true);
 		creature->addMountedCombatSlow();
 
-		if (vehicle->getCreatureLinkID() != creature->getObjectID()) {
-			ManagedReference<GroupObject*> group = creature->getGroup();
-			if (group != nullptr) {
-				ManagedReference<CreatureObject* > vehicleOwner = vehicle->getLinkedCreature();
-				if (vehicleOwner != nullptr) {
-					if (object->isVehicleObject()) {
-						VehicleObject* speeder = cast<VehicleObject*>(vehicle);
-						if (group->hasMember(vehicleOwner) && speeder->hasRidingCreature() && speeder->hasOpenSeat()) {
-							speeder->slotPassenger(creature);
-							creature->setPosition(vehicle->getWorldPositionX(), vehicle->getWorldPositionZ(), vehicle->getWorldPositionY());
-						}
-					}
-				}
-			}
-			return GENERALERROR;
-		}
+		return SUCCESS;
 	}
 };
 
