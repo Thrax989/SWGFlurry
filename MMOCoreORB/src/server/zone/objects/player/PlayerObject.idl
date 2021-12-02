@@ -89,7 +89,7 @@ class PlayerObject extends IntangibleObject {
 	protected boolean teleporting;
 
 	protected boolean onLoadScreen;
-	protected boolean forcedTransform;
+
 	protected boolean muted;
 	protected string mutedReason;
 	protected int tosVersionAccepted;
@@ -334,7 +334,7 @@ class PlayerObject extends IntangibleObject {
 
 		teleporting = false;
 		onLoadScreen = false;
-		forcedTransform = false;
+
 		muted = false;
 		mutedReason = "";
 
@@ -1260,10 +1260,6 @@ class PlayerObject extends IntangibleObject {
 		onLoadScreen = val;
 	}
 
-	public void setForcedTransform(boolean val) {
-		forcedTransform = val;
-	}
-
 	@dirty
 	public int getNumBadges() {
 		return badges.getNumBadges();
@@ -1506,11 +1502,6 @@ class PlayerObject extends IntangibleObject {
 		return onLoadScreen;
 	}
 
-	@read
-	public boolean isForcedTransform() {
-		return forcedTransform;
-	}
-
 	public void addChatRoom(unsigned int roomID) {
 		chatRooms.put(roomID);
 	}
@@ -1630,12 +1621,6 @@ class PlayerObject extends IntangibleObject {
 	@local
 	@dirty
 	public ValidatedPosition getLastValidatedPosition() {
-		return lastValidatedPosition;
-	}
-
-	@local
-	@read
-	public final ValidatedPosition getLastValidatedPosition() {
 		return lastValidatedPosition;
 	}
 
