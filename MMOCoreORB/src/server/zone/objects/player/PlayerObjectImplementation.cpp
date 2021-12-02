@@ -80,6 +80,7 @@
 #include "server/zone/objects/installation/InstallationObject.h"
 #include "server/zone/objects/player/sui/listbox/SuiListBox.h"
 #include "server/zone/objects/player/sui/SuiWindowType.h"
+#include "templates/creature/SharedCreatureObjectTemplate.h"
 
 void PlayerObjectImplementation::initializeTransientMembers() {
 	playerLogLevel = ConfigManager::instance()->getPlayerLogLevel();
@@ -257,9 +258,7 @@ void PlayerObjectImplementation::unload() {
 	MissionManager* missionManager = creature->getZoneServer()->getMissionManager();
 	missionManager->deactivateMissions(creature);
 
-	if (creature->isRidingMount()) {
-		creature->executeObjectControllerAction(STRING_HASHCODE("dismount"));
-	}
+	creature->executeObjectControllerAction(STRING_HASHCODE("dismount"));
 
 	unloadSpawnedChildren();
 
@@ -1467,6 +1466,18 @@ void PlayerObjectImplementation::notifyOnline() {
 	luaOnPlayerLoggedIn->callFunction();
 
 	playerCreature->notifyObservers(ObserverEventType::LOGGEDIN);
+
+	// Set speed if player isn't mounted.
+	if (!playerCreature->isRidingMount())
+	{
+		auto playerTemplate = dynamic_cast<SharedCreatureObjectTemplate*>(playerCreature->getObjectTemplate());
+
+		if (playerTemplate != nullptr) {
+			auto speedTempl = playerTemplate->getSpeed();
+
+			playerCreature->setRunSpeed(speedTempl.get(0));
+		}
+	}
 
 	if (playerCreature->isInGuild()) {
 		ManagedReference<GuildObject*> guild = playerCreature->getGuildObject().get();
