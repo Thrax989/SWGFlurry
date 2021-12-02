@@ -8,6 +8,7 @@
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/intangible/ControlDevice.h"
 #include "templates/creature/SharedCreatureObjectTemplate.h"
+#include "server/zone/managers/objectcontroller/ObjectController.h"
 
 class DismountCommand : public QueueCommand {
 	Vector<uint32> restrictedBuffCRCs;
@@ -74,6 +75,27 @@ public:
 
 		if (terrainManager == nullptr)
 			return GENERALERROR;
+
+		ZoneServer* zoneServer = server->getZoneServer();
+		ManagedReference<ObjectController*> objectController = zoneServer->getObjectController();	
+
+		for (int i = 1; i < 8; ++i) {
+			String text = "rider";
+			text += String::valueOf(i);
+			CreatureObject* seat = vehicle->getSlottedObject(text).castTo<CreatureObject*>();
+			if (seat != nullptr) {
+				Locker slocker(seat);
+				CreatureObject* rider = seat->getSlottedObject("rider").castTo<CreatureObject*>();
+				if (rider != nullptr) {
+					Locker rlocker(rider, seat);
+					seat->setPosition(vehicle->getPositionX(), vehicle->getPositionZ(), vehicle->getPositionY());
+					rider->setPosition(vehicle->getPositionX(), vehicle->getPositionZ(), vehicle->getPositionY());
+					objectController->activateCommand(rider, STRING_HASHCODE("dismount"), 0, 0, "");
+				} else {
+					seat->destroyObjectFromWorld(true);
+				}
+			}
+		}
 
 		zone->transferObject(creature, -1, false);
 
@@ -147,6 +169,13 @@ public:
 					buff->removeAllModifiers();
 				}, "RemoveGallopModsLambda");
 			}
+		}
+
+		ManagedReference<SceneObject*> parentObject = vehicle->getParent().get();
+		CreatureObject* parent = cast<CreatureObject*>(parentObject.get());
+		if (parent != nullptr && parent->isCreatureObject()) {
+			Locker lock(vehicle);
+			vehicle->destroyObjectFromWorld(true);
 		}
 
 		return SUCCESS;
