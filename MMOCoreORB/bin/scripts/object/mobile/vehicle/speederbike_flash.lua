@@ -45,8 +45,8 @@ object_mobile_vehicle_speederbike_flash = object_mobile_vehicle_shared_speederbi
 	templateType = VEHICLE,
 	decayRate = 15, -- Damage tick per decay cycle
 	decayCycle = 600, -- Time in seconds per cycle
-	passengerCapacity = 1, --How many passengers a vehicle can carry aside from the driver; default is 0
-	passengerSeatString = "flash_speeder", --Used for generating appropriate seating in the vehicle
+	passengerCapacity = 1,
+	passengerSeatString = "flash_speeder",
 }
 
 ObjectTemplates:addTemplate(object_mobile_vehicle_speederbike_flash, "object/mobile/vehicle/speederbike_flash.iff")
