@@ -395,6 +395,17 @@ bool ResourceSpawner::ghDumpAll() {
 	planets->add("talus");
 	planets->add("tatooine");
 	planets->add("yavin4");
+	planets->add("hoth");
+	planets->add("kashyyyk");
+	planets->add("mustafar");
+	planets->add("taanab");
+	planets->add("mandalore");
+	planets->add("korriban");
+	planets->add("kaas");
+	planets->add("jakku");
+	planets->add("hutta");
+	planets->add("geonosis");
+	planets->add("chandrila");
 	//String planets = "corellia";
 
 	try {
