@@ -153,6 +153,8 @@ Luna<LuaCreatureObject>::RegType LuaCreatureObject::Register[] = {
 		{ "broadcastToDiscord", &LuaCreatureObject::broadcastToDiscord },
 		{ "broadcastToDiscordGcw", &LuaCreatureObject::broadcastToDiscordGcw },
 		{ "broadcastToDiscordUnlock", &LuaCreatureObject::broadcastToDiscordUnlock },
+		{ "isRidingMount", &LuaCreatureObject::isRidingMount },
+		{ "dismount", &LuaCreatureObject::dismount },
 		{ 0, 0 }
 };
 
@@ -1225,4 +1227,17 @@ int LuaCreatureObject::broadcastToDiscordUnlock(lua_State* L) {
 	ZoneServer* zServ = realObject->getZoneServer();
 	zServ->getChatManager()->handleGeneralDiscordUnlock(nullptr, message);
 	return 1;
+}
+
+int LuaCreatureObject::isRidingMount(lua_State* L) {
+	bool isMounted = realObject->isRidingMount();
+
+	lua_pushboolean(L, isMounted);
+
+	return 1;
+}
+
+int LuaCreatureObject::dismount(lua_State* L) {
+	realObject->dismount();
+	return 0;
 }
