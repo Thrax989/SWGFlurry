@@ -1,5 +1,5 @@
-deathwatch_sbd = Creature:new {
-	customName = "Deathwatch Super Battle Droid",
+taung_sbd = Creature:new {
+	customName = "Taung Super Battle Droid",
 	socialGroup = "",
 	faction = "",
 	level = 300,
@@ -37,15 +37,10 @@ deathwatch_sbd = Creature:new {
 		    },
 		    {
 			    groups = {
-				    {group = "death_watch_bunker_lieutenants", chance = 10000000}
+				{group = "trash_common", chance = 7000000},
+ 				{group = "trash_rare", chance = 3000000},
 			  },
-			  lootChance = 5000000
-		    },
-		    {
-			    groups = {
-				    {group = "jetpack_base", chance = 10000000}
-			  },
-			  lootChance = 5000000
+			  lootChance = 10000000
 		    },
 		    {
 			    groups = {
@@ -53,12 +48,6 @@ deathwatch_sbd = Creature:new {
  				    {group = "death_watch_bunker_ingredient_binary", chance = 5000000},
 			  },
 			  lootChance = 100000
-		    },
-		    {
-			    groups = {
-				    {group = "death_watch_bunker_commoners", chance = 10000000}
-			  },
-			  lootChance = 5000000
 		    },
 		    {
 			    groups = {
@@ -72,4 +61,4 @@ deathwatch_sbd = Creature:new {
 	attacks = merge(pistoleermaster,carbineermaster,marksmanmaster)
 }
 
-CreatureTemplates:addCreatureTemplate(deathwatch_sbd, "deathwatch_sbd")
+CreatureTemplates:addCreatureTemplate(taung_sbd, "taung_sbd")
