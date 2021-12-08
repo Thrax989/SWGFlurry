@@ -129,7 +129,7 @@ mandalore_destroy_missions = {
 			size = 25,
 		},
 		{
-			lairTemplateName = "mandalore_deathwatch_sbd_lair",
+			lairTemplateName = "mandalore_taung_sbd_lair",
 			minDifficulty = 65,
 			maxDifficulty = 80,
 			size = 20,
