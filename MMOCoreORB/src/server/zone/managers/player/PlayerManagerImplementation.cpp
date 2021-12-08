@@ -6580,7 +6580,7 @@ void PlayerManagerImplementation::offerPlayerBounty(CreatureObject* attacker, Cr
 		return;
 
 	//Player already has a bounty on their head or they are a jedi
-	if (attackerGhost->hasPlayerBounty() || attacker->hasSkill("combat_jedi_novice"))
+	if (attackerGhost->hasPlayerBounty())
 		return;
 
 	int reward = attackerGhost->calculateBhReward();
