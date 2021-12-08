@@ -17,19 +17,20 @@
 #include "server/zone/objects/region/Region.h"
 #include "server/zone/objects/creature/sui/RepairVehicleSuiCallback.h"
 #include "templates/customization/AssetCustomizationManagerTemplate.h"
+#include "templates/manager/TemplateManager.h"
+#include "templates/creature/SharedCreatureObjectTemplate.h"
+
 #include "server/zone/objects/group/GroupObject.h"
 #include "templates/creature/VehicleObjectTemplate.h"
 #include "server/zone/managers/creature/CreatureManager.h"
 
-
 void VehicleObjectImplementation::fillObjectMenuResponse(ObjectMenuResponse* menuResponse, CreatureObject* player) {
-
 	if (linkedCreature != player) {
 		ManagedReference<GroupObject*> group = player->getGroup();
 		if (group != nullptr) {
 			CreatureObject* vehicleOwner = this->linkedCreature.get();
 			if (vehicleOwner != nullptr)
-				if (group->hasMember(this->linkedCreature.get()) && hasRidingCreature() && hasOpenSeat()) 
+				if (group->hasMember(this->linkedCreature.get()) && hasRidingCreature())
 					menuResponse->addRadialMenuItem(205, 1, "@pet/pet_menu:menu_enter_exit");
 		}
 	}
@@ -89,7 +90,9 @@ void VehicleObjectImplementation::fillAttributeList(AttributeListMessage* alm, C
 		return;
 
 	alm->insertAttribute("@obj_attr_n:owner", linkedCreature->getFirstName());
-	alm->insertAttribute("@obj_attr_n:riders", getPassengerCapacity() + 1);
+
+	alm->insertAttribute("@obj_attr_n:seatsavail", getOpenSeatCount());
+
 }
 
 void VehicleObjectImplementation::notifyInsertToZone(Zone* zone) {
@@ -128,6 +131,22 @@ void VehicleObjectImplementation::notifyInsertToZone(Zone* zone) {
 			}
 		}
 		--paintCount;
+	}
+
+	//Ensure Vehicle speed and turn rate matches what's in the .tre file
+	TemplateManager* templateManager = TemplateManager::instance();
+	uint32 vehicleCRC = getObjectTemplate()->getFullTemplateString().hashCode();
+	SharedCreatureObjectTemplate* vehicleTemplate = dynamic_cast<SharedCreatureObjectTemplate*>(templateManager->getTemplate(vehicleCRC));
+
+	if (vehicleTemplate != nullptr) {
+		float speed = vehicleTemplate->getSpeed().get(0);
+		float turn = vehicleTemplate->getTurnRate().get(0);
+
+		if (getRunSpeed() != speed)
+			setRunSpeed(speed, true);
+
+		if (getTurnScale() != turn)
+			setTurnScale(turn, true);
 	}
 }
 
@@ -376,27 +395,54 @@ int VehicleObjectImplementation::getOpenSeat() {
 	return 0;
 }
 
+int VehicleObjectImplementation::getOpenSeatCount() {
+	int passengerSeats = getPassengerCapacity();
+
+	if (passengerSeats == 0)
+		return 0;
+
+	int openSeats = 0;
+
+	for (int i = 1; i <= passengerSeats; ++i){
+		String text = "rider";
+		text += String::valueOf(i);
+		CreatureObject* seat = this->getSlottedObject(text).castTo<CreatureObject*>();
+		if (seat == nullptr) {
+			openSeats += 1;
+		}
+	}
+
+	return openSeats;
+}
+
 bool VehicleObjectImplementation::slotPassenger(CreatureObject* passenger) {
-	int seatNumber = getOpenSeat();
-	String seat = "passenger_" + getPassengerSeatName() + "_" + String::valueOf(seatNumber);
-	Zone* zone = getZone();
-	float x = getWorldPositionX();
-	float y = getWorldPositionY();
-	float z = getWorldPositionZ();
-	CreatureManager* creatureManager = zone->getCreatureManager();
-	CreatureObject* seatObject = creatureManager->spawnCreature(seat.hashCode(), 0, x, z, y, 0);
-	transferObject(seatObject, 4 + seatNumber, true);
-	seatObject->setPosition(x, z, y);
-	Locker slocker(seatObject);
+    int seatNumber = getOpenSeat();
+    String seat = "passenger_" + getPassengerSeatName() + "_" + String::valueOf(seatNumber);
+    Zone* zone = getZone();
+    float x = getWorldPositionX();
+    float y = getWorldPositionY();
+    float z = getWorldPositionZ();
+    CreatureManager* creatureManager = zone->getCreatureManager();
+    CreatureObject* seatObject = creatureManager->spawnCreature(seat.hashCode(), 0, x, z, y, 0);
 
-	Locker plocker(passenger);
-	seatObject->transferObject(passenger, 4, true);
-	passenger->setState(CreatureState::RIDINGMOUNT);
-	passenger->teleport(x, z, y, 0);
-	passenger->setPosition(x, z, y);
+    if (seatObject == nullptr)
+    	return false;
 
-	synchronizeCloseObjects();
-	seatObject->synchronizeCloseObjects();
-	passenger->synchronizeCloseObjects();
-	return true;
+    Locker slocker(seatObject);
+    Locker plocker(passenger);
+
+    transferObject(seatObject, 4 + seatNumber, true);
+
+    seatObject->transferObject(passenger, 4, true);
+    seatObject->setPosition(x, z, y);
+    seatObject->updateZone(true, true);
+
+    passenger->setPosition(x, z, y);
+    passenger->setState(CreatureState::RIDINGMOUNT);
+    passenger->clearState(CreatureState::SWIMMING);
+
+    synchronizeCloseObjects();
+    seatObject->synchronizeCloseObjects();
+    passenger->synchronizeCloseObjects();
+    return true;
 }
