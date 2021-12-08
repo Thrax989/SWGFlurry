@@ -156,7 +156,17 @@ void ResourceManagerImplementation::loadDefaultConfig() {
 	resourceSpawner->addZone("talus");
 	resourceSpawner->addZone("tatooine");
 	resourceSpawner->addZone("endor");
-
+	resourceSpawner->addZone("hoth");
+	resourceSpawner->addZone("kashyyyk");
+	resourceSpawner->addZone("mustafar");
+	resourceSpawner->addZone("taanab");
+	resourceSpawner->addZone("mandalore");
+	resourceSpawner->addZone("korriban");
+	resourceSpawner->addZone("kaas");
+	resourceSpawner->addZone("jakku");
+	resourceSpawner->addZone("hutta");
+	resourceSpawner->addZone("geonosis");
+	resourceSpawner->addZone("chandrila");
 	shiftInterval = 7200000;
 	resourceSpawner->setSpawningParameters(1, 86400, 90, 1000, 0);
 }
