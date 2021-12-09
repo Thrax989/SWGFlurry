@@ -310,8 +310,5 @@ class VehicleObject extends CreatureObject {
 	public native int getOpenSeat();
 
 	@dirty
-	public native int getOpenSeatCount();
-
-	@dirty
 	public native boolean slotPassenger(CreatureObject passenger);
 }
