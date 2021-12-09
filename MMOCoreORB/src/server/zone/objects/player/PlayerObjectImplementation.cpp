@@ -1468,6 +1468,8 @@ void PlayerObjectImplementation::notifyOnline() {
 
 	playerCreature->notifyObservers(ObserverEventType::LOGGEDIN);
 
+	playerCreature->executeObjectControllerAction(STRING_HASHCODE("dismount"));
+
 	if (playerCreature->isInGuild()) {
 		ManagedReference<GuildObject*> guild = playerCreature->getGuildObject().get();
 		uint64 playerId = playerCreature->getObjectID();
@@ -1569,10 +1571,6 @@ void PlayerObjectImplementation::notifyOnline() {
 		}
 	}
 
-	if (playerCreature->hasSkill("combat_jedi_novice") && playerCreature->getFactionStatus() == FactionStatus::OVERT) {
-		playerCreature->setFactionStatus(1);
-	}
-
 	MissionManager* missionManager = zoneServer->getMissionManager();
 
 	if (missionManager != nullptr) {
@@ -1636,6 +1634,8 @@ void PlayerObjectImplementation::notifyOffline() {
 			player->sendMessage(notifyStatus);
 		}
 	}
+
+	playerCreature->executeObjectControllerAction(STRING_HASHCODE("dismount"));
 
 	//Remove player from visibility list
 	VisibilityManager::instance()->removeFromVisibilityList(playerCreature);

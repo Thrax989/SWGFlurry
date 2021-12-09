@@ -197,6 +197,8 @@ void AiAgentImplementation::loadTemplateData(CreatureTemplate* templateData) {
 			Locker locker(weao);
 			if (weao->isJediWeapon()) {
 			int color = System::random(30);
+			if (weaponToUse.contains("dark_jedi"))
+				color = 0;
 			weao->setBladeColor(color);
 			weao->setCustomizationVariable("/private/index_color_blade", color, true);
 			}
