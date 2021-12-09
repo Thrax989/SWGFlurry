@@ -1152,6 +1152,40 @@ int LuaCreatureObject::buffSingleStat(lua_State* L) {
 	return 0;
 }
 
+int LuaCreatureObject::slotPassenger(lua_State* L) {
+	CreatureObject* passenger = (CreatureObject*) lua_touserdata(L, -1);
+
+	SceneObject* vehicle = realObject->getParent().get().get();
+	if (!vehicle->isCreatureObject()) {
+		lua_pushboolean(L, false);
+		return 1;
+	}
+
+
+	if (vehicle->isVehicleObject()) {
+		VehicleObject* speeder = static_cast<VehicleObject*>(vehicle);
+		if (!speeder->hasOpenSeat()) {
+			lua_pushboolean(L, false);
+			return 1;
+		} else {
+			speeder->slotPassenger(passenger);
+			lua_pushboolean(L, true);
+			return 1;
+		}
+	} else {
+		Creature* mount = static_cast<Creature*>(vehicle);
+		if (!mount->hasOpenSeat()) {
+			lua_pushboolean(L, false);
+			return 1;
+		} else {
+			mount->slotPassenger(passenger);
+			lua_pushboolean(L, true);
+			return 1;
+		}
+
+	}
+}
+
 int LuaCreatureObject::removeBuffs(lua_State* L) {
 	Reference<PlayerObject*> player = realObject->getPlayerObject();
 	
