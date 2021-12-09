@@ -30,7 +30,7 @@ void VehicleObjectImplementation::fillObjectMenuResponse(ObjectMenuResponse* men
 		if (group != nullptr) {
 			CreatureObject* vehicleOwner = this->linkedCreature.get();
 			if (vehicleOwner != nullptr)
-				if (group->hasMember(this->linkedCreature.get()) && hasRidingCreature())
+				if (group->hasMember(this->linkedCreature.get()) && hasRidingCreature() && hasOpenSeat())
 					menuResponse->addRadialMenuItem(205, 1, "@pet/pet_menu:menu_enter_exit");
 		}
 	}
@@ -91,7 +91,7 @@ void VehicleObjectImplementation::fillAttributeList(AttributeListMessage* alm, C
 
 	alm->insertAttribute("@obj_attr_n:owner", linkedCreature->getFirstName());
 
-	alm->insertAttribute("@obj_attr_n:seatsavail", getOpenSeatCount());
+	alm->insertAttribute("@obj_attr_n:riders", getPassengerCapacity() + 1);
 
 }
 
