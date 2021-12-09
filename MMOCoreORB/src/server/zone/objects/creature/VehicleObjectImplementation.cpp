@@ -395,54 +395,36 @@ int VehicleObjectImplementation::getOpenSeat() {
 	return 0;
 }
 
-int VehicleObjectImplementation::getOpenSeatCount() {
-	int passengerSeats = getPassengerCapacity();
-
-	if (passengerSeats == 0)
-		return 0;
-
-	int openSeats = 0;
-
-	for (int i = 1; i <= passengerSeats; ++i){
-		String text = "rider";
-		text += String::valueOf(i);
-		CreatureObject* seat = this->getSlottedObject(text).castTo<CreatureObject*>();
-		if (seat == nullptr) {
-			openSeats += 1;
-		}
-	}
-
-	return openSeats;
-}
-
 bool VehicleObjectImplementation::slotPassenger(CreatureObject* passenger) {
-    int seatNumber = getOpenSeat();
-    String seat = "passenger_" + getPassengerSeatName() + "_" + String::valueOf(seatNumber);
-    Zone* zone = getZone();
-    float x = getWorldPositionX();
-    float y = getWorldPositionY();
-    float z = getWorldPositionZ();
-    CreatureManager* creatureManager = zone->getCreatureManager();
-    CreatureObject* seatObject = creatureManager->spawnCreature(seat.hashCode(), 0, x, z, y, 0);
-
-    if (seatObject == nullptr)
-    	return false;
-
-    Locker slocker(seatObject);
-    Locker plocker(passenger);
-
-    transferObject(seatObject, 4 + seatNumber, true);
-
-    seatObject->transferObject(passenger, 4, true);
-    seatObject->setPosition(x, z, y);
-    seatObject->updateZone(true, true);
-
-    passenger->setPosition(x, z, y);
-    passenger->setState(CreatureState::RIDINGMOUNT);
-    passenger->clearState(CreatureState::SWIMMING);
-
-    synchronizeCloseObjects();
-    seatObject->synchronizeCloseObjects();
-    passenger->synchronizeCloseObjects();
-    return true;
+	Locker plocker(passenger);
+	int seatNumber = getOpenSeat();
+	String seat = "passenger_" + getPassengerSeatName() + "_" + String::valueOf(seatNumber);
+	Zone* zone = getZone();
+	float x = getWorldPositionX();
+	float y = getWorldPositionY();
+	float z = getWorldPositionZ();
+	CreatureManager* creatureManager = zone->getCreatureManager();
+	CreatureObject* seatObject = creatureManager->spawnCreature(seat.hashCode(), 0, x, z, y, 0);
+	transferObject(seatObject, 4 + seatNumber, true);
+	Locker slocker(seatObject);
+	uint32 crcSaddle = String("saddle").hashCode();
+	ManagedReference<Buff*> saddleBuff = new Buff(seatObject, crcSaddle, 36000, BuffType::OTHER);
+	Locker blocker(saddleBuff);
+	saddleBuff->setSpeedMultiplierMod(0.01f);
+	saddleBuff->setAccelerationMultiplierMod(0.01f);
+	seatObject->addBuff(saddleBuff);
+	seatObject->setPosition(x, z, y);
+	seatObject->transferObject(passenger, 4, true);
+	passenger->setState(CreatureState::RIDINGMOUNT);
+	passenger->teleport(x, z, y, 0);
+	passenger->setPosition(x, z, y);
+	passenger->synchronizeCloseObjects();
+	uint32 crc = String("passenger").hashCode();
+	ManagedReference<Buff*> buff = new Buff(passenger, crc, 36000, BuffType::OTHER);
+	Locker locker(buff);
+	buff->setSpeedMultiplierMod(0.01f);
+	buff->setAccelerationMultiplierMod(0.01f);
+	passenger->addBuff(buff);
+	synchronizeCloseObjects();
+	return true;
 }
