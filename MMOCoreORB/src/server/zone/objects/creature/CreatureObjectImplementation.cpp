@@ -2133,10 +2133,18 @@ void CreatureObjectImplementation::notifyLoadFromDatabase() {
 void CreatureObjectImplementation::notifyInsert(QuadTreeEntry* obj) {
 	auto linkedCreature = getLinkedCreature().get();
 
+	float x = 0, y = 0, z = 0;
+
 	if (linkedCreature != nullptr && linkedCreature->getParent() == asCreatureObject()) {
 #if DEBUG_COV
 		linkedCreature->info("proxy notifyInsert(" + String::valueOf(obj->getObjectID()) + ")");
 #endif // DEBUG_COV
+
+		float x = linkedCreature->getWorldPositionX();
+		float y = linkedCreature->getWorldPositionY();
+		float z = linkedCreature->getWorldPositionZ();
+		if (!isInRange(linkedCreature, 16.0f) && hasRidingCreature())
+			teleport(x, z, y, 0);
 
 		if (linkedCreature->getCloseObjects() != nullptr)
 			linkedCreature->addInRangeObject(obj);
@@ -2144,9 +2152,6 @@ void CreatureObjectImplementation::notifyInsert(QuadTreeEntry* obj) {
 		if (obj->getCloseObjects() != nullptr)
 			obj->addInRangeObject(linkedCreature);
 
-		float x = linkedCreature->getWorldPositionX();
-		float y = linkedCreature->getWorldPositionY();
-		float z = linkedCreature->getWorldPositionZ();
 		for (int i = 1; i < 8; ++i) {
 			String text = "rider";
 			text += String::valueOf(i);
@@ -2185,15 +2190,19 @@ void CreatureObjectImplementation::notifyDissapear(QuadTreeEntry* obj) {
 #if DEBUG_COV
 		linkedCreature->info("proxy notifyDissapear(" + String::valueOf(obj->getObjectID()) + ")");
 #endif // DEBUG_COV
+
+		float x = linkedCreature->getWorldPositionX();
+		float y = linkedCreature->getWorldPositionY();
+		float z = linkedCreature->getWorldPositionZ();
+		if (!isInRange(linkedCreature, 16.0f) && hasRidingCreature())
+			teleport(x, z, y, 0);
+
 		if (linkedCreature->getCloseObjects() != nullptr)
 			linkedCreature->removeInRangeObject(obj);
 
 		if (obj->getCloseObjects() != nullptr)
 			obj->removeInRangeObject(linkedCreature);
 
-		float x = linkedCreature->getWorldPositionX();
-		float y = linkedCreature->getWorldPositionY();
-		float z = linkedCreature->getWorldPositionZ();
 		for (int i = 1; i < 8; ++i) {
 			String text = "rider";
 			text += String::valueOf(i);
@@ -2232,15 +2241,19 @@ void CreatureObjectImplementation::notifyPositionUpdate(QuadTreeEntry* entry) {
 #if DEBUG_COV
 		linkedCreature->info("proxy notifyPositionUpdate(" + String::valueOf(entry->getObjectID()) + ")");
 #endif // DEBUG_COV
+
+		float x = linkedCreature->getWorldPositionX();
+		float y = linkedCreature->getWorldPositionY();
+		float z = linkedCreature->getWorldPositionZ();
+		if (!isInRange(linkedCreature, 16.0f) && hasRidingCreature())
+			teleport(x, z, y, 0);
+
 		if (linkedCreature->getCloseObjects() != nullptr)
 			linkedCreature->addInRangeObject(entry);
 
 		if (entry->getCloseObjects() != nullptr)
 			entry->addInRangeObject(linkedCreature);
 
-		float x = linkedCreature->getWorldPositionX();
-		float y = linkedCreature->getWorldPositionY();
-		float z = linkedCreature->getWorldPositionZ();
 		for (int i = 1; i < 8; ++i) {
 			String text = "rider";
 			text += String::valueOf(i);
@@ -3999,4 +4012,13 @@ void CreatureObjectImplementation::setHue(int hueIndex) {
 	}
 
 	hueValue = hueIndex;
+}
+
+int CreatureObjectImplementation::getPassengerCapacity() {
+	SharedCreatureObjectTemplate* tmpl = cast<SharedCreatureObjectTemplate*>(getObjectTemplate());
+
+	if(tmpl == nullptr)
+		return 1;
+
+	return tmpl->getPassengerCapacity();
 }
