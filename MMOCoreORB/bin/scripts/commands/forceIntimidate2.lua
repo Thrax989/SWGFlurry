@@ -52,7 +52,7 @@ ForceIntimidate2Command = {
 	splashDamage = true,
 	areaAction = true,
 	areaRange = 16,
-	visMod = 25,
+	visMod = 1,
 
 	stateEffects = {
 	  StateEffect(
