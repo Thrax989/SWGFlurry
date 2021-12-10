@@ -65,6 +65,7 @@
 #include "server/zone/objects/tangible/components/DotpackMenuComponent.h"
 #include "server/zone/objects/tangible/components/EventpackMenuComponent.h"
 #include "server/zone/objects/tangible/components/ContrabandMenuComponent.h"
+#include "server/zone/objects/tangible/components/VisMenuComponent.h"
 #include "server/zone/objects/tangible/components/DarkJediMenuComponent.h"
 #include "server/zone/objects/tangible/components/LightJediMenuComponent.h"
 #include "server/zone/objects/tangible/components/WorldMenuComponent.h"
@@ -234,6 +235,7 @@ ComponentManager::ComponentManager() {
 	components.put("BossMenuComponent", new BossMenuComponent());
 	components.put("pvpMenuComponent", new pvpMenuComponent());
 	components.put("ContrabandMenuComponent", new ContrabandMenuComponent());
+	components.put("VisMenuComponent", new VisMenuComponent());
 	components.put("DarkJediMenuComponent", new DarkJediMenuComponent());
 	components.put("LightJediMenuComponent", new LightJediMenuComponent());
 	components.put("DiamondMenuComponent", new DiamondMenuComponent());
