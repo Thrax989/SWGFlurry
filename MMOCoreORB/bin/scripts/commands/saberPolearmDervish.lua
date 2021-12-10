@@ -52,7 +52,7 @@ SaberPolearmDervishCommand = {
 	areaAction = true,
 	areaRange = 16,
 	forceCostMultiplier = 2.5,
-	visMod = 25,
+	visMod = 1,
 
 		stateEffects = {
 	   StateEffect( 
