@@ -122,7 +122,7 @@ end
 -- @param pCreatureObject pointer to the creature object of the player who unlocked jedi.
 function HologrindJediManager:sendSuiWindow(pCreatureObject)
 	local suiManager = LuaSuiManager()
-	suiManager:sendMessageBox(pCreatureObject, pCreatureObject, "@quest/force_sensitive/intro:force_sensitive", "Perhaps you should meditate somewhere alone...", "@ok", "HologrindJediManager", "notifyOkPressed")
+	suiManager:sendMessageBox(pCreatureObject, pCreatureObject, "@quest/force_sensitive/intro:force_sensitive", "The Force is strong with you find a holocron to finish your path", "@ok", "HologrindJediManager", "notifyOkPressed")
 end
 
 -- Award skill and jedi status to the player.
@@ -137,20 +137,12 @@ function HologrindJediManager:awardJediStatusAndSkill(pCreatureObject)
 			return
 		end
 
-		if (not PlayerObject(pGhost):isJedi()) then
-			PlayerObject(pGhost):setJediState(2)
-		end
+		PlayerObject(pGhost):setJediState(2)
 
 		CreatureObject(pCreatureObject):broadcastToServer("\\#00ff00IMPERIAL COMMUNICATION FROM THE REGIONAL GOVERNOR: Lord Vader has detected a vergence in the Force. Be on the lookout for any suspicious persons displaying unique or odd abilities. Lord Vader authorizes all citizens to use deadly force to eliminate this threat from the Empire.")
 		CreatureObject(pCreatureObject):broadcastToDiscordUnlock("IMPERIAL COMMUNICATION FROM THE REGIONAL GOVERNOR: Lord Vader has detected a vergence in the Force. Be on the lookout for any suspicious persons displaying unique or odd abilities. Lord Vader authorizes all citizens to use deadly force to eliminate this threat from the Empire.")
-		createEvent(1 * 1000, "HologrindJediManager", "awardskill", pPlayer, "")
 		print(firstName, "has become a jedi")
 	end)
-end
-
-function HologrindJediManager:awardskill(pPlayer)
-		local player = LuaCreatureObject(pPlayer)
-		awardSkill(pPlayer, "force_title_jedi_novice")
 end
 
 -- Check if the player has mastered all hologrind professions and send sui window and award skills.
