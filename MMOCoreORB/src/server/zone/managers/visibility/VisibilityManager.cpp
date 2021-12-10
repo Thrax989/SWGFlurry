@@ -42,7 +42,7 @@ float VisibilityManager::calculateVisibilityIncrease(CreatureObject* creature) {
 
 		CreatureObject* c = obj->asCreatureObject();
 
-		if (c == nullptr || (!c->isNonPlayerCreatureObject() && !c->isPlayerCreature()))
+		if (c == nullptr || (!c->isPlayerCreature()))
 			continue;
 
 		if (c->isDead() || c->isIncapacitated() || (c->isPlayerCreature() && c->getPlayerObject()->hasGodMode()))
