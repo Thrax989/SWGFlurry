@@ -52,7 +52,7 @@ public:
 		clientEffect = "";
 		buffClass = BASE_BUFF;
 		speedMod = 0;
-		visMod = 10;
+		visMod = 1;
 		buffCRC = 0;
 		frsLightForceCostModifier = 0;
 		frsDarkExtraForceCostModifier = 0;
