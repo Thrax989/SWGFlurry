@@ -26,11 +26,12 @@ void HolocronsMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject, Ob
 	ManagedReference<PlayerObject*> ghost = player->getPlayerObject();
 
 	if (ghost->getJediState() >=1) {
-			//menuResponse->addRadialMenuItem(213, 3, "Reveal Encrypted Data"); // Use Holocron
+			menuResponse->addRadialMenuItem(213, 3, "Reveal Encrypted Data"); // Use Holocron
 			menuResponse->addRadialMenuItemToRadialID(213, 214, 3, "Increase Jedi Lives"); // Increase Jedi Lives
 			menuResponse->addRadialMenuItemToRadialID(213, 215, 3, "Regenerate Full Force"); // Regenerate Jedi's Full Force
 			menuResponse->addRadialMenuItemToRadialID(213, 216, 3, "Visibility"); // Show Jedi's Visibility
 			menuResponse->addRadialMenuItemToRadialID(213, 217, 3, "Jedi Lives Remaining"); // Jedi Live's Remaining
+			menuResponse->addRadialMenuItemToRadialID(213, 218, 3, "Unlock Jedi"); // Unlock Normal Jedi
 			menuResponse->addRadialMenuItemToRadialID(213, 220, 3, "Unlock Gray Jedi"); // Unlocks Gray Jedi
 		}
 	}
@@ -45,11 +46,11 @@ int HolocronsMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Cre
 	if (zserv == NULL)
 		return 0;
 	
-	//if (selectedID == 213) {
- 		//if (ghost->getJediState() >= 1) {
+	if (selectedID == 213) {
+ 		if (ghost->getJediState() >= 1) {
 			//JediManager::instance()->useItem(sceneObject, JediManager::ITEMHOLOCRON, creature);
-		//}
-	//}
+		}
+	}
 	if (selectedID == 214 && (ghost->getJediState() >= 1) && creature->hasSkill("combat_jedi_novice") && (creature->getScreenPlayState("jediLives") == 0)) {
 		creature->sendSystemMessage("You have Permanently died on your jedi, you may not use this option"); // You have Permanently died on your jedi, you may not use this option
 		}
@@ -137,6 +138,9 @@ int HolocronsMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Cre
 		box->setPromptText(promptText.toString());
 		ghost->addSuiBox(box);
 		creature->sendMessage(box->generateMessage());
+	}
+	if (selectedID == 218 && (ghost->getJediState() >= 1)) {
+		skillManager->awardSkill("force_title_jedi_novice", player, true, true, true);
 	}
 	if (selectedID == 220 && (ghost->getJediState() >= 1) && (ghost->getSkillPoints() == 250)) {
 		        ManagedReference<SuiMessageBox*> box = new SuiMessageBox(creature, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
