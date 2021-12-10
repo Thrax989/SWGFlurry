@@ -141,13 +141,16 @@ function HologrindJediManager:awardJediStatusAndSkill(pCreatureObject)
 			PlayerObject(pGhost):setJediState(2)
 		end
 
-		awardSkill(pPlayer, "force_title_jedi_novice")
-
 		CreatureObject(pCreatureObject):broadcastToServer("\\#00ff00IMPERIAL COMMUNICATION FROM THE REGIONAL GOVERNOR: Lord Vader has detected a vergence in the Force. Be on the lookout for any suspicious persons displaying unique or odd abilities. Lord Vader authorizes all citizens to use deadly force to eliminate this threat from the Empire.")
 		CreatureObject(pCreatureObject):broadcastToDiscordUnlock("IMPERIAL COMMUNICATION FROM THE REGIONAL GOVERNOR: Lord Vader has detected a vergence in the Force. Be on the lookout for any suspicious persons displaying unique or odd abilities. Lord Vader authorizes all citizens to use deadly force to eliminate this threat from the Empire.")
-
+		createEvent(1 * 1000, "HologrindJediManager", "awardskill", pPlayer, "")
 		print(firstName, "has become a jedi")
 	end)
+end
+
+function HologrindJediManager:awardskill(pPlayer)
+		local player = LuaCreatureObject(pPlayer)
+		awardSkill(pPlayer, "force_title_jedi_novice")
 end
 
 -- Check if the player has mastered all hologrind professions and send sui window and award skills.
