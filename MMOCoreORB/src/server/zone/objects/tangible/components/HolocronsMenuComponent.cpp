@@ -141,7 +141,9 @@ int HolocronsMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Cre
 	}
 	if (selectedID == 218 && (ghost->getJediState() >= 1)) {
 		SkillManager::instance()->awardSkill("force_title_jedi_novice", creature, true, true, true);
-		creature->sendSystemMessage("You Have Jedi");
+		SkillManager::instance()->awardSkill("force_title_jedi_rank_01", creature, true, true, true);
+		SkillManager::instance()->awardSkill("force_title_jedi_rank_02", creature, true, true, true);
+		creature->sendSystemMessage("You Have Become A Jedi");
 	}
 	if (selectedID == 220 && (ghost->getJediState() >= 1) && (ghost->getSkillPoints() == 250)) {
 		        ManagedReference<SuiMessageBox*> box = new SuiMessageBox(creature, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
