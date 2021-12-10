@@ -1,6 +1,6 @@
 AnimalAttackCommand = {
   name = "animalattack",
-  visMod = 25,
+  visMod = 1,
 	damageMultiplier = 0,
 	speed = 4.0,
 	forceCost = 150,
