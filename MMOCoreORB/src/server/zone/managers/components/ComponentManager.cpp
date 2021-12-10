@@ -50,6 +50,7 @@
 #include "server/zone/objects/tangible/components/BankTerminalMenuComponent.h"
 #include "server/zone/objects/tangible/components/CloningTerminalMenuComponent.h"
 #include "server/zone/objects/tangible/components/HolocronMenuComponent.h"
+#include "server/zone/objects/tangible/components/HolocronsMenuComponent.h"
 #include "server/zone/objects/tangible/components/ArtifactMenuComponent.h"
 #include "server/zone/objects/tangible/components/BossMenuComponent.h"
 #include "server/zone/objects/tangible/components/pvpMenuComponent.h"
@@ -251,6 +252,7 @@ ComponentManager::ComponentManager() {
 	components.put("NewMemberMenuComponent", new NewMemberMenuComponent());
 	components.put("ScrapMenuComponent", new ScrapMenuComponent());
 	components.put("HolocronMenuComponent", new HolocronMenuComponent());
+	components.put("HolocronsMenuComponent", new HolocronsMenuComponent());
 	components.put("WaypointDatapadMenuComponent", new WaypointDatapadMenuComponent());
 
 	components.put("AttributeListComponent", new AttributeListComponent());
