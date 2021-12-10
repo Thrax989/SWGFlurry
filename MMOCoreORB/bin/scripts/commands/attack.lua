@@ -53,7 +53,7 @@ AttackCommand = {
 	actionCostMultiplier = 0,
 	mindCostMultiplier = 0,
 	forceCostMultiplier = 0,
-	visMod = 25,
+	visMod = 1,
 
 	range = -1,
 	
