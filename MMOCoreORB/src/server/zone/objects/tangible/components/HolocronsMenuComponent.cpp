@@ -48,7 +48,7 @@ int HolocronsMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Cre
 	
 	if (selectedID == 213) {
  		if (ghost->getJediState() >= 1) {
-			//JediManager::instance()->useItem(sceneObject, JediManager::ITEMHOLOCRON, creature);
+			JediManager::instance()->useItem(sceneObject, JediManager::ITEMHOLOCRON, creature);
 		}
 	}
 	if (selectedID == 214 && (ghost->getJediState() >= 1) && creature->hasSkill("combat_jedi_novice") && (creature->getScreenPlayState("jediLives") == 0)) {
@@ -140,7 +140,7 @@ int HolocronsMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Cre
 		creature->sendMessage(box->generateMessage());
 	}
 	if (selectedID == 218 && (ghost->getJediState() >= 1)) {
-		skillManager->awardSkill("force_title_jedi_novice", player, true, true, true);
+		SkillManager::instance()->awardSkill("force_title_jedi_novice", creature, true, true, true);
 		creature->sendSystemMessage("You Have Jedi");
 	}
 	if (selectedID == 220 && (ghost->getJediState() >= 1) && (ghost->getSkillPoints() == 250)) {
