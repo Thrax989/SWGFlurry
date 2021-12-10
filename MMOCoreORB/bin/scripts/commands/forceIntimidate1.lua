@@ -51,7 +51,7 @@ ForceIntimidate1Command = {
 	coneAngle = 30,
 	coneAction = true,
 	forceAttack = true,
-	visMod = 25,
+	visMod = 1,
 
 	stateEffects = {
 	  StateEffect(
