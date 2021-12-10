@@ -51,7 +51,7 @@ SaberSlash2Command = {
 	actionCostMultiplier = 0,
 	mindCostMultiplier = 0,
 	forceCostMultiplier = 2.0,
-	visMod = 25,
+	visMod = 1,
 
 	dotEffects = {
 	  DotEffect(
