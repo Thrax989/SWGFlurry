@@ -8,7 +8,12 @@
 #include "HolocronSensesMenuComponent.h"
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "server/zone/objects/scene/SceneObject.h"
-#include "server/zone/managers/jedi/JediManager.h"
+#include "server/zone/managers/loot/LootManager.h"
+#include "server/zone/Zone.h"
+#include "server/zone/ZoneServer.h"
+#include "server/zone/packets/object/ObjectMenuResponse.h"
+#include "server/zone/objects/group/GroupObject.h"
+#include "server/zone/managers/player/PlayerManager.h"
 
 void HolocronSensesMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject, ObjectMenuResponse* menuResponse, CreatureObject* player) const {
 	TangibleObjectMenuComponent::fillObjectMenuResponse(sceneObject, menuResponse, player);
