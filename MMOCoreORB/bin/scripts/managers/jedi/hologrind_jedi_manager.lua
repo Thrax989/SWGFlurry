@@ -137,8 +137,12 @@ function HologrindJediManager:awardJediStatusAndSkill(pCreatureObject)
 			return
 		end
 
-		awardSkill(pCreatureObject, "force_title_jedi_novice")
-		PlayerObject(pGhost):setJediState(2)
+		if (not PlayerObject(pGhost):isJedi()) then
+			PlayerObject(pGhost):setJediState(2)
+		end
+
+		awardSkill(pPlayer, "force_title_jedi_novice")
+
 		CreatureObject(pCreatureObject):broadcastToServer("\\#00ff00IMPERIAL COMMUNICATION FROM THE REGIONAL GOVERNOR: Lord Vader has detected a vergence in the Force. Be on the lookout for any suspicious persons displaying unique or odd abilities. Lord Vader authorizes all citizens to use deadly force to eliminate this threat from the Empire.")
 		CreatureObject(pCreatureObject):broadcastToDiscordUnlock("IMPERIAL COMMUNICATION FROM THE REGIONAL GOVERNOR: Lord Vader has detected a vergence in the Force. Be on the lookout for any suspicious persons displaying unique or odd abilities. Lord Vader authorizes all citizens to use deadly force to eliminate this threat from the Empire.")
 
