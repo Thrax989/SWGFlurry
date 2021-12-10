@@ -20,7 +20,7 @@ class ForcePowersQueueCommand : public CombatQueueCommand {
 public:
 
 	ForcePowersQueueCommand(const String& name, ZoneProcessServer* server) : CombatQueueCommand(name, server) {
-		visMod = 25;
+		visMod = 1;
 	}
 
 	int doCombatAction(CreatureObject* creature, const uint64& target, const UnicodeString& arguments = "") const {
