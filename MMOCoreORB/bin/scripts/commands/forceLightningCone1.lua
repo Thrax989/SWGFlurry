@@ -51,7 +51,7 @@ ForceLightningCone1Command = {
 	accuracySkillMod = "forcelightning_accuracy",
 	coneAngle = 40,
 	coneAction = true,
-	visMod = 25,
+	visMod = 1,
 
 	animation = "force_lightning_1_arc_particle_level_1",
 	animType = GENERATE_INTENSITY,
