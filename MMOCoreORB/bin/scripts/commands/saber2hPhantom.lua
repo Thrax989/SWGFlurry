@@ -52,7 +52,7 @@ Saber2hPhantomCommand = {
 	areaAction = true,
 	areaRange = 16,
 	forceCostMultiplier = 3.0,
-	visMod = 25,
+	visMod = 1,
 
 		stateEffects = {
 	   StateEffect( 
