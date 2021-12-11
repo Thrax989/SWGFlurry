@@ -1,3 +1,0 @@
-object_mobile_passenger_swamp_speeder_1 = object_mobile_shared_passenger_swamp_speeder_1:new {
-}
-ObjectTemplates:addTemplate(object_mobile_passenger_swamp_speeder_1, "object/mobile/passenger_swamp_speeder_1.iff")

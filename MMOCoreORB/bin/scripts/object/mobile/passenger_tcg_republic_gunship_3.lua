@@ -1,3 +1,0 @@
-object_mobile_passenger_tcg_republic_gunship_3 = object_mobile_shared_passenger_tcg_republic_gunship_3:new {
-}
-ObjectTemplates:addTemplate(object_mobile_passenger_tcg_republic_gunship_3, "object/mobile/passenger_tcg_republic_gunship_3.iff")

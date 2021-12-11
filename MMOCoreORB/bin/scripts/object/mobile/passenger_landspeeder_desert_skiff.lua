@@ -1,3 +1,0 @@
-object_mobile_passenger_landspeeder_desert_skiff = object_mobile_shared_passenger_landspeeder_desert_skiff:new {
-}
-ObjectTemplates:addTemplate(object_mobile_passenger_landspeeder_desert_skiff, "object/mobile/passenger_landspeeder_desert_skiff.iff")

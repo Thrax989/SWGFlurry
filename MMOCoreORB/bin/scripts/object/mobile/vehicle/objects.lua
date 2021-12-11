@@ -953,14 +953,3 @@ object_mobile_vehicle_shared_vehicle_base = SharedCreatureObjectTemplate:new {
 }
 
 ObjectTemplates:addClientTemplate(object_mobile_vehicle_shared_vehicle_base, "object/mobile/vehicle/shared_vehicle_base.iff")
-
-object_mobile_vehicle_shared_walker_at_rt_reg = SharedTangibleObjectTemplate:new {
-    clientTemplateFileName = "object/mobile/vehicle/shared_walker_at_rt_reg.iff"
-}
-ObjectTemplates:addClientTemplate(object_mobile_vehicle_shared_walker_at_rt_reg, "object/mobile/vehicle/shared_walker_at_rt_reg.iff")
-
-
-object_mobile_vehicle_shared_walker_at_rt_camo = SharedTangibleObjectTemplate:new {
-    clientTemplateFileName = "object/mobile/vehicle/shared_walker_at_rt_camo.iff"
-}
-ObjectTemplates:addClientTemplate(object_mobile_vehicle_shared_walker_at_rt_camo, "object/mobile/vehicle/shared_walker_at_rt_camo.iff")

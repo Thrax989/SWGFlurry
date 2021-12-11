@@ -1,3 +1,0 @@
-object_mobile_passenger_speeder_tantive4_3 = object_mobile_shared_passenger_speeder_tantive4_3:new {
-}
-ObjectTemplates:addTemplate(object_mobile_passenger_speeder_tantive4_3, "object/mobile/passenger_speeder_tantive4_3.iff")

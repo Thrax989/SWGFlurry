@@ -1,3 +1,0 @@
-object_mobile_vehicle_walker_at_rt_reg = object_mobile_vehicle_shared_walker_at_rt_reg:new {
-}
-ObjectTemplates:addTemplate(object_mobile_vehicle_walker_at_rt_reg, "object/mobile/vehicle/walker_at_rt_reg.iff")
