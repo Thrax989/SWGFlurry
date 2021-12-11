@@ -18,8 +18,8 @@ WorldBossSpawner = ScreenPlay:new {
 		{template = "corrupted_wampa_boss", name = "Corrupted Wampa"},
 		{template = "corrupted_geonosian_boss", name = "Corrupted Geonosian"},
 		{template = "corrupted_deathsting_boss", name = "Corrupted Deathsting"},
-		{template = "the_hand", name = "The Emperors Hand"},
-		{template = "the_hand", name = "General Hark"},
+		{template = "corrupted_the_hand", name = "Corrupted Emperors Hand"},
+		{template = "corrupted_general_hark", name = "Corrupted General Hark"},
 
 	},
 
