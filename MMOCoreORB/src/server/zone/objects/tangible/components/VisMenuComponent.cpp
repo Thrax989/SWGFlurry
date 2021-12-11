@@ -18,7 +18,7 @@
 
 void VisMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject, ObjectMenuResponse* menuResponse, CreatureObject* player) const {
 	TangibleObjectMenuComponent::fillObjectMenuResponse(sceneObject, menuResponse, player);
-	menuResponse->addRadialMenuItem(20, 3, "Dark Jedi FRS XP");
+	menuResponse->addRadialMenuItem(20, 3, "Remove Jedi Visibility");
 }
 
 int VisMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* creature, byte selectedID) const {
