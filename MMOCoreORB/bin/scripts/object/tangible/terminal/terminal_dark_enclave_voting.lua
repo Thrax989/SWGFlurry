@@ -42,7 +42,6 @@
 
 
 object_tangible_terminal_terminal_dark_enclave_voting = object_tangible_terminal_shared_terminal_dark_enclave_voting:new {
-	objectMenuComponent = "EnclaveTerminalMenuComponent",
 }
 
 ObjectTemplates:addTemplate(object_tangible_terminal_terminal_dark_enclave_voting, "object/tangible/terminal/terminal_dark_enclave_voting.iff")
