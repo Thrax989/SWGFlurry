@@ -1,7 +1,47 @@
 /*
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions. */
+                See file COPYING for copying conditions. */
 
+4
+
+​
+
+5
+
+#include "server/zone/objects/player/PlayerObject.h"
+
+6
+
+​
+
+7
+
+#include "server/zone/managers/object/ObjectManager.h"
+
+8
+
+#include "server/zone/managers/player/PlayerManager.h"
+
+9
+
+#include "server/zone/managers/skill/SkillManager.h"
+
+10
+
+#include "server/zone/managers/planet/PlanetManager.h"
+
+11
+
+#include "server/zone/managers/mission/MissionManager.h"
+
+12
+
+#include "server/zone/managers/combat/CombatManager.h"
+
+13
+
+#include "server/zone/managers/structure/StructureManager.h"
 #include "server/zone/objects/player/PlayerObject.h"
 
 #include "server/zone/managers/object/ObjectManager.h"
@@ -1500,16 +1540,16 @@ void PlayerObjectImplementation::notifyOnline() {
 		}
 	//Extra Gray Jedi Lives Check For Spill Over Lives
 	if (playerCreature->getScreenPlayState("jediLives") == 2) {
-		if (player->hasSkill("combat_jedi_novice")) {
-		int livesLeft = player->getScreenPlayState("jediLives") - 1;
-		player->setScreenPlayState("jediLives", livesLeft);
+		if (playerCreature->hasSkill("combat_jedi_novice")) {
+		int livesLeft = playerCreature->getScreenPlayState("jediLives") - 1;
+		playerCreature->setScreenPlayState("jediLives", livesLeft);
 		}
 	}
 
 	if (playerCreature->getScreenPlayState("jediLives") == 3) {
-		if (player->hasSkill("combat_jedi_novice")) {
-		int livesLeft = player->getScreenPlayState("jediLives") - 2;
-		player->setScreenPlayState("jediLives", livesLeft);
+		if (playerCreature->hasSkill("combat_jedi_novice")) {
+		int livesLeft = playerCreature->getScreenPlayState("jediLives") - 2;
+		playerCreature->setScreenPlayState("jediLives", livesLeft);
 		}
 	}
 
