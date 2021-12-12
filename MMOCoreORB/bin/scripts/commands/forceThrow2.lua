@@ -48,7 +48,7 @@ ForceThrow2Command = {
 	maxDamage = 500,
 	speed = 4.0,
 	forceCost = 56,
-	visMod = 1,
+	visMod = 25,
 	accuracySkillMod = "forcethrow_accuracy",
 
 	stateEffects = {
@@ -60,8 +60,7 @@ ForceThrow2Command = {
 			65,
 			0,
 			10
-		),
-	  StateEffect(
+		),	  StateEffect(
 		KNOCKDOWN_EFFECT,
 		{ "knockdownRecovery", "lastKnockdown" },
 		{},

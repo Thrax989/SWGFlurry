@@ -43,7 +43,7 @@
 
 AnimalScareCommand = {
         name = "animalscare",
-        visMod = 1,
+        visMod = 25,
 }
 
 AddCommand(AnimalScareCommand)

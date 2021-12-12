@@ -51,7 +51,7 @@ Saber1hHit3Command = {
 	actionCostMultiplier = 0,
 	mindCostMultiplier = 0,
 	forceCostMultiplier = 2.0,
-	visMod = 1,
+	visMod = 25,
 
 	animation = "combo_jedi_3", 
 	animType = GENERATE_INTENSITY,

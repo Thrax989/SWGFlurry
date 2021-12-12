@@ -52,7 +52,7 @@ Saber2hFrenzyCommand = {
 	areaAction = true,
 	areaRange = 16,
 	forceCostMultiplier = 2.5,
-	visMod = 1,
+	visMod = 25,
 
 		stateEffects = {
 	   StateEffect( 

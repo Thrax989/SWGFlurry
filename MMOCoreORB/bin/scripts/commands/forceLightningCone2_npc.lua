@@ -51,7 +51,7 @@ ForceLightningCone2Command = {
 	accuracySkillMod = "forcelightning_accuracy",
 	coneAngle = 60,
 	coneAction = true,
-	visMod = 1,
+	visMod = 25,
 
 	stateEffects = {
 	  StateEffect(

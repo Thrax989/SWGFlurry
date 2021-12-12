@@ -1,6 +1,6 @@
 JediMindTrickCommand = {
         name = "jedimindtrick",
-        visMod = 1,
+        visMod = 25,
         damageMultiplier = 0,
         speed = 4.0,
         forceCost = 200,
