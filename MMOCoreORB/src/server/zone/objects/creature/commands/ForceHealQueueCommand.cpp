@@ -37,7 +37,7 @@ ForceHealQueueCommand::ForceHealQueueCommand(const String& name, ZoneProcessServ
 	diseaseHealIterations = 1;
 	fireHealIterations = 1;
 
-	visMod = 1;
+	visMod = 10;
 
 	range = 0;
 

@@ -15,7 +15,7 @@ class JediCombatQueueCommand : public CombatQueueCommand {
 public:
 
 	JediCombatQueueCommand(const String& name, ZoneProcessServer* server) : CombatQueueCommand(name, server) {
-		visMod = 1;
+		visMod = 25;
 	}
 
 	virtual bool isJediCombatCommand() {
