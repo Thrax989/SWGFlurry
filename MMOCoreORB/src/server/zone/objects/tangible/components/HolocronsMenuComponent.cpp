@@ -27,10 +27,10 @@ void HolocronsMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject, Ob
 
 	if (ghost->getJediState() >=1) {
 			menuResponse->addRadialMenuItem(213, 3, "Reveal Encrypted Data"); // Use Holocron
-			menuResponse->addRadialMenuItemToRadialID(213, 214, 3, "Increase Jedi Lives"); // Increase Jedi Lives
+			//menuResponse->addRadialMenuItemToRadialID(213, 214, 3, "Increase Jedi Lives"); // Increase Jedi Lives
 			menuResponse->addRadialMenuItemToRadialID(213, 215, 3, "Regenerate Full Force"); // Regenerate Jedi's Full Force
 			menuResponse->addRadialMenuItemToRadialID(213, 216, 3, "Visibility"); // Show Jedi's Visibility
-			menuResponse->addRadialMenuItemToRadialID(213, 217, 3, "Jedi Lives Remaining"); // Jedi Live's Remaining
+			//menuResponse->addRadialMenuItemToRadialID(213, 217, 3, "Jedi Lives Remaining"); // Jedi Live's Remaining
 			menuResponse->addRadialMenuItemToRadialID(213, 218, 3, "Unlock Jedi"); // Unlock Normal Jedi
 			menuResponse->addRadialMenuItemToRadialID(213, 220, 3, "Unlock Gray Jedi"); // Unlocks Gray Jedi
 		}
@@ -148,7 +148,7 @@ int HolocronsMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Cre
 	if (selectedID == 220 && (ghost->getJediState() >= 1) && (ghost->getSkillPoints() == 250)) {
 		        ManagedReference<SuiMessageBox*> box = new SuiMessageBox(creature, SuiWindowType::CITY_ADMIN_CONFIRM_UPDATE_TYPE);
 				creature->sendSystemMessage("You Have Unlocked Gray Jedi");
-				int livesLeft = creature->getScreenPlayState("jediLives") + 3;
+				int livesLeft = creature->getScreenPlayState("jediLives") + 1;
 				creature->setScreenPlayState("jediLives", livesLeft);
 				int jediVis1 = ghost->getVisibility();
 				box->setPromptTitle("Gray Jedi Progress");
