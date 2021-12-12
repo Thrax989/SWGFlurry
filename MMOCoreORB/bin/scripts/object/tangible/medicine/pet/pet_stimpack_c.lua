@@ -54,8 +54,8 @@ object_tangible_medicine_pet_pet_stimpack_c = object_tangible_medicine_pet_share
 	experimentalWeights = {1, 1, 2, 1, 2, 1, 1, 1},
 	experimentalGroupTitles = {"null", "null", "exp_effectiveness", "exp_charges", "null", "null"},
 	experimentalSubGroupTitles = {"null", "null", "power", "charges", "decayrate", "hitpoints"},
-	experimentalMin = {0, 0, 5000, 10, 15, 1000},
-	experimentalMax = {0, 0, 15000, 25, 15, 1000},
+	experimentalMin = {0, 0, 500, 10, 15, 1000},
+	experimentalMax = {0, 0, 1500, 25, 15, 1000},
 	experimentalPrecision = {0, 0, 0, 0, 0, 0},
 	experimentalCombineType = {0, 0, 1, 1, 1, 4},
 }
