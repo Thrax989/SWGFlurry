@@ -309,9 +309,8 @@ public:
 
 		int	range = int(dotPack->getRange() + creature->getSkillMod("healing_range") / 100 * 14);
 
-		if (creature->isPlayerCreature() && dotPack->getRange() >= 65) {
-  		Locker locker(weapon);
- 		dotPack->range(64);
+		if (range > 64 {
+			range = 64;
 		}
 
 		if(!checkDistance(creature, creatureTarget, range))
