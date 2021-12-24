@@ -1,5 +1,5 @@
 object_tangible_quest_som_kenobi_reunite_shard_splinters_2 = object_tangible_quest_shared_som_kenobi_reunite_shard_splinters_2:new {
-
+  objectMenuComponent = "HolocronCraftingMenuComponent"
 }
 
 ObjectTemplates:addTemplate(object_tangible_quest_som_kenobi_reunite_shard_splinters_2, "object/tangible/quest/som_kenobi_reunite_shard_splinters_2.iff")

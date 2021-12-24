@@ -1498,7 +1498,21 @@ void PlayerObjectImplementation::notifyOnline() {
 			ghost->disconnect(true, true);
 			}
 		}
+	//Extra Gray Jedi Lives Check For Spill Over Lives
+	if (playerCreature->getScreenPlayState("jediLives") == 2) {
+		if (playerCreature->hasSkill("combat_jedi_novice")) {
+		int livesLeft = playerCreature->getScreenPlayState("jediLives") - 1;
+		playerCreature->setScreenPlayState("jediLives", livesLeft);
+		}
+	}
 
+	if (playerCreature->getScreenPlayState("jediLives") == 3) {
+		if (playerCreature->hasSkill("combat_jedi_novice")) {
+		int livesLeft = playerCreature->getScreenPlayState("jediLives") - 2;
+		playerCreature->setScreenPlayState("jediLives", livesLeft);
+		}
+	}
+	
 	schedulePvpTefRemovalTask();
 
  	PlayerManager* playerManager = playerCreature->getZoneServer()->getPlayerManager();
@@ -1569,6 +1583,10 @@ void PlayerObjectImplementation::notifyOnline() {
 				chatManager->handleGeneralChat(playerCreature, zReward.toString());
 			}
 		}
+	}
+
+	if (playerCreature->hasSkill("combat_jedi_novice") && playerCreature->getFactionStatus() == FactionStatus::OVERT) {
+		playerCreature->setFactionStatus(1);
 	}
 
 	MissionManager* missionManager = zoneServer->getMissionManager();

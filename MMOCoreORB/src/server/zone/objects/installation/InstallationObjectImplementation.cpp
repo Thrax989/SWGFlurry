@@ -433,27 +433,7 @@ bool InstallationObjectImplementation::updateMaintenance(Time& workingTime) {
 
 		Time workTill(lastMaintenanceTime.getTime() + (int) workTimePermitted);
 		workingTime = workTill;
-
-		// Stack get a ref to owning player. if they have the funds, do NOT shut it down because its going to be withdrawn from bank
-		CreatureObject* player = getOwnerCreatureObject();
-		if(player != nullptr)
-		{
-			if(player->getBankCredits() > payAmount)
-			{
-				shutdownWork = false;
-			}
-			else
-			{
-				shutdownWork = true;
-			}
-
-		}
-		else
-		{
-			shutdownWork = true;
-		}
-
-
+		shutdownWork = true;
 	}
 
 	if (workTimePermitted > 0) {

@@ -18,6 +18,9 @@ WorldBossSpawner = ScreenPlay:new {
 		{template = "corrupted_wampa_boss", name = "Corrupted Wampa"},
 		{template = "corrupted_geonosian_boss", name = "Corrupted Geonosian"},
 		{template = "corrupted_deathsting_boss", name = "Corrupted Deathsting"},
+		{template = "corrupted_the_hand", name = "Corrupted Emperors Hand"},
+		{template = "corrupted_general_hark", name = "Corrupted General Hark"},
+
 	},
 
 	screenplayName = "WorldBossSpawner",
@@ -54,7 +57,6 @@ function WorldBossSpawner:notifyBossDead(pBoss, pKiller)
 		return 1
 	end
 	createEvent(getRandomNumber(self.secondsToRespawn - self.randomVariance, self.secondsToRespawn + self.randomVariance) * 1000, "WorldBossSpawner", "respawnBoss", pBoss, "")
-	--print("Boss was killed, initiating respawn.")
 	local bossName = self:getBossName(pBoss)
 	local zone = self:getBossZone(pBoss)
 
@@ -118,10 +120,6 @@ function WorldBossSpawner:respawnBoss(pOldBoss)
 		if (pBoss ~= nil) then
 
 			createEvent(30, "WorldBossSpawner", "setupBoss", pBoss, "")
-
-			--self:spawnBigGameHunter(pBoss, zone)
-
-			--print("World Boss: " .. bossObject.name .. " spawned at " .. spawnPoint[1] .. ", " .. spawnPoint[3] .. ", " .. zone)
 
 			writeStringData(SceneObject(pBoss):getObjectID() .. ":name", bossObject.name)
 			writeStringData(SceneObject(pBoss):getObjectID() .. ":zone", zone)
@@ -197,41 +195,3 @@ function WorldBossSpawner:getBossZone(pBoss)
 	local bossZone = readStringData(SceneObject(pBoss):getObjectID() .. ":zone")
 	return bossZone
 end
-
---[[
-function WorldBossSpawner:spawnBigGameHunter(pBoss, planet)
-	if (pBoss ~= nil or CreatureObject(pBoss):isDead() == false) then
-		for i = 1, #BigGameHunterSpawns, 1 do
-			local bghSpawn = BigGameHunterSpawns[i]
-			if (bghSpawn[1] == planet) then
-
-				if (readData(planet .. ":bghPlanet") == 0) then
-					local pBGH = spawnMobile(bghSpawn[1], bghSpawn[2], bghSpawn[3], bghSpawn[4], bghSpawn[5], bghSpawn[6], bghSpawn[7], bghSpawn[8])
-					if (pBGH ~= nil) then
-						writeData(planet .. ":bghPlanet", SceneObject(pBGH):getObjectID())
-						writeStringData(SceneObject(pBGH):getObjectID() .. ":bghPlanet", planet)
-						createEvent(60 * 1000, "WorldBossSpawner", "despawnBigGameHunter", pBGH, "")
-					end
-				end
-			end
-		end
-	end
-end
-
-function WorldBossSpawner:despawnBigGameHunter(pBGH)
-	if (pBGH ~= nil) then
-		local BGHPlanet = readStringData(SceneObject(pBGH):getObjectID() .. ":bghPlanet")
-
-		for i = 1, self.bossesToSpawn, 1 do
-			local checkBossPlanetData = readData(BGHPlanet .. ":" .. i)
-			if (checkBossPlanetData ~= nil and checkBossPlanetData ~= 0) then
-				createEvent(30 * 1000, "WorldBossSpawner", "despawnBigGameHunter", pBGH, "")
-				return
-			end
-		end
-		deleteData(BGHPlanet .. ":bghPlanet")
-		deleteStringData(SceneObject(pBGH):getObjectID() .. ":bghPlanet")
-		SceneObject(pBGH):destroyObjectFromWorld()
-	end
-end
---]]
