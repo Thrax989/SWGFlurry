@@ -1,5 +1,5 @@
-impshadowvendorData = VendorLogic:new {
-	scriptName = "impshadowvendorDataDataVendorLogic",
+impshadowVendorLogic = VendorLogic:new {
+	scriptName = "impshadowVendorLogic",
 	currencies = {
 	--For Tokens: Displayed Name, full template string (without shared_), if applicable: ScreenPlayData string, ScreenPlayData key
 		{currency = "token", name = "Community Token", template = "object/tangible/loot/token/event_token.iff", ScreenPlayDataString = "vendorToken", ScreenPlayDataKey = "event_token"},
@@ -18,4 +18,4 @@ impshadowvendorData = VendorLogic:new {
 	},
 }
 
-registerScreenPlay("impshadowvendorDataDataVendorLogic", false)
+registerScreenPlay("impshadowVendorLogic", false)
