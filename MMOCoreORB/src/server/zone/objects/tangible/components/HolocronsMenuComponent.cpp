@@ -38,12 +38,12 @@ void HolocronsMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject, Ob
 int HolocronsMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* creature, byte selectedID) const {
 	ManagedReference<PlayerObject*> ghost = creature->getPlayerObject();
 
-	if (ghost == NULL)
+	if (ghost == nullptr)
 		return 0;
 
 	ZoneServer* zserv = creature->getZoneServer();
 
-	if (zserv == NULL)
+	if (zserv == nullptr)
 		return 0;
 	
 	if (selectedID == 213) {
@@ -95,7 +95,7 @@ int HolocronsMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Cre
 			}
 		return 0;
 	}
-	if (playerObject != NULL && playerObject->getJediState() >= 1) {
+	if (playerObject != nullptr && playerObject->getJediState() >= 1) {
 		if (playerObject->getForcePower() < playerObject->getForcePowerMax()) {
 			//Refil force + Message player
 			creature->sendSystemMessage("@jedi_spam:holocron_force_replenish");
