@@ -1500,18 +1500,19 @@ void PlayerObjectImplementation::notifyOnline() {
 		}
 	//Extra Gray Jedi Lives Check For Spill Over Lives
 	if (playerCreature->getScreenPlayState("jediLives") == 2) {
-		if (playerCreature->hasSkill("combat_jedi_novice")) {
-		int livesLeft = playerCreature->getScreenPlayState("jediLives") - 1;
-		playerCreature->setScreenPlayState("jediLives", livesLeft);
+		if (player->hasSkill("combat_jedi_novice")) {
+		int livesLeft = player->getScreenPlayState("jediLives") - 1;
+		player->setScreenPlayState("jediLives", livesLeft);
 		}
 	}
 
 	if (playerCreature->getScreenPlayState("jediLives") == 3) {
-		if (playerCreature->hasSkill("combat_jedi_novice")) {
-		int livesLeft = playerCreature->getScreenPlayState("jediLives") - 2;
-		playerCreature->setScreenPlayState("jediLives", livesLeft);
+		if (player->hasSkill("combat_jedi_novice")) {
+		int livesLeft = player->getScreenPlayState("jediLives") - 2;
+		player->setScreenPlayState("jediLives", livesLeft);
 		}
 	}
+
 	
 	schedulePvpTefRemovalTask();
 
