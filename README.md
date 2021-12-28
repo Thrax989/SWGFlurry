@@ -126,7 +126,7 @@ http://www.swgflurry.com/Launcher/SWGFlurry_Launcher_0.0.3.7.exe
  `Taanab`
  `Talus`
  `Tatooine`
- `Yavin4'
+ `Yavin`
 
 ## Extended thanks to the following servers / contributors
 Thank you to the following server that provided custom content / alterations to the base core3 experience. Over the course of a few years each individual has added some portion to the frame work or code that is currently in this repository.
