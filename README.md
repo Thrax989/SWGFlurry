@@ -1,24 +1,6 @@
 ## Repository EST Dec 29, 2016 
 
 ## Server Development Legend
-<!--
-*** Thanks for checking out this README Template. If you have a suggestion that would
-*** make this better, please fork the repo and create a pull request or simply open
-*** an issue with the tag "enhancement".
-*** Thanks again! Now go create something AMAZING! :D
--->
-
-
-
-
-<!-- PROJECT SHIELDS -->
-<!--
-*** I'm using markdown "reference style" links for readability.
-*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
-*** See the bottom of this document for the declaration of the reference variables
-*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
-*** https://www.markdownguide.org/basic-syntax/#reference-style-links
--->
 [![GitHub last commit](https://img.shields.io/github/last-commit/Thrax989/SWGFlurry.svg)](https://github.com/Thrax989/SWGFlurry/commits/master)
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
@@ -48,103 +30,103 @@ http://www.swgflurry.com/Launcher/SWGFlurry_Launcher_0.0.3.7.exe
   * Make sure level 15 access is added to your account
   
 ## Coding Legend
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `Complete`
-- ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) `Incomplete`
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `Testing`
+ `Complete`
+ `Incomplete`
+ `Testing`
 
 ## All Custom Additions
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `All standard Pre-CU assets`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `All post 14.1 Weapons`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `CU Armor - Katarn, Rebel Assault/Battle, Imperial Assualt & Scout Troopers`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `Mustafar Mobs & NPC's`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `Kashyyyk Mobs and worldbuilding assets`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `Many NGE Mobs`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `All NGE Backpack`
-- ![#008000](https://placehold.it/15/FF0000/000000?text=+) `NGE Wings / Halos`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `BARC Speeder Neutral / Rebel Imperial / Pod Racers 1 an 2 / Sith Sppeder`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `All NGE Housing Deeds With Appropriate signs / Halloween signs`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `NGE House schematics`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `NGE capes Rebel / Imperial`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `NGE Decorations / Hologram Decorations / 1 year - 10 year vet rewards`
-- ![#008000](https://placehold.it/15/FF0000/000000?text=+) `All TCG Items`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `NGE Wearable,Vehicles,Deeds,Assets`
+ `All standard Pre-CU assets`
+ `All post 14.1 Weapons`
+ `CU Armor - Katarn, Rebel Assault/Battle, Imperial Assualt & Scout Troopers`
+ `Mustafar Mobs & NPC's`
+ `Kashyyyk Mobs and worldbuilding assets`
+ `Many NGE Mobs`
+ `All NGE Backpack`
+ `NGE Wings / Halos`
+ `BARC Speeder Neutral / Rebel Imperial / Pod Racers 1 an 2 / Sith Sppeder`
+ `All NGE Housing Deeds With Appropriate signs / Halloween signs`
+ `NGE House schematics`
+ `NGE capes Rebel / Imperial`
+ `NGE Decorations / Hologram Decorations / 1 year - 10 year vet rewards`
+ `All TCG Items`
+ `NGE Wearable,Vehicles,Deeds,Assets`
 
 ## Custom Professions
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `Spy`
-- ![#FF0000](https://placehold.it/15/008000/000000?text=+) `Melee Bounty Hunter`
-- ![#FF0000](https://placehold.it/15/008000/000000?text=+) `Gray force sensative`
-- ![#FF0000](https://placehold.it/15/008000/000000?text=+) `Gray Initiate`
-- ![#FF0000](https://placehold.it/15/008000/000000?text=+) `Gray Jedi Novice` 
-- ![#FF0000](https://placehold.it/15/008000/000000?text=+) `Gray Jedi Master`
-- ![#FF0000](https://placehold.it/15/008000/000000?text=+) `Elder Gray Jedi`
-- ![#FF0000](https://placehold.it/15/008000/000000?text=+) `Elder Gray Jedi Master`
-- ![#FF0000](https://placehold.it/15/008000/000000?text=+) `Gray Jedi Order`
-- ![#FF0000](https://placehold.it/15/008000/000000?text=+) `Grand Master`
+ `Spy`
+ `Melee Bounty Hunter`
+ `Gray force sensative`
+ `Gray Initiate`
+ `Gray Jedi Novice` 
+ `Gray Jedi Master`
+ `Elder Gray Jedi`
+ `Elder Gray Jedi Master`
+ `Gray Jedi Order`
+ `Grand Master`
 
 ## Armorsmith [Available Craftable Armors]
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `Assault Trooper`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `Bone`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `Bounty Hunter`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `Chitin`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `Clone Trooper`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `Composite` 
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `Death Trooper`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `Galactic Marine`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `Infilitrator`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `Ithroian Defender`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `Ithorian Guardian`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `Ithorian Sentinel`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `Kashyyykian Black Moutain`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `Kashyyykian Ceremonial`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `Kashyyykian Hunting`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `Mandalorian`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `Mandalorian Rebel`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `Mandalorian Imperial`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `Marauder`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `Marine`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `Nightsister`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `Padded`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `Rebel Assault`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `Rebel Battle`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `Rebel Snow`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `Rebel Spec Force`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `RIS`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `Scout Trooper`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `Singing Moutain clan`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `Snowtrooper`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `Stormtrooper`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `Tantel`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `Ubues`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `Zam`
+ `Assault Trooper`
+ `Bone`
+ `Bounty Hunter`
+ `Chitin`
+ `Clone Trooper`
+ `Composite` 
+ `Death Trooper`
+ `Galactic Marine`
+ `Infilitrator`
+ `Ithroian Defender`
+ `Ithorian Guardian`
+ `Ithorian Sentinel`
+ `Kashyyykian Black Moutain`
+ `Kashyyykian Ceremonial`
+ `Kashyyykian Hunting`
+ `Mandalorian`
+ `Mandalorian Rebel`
+ `Mandalorian Imperial`
+ `Marauder`
+ `Marine`
+ `Nightsister`
+ `Padded`
+ `Rebel Assault`
+ `Rebel Battle`
+ `Rebel Snow`
+ `Rebel Spec Force`
+ `RIS`
+ `Scout Trooper`
+ `Singing Moutain clan`
+ `Snowtrooper`
+ `Stormtrooper`
+ `Tantel`
+ `Ubues`
+ `Zam`
 
 ## Pre-Pub 9 Jedi Additions
-- ![#008000](https://placehold.it/15/008000/000000?text=+) Jedi Perma Death (3 Lives Additional lives gained from holocrons) - This system can be turn - ![#008000](https://placehold.it/15/008000/000000?text=+) `On` or - ![#FF0000](https://placehold.it/15/FF0000/000000?text=+) `Off` depending on the server operators choice
+ Jedi Perma Death (3 Lives Additional lives gained from holocrons) - This system can be turn  `On` or  `Off` depending on the server operators choice
 
 ## Custom Planets
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `Chandrila`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `Corellia`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `Coruscant`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `Dantooine`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `Dathomir`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `Dungeon1`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `Dungeon2`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `Endor`
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `Geonosis`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `Hoth`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `Hutta`
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `Jakku`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `Kaas`
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `Kashyyyk`
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `korriban`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `Lok`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `Mandalore`
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `Mustafar`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `Naboo`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `Rori`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `Taanab`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `Talus`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `Tatooine`
-- ![#008000](https://placehold.it/15/008000/000000?text=+) `Yavin4'
+ `Chandrila`
+ `Corellia`
+ `Coruscant`
+ `Dantooine`
+ `Dathomir`
+ `Dungeon1`
+ `Dungeon2`
+ `Endor`
+ `Geonosis`
+ `Hoth`
+ `Hutta`
+ `Jakku`
+ `Kaas`
+ `Kashyyyk`
+ `korriban`
+ `Lok`
+ `Mandalore`
+ `Mustafar`
+ `Naboo`
+ `Rori`
+ `Taanab`
+ `Talus`
+ `Tatooine`
+ `Yavin4'
 
 ## Extended thanks to the following servers / contributors
 Thank you to the following server that provided custom content / alterations to the base core3 experience. Over the course of a few years each individual has added some portion to the frame work or code that is currently in this repository.
