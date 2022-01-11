@@ -25,8 +25,9 @@ void HolocronsMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject, Ob
 	TangibleObjectMenuComponent::fillObjectMenuResponse(sceneObject, menuResponse, player);
 	ManagedReference<PlayerObject*> ghost = player->getPlayerObject();
 
+	menuResponse->addRadialMenuItem(213, 3, "Reveal Encrypted Data"); // Use Holocron
+
 	if (ghost->getJediState() >=1) {
-			menuResponse->addRadialMenuItem(213, 3, "Reveal Encrypted Data"); // Use Holocron
 			menuResponse->addRadialMenuItemToRadialID(213, 214, 3, "Increase Jedi Lives"); // Increase Jedi Lives
 			menuResponse->addRadialMenuItemToRadialID(213, 215, 3, "Regenerate Full Force"); // Regenerate Jedi's Full Force
 			menuResponse->addRadialMenuItemToRadialID(213, 216, 3, "Visibility"); // Show Jedi's Visibility
@@ -47,9 +48,7 @@ int HolocronsMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Cre
 		return 0;
 	
 	if (selectedID == 213) {
- 		if (ghost->getJediState() >= 1) {
 			JediManager::instance()->useItem(sceneObject, JediManager::ITEMHOLOCRON, creature);
-		}
 	}
 	if (selectedID == 214 && (ghost->getJediState() >= 1) && creature->hasSkill("combat_jedi_novice") && (creature->getScreenPlayState("jediLives") == 0)) {
 		creature->sendSystemMessage("You have Permanently died on your jedi, you may not use this option"); // You have Permanently died on your jedi, you may not use this option
