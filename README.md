@@ -155,4 +155,4 @@ For more information, see https://review.swgemu.com.
 [issues-shield]: https://img.shields.io/github/issues/Thrax989/SWGFlurry.svg?style=flat-square
 [issues-url]: https://github.com/Thrax989/SWGFlurry/issues
 [license-shield]: https://img.shields.io/github/license/Thrax989/SWGFlurry.svg?style=flat-square
-[license-url]: https://github.com/Thrax989/SWGFlurry/blob/TestServer/COPYING
+[license-url]: https://github.com/Thrax989/SWGFlurry/blob/TestServer/LICENSE
