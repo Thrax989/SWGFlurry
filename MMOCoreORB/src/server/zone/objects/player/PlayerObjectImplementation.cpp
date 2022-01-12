@@ -1447,6 +1447,20 @@ void PlayerObjectImplementation::notifyOnline() {
 		SkillManager::instance()->surrenderSkill("force_rank_dark_novice", playerCreature, true);
 	}
 
+	//Check for FRS Jedi without overt skill check
+	if (playerCreature->hasSkill("force_rank_dark_novice") || playerCreature->hasSkill("force_rank_light_novice")) {
+		playerCreature->setFactionStatus(2);
+	}
+
+	//Check for Gray Faction Jedi without overt skill check
+	if (playerCreature->hasSkill("combat_jedi_novice") && playerCreature->isRebel()) {
+		playerCreature->setFactionStatus(2);
+	}
+
+	if (playerCreature->hasSkill("combat_jedi_novice") && playerCreature->isImperial()) {
+		playerCreature->setFactionStatus(2);
+	}
+
 	//Login to jedi manager
 	JediManager::instance()->onPlayerLoggedIn(playerCreature);
 	//Reset Players Skill Mods
@@ -1498,20 +1512,6 @@ void PlayerObjectImplementation::notifyOnline() {
 			ghost->disconnect(true, true);
 			}
 		}
-	//Extra Gray Jedi Lives Check For Spill Over Lives
-	if (playerCreature->getScreenPlayState("jediLives") == 2) {
-		if (playerCreature->hasSkill("combat_jedi_novice")) {
-		int livesLeft = playerCreature->getScreenPlayState("jediLives") - 1;
-		playerCreature->setScreenPlayState("jediLives", livesLeft);
-		}
-	}
-
-	if (playerCreature->getScreenPlayState("jediLives") == 3) {
-		if (playerCreature->hasSkill("combat_jedi_novice")) {
-		int livesLeft = playerCreature->getScreenPlayState("jediLives") - 2;
-		playerCreature->setScreenPlayState("jediLives", livesLeft);
-		}
-	}
 	
 	schedulePvpTefRemovalTask();
 
@@ -1583,10 +1583,6 @@ void PlayerObjectImplementation::notifyOnline() {
 				chatManager->handleGeneralChat(playerCreature, zReward.toString());
 			}
 		}
-	}
-
-	if (playerCreature->hasSkill("combat_jedi_novice") && playerCreature->getFactionStatus() == FactionStatus::OVERT) {
-		playerCreature->setFactionStatus(1);
 	}
 
 	MissionManager* missionManager = zoneServer->getMissionManager();
@@ -2341,6 +2337,8 @@ void PlayerObjectImplementation::setOnline() {
 	clearCharacterBit(PlayerObjectImplementation::LD, true);
 
 	doRecovery(1000);
+
+	regrantSkills();
 
 	activateMissions();
 }

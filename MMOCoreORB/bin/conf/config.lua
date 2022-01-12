@@ -91,48 +91,19 @@ Core3 = {
 	--To save on RAM and CPU usage, you should only enable the zones you need.
 	--In order to disable a zone, all you have to do is comment it out.
 	ZonesEnabled = {
-	"chandrila",
-	--"concordia",
-	--"concorddawn",
 	"corellia",
-	"coruscant",
 	"dantooine",
 	"dathomir",
 	"dungeon1",
 	"dungeon2",
 	"endor",
-	"geonosis",
-	"hoth",
-	"hutta",
-	"jakku",
-	"kaas",
-	"kashyyyk",
-	"korriban",
 	"lok",
-	"mandalore",
-	"mustafar",
 	"naboo",
 	"rori",
-	"taanab",
 	"talus",
 	"tatooine",
 	"tutorial",
 	"yavin4"
-	--"space_corellia",
-	--"space_corellia_2",
-	--"space_dantooine",
-	--"space_dathomir",
-	--"space_endor",
-	--"space_env",
-	--"space_halos",
-	--"space_heavy1",
-	--"space_light1",
-	--"space_lok",
-	--"space_naboo",
-	--"space_naboo_2",
-	--"space_tatooine",
-	--"space_tatooine_2",
-	--"space_yavin4",
 },
 
 
@@ -220,7 +191,7 @@ Core3 = {
 	--Custom Server Settings
 	------------------------
 	--Structure Packup Config
-	structurePackupEnabled = "true", --Enables Structure Packup.
+	structurePackupEnabled = "false", --Enables Structure Packup.
 
 	--Structure Inactivity Packup Config
 	inactiveStructurePackupEnabled = "false", --Enables Inactive Structure Packup. Structure Packup must be enabled above.

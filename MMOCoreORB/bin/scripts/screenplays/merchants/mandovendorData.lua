@@ -1,5 +1,5 @@
-mandoData = VendorLogic:new {
-	scriptName = "mandovendorDataVendorLogic",
+mandoVendorLogic = VendorLogic:new {
+	scriptName = "mandoVendorLogic",
 	currencies = {
 	--For Tokens: Displayed Name, full template string (without shared_), if applicable: ScreenPlayData string, ScreenPlayData key
 		{currency = "token", name = "Community Token", template = "object/tangible/loot/token/event_token.iff", ScreenPlayDataString = "vendorToken", ScreenPlayDataKey = "event_token"},
@@ -19,4 +19,4 @@ mandoData = VendorLogic:new {
 	},
 }
 
-registerScreenPlay("mandoDataVendorLogic", false)
+registerScreenPlay("mandoVendorLogic", false)
