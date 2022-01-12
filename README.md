@@ -24,7 +24,7 @@
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
+[![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
 
 ## Flurry Server Index  ##
   * [![Discord](https://discordapp.com/api/guilds/457257573859590154/widget.png)](https://discord.gg/RVx66Sw) 
@@ -154,5 +154,3 @@ For more information, see https://review.swgemu.com.
 [stars-url]: https://github.com/Thrax989/SWGFlurry/stargazers
 [issues-shield]: https://img.shields.io/github/issues/Thrax989/SWGFlurry.svg?style=flat-square
 [issues-url]: https://github.com/Thrax989/SWGFlurry/issues
-[license-shield]: https://img.shields.io/github/license/Thrax989/SWGFlurry.svg?style=flat-square
-[license-url]: https://github.com/Thrax989/SWGFlurry/blob/master/LICENSE
