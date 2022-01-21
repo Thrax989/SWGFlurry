@@ -1448,16 +1448,7 @@ void PlayerObjectImplementation::notifyOnline() {
 	}
 
 	//Check for FRS Jedi without overt skill check
-	if (playerCreature->hasSkill("force_rank_dark_novice") || playerCreature->hasSkill("force_rank_light_novice")) {
-		playerCreature->setFactionStatus(2);
-	}
-
-	//Check for Gray Faction Jedi without overt skill check
-	if (playerCreature->hasSkill("combat_jedi_novice") && playerCreature->isRebel()) {
-		playerCreature->setFactionStatus(2);
-	}
-
-	if (playerCreature->hasSkill("combat_jedi_novice") && playerCreature->isImperial()) {
+	if (playerCreature->hasSkill("force_rank_dark_novice") || playerCreature->hasSkill("force_rank_light_novice") || playerCreature->hasSkill("combat_jedi_novice")) {
 		playerCreature->setFactionStatus(2);
 	}
 
