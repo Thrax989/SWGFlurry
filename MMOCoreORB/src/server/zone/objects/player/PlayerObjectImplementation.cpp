@@ -1585,10 +1585,6 @@ void PlayerObjectImplementation::notifyOnline() {
 		}
 	}
 
-	if (playerCreature->hasSkill("combat_jedi_novice") && playerCreature->getFactionStatus() == FactionStatus::OVERT) {
-		playerCreature->setFactionStatus(1);
-	}
-
 	MissionManager* missionManager = zoneServer->getMissionManager();
 
 	if (missionManager != nullptr) {
