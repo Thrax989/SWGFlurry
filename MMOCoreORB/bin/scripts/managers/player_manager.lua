@@ -44,14 +44,14 @@
 --GENERAL PLAYER SETTINGS
 -----------------------------------
 
-onlineCharactersPerAccount = 3 --How many characters are allowed online from a single account.
+onlineCharactersPerAccount = 1 --How many characters are allowed online from a single account.
 allowSameAccountPvpRatingCredit = 0
 
 --Blue frog / GM buff values
-performanceBuff = 15000
-medicalBuff = 15000
-performanceDuration = 10800 -- in seconds
-medicalDuration = 10800 -- in seconds
+performanceBuff = 0
+medicalBuff = 0
+performanceDuration = 0 -- in seconds
+medicalDuration = 0 -- in seconds
 
 --Sets the experience multiplier while grouped
 groupExpMultiplier = 1.2
@@ -61,11 +61,11 @@ globalExpMultiplier = 1.0
 
 --Sets the base number of control devices of each type that a player can have in their datapad at once
 --For creature pets, A Creature Handler will have the base number + their stored pets skill mod as limit
-baseStoredCreaturePets = 20
-baseStoredFactionPets = 20
-baseStoredDroids = 20
-baseStoredVehicles = 20
-baseStoredShips = 20
+baseStoredCreaturePets = 2
+baseStoredFactionPets = 3
+baseStoredDroids = 5
+baseStoredVehicles = 3
+baseStoredShips = 3
 -----------------------------------
 --VETERAN REWARDS CONFIG
 -----------------------------------
@@ -120,7 +120,6 @@ veteranRewards = {
 		{templateFile = "object/tangible/tcg/series1/decorative_statuette_princess_leia.iff", milestone=30, oneTime=false, description="Statuette princess leia"},
 		{templateFile = "object/tangible/tcg/series5/furniture_tie_fighter_chair.iff", milestone=30, oneTime=false, description="Tie fighter chair"},
 		{templateFile = "object/tangible/tcg/series6/combine_object_battle_droid_statuette.iff", milestone=30, oneTime=false, description="Battle droid statuette"},
-		{templateFile = "object/tangible/veteran_reward/harvester.iff", milestone=30, oneTime=true, description="@veteran_new:poweredharvester"},
 		{templateFile = "object/tangible/veteran_reward/data_terminal_s1.iff", milestone=30, oneTime=false, description="@veteran_new:dataterminal1"},
 		{templateFile = "object/tangible/veteran_reward/data_terminal_s2.iff", milestone=30, oneTime=false, description="@veteran_new:dataterminal2"},
 		{templateFile = "object/tangible/veteran_reward/data_terminal_s3.iff", milestone=30, oneTime=false, description="@veteran_new:dataterminal3"},
@@ -343,7 +342,6 @@ veteranRewards = {
 		{templateFile = "object/tangible/veteran_reward/one_year_anniversary/painting_08.iff", milestone=360, oneTime=false, description="Painting: Imperial Oppression (TIE Oppressor)"},
 		{templateFile = "object/tangible/veteran_reward/one_year_anniversary/painting_09.iff", milestone=360, oneTime=false, description="Painting: Emperor's Eyes (TIE Sentinel)"},
 		{templateFile = "object/tangible/wearables/armor/nightsister/armor_nightsister_bicep_r_s01.iff", milestone=360, oneTime=true, description="Nightsister Melee Armguard"},
-		{templateFile = "object/tangible/veteran_reward/resource.iff", milestone=360, oneTime=true, description="@veteran_new:resourcecrate"},
 		-- 365 Day Rewards
 		{templateFile = "object/tangible/furniture/modern/rug_rect_lg_s01.iff", milestone=365, oneTime=false, description="Large Rectangular Rug (Style 1)"},
 		{templateFile = "object/tangible/furniture/modern/rug_rect_lg_s02.iff", milestone=365, oneTime=false, description="Large Rectangular Rug (Style 2)"},
