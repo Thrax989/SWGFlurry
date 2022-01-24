@@ -5,16 +5,16 @@ bounty_hunter_armor = {
 	minimumLevel = 0,
 	maximumLevel = 0,
 	lootItems = {
-		{itemTemplate = "locked_briefcase", weight = 1000000},
-		{itemTemplate = "locked_container", weight = 1000000},
-		{itemTemplate = "force_color_crystal", weight = 1000000},
-		{itemTemplate = "force_power_crystal", weight = 1000000},
-		{itemTemplate = "attachment_clothing", weight = 1000000},
-		{itemTemplate = "attachment_armor", weight = 1000000},
-		{groupTemplate = "lifeday", weight = 1000000},
-		{groupTemplate = "junk", weight = 1000000},
-		{groupTemplate = "outbreak", weight = 1000000},
-		{groupTemplate = "wearables_all", weight = 1000000}
+		{itemTemplate = "bh_armor_belt", weight = 1000000},
+		{itemTemplate = "bh_armor_bicep_l", weight = 1000000},
+		{itemTemplate = "bh_armor_bicep_r", weight = 1000000},
+		{itemTemplate = "bh_armor_boots", weight = 1000000},
+		{itemTemplate = "bh_armor_bracer_l", weight = 1000000},
+		{itemTemplate = "bh_armor_bracer_r", weight = 1000000},
+		{itemTemplate = "bh_armor_chest_plate", weight = 1000000},
+		{itemTemplate = "bh_armor_gloves", weight = 1000000},
+		{itemTemplate = "bh_armor_helmet", weight = 1000000},
+		{itemTemplate = "bh_armor_leggings", weight = 1000000}
 	}
 }
 

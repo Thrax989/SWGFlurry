@@ -5,16 +5,21 @@ pistols = {
 	minimumLevel = 0,
 	maximumLevel = 0,
 	lootItems = {
-		{itemTemplate = "locked_briefcase", weight = 1000000},
-		{itemTemplate = "locked_container", weight = 1000000},
-		{itemTemplate = "force_color_crystal", weight = 1000000},
-		{itemTemplate = "force_power_crystal", weight = 1000000},
-		{itemTemplate = "attachment_clothing", weight = 1000000},
-		{itemTemplate = "attachment_armor", weight = 1000000},
-		{groupTemplate = "lifeday", weight = 1000000},
-		{groupTemplate = "armor_all", weight = 1000000},
-		{groupTemplate = "outbreak", weight = 1000000},
-		{groupTemplate = "wearables_all", weight = 1000000}
+		{itemTemplate = "pistol_cdef", weight = 1200000},
+		{itemTemplate = "pistol_d18", weight = 1000000},
+		{itemTemplate = "pistol_dh17", weight = 1000000},
+		{itemTemplate = "pistol_dl44", weight = 1000000},
+		{itemTemplate = "pistol_dl44_metal", weight = 800000},
+		{itemTemplate = "pistol_dx2", weight = 300000},
+		{itemTemplate = "pistol_fwg5", weight = 500000},
+		{itemTemplate = "pistol_launcher", weight = 400000},
+		{itemTemplate = "pistol_power5", weight = 500000},
+		{itemTemplate = "pistol_republic_blaster", weight = 300000},
+		{itemTemplate = "pistol_scatter", weight = 400000},
+		{itemTemplate = "pistol_scout_trooper", weight = 700000},
+		{itemTemplate = "pistol_sr_combat", weight = 700000},
+		{itemTemplate = "pistol_striker", weight = 700000},
+		{itemTemplate = "pistol_tangle", weight = 500000},
 	}
 }
 

@@ -3,7 +3,7 @@
 kimogila_scales = {
 	minimumLevel = 0,
 	maximumLevel = -1,
-	customObjectName = "Kimogila Scales",
+	customObjectName = "",
 	directObjectTemplate = "object/tangible/component/armor/armor_segment_enhancement_kimogila.iff",
 	craftingValues = {
 		{"armor_special_type",0,0,0},

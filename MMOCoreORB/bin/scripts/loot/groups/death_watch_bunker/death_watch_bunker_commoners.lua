@@ -8,7 +8,6 @@ death_watch_bunker_commoners = {
 		{itemTemplate = "alum_gel_packet", weight = 3000000},
 		{itemTemplate = "executioners_hack_schematic", weight = 2000000},
 		{itemTemplate = "mandalorian_rebreather", weight = 3000000},
-		{itemTemplate = "berserker_schematic", weight = 500000},
 		{itemTemplate = "pistol_de10_schematic", weight = 2000000}
 	}
 }
