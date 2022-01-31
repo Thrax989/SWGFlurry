@@ -2349,32 +2349,31 @@ int PlayerManagerImplementation::awardExperience(CreatureObject* player, const S
 				frsSkillCheck(player, "novice", "guild_01");
 			}
 			if (curExp >= 10000 && curExp < 20000) {
-				frsSkillCheck(player, "rank_01", "guild_02");
+				frsSkillCheck(player, "guild_01", "guild_02");
 			}
 			if (curExp >= 20000 && curExp < 30000) {
-				frsSkillCheck(player, "rank_02", "guild_03");
+				frsSkillCheck(player, "guild_02", "guild_03");
 			}
 			if (curExp >= 30000 && curExp < 40000) {
-				frsSkillCheck(player, "rank_03", "guild_04");
+				frsSkillCheck(player, "guild_03", "guild_04");
 			}
 			if (curExp >= 40000 && curExp < 60000) {
-				frsSkillCheck(player, "rank_04", "guild_05");
+				frsSkillCheck(player, "guild_04", "guild_05");
 			}
 			if (curExp >= 60000 && curExp < 80000) {
-				frsSkillCheck(player, "rank_05", "guild_06");
+				frsSkillCheck(player, "guild_05", "guild_06");
 			}
 			if (curExp >= 80000 && curExp < 100000) {
-				frsSkillCheck(player, "rank_06", "guild_07");
+				frsSkillCheck(player, "guild_06", "guild_07");
 			}
 			if (curExp >= 100000 && curExp < 150000) {
-				frsSkillCheck(player, "rank_07", "guild_08");
+				frsSkillCheck(player, "guild_07", "guild_08");
 			}
 			if (curExp >= 150000 && curExp < 200000) {
-				frsSkillCheck(player, "rank_08", "guild_09");
-				SkillManager::instance()->awardSkill("force_title_jedi_rank_04", player, true, true, true);
+				frsSkillCheck(player, "guild_08", "guild_09");
 			}
 			if (curExp >= 200000 && curExp < 300000) {
-				frsSkillCheck(player, "rank_09", "guild_10");
+				frsSkillCheck(player, "guild_09", "guild_10");
 			}
 			if (curExp >= 300000 && curExp < 500000) {
 				frsSkillCheck(player, "guild_10", "master");
