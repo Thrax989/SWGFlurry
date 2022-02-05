@@ -2,15 +2,15 @@ tusken_raid_leader = Creature:new {
 	objectName = "@mob/creature_names:tusken_raid_leader",
 	socialGroup = "tusken_raider",
 	faction = "tusken_raider",
-	level = 300,
-	chanceHit = 25.0,
-	damageMin = 1450,
-	damageMax = 1850,
-	baseXp = 25000,
-	baseHAM = 100000,
-	baseHAMmax = 110000,
-	armor = 2,
-	resists = {115,115,115,115,115,115,115,115,115},
+	level = 49,
+	chanceHit = 0.49,
+	damageMin = 390,
+	damageMax = 490,
+	baseXp = 4825,
+	baseHAM = 10000,
+	baseHAMmax = 12000,
+	armor = 0,
+	resists = {35,25,0,60,-1,30,0,-1,-1},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -29,30 +29,17 @@ tusken_raid_leader = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "trash_rare", chance = 10000000},
-			},
-			lootChance = 2000000
-		},		
-		{
-			groups = {
-				{group = "trash_common", chance = 10000000},
-			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "weapon_component_advanced", chance = 10000000},
-			},
-			lootChance = 7000000
-		},
-		{
-			groups = {
-				{group = "tierone", chance = 1500000},
-				{group = "tiertwo", chance = 3500000},
-				{group = "tierthree", chance = 2500000},
-				{group = "tierdiamond", chance = 2500000},
-			},
-			lootChance = 3000000
+				{group = "junk", chance = 1500000},
+				{group = "tusken_common", chance = 3500000},
+				{group = "wearables_common", chance = 1000000},
+				{group = "wearables_uncommon", chance = 500000},
+				{group = "bone_armor", chance = 750000},
+				{group = "chitin_armor", chance = 750000},
+				{group = "armor_attachments", chance = 500000},
+				{group = "clothing_attachments", chance = 500000},
+				{group = "color_crystals", chance = 500000},
+				{group = "power_crystals", chance = 500000}
+			}
 		}
 	},
 	weapons = {"tusken_weapons"},

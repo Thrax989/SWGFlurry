@@ -2,15 +2,15 @@ tusken_executioner = Creature:new {
 	objectName = "@mob/creature_names:tusken_executioner",
 	socialGroup = "tusken_raider",
 	faction = "tusken_raider",
-	level = 300,
-	chanceHit = 35.0,
-	damageMin = 1650,
-	damageMax = 2500,
+	level = 263,
+	chanceHit = 23.5,
+	damageMin = 1645,
+	damageMax = 3000,
 	baseXp = 25167,
-	baseHAM = 110000,
-	baseHAMmax = 130000,
-	armor = 2,
-	resists = {125,125,125,125,125,125,125,125,125},
+	baseHAM = 261000,
+	baseHAMmax = 320000,
+	armor = 3,
+	resists = {85,80,35,100,20,30,45,80,-1},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -29,30 +29,16 @@ tusken_executioner = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "trash_rare", chance = 10000000},
-			},
-			lootChance = 2000000
-		},		
-		{
-			groups = {
-				{group = "trash_common", chance = 10000000},
-			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "weapon_component_advanced", chance = 10000000},
-			},
-			lootChance = 7000000
-		},
-		{
-			groups = {
-				{group = "tierone", chance = 1500000},
-				{group = "tiertwo", chance = 3500000},
-				{group = "tierthree", chance = 2500000},
-				{group = "tierdiamond", chance = 2500000},
-			},
-			lootChance = 3000000
+				{group = "junk", chance = 1500000},
+				{group = "tusken_common", chance = 3000000},
+				{group = "wearables_scarce", chance = 2000000},
+				{group = "bone_armor", chance = 750000},
+				{group = "chitin_armor", chance = 750000},
+				{group = "armor_attachments", chance = 500000},
+				{group = "clothing_attachments", chance = 500000},
+				{group = "color_crystals", chance = 500000},
+				{group = "power_crystals", chance = 500000}
+			}
 		}
 	},
 	weapons = {"tusken_weapons"},
