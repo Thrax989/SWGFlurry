@@ -1614,7 +1614,7 @@ endor_world = {
 		},
 		{
 			lairTemplateName = "endor_blurrg_raptor_neutral_none",
-			spawnLimit = -1,
+			spawnLimit = 5,
 			minDifficulty = 141,
 			maxDifficulty = 145,
 			numberToSpawn = 0,
