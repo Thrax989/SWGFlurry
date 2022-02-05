@@ -1,4 +1,4 @@
- black_sun_minion = Creature:new {
+black_sun_minion = Creature:new {
 	objectName = "@mob/creature_names:black_sun_minion",
 	randomNameType = NAME_GENERIC,
 	randomNameTag = true,
@@ -20,7 +20,7 @@
 	boneType = "",
 	boneAmount = 0,
 	milk = 0,
-	tamingChance = 0.0,
+	tamingChance = 0,
 	ferocity = 0,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
 	creatureBitmask = KILLER,
