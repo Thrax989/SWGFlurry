@@ -37,12 +37,12 @@ bh_scientist = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "tierone", chance = 2500000},
-				{group = "tiertwo", chance = 500000},
+				{group = "junk", chance = 2500000},
+				{group = "tailor_components", chance = 500000},
 				{group = "loot_kit_parts", chance = 500000},
 				{group = "color_crystals", chance = 500000},
 				{group = "power_crystals", chance = 1000000},
-				{group = "nge_all", chance = 1000000},
+				{group = "wearables_all", chance = 1000000},
 				{group = "weapons_all", chance = 1000000},
 				{group = "armor_all", chance = 1000000},
 				{group = "clothing_attachments", chance = 1000000},
@@ -52,13 +52,13 @@ bh_scientist = Creature:new {
 		},
 		{
 			groups = {
-				{group = "tierone", chance = 2500000},
-				{group = "tiertwo", chance = 500000},
-				{group = "tierthree", chance = 500000},
+				{group = "junk", chance = 2500000},
+				{group = "tailor_components", chance = 500000},
+				{group = "loot_kit_parts", chance = 500000},
 				{group = "color_crystals", chance = 500000},
 				{group = "power_crystals", chance = 500000},
 				{group = "power_crystals", chance = 500000},
-				{group = "nge_all", chance = 1000000},
+				{group = "wearables_all", chance = 1000000},
 				{group = "weapons_all", chance = 1000000},
 				{group = "armor_all", chance = 1000000},
 				{group = "clothing_attachments", chance = 1000000},

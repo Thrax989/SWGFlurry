@@ -2,15 +2,15 @@ bh_tusken_carnage_champion = Creature:new {
 	objectName = "@mob/creature_names:tusken_fort_tusken_champion",
 	socialGroup = "tusken_raider",
 	faction = "tusken_raider",
-	level = 300,
+	level = 116,
 	chanceHit = 3.85,
 	damageMin = 750,
 	damageMax = 1210,
 	baseXp = 11015,
-	baseHAM = 143000,
-	baseHAMmax = 153000,
-	armor = 3,
-	resists = {80,80,80,100,80,100,80,80,80},
+	baseHAM = 43000,
+	baseHAMmax = 53000,
+	armor = 2,
+	resists = {85,60,30,100,-1,100,-1,-1,-1},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -29,51 +29,49 @@ bh_tusken_carnage_champion = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "tierone", chance = 2500000},
-				{group = "tiertwo", chance = 1000000},
-				{group = "tierthree", chance = 1000000},
-				{group = "tierdiamond", chance = 1000000},
-				{group = "non_jedi_rings_ranged", chance = 500000},
-				{group = "capes", chance = 500000},
-				{group = "power_crystals", chance = 500000},
-				{group = "nge_all", chance = 500000},
-				{group = "weapons_all", chance = 500000},
-				{group = "clothing_attachments", chance = 1000000},
-				{group = "armor_attachments", chance = 1000000}
-			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "tierone", chance = 2500000},
-				{group = "tierrwo", chance = 1000000},
-				{group = "tierthree", chance = 1000000},
-				{group = "tierdiamond", chance = 1000000},
-				{group = "non_jedi_rings", chance = 500000},
-				{group = "g_necklaces", chance = 500000},
+				{group = "junk", chance = 2500000},
+				{group = "tailor_components", chance = 500000},
+				{group = "loot_kit_parts", chance = 500000},
 				{group = "color_crystals", chance = 500000},
-				{group = "nge_all", chance = 500000},
-				{group = "weapons_all", chance = 500000},
+				{group = "power_crystals", chance = 1000000},
+				{group = "wearables_all", chance = 1000000},
+				{group = "weapons_all", chance = 1000000},
+				{group = "armor_all", chance = 1000000},
 				{group = "clothing_attachments", chance = 1000000},
 				{group = "armor_attachments", chance = 1000000}
 			},
-			lootChance = 10000000
+			lootChance = 5320000
 		},
 		{
 			groups = {
-				{group = "tierone", chance = 2500000},
-				{group = "tierrwo", chance = 1000000},
-				{group = "tierthree", chance = 1000000},
-				{group = "tierdiamond", chance = 1000000},
-				{group = "vehicledeedsnormal", chance = 500000},
-				{group = "vehicledeedsrare", chance = 500000},
-				{group = "g_named_crystals", chance = 500000},
-				{group = "nge_all", chance = 500000},
-				{group = "weapons_all", chance = 500000},
+				{group = "junk", chance = 2500000},
+				{group = "tailor_components", chance = 500000},
+				{group = "loot_kit_parts", chance = 500000},
+				{group = "color_crystals", chance = 500000},
+				{group = "power_crystals", chance = 1000000},
+				{group = "wearables_all", chance = 1000000},
+				{group = "weapons_all", chance = 1000000},
+				{group = "armor_all", chance = 1000000},
 				{group = "clothing_attachments", chance = 1000000},
 				{group = "armor_attachments", chance = 1000000}
 			},
-			lootChance = 10000000
+			lootChance = 5320000
+		},
+		{
+			groups = {
+				{group = "junk", chance = 2500000},
+				{group = "tailor_components", chance = 500000},
+				{group = "loot_kit_parts", chance = 500000},
+				{group = "color_crystals", chance = 500000},
+				{group = "power_crystals", chance = 500000},
+				{group = "power_crystals", chance = 500000},
+				{group = "wearables_all", chance = 1000000},
+				{group = "weapons_all", chance = 1000000},
+				{group = "armor_all", chance = 1000000},
+				{group = "clothing_attachments", chance = 1000000},
+				{group = "armor_attachments", chance = 1000000}
+			},
+			lootChance = 5320000
 		},
 	},
 	weapons = {"tusken_weapons"},

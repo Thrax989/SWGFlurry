@@ -26,7 +26,7 @@ odoof_grunda = Creature:new {
   optionsBitmask = AIENABLED + CONVERSABLE,
   diet = HERBIVORE,
 
-	templates = {"object/mobile/gungan_male.iff"},
+  templates = {"object/mobile/gungan_male.iff"},
   lootGroups = {},
   weapons = {},
   conversationTemplate = "jaleela_bindoo_mission_target_convotemplate",

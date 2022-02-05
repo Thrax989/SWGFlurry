@@ -8,7 +8,7 @@ bh_gunrunner = Creature:new {
 	chanceHit = 0.28,
 	damageMin = 90,
 	damageMax = 110,
-	baseXp = 293,
+	baseXp = 292,
 	baseHAM = 810,
 	baseHAMmax = 990,
 	armor = 0,
@@ -31,7 +31,7 @@ bh_gunrunner = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "tierone", chance = 2500000},
+				{group = "junk", chance = 2500000},
 				{group = "tailor_components", chance = 500000},
 				{group = "loot_kit_parts", chance = 500000},
 				{group = "color_crystals", chance = 500000},
