@@ -1,5 +1,5 @@
 yavin4_stintaril_prowler_neutral_none = Lair:new {
-	mobiles = {{"stintaril_prowler",3}},
+	mobiles = {{"stintaril_prowler",1}},
 	spawnLimit = 5,
 	buildingsVeryEasy = {},
 	buildingsEasy = {},
