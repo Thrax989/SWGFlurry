@@ -27,44 +27,7 @@ mand_bunker_crazed_miner = Creature:new {
 	diet = HERBIVORE,
 
 	templates = {"object/mobile/dressed_mand_bunker_crazed_miner.iff"},
-	lootGroups = {
-		{
-			groups = {
-				{group = "wearables_uncommon", chance = 10000000}
-			},
-			lootChance = 5000000
-		},
-		{
-			groups = {
-				{group = "wearables_common", chance = 10000000}
-			},
-			lootChance = 5000000
-		},
-		{
-			groups = {
-				{group = "jetpack_base", chance = 10000000}
-			},
-			lootChance = 5000000
-		},
-		{
-			groups = {
-				{group = "death_watch_bunker_commoners", chance = 10000000}
-			},
-			lootChance = 5000000
-		},
-		{
-			groups = {
-				{group = "junk", chance = 10000000}
-			},
-			lootChance = 5000000
-		},
-		{
-			groups = {
-				{group = "black_suns", chance = 10000000}
-			},
-			lootChance = 100000
-		},
-	},
+	lootGroups = {},
 	weapons = {},
 	conversationTemplate = "",
 	attacks = merge(brawlermaster,marksmanmaster)

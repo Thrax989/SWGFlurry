@@ -4,15 +4,15 @@ death_watch_ghost = Creature:new {
 	randomNameTag = true,
 	socialGroup = "death_watch",
 	faction = "",
-	level = 300,
-	chanceHit = 35.0,
-	damageMin = 1800,
-	damageMax = 2500,
+	level = 152,
+	chanceHit = 8.5,
+	damageMin = 895,
+	damageMax = 1500,
 	baseXp = 14314,
-	baseHAM = 130000,
-	baseHAMmax = 140000,
+	baseHAM = 110000,
+	baseHAMmax = 110000,
 	armor = 2,
-	resists = {60,60,60,60,60,60,30,60,20},
+	resists = {65,65,70,60,35,35,100,50,-1},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -32,49 +32,13 @@ death_watch_ghost = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "wearables_uncommon", chance = 10000000}
-			},
-			lootChance = 5000000
-		},
-		{
-			groups = {
 				{group = "death_watch_bunker_commoners",   chance = 6300000},
 				{group = "death_watch_bunker_lieutenants", chance = 3500000},
 				{group = "death_watch_bunker_ingredient_protective",  chance = 100000},
 				{group = "death_watch_bunker_ingredient_binary",  chance = 100000}
 			},
-			lootChance = 5000000
-		},
-		{
-			groups = {
-				{group = "wearables_common", chance = 10000000}
-			},
-			lootChance = 5000000
-		},
-		{
-			groups = {
-				{group = "jetpack_base", chance = 10000000}
-			},
-			lootChance = 5000000
-		},
-		{
-			groups = {
-				{group = "death_watch_bunker_commoners", chance = 10000000}
-			},
-			lootChance = 5000000
-		},
-		{
-			groups = {
-				{group = "junk", chance = 10000000}
-			},
-			lootChance = 5000000
-		},
-		{
-			groups = {
-				{group = "black_suns", chance = 10000000}
-			},
-			lootChance = 100000
-		},
+			lootChance = 1500000
+		}
 	},
 	weapons = {"pirate_weapons_heavy"},
 	conversationTemplate = "",

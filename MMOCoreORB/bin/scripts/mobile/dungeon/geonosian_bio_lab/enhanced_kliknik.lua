@@ -4,8 +4,8 @@ enhanced_kliknik = Creature:new {
 	faction = "",
 	level = 109,
 	chanceHit = 2.2,
-	damageMin = 1200,
-	damageMax = 1800,
+	damageMin = 675,
+	damageMax = 1060,
 	baseXp = 10360,
 	baseHAM = 34000,
 	baseHAMmax = 42000,
@@ -28,30 +28,12 @@ enhanced_kliknik = Creature:new {
 	templates = {"object/mobile/kliknik.iff"},
 	scale = 1.4,
 	lootGroups = {
-		{
-			groups = {
-				{group = "geo_kliknik", chance = 10000000},
+	 {
+	        groups = {
+				{group = "geo_kliknik", chance = 10000000}
 			},
-			lootChance = 5000000
-		},
-		{
-			groups = {
-				{group = "nge_all", chance = 10000000},
-			},
-			lootChance = 5000000
-		},
-		{
-			groups = {
-				{group = "geonosian_common", chance = 10000000},
-			},
-			lootChance = 5000000
-		},		
-		{
-			groups = {
-				{group = "fire_breathing_spider", chance = 10000000},
-			},
-			lootChance = 5000000
-		},
+			lootChance = 3180000
+		}
 	},
 	weapons = {"creature_spit_heavy_flame"},
 	conversationTemplate = "",
