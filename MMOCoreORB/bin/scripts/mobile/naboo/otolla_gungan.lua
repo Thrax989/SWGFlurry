@@ -20,13 +20,13 @@ otolla_gungan = Creature:new {
 	boneType = "",
 	boneAmount = 0,
 	milk = 0,
-	tamingChance = 0.0,
+	tamingChance = 0,
 	ferocity = 0,
 	pvpBitmask = ATTACKABLE,
 	creatureBitmask = PACK,
 	diet = HERBIVORE,
 
-	templates = {"object/mobile/gungan_s04_male.iff", "object/mobile/gungan_s02_male.iff"},
+	templates = {"object/mobile/gungan_s04_male.iff", "object/mobile/gungan_male.iff"},
 	lootGroups = {
 		{
 			groups = {

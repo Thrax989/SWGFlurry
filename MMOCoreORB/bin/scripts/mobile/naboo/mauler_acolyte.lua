@@ -4,15 +4,15 @@ mauler_acolyte = Creature:new {
 	randomNameTag = true,
 	socialGroup = "mauler",
 	faction = "",
-	level = 300,
-	chanceHit = 25.00,
-	damageMin = 1600,
-	damageMax = 2000,
-	baseXp = 25000,
-	baseHAM = 80000,
-	baseHAMmax = 90000,
-	armor = 2,
-	resists = {120,120,120,120,120,120,120,120,120},
+	level = 14,
+	chanceHit = 0.3,
+	damageMin = 150,
+	damageMax = 160,
+	baseXp = 714,
+	baseHAM = 2000,
+	baseHAMmax = 2400,
+	armor = 0,
+	resists = {0,0,0,0,0,0,0,0,-1},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -20,7 +20,7 @@ mauler_acolyte = Creature:new {
 	boneType = "",
 	boneAmount = 0,
 	milk = 0,
-	tamingChance = 0.0,
+	tamingChance = 0,
 	ferocity = 0,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
 	creatureBitmask = PACK + HEALER,
@@ -31,36 +31,18 @@ mauler_acolyte = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "trash_common", chance = 10000000},
-			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "mauler_common", chance = 10000000},
-			},
-			lootChance = 5000000
-		},
-		{
-			groups = {
-				{group = "trash_rare", chance = 10000000},
-			},
-			lootChance = 2000000
-		},
-		{
-			groups = {
-				{group = "tierone", chance = 1500000},
-				{group = "tiertwo", chance = 3500000},
-				{group = "tierthree", chance = 2500000},
-				{group = "tierdiamond", chance = 2500000},
-			},
-			lootChance = 3000000
+				{group = "junk", chance = 4000000},
+				{group = "tailor_components", chance = 1000000},
+				{group = "loot_kit_parts", chance = 2000000},
+				{group = "carbines", chance = 1000000},
+				{group = "mauler_common", chance = 2000000}
+			}
 		}
 	},
-	weapons = {"dark_jedi_weapons_gen2"},
+	weapons = {"pirate_weapons_light"},
 	conversationTemplate = "",
 	reactionStf = "@npc_reaction/fancy",
-	attacks = merge(lightsabermaster,forcepowermaster)
+	attacks = merge(brawlermid,marksmanmid)
 }
 
 CreatureTemplates:addCreatureTemplate(mauler_acolyte, "mauler_acolyte")
