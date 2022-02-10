@@ -2,15 +2,15 @@ ancient_bull_rancor = Creature:new {
 	objectName = "@mob/creature_names:ancient_bull_rancor",
 	socialGroup = "rancor",
 	faction = "",
-	level = 300,
-	chanceHit = 100,
-	damageMin = 3500,
-	damageMax = 5500,
-	baseXp = 10500,
-	baseHAM = 50000,
-	baseHAMmax = 100000,
-	armor = 3,
-	resists = {150,165,150,200,200,200,150,140,140},
+	level = 98,
+	chanceHit = 0.95,
+	damageMin = 620,
+	damageMax = 950,
+	baseXp = 9336,
+	baseHAM = 20000,
+	baseHAMmax = 25000,
+	armor = 2,
+	resists = {150,165,0,200,200,200,0,0,-1},
 	meatType = "meat_carnivore",
 	meatAmount = 1000,
 	hideType = "hide_leathery",
@@ -31,9 +31,9 @@ ancient_bull_rancor = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "rancor_common", chance = 5000000},
-				{group = "armor_all", chance = 3000000},
-				{group = "weapons_all", chance = 500000},
+				{group = "rancor_common", chance = 4000000},
+				{group = "armor_all", chance = 2000000},
+				{group = "weapons_all", chance = 2500000},
 				{group = "wearables_all", chance = 1500000}
 			},
 			lootChance = 2960000
@@ -42,9 +42,8 @@ ancient_bull_rancor = Creature:new {
 	weapons = {},
 	conversationTemplate = "",
 	attacks = {
-		{"creatureareableeding","BleedChance=80"},
-		{"creatureareapoison","PoisonChance=80"},
-		{"creatureareacombo","stateAccuracyBonus=80"}
+		{"creatureareableeding",""},
+		{"creatureareacombo",""}
 	}
 }
 

@@ -170,16 +170,6 @@ includeFile("conversations/trainer/trainer_conv.lua")
 -- Missions
 includeFile("conversations/mission/deliver_npc.lua")
 includeFile("conversations/mission/informant_npc.lua")
-includeFile("conversations/mission_quest/mission_conv.lua")
-includeFile("conversations/mission_quest/missionone_conv.lua")
-includeFile("conversations/mission_quest/missiontwo_conv.lua")
-includeFile("conversations/mission_quest/missionthree_conv.lua")
-includeFile("conversations/mission_quest/missionfour_conv.lua")
-includeFile("conversations/mission_quest/missionfive_conv.lua")
-includeFile("conversations/mission_quest/missionsix_conv.lua")
-includeFile("conversations/mission_quest/missionseven_conv.lua")
-includeFile("conversations/mission_quest/missioneight_conv.lua")
-
 
 -- Recruiters
 includeFile("conversations/recruiter/rebel_recruiter_conv.lua")
@@ -304,24 +294,3 @@ includeFile("conversations/junk_dealer/junk_dealer_quich_conv.lua")
 includeFile("conversations/junk_dealer/junk_dealer_reggi_conv.lua")
 includeFile("conversations/junk_dealer/junk_dealer_sheani_conv.lua")
 includeFile("conversations/junk_dealer/junk_dealer_sneg_conv.lua")
-
---custom waypoint npc's
-includeFile("conversations/events/corellia_poi_waypoints.lua")
-includeFile("conversations/events/dantooine_poi_waypoints.lua")
-includeFile("conversations/events/dathomir_poi_waypoints.lua")
-includeFile("conversations/events/endor_poi_waypoints.lua")
-includeFile("conversations/events/lok_poi_waypoints.lua")
-includeFile("conversations/events/naboo_poi_waypoints.lua")
-includeFile("conversations/events/rori_poi_waypoints.lua")
-includeFile("conversations/events/talus_poi_waypoints.lua")
-includeFile("conversations/events/tatooine_poi_waypoints.lua")
-includeFile("conversations/events/yavin4_poi_waypoints.lua")
-
---custom painting exchange
-includeFile("conversations/events/painting_exchange.lua")
---Holo exchnage
-includeFile("conversations/events/holo_exchange.lua")
---custom exchange
-includeFile("conversations/events/event_exchange_dealer.lua")
-
-includeFile("conversations/merchants/vendor_conv.lua") 

@@ -9,8 +9,8 @@ black_sun_assassin = Creature:new {
 	damageMin = 670,
 	damageMax = 1050,
 	baseXp = 10081,
-	baseHAM = 40000,
-	baseHAMmax = 40000,
+	baseHAM = 29000,
+	baseHAMmax = 36000,
 	armor = 2,
 	resists = {55,55,70,45,75,80,55,45,-1},
 	meatType = "",
@@ -32,40 +32,16 @@ black_sun_assassin = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "wearables_uncommon", chance = 10000000}
-			},
-			lootChance = 5000000
-		},
-		{
-			groups = {
-				{group = "wearables_common", chance = 10000000}
-			},
-			lootChance = 5000000
-		},
-		{
-			groups = {
-				{group = "jetpack_base", chance = 10000000}
-			},
-			lootChance = 5000000
-		},
-		{
-			groups = {
-				{group = "death_watch_bunker_commoners", chance = 10000000}
-			},
-			lootChance = 5000000
-		},
-		{
-			groups = {
-				{group = "junk", chance = 10000000}
-			},
-			lootChance = 5000000
-		},
-		{
-			groups = {
-				{group = "black_suns", chance = 10000000}
-			},
-			lootChance = 100000
-		},
+				{group = "junk", chance = 6500000},
+				{group = "pistols", chance = 750000},
+				{group = "rifles", chance = 750000},
+				{group = "carbines", chance = 750000},
+				{group = "bounty_hunter_armor", chance = 200000},
+				{group = "jetpack_base", chance = 50000},
+				{group = "wearables_common", chance = 500000},
+				{group = "wearables_uncommon", chance = 500000}
+			}
+		}
 	},
 	weapons = {"pirate_weapons_heavy"},
 	conversationTemplate = "",

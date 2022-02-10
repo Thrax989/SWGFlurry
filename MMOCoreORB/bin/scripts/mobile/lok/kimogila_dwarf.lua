@@ -2,15 +2,15 @@ kimogila_dwarf = Creature:new {
 	objectName = "@mob/creature_names:kimogila_dwarf",
 	socialGroup = "kimogila",
 	faction = "",
-	level = 300,
-	chanceHit = 30.0,
-	damageMin = 1900,
-	damageMax = 2500,
-	baseXp = 20000,
-	baseHAM = 240000,
-	baseHAMmax = 300000,
+	level = 139,
+	chanceHit = 4.5,
+	damageMin = 800,
+	damageMax = 1400,
+	baseXp = 12671,
+	baseHAM = 71000,
+	baseHAMmax = 79000,
 	armor = 2,
-	resists = {135,150,20,150,120,120,200,120,115},
+	resists = {135,180,20,180,20,20,200,20,-1},
 	meatType = "meat_carnivore",
 	meatAmount = 1000,
 	hideType = "hide_leathery",
@@ -19,7 +19,7 @@ kimogila_dwarf = Creature:new {
 	boneAmount = 0,
 	milk = 0,
 	tamingChance = 0.25,
-	ferocity = 30,
+	ferocity = 20,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
 	creatureBitmask = PACK + KILLER,
 	optionsBitmask = AIENABLED,
@@ -33,7 +33,7 @@ kimogila_dwarf = Creature:new {
 	        groups = {
 				{group = "kimogila_common", chance = 10000000}
 			},
-			lootChance = 5000000
+			lootChance = 3460000
 		}
 	},
 	weapons = {},

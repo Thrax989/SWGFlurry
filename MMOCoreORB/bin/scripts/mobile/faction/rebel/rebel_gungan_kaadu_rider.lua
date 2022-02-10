@@ -27,7 +27,7 @@ rebel_gungan_kaadu_rider = Creature:new {
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
 
-	templates = {"object/mobile/gungan_male.iff"},
+	templates = {"object/mobile/gungan_s02_male.iff"},
 	lootGroups = {
 		{
 			groups = {

@@ -4,16 +4,15 @@ donkuwah_scout = Creature:new {
 	randomNameTag = true,
 	socialGroup = "donkuwah_tribe",
 	faction = "donkuwah_tribe",
-	level = 300,
-	chanceHit = 75.00,
-  specialDamageMult = 2.5,
-	damageMin = 5050,
-	damageMax = 8050,
-	baseXp = 13273,
-	baseHAM = 150000,
-	baseHAMmax = 200000,
-	armor = 3,
-	resists = {45,65,25,80,80,80,25,35,45},
+	level = 18,
+	chanceHit = 0.32,
+	damageMin = 170,
+	damageMax = 180,
+	baseXp = 1426,
+	baseHAM = 4100,
+	baseHAMmax = 5000,
+	armor = 0,
+	resists = {0,0,0,-1,-1,30,-1,-1,-1},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -21,7 +20,7 @@ donkuwah_scout = Creature:new {
 	boneType = "",
 	boneAmount = 0,
 	milk = 0,
-	tamingChance = 0.0,
+	tamingChance = 0,
 	ferocity = 0,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
 	creatureBitmask = PACK + KILLER,
@@ -31,41 +30,13 @@ donkuwah_scout = Creature:new {
 	templates = {
 		"object/mobile/dulok_male.iff",
 		"object/mobile/dulok_female.iff"},
-		lootGroups = {
+	lootGroups = {
 		{
 			groups = {
-				{group = "trash_common", chance = 8000000},
- 				{group = "trash_rare", chance = 2000000},       
+				{group = "donkuwah_common", chance = 10000000}
 			},
-			lootChance = 10000000
-		},		
-		{
-			groups = {
-				{group = "clothing_attachments", chance = 10000000},
-			},
-			lootChance = 8000000
-		},
-		{
-			groups = {
-				{group = "armor_attachments", chance = 10000000},
-			},
-			lootChance = 8000000
-		},
-		{
-			groups = {
-				{group = "donkuwah_common", chance = 10000000},
-			},
-			lootChance = 10000000
-		},
-		{
-			groups = {
-				{group = "tierone", chance = 1500000},
-				{group = "tiertwo", chance = 3500000},
-				{group = "tierthree", chance = 2500000},
-				{group = "tierdiamond", chance = 2500000},
-			},
-			lootChance = 5000000
-		},
+			lootChance = 1360000
+		}
 	},
 	weapons = {"donkuwah_weapons"},
 	conversationTemplate = "",

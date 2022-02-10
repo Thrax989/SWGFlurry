@@ -4,8 +4,8 @@ enhanced_kwi = Creature:new {
 	faction = "",
 	level = 106,
 	chanceHit = 1.75,
-	damageMin = 1000,
-	damageMax = 1500,
+	damageMin = 690,
+	damageMax = 1090,
 	baseXp = 10081,
 	baseHAM = 27000,
 	baseHAMmax = 33000,
@@ -30,22 +30,10 @@ enhanced_kwi = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "enhanced_kwi", chance = 10000000},
+				{group = "enhanced_kwi", chance = 10000000}
 			},
-			lootChance = 5000000
-		},
-		{
-			groups = {
-				{group = "nge_all", chance = 10000000},
-			},
-			lootChance = 5000000
-		},
-		{
-			groups = {
-				{group = "fire_breathing_spider", chance = 10000000},
-			},
-			lootChance = 5000000
-		},
+			lootChance = 3120000
+		}
 	},
 	weapons = {},
 	conversationTemplate = "",

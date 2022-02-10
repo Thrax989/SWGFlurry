@@ -20,7 +20,7 @@ hidden_daggers_lieutenant = Creature:new {
 	boneType = "",
 	boneAmount = 0,
 	milk = 0,
-	tamingChance = 0.0,
+	tamingChance = 0,
 	ferocity = 0,
 	pvpBitmask = ATTACKABLE,
 	creatureBitmask = PACK + KILLER,
@@ -41,8 +41,8 @@ hidden_daggers_lieutenant = Creature:new {
 			groups = {
 				{group = "junk", chance = 4300000},
 				{group = "loot_kit_parts", chance = 2000000},
-				{group = "tailor_components", chance = 500000},
-				{group = "hidden_dagger_common", chance = 3200000}
+				{group = "tailor_components", chance = 1000000},
+				{group = "hidden_dagger_common", chance = 2700000}
 			}
 		}
 	},
