@@ -4,10 +4,10 @@ singing_mountain_clan_councilwoman = Creature:new {
 	randomNameTag = true,
 	socialGroup = "mtn_clan",
 	faction = "mtn_clan",
-	level = 300,
+	level = 253,
 	chanceHit = 23.5,
-	damageMin = 1800,
-	damageMax = 3000,
+	damageMin = 1395,
+	damageMax = 2500,
 	baseXp = 24180,
 	baseHAM = 261000,
 	baseHAMmax = 320000,
@@ -20,7 +20,7 @@ singing_mountain_clan_councilwoman = Creature:new {
 	boneType = "",
 	boneAmount = 0,
 	milk = 0,
-	tamingChance = 0.0,
+	tamingChance = 0,
 	ferocity = 0,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
 	creatureBitmask = PACK + KILLER + HEALER,
@@ -31,49 +31,18 @@ singing_mountain_clan_councilwoman = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "power_crystals", chance = 10000000},
-			},
-			lootChance = 500000
-		},
-		{
-			groups = {
-				{group = "color_crystals", chance = 10000000},
-			},
-			lootChance = 500000
-		},
-		{
-			groups = {
-				{group = "nightsister_common", chance = 10000000},
-			},
-			lootChance = 2000000
-		},
-		{
-			groups = {
-				{group = "armor_attachments", chance = 10000000},
-			},
-			lootChance = 250000
-		},
-		{
-			groups = {
-				{group = "clothing_attachments", chance = 10000000},
-			},
-			lootChance = 250000
-		},
-		{
-			groups = {
-				{group = "jedi_comp_group", chance = 10000000},
-			},
-			lootChance = 500000
-		},
-		{
-			groups = {
-				{group = "tierone", chance = 1500000},
-				{group = "tiertwo", chance = 3500000},
-				{group = "tierthree", chance = 2500000},
-				{group = "tierdiamond", chance = 2500000},
-			},
-			lootChance = 4000000
-		},
+				{group = "junk", chance = 1500000},
+				{group = "power_crystals", chance = 500000},
+				{group = "color_crystals", chance = 500000},
+				{group = "armor_attachments", chance = 600000},
+				{group = "clothing_attachments", chance = 600000},
+				{group = "melee_weapons", chance = 2800000},
+				{group = "rifles", chance = 1000000},
+				{group = "pistols", chance = 1000000},
+				{group = "carbines", chance = 1000000},
+				{group = "wearables_rare", chance = 500000}
+			}
+		}
 	},
 	weapons = {"mixed_force_weapons"},
 	conversationTemplate = "",

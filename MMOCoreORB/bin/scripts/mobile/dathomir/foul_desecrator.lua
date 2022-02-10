@@ -3,20 +3,20 @@ foul_desecrator = Creature:new {
 	socialGroup = "kamurith",
 	faction = "",
 	level = 60,
-	chanceHit = 1.25,
-	damageMin = 500,
-	damageMax = 680,
-	baseXp = 11230,
-	baseHAM = 12500,
-	baseHAMmax = 15500,
+	chanceHit = 0.55,
+	damageMin = 470,
+	damageMax = 650,
+	baseXp = 5830,
+	baseHAM = 11000,
+	baseHAMmax = 14000,
 	armor = 1,
-	resists = {165,165,150,145,165,175,200,150,-1},
+	resists = {125,15,15,15,15,15,120,120,-1},
 	meatType = "meat_carnivore",
-	meatAmount = 180,
+	meatAmount = 90,
 	hideType = "hide_leathery",
-	hideAmount = 130,
+	hideAmount = 65,
 	boneType = "bone_avian",
-	boneAmount = 100,
+	boneAmount = 50,
 	milk = 0,
 	tamingChance = 0.25,
 	ferocity = 10,
@@ -32,8 +32,8 @@ foul_desecrator = Creature:new {
 	weapons = {},
 	conversationTemplate = "",
 	attacks = {
-		{"strongdisease","stateAccuracyBonus=100"},
-		{"creatureareadisease","stateAccuracyBonus=100"}
+		{"strongdisease",""},
+		{"creatureareadisease",""}
 	}
 }
 
