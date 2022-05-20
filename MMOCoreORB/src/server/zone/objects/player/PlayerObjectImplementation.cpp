@@ -1504,29 +1504,6 @@ void PlayerObjectImplementation::notifyOnline() {
 		activateForcePowerRegen();
 
 	PlayerObject* ghost = playerCreature->getPlayerObject();
-
-	//PermaDeath : Gray Jedi with 0 lives cannont login
-	if (playerCreature->getScreenPlayState("jediLives") == 0) {
-		if (playerCreature->hasSkill("combat_jedi_novice")) {
-			ghost->setLinkDead(true);
-			ghost->disconnect(true, true);
-			}
-		}
-	//Extra Gray Jedi Lives Check For Spill Over Lives
-	if (playerCreature->getScreenPlayState("jediLives") == 2) {
-		if (player->hasSkill("combat_jedi_novice")) {
-		int livesLeft = player->getScreenPlayState("jediLives") - 1;
-		player->setScreenPlayState("jediLives", livesLeft);
-		}
-	}
-
-	if (playerCreature->getScreenPlayState("jediLives") == 3) {
-		if (player->hasSkill("combat_jedi_novice")) {
-		int livesLeft = player->getScreenPlayState("jediLives") - 2;
-		player->setScreenPlayState("jediLives", livesLeft);
-		}
-	}
-
 	
 	schedulePvpTefRemovalTask();
 
