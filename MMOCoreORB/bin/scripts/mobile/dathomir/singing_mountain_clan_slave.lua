@@ -20,7 +20,7 @@ singing_mountain_clan_slave = Creature:new {
 	boneType = "",
 	boneAmount = 0,
 	milk = 0,
-	tamingChance = 0,
+	tamingChance = 0.0,
 	ferocity = 0,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
 	creatureBitmask = NONE,
@@ -31,12 +31,28 @@ singing_mountain_clan_slave = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "junk", chance = 4000000},
-				{group = "wearables_common", chance = 3000000},
-				{group = "loot_kit_parts", chance = 2000000},
-				{group = "tailor_components", chance = 1000000},
-			}
-		}
+				{group = "junk", chance = 10000000},
+			},
+			lootChance = 4000000
+		},
+		{
+			groups = {
+				{group = "wearables_common", chance = 10000000},
+			},
+			lootChance = 2000000
+		},
+		{
+			groups = {
+				{group = "loot_kit_parts", chance = 10000000},
+			},
+			lootChance = 2500000
+		},
+		{
+			groups = {
+				{group = "tailor_components", chance = 10000000},
+			},
+			lootChance = 1500000
+		},
 	},
 	weapons = {},
 	conversationTemplate = "",

@@ -32,8 +32,8 @@ fbase_imperial_exterminator = Creature:new {
 		{
 			groups = {
 				{group = "color_crystals", chance = 200000},
-				{group = "junk", chance = 6000000},
-				{group = "weapons_all", chance = 1250000},
+				{group = "junk", chance = 7000000},
+				{group = "rebpoints", chance = 250000},
 				{group = "armor_all", chance = 1250000},
 				{group = "clothing_attachments", chance = 150000},
 				{group = "armor_attachments", chance = 150000},

@@ -31,10 +31,40 @@ rageon_vart = Creature:new {
 	lootGroups = {
 		{
 			groups = {
+				{group = "wearables_uncommon", chance = 10000000}
+			},
+			lootChance = 5000000
+		},
+		{
+			groups = {
 				{group = "rageon_vart_drop", chance = 10000000}
 			},
 			lootChance = 10000000
-		} 
+		},
+		{
+			groups = {
+				{group = "wearables_common", chance = 10000000}
+			},
+			lootChance = 5000000
+		},
+		{
+			groups = {
+				{group = "jetpack_base", chance = 10000000}
+			},
+			lootChance = 5000000
+		},
+		{
+			groups = {
+				{group = "death_watch_bunker_commoners", chance = 10000000}
+			},
+			lootChance = 5000000
+		},
+		{
+			groups = {
+				{group = "jedi_comp_group", chance = 10000000}
+			},
+			lootChance = 100000
+		},
 	},
 	weapons = {"death_watch_commander_weapons"},
 	conversationTemplate = "",

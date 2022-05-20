@@ -20,14 +20,14 @@ gungan_outcast = Creature:new {
 	boneType = "",
 	boneAmount = 0,
 	milk = 0,
-	tamingChance = 0,
+	tamingChance = 0.0,
 	ferocity = 0,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
 	creatureBitmask = KILLER + STALKER,
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
 
-	templates = {"object/mobile/gungan_outcast.iff"},
+	templates = {"object/mobile/gungan_male.iff"},
 	lootGroups = {
 		{
 			groups = {

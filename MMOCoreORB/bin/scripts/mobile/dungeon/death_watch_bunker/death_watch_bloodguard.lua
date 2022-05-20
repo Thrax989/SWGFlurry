@@ -32,11 +32,53 @@ death_watch_bloodguard = Creature:new {
 	lootGroups = {
 		{
 			groups = {
+				{group = "wearables_uncommon", chance = 10000000}
+			},
+			lootChance = 5000000
+		},
+		{
+			groups = {
 				{group = "death_watch_bunker_commoners", chance = 6000000},
 				{group = "death_watch_bunker_lieutenants", chance = 4000000}
 			},
-			lootChance = 1000000
-		}
+			lootChance = 5000000
+		},
+		{
+			groups = {
+				{group = "death_watch_bunker_commoners", chance = 10000000}
+			},
+			lootChance = 5000000
+		},
+		{
+			groups = {
+				{group = "death_watch_bunker_lieutenants", chance = 10000000}
+			},
+			lootChance = 5000000
+		},
+		{
+			groups = {
+				{group = "wearables_common", chance = 10000000}
+			},
+			lootChance = 5000000
+		},
+		{
+			groups = {
+				{group = "jetpack_base", chance = 10000000}
+			},
+			lootChance = 5000000
+		},
+		{
+			groups = {
+				{group = "death_watch_bunker_commoners", chance = 10000000}
+			},
+			lootChance = 5000000
+		},
+		{
+			groups = {
+				{group = "junk", chance = 10000000}
+			},
+			lootChance = 5000000
+		},
 	},
 	weapons = {"pirate_weapons_heavy"},
 	conversationTemplate = "",

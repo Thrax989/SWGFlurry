@@ -4,15 +4,15 @@ bh_nightsister_outcast = Creature:new {
 	randomNameTag = true,
 	socialGroup = "nightsister",
 	faction = "nightsister",
-	level = 81,
+	level = 300,
 	chanceHit = 0.75,
 	damageMin = 555,
 	damageMax = 820,
 	baseXp = 7761,
-	baseHAM = 12000,
-	baseHAMmax = 15000,
+	baseHAM = 112000,
+	baseHAMmax = 115000,
 	armor = 1,
-	resists = {30,30,30,100,100,100,100,100,-1},
+	resists = {80,80,80,100,100,100,100,100,-1},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -31,49 +31,51 @@ bh_nightsister_outcast = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "junk", chance = 2500000},
-				{group = "tailor_components", chance = 500000},
-				{group = "loot_kit_parts", chance = 500000},
-				{group = "color_crystals", chance = 500000},
-				{group = "power_crystals", chance = 1000000},
-				{group = "wearables_all", chance = 1000000},
-				{group = "weapons_all", chance = 1000000},
-				{group = "armor_all", chance = 1000000},
+				{group = "tierone", chance = 2500000},
+				{group = "tiertwo", chance = 1000000},
+				{group = "tierthree", chance = 1000000},
+				{group = "tierdiamond", chance = 1000000},
+				{group = "non_jedi_rings_ranged", chance = 500000},
+				{group = "capes", chance = 500000},
+				{group = "power_crystals", chance = 500000},
+				{group = "nge_all", chance = 500000},
+				{group = "weapons_all", chance = 500000},
 				{group = "clothing_attachments", chance = 1000000},
 				{group = "armor_attachments", chance = 1000000}
 			},
-			lootChance = 4620000
+			lootChance = 10000000
 		},
 		{
 			groups = {
-				{group = "junk", chance = 2500000},
-				{group = "tailor_components", chance = 500000},
-				{group = "loot_kit_parts", chance = 500000},
+				{group = "tierone", chance = 2500000},
+				{group = "tierrwo", chance = 1000000},
+				{group = "tierthree", chance = 1000000},
+				{group = "tierdiamond", chance = 1000000},
+				{group = "non_jedi_rings", chance = 500000},
+				{group = "g_necklaces", chance = 500000},
 				{group = "color_crystals", chance = 500000},
-				{group = "power_crystals", chance = 1000000},
-				{group = "wearables_all", chance = 1000000},
-				{group = "weapons_all", chance = 1000000},
-				{group = "armor_all", chance = 1000000},
+				{group = "nge_all", chance = 500000},
+				{group = "weapons_all", chance = 500000},
 				{group = "clothing_attachments", chance = 1000000},
 				{group = "armor_attachments", chance = 1000000}
 			},
-			lootChance = 4620000
+			lootChance = 10000000
 		},
 		{
 			groups = {
-				{group = "junk", chance = 2500000},
-				{group = "tailor_components", chance = 500000},
-				{group = "loot_kit_parts", chance = 500000},
-				{group = "color_crystals", chance = 500000},
-				{group = "power_crystals", chance = 500000},
-				{group = "power_crystals", chance = 500000},
-				{group = "wearables_all", chance = 1000000},
-				{group = "weapons_all", chance = 1000000},
-				{group = "armor_all", chance = 1000000},
+				{group = "tierone", chance = 2500000},
+				{group = "tierrwo", chance = 1000000},
+				{group = "tierthree", chance = 1000000},
+				{group = "tierdiamond", chance = 1000000},
+				{group = "vehicledeedsnormal", chance = 500000},
+				{group = "vehicledeedsrare", chance = 500000},
+				{group = "g_named_crystals", chance = 500000},
+				{group = "nge_all", chance = 500000},
+				{group = "weapons_all", chance = 500000},
 				{group = "clothing_attachments", chance = 1000000},
 				{group = "armor_attachments", chance = 1000000}
 			},
-			lootChance = 4620000
+			lootChance = 10000000
 		}
 	},
 	weapons = {"mixed_force_weapons"},

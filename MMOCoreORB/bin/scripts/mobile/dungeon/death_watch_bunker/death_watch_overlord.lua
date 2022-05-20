@@ -31,17 +31,46 @@ death_watch_overlord = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "death_watch_bunker_overlord_shared", chance =  10000000}
+				{group = "jedi_comp_group", chance = 10000000},
 			},
-			lootChance = 10000000
+			lootChance = 1000000
+		},		
+		{
+			groups = {
+				{group = "wearables_uncommon", chance = 10000000}
+			},
+			lootChance = 5000000
 		},
 		{
 			groups = {
-				{group = "death_watch_bunker_overlord_shared", chance =  500000},
-				{group = "death_watch_bunker_overlord_quest", chance  = 9500000}
+				{group = "death_watch_bunker_overlord_shared", chance = 10000000}
 			},
 			lootChance = 5000000
-		}
+		},
+		{
+			groups = {
+				{group = "wearables_common", chance = 10000000}
+			},
+			lootChance = 5000000
+		},
+		{
+			groups = {
+				{group = "jetpack_base", chance = 10000000}
+			},
+			lootChance = 5000000
+		},
+		{
+			groups = {
+				{group = "death_watch_bunker_commoners", chance = 10000000}
+			},
+			lootChance = 5000000
+		},
+		{
+			groups = {
+				{group = "junk", chance = 10000000}
+			},
+			lootChance = 5000000
+		},
 	},
 	weapons = {"dark_trooper_weapons"},
 	conversationTemplate = "",

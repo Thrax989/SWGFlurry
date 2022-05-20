@@ -26,7 +26,38 @@ mand_bunker_vent_droid = Creature:new {
 	diet = HERBIVORE,
 
 	templates = { "object/mobile/r2.iff" },
-	lootGroups = {},
+	lootGroups = {
+		{
+			groups = {
+				{group = "wearables_uncommon", chance = 10000000}
+			},
+			lootChance = 5000000
+		},
+		{
+			groups = {
+				{group = "wearables_common", chance = 10000000}
+			},
+			lootChance = 5000000
+		},
+		{
+			groups = {
+				{group = "jetpack_base", chance = 10000000}
+			},
+			lootChance = 5000000
+		},
+		{
+			groups = {
+				{group = "death_watch_bunker_commoners", chance = 10000000}
+			},
+			lootChance = 5000000
+		},
+		{
+			groups = {
+				{group = "junk", chance = 10000000}
+			},
+			lootChance = 5000000
+		},
+	},
 	weapons = {},
 	attacks = {}
 }
