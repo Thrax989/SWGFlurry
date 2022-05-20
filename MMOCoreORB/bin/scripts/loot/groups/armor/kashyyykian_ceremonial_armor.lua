@@ -3,10 +3,16 @@ kashyyykian_ceremonial_armor = {
 	minimumLevel = 0,
 	maximumLevel = -1,
 	lootItems = {
-		{itemTemplate = "kashyyykian_ceremonial_armor_bracer_l", weight = 2500000},
-		{itemTemplate = "kashyyykian_ceremonial_armor_bracer_r", weight = 2500000},
-		{itemTemplate = "kashyyykian_ceremonial_armor_chest_plate", weight = 2500000},
-		{itemTemplate = "kashyyykian_ceremonial_armor_leggings", weight = 2500000},
+		{itemTemplate = "locked_briefcase", weight = 1000000},
+		{itemTemplate = "locked_container", weight = 1000000},
+		{itemTemplate = "force_color_crystal", weight = 1000000},
+		{itemTemplate = "force_power_crystal", weight = 1000000},
+		{itemTemplate = "attachment_clothing", weight = 1000000},
+		{itemTemplate = "attachment_armor", weight = 1000000},
+		{groupTemplate = "lifeday", weight = 1000000},
+		{groupTemplate = "junk", weight = 1000000},
+		{groupTemplate = "outbreak", weight = 1000000},
+		{groupTemplate = "wearables_all", weight = 1000000}
 	}
 }
 

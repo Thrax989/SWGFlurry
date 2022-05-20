@@ -6,9 +6,10 @@ janta_blood = {
 	customObjectName = "",
 	directObjectTemplate = "object/tangible/component/chemistry/janta_blood.iff",
 	craftingValues = {
-		{"power",100,250,0},
+		{"power",100,150,0},
 		{"charges",10,25,0},
-		{"useCount",1,4,0},
+		{"duration",1500,1800,0},
+		{"useCount",6,18,0},
 	},
 	customizationStringNames = {},
 	customizationValues = {}

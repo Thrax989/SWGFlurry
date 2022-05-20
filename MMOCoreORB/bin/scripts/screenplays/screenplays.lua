@@ -166,8 +166,6 @@ includeFile("dungeon/corellian_corvette/ticket_takers/klaatu.lua")
 includeFile("dungeon/corellian_corvette/ticket_takers/lt_lance.lua")
 --Custom exar kun dungeon
 includeFile("dungeon/exar_kun_temple/exar_kun.lua")
---Custom boba fett dungeon
-includeFile("dungeon/boba_fett/boba_fett.lua")
 --Custom sher kar dungeon
 includeFile("dungeon/sher_kar/sher_kar.lua")
 --Custom geo acklay dungeon
@@ -392,7 +390,7 @@ includeFile("events/jediQuest.lua")
 includeFile("events/jediLives.lua")
 --includeFile("events/black_sun.lua")
 includeFile("events/deathBounty.lua")
-includeFile("events/halloween_moenia.lua")
+--includeFile("events/halloween_moenia.lua")
 
 --Holo exchange
 includeFile("events/holo_exchange_dealer.lua")
@@ -809,13 +807,3 @@ includeFile("custom_screenplays/screenplays.lua")
 
 --Battlefields
 includeFile("battlefields/battlefield_spawner.lua")
-
-
---Merchants
-includeFile("merchants/vendor_logic.lua")
-includeFile("merchants/vendorData.lua")
-includeFile("merchants/houseVendorData.lua")
-includeFile("merchants/halloweenvendorData.lua")
-includeFile("merchants/vendor_conv_handler.lua")
-includeFile("merchants/tcgonevendorData.lua")
-includeFile("merchants/tcgtwovendorData.lua")

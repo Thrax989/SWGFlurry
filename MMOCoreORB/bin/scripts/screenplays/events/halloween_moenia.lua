@@ -103,8 +103,8 @@ function halloween_moenia:spawnSceneObjects()
 end
 
 function halloween_moenia:spawnMobiles()
---Halloween Token Shop
-	spawnMobile("naboo", "halloweenvendor", 1, -4.06602, 0.611579, -4.16374, 81, 8575781)
+	
+
 --Deathtrooper
 	pNpc = spawnMobile(self.planet, "outbreak_deathtrooper", 1800, 4731.5, 4.03629, -4881.78, 15, 0)
 	AiAgent(pNpc):setAiTemplate("idlewander")

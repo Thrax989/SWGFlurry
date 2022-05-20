@@ -21,6 +21,7 @@ includeFile("groups/sith_shadow_intro_theater_datapad.lua")
 includeFile("groups/skill_buffs.lua")
 includeFile("groups/tailor_components.lua")
 includeFile("groups/treasure_map_group.lua")
+includeFile("groups/schematics_themeparks.lua")
 
 -- armor sub-folder
 includeFile("groups/armor/armor_all.lua")
@@ -55,6 +56,12 @@ includeFile("groups/component_loot/chemistry_component_advanced.lua")
 includeFile("groups/component_loot/weapon_component_advanced.lua")
 includeFile("groups/component_loot/chemistry_component.lua")
 includeFile("groups/component_loot/weapon_component.lua")
+includeFile("groups/component_loot/jedi_comp_group.lua")
+includeFile("groups/component_loot/g_ancient_jedaii_holocron_dode.lua")
+includeFile("groups/component_loot/g_ancient_jedaii_holocron_cube.lua")
+includeFile("groups/component_loot/g_ancient_jedaii_holocron_triangle.lua")
+includeFile("groups/component_loot/legendary_comp_group.lua")
+includeFile("groups/component_loot/jedi_pack_group.lua")
 
 -- corellian_corvette sub-folder
 includeFile("groups/corellian_corvette/imperial_corvette_loot.lua")
@@ -77,6 +84,8 @@ includeFile("groups/creature/krayt_tissue_common.lua")
 includeFile("groups/creature/krayt_tissue_rare.lua")
 includeFile("groups/creature/krayt_tissue_uncommon.lua")
 includeFile("groups/creature/krayt_pearls.lua")
+includeFile("groups/creature/krayt_pearls_flawless.lua")
+includeFile("groups/creature/mythosaur_common.lua")
 includeFile("groups/creature/peko_albatross.lua")
 includeFile("groups/creature/rancor_common.lua")
 includeFile("groups/creature/sharnaff_common.lua")
@@ -166,6 +175,7 @@ includeFile("groups/npc/tusken_common.lua")
 includeFile("groups/npc/tutorial_pirate.lua")
 includeFile("groups/npc/valarian_common.lua")
 includeFile("groups/npc/weequay_common.lua")
+includeFile("groups/npc/mokk_elites.lua")
 
 -- task_loot sub-folder
 includeFile("groups/task_loot/hedon_istee_treasure.lua")
@@ -368,3 +378,114 @@ includeFile("groups/wearables/wearables_common.lua")
 includeFile("groups/wearables/wearables_rare.lua")
 includeFile("groups/wearables/wearables_scarce.lua")
 includeFile("groups/wearables/wearables_uncommon.lua")
+
+includeFile("groups/playerDatapad.lua")
+includeFile("groups/playerSkull.lua")
+
+--Collection system
+includeFile("groups/tierone.lua")
+includeFile("groups/tiertwo.lua")
+includeFile("groups/tierthree.lua")
+includeFile("groups/tierdiamond.lua")
+includeFile("groups/rarelootsystem.lua")
+includeFile("groups/lootcollectiontierone.lua")
+includeFile("groups/lootcollectiontiertwo.lua")
+includeFile("groups/lootcollectiontierthree.lua")
+includeFile("groups/lootcollectiontierdiamond.lua")
+includeFile("groups/lootcollectiontierheroic.lua")
+includeFile("groups/lootcollectiontierdiamonds.lua")
+includeFile("groups/lootcollectionflurry_coal.lua")
+includeFile("groups/lootcollectionflurry_present.lua")
+
+
+--Halloween
+includeFile("groups/halloween.lua")
+includeFile("groups/halloween1.lua")
+
+--Christmas
+includeFile("groups/flurry_coal.lua")
+includeFile("groups/flurry_present.lua")
+
+--Marauder armor schems
+includeFile("groups/marauder_armor_schems.lua")
+
+--Custom color crystals
+includeFile("groups/crystal_mauls_vengence.lua")
+includeFile("groups/crystal_qui_gons_devotion.lua")
+includeFile("groups/crystal_baass_wisdom.lua")
+includeFile("groups/crystal_banes_heart.lua")
+includeFile("groups/crystal_bnars_sacrifice.lua")
+includeFile("groups/crystal_bondaras_folly.lua")
+includeFile("groups/crystal_dawn_of_dagobah.lua")
+includeFile("groups/crystal_gallias_intuition.lua")
+includeFile("groups/crystal_horns_future.lua")
+includeFile("groups/crystal_kenobis_legacy.lua")
+includeFile("groups/crystal_kits_ferocity.lua")
+includeFile("groups/crystal_kuns_blood.lua")
+includeFile("groups/crystal_mundis_response.lua")
+includeFile("groups/crystal_prowess_of_plo_koon.lua")
+includeFile("groups/crystal_quintessence_of_the_force.lua")
+includeFile("groups/crystal_strength_of_luminaria.lua")
+includeFile("groups/crystal_sunriders_destiny.lua")
+includeFile("groups/crystal_ulics_redemption.lua")
+includeFile("groups/crystal_windus_guile.lua")
+
+--Nightsister gear
+includeFile("groups/nightsister1.lua")
+includeFile("groups/nightsister2.lua")
+includeFile("groups/nightsister3.lua")
+includeFile("groups/nightsister4.lua")
+includeFile("groups/nightsister5.lua")
+includeFile("groups/nightsister6.lua")
+
+--World boss token
+includeFile("groups/worldbosstoken.lua")
+
+--Bh saber loot when Deathblowing a Player jedi. Trophy no stats
+includeFile("groups/saberhand28.lua")
+
+--Faction /point /loot
+includeFile("groups/imppoints.lua")
+includeFile("groups/rebpoints.lua")
+
+--World Boss Crate
+includeFile("groups/worldbosscrate.lua")
+
+--Event Player Crate
+includeFile("groups/eventplayercrate.lua")
+
+--Vehicle Deeds
+includeFile("groups/vehicledeedsnormal.lua")
+includeFile("groups/vehicledeedsrare.lua")
+
+--Custom Capes
+includeFile("groups/wearables/capes.lua")
+
+--Custom Black Suns
+includeFile("groups/wearables/black_suns.lua")
+
+--CU/NGE Weapons
+includeFile("groups/weapon/nge_all.lua")
+
+--Boss and Trash Loot table
+includeFile("groups/boss_dungeon/boss_common.lua")
+includeFile("groups/boss_dungeon/boss_rare.lua")
+includeFile("groups/boss_dungeon/trash_common.lua")
+includeFile("groups/boss_dungeon/trash_rare.lua")
+includeFile("groups/nonjedi_jewelry.lua")
+includeFile("groups/jedi_jewelry.lua")
+
+--Dot System / Item Contraband
+includeFile("groups/dotsystem.lua")
+
+--Ancient Force Bread
+includeFile("groups/ancient_force_bread.lua")
+
+
+--Legendary Rare Loot Crate
+includeFile("groups/resource_deed_loot.lua")
+includeFile("groups/resource_crate_loot.lua")
+
+--Dark/Light FRS Items
+includeFile("groups/darkjedifrs.lua")
+includeFile("groups/lightjedifrs.lua")
