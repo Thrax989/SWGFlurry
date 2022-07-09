@@ -1696,16 +1696,6 @@ void BuildingObjectImplementation::changeSign(const SignTemplate* signConfig) {
 
 		oldSign->destroyObjectFromWorld(true);
 		oldSign->destroyObjectFromDatabase(true);
-	} else {
-		BuildingObject* building = asBuildingObject();
-		CreatureObject* owner = getOwnerCreatureObject();
-
-		if (building != nullptr && owner != nullptr) {
-			if (!building->isCivicStructure() && !building->isCommercialStructure()) {
-				building->setCustomObjectName(owner->getFirstName() + "'s House", true);
-				signName = building->getCustomObjectName();
-			}
-		}
 	}
 
 	Locker clocker2(signObject, asBuildingObject());

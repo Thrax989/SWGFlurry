@@ -136,7 +136,7 @@ void PetControlDeviceImplementation::callObject(CreatureObject* player) {
 	int currentlySpawned = 0;
 	int spawnedLevel = 0;
 	int maxPets = 1;
-	int maxLevelofPets = 13;
+	int maxLevelofPets = 10;
 	int level = pet->getLevel();
 
 	if (pet->getCreatureTemplate() == nullptr) {
@@ -167,7 +167,7 @@ void PetControlDeviceImplementation::callObject(CreatureObject* player) {
 		}
 
 	} else if (petType == PetManager::FACTIONPET){
-		maxPets = 3;
+		maxPets = 2;
 	}
 
 	for (int i = 0; i < ghost->getActivePetsSize(); ++i) {
@@ -209,12 +209,6 @@ void PetControlDeviceImplementation::callObject(CreatureObject* player) {
 					return;
 				}
 			} else if (object->isDroidObject() && petType == PetManager::DROIDPET) {
-				if (player->hasSkill("crafting_droidengineer_production_04")) {
-				maxPets = 2;
-					if (player->hasSkill("crafting_droidengineer_master")) {
-					maxPets = 3;
-					}
-				}
 				if (++currentlySpawned >= maxPets) {
 					player->sendSystemMessage("@pet/pet_menu:at_max"); // You already have the maximum number of pets of this type that you can call.
 					return;
@@ -1078,7 +1072,7 @@ void PetControlDeviceImplementation::setDefaultCommands() {
 	if (droid != nullptr) {
 		int species = droid->getSpecies();
 
-		if (droid->isCombatDroid() && (species == DroidObject::PROBOT || species == DroidObject::DZ70 || species == DroidObject::DROIDECA || species == DroidObject::ASSASSIN_DROID))
+		if (droid->isCombatDroid() && (species == DroidObject::PROBOT || species == DroidObject::DZ70))
 			trainedCommands.put(PetManager::RANGED_ATTACK, "ranged attack");
 	} else {
 		trainedCommands.put(PetManager::RANGED_ATTACK, "ranged attack");

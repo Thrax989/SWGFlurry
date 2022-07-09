@@ -27,7 +27,6 @@ void WeatherManagerImplementation::initialize() {
 
 	//Load weather configuration from the luas.
 	debug() << "Loading configuration from Lua.";
-
 	if(!loadLuaConfig()) {
 		info("ERROR in Lua config. Loading default values.");
 		loadDefaultValues();
@@ -224,14 +223,11 @@ int WeatherManagerImplementation::calculateSandstormProtection(CreatureObject* p
 	ManagedReference<SceneObject*> hat = player->getSlottedObject("hat");
 	if (hat != nullptr) {
 		crc = hat->getServerObjectCRC();
-		if (crc == 0xC3151F52 || crc == 0xD06ACFCA || crc == 0x6E6362EB) //Snow armor helmets and cold weather hat.
-			protection += 15;
-		else if (crc == 0x612f992f || crc == 0xba3831b8 || crc == 0xdc8d2e72 || crc == 0x754b6f93) //Tusken Raider helmets, Swoop helmet, Large Headwrap.
+		if (crc == 0x612f992f || crc == 0xba3831b8 || crc == 0xdc8d2e72 || crc == 0x754b6f93) //Tusken Raider helmets, Swoop helmet, Large Headwrap.
 			protection += 1;
 		else if (hat->isArmorObject())
 			protection += 1;
 	}
-
 
 	//Check for protective chest covering.
 	bool tuskenRobe = false;
@@ -245,12 +241,9 @@ int WeatherManagerImplementation::calculateSandstormProtection(CreatureObject* p
 			protection += 1;
 		else if (crc == 0x9053a6ce || crc == 0x663c19d1) //Vested jacket, Desert Command Jacket.
 			protection += 1;
-		else if (crc == 0x130F1F72 || crc == 0xFD2E8E66 || crc == 0x9053A6CE || crc == 0xD95EC143 || crc == 0x196164AC) //Snow armor chests and cold weather jackets.
-			protection += 15;			
 		else if (robe->isArmorObject())
 			protection += 1;
 	}
-
 
 	//Check for protective pants.
 	if (!tuskenRobe) {
@@ -261,8 +254,6 @@ int WeatherManagerImplementation::calculateSandstormProtection(CreatureObject* p
 				protection += 1;
 			else if (crc == 0xb9f0dcd7 || crc == 0xc6ada1aa) //Desert Crawlers, Padded Workpants
 				protection += 1;
-			else if (crc == 0xF83979A || crc == 0x655AF300) //Snow armor pants.
-			protection += 15;
 		}
 
 		ManagedReference<SceneObject*> pants2 = player->getSlottedObject("pants2");
@@ -278,8 +269,6 @@ int WeatherManagerImplementation::calculateSandstormProtection(CreatureObject* p
 		crc = gloves->getServerObjectCRC();
 		if (crc == 0x29fc844 || crc == 0x41ba6c29 || crc == 0x614eefaa) //Tusken gloves, Link-Steel Reinforced Gloves, Heavy Gloves.
 			protection += 1;
-		else if (crc == 0x75D5FE5A || crc == 0x66AA2EC2 || crc == 0xA1714A45) //Snow armor gloves and cold weather gloves.
-			protection += 15;			
 		else if (gloves->isArmorObject())
 			protection += 1;
 	}
@@ -292,11 +281,10 @@ int WeatherManagerImplementation::calculateSandstormProtection(CreatureObject* p
 			protection += 1;
 		else if (crc == 0x9192dd9e || crc == 0x35d80874) //Paneled Boots, Wrapped Boots.
 			protection += 1;
-		else if (crc == 0x10BEC881 || crc == 0x7923DB67) //Snow armor boots
-			protection += 15;			
 		else if (boots->isArmorObject())
 			protection += 1;
 	}
+
 	return protection;
 }
 
