@@ -337,8 +337,8 @@ bool PlayerCreationManager::createCharacter(ClientCreateCharacterCallback* callb
 
 	auto client = callback->getClient();
 
-	if (client->getCharacterCount(zoneServer.get()->getGalaxyID()) >= 3) {
-		ErrorMessage* errMsg = new ErrorMessage("Create Error", "You are limited to 3 characters per galaxy.", 0x0);
+	if (client->getCharacterCount(zoneServer.get()->getGalaxyID()) >= 10) {
+		ErrorMessage* errMsg = new ErrorMessage("Create Error", "You are limited to 10 characters per galaxy.", 0x0);
 		client->sendMessage(errMsg);
 
 		return false;
@@ -619,9 +619,9 @@ bool PlayerCreationManager::createCharacter(ClientCreateCharacterCallback* callb
   	promptText << endl;
   	promptText << "\\#00ff001 Account per IP";
    	promptText << endl;
-  	promptText << "3 Characters Max per account";
+  	promptText << "10 Characters Max per account";
    	promptText << endl;
-   	promptText << "1 Character Max Online per account";
+   	promptText << "3 Character Max Online per account";
    	promptText << endl;
    	promptText << endl;
    	promptText << endl;
@@ -633,11 +633,11 @@ bool PlayerCreationManager::createCharacter(ClientCreateCharacterCallback* callb
    	promptText << endl;
    	promptText << "\\#ffffffServer Drop Rates";
    	promptText << endl;
-   	promptText << "\\#00ff00YellowChance = 1 in 500";
+   	promptText << "\\#00ff00YellowChance = 1 in 100";
    	promptText << endl;
-   	promptText << "ExceptionalChance = 1 in 50000";
+   	promptText << "ExceptionalChance = 1 in 500";
    	promptText << endl;
-   	promptText << "LegendaryChance = 1 in 500000";
+   	promptText << "LegendaryChance = 1 in 1000";
    	promptText << endl;
    	promptText << endl;
    	promptText << endl;

@@ -58,6 +58,12 @@ mand_bunker_crazed_miner_converse = Creature:new {
 			},
 			lootChance = 5000000
 		},
+		{
+			groups = {
+				{group = "black_suns", chance = 10000000}
+			},
+			lootChance = 100000
+		},
 	},
 	weapons = {},
 	conversationTemplate = "deathWatchInsaneMinerConvoTemplate",
