@@ -151,11 +151,32 @@ class FishingManager extends Observer implements Logger {
 	
 	public void initializeLoot() {
 		//TODO: This should be loaded from a lua config "fishing_manager.lua"
-		miscLoot.add("object/tangible/wearables/shoes/shoes_s07.iff");
-		miscLoot.add("object/tangible/wearables/shoes/shoes_s02.iff");
-		miscLoot.add("object/tangible/food/foraged/foraged_fruit_s1.iff");
-		
-		rareLoot.add("object/weapon/ranged/pistol/pistol_cdef.iff");
+        miscLoot.add("object/tangible/collection/reward/rock_bubbling_reward.iff");
+        miscLoot.add("object/tangible/veteran_reward/frn_plush_tauntaun.iff");
+        miscLoot.add("object/tangible/collection/reward/target_reticule_goggles.iff");
+		miscLoot.add("object/tangible/wearables/goggles/goggles_anniversary.iff");
+		miscLoot.add("object/tangible/dance_prop/generic_must_prop_baton_04_l.iff");
+		miscLoot.add("object/tangible/dance_prop/generic_must_prop_baton_04_r.iff");
+		miscLoot.add("object/tangible/food/spice/spice_thruster_head.iff");
+        miscLoot.add("object/tangible/furniture/all/frn_all_camp_lantern_s3.iff");
+        miscLoot.add("object/tangible/furniture/all/frn_all_meatlump_palette_empty.iff");
+        miscLoot.add("object/tangible/furniture/decorative/cafe_chair.iff");
+        miscLoot.add("object/tangible/furniture/tatooine/frn_tato_cafe_parasol.iff");
+        miscLoot.add("object/tangible/furniture/tatooine/uber_basket_holder.iff");
+        miscLoot.add("object/tangible/loot/misc/loot_skull_human.iff");
+        miscLoot.add("object/tangible/loot/misc/loot_skull_ithorian.iff");
+        miscLoot.add("object/tangible/loot/misc/loot_skull_bith.iff");
+        miscLoot.add("object/tangible/loot/mustafar/stuffed_dewback_doll.iff");
+        miscLoot.add("object/tangible/loot/mustafar/throw_pillow_03.iff");
+        miscLoot.add("object/tangible/loot/mustafar/throw_pillow_01.iff");
+        miscLoot.add("object/tangible/storyteller/prop/pr_ch9_droid_powerdroid_powerdown.iff");
+        miscLoot.add("object/tangible/storyteller/prop/pr_ch9_droid_r3_powerdown.iff");
+        miscLoot.add("object/tangible/storyteller/prop/pr_ch9_droid_r2_powerdown.iff");
+        miscLoot.add("object/tangible/storyteller/prop/pr_eqp_camping_chair_s1.iff");
+        miscLoot.add("object/tangible/storyteller/prop/pr_escape_pod_door.iff");
+        miscLoot.add("object/tangible/storyteller/prop/pr_ch9_droid_r4_powerdown.iff");
+
+        rareLoot.add("object/tangible/treasure_map/treasure_map_encoded_disk.iff");
 	}
 	
 	public void initializeColor() {
@@ -170,6 +191,11 @@ class FishingManager extends Observer implements Logger {
 		color.put("talus", 0);
 		color.put("tatooine", 7);
 		color.put("yavin4", 41);
+		color.put("mustafar", 15);
+		color.put("kashyyyk", 47);
+		color.put("taanab", 31);
+		color.put("hoth", 30);
+		color.put("mandalore", 7);
 	}
 	
 	public int notifyObserverEvent(unsigned int eventType, Observable observable, ManagedObject arg1, long arg2) {
