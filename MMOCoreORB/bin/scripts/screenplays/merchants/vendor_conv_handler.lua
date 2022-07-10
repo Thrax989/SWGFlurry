@@ -119,9 +119,9 @@ HalloweenEventVendorConvoHandler = VendorConvoHandler:new {
 	informationSecondDialog = "Killya doe abominations at doe 'publiko blacksite!",
 }
 
-RisVendorConvoHandler = VendorConvoHandler:new {
+RisEventVendorConvoHandler = VendorConvoHandler:new {
 	--Vendor Setup
-	vendorLogicType = RisVendorLogic,
+	vendorLogicType = RisEventVendorLogic,
 	--Vendor Greeting
 	initialDialog = "Mee have some wares che trade.",
 	--Player selection to start buying, vendor spatial.
