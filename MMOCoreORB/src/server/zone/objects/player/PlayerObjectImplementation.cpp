@@ -1447,6 +1447,20 @@ void PlayerObjectImplementation::notifyOnline() {
 		SkillManager::instance()->surrenderSkill("force_rank_dark_novice", playerCreature, true);
 	}
 
+	//Check for FRS Jedi without overt skill check
+	if (playerCreature->hasSkill("force_rank_dark_novice") || playerCreature->hasSkill("force_rank_light_novice")) {
+		playerCreature->setFactionStatus(2);
+	}
+
+	//Check for Gray Faction Jedi without overt skill check
+	if (playerCreature->hasSkill("combat_jedi_novice") && playerCreature->isRebel()) {
+		playerCreature->setFactionStatus(2);
+	}
+
+	if (playerCreature->hasSkill("combat_jedi_novice") && playerCreature->isImperial()) {
+		playerCreature->setFactionStatus(2);
+	}
+
 	//Login to jedi manager
 	JediManager::instance()->onPlayerLoggedIn(playerCreature);
 	//Reset Players Skill Mods
@@ -1468,6 +1482,8 @@ void PlayerObjectImplementation::notifyOnline() {
 
 	playerCreature->notifyObservers(ObserverEventType::LOGGEDIN);
 
+	playerCreature->executeObjectControllerAction(STRING_HASHCODE("dismount"));
+
 	if (playerCreature->isInGuild()) {
 		ManagedReference<GuildObject*> guild = playerCreature->getGuildObject().get();
 		uint64 playerId = playerCreature->getObjectID();
@@ -1488,15 +1504,7 @@ void PlayerObjectImplementation::notifyOnline() {
 		activateForcePowerRegen();
 
 	PlayerObject* ghost = playerCreature->getPlayerObject();
-
-	//PermaDeath : Gray Jedi with 0 lives cannont login
-	if (playerCreature->getScreenPlayState("jediLives") == 0) {
-		if (playerCreature->hasSkill("combat_jedi_novice")) {
-			ghost->setLinkDead(true);
-			ghost->disconnect(true, true);
-			}
-		}
-
+	
 	schedulePvpTefRemovalTask();
 
  	PlayerManager* playerManager = playerCreature->getZoneServer()->getPlayerManager();
@@ -1569,10 +1577,6 @@ void PlayerObjectImplementation::notifyOnline() {
 		}
 	}
 
-	if (playerCreature->hasSkill("combat_jedi_novice") && playerCreature->getFactionStatus() == FactionStatus::OVERT) {
-		playerCreature->setFactionStatus(1);
-	}
-
 	MissionManager* missionManager = zoneServer->getMissionManager();
 
 	if (missionManager != nullptr) {
@@ -1636,6 +1640,8 @@ void PlayerObjectImplementation::notifyOffline() {
 			player->sendMessage(notifyStatus);
 		}
 	}
+
+	playerCreature->executeObjectControllerAction(STRING_HASHCODE("dismount"));
 
 	//Remove player from visibility list
 	VisibilityManager::instance()->removeFromVisibilityList(playerCreature);
@@ -2323,6 +2329,8 @@ void PlayerObjectImplementation::setOnline() {
 	clearCharacterBit(PlayerObjectImplementation::LD, true);
 
 	doRecovery(1000);
+
+	regrantSkills();
 
 	activateMissions();
 }
