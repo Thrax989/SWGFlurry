@@ -118,11 +118,7 @@ void ZoneComponent::updateZone(SceneObject* sceneObject, bool lightUpdate, bool 
 		zone = sceneObjectRootParent->getZone();
 	}
 
-	bool isSeat = false;
-	if (sceneObject->getObjectTemplate()->getFullTemplateString().contains("passenger_"))
-		isSeat = true;
-
-	if (parent != nullptr && !isSeat && (parent->isVehicleObject() || parent->isMount()))
+	if (parent != nullptr && (parent->isVehicleObject() || parent->isMount()))
 		sceneObject->updateVehiclePosition(sendPackets);
 
 	Locker _locker(zone);

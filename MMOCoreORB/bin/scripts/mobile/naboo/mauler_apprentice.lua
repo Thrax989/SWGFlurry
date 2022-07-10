@@ -4,15 +4,15 @@ mauler_apprentice = Creature:new {
 	randomNameTag = true,
 	socialGroup = "mauler",
 	faction = "",
-	level = 12,
-	chanceHit = 0.29,
-	damageMin = 140,
-	damageMax = 150,
-	baseXp = 609,
-	baseHAM = 810,
-	baseHAMmax = 990,
-	armor = 0,
-	resists = {0,0,10,0,0,0,0,-1,-1},
+	level = 300,
+	chanceHit = 25.00,
+	damageMin = 1500,
+	damageMax = 1900,
+	baseXp = 25000,
+	baseHAM = 90000,
+	baseHAMmax = 100000,
+	armor = 1,
+	resists = {115,115,115,115,115,115,115,115,115},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -20,7 +20,7 @@ mauler_apprentice = Creature:new {
 	boneType = "",
 	boneAmount = 0,
 	milk = 0,
-	tamingChance = 0,
+	tamingChance = 0.0,
 	ferocity = 0,
 	pvpBitmask = ATTACKABLE + AGGRESSIVE + ENEMY,
 	creatureBitmask = PACK + KILLER,
@@ -30,17 +30,35 @@ mauler_apprentice = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "junk", chance = 4000000},
-				{group = "tailor_components", chance = 1000000},
-				{group = "loot_kit_parts", chance = 2000000},
-				{group = "carbines", chance = 1000000},
-				{group = "mauler_common", chance = 2000000}
-			}
+				{group = "trash_common", chance = 10000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "trash_common", chance = 10000000},
+			},
+			lootChance = 5000000
+		},
+		{
+			groups = {
+				{group = "trash_rare", chance = 10000000},
+			},
+			lootChance = 2000000
+		},
+		{
+			groups = {
+				{group = "tierone", chance = 1500000},
+				{group = "tiertwo", chance = 3500000},
+				{group = "tierthree", chance = 2500000},
+				{group = "tierdiamond", chance = 2500000},
+			},
+			lootChance = 3000000
 		}
 	},
-	weapons = {"pirate_weapons_medium"},
+	weapons = {"pirate_weapons_heavy"},
 	reactionStf = "@npc_reaction/fancy",
-	attacks = merge(brawlermid,marksmanmid)
+	attacks = merge(tkamaster,swordsmanmaster,fencermaster)
 }
 
 CreatureTemplates:addCreatureTemplate(mauler_apprentice, "mauler_apprentice")

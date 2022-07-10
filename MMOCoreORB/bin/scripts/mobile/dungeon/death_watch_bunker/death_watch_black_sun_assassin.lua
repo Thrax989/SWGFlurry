@@ -4,15 +4,15 @@ death_watch_black_sun_assassin = Creature:new {
 	randomNameTag = true,
 	socialGroup = "death_watch",
 	faction = "",
-	level = 107,
-	chanceHit = 1.75,
-	damageMin = 670,
-	damageMax = 1050,
+	level = 175,
+	chanceHit = 20.0,
+	damageMin = 1200,
+	damageMax = 1600,
 	baseXp = 10081,
 	baseHAM = 40000,
-	baseHAMmax = 40000,
+	baseHAMmax = 50000,
 	armor = 2,
-	resists = {55,55,70,45,75,80,55,45,-1},
+	resists = {45,45,20,45,45,40,45,45,10},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -32,10 +32,46 @@ death_watch_black_sun_assassin = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "death_watch_bunker_commoners", chance = 10000000},
+				{group = "wearables_uncommon", chance = 10000000}
 			},
-			lootChance = 1000000
-		}
+			lootChance = 5000000
+		},
+		{
+			groups = {
+				{group = "death_watch_bunker_commoners", chance = 10000000}
+			},
+			lootChance = 5000000
+		},
+		{
+			groups = {
+				{group = "wearables_common", chance = 10000000}
+			},
+			lootChance = 5000000
+		},
+		{
+			groups = {
+				{group = "jetpack_base", chance = 10000000}
+			},
+			lootChance = 5000000
+		},
+		{
+			groups = {
+				{group = "death_watch_bunker_commoners", chance = 10000000}
+			},
+			lootChance = 5000000
+		},
+		{
+			groups = {
+				{group = "junk", chance = 10000000}
+			},
+			lootChance = 5000000
+		},
+		{
+			groups = {
+				{group = "black_suns", chance = 10000000}
+			},
+			lootChance = 100000
+		},
 	},
 	weapons = {"battle_droid_weapons"},
 	conversationTemplate = "",

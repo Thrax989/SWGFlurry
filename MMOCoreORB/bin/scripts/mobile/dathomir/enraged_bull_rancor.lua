@@ -4,7 +4,7 @@ enraged_bull_rancor = Creature:new {
 	faction = "",
 	level = 89,
 	chanceHit = 0.85,
-	damageMin = 570,
+	damageMin = 600,
 	damageMax = 850,
 	baseXp = 8500,
 	baseHAM = 13000,
@@ -31,9 +31,9 @@ enraged_bull_rancor = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "rancor_common", chance = 4000000},
-				{group = "armor_all", chance = 2000000},
-				{group = "weapons_all", chance = 2500000},
+				{group = "rancor_common", chance = 5000000},
+				{group = "armor_all", chance = 3000000},
+				{group = "trash_common", chance = 500000},
 				{group = "wearables_all", chance = 1500000}
 			},
 			lootChance = 2780000

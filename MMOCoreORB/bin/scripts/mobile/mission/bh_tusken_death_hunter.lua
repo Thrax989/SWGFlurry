@@ -2,15 +2,15 @@ bh_tusken_death_hunter = Creature:new {
 	objectName = "@mob/creature_names:tusken_death_hunter",
 	socialGroup = "tusken_raider",
 	faction = "tusken_raider",
-	level = 50,
+	level = 150,
 	chanceHit = 0.5,
 	damageMin = 395,
 	damageMax = 500,
 	baseXp = 4916,
-	baseHAM = 10000,
-	baseHAMmax = 12000,
+	baseHAM = 110000,
+	baseHAMmax = 112000,
 	armor = 1,
-	resists = {40,40,30,30,0,30,0,30,-1},
+	resists = {60,60,60,60,60,60,60,60,-1},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -29,33 +29,33 @@ bh_tusken_death_hunter = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "junk", chance = 2500000},
-				{group = "tailor_components", chance = 500000},
-				{group = "loot_kit_parts", chance = 500000},
+				{group = "tierone", chance = 2500000},
+				{group = "tiertwo", chance = 500000},
+				{group = "tierthree", chance = 500000},
 				{group = "color_crystals", chance = 500000},
 				{group = "power_crystals", chance = 1000000},
-				{group = "wearables_all", chance = 1000000},
+				{group = "nge_all", chance = 1000000},
 				{group = "weapons_all", chance = 1000000},
 				{group = "armor_all", chance = 1000000},
 				{group = "clothing_attachments", chance = 1000000},
 				{group = "armor_attachments", chance = 1000000}
 			},
-			lootChance = 4000000
+			lootChance = 100000000
 		},
 		{
 			groups = {
-				{group = "junk", chance = 2500000},
-				{group = "tailor_components", chance = 500000},
-				{group = "loot_kit_parts", chance = 500000},
+				{group = "tierone", chance = 2500000},
+				{group = "tiertwo", chance = 500000},
+				{group = "tierthree", chance = 500000},
 				{group = "color_crystals", chance = 500000},
 				{group = "power_crystals", chance = 1000000},
-				{group = "wearables_all", chance = 1000000},
+				{group = "nge_all", chance = 1000000},
 				{group = "weapons_all", chance = 1000000},
 				{group = "armor_all", chance = 1000000},
 				{group = "clothing_attachments", chance = 1000000},
 				{group = "armor_attachments", chance = 1000000}
 			},
-			lootChance = 4000000
+			lootChance = 5000000
 		}
 	},
 	weapons = {"tusken_weapons"},

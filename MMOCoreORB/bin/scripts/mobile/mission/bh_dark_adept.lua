@@ -4,10 +4,10 @@ bh_dark_adept = Creature:new {
 	randomNameTag = true,
 	socialGroup = "dark_jedi",
 	faction = "",
-	level = 120,
+	level = 300,
 	chanceHit = 4.75,
 	damageMin = 945,
-	damageMax = 1600,
+	damageMax = 1200,
 	baseXp = 13178,
 	baseHAM = 50000,
 	baseHAMmax = 61000,
@@ -27,53 +27,55 @@ bh_dark_adept = Creature:new {
 	optionsBitmask = AIENABLED,
 	diet = HERBIVORE,
 
-	templates = {"object/mobile/dressed_dark_jedi_human_male_01.iff"},
+	templates = {" dark_jedi" },
 	lootGroups = {
 		{
 			groups = {
-				{group = "junk", chance = 2500000},
-				{group = "tailor_components", chance = 500000},
-				{group = "loot_kit_parts", chance = 500000},
-				{group = "color_crystals", chance = 500000},
-				{group = "power_crystals", chance = 1000000},
-				{group = "wearables_all", chance = 1000000},
-				{group = "weapons_all", chance = 1000000},
-				{group = "armor_all", chance = 1000000},
+				{group = "tierone", chance = 2500000},
+				{group = "tiertwo", chance = 1000000},
+				{group = "tierthree", chance = 1000000},
+				{group = "tierdiamond", chance = 1000000},
+				{group = "non_jedi_rings_ranged", chance = 500000},
+				{group = "capes", chance = 500000},
+				{group = "power_crystals", chance = 500000},
+				{group = "nge_all", chance = 500000},
+				{group = "weapons_all", chance = 500000},
 				{group = "clothing_attachments", chance = 1000000},
 				{group = "armor_attachments", chance = 1000000}
 			},
-			lootChance = 5400000
+			lootChance = 10000000
 		},
 		{
 			groups = {
-				{group = "junk", chance = 2500000},
-				{group = "tailor_components", chance = 500000},
-				{group = "loot_kit_parts", chance = 500000},
+				{group = "tierone", chance = 2500000},
+				{group = "tierrwo", chance = 1000000},
+				{group = "tierthree", chance = 1000000},
+				{group = "tierdiamond", chance = 1000000},
+				{group = "non_jedi_rings", chance = 500000},
+				{group = "g_necklaces", chance = 500000},
 				{group = "color_crystals", chance = 500000},
-				{group = "power_crystals", chance = 1000000},
-				{group = "wearables_all", chance = 1000000},
-				{group = "weapons_all", chance = 1000000},
-				{group = "armor_all", chance = 1000000},
+				{group = "nge_all", chance = 500000},
+				{group = "weapons_all", chance = 500000},
 				{group = "clothing_attachments", chance = 1000000},
 				{group = "armor_attachments", chance = 1000000}
 			},
-			lootChance = 5400000
+			lootChance = 10000000
 		},
 		{
 			groups = {
-				{group = "junk", chance = 2500000},
-				{group = "tailor_components", chance = 500000},
-				{group = "loot_kit_parts", chance = 500000},
-				{group = "color_crystals", chance = 500000},
-				{group = "power_crystals", chance = 500000},
-				{group = "power_crystals", chance = 500000},
-				{group = "wearables_all", chance = 1000000},
-				{group = "weapons_all", chance = 1000000},
-				{group = "armor_all", chance = 1000000},
+				{group = "tierone", chance = 2500000},
+				{group = "tierrwo", chance = 1000000},
+				{group = "tierthree", chance = 1000000},
+				{group = "tierdiamond", chance = 1000000},
+				{group = "vehicledeedsnormal", chance = 500000},
+				{group = "vehicledeedsrare", chance = 500000},
+				{group = "g_named_crystals", chance = 500000},
+				{group = "nge_all", chance = 500000},
+				{group = "weapons_all", chance = 500000},
 				{group = "clothing_attachments", chance = 1000000},
 				{group = "armor_attachments", chance = 1000000}
 			},
-			lootChance = 5400000
+			lootChance = 10000000
 		},
 	},
 	weapons = {"dark_jedi_weapons_gen2"},

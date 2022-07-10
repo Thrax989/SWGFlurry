@@ -8,7 +8,7 @@ dispersal_mechanism = {
 	craftingValues = {
 		{"charges", 2,10,0},
 		{"area", 2,10,0},
-		{"range", 2,10,0},
+		{"range", 4,4,0},
 		{"useCount",3,7,0}
 	},
 	customizationStringName = {},

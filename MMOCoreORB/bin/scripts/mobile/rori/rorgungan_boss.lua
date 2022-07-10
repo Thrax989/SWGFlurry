@@ -20,13 +20,13 @@ rorgungan_boss = Creature:new {
 	boneType = "",
 	boneAmount = 0,
 	milk = 0,
-	tamingChance = 0,
+	tamingChance = 0.0,
 	ferocity = 0,
 	pvpBitmask = ATTACKABLE,
 	creatureBitmask = PACK + HERD,
 	diet = HERBIVORE,
 
-	templates = {"object/mobile/gungan_s03_male.iff"},
+	templates = {"object/mobile/gungan_male.iff"},
 	lootGroups = {
 		{
 			groups = {

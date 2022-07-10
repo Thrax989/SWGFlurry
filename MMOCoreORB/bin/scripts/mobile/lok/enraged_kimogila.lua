@@ -2,15 +2,15 @@ enraged_kimogila = Creature:new {
 	objectName = "@mob/creature_names:enraged_kimogila",
 	socialGroup = "kimogila",
 	faction = "",
-	level = 135,
-	chanceHit = 4.75,
-	damageMin = 920,
-	damageMax = 1550,
-	baseXp = 12801,
-	baseHAM = 50000,
-	baseHAMmax = 61000,
+	level = 300,
+	chanceHit = 30.0,
+	damageMin = 2200,
+	damageMax = 4200,
+	baseXp = 25000,
+	baseHAM = 300000,
+	baseHAMmax = 400000,
 	armor = 2,
-	resists = {145,170,145,170,145,140,200,145,-1},
+	resists = {145,170,145,170,145,140,200,145,125},
 	meatType = "meat_carnivore",
 	meatAmount = 1000,
 	hideType = "hide_leathery",
@@ -19,7 +19,7 @@ enraged_kimogila = Creature:new {
 	boneAmount = 0,
 	milk = 0,
 	tamingChance = 0.25,
-	ferocity = 0,
+	ferocity = 30,
 	pvpBitmask = AGGRESSIVE + ATTACKABLE + ENEMY,
 	creatureBitmask = PACK + KILLER,
 	optionsBitmask = AIENABLED,
@@ -29,11 +29,14 @@ enraged_kimogila = Creature:new {
 	hues = { 24, 25, 26, 27, 28, 29, 30, 31 },
 	scale = 0.9,
 	lootGroups = {
-	 {
-	        groups = {
-				{group = "kimogila_common", chance = 10000000}
+		{
+	        	groups = {
+				{group = "krayt_tissue_rare", chance = 2500000},
+				{group = "krayt_dragon_common", chance = 2000000},
+				{group = "krayt_pearls_flawless", chance = 500000},
+				{group = "kimogila_common", chance = 5000000},
 			},
-			lootChance = 3700000
+			lootChance = 10000000
 		}
 	},
 	weapons = {},

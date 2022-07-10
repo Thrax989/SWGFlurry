@@ -5,16 +5,16 @@ rifles = {
 	minimumLevel = 0,
 	maximumLevel = 0,
 	lootItems = {
-		{itemTemplate = "rifle_bowcaster", weight = 700000},
-		{itemTemplate = "rifle_cdef", weight = 1900000},
-		{itemTemplate = "rifle_dlt20", weight = 1100000},
-		{itemTemplate = "rifle_dlt20a", weight = 1100000},
-		{itemTemplate = "rifle_e11", weight = 900000},
-		{itemTemplate = "rifle_jawa_ion", weight = 800000},
-		{itemTemplate = "rifle_laser", weight = 1000000},
-		{itemTemplate = "rifle_sg82", weight = 1050000},
-		{itemTemplate = "rifle_spraystick", weight = 1050000},
-		{itemTemplate = "rifle_t21", weight = 400000}
+		{itemTemplate = "locked_briefcase", weight = 1000000},
+		{itemTemplate = "locked_container", weight = 1000000},
+		{itemTemplate = "force_color_crystal", weight = 1000000},
+		{itemTemplate = "force_power_crystal", weight = 1000000},
+		{itemTemplate = "attachment_clothing", weight = 1000000},
+		{itemTemplate = "attachment_armor", weight = 1000000},
+		{groupTemplate = "lifeday", weight = 1000000},
+		{groupTemplate = "armor_all", weight = 1000000},
+		{groupTemplate = "outbreak", weight = 1000000},
+		{groupTemplate = "wearables_all", weight = 1000000}
 	}
 }
 

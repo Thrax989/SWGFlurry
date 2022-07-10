@@ -166,8 +166,6 @@ includeFile("dungeon/corellian_corvette/ticket_takers/klaatu.lua")
 includeFile("dungeon/corellian_corvette/ticket_takers/lt_lance.lua")
 --Custom exar kun dungeon
 includeFile("dungeon/exar_kun_temple/exar_kun.lua")
---Custom boba fett dungeon
-includeFile("dungeon/boba_fett/boba_fett.lua")
 --Custom sher kar dungeon
 includeFile("dungeon/sher_kar/sher_kar.lua")
 --Custom geo acklay dungeon
@@ -794,7 +792,7 @@ includeFile("events/mokk_worldboss_sp.lua")
 --includeFile("events/worldboss_fifteen.lua")
 includeFile("events/baxterstockman.lua")
 includeFile("events/inquisitor_boss.lua")
-includeFile("events/world_boss_spawner.lua")
+--includeFile("events/world_boss_spawner.lua")
 
 --painting exchange dealer
 includeFile("events/painting_exchange_dealer.lua")
@@ -816,6 +814,7 @@ includeFile("merchants/vendor_logic.lua")
 includeFile("merchants/vendorData.lua")
 includeFile("merchants/houseVendorData.lua")
 includeFile("merchants/halloweenvendorData.lua")
+includeFile("merchants/risvendorData.lua")
 includeFile("merchants/vendor_conv_handler.lua")
 includeFile("merchants/tcgonevendorData.lua")
 includeFile("merchants/tcgtwovendorData.lua")

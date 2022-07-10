@@ -27,7 +27,7 @@ theme_park_naboo_holy_man = Creature:new {
   optionsBitmask = AIENABLED + CONVERSABLE,
   diet = HERBIVORE,
 
-  templates = {"object/mobile/gungan_male.iff"},
+	templates = {"object/mobile/gungan_male.iff"},
   lootGroups = {},
   weapons = {},
   conversationTemplate = "theme_park_smc_vurlene_aujante_mission_target_convotemplate",

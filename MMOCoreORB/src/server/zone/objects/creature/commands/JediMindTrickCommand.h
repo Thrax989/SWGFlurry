@@ -20,10 +20,6 @@ int doQueueCommand(CreatureObject* creature, const uint64& target, const Unicode
 	if (!checkInvalidLocomotions(creature))
 		return INVALIDLOCOMOTION;
 
-	if (isWearingArmor(creature)) {
-		return NOJEDIARMOR;
-	}
-
 	ManagedReference<SceneObject*> targetObject = server->getZoneServer()->getObject(target);
 	Creature* targetCreature = cast<Creature*>(targetObject.get());
 

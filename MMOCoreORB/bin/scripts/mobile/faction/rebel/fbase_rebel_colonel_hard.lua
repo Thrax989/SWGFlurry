@@ -37,13 +37,14 @@ fbase_rebel_colonel_hard = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "color_crystals", chance = 100000},
-				{group = "junk", chance = 6000000},
-				{group = "weapons_all", chance = 1100000},
-				{group = "armor_all", chance = 1100000},
+				{group = "color_crystals", chance = 300000},
+				{group = "junk", chance = 6500000},
+				{group = "holocron_dark", chance = 150000},
+				{group = "holocron_light", chance = 150000},
+				{group = "imppoints", chance = 550000},
+				{group = "armor_all", chance = 1050000},
 				{group = "clothing_attachments", chance = 150000},
 				{group = "armor_attachments", chance = 150000},
-				{group = "rebel_officer_common", chance = 400000},
 				{group = "wearables_all", chance = 1000000}
 			}
 		}

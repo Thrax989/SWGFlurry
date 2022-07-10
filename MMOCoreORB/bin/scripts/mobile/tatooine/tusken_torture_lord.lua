@@ -2,15 +2,15 @@ tusken_torture_lord = Creature:new {
 	objectName = "@mob/creature_names:tusken_torture_lord",
 	socialGroup = "tusken_raider",
 	faction = "tusken_raider",
-	level = 57,
-	chanceHit = 0.57,
-	damageMin = 430,
-	damageMax = 570,
-	baseXp = 5555,
-	baseHAM = 11000,
-	baseHAMmax = 13000,
-	armor = 0,
-	resists = {50,30,0,60,-1,30,-1,-1,-1},
+	level = 300,
+	chanceHit = 25.0,
+	damageMin = 1500,
+	damageMax = 1900,
+	baseXp = 25000,
+	baseHAM = 100000,
+	baseHAMmax = 115000,
+	armor = 1,
+	resists = {120,120,120,120,120,120,120,120,120},
 	meatType = "",
 	meatAmount = 0,
 	hideType = "",
@@ -29,17 +29,30 @@ tusken_torture_lord = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "junk", chance = 1500000},
-				{group = "tusken_common", chance = 3500000},
-				{group = "wearables_common", chance = 1000000},
-				{group = "wearables_uncommon", chance = 500000},
-				{group = "bone_armor", chance = 750000},
-				{group = "chitin_armor", chance = 750000},
-				{group = "armor_attachments", chance = 500000},
-				{group = "clothing_attachments", chance = 500000},
-				{group = "color_crystals", chance = 500000},
-				{group = "power_crystals", chance = 500000}
-			}
+				{group = "trash_rare", chance = 10000000},
+			},
+			lootChance = 2000000
+		},		
+		{
+			groups = {
+				{group = "trash_common", chance = 10000000},
+			},
+			lootChance = 10000000
+		},
+		{
+			groups = {
+				{group = "weapon_component_advanced", chance = 10000000},
+			},
+			lootChance = 7000000
+		},
+		{
+			groups = {
+				{group = "tierone", chance = 1500000},
+				{group = "tiertwo", chance = 3500000},
+				{group = "tierthree", chance = 2500000},
+				{group = "tierdiamond", chance = 2500000},
+			},
+			lootChance = 3000000
 		}
 	},
 	weapons = {"tusken_weapons"},

@@ -1,5 +1,5 @@
 dathomir_rancor_ancient_bull_pack_neutral_none = Lair:new {
-	mobiles = {{"ancient_bull_rancor",1}},
+	mobiles = {{"ancient_bull_rancor",3}},
 	spawnLimit = 15,
 	buildingsVeryEasy = {},
 	buildingsEasy = {},

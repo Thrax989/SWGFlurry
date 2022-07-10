@@ -37,12 +37,13 @@ fbase_rebel_rifleman_hard = Creature:new {
 	lootGroups = {
 		{
 			groups = {
-				{group = "color_crystals", chance = 200000},
-				{group = "junk", chance = 6000000},
-				{group = "weapons_all", chance = 1250000},
-				{group = "armor_all", chance = 1250000},
+				{group = "color_crystals", chance = 100000},
+				{group = "junk", chance = 6600000},
+				{group = "imppoints", chance = 500000},
+				{group = "armor_all", chance = 1100000},
 				{group = "clothing_attachments", chance = 150000},
 				{group = "armor_attachments", chance = 150000},
+				{group = "rebel_officer_common", chance = 400000},
 				{group = "wearables_all", chance = 1000000}
 			}
 		}

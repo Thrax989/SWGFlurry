@@ -118,3 +118,19 @@ HalloweenEventVendorConvoHandler = VendorConvoHandler:new {
 	informationSecondOption = "How do I get Halloween event tokens?",
 	informationSecondDialog = "Killya doe abominations at doe 'publiko blacksite!",
 }
+
+RisEventVendorConvoHandler = VendorConvoHandler:new {
+	--Vendor Setup
+	vendorLogicType = RisEventVendorLogic,
+	--Vendor Greeting
+	initialDialog = "Mee have some wares che trade.",
+	--Player selection to start buying, vendor spatial.
+	saleOption = "Show me what you have for sale.",
+	saleDialog = "Take do look unko",
+	--Player selection to get vendor information, vendor dialog.
+	informationFirstOption = "What sort of items do you sell?",
+	informationFirstDialog = "Mee trade items che blood samples tuta doe Republiko blacksite.",
+	--Player selection to get vendor more information, vendor dialog.
+	informationSecondOption = "How do I get Halloween event tokens?",
+	informationSecondDialog = "Killya doe abominations at doe 'publiko blacksite!",
+}

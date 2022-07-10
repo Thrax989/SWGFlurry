@@ -25,19 +25,21 @@
 void CollectiongoldMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject, ObjectMenuResponse* menuResponse, CreatureObject* player) const {
 
 	TangibleObjectMenuComponent::fillObjectMenuResponse(sceneObject, menuResponse, player);
-		ManagedReference<BuildingObject*> building = cast<BuildingObject*>(player->getRootParent());
 
-	// If outside dispaly menu options, if inside a building show nothing.
-	if (building == NULL) {
 	menuResponse->addRadialMenuItem(20, 3, "Open Gold Crate");
-	}
 }
 
 int CollectiongoldMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* creature, byte selectedID) const {
-		ManagedReference<BuildingObject*> building = cast<BuildingObject*>(creature->getRootParent());
 
-	// If outside dispaly menu options, if inside a building show nothing.
-	if (building == NULL) {
+	if (!sceneObject->isTangibleObject())
+		return 0;
+
+	if (!creature->isPlayerCreature())
+		return 0;
+
+	if (!sceneObject->isASubChildOf(creature))
+		return 0;
+
 	if (selectedID != 20)
 		return 0;
 
@@ -48,6 +50,5 @@ int CollectiongoldMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject
 	lootManager->createLoot(inventory, "lootcollectiontiertwo", 200);
 	sceneObject->destroyObjectFromWorld(true);
 	sceneObject->destroyObjectFromDatabase(true);
-	}
 	return 0;
 }
