@@ -30,7 +30,7 @@ risvendor = Creature:new {
 	templates = {"object/mobile/borvo.iff"},
 	lootGroups = {},
 	weapons = {},
-	conversationTemplate = "RisVendorConvoTemplate",
+	conversationTemplate = "RisEventVendorConvoTemplate",
 	attacks = {
 	}
 }
