@@ -467,4 +467,6 @@ function CorelliaCoronetScreenPlay:spawnMobiles()
 	  spawnMobile(self.planet, "rizz_ghost", 0, -159.986, 28, -4727.92, 90, 0)
 	  spawnMobile(self.planet, "heat_ghost", 0, -159.986, 28, -4719.8, 90, 0)
 	  spawnMobile(self.planet, "thornes", 1, -159.902, 28, -4715.79, 73, 0) 
+	  spawnMobile(self.planet, "risvendor", 1, -143.774, 28, -4723.66, 80, 0)
+
 end
