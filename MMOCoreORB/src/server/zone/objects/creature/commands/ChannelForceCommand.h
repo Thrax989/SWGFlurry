@@ -27,10 +27,6 @@ public:
 		if (creature->hasAttackDelay())
 			return GENERALERROR;
 
-		if (isWearingArmor(creature)) {
-			return NOJEDIARMOR;
-		}
-
 		if (creature->hasBuff(BuffCRC::JEDI_AVOID_INCAPACITATION)) {
 			creature->sendSystemMessage("You cannot use Channel Force while Avoid Incapping.");
 			return INVALIDSTATE;
