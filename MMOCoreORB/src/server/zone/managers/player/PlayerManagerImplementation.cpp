@@ -2290,7 +2290,7 @@ int PlayerManagerImplementation::awardExperience(CreatureObject* player, const S
 		xpType == "squadleader" ||  
 		xpType == "trapping" || 
 		xpType == "shipwright") {
-		xp = playerObject->addExperience(xpType, (amount * 20));
+		xp = playerObject->addExperience(xpType, (amount * 1.1));
 		float speciesModifier = 1.f;
 		if (amount > 0)
 			speciesModifier = getSpeciesXpModifier(player->getSpeciesName(), xpType);
