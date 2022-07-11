@@ -1928,7 +1928,7 @@ void PlayerManagerImplementation::disseminateExperience(TangibleObject* destruct
 				int groupSize = group->getGroupSize();
 				for (int i = 0; i < groupSize; i++) {
 					ManagedReference<CreatureObject*> groupMember = group->getGroupMember(i);
-					if (groupMember->isInRange(attacker, 100.0)) {	
+					if (groupMember->isInRange(attacker, 20000.0)) {	
 						if (groupMember->isPlayerCreature()) {			
 							xpAmount *= groupExpMultiplier;
 							} 			
@@ -2290,7 +2290,7 @@ int PlayerManagerImplementation::awardExperience(CreatureObject* player, const S
 		xpType == "squadleader" ||  
 		xpType == "trapping" || 
 		xpType == "shipwright") {
-		xp = playerObject->addExperience(xpType, (amount * 20));
+		xp = playerObject->addExperience(xpType, (amount * 1.1));
 		float speciesModifier = 1.f;
 		if (amount > 0)
 			speciesModifier = getSpeciesXpModifier(player->getSpeciesName(), xpType);
