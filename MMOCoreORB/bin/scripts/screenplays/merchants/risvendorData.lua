@@ -6,15 +6,15 @@ RisEventVendorLogic = VendorLogic:new {
 	},
 	--Displayed Name, full template string (without shared_), cost in {}, use the same structure as currencies
 	merchandise = {
-	{name = "\\#FFD700 1 \\00FF00 RIS L Bicep", template = "object/tangible/wearables/armor/ris/armor_ris_bicep_l.iff", cost = {500,}},
-	{name = "\\#FFD700 2 \\00FF00 RIS R Bicep", template = "object/tangible/wearables/armor/ris/armor_ris_bicep_r.iff", cost = {500,}},
-	{name = "\\#FFD700 3 \\00FF00 RIS Boots", template = "object/tangible/wearables/armor/ris/armor_ris_boots.iff", cost = {500,}},
-	{name = "\\#FFD700 4 \\00FF00 RIS L Bracer", template = "object/tangible/wearables/armor/ris/armor_ris_bracer_l.iff", cost = {500,}},
-	{name = "\\#FFD700 5 \\00FF00 RIS R Bracer", template = "object/tangible/wearables/armor/ris/armor_ris_bracer_r.iff", cost = {500,}},
-	{name = "\\#FFD700 6 \\00FF00 RIS Chest Plate", template = "object/tangible/wearables/armor/ris/armor_ris_chest_plate.iff", cost = {1000,}},
-	{name = "\\#FFD700 7 \\00FF00 RIS Gloves", template = "object/tangible/wearables/armor/ris/armor_ris_gloves.iff", cost = {500,}},
-	{name = "\\#FFD700 8 \\00FF00 RIS Helmet", template = "object/tangible/wearables/armor/ris/armor_ris_helmet.iff", cost = {500,}},
-	{name = "\\#FFD700 9 \\00FF00 RIS Leggings", template = "object/tangible/wearables/armor/ris/armor_ris_leggings.iff", cost = {500,}},
+	{name = "\\#FFD700 1 \\#00FF00 RIS L Bicep", template = "object/tangible/wearables/armor/ris/armor_ris_bicep_l.iff", cost = {500,}},
+	{name = "\\#FFD700 2 \\#00FF00 RIS R Bicep", template = "object/tangible/wearables/armor/ris/armor_ris_bicep_r.iff", cost = {500,}},
+	{name = "\\#FFD700 3 \\#00FF00 RIS Boots", template = "object/tangible/wearables/armor/ris/armor_ris_boots.iff", cost = {500,}},
+	{name = "\\#FFD700 4 \\#00FF00 RIS L Bracer", template = "object/tangible/wearables/armor/ris/armor_ris_bracer_l.iff", cost = {500,}},
+	{name = "\\#FFD700 5 \\#00FF00 RIS R Bracer", template = "object/tangible/wearables/armor/ris/armor_ris_bracer_r.iff", cost = {500,}},
+	{name = "\\#FFD700 6 \\#00FF00 RIS Chest Plate", template = "object/tangible/wearables/armor/ris/armor_ris_chest_plate.iff", cost = {1000,}},
+	{name = "\\#FFD700 7 \\#00FF00 RIS Gloves", template = "object/tangible/wearables/armor/ris/armor_ris_gloves.iff", cost = {500,}},
+	{name = "\\#FFD700 8 \\#00FF00 RIS Helmet", template = "object/tangible/wearables/armor/ris/armor_ris_helmet.iff", cost = {500,}},
+	{name = "\\#FFD700 9 \\#00FF00 RIS Leggings", template = "object/tangible/wearables/armor/ris/armor_ris_leggings.iff", cost = {500,}},
 	},
 }
 
