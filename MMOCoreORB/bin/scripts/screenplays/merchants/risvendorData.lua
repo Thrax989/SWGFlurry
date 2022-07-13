@@ -68,6 +68,17 @@ RisEventVendorLogic = VendorLogic:new {
 	{name = "\\#FFD700 55 \\#00FF00 BONE \\#FFFFFF", template = "object/tangible/wearables/armor/bone/armor_bone_s01_helmet.iff", cost = {500,}},
 	{name = "\\#FFD700 56 \\#00FF00 BONE \\#FFFFFF", template = "object/tangible/wearables/armor/bone/armor_bone_s01_leggings.iff", cost = {500,}},
 	{name = "\\#FFD700 57 \\#00FF00 BONE \\#FFFFFF", template = "object/tangible/wearables/armor/bone/armor_smc_s01_bicep_l.iff", cost = {500,}},
+	--BOUNTY HUNTER ARMOR
+	{name = "\\#FFD700 58 \\#00FF00 BOUNTY HUNTER \\#FFFFFF", template = "object/tangible/wearables/armor/bounty_hunter/armor_bounty_hunter_belt.iff", cost = {500,}},)
+	{name = "\\#FFD700 59 \\#00FF00 BOUNTY HUNTER \\#FFFFFF", template = "object/tangible/wearables/armor/bounty_hunter/armor_bounty_hunter_bicep_l.iff", cost = {500,}},)
+	{name = "\\#FFD700 60 \\#00FF00 BOUNTY HUNTER \\#FFFFFF", template = "object/tangible/wearables/armor/bounty_hunter/armor_bounty_hunter_bicep_r.iff", cost = {500,}},)
+	{name = "\\#FFD700 61 \\#00FF00 BOUNTY HUNTER \\#FFFFFF", template = "object/tangible/wearables/armor/bounty_hunter/armor_bounty_hunter_boots.iff", cost = {500,}},)
+	{name = "\\#FFD700 62 \\#00FF00 BOUNTY HUNTER \\#FFFFFF", template = "object/tangible/wearables/armor/bounty_hunter/armor_bounty_hunter_bracer_l.iff", cost = {500,}},)
+	{name = "\\#FFD700 63 \\#00FF00 BOUNTY HUNTER \\#FFFFFF", template = "object/tangible/wearables/armor/bounty_hunter/armor_bounty_hunter_bracer_r.iff", cost = {500,}},)
+	{name = "\\#FFD700 64 \\#00FF00 BOUNTY HUNTER \\#FFFFFF", template = "object/tangible/wearables/armor/bounty_hunter/armor_bounty_hunter_chest_plate.iff", cost = {500,}},)
+	{name = "\\#FFD700 65 \\#00FF00 BOUNTY HUNTER \\#FFFFFF", template = "object/tangible/wearables/armor/bounty_hunter/armor_bounty_hunter_gloves.iff", cost = {500,}},)
+	{name = "\\#FFD700 66 \\#00FF00 BOUNTY HUNTER \\#FFFFFF", template = "object/tangible/wearables/armor/bounty_hunter/armor_bounty_hunter_helmet.iff", cost = {500,}},)
+	{name = "\\#FFD700 67 \\#00FF00 BOUNTY HUNTER \\#FFFFFF", template = "object/tangible/wearables/armor/bounty_hunter/armor_bounty_hunter_leggings.iff", cost = {500,}},)
 
 
 	},
