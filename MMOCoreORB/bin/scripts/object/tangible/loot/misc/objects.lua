@@ -4229,3 +4229,12 @@ object_tangible_loot_misc_shared_worklight = SharedTangibleObjectTemplate:new {
 }
 
 ObjectTemplates:addClientTemplate(object_tangible_loot_misc_shared_worklight, "object/tangible/loot/misc/shared_worklight.iff")
+
+
+ObjectTemplates:addClientTemplate(object_tangible_loot_misc_shared_worklight, "object/tangible/loot/misc/shared_worklight.iff")
+
+object_tangible_loot_misc_shared_vendor_token = SharedTangibleObjectTemplate:new {
+	clientTemplateFileName = "object/tangible/loot/misc/shared_vendor_token.iff"
+}
+
+ObjectTemplates:addClientTemplate(object_tangible_loot_misc_shared_vendor_token, "object/tangible/loot/misc/shared_vendor_token.iff")
