@@ -79,6 +79,16 @@ RisEventVendorLogic = VendorLogic:new {
 	{name = "\\#FFD700 65 \\#00FF00 BOUNTY HUNTER \\#FFFFFF", template = "object/tangible/wearables/armor/bounty_hunter/armor_bounty_hunter_gloves.iff", cost = {500,}},)
 	{name = "\\#FFD700 66 \\#00FF00 BOUNTY HUNTER \\#FFFFFF", template = "object/tangible/wearables/armor/bounty_hunter/armor_bounty_hunter_helmet.iff", cost = {500,}},)
 	{name = "\\#FFD700 67 \\#00FF00 BOUNTY HUNTER \\#FFFFFF", template = "object/tangible/wearables/armor/bounty_hunter/armor_bounty_hunter_leggings.iff", cost = {500,}},)
+	--CHITIN ARMOR
+	{name = "\\#FFD700 68 \\#00FF00 CHITIN \\#FFFFFF", template = "object/tangible/wearables/armor/chitin/armor_chitin_s01_bicep_l", cost = {500,}},)
+	{name = "\\#FFD700 69 \\#00FF00 CHITIN \\#FFFFFF", template = "object/tangible/wearables/armor/chitin/armor_chitin_s01_bicep_r", cost = {500,}},)
+	{name = "\\#FFD700 70 \\#00FF00 CHITIN \\#FFFFFF", template = "object/tangible/wearables/armor/chitin/armor_chitin_s01_boots", cost = {500,}},)
+	{name = "\\#FFD700 71 \\#00FF00 CHITIN \\#FFFFFF", template = "object/tangible/wearables/armor/chitin/armor_chitin_s01_bracer_l", cost = {500,}},)
+	{name = "\\#FFD700 72 \\#00FF00 CHITIN \\#FFFFFF", template = "object/tangible/wearables/armor/chitin/armor_chitin_s01_bracer_r", cost = {500,}},)
+	{name = "\\#FFD700 73 \\#00FF00 CHITIN \\#FFFFFF", template = "object/tangible/wearables/armor/chitin/armor_chitin_s01_chest_plate", cost = {500,}},)
+	{name = "\\#FFD700 74 \\#00FF00 CHITIN \\#FFFFFF", template = "object/tangible/wearables/armor/chitin/armor_chitin_s01_gloves", cost = {500,}},)
+	{name = "\\#FFD700 75 \\#00FF00 CHITIN \\#FFFFFF", template = "object/tangible/wearables/armor/chitin/armor_chitin_s01_helmet", cost = {500,}},)
+	{name = "\\#FFD700 76 \\#00FF00 CHITIN \\#FFFFFF", template = "object/tangible/wearables/armor/chitin/armor_chitin_s01_leggings", cost = {500,}},)
 
 
 	},
