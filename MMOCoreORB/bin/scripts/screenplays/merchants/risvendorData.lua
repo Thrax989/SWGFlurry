@@ -57,7 +57,17 @@ RisEventVendorLogic = VendorLogic:new {
 	{name = "\\#FFD700 45 \\#00FF00 ASSAULT TROOPER \\#FFFFFF", template = "object/tangible/wearables/armor/assault_trooper/armor_assault_trooper_leggings_gcw.iff", cost = {500,}},
 	{name = "\\#FFD700 46 \\#00FF00 ASSAULT TROOPER \\#FFFFFF", template = "object/tangible/wearables/armor/assault_trooper/armor_assault_trooper_utility_belt.iff", cost = {500,}},
 	{name = "\\#FFD700 47 \\#00FF00 ASSAULT TROOPER \\#FFFFFF", template = "object/tangible/wearables/armor/assault_trooper/armor_assault_trooper_utility_belt_gcw.iff", cost = {500,}},
-
+	--BONE ARMOR
+	{name = "\\#FFD700 37 \\#00FF00 BONE \\#FFFFFF", template = "object/tangible/wearables/armor/bone/armor_bone_s01_bicep_l.iff", cost = {500,}},
+	{name = "\\#FFD700 37 \\#00FF00 BONE \\#FFFFFF", template = "object/tangible/wearables/armor/bone/armor_bone_s01_bicep_r.iff", cost = {500,}},
+	{name = "\\#FFD700 37 \\#00FF00 BONE \\#FFFFFF", template = "object/tangible/wearables/armor/bone/armor_bone_s01_boots.iff", cost = {500,}},
+	{name = "\\#FFD700 37 \\#00FF00 BONE \\#FFFFFF", template = "object/tangible/wearables/armor/bone/armor_bone_s01_bracer_l.iff", cost = {500,}},
+	{name = "\\#FFD700 37 \\#00FF00 BONE \\#FFFFFF", template = "object/tangible/wearables/armor/bone/armor_bone_s01_bracer_r.iff", cost = {500,}},
+	{name = "\\#FFD700 37 \\#00FF00 BONE \\#FFFFFF", template = "object/tangible/wearables/armor/bone/armor_bone_s01_chest_plate.iff", cost = {500,}},
+	{name = "\\#FFD700 37 \\#00FF00 BONE \\#FFFFFF", template = "object/tangible/wearables/armor/bone/armor_bone_s01_gloves.iff", cost = {500,}},
+	{name = "\\#FFD700 37 \\#00FF00 BONE \\#FFFFFF", template = "object/tangible/wearables/armor/bone/armor_bone_s01_helmet.iff", cost = {500,}},
+	{name = "\\#FFD700 37 \\#00FF00 BONE \\#FFFFFF", template = "object/tangible/wearables/armor/bone/armor_bone_s01_leggings.iff", cost = {500,}},
+	{name = "\\#FFD700 37 \\#00FF00 BONE \\#FFFFFF", template = "object/tangible/wearables/armor/bone/armor_smc_s01_bicep_l.iff", cost = {500,}},
 
 
 	},
