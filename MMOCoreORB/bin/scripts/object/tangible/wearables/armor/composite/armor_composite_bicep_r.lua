@@ -241,17 +241,17 @@ object_tangible_wearables_armor_composite_armor_composite_bicep_r = object_tangi
 	maxCondition = 30000,
 
 	-- LIGHT, MEDIUM, HEAVY
-	rating = HEAVY,
+	rating = LIGHT,
 
-	kinetic = 90,
-	energy = 90,
-	electricity = 90,
-	stun = 90,
-	blast = 90,
-	heat = 90,
-	cold = 90,
-	acid = 90,
-	lightSaber = 67,
+	kinetic = 75,
+	energy = 75,
+	electricity = 75,
+	stun = 75,
+	blast = 75,
+	heat = 75,
+	cold = 75,
+	acid = 75,
+	lightSaber = 75,
 
 	numberExperimentalProperties = {1, 1, 1, 1, 2, 2, 2, 2, 2, 1, 1, 2, 1},
 	experimentalProperties = {"XX", "XX", "XX", "XX", "OQ", "SR", "OQ", "UT", "MA", "OQ", "MA", "OQ", "MA", "OQ", "XX", "XX", "OQ", "SR", "XX"},
