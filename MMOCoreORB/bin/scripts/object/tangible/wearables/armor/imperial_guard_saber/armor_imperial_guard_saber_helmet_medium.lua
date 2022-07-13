@@ -94,17 +94,17 @@ object_tangible_wearables_armor_imperial_guard_saber_armor_imperial_guard_saber_
 	maxCondition = 30000,
 
 	-- LIGHT, MEDIUM, HEAVY
-	rating = MEDIUM,
+	rating = LIGHT,
 
-	kinetic = 63,
-	energy = 50,
+	kinetic = 75,
+	energy = 75,
 	electricity = 75,
-	stun = 50,
-	blast = 50,
-	heat = 50,
-	cold = 50,
-	acid = 73,
-	lightSaber = 0,
+	stun = 75,
+	blast = 75,
+	heat = 75,
+	cold = 75,
+	acid = 75,
+	lightSaber = 75,
 
 	numberExperimentalProperties = {1, 1, 1, 2, 2, 2, 2, 2, 2, 1, 1, 2, 1},
 	experimentalProperties = {"XX", "XX", "XX", "OQ", "SR", "OQ", "SR", "OQ", "UT", "MA", "OQ", "MA", "OQ", "MA", "OQ", "XX", "XX", "OQ", "SR", "XX"},
