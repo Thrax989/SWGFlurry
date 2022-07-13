@@ -26,7 +26,16 @@ RisEventVendorLogic = VendorLogic:new {
 	{name = "\\#FFD700 1 \\#00FF00 IMPERIAL GUARD SABER \\#FFFFFF", template = "object/tangible/wearables/armor/armor_imperial_guard_saber/armor_imperial_guard_saber_chest_plate.iff", cost = {500,}},
 	{name = "\\#FFD700 1 \\#00FF00 IMPERIAL GUARD SABER \\#FFFFFF", template = "object/tangible/wearables/armor/armor_imperial_guard_saber/armor_imperial_guard_saber_bracer_l.iff", cost = {500,}},
 	{name = "\\#FFD700 1 \\#00FF00 IMPERIAL GUARD SABER \\#FFFFFF", template = "object/tangible/wearables/armor/armor_imperial_guard_saber/armor_imperial_guard_saber_bicep_r.iff", cost = {500,}},
-
+	--IMPERIAL GUard SHADOW
+	{name = "\\#FFD700 1 \\#00FF00 IMPERIAL GUARD SHADOW \\#FFFFFF", template = "object/tangible/wearables/armor/armor_imperial_guard_shadow/armor_imperial_guard_shadow_bicep_l.iff", cost = {500,}},
+	{name = "\\#FFD700 1 \\#00FF00 IMPERIAL GUARD SHADOW \\#FFFFFF", template = "object/tangible/wearables/armor/armor_imperial_guard_shadow/armor_imperial_guard_shadow_pants.iff", cost = {500,}},
+	{name = "\\#FFD700 1 \\#00FF00 IMPERIAL GUARD SHADOW \\#FFFFFF", template = "object/tangible/wearables/armor/armor_imperial_guard_shadow/armor_imperial_guard_shadow_boots.iff", cost = {500,}},
+	{name = "\\#FFD700 1 \\#00FF00 IMPERIAL GUARD SHADOW \\#FFFFFF", template = "object/tangible/wearables/armor/armor_imperial_guard_shadow/armor_imperial_guard_shadow_bracer_r.iff", cost = {500,}},
+	{name = "\\#FFD700 1 \\#00FF00 IMPERIAL GUARD SHADOW \\#FFFFFF", template = "object/tangible/wearables/armor/armor_imperial_guard_shadow/armor_imperial_guard_shadow_bracer_l.iff", cost = {500,}},
+	{name = "\\#FFD700 1 \\#00FF00 IMPERIAL GUARD SHADOW \\#FFFFFF", template = "object/tangible/wearables/armor/armor_imperial_guard_shadow/armor_imperial_guard_shadow_helmet.iff", cost = {500,}},
+	{name = "\\#FFD700 1 \\#00FF00 IMPERIAL GUARD SHADOW \\#FFFFFF", template = "object/tangible/wearables/armor/armor_imperial_guard_shadow/armor_imperial_guard_shadow_gloves.iff", cost = {500,}},
+	{name = "\\#FFD700 1 \\#00FF00 IMPERIAL GUARD SHADOW \\#FFFFFF", template = "object/tangible/wearables/armor/armor_imperial_guard_shadow/armor_imperial_guard_shadow_chest_plate.iff", cost = {500,}},
+	{name = "\\#FFD700 1 \\#00FF00 IMPERIAL GUARD SHADOW \\#FFFFFF", template = "object/tangible/wearables/armor/armor_imperial_guard_shadow/armor_imperial_guard_shadow_bicep_r.iff", cost = {500,}},
 
 
 
