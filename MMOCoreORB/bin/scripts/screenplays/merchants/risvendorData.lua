@@ -16,7 +16,7 @@ RisEventVendorLogic = VendorLogic:new {
 	{name = "\\#FFD700 7 \\#00FF00 RIS Gloves \\#FFFFFF", template = "object/tangible/wearables/armor/ris/armor_ris_gloves.iff", cost = {500,}},
 	{name = "\\#FFD700 8 \\#00FF00 RIS Helmet \\#FFFFFF", template = "object/tangible/wearables/armor/ris/armor_ris_helmet.iff", cost = {500,}},
 	{name = "\\#FFD700 9 \\#00FF00 RIS Leggings \\#FFFFFF", template = "object/tangible/wearables/armor/ris/armor_ris_leggings.iff", cost = {500,}},
-	--IMPERIAL GUARD SABER ARMOR
+	--IMPERIAL GUARD SABER ARMOR SET
 	{name = "\\#FFD700 10 \\#00FF00 IMPERIAL GUARD SABER \\#FFFFFF", template = "object/tangible/wearables/armor/armor_imperial_guard_saber/armor_imperial_guard_saber_bicep_l.iff", cost = {500,}},
 	{name = "\\#FFD700 11 \\#00FF00 IMPERIAL GUARD SABER \\#FFFFFF", template = "object/tangible/wearables/armor/armor_imperial_guard_saber/armor_imperial_guard_saber_pants.iff", cost = {500,}},
 	{name = "\\#FFD700 12 \\#00FF00 IMPERIAL GUARD SABER \\#FFFFFF", template = "object/tangible/wearables/armor/armor_imperial_guard_saber/armor_imperial_guard_saber_bracer_r.iff", cost = {500,}},
@@ -26,7 +26,7 @@ RisEventVendorLogic = VendorLogic:new {
 	{name = "\\#FFD700 16 \\#00FF00 IMPERIAL GUARD SABER \\#FFFFFF", template = "object/tangible/wearables/armor/armor_imperial_guard_saber/armor_imperial_guard_saber_chest_plate.iff", cost = {500,}},
 	{name = "\\#FFD700 17 \\#00FF00 IMPERIAL GUARD SABER \\#FFFFFF", template = "object/tangible/wearables/armor/armor_imperial_guard_saber/armor_imperial_guard_saber_bracer_l.iff", cost = {500,}},
 	{name = "\\#FFD700 18 \\#00FF00 IMPERIAL GUARD SABER \\#FFFFFF", template = "object/tangible/wearables/armor/armor_imperial_guard_saber/armor_imperial_guard_saber_bicep_r.iff", cost = {500,}},
-	--IMPERIAL GUard SHADOW
+	--IMPERIAL GUard SHADOW SET
 	{name = "\\#FFD700 19 \\#00FF00 IMPERIAL GUARD SHADOW \\#FFFFFF", template = "object/tangible/wearables/armor/armor_imperial_guard_shadow/armor_imperial_guard_shadow_bicep_l.iff", cost = {500,}},
 	{name = "\\#FFD700 20 \\#00FF00 IMPERIAL GUARD SHADOW \\#FFFFFF", template = "object/tangible/wearables/armor/armor_imperial_guard_shadow/armor_imperial_guard_shadow_pants.iff", cost = {500,}},
 	{name = "\\#FFD700 21 \\#00FF00 IMPERIAL GUARD SHADOW \\#FFFFFF", template = "object/tangible/wearables/armor/armor_imperial_guard_shadow/armor_imperial_guard_shadow_boots.iff", cost = {500,}},
@@ -36,7 +36,7 @@ RisEventVendorLogic = VendorLogic:new {
 	{name = "\\#FFD700 25 \\#00FF00 IMPERIAL GUARD SHADOW \\#FFFFFF", template = "object/tangible/wearables/armor/armor_imperial_guard_shadow/armor_imperial_guard_shadow_gloves.iff", cost = {500,}},
 	{name = "\\#FFD700 26 \\#00FF00 IMPERIAL GUARD SHADOW \\#FFFFFF", template = "object/tangible/wearables/armor/armor_imperial_guard_shadow/armor_imperial_guard_shadow_chest_plate.iff", cost = {500,}},
 	{name = "\\#FFD700 27 \\#00FF00 IMPERIAL GUARD SHADOW \\#FFFFFF", template = "object/tangible/wearables/armor/armor_imperial_guard_shadow/armor_imperial_guard_shadow_bicep_r.iff", cost = {500,}},
-	--ASSAULt TROOPER
+	--ASSAULt TROOPER SET
 	{name = "\\#FFD700 28 \\#00FF00 ASSAULT TROOPER \\#FFFFFF", template = "object/tangible/wearables/armor/assault_trooper/armor_assault_trooper_bicep_l.iff", cost = {500,}},
 	{name = "\\#FFD700 29 \\#00FF00 ASSAULT TROOPER \\#FFFFFF", template = "object/tangible/wearables/armor/assault_trooper/armor_assault_trooper_bicep_l_gcw.iff", cost = {500,}},
 	{name = "\\#FFD700 30 \\#00FF00 ASSAULT TROOPER \\#FFFFFF", template = "object/tangible/wearables/armor/assault_trooper/armor_assault_trooper_bicep_r.iff", cost = {500,}},
@@ -57,7 +57,7 @@ RisEventVendorLogic = VendorLogic:new {
 	{name = "\\#FFD700 45 \\#00FF00 ASSAULT TROOPER \\#FFFFFF", template = "object/tangible/wearables/armor/assault_trooper/armor_assault_trooper_leggings_gcw.iff", cost = {500,}},
 	{name = "\\#FFD700 46 \\#00FF00 ASSAULT TROOPER \\#FFFFFF", template = "object/tangible/wearables/armor/assault_trooper/armor_assault_trooper_utility_belt.iff", cost = {500,}},
 	{name = "\\#FFD700 47 \\#00FF00 ASSAULT TROOPER \\#FFFFFF", template = "object/tangible/wearables/armor/assault_trooper/armor_assault_trooper_utility_belt_gcw.iff", cost = {500,}},
-	--BONE ARMOR
+	--BONE ARMOR SET
 	{name = "\\#FFD700 48 \\#00FF00 BONE \\#FFFFFF", template = "object/tangible/wearables/armor/bone/armor_bone_s01_bicep_l.iff", cost = {500,}},
 	{name = "\\#FFD700 49 \\#00FF00 BONE \\#FFFFFF", template = "object/tangible/wearables/armor/bone/armor_bone_s01_bicep_r.iff", cost = {500,}},
 	{name = "\\#FFD700 50 \\#00FF00 BONE \\#FFFFFF", template = "object/tangible/wearables/armor/bone/armor_bone_s01_boots.iff", cost = {500,}},
@@ -68,7 +68,7 @@ RisEventVendorLogic = VendorLogic:new {
 	{name = "\\#FFD700 55 \\#00FF00 BONE \\#FFFFFF", template = "object/tangible/wearables/armor/bone/armor_bone_s01_helmet.iff", cost = {500,}},
 	{name = "\\#FFD700 56 \\#00FF00 BONE \\#FFFFFF", template = "object/tangible/wearables/armor/bone/armor_bone_s01_leggings.iff", cost = {500,}},
 	{name = "\\#FFD700 57 \\#00FF00 BONE \\#FFFFFF", template = "object/tangible/wearables/armor/bone/armor_smc_s01_bicep_l.iff", cost = {500,}},
-	--BOUNTY HUNTER ARMOR
+	--BOUNTY HUNTER ARMOR SET
 	{name = "\\#FFD700 58 \\#00FF00 BOUNTY HUNTER \\#FFFFFF", template = "object/tangible/wearables/armor/bounty_hunter/armor_bounty_hunter_belt.iff", cost = {500,}},)
 	{name = "\\#FFD700 59 \\#00FF00 BOUNTY HUNTER \\#FFFFFF", template = "object/tangible/wearables/armor/bounty_hunter/armor_bounty_hunter_bicep_l.iff", cost = {500,}},)
 	{name = "\\#FFD700 60 \\#00FF00 BOUNTY HUNTER \\#FFFFFF", template = "object/tangible/wearables/armor/bounty_hunter/armor_bounty_hunter_bicep_r.iff", cost = {500,}},)
@@ -79,7 +79,7 @@ RisEventVendorLogic = VendorLogic:new {
 	{name = "\\#FFD700 65 \\#00FF00 BOUNTY HUNTER \\#FFFFFF", template = "object/tangible/wearables/armor/bounty_hunter/armor_bounty_hunter_gloves.iff", cost = {500,}},)
 	{name = "\\#FFD700 66 \\#00FF00 BOUNTY HUNTER \\#FFFFFF", template = "object/tangible/wearables/armor/bounty_hunter/armor_bounty_hunter_helmet.iff", cost = {500,}},)
 	{name = "\\#FFD700 67 \\#00FF00 BOUNTY HUNTER \\#FFFFFF", template = "object/tangible/wearables/armor/bounty_hunter/armor_bounty_hunter_leggings.iff", cost = {500,}},)
-	--CHITIN ARMOR
+	--CHITIN ARMOR SET
 	{name = "\\#FFD700 68 \\#00FF00 CHITIN \\#FFFFFF", template = "object/tangible/wearables/armor/chitin/armor_chitin_s01_bicep_l", cost = {500,}},)
 	{name = "\\#FFD700 69 \\#00FF00 CHITIN \\#FFFFFF", template = "object/tangible/wearables/armor/chitin/armor_chitin_s01_bicep_r", cost = {500,}},)
 	{name = "\\#FFD700 70 \\#00FF00 CHITIN \\#FFFFFF", template = "object/tangible/wearables/armor/chitin/armor_chitin_s01_boots", cost = {500,}},)
