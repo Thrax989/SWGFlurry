@@ -1,3 +1,6 @@
+--Vendor For All Armor Sets In Game
+--These Items Will Take Alot Of Farming Coins In Order To Be Obtained
+--You Can Still Craft All Suits With A Armor Smith
 RisEventVendorLogic = VendorLogic:new {
 	scriptName = "RisEventVendorLogic",
 	currencies = {
