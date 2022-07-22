@@ -93,7 +93,6 @@ object_tangible_wearables_armor_spy_armor_spy_chest_plate = object_tangible_wear
 
 
 
-	-- Damage types in WeaponObject
 	vulnerability = STUN,
 	specialResists = LIGHTSABER,
 

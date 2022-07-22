@@ -100,10 +100,7 @@ object_tangible_wearables_armor_kashyyykian_ceremonial_armor_kashyyykian_ceremon
 				"object/creature/player/zabrak_male.iff",
 				"object/creature/player/zabrak_female.iff" },
 	
-	-- Damage types in WeaponObject
-	vulnerability = STUN + LIGHTSABER,
 
-	specialResists = ELECTRICITY,
 
 	-- These are default Blue Frog stats
 	healthEncumbrance = 300,

@@ -100,10 +100,7 @@ object_tangible_wearables_armor_tantel_armor_tantel_skreej_bicep_r = object_tang
 				"object/creature/player/zabrak_male.iff",
 				"object/creature/player/zabrak_female.iff" },
 	
-	-- Damage types in WeaponObject
-	vulnerability = STUN + LIGHTSABER,
 
-	specialResists = ELECTRICITY,
 
 	-- These are default Blue Frog stats
 	healthEncumbrance = 80,

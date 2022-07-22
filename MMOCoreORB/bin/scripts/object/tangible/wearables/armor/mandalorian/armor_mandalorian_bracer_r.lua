@@ -186,7 +186,6 @@ object_tangible_wearables_armor_mandalorian_armor_mandalorian_bracer_r = object_
 
 
 	
-	-- Damage types in WeaponObject
 	vulnerability = STUN,
 	--specialResists = LIGHTSABER,
 

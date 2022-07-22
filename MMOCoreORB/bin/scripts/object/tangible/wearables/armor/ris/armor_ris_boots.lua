@@ -228,7 +228,6 @@ object_tangible_wearables_armor_ris_armor_ris_boots = object_tangible_wearables_
 				"object/mobile/vendor/zabrak_male.iff",
 				"object/mobile/vendor/zabrak_female.iff" },
 	
-	-- Damage types in WeaponObject
 	vulnerability = STUN,
 --	specialResists = LIGHTSABER,
 

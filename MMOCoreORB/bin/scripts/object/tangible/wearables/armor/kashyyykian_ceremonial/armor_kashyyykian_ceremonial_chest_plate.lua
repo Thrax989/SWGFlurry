@@ -49,10 +49,7 @@ object_tangible_wearables_armor_kashyyykian_ceremonial_armor_kashyyykian_ceremon
 				"object/mobile/vendor/wookiee_female.iff",
 				"object/mobile/vendor/wookiee_male.iff" },
 
-	-- Damage types in WeaponObject
-	vulnerability = STUN + LIGHTSABER,
 
-	specialResists = ELECTRICITY,
 
 	-- These are default Blue Frog stats
 	healthEncumbrance = 300,

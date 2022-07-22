@@ -225,10 +225,8 @@ object_tangible_wearables_armor_bone_armor_bone_s01_leggings = object_tangible_w
 				"object/mobile/vendor/zabrak_male.iff",
 				"object/mobile/vendor/zabrak_female.iff" },
 
-	-- Damage types in WeaponObject
-	vulnerability = STUN + LIGHTSABER,
 
-	specialResists = ELECTRICITY,
+
 
 	-- These are default Blue Frog stats
 	healthEncumbrance = 130,
