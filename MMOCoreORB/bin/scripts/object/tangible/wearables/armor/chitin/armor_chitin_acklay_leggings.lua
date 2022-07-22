@@ -100,10 +100,8 @@ object_tangible_wearables_armor_chitin_armor_chitin_acklay_leggings = object_tan
 				"object/creature/player/zabrak_male.iff",
 				"object/creature/player/zabrak_female.iff" },
 	
-	-- Damage types in WeaponObject
-	vulnerability = STUN + LIGHTSABER,
 
-	specialResists = ELECTRICITY,
+
 
 	-- These are default Blue Frog stats
 	healthEncumbrance = 130,

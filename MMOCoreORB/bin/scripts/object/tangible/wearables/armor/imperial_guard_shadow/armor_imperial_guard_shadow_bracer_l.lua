@@ -90,7 +90,6 @@ object_tangible_wearables_armor_imperial_guard_shadow_armor_imperial_guard_shado
 				"object/mobile/vendor/zabrak_female.iff",
 				"object/mobile/vendor/zabrak_male.iff" },
 
-	-- Damage types in WeaponObject
 	vulnerability = LIGHTSABER,
 
 	-- These are default Blue Frog stats

@@ -91,7 +91,6 @@ object_tangible_wearables_armor_spy_armor_spy_leggings = object_tangible_wearabl
 				"object/mobile/vendor/zabrak_male.iff" },
 
 	
-	-- Damage types in WeaponObject
 	vulnerability = STUN,
 	specialResists = LIGHTSABER,
 

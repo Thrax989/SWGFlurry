@@ -185,7 +185,6 @@ object_tangible_wearables_armor_mandalorian_armor_mandalorian_leggings = object_
 				"object/mobile/vendor/zabrak_female.iff" },
 
 	
-	-- Damage types in WeaponObject
 	vulnerability = STUN,
 --	specialResists = LIGHTSABER,
 

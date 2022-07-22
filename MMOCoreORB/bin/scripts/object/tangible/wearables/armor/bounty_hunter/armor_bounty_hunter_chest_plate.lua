@@ -186,7 +186,6 @@ object_tangible_wearables_armor_bounty_hunter_armor_bounty_hunter_chest_plate = 
 				"object/mobile/vendor/zabrak_female.iff" },
 
 	
-	-- Damage types in WeaponObject
 	vulnerability = STUN,
 --	specialResists = LIGHTSABER,
 

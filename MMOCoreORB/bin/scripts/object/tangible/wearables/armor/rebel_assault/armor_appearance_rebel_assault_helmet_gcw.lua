@@ -189,10 +189,7 @@ object_tangible_wearables_armor_rebel_assault_armor_appearance_rebel_assault_hel
 
 
 
-	-- Damage types in WeaponObject
-	vulnerability = STUN + LIGHTSABER,
 
-	specialResists = ELECTRICITY,
 
 	-- These are default Blue Frog stats
 	healthEncumbrance = 80,

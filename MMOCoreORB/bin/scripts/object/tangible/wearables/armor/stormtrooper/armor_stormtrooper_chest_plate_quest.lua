@@ -231,10 +231,7 @@ object_tangible_wearables_armor_stormtrooper_armor_stormtrooper_chest_plate_ques
 				"object/mobile/vendor/zabrak_female.iff" },
 
 	
-	-- Damage types in WeaponObject
-	vulnerability = STUN + LIGHTSABER,
 
-	specialResists = ELECTRICITY,
 
 	-- These are default Blue Frog stats
 	healthEncumbrance = 300,

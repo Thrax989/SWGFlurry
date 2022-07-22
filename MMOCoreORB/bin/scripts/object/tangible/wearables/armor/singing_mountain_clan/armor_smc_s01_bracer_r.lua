@@ -137,10 +137,7 @@ object_tangible_wearables_armor_singing_mountain_clan_armor_smc_s01_bracer_r = o
 				"object/creature/player/zabrak_female.iff" ,
 				"object/mobile/vendor/zabrak_female.iff" },
 	
-	-- Damage types in WeaponObject
-	vulnerability = STUN + LIGHTSABER,
 
-	specialResists = ELECTRICITY,
 
 	-- These are default Blue Frog stats
 	healthEncumbrance = 80,
