@@ -26,7 +26,7 @@ void HolocronMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject, Obj
 	ManagedReference<PlayerObject*> ghost = player->getPlayerObject();
 
 	if (ghost->getJediState() >=1) {
-			//menuResponse->addRadialMenuItem(213, 3, "Reveal Encrypted Data"); // Use Holocron
+			menuResponse->addRadialMenuItem(213, 3, "Reveal Encrypted Data"); // Use Holocron
 			//menuResponse->addRadialMenuItemToRadialID(213, 214, 3, "Increase Jedi Lives"); // Increase Jedi Lives
 			menuResponse->addRadialMenuItemToRadialID(213, 215, 3, "Regenerate Full Force"); // Regenerate Jedi's Full Force
 			menuResponse->addRadialMenuItemToRadialID(213, 216, 3, "Visibility"); // Show Jedi's Visibility
@@ -45,11 +45,11 @@ int HolocronMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Crea
 	if (zserv == nullptr)
 		return 0;
 	
-	//if (selectedID == 213) {
- 		//if (ghost->getJediState() >= 1) {
-			//JediManager::instance()->useItem(sceneObject, JediManager::ITEMHOLOCRON, creature);
-		//}
-	//}
+	if (selectedID == 213) {
+ 		if (ghost->getJediState() >= 1) {
+			JediManager::instance()->useItem(sceneObject, JediManager::ITEMHOLOCRON, creature);
+		}
+	}
 	//if (selectedID == 214 && (ghost->getJediState() >= 1) && creature->hasSkill("combat_jedi_novice") && (creature->getScreenPlayState("jediLives") == 0)) {
 		//creature->sendSystemMessage("You have Permanently died on your jedi, you may not use this option"); // You have Permanently died on your jedi, you may not use this option
 		//}
@@ -73,7 +73,7 @@ int HolocronMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Crea
 		//}
 	//if (selectedID == 214 && !creature->hasSkill("combat_jedi_novice")) {
 		//creature->sendSystemMessage("You must be a gray jedi to use this option"); // You have Permanently died on your jedi, you may not use this option
-		//}
+		}
 	if (selectedID == 215 && (ghost->getJediState() >= 1)) {
 		ManagedReference<PlayerObject*> playerObject = creature->getPlayerObject();
 		if (!creature->checkCooldownRecovery("force_replenish_cooldown")) {
