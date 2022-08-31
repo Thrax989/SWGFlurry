@@ -109,7 +109,7 @@ int HolocronMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Crea
   			playerObject->sendMessage(pmm);
 		} else {
 			//You have max force
-			creature->sendSystemMessage("You may not use this option unless you are a jedi");
+			creature->sendSystemMessage("Your force pool is currently full");
 		}
 	} else {
 		//You're not a jedi yet
