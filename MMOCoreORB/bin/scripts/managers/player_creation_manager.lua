@@ -13,7 +13,7 @@ professions = {
 	"combat_brawler",
 	"combat_marksman",
 	"crafting_artisan",
-	"jedi",
+	"combat_jedi",
 	"outdoors_scout",
 	"science_medic",
 	"social_entertainer"
@@ -47,11 +47,23 @@ marojMelon = "object/tangible/food/foraged/foraged_fruit_s1.iff"
 
 SwoopBike = "object/tangible/deed/vehicle_deed/speederbike_swoop_deed.iff"
 
+robe = "object/tangible/wearables/robe/robe_jedi_padawan.iff"
+
+saber = "object/weapon/melee/sword/crafted_saber/sword_lightsaber_s9_training.iff"
+
+jediTool = "object/tangible/crafting/station/jedi_tool.iff"
+
+jediCrystal = "object/tangible/component/weapon/lightsaber/lightsaber_module_force_crystal.iff"
+
+gasTool = "object/tangible/survey_tool/survey_tool_gas.iff"
+
+stim = "object/tangible/medicine/crafted/crafted_stimpack_sm_s1_a.iff
+
 professionSpecificItems = {
 	combat_brawler = { brawlerOneHander, brawlerTwoHander, brawlerPolearm },
 	combat_marksman = { marksmanPistol, marksmanCarbine, marksmanRifle },
 	crafting_artisan = { genericTool, mineralTool, chemicalTool },
-	jedi = { },
+  	combat_jedi = { genericTool, mineralTool, chemicalTool, gasTool, jediTool, jediCrystal, stim },
 	outdoors_scout = { genericTool },
 	science_medic = { foodTool, chemicalTool, mineralTool },
 	social_entertainer = { slitherhorn }
