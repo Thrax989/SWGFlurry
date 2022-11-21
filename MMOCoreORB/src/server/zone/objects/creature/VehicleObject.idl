@@ -186,7 +186,7 @@ class VehicleObject extends CreatureObject {
 	public boolean isAttackableBy(CreatureObject object) {
 		CreatureObject creature = super.linkedCreature;
 
-		if (creature == null || isDestroyed())
+		if (!creature || isDestroyed())
 			return false;
 
 		if (object.getZone() != getZone())
@@ -296,4 +296,19 @@ class VehicleObject extends CreatureObject {
 	public float getLightSaber() {
 		return 25 - getConditionReduction(25);
 	}
+
+	@dirty
+	public native int getPassengerCapacity();
+
+	@dirty
+	public native string getPassengerSeatName();
+
+	@dirty
+	public native boolean hasOpenSeat();
+
+	@dirty
+	public native int getOpenSeat();
+
+	@dirty
+	public native boolean slotPassenger(CreatureObject passenger);
 }

@@ -1,0 +1,5 @@
+
+object_mobile_passenger_grievous_wheel_bike = object_mobile_shared_passenger_grievous_wheel_bike:new {
+
+}
+ObjectTemplates:addTemplate(object_mobile_passenger_grievous_wheel_bike, "object/mobile/passenger_grievous_wheel_bike.iff")

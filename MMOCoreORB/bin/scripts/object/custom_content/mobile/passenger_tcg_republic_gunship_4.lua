@@ -1,0 +1,5 @@
+
+object_mobile_passenger_tcg_republic_gunship_4 = object_mobile_shared_passenger_tcg_republic_gunship_4:new {
+
+}
+ObjectTemplates:addTemplate(object_mobile_passenger_tcg_republic_gunship_4, "object/mobile/passenger_tcg_republic_gunship_4.iff")

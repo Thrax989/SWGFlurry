@@ -2330,8 +2330,6 @@ void PlayerObjectImplementation::setOnline() {
 
 	doRecovery(1000);
 
-	regrantSkills();
-
 	activateMissions();
 }
 

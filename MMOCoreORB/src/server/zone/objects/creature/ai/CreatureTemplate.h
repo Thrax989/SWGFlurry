@@ -102,6 +102,8 @@ protected:
 	String reactionStf;
 	String personalityStf;
 
+	int passengerCapacity;
+	String passengerSeatString;
 public:
 	CreatureTemplate();
 
@@ -407,6 +409,14 @@ public:
 
 	inline const String& getPersonalityStf() const {
 		return personalityStf;
+	}
+
+	inline const String& getPassengerSeatString() const {
+		return passengerSeatString;
+	}
+
+	inline int getPassengerCapacity() const {
+		return passengerCapacity;
 	}
 
 	inline bool isSpecialProtection(int resistType) const {
