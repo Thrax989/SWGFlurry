@@ -1,0 +1,5 @@
+
+object_mobile_passenger_landspeeder_xp38 = object_mobile_shared_passenger_landspeeder_xp38:new {
+
+}
+ObjectTemplates:addTemplate(object_mobile_passenger_landspeeder_xp38, "object/mobile/passenger_landspeeder_xp38.iff")

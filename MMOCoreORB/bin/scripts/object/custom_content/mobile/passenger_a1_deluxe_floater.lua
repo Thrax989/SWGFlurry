@@ -1,0 +1,5 @@
+
+object_mobile_passenger_a1_deluxe_floater = object_mobile_shared_passenger_a1_deluxe_floater:new {
+
+}
+ObjectTemplates:addTemplate(object_mobile_passenger_a1_deluxe_floater, "object/mobile/passenger_a1_deluxe_floater.iff")
