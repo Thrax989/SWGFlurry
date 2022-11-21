@@ -73,7 +73,7 @@ int HolocronMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, Crea
 		//}
 	//if (selectedID == 214 && !creature->hasSkill("combat_jedi_novice")) {
 		//creature->sendSystemMessage("You must be a gray jedi to use this option"); // You have Permanently died on your jedi, you may not use this option
-		}
+		//}
 	if (selectedID == 215 && (ghost->getJediState() >= 1)) {
 		ManagedReference<PlayerObject*> playerObject = creature->getPlayerObject();
 		if (!creature->checkCooldownRecovery("force_replenish_cooldown")) {
