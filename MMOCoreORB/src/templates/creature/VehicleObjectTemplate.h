@@ -4,14 +4,16 @@
 #include "templates/creature/SharedCreatureObjectTemplate.h"
 
 class VehicleObjectTemplate : public SharedCreatureObjectTemplate {
-	int decayRate, decayCycle, passengerCapacity;
-	String passengerSeat;
+	int decayRate, decayCycle, passengerCapacity, vehicleType, hoverHeight;
+	String passengerSeat, jetpackString;
 
 public:
 	VehicleObjectTemplate() {
 		decayRate = 0;
 		decayCycle = 0;
 		passengerCapacity = 0;
+		vehicleType = 0;
+		hoverHeight = 0;
 	}
 
 	~VehicleObjectTemplate() {
@@ -24,6 +26,9 @@ public:
 		decayCycle = templateData->getIntField("decayCycle");
 		passengerCapacity = templateData->getIntField("passengerCapacity");
 		passengerSeat = templateData->getStringField("passengerSeatString");
+		vehicleType = templateData->getIntField("vehicleType");
+		hoverHeight = templateData->getIntField("hoverHeight");
+		jetpackString = templateData->getStringField("jetpackWearable");
     }
 
 	bool isVehicleObjectTemplate() {
@@ -45,6 +50,19 @@ public:
 	String& getPassengerSeatString() {
 		return passengerSeat;
 	}
+
+	int getVehicleType() {
+		return vehicleType;
+	}
+
+	int getHoverHeight() {
+		return hoverHeight;
+	}
+
+	String& getJetpackString() {
+		return jetpackString;
+	}
+
 };
 
 #endif /* VEHICLEOBJECTTEMPLATE_H_ */
