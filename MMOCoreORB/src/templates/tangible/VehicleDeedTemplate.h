@@ -13,9 +13,11 @@
 class VehicleDeedTemplate : public DeedTemplate {
 private:
 	String controlDeviceObjectTemplate;
+	String jetpackObjectTemplate;
 
 public:
 	VehicleDeedTemplate() {
+		jetpackObjectTemplate = "";
 
 	}
 
@@ -27,11 +29,17 @@ public:
 		DeedTemplate::readObject(templateData);
 
 		controlDeviceObjectTemplate = templateData->getStringField("controlDeviceObjectTemplate");
+		jetpackObjectTemplate = templateData->getStringField("jetpackObjectTemplate");
     }
 
 	String getControlDeviceObjectTemplate()
 	{
 		return controlDeviceObjectTemplate;
+	}
+
+	String getJetpackObjectTemplate()
+	{
+		return jetpackObjectTemplate;
 	}
 };
 

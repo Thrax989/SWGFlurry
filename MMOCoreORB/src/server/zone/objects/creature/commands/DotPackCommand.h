@@ -309,6 +309,9 @@ public:
 
 		int	range = int(dotPack->getRange() + creature->getSkillMod("healing_range") / 100 * 14);
 
+		if (range > 64)
+			range = 64;
+
 		if(!checkDistance(creature, creatureTarget, range))
 					return TOOFAR;
 		//timer
