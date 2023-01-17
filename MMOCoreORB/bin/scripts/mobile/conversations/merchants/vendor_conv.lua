@@ -65,9 +65,3 @@ HalloweenEventVendorConvoTemplate = VendorConvoTemplate:new {
 }
 
 addConversationTemplate("HalloweenEventVendorConvoTemplate", HalloweenEventVendorConvoTemplate);
-
-RisEventVendorConvoTemplate = VendorConvoTemplate:new {
-	luaClassHandler = "RisEventVendorConvoHandler"
-}
-
-addConversationTemplate("RisEventVendorConvoTemplate", RisEventVendorConvoTemplate);

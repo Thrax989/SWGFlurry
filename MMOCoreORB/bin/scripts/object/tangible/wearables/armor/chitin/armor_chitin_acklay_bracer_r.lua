@@ -100,8 +100,10 @@ object_tangible_wearables_armor_chitin_armor_chitin_acklay_bracer_r = object_tan
 				"object/creature/player/zabrak_male.iff",
 				"object/creature/player/zabrak_female.iff" },
 	
+	-- Damage types in WeaponObject
+	vulnerability = STUN + LIGHTSABER,
 
-
+	specialResists = ELECTRICITY,
 
 	-- These are default Blue Frog stats
 	healthEncumbrance = 80,
@@ -113,15 +115,15 @@ object_tangible_wearables_armor_chitin_armor_chitin_acklay_bracer_r = object_tan
 	-- LIGHT, MEDIUM, HEAVY
 	rating = LIGHT,
 
-	kinetic = 75,
-	energy = 75,
-	electricity = 75,
-	stun = 75,
-	blast = 75,
-	heat = 75,
-	cold = 75,
-	acid = 75,
-	lightSaber = 75,
+	kinetic = 65,
+	energy = 65,
+	electricity = 80,
+	stun = 25,
+	blast = 65,
+	heat = 65,
+	cold = 65,
+	acid = 65,
+	lightSaber = 0,
 
 	numberExperimentalProperties = {1, 1, 1, 2, 2, 2, 2, 2, 2, 1, 1, 2, 1},
 	experimentalProperties = {"XX", "XX", "XX", "OQ", "SR", "OQ", "SR", "OQ", "UT", "MA", "OQ", "MA", "OQ", "MA", "OQ", "XX", "XX", "OQ", "SR", "XX"},

@@ -130,6 +130,7 @@ object_tangible_wearables_armor_spy_armor_spy_belt = object_tangible_wearables_a
 				"object/mobile/vendor/zabrak_female.iff",
 				"object/mobile/vendor/zabrak_male.iff" },
 	
+	-- Damage types in WeaponObject
 	vulnerability = ACID,
 
 	-- These are default Blue Frog stats

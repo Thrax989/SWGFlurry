@@ -185,6 +185,7 @@ object_tangible_wearables_armor_bounty_hunter_armor_bounty_hunter_boots = object
 				"object/mobile/vendor/zabrak_female.iff" },
 
 	
+	-- Damage types in WeaponObject
 	vulnerability = STUN,
 --	specialResists = LIGHTSABER,
 
@@ -198,15 +199,15 @@ object_tangible_wearables_armor_bounty_hunter_armor_bounty_hunter_boots = object
 	-- LIGHT, MEDIUM, HEAVY
 	rating = LIGHT,
 
-	kinetic = 75,
-	energy = 75,
-	electricity = 75,
-	stun = 75,
-	blast = 75,
-	heat = 75,
-	cold = 75,
-	acid = 75,
-	lightSaber = 75,
+	kinetic = 65,
+	energy = 65,
+	electricity = 80,
+	stun = 25,
+	blast = 65,
+	heat = 65,
+	cold = 65,
+	acid = 65,
+	lightSaber = 10,
 
 	numberExperimentalProperties = {1, 1, 1, 1, 2, 2, 2, 2, 2, 1, 1, 2, 1},
 	experimentalProperties = {"XX", "XX", "XX", "XX", "OQ", "SR", "OQ", "UT", "MA", "OQ", "MA", "OQ", "MA", "OQ", "XX", "XX", "OQ", "SR", "XX"},
