@@ -228,10 +228,7 @@ object_tangible_wearables_armor_composite_armor_composite_chest_plate = object_t
 				"object/mobile/vendor/zabrak_male.iff",
 				"object/mobile/vendor/zabrak_female.iff" },
 
-	-- Damage types in WeaponObject
-	vulnerability = STUN + LIGHTSABER,
 
-	specialResists = ELECTRICITY,
 
 	-- These are default Blue Frog stats
 	healthEncumbrance = 300,
@@ -241,17 +238,17 @@ object_tangible_wearables_armor_composite_armor_composite_chest_plate = object_t
 	maxCondition = 30000,
 
 	-- LIGHT, MEDIUM, HEAVY
-	rating = HEAVY,
+	rating = LIGHT,
 
-	kinetic = 90,
-	energy = 90,
-	electricity = 90,
-	stun = 90,
-	blast = 90,
-	heat = 90,
-	cold = 90,
-	acid = 90,
-	lightSaber = 67,
+	kinetic = 75,
+	energy = 75,
+	electricity = 75,
+	stun = 75,
+	blast = 75,
+	heat = 75,
+	cold = 75,
+	acid = 75,
+	lightSaber = 75,
 
 	numberExperimentalProperties = {1, 1, 1, 1, 2, 2, 2, 2, 2, 1, 1, 2, 1},
 	experimentalProperties = {"XX", "XX", "XX", "XX", "OQ", "SR", "OQ", "UT", "MA", "OQ", "MA", "OQ", "MA", "OQ", "XX", "XX", "OQ", "SR", "XX"},

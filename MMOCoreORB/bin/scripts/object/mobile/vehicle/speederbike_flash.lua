@@ -46,7 +46,7 @@ object_mobile_vehicle_speederbike_flash = object_mobile_vehicle_shared_speederbi
 	decayRate = 15, -- Damage tick per decay cycle
 	decayCycle = 600, -- Time in seconds per cycle
 	passengerCapacity = 1,
-	passengerSeatString = "flash_speeder",
+	passengerSeatString = "speederbike_flash",
 }
 
 ObjectTemplates:addTemplate(object_mobile_vehicle_speederbike_flash, "object/mobile/vehicle/speederbike_flash.iff")

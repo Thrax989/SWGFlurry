@@ -225,7 +225,6 @@ object_tangible_wearables_armor_ubese_armor_ubese_bandolier = object_tangible_we
 				"object/mobile/vendor/zabrak_male.iff",
 				"object/mobile/vendor/zabrak_female.iff" },
 
-	-- Damage types in WeaponObject
 	vulnerability = HEAT + COLD + STUN + LIGHTSABER,
 
 	-- These are default Blue Frog stats
@@ -236,15 +235,15 @@ object_tangible_wearables_armor_ubese_armor_ubese_bandolier = object_tangible_we
 	-- LIGHT, MEDIUM, HEAVY
 	rating = LIGHT,
 
-	kinetic = 15,
-	energy = 15,
-	electricity = 15,
-	stun = 15,
-	blast = 15,
-	heat = 15,
-	cold = 15,
-	acid = 15,
-	lightSaber = 0,
+	kinetic = 75,
+	energy = 75,
+	electricity = 75,
+	stun = 75,
+	blast = 75,
+	heat = 75,
+	cold = 75,
+	acid = 75,
+	lightSaber = 75,
 
 	numberExperimentalProperties = {1, 1, 1, 1},
 	experimentalProperties = {"XX", "XX", "XX", "XX"},

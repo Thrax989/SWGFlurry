@@ -227,10 +227,7 @@ object_tangible_wearables_armor_rebel_assault_armor_rebel_assault_gloves_camo = 
 				"object/mobile/vendor/zabrak_male.iff",
 				"object/mobile/vendor/zabrak_female.iff" },
 	
-	-- Damage types in WeaponObject
-	vulnerability = STUN + LIGHTSABER,
 
-	specialResists = ELECTRICITY,
 
 	-- These are default Blue Frog stats
 	healthEncumbrance = 80,
@@ -242,15 +239,15 @@ object_tangible_wearables_armor_rebel_assault_armor_rebel_assault_gloves_camo = 
 	-- LIGHT, MEDIUM, HEAVY
 	rating = LIGHT,
 
-	kinetic = 65,
-	energy = 65,
-	electricity = 80,
-	stun = 25,
-	blast = 65,
-	heat = 65,
-	cold = 65,
-	acid = 65,
-	lightSaber = 0,
+	kinetic = 75,
+	energy = 75,
+	electricity = 75,
+	stun = 75,
+	blast = 75,
+	heat = 75,
+	cold = 75,
+	acid = 75,
+	lightSaber = 75,
 
 	numberExperimentalProperties = {1, 1, 1, 1, 2, 2, 2, 2, 2, 1, 1, 2, 1},
 	experimentalProperties = {"XX", "XX", "XX", "XX", "OQ", "SR", "OQ", "UT", "MA", "OQ", "MA", "OQ", "MA", "OQ", "XX", "XX", "OQ", "SR", "XX"},

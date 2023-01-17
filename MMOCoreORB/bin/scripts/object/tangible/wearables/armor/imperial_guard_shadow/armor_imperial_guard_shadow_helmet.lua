@@ -83,7 +83,6 @@ object_tangible_wearables_armor_imperial_guard_shadow_armor_imperial_guard_shado
 				"object/mobile/vendor/zabrak_female.iff",
 				"object/mobile/vendor/zabrak_male.iff" },
 
-	-- Damage types in WeaponObject
 	vulnerability = LIGHTSABER,
 
 	-- These are default Blue Frog stats
@@ -96,15 +95,15 @@ object_tangible_wearables_armor_imperial_guard_shadow_armor_imperial_guard_shado
 	-- LIGHT, MEDIUM, HEAVY
 	rating = LIGHT,
 
-	kinetic = 6000,
-	energy = 6000,
-	electricity = 6000,
-	stun = 6000,
-	blast = 6000,
-	heat = 6000,
-	cold = 6000,
-	acid = 6000,
-	lightSaber = 0,
+	kinetic = 75,
+	energy = 75,
+	electricity = 75,
+	stun = 75,
+	blast = 75,
+	heat = 75,
+	cold = 75,
+	acid = 75,
+	lightSaber = 75,
 
 	numberExperimentalProperties = {1, 1, 1, 1, 1},
 	experimentalProperties = {"XX", "XX", "XX", "OQ", "SR"},
