@@ -23,6 +23,10 @@ public:
 		if (!checkInvalidLocomotions(creature))
 			return INVALIDLOCOMOTION;
 
+		if (isWearingArmor(creature)) {
+			return NOJEDIARMOR;
+		}
+
 		float mods[3] = {0.f, 0.f, 0.f};
 
 		for (int i = 0; i < 2; i++)

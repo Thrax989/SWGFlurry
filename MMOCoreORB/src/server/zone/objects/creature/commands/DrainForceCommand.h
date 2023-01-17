@@ -27,6 +27,10 @@ public:
 		if (creature->hasAttackDelay() || !creature->checkPostureChangeDelay())
 			return GENERALERROR;
 
+		if (isWearingArmor(creature)) {
+			return NOJEDIARMOR;
+		}
+
 		// Fail if target is not a player...
 
 		ManagedReference<SceneObject*> object = server->getZoneServer()->getObject(target);

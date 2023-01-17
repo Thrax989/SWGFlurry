@@ -343,7 +343,7 @@ void ArmorObjectImplementation::updateCraftingValues(CraftingValues* values, boo
 		effectivenessSlice = 1;
 		encumbranceSlice = 1;
 
-		//calculateSpecialProtection(values);
+		calculateSpecialProtection(values);
 
 		setRating((int) values->getCurrentValue("armor_rating"));
 
@@ -369,21 +369,21 @@ void ArmorObjectImplementation::updateCraftingValues(CraftingValues* values, boo
 
 }
 
-//void ArmorObjectImplementation::calculateSpecialProtection(CraftingValues* craftingValues) {
-	//specialResists = ((int)(craftingValues->getCurrentValue("armor_special_type")));
+void ArmorObjectImplementation::calculateSpecialProtection(CraftingValues* craftingValues) {
+	specialResists = ((int)(craftingValues->getCurrentValue("armor_special_type")));
 
-	//for (int i = 0; i <= 8; ++i) {
-		//int type = pow((float)2,i);
+	for (int i = 0; i <= 8; ++i) {
+		int type = pow((float)2,i);
 
-		//String subtitle = getStringType(type);
-		//float value = craftingValues->getCurrentValue(subtitle);
+		String subtitle = getStringType(type);
+		float value = craftingValues->getCurrentValue(subtitle);
 
-		//if (value != ValuesMap::VALUENOTFOUND) {
-			//specialResists |= type;
-			//setProtectionValue(type, value);
-		//}
-	//}
-//}
+		if (value != ValuesMap::VALUENOTFOUND) {
+			specialResists |= type;
+			setProtectionValue(type, value);
+		}
+	}
+}
 
 String ArmorObjectImplementation::getStringType(int type) {
 

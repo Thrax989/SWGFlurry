@@ -25,22 +25,18 @@
 void Rarelootcrate1MenuComponent::fillObjectMenuResponse(SceneObject* sceneObject, ObjectMenuResponse* menuResponse, CreatureObject* player) const {
 
 	TangibleObjectMenuComponent::fillObjectMenuResponse(sceneObject, menuResponse, player);
-
+	ManagedReference<BuildingObject*> building = cast<BuildingObject*>(player->getRootParent());
+	// If outside dispaly menu options, if inside a building show nothing.
+	if (building == nullptr) {
 	menuResponse->addRadialMenuItem(20, 3, "Open Rare Loot Crate");
-
+	}
 }
 
 int Rarelootcrate1MenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* creature, byte selectedID) const {
+	ManagedReference<BuildingObject*> building = cast<BuildingObject*>(creature->getRootParent());
 
-	if (!sceneObject->isTangibleObject())
-		return 0;
-
-	if (!creature->isPlayerCreature())
-		return 0;
-
-	if (!sceneObject->isASubChildOf(creature))
-		return 0;
-
+	// If outside dispaly menu options, if inside a building show nothing.
+	if (building == nullptr) {
 	if (selectedID != 20)
 		return 0;
 
@@ -52,5 +48,6 @@ int Rarelootcrate1MenuComponent::handleObjectMenuSelect(SceneObject* sceneObject
 	lootManager->createLoot(inventory, "boss_rare", 300);
 	creature->playEffect("clienteffect/rare_loot.cef", "");
 	sceneObject->destroyObjectFromWorld(true);
+	}
 	return 0;
 }

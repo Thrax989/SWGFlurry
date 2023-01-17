@@ -396,34 +396,35 @@ int VehicleObjectImplementation::getOpenSeat() {
 }
 
 bool VehicleObjectImplementation::slotPassenger(CreatureObject* passenger) {
-	//get everything necessary for the passenger seat
+	Locker plocker(passenger);
 	int seatNumber = getOpenSeat();
 	String seat = "passenger_" + getPassengerSeatName() + "_" + String::valueOf(seatNumber);
 	Zone* zone = getZone();
 	float x = getWorldPositionX();
 	float y = getWorldPositionY();
 	float z = getWorldPositionZ();
-	String name = zone->getZoneName();
 	CreatureManager* creatureManager = zone->getCreatureManager();
-
-	//spawn seat and slot it in
 	CreatureObject* seatObject = creatureManager->spawnCreature(seat.hashCode(), 0, x, z, y, 0);
-	Locker slocker(seatObject);
-	seatObject->switchZone(name, x, z, y);
 	transferObject(seatObject, 4 + seatNumber, true);
-
-	//transfer the player in
-	Locker plocker(passenger, seatObject);
+	Locker slocker(seatObject);
+	uint32 crcSaddle = String("saddle").hashCode();
+	ManagedReference<Buff*> saddleBuff = new Buff(seatObject, crcSaddle, 36000, BuffType::OTHER);
+	Locker blocker(saddleBuff);
+	saddleBuff->setSpeedMultiplierMod(0.01f);
+	saddleBuff->setAccelerationMultiplierMod(0.01f);
+	seatObject->addBuff(saddleBuff);
+	seatObject->setPosition(x, z, y);
 	seatObject->transferObject(passenger, 4, true);
-
-	if (passenger->isPlayerCreature()) {
-		//set all the things
-		passenger->setState(CreatureState::RIDINGMOUNT);
-		passenger->setPosition(x, z, y);
-		synchronizeCloseObjects();
-		seatObject->synchronizeCloseObjects();
-		passenger->synchronizeCloseObjects();
-	}
-
+	passenger->setState(CreatureState::RIDINGMOUNT);
+	passenger->teleport(x, z, y, 0);
+	passenger->setPosition(x, z, y);
+	passenger->synchronizeCloseObjects();
+	uint32 crc = String("passenger").hashCode();
+	ManagedReference<Buff*> buff = new Buff(passenger, crc, 36000, BuffType::OTHER);
+	Locker locker(buff);
+	buff->setSpeedMultiplierMod(0.01f);
+	buff->setAccelerationMultiplierMod(0.01f);
+	passenger->addBuff(buff);
+	synchronizeCloseObjects();
 	return true;
 }

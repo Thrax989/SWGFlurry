@@ -24,15 +24,6 @@ void NewMemberMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject, Ob
 
 int NewMemberMenuComponent::handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* creature, byte selectedID) const {
 
-	if (!sceneObject->isTangibleObject())
-		return 0;
-
-	if (!creature->isPlayerCreature())
-		return 0;
-
-	if (!sceneObject->isASubChildOf(creature))
-		return 0;
-
 	if (selectedID != 20)
 		return 0;
 
