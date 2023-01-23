@@ -1462,7 +1462,7 @@ void PlayerObjectImplementation::notifyOnline() {
 	}
 
 	//jedi check when logging in for grey jedi state
-	if (playerCreature->hasSkill("cobat_jedi_novice")) {
+	if (playerCreature->hasSkill("combat_jedi_novice")) {
 		player->setJediState(1);
                 info(playerCreature->getFirstName() + " Jedi State Adjusted To " + " 1 " + " Grey Jedi ", true);
 	}
