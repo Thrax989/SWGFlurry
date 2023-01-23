@@ -1461,6 +1461,12 @@ void PlayerObjectImplementation::notifyOnline() {
 		playerCreature->setFactionStatus(2);
 	}
 
+	//jedi check when logging in for grey jedi state
+	if (playerCreature->hasSkill("cobat_jedi_novice")) {
+		player->setJediState(1);
+                info(playerCreature->getFirstName() + " Jedi State Adjusted To " + " 1 " + " Grey Jedi ", true);
+	}
+
 	//Login to jedi manager
 	JediManager::instance()->onPlayerLoggedIn(playerCreature);
 	//Reset Players Skill Mods
