@@ -278,11 +278,11 @@ int CombatManager::doCombatAction(CreatureObject* attacker, WeaponObject* weapon
 				Locker olocker(attackingCreature, attacker);
 				ghost->updateLastPvpCombatActionTimestamp(shouldGcwTef, shouldBhTef, shouldJediTef);
 				ManagedReference<CreatureObject*> defenderCreature = cast<CreatureObject*>(defenderObject);
-				if (defenderCreature != NULL){
+				if (defenderCreature != nullptr){
 					olocker.release();
 					Locker olocker(defenderCreature, attacker);
 					ManagedReference<PlayerObject*> defenderPlayer = defenderCreature->getPlayerObject(); 
-					if (defenderPlayer != NULL && shouldJediTef)
+					if (defenderPlayer != nullptr && shouldJediTef)
 						defenderPlayer->updateLastPvpCombatActionTimestamp(false, false, true);
 				}
 			}
@@ -336,9 +336,9 @@ int CombatManager::doTargetCombatAction(CreatureObject* attacker, WeaponObject* 
 	} else {
 		int poolsToDamage = calculatePoolsToDamage(data.getPoolsToDamage());
 
-		if (tano != NULL && attacker != NULL && attacker->isPlayerCreature() && tano->getFaction() != 0 && attacker->getFaction() != tano->getFaction()){
+		if (tano != nullptr && attacker != nullptr && attacker->isPlayerCreature() && tano->getFaction() != 0 && attacker->getFaction() != tano->getFaction()){
 			PlayerObject* ghost = attacker->getPlayerObject();
-			if (ghost != NULL)
+			if (ghost != nullptr)
 				ghost->updateLastPvpCombatActionTimestamp(true, false, false);
 		}
 
@@ -2426,7 +2426,7 @@ void CombatManager::broadcastCombatSpam(TangibleObject* attacker, TangibleObject
 		vec->safeCopyReceiversTo(closeObjects, CloseObjectsVector::PLAYERTYPE);
 	} else {
 #ifdef COV_DEBUG
-		info("Null closeobjects vector in CombatManager::broadcastCombatSpam", true);
+		info("nullptr closeobjects vector in CombatManager::broadcastCombatSpam", true);
 #endif
 		zone->getInRangeObjects(attacker->getWorldPositionX(), attacker->getWorldPositionY(), COMBAT_SPAM_RANGE, &closeObjects, true);
 	}
@@ -2837,7 +2837,7 @@ Reference<SortedVector<ManagedReference<TangibleObject*> >* > CombatManager::get
 			vec->safeCopyTo(closeObjects);
 		} else {
 #ifdef COV_DEBUG
-			attacker->info("Null closeobjects vector in CombatManager::getAreaTargets", true);
+			attacker->info("nullptr closeobjects vector in CombatManager::getAreaTargets", true);
 #endif
 			zone->getInRangeObjects(attacker->getWorldPositionX(), attacker->getWorldPositionY(), 128, &closeObjects, true);
 		}
@@ -3104,7 +3104,7 @@ void CombatManager::checkForTefs(CreatureObject* attacker, CreatureObject* defen
 
 		if (!(*shouldBhTef) && (attackingCreature->hasBountyMissionFor(targetCreature) || targetCreature->hasBountyMissionFor(attackingCreature)))
 			*shouldBhTef = true;
-		} else if (attackingCreature != NULL && targetCreature != NULL && attackingCreature->isPlayerCreature() && targetCreature->getFaction() != 0 && targetCreature->getFaction() != attackingCreature->getFaction()){
+		} else if (attackingCreature != nullptr && targetCreature != nullptr && attackingCreature->isPlayerCreature() && targetCreature->getFaction() != 0 && targetCreature->getFaction() != attackingCreature->getFaction()){
 			*shouldGcwTef = true;
 	}
 }
