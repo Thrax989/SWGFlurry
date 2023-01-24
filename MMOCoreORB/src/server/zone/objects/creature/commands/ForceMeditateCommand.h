@@ -52,7 +52,7 @@ public:
 
 		PlayerManager* playermgr = server->getZoneServer()->getPlayerManager();	
 		creature->registerObserver(ObserverEventType::POSTURECHANGED, playermgr);
-
+		ghost->updateLastJediAttackableTimestamp();
 		return SUCCESS;
 
 	}
