@@ -1025,7 +1025,7 @@ void PlayerObjectImplementation::removeRewardedSchematic(DraftSchematic* schemat
 
 void PlayerObjectImplementation::decreaseSchematicUseCount(DraftSchematic* schematic) {
 
-	if(schematicList.decreaseSchematicUseCount(schematic)) {
+	if (schematicList.decreaseSchematicUseCount(schematic)) {
 		Vector<ManagedReference<DraftSchematic*> > schematics;
 
 		schematics.add(schematic);
@@ -2131,7 +2131,7 @@ void PlayerObjectImplementation::doRecovery(int latency) {
 		}
 
 		if (!getZoneServer()->isServerLoading() && cooldownTimerMap->isPast("weatherEvent")) {
-			if(creature->getZone() != nullptr && creature->getZone()->getPlanetManager() != nullptr) {
+			if (creature->getZone() != nullptr && creature->getZone()->getPlanetManager() != nullptr) {
 				ManagedReference<WeatherManager*> weatherManager = creature->getZone()->getPlanetManager()->getWeatherManager();
 
 				if (weatherManager != nullptr)
@@ -2318,7 +2318,7 @@ void PlayerObjectImplementation::setLinkDead(bool isSafeLogout) {
 	logoutTimeStamp.updateToCurrentTime();
 	if(!isSafeLogout) {
 		info("went link dead");
-		logoutTimeStamp.addMiliTime(ConfigManager::instance()->getInt("Core3.Tweaks.PlayerObject.LinkDeadDelay", 30 * 1) * 1000); // 3 minutes if unsafe
+		logoutTimeStamp.addMiliTime(ConfigManager::instance()->getInt("Core3.Tweaks.PlayerObject.LinkDeadDelay", 30 * 1) * 1000); // 30 seconds if unsafe
 	}
 
 	setCharacterBit(PlayerObjectImplementation::LD, true);
@@ -2472,12 +2472,12 @@ void PlayerObjectImplementation::activateMissions() {
 }
 
 void PlayerObjectImplementation::setForcePowerMax(int newValue, bool notifyClient) {
-	if(newValue == getForcePowerMax())
+	if (newValue == getForcePowerMax())
 		return;
 
 	forcePowerMax = newValue;
 
-	if(forcePower > forcePowerMax)
+	if (forcePower > forcePowerMax)
 		setForcePower(forcePowerMax, true);
 
 	if (forcePower < forcePowerMax) {
@@ -2496,7 +2496,7 @@ void PlayerObjectImplementation::setForcePowerMax(int newValue, bool notifyClien
 
 void PlayerObjectImplementation::setForcePower(int fp, bool notifyClient) {
 
-	if(fp == getForcePower())
+	if (fp == getForcePower())
 		return;
 
 	// Set forcepower back to 0 incase player goes below
@@ -2653,16 +2653,19 @@ bool PlayerObjectImplementation::isJediAttackable() const {
 void PlayerObjectImplementation::schedulePvpTefRemovalTask(bool removeGcwTefNow, bool removeBhTefNow, bool removeJediTefNow) {
 	ManagedReference<CreatureObject*> parent = getParent().get().castTo<CreatureObject*>();
 
-	if (parent == nullptr)
+	if (parent == nullptr) {
 		return;
+	}
 
 	if (pvpTefTask == nullptr) {
 		pvpTefTask = new PvpTefRemovalTask(parent);
 	}
 
 	if (removeGcwTefNow || removeBhTefNow || removeJediTefNow) {
-		if (removeGcwTefNow)
+
+		if (removeGcwTefNow) {
 			lastGcwPvpCombatActionTimestamp.updateToCurrentTime();
+		}
 
 		if (removeBhTefNow) {
 			lastBhPvpCombatActionTimestamp.updateToCurrentTime();
