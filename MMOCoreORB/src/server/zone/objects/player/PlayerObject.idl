@@ -243,6 +243,12 @@ class PlayerObject extends IntangibleObject {
 	protected Time lastGcwPvpCombatActionTimestamp;
 
 	@dereferenced
+	protected Time lastJediPvpCombatActionTimestamp;
+
+	@dereferenced
+	protected Time lastJediAttackableTimestamp;
+
+	@dereferenced
 	protected transient Reference<PvpTefRemovalTask> pvpTefTask;
 
 	@dereferenced
@@ -298,12 +304,12 @@ class PlayerObject extends IntangibleObject {
 	protected unsigned long missionsCompleted;
 	protected unsigned long worldbossKills;
 	protected unsigned long eventplayerCrate;
-
+	
 	//Player Bounty
 	@dereferenced
 	protected Time playerBountyTimestamp;
 	protected unsigned long bountyPlacerId;
-	protected int bountyReward;	
+	protected int bountyReward;
 
 	public static final int LFG = 1;
 	public static final int NEWBIEHELPER = 2;
@@ -321,7 +327,7 @@ class PlayerObject extends IntangibleObject {
 	public static final int LOADING = 6;
 
 	public static final int PVP_RATING_FLOOR = 500;
-	public static final unsigned long PVP_RESET_TIME = 259200000; // 3 days
+	public static final unsigned long PVP_RESET_TIME = 300000; // 5 minutes
 
 	public PlayerObject() {
 		playerLogLevel = 4; // INFO
@@ -388,6 +394,8 @@ class PlayerObject extends IntangibleObject {
 
 		lastBhPvpCombatActionTimestamp.updateToCurrentTime();
 		lastGcwPvpCombatActionTimestamp.updateToCurrentTime();
+		lastJediPvpCombatActionTimestamp.updateToCurrentTime();
+		lastJediAttackableTimestamp.updateToCurrentTime();
 
 		lastDigestion.updateToCurrentTime();
 
@@ -421,7 +429,6 @@ class PlayerObject extends IntangibleObject {
 		pveKills = 0;
 		pveDeaths = 0;
 		missionsCompleted = 0;
-
 		//Player Bounty
 		playerBountyTimestamp.updateToCurrentTime();
 		bountyPlacerId = 0;
@@ -1740,11 +1747,23 @@ class PlayerObject extends IntangibleObject {
 	@read
 	public native Time getLastGcwPvpCombatActionTimestamp();
 
-	public native void updateLastPvpCombatActionTimestamp(boolean updateGcwAction, boolean updateBhAction);
+	@dereferenced
+	@local
+	public native Time getLastJediPvpCombatActionTimestamp();
+
+	@dereferenced
+	@local
+	public native Time getLastJediAttackableTimestamp();
+
+	public native void updateLastPvpCombatActionTimestamp(boolean updateGcwAction, boolean updateBhAction, boolean updateJediAction);
 
 	public native void updateLastBhPvpCombatActionTimestamp();
 
 	public native void updateLastGcwPvpCombatActionTimestamp();
+
+	public native void updateLastJediPvpCombatActionTimestamp();
+
+	public native void updateLastJediAttackableTimestamp();
 
 	@read
 	public native boolean hasPvpTef();
@@ -1752,7 +1771,13 @@ class PlayerObject extends IntangibleObject {
 	@read
 	public native boolean hasBhTef();
 
-	public native void schedulePvpTefRemovalTask(boolean removeGcwTefNow, boolean removeBhTefNow);
+	@read
+	public native boolean hasJediTef();
+
+	@read
+	public native boolean isJediAttackable();
+
+	public native void schedulePvpTefRemovalTask(boolean removeGcwTefNow, boolean removeBhTefNow, boolean removeJediTefNow);
 
 	public native void schedulePvpTefRemovalTask(boolean removeNow = false);
 
@@ -1952,7 +1977,7 @@ class PlayerObject extends IntangibleObject {
 		lastPvpRatingUpdate.updateToCurrentTime();
 	}
 
-	public boolean hasOnVictimList(unsigned int playerID) {
+	public synchronized boolean hasOnVictimList(unsigned int playerID) {
 		if (lastPvpRatingUpdate.miliDifference() >= PVP_RESET_TIME && victimList.size() > 0) {
 			victimList.removeAll();
 			return false;

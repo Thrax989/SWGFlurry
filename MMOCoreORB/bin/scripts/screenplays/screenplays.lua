@@ -792,7 +792,7 @@ includeFile("events/mokk_worldboss_sp.lua")
 --includeFile("events/worldboss_fifteen.lua")
 includeFile("events/baxterstockman.lua")
 includeFile("events/inquisitor_boss.lua")
---includeFile("events/world_boss_spawner.lua")
+includeFile("events/world_boss_spawner.lua")
 
 --painting exchange dealer
 includeFile("events/painting_exchange_dealer.lua")

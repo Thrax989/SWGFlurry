@@ -325,6 +325,7 @@ public:
 	int doCommonMedicalCommandChecks(CreatureObject* creature) const;
 
 	void checkForTef(CreatureObject* creature, CreatureObject* target) const;
+	void checkCmTef(CreatureObject* creature, CreatureObject* target) const;
 };
 
 
