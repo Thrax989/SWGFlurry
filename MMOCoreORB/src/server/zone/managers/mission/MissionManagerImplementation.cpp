@@ -2209,7 +2209,7 @@ void MissionManagerImplementation::failPlayerBountyMission(uint64 bountyHunter) 
 				if (target != nullptr) {
 					auto targetGhost = target->getPlayerObject();
 					if (targetGhost != nullptr)
-						targetGhost->schedulePvpTefRemovalTask(false, true);
+						targetGhost->schedulePvpTefRemovalTask(false, true, false);
 				}
 
 				objective->fail();
