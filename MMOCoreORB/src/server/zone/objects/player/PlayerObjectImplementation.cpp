@@ -1463,8 +1463,9 @@ void PlayerObjectImplementation::notifyOnline() {
 
 	//jedi check when logging in for grey jedi state
 	if (playerCreature->hasSkill("combat_jedi_novice")) {
-		player->setJediState(1);
-                info(playerCreature->getFirstName() + " Jedi State Adjusted To " + " 1 " + " Grey Jedi ", true);
+		ManagedReference<PlayerObject*> ghost = playerCreature->getPlayerObject();
+		ghost->setJediState(1);
+        info(playerCreature->getFirstName() + " Jedi State Adjusted To " + " 1 " + " Grey Jedi ", true);
 	}
 
 	//Login to jedi manager
@@ -2574,14 +2575,14 @@ Time PlayerObjectImplementation::getLastGcwPvpCombatActionTimestamp() const {
 	return lastGcwPvpCombatActionTimestamp;
 }
 
-Time PlayerObjectImplementation::getLastJediPvpCombatActionTimestamp() const {
+Time PlayerObjectImplementation::getLastJediPvpCombatActionTimestamp() {
 	return lastJediPvpCombatActionTimestamp;
 }
-Time PlayerObjectImplementation::getLastJediAttackableTimestamp() const {
+Time PlayerObjectImplementation::getLastJediAttackableTimestamp() {
 	return lastJediAttackableTimestamp;
 }
 
-void PlayerObjectImplementation::updateLastJediAttackableTimestamp() const {
+void PlayerObjectImplementation::updateLastJediAttackableTimestamp() {
 	lastJediAttackableTimestamp.updateToCurrentTime();
 	lastJediAttackableTimestamp.addMiliTime(60000);
 }
