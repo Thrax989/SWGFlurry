@@ -2574,14 +2574,14 @@ Time PlayerObjectImplementation::getLastGcwPvpCombatActionTimestamp() const {
 	return lastGcwPvpCombatActionTimestamp;
 }
 
-Time PlayerObjectImplementation::getLastJediPvpCombatActionTimestamp() {
+Time PlayerObjectImplementation::getLastJediPvpCombatActionTimestamp() const {
 	return lastJediPvpCombatActionTimestamp;
 }
-Time PlayerObjectImplementation::getLastJediAttackableTimestamp() {
+Time PlayerObjectImplementation::getLastJediAttackableTimestamp() const {
 	return lastJediAttackableTimestamp;
 }
 
-void PlayerObjectImplementation::updateLastJediAttackableTimestamp() {
+void PlayerObjectImplementation::updateLastJediAttackableTimestamp() const {
 	lastJediAttackableTimestamp.updateToCurrentTime();
 	lastJediAttackableTimestamp.addMiliTime(60000);
 }
