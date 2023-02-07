@@ -208,7 +208,7 @@ public:
 			creature->sendSystemMessage(stringId);
 		}
 
-		checkForTef(creature, creatureTarget);
+		checkCmTef(creature, creatureTarget);
 	}
 
 	int hasCost(CreatureObject* creature) const {
@@ -394,7 +394,7 @@ public:
 			creatureTarget->sendSystemMessage(stringId2);
 		}
 
-		checkForTef(creature, creatureTarget);
+		checkCmTef(creature, creatureTarget);
 
 		if (dotPack->isArea()) {
 			if (creatureTarget != creature)
